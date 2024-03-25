@@ -1,0 +1,11 @@
+C:\Users\23343593309\source\repos\Form_Equipo1\bin\Debug\Form_Equipo1.exe.config
+C:\Users\23343593309\source\repos\Form_Equipo1\bin\Debug\Form_Equipo1.exe
+C:\Users\23343593309\source\repos\Form_Equipo1\bin\Debug\Form_Equipo1.pdb
+C:\Users\23343593309\source\repos\Form_Equipo1\obj\Debug\Equipo1.csproj.AssemblyReference.cache
+C:\Users\23343593309\source\repos\Form_Equipo1\obj\Debug\Equipo1.csproj.SuggestedBindingRedirects.cache
+C:\Users\23343593309\source\repos\Form_Equipo1\obj\Debug\Equipo1.UserAdmin.resources
+C:\Users\23343593309\source\repos\Form_Equipo1\obj\Debug\Form_Equipo1.Properties.Resources.resources
+C:\Users\23343593309\source\repos\Form_Equipo1\obj\Debug\Equipo1.csproj.GenerateResource.cache
+C:\Users\23343593309\source\repos\Form_Equipo1\obj\Debug\Equipo1.csproj.CoreCompileInputs.cache
+C:\Users\23343593309\source\repos\Form_Equipo1\obj\Debug\Form_Equipo1.exe
+C:\Users\23343593309\source\repos\Form_Equipo1\obj\Debug\Form_Equipo1.pdb
