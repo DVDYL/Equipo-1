@@ -22,5 +22,9 @@ namespace Equipo1
             // Código para manejar el evento de clic de la etiqueta
         }
 
+        private void GBOX_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
