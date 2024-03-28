@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Boton_Confirmar = new System.Windows.Forms.Button();
+            this.Boton_Cancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ComboBox_Rol = new System.Windows.Forms.ComboBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.ComboBox_ABM = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -43,33 +43,42 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Calendario_Nacimiento = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.Box_Nombre = new System.Windows.Forms.TextBox();
+            this.Box_Apellido = new System.Windows.Forms.TextBox();
+            this.Box_DNI = new System.Windows.Forms.TextBox();
+            this.Box_Dir = new System.Windows.Forms.TextBox();
+            this.Box_Mail = new System.Windows.Forms.TextBox();
+            this.Box_Pass = new System.Windows.Forms.TextBox();
+            this.Box_Telefono = new System.Windows.Forms.TextBox();
+            this.Box_Mail_Confirm = new System.Windows.Forms.TextBox();
+            this.Box_Pass_Confirm = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // Boton_Confirmar
             // 
-            this.button1.Font = new System.Drawing.Font("Nunito", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(286, 564);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 27);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Confirmar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Boton_Confirmar.Font = new System.Drawing.Font("Nunito", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boton_Confirmar.Location = new System.Drawing.Point(834, 599);
+            this.Boton_Confirmar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Boton_Confirmar.Name = "Boton_Confirmar";
+            this.Boton_Confirmar.Size = new System.Drawing.Size(88, 27);
+            this.Boton_Confirmar.TabIndex = 0;
+            this.Boton_Confirmar.Text = "Confirmar";
+            this.Boton_Confirmar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // Boton_Cancelar
             // 
-            this.button2.Font = new System.Drawing.Font("Nunito", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(468, 565);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 27);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Boton_Cancelar.Font = new System.Drawing.Font("Nunito", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boton_Cancelar.Location = new System.Drawing.Point(980, 599);
+            this.Boton_Cancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Boton_Cancelar.Name = "Boton_Cancelar";
+            this.Boton_Cancelar.Size = new System.Drawing.Size(88, 27);
+            this.Boton_Cancelar.TabIndex = 1;
+            this.Boton_Cancelar.Text = "Cancelar";
+            this.Boton_Cancelar.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -83,14 +92,14 @@
             this.label1.Text = "ABM de Usuarios";
             this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
-            // comboBox1
+            // ComboBox_Rol
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(798, 90);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(140, 23);
-            this.comboBox1.TabIndex = 3;
+            this.ComboBox_Rol.FormattingEnabled = true;
+            this.ComboBox_Rol.Location = new System.Drawing.Point(852, 90);
+            this.ComboBox_Rol.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ComboBox_Rol.Name = "ComboBox_Rol";
+            this.ComboBox_Rol.Size = new System.Drawing.Size(140, 23);
+            this.ComboBox_Rol.TabIndex = 3;
             // 
             // label2
             // 
@@ -104,14 +113,14 @@
             this.label2.Text = "Tipo de Usuario";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // comboBox2
+            // ComboBox_ABM
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(432, 90);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(140, 23);
-            this.comboBox2.TabIndex = 5;
+            this.ComboBox_ABM.FormattingEnabled = true;
+            this.ComboBox_ABM.Location = new System.Drawing.Point(432, 90);
+            this.ComboBox_ABM.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ComboBox_ABM.Name = "ComboBox_ABM";
+            this.ComboBox_ABM.Size = new System.Drawing.Size(140, 23);
+            this.ComboBox_ABM.TabIndex = 5;
             // 
             // label3
             // 
@@ -204,12 +213,12 @@
             this.label10.TabIndex = 13;
             this.label10.Text = "Fecha de Nacimiento";
             // 
-            // dateTimePicker1
+            // Calendario_Nacimiento
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(798, 229);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 15;
+            this.Calendario_Nacimiento.Location = new System.Drawing.Point(852, 229);
+            this.Calendario_Nacimiento.Name = "Calendario_Nacimiento";
+            this.Calendario_Nacimiento.Size = new System.Drawing.Size(200, 22);
+            this.Calendario_Nacimiento.TabIndex = 15;
             // 
             // label11
             // 
@@ -246,15 +255,87 @@
             this.label13.TabIndex = 18;
             this.label13.Text = "Confirmar Contraseña";
             // 
+            // Box_Nombre
+            // 
+            this.Box_Nombre.Location = new System.Drawing.Point(432, 161);
+            this.Box_Nombre.Name = "Box_Nombre";
+            this.Box_Nombre.Size = new System.Drawing.Size(100, 22);
+            this.Box_Nombre.TabIndex = 19;
+            // 
+            // Box_Apellido
+            // 
+            this.Box_Apellido.Location = new System.Drawing.Point(852, 163);
+            this.Box_Apellido.Name = "Box_Apellido";
+            this.Box_Apellido.Size = new System.Drawing.Size(100, 22);
+            this.Box_Apellido.TabIndex = 20;
+            // 
+            // Box_DNI
+            // 
+            this.Box_DNI.Location = new System.Drawing.Point(432, 232);
+            this.Box_DNI.Name = "Box_DNI";
+            this.Box_DNI.Size = new System.Drawing.Size(100, 22);
+            this.Box_DNI.TabIndex = 21;
+            // 
+            // Box_Dir
+            // 
+            this.Box_Dir.Location = new System.Drawing.Point(432, 302);
+            this.Box_Dir.Name = "Box_Dir";
+            this.Box_Dir.Size = new System.Drawing.Size(100, 22);
+            this.Box_Dir.TabIndex = 22;
+            // 
+            // Box_Mail
+            // 
+            this.Box_Mail.Location = new System.Drawing.Point(432, 378);
+            this.Box_Mail.Name = "Box_Mail";
+            this.Box_Mail.Size = new System.Drawing.Size(100, 22);
+            this.Box_Mail.TabIndex = 23;
+            // 
+            // Box_Pass
+            // 
+            this.Box_Pass.Location = new System.Drawing.Point(432, 456);
+            this.Box_Pass.Name = "Box_Pass";
+            this.Box_Pass.Size = new System.Drawing.Size(100, 22);
+            this.Box_Pass.TabIndex = 24;
+            // 
+            // Box_Telefono
+            // 
+            this.Box_Telefono.Location = new System.Drawing.Point(852, 303);
+            this.Box_Telefono.Name = "Box_Telefono";
+            this.Box_Telefono.Size = new System.Drawing.Size(100, 22);
+            this.Box_Telefono.TabIndex = 25;
+            // 
+            // Box_Mail_Confirm
+            // 
+            this.Box_Mail_Confirm.Location = new System.Drawing.Point(852, 375);
+            this.Box_Mail_Confirm.Name = "Box_Mail_Confirm";
+            this.Box_Mail_Confirm.Size = new System.Drawing.Size(100, 22);
+            this.Box_Mail_Confirm.TabIndex = 26;
+            // 
+            // Box_Pass_Confirm
+            // 
+            this.Box_Pass_Confirm.Location = new System.Drawing.Point(852, 453);
+            this.Box_Pass_Confirm.Name = "Box_Pass_Confirm";
+            this.Box_Pass_Confirm.Size = new System.Drawing.Size(100, 22);
+            this.Box_Pass_Confirm.TabIndex = 27;
+            // 
             // UserAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 661);
+            this.Controls.Add(this.Box_Pass_Confirm);
+            this.Controls.Add(this.Box_Mail_Confirm);
+            this.Controls.Add(this.Box_Telefono);
+            this.Controls.Add(this.Box_Pass);
+            this.Controls.Add(this.Box_Mail);
+            this.Controls.Add(this.Box_Dir);
+            this.Controls.Add(this.Box_DNI);
+            this.Controls.Add(this.Box_Apellido);
+            this.Controls.Add(this.Box_Nombre);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.Calendario_Nacimiento);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -263,12 +344,12 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.ComboBox_ABM);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.ComboBox_Rol);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Boton_Cancelar);
+            this.Controls.Add(this.Boton_Confirmar);
             this.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "UserAdmin";
@@ -280,13 +361,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Boton_Confirmar;
+        private System.Windows.Forms.Button Boton_Cancelar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ComboBox_Rol;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox ComboBox_ABM;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -295,10 +376,22 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker Calendario_Nacimiento;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+<<<<<<< HEAD
+        private System.Windows.Forms.TextBox Box_Nombre;
+        private System.Windows.Forms.TextBox Box_Apellido;
+        private System.Windows.Forms.TextBox Box_DNI;
+        private System.Windows.Forms.TextBox Box_Dir;
+        private System.Windows.Forms.TextBox Box_Mail;
+        private System.Windows.Forms.TextBox Box_Pass;
+        private System.Windows.Forms.TextBox Box_Telefono;
+        private System.Windows.Forms.TextBox Box_Mail_Confirm;
+        private System.Windows.Forms.TextBox Box_Pass_Confirm;
+=======
+>>>>>>> 1df17a4e25fe7dd08e7c3598571c7f4795a0b0d6
     }
 }
 
