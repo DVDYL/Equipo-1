@@ -14,7 +14,7 @@ namespace Equipo1
     {
         public UserAdmin()
         {
-            InitializeComponent();
+            InitializeComponent(); // Inicializamos el formulario.
 
             // Agregar opciones al ComboBox de tipo de ABM una sola vez al cargar el formulario
             ComboBox_ABM.Items.Add("01 - Alta");
@@ -155,7 +155,6 @@ namespace Equipo1
 
         private void Boton_Cancelar_Click(object sender, EventArgs e) // Preguntar al usuario si está seguro de cancelar cuando clickea "Cancelar"
         {
-
             DialogResult resultado = MessageBox.Show("¿Desea cancelar la operación?", "Confirmar Cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)             // Verificar la respuesta del usuario
