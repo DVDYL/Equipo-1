@@ -267,6 +267,7 @@
             this.Box_Apellido.Name = "Box_Apellido";
             this.Box_Apellido.Size = new System.Drawing.Size(140, 22);
             this.Box_Apellido.TabIndex = 3;
+            this.Box_Apellido.TextChanged += new System.EventHandler(this.Box_Apellido_TextChanged);
             // 
             // Box_DNI
             // 

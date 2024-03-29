@@ -32,11 +32,9 @@ namespace Equipo1
             // Desactivar la capacidad de edición del ComboBox_Rol
             ComboBox_Rol.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            // Establecer el formato de visualización predeterminado para la fecha de alta
+            // Establecer el formato de visualización predeterminado para la fecha de nacimiento
             Calendario_Nacimiento.Format = DateTimePickerFormat.Custom;
             Calendario_Nacimiento.CustomFormat = "dd/MM/yyyy";
-
-
         }
 
         private void ComboBox_ABM_SelectedIndexChanged(object sender, EventArgs e) 
@@ -74,6 +72,11 @@ namespace Equipo1
         private void Box_Nombre_Leave(object sender, EventArgs e)
         {
             // Aquí no necesitamos hacer nada, pero este evento puede ser útil para ejecutar acciones después de la validación
+        }
+
+        private void Box_Apellido_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void Box_DNI_TextChanged(object sender, EventArgs e)
