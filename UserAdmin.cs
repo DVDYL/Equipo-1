@@ -164,7 +164,7 @@ namespace Equipo1
             }
         }
 
-        private void Boton_Confirmar_Click(object sender, EventArgs e)
+        private void Boton_Confirmar_Click(object sender, EventArgs e) // Esto es un botón
         {
             // Verificar si el campo "Operación" está en blanco
             if (ComboBox_ABM.SelectedIndex == -1)
@@ -185,7 +185,5 @@ namespace Equipo1
                 ComboBox_Rol.Focus();
             }
         }
-
-
     }
 }
