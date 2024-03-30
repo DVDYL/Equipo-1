@@ -56,5 +56,23 @@ namespace Equipo1
             return null;
         }
 
+        public static string EsTelefono(string texto)
+        {
+            // Verificar si el texto tiene longitud diferente de 8 dígitos
+            if (texto.Length != 10)
+            {
+                return "El campo Telefono debe tener exactamente 10 dígitos.";
+            }
+
+            // Verificar si el texto contiene algún carácter que no sea un dígito
+            if (!texto.All(char.IsDigit))
+            {
+                return "El campo Telefono debe contener únicamente dígitos numéricos.";
+            }
+
+            // Si se cumplen todas las condiciones, el campo es válido
+            return null;
+        }
+
     }
 }

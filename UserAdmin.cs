@@ -128,6 +128,15 @@ namespace Equipo1
                 return;
             }
 
+            string errorCampoTelefono = Validar.EsTelefono(Box_Telefono.Text);
+            if (errorCampoTelefono != null)
+            {
+                MessageBox.Show(errorCampoTelefono, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+
             // Si todas las validaciones pasan, mostrar mensaje de éxito
             MessageBox.Show("El Usuario fue dado de alta con éxito con el ID: 1", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
