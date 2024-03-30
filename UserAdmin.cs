@@ -183,6 +183,13 @@ namespace Equipo1
                 // Enfocar el ComboBox "Tipo de Usuario" para que el usuario tenga que volver a él
                 ComboBox_Rol.Focus();
             }
+            // Verificar si el campo "Tipo de Usuario" está en blanco
+            else if (Box_Nombre.Text == null)
+            {
+                // Mostrar mensaje de advertencia cuando el tipo de usuario está en blanco
+                MessageBox.Show("Por favor, tiene que ingresar un nombre.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
         }
     }
 }
