@@ -55,13 +55,11 @@
             this.Box_Telefono = new System.Windows.Forms.TextBox();
             this.Box_Mail_Confirm = new System.Windows.Forms.TextBox();
             this.Box_Pass_Confirm = new System.Windows.Forms.TextBox();
-            this.Label_N_Usuario = new System.Windows.Forms.Label();
-            this.Box_Usuario = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Boton_Confirmar
             // 
-            this.Boton_Confirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boton_Confirmar.Font = new System.Drawing.Font("Nunito", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Boton_Confirmar.Location = new System.Drawing.Point(834, 599);
             this.Boton_Confirmar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Confirmar.Name = "Boton_Confirmar";
@@ -73,7 +71,7 @@
             // 
             // Boton_Cancelar
             // 
-            this.Boton_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boton_Cancelar.Font = new System.Drawing.Font("Nunito", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Boton_Cancelar.Location = new System.Drawing.Point(980, 599);
             this.Boton_Cancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Cancelar.Name = "Boton_Cancelar";
@@ -86,7 +84,7 @@
             // Label_ABM_Usuarios
             // 
             this.Label_ABM_Usuarios.AutoSize = true;
-            this.Label_ABM_Usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_ABM_Usuarios.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_ABM_Usuarios.Location = new System.Drawing.Point(31, 35);
             this.Label_ABM_Usuarios.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_ABM_Usuarios.Name = "Label_ABM_Usuarios";
@@ -107,7 +105,7 @@
             // Label_Tipo_Usuario
             // 
             this.Label_Tipo_Usuario.AutoSize = true;
-            this.Label_Tipo_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Tipo_Usuario.Font = new System.Drawing.Font("Nunito", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_Tipo_Usuario.Location = new System.Drawing.Point(632, 123);
             this.Label_Tipo_Usuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Tipo_Usuario.Name = "Label_Tipo_Usuario";
@@ -117,7 +115,7 @@
             // 
             // ComboBox_ABM
             // 
-            this.ComboBox_ABM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBox_ABM.Font = new System.Drawing.Font("Nunito", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBox_ABM.FormattingEnabled = true;
             this.ComboBox_ABM.Location = new System.Drawing.Point(432, 120);
             this.ComboBox_ABM.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -129,7 +127,7 @@
             // Label_Operacion
             // 
             this.Label_Operacion.AutoSize = true;
-            this.Label_Operacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Operacion.Font = new System.Drawing.Font("Nunito", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_Operacion.Location = new System.Drawing.Point(239, 123);
             this.Label_Operacion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Operacion.Name = "Label_Operacion";
@@ -140,7 +138,7 @@
             // Label_Nombre
             // 
             this.Label_Nombre.AutoSize = true;
-            this.Label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Nombre.Font = new System.Drawing.Font("Nunito", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_Nombre.Location = new System.Drawing.Point(239, 192);
             this.Label_Nombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Nombre.Name = "Label_Nombre";
@@ -151,7 +149,7 @@
             // Label_Apellido
             // 
             this.Label_Apellido.AutoSize = true;
-            this.Label_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Apellido.Font = new System.Drawing.Font("Nunito", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_Apellido.Location = new System.Drawing.Point(632, 192);
             this.Label_Apellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Apellido.Name = "Label_Apellido";
@@ -162,7 +160,7 @@
             // Label_Direccion
             // 
             this.Label_Direccion.AutoSize = true;
-            this.Label_Direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Direccion.Font = new System.Drawing.Font("Nunito", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_Direccion.Location = new System.Drawing.Point(239, 332);
             this.Label_Direccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Direccion.Name = "Label_Direccion";
@@ -173,7 +171,7 @@
             // Label_Telefono
             // 
             this.Label_Telefono.AutoSize = true;
-            this.Label_Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Telefono.Font = new System.Drawing.Font("Nunito", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_Telefono.Location = new System.Drawing.Point(632, 332);
             this.Label_Telefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Telefono.Name = "Label_Telefono";
@@ -184,7 +182,7 @@
             // Label_Email
             // 
             this.Label_Email.AutoSize = true;
-            this.Label_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Email.Font = new System.Drawing.Font("Nunito", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_Email.Location = new System.Drawing.Point(239, 407);
             this.Label_Email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Email.Name = "Label_Email";
@@ -195,7 +193,7 @@
             // Label_DNI
             // 
             this.Label_DNI.AutoSize = true;
-            this.Label_DNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_DNI.Font = new System.Drawing.Font("Nunito", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_DNI.Location = new System.Drawing.Point(239, 261);
             this.Label_DNI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_DNI.Name = "Label_DNI";
@@ -206,7 +204,7 @@
             // Label_F_Nacimiento
             // 
             this.Label_F_Nacimiento.AutoSize = true;
-            this.Label_F_Nacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_F_Nacimiento.Font = new System.Drawing.Font("Nunito", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_F_Nacimiento.Location = new System.Drawing.Point(632, 261);
             this.Label_F_Nacimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_F_Nacimiento.Name = "Label_F_Nacimiento";
@@ -225,7 +223,7 @@
             // Label_ConfirmarEmail
             // 
             this.Label_ConfirmarEmail.AutoSize = true;
-            this.Label_ConfirmarEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_ConfirmarEmail.Font = new System.Drawing.Font("Nunito", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_ConfirmarEmail.Location = new System.Drawing.Point(632, 407);
             this.Label_ConfirmarEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_ConfirmarEmail.Name = "Label_ConfirmarEmail";
@@ -236,7 +234,7 @@
             // Label_Contraseña
             // 
             this.Label_Contraseña.AutoSize = true;
-            this.Label_Contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Contraseña.Font = new System.Drawing.Font("Nunito", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_Contraseña.Location = new System.Drawing.Point(239, 485);
             this.Label_Contraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Contraseña.Name = "Label_Contraseña";
@@ -247,7 +245,7 @@
             // Label_ConfirmarContraseña
             // 
             this.Label_ConfirmarContraseña.AutoSize = true;
-            this.Label_ConfirmarContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_ConfirmarContraseña.Font = new System.Drawing.Font("Nunito", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_ConfirmarContraseña.Location = new System.Drawing.Point(632, 485);
             this.Label_ConfirmarContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_ConfirmarContraseña.Name = "Label_ConfirmarContraseña";
@@ -321,31 +319,11 @@
             this.Box_Pass_Confirm.Size = new System.Drawing.Size(140, 20);
             this.Box_Pass_Confirm.TabIndex = 11;
             // 
-            // Label_N_Usuario
-            // 
-            this.Label_N_Usuario.AutoSize = true;
-            this.Label_N_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_N_Usuario.Location = new System.Drawing.Point(239, 449);
-            this.Label_N_Usuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Label_N_Usuario.Name = "Label_N_Usuario";
-            this.Label_N_Usuario.Size = new System.Drawing.Size(118, 18);
-            this.Label_N_Usuario.TabIndex = 21;
-            this.Label_N_Usuario.Text = "Nombre Usuario";
-            // 
-            // Box_Usuario
-            // 
-            this.Box_Usuario.Location = new System.Drawing.Point(432, 447);
-            this.Box_Usuario.Name = "Box_Usuario";
-            this.Box_Usuario.Size = new System.Drawing.Size(140, 20);
-            this.Box_Usuario.TabIndex = 22;
-            // 
             // UserAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 661);
-            this.Controls.Add(this.Box_Usuario);
-            this.Controls.Add(this.Label_N_Usuario);
             this.Controls.Add(this.Box_Pass_Confirm);
             this.Controls.Add(this.Box_Mail_Confirm);
             this.Controls.Add(this.Box_Telefono);
@@ -373,7 +351,7 @@
             this.Controls.Add(this.Label_ABM_Usuarios);
             this.Controls.Add(this.Boton_Cancelar);
             this.Controls.Add(this.Boton_Confirmar);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "UserAdmin";
             this.Text = "ABM de Usuarios";
@@ -411,8 +389,6 @@
         private System.Windows.Forms.TextBox Box_Telefono;
         private System.Windows.Forms.TextBox Box_Mail_Confirm;
         private System.Windows.Forms.TextBox Box_Pass_Confirm;
-        private System.Windows.Forms.Label Label_N_Usuario;
-        private System.Windows.Forms.TextBox Box_Usuario;
     }
 }
 
