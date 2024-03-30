@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Equipo1
 {
@@ -74,5 +76,33 @@ namespace Equipo1
             return null;
         }
 
+        public static bool EsCorreoElectronicoValido(string correo)
+        {
+            // Patrón de expresión regular para validar un correo electrónico
+            string patronCorreo = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            
+            // Lo que hacemos acá es asegurar que la persona ingrese el mail cumpliendo con el patrón.
+            if (Regex.IsMatch(correo, patronCorreo))
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
+        }
+
+        public static bool ConfirmarCorreo(string correo, string confirmation)
+        {
+            if (correo == confirmation)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
     }
 }

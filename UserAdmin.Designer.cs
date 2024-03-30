@@ -94,7 +94,7 @@
             // 
             // ComboBox_Rol
             // 
-            this.ComboBox_Rol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBox_Rol.Font = new System.Drawing.Font("Nunito", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBox_Rol.FormattingEnabled = true;
             this.ComboBox_Rol.Location = new System.Drawing.Point(852, 120);
             this.ComboBox_Rol.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -290,6 +290,7 @@
             this.Box_Mail.Name = "Box_Mail";
             this.Box_Mail.Size = new System.Drawing.Size(140, 20);
             this.Box_Mail.TabIndex = 8;
+            this.Box_Mail.TextChanged += new System.EventHandler(this.Box_Mail_TextChanged);
             // 
             // Box_Pass
             // 

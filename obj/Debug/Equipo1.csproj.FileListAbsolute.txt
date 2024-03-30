@@ -42,3 +42,13 @@ C:\Users\yaly_\OneDrive\Desktop\TP CAI\obj\Debug\Equipo1.csproj.GenerateResource
 C:\Users\yaly_\OneDrive\Desktop\TP CAI\obj\Debug\Equipo1.csproj.CoreCompileInputs.cache
 C:\Users\yaly_\OneDrive\Desktop\TP CAI\obj\Debug\Form_Equipo1.exe
 C:\Users\yaly_\OneDrive\Desktop\TP CAI\obj\Debug\Form_Equipo1.pdb
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Repositorio GitHub\DVDYL\Equipo-1\bin\Debug\Form_Equipo1.exe.config
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Repositorio GitHub\DVDYL\Equipo-1\bin\Debug\Form_Equipo1.exe
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Repositorio GitHub\DVDYL\Equipo-1\bin\Debug\Form_Equipo1.pdb
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Repositorio GitHub\DVDYL\Equipo-1\obj\Debug\Equipo1.csproj.AssemblyReference.cache
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Repositorio GitHub\DVDYL\Equipo-1\obj\Debug\Equipo1.UserAdmin.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Repositorio GitHub\DVDYL\Equipo-1\obj\Debug\Form_Equipo1.Properties.Resources.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Repositorio GitHub\DVDYL\Equipo-1\obj\Debug\Equipo1.csproj.GenerateResource.cache
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Repositorio GitHub\DVDYL\Equipo-1\obj\Debug\Equipo1.csproj.CoreCompileInputs.cache
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Repositorio GitHub\DVDYL\Equipo-1\obj\Debug\Form_Equipo1.exe
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Repositorio GitHub\DVDYL\Equipo-1\obj\Debug\Form_Equipo1.pdb

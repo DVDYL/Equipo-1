@@ -88,6 +88,10 @@ namespace Equipo1
                 }
             }
         } // Evalúa que el usuario no tenga menos de 18 años.
+        private void Box_Mail_TextChanged(object sender, EventArgs e)
+        {
+
+        } // Detecta cambios en el campo "Email"
 
         private void Boton_Confirmar_Click(object sender, EventArgs e)
         {
@@ -135,7 +139,29 @@ namespace Equipo1
                 return;
             }
 
+            string errorMail = Box_Mail.Text;
+            if (string.IsNullOrEmpty(errorMail))
+            {
+                MessageBox.Show("El campo no puede estar vacío. Por favor, ingrese un mail.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if (!Validar.EsCorreoElectronicoValido(errorMail)) //Si NO cumple con la validación, mostrará el mensaje.
+            {
+                MessageBox.Show("El mail ingresado es inválido, por favor, ingrese un mail válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+            string errorConfirmarMail = Box_Mail_Confirm.Text;
+            if (string.IsNullOrEmpty(errorConfirmarMail))
+            {
+                MessageBox.Show("El campo no puede estar vacío. Por favor, ingrese un mail.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if (!Validar.ConfirmarCorreo(errorMail,errorConfirmarMail))
+            {
+                MessageBox.Show("El mail ingresado es diferente al ingresado en el paso anterior. Por favor, confirme nuevamente el mail.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             // Si todas las validaciones pasan, mostrar mensaje de éxito
             MessageBox.Show("El Usuario fue dado de alta con éxito con el ID: 1", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -153,6 +179,5 @@ namespace Equipo1
                 this.Close();                 // Si el usuario selecciona "Sí", cierra el formulario
             }
         }
-
     }
 }
