@@ -153,6 +153,22 @@ namespace Equipo1
             }
         }
 
+        private void Validarvacio() //Funcion para validaciones del Nombre
+        {
+            if (Box_Nombre.Text == "" ||
+                    Box_Nombre.Text.Length < 3 ||
+                    Box_Nombre.Text.Any(char.IsDigit) ||
+                    Box_Nombre.Text.Any(c => !char.IsLetterOrDigit(c)))
+            {
+                // Mostrar mensaje de error
+                MessageBox.Show("El campo no cumple con los requisitos de validación.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+
+            }
+        }
+
         private void Boton_Cancelar_Click(object sender, EventArgs e) // Preguntar al usuario si está seguro de cancelar cuando clickea "Cancelar"
         {
             DialogResult resultado = MessageBox.Show("¿Desea cancelar la operación?", "Confirmar Cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -165,6 +181,7 @@ namespace Equipo1
 
         private void Boton_Confirmar_Click(object sender, EventArgs e) // Esto es un botón
         {
+            Validarvacio();
             // Verificar si el campo "Operación" está en blanco
             if (ComboBox_ABM.SelectedIndex == -1)
             {
