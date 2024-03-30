@@ -104,5 +104,29 @@ namespace Equipo1
             }
 
         }
+
+        public static bool EsContraseñaValida(string Contraseña)
+        {
+            bool mayuscula = false;
+            bool numero = false;
+
+            for (int i = 0; i < Contraseña.Length; i++)
+            {
+                if (Char.IsUpper(Contraseña, i))
+                {
+                    mayuscula = true;
+                }
+                else if (Char.IsDigit(Contraseña, i))
+                {
+                    numero = true;
+                }
+            }
+            if (numero && mayuscula && Contraseña.Length > 8 && Contraseña.Length < 15)
+            {
+                return true;
+            }
+            return false;
+
+        }
     }
 }
