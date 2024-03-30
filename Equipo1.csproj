@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Validar.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="UserAdmin.cs">
       <SubType>Form</SubType>

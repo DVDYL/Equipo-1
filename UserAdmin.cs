@@ -35,91 +35,27 @@ namespace Equipo1
             // Establecer el formato de visualización predeterminado para la fecha de nacimiento
             Calendario_Nacimiento.Format = DateTimePickerFormat.Custom;
             Calendario_Nacimiento.CustomFormat = "dd/MM/yyyy";
-        }
+        } // Esta Función prepara el formulario y sus restricciones
 
         private void ComboBox_ABM_SelectedIndexChanged(object sender, EventArgs e) 
         {
             // La validación de este componente se deberá realizar cuando el usuario haga clic en el evento "Confirmar"
-        }
+        } // Detecta Cambios en el campo "Operación"
 
         private void Box_Nombre_TextChanged(object sender, EventArgs e)
         {
             // No necesitamos hacer nada en este evento para esta validación
-        }
-
-        private void Box_Nombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Tab)
-            {
-                // Obtener el texto del TextBox
-                string texto = Box_Nombre.Text;
-
-                // Realizar la validación
-                if (string.IsNullOrWhiteSpace(texto) ||
-                    texto.Length < 3 ||
-                    texto.Any(char.IsDigit) ||
-                    texto.Any(c => !char.IsLetterOrDigit(c)))
-                {
-                    // Mostrar mensaje de error
-                    MessageBox.Show("El campo no cumple con los requisitos de validación.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    // Prevenir que el tabulador avance al siguiente control
-                    e.Handled = true;
-                }
-            }
-        }
-
-        private void Box_Nombre_Leave(object sender, EventArgs e)
-        {
-            // Aquí no necesitamos hacer nada, pero este evento puede ser útil para ejecutar acciones después de la validación
-        }
+        } // Detecta Cambios en el campo "Nombre"
 
         private void Box_Apellido_TextChanged(object sender, EventArgs e)
         {
 
-        }
+        } // Detecta Cambios en el campo "Apellido"
 
         private void Box_DNI_TextChanged(object sender, EventArgs e)
         {
             // No necesitamos hacer nada en este evento para esta validación
-        }
-
-        private void Box_DNI_Leave(object sender, EventArgs e)
-        {
-            // Obtener el texto del TextBox
-            string texto = Box_DNI.Text.Trim();
-
-            // Verificar si el campo está en blanco
-            if (string.IsNullOrWhiteSpace(texto))
-            {
-                MessageBox.Show("El campo DNI no puede estar en blanco.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Verificar si el texto contiene caracteres que no son números
-            if (!texto.All(char.IsDigit))
-            {
-                MessageBox.Show("El campo DNI solo puede contener números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Verificar la longitud del DNI y preguntar al usuario si desea completar con 0s al principio si es menor a 8 dígitos
-            if (texto.Length < 8)
-            {
-                DialogResult result = MessageBox.Show("El DNI debe tener al menos 8 dígitos. ¿Desea completar con 0s al principio?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (result == DialogResult.Yes)
-                {
-                    texto = texto.PadLeft(8, '0');
-                    Box_DNI.Text = texto;
-                }
-                else
-                {
-                    // Si el usuario elige No, limpiar el TextBox
-                    Box_DNI.Clear();
-                }
-            }
-        }
+        } // Detecta Cambios en el campo "Apellido"
 
         private void Calendario_Nacimiento_ValueChanged(object sender, EventArgs e)
         {
@@ -151,7 +87,62 @@ namespace Equipo1
                     }
                 }
             }
-        }
+        } // Evalúa que el usuario no tenga menos de 18 años.
+
+        private void Boton_Confirmar_Click(object sender, EventArgs e)
+        {
+            if (ComboBox_ABM.SelectedIndex == -1)
+            {
+                // Mostrar mensaje de advertencia cuando la operación está en blanco
+                MessageBox.Show("Por favor, seleccione una operación y vuelva a intentarlo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ComboBox_ABM.Focus();
+                return;
+            }
+
+            else if (ComboBox_Rol.SelectedIndex == -1)
+            {
+                // Mostrar mensaje de advertencia cuando el tipo de usuario está en blanco
+                MessageBox.Show("Por favor, seleccione un tipo de usuario y vuelva a intentarlo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ComboBox_Rol.Focus();
+                return;
+            }
+
+            string errorNombre = Validar.EsNombre(Box_Nombre.Text, "Nombre");
+            if (errorNombre != null)
+            {
+                MessageBox.Show(errorNombre, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string errorApellido = Validar.EsNombre(Box_Apellido.Text, "Apellido");
+            if (errorApellido != null)
+            {
+                MessageBox.Show(errorApellido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string errorCampoNumerico = Validar.EsDNI(Box_DNI.Text);
+            if (errorCampoNumerico != null)
+            {
+                MessageBox.Show(errorCampoNumerico, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string errorCampoTelefono = Validar.EsTelefono(Box_Telefono.Text);
+            if (errorCampoTelefono != null)
+            {
+                MessageBox.Show(errorCampoTelefono, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+
+            // Si todas las validaciones pasan, mostrar mensaje de éxito
+            MessageBox.Show("El Usuario fue dado de alta con éxito con el ID: 1", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Cerrar la ventana actual
+            this.Close();
+        } // Confirma todos los campos, si está todo correcto, genera un ID de usuario.
 
         private void Boton_Cancelar_Click(object sender, EventArgs e) // Preguntar al usuario si está seguro de cancelar cuando clickea "Cancelar"
         {
@@ -163,26 +154,5 @@ namespace Equipo1
             }
         }
 
-        private void Boton_Confirmar_Click(object sender, EventArgs e) // Esto es un botón
-        {
-            // Verificar si el campo "Operación" está en blanco
-            if (ComboBox_ABM.SelectedIndex == -1)
-            {
-                // Mostrar mensaje de advertencia cuando la operación está en blanco
-                MessageBox.Show("Por favor, seleccione una operación y vuelva a intentarlo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                // Enfocar el ComboBox "Operación" para que el usuario tenga que volver a él
-                ComboBox_ABM.Focus();
-            }
-            // Verificar si el campo "Tipo de Usuario" está en blanco
-            else if (ComboBox_Rol.SelectedIndex == -1)
-            {
-                // Mostrar mensaje de advertencia cuando el tipo de usuario está en blanco
-                MessageBox.Show("Por favor, seleccione un tipo de usuario y vuelva a intentarlo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                // Enfocar el ComboBox "Tipo de Usuario" para que el usuario tenga que volver a él
-                ComboBox_Rol.Focus();
-            }
-        }
     }
 }
