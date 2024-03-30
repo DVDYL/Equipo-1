@@ -175,6 +175,18 @@ namespace Equipo1
                 return;
             }
 
+            string errorConfirmarContraseña = Box_Pass_Confirm.Text;
+            if (string.IsNullOrEmpty(errorConfirmarContraseña))
+            {
+                MessageBox.Show("El campo no puede estar vacío. Por favor, ingrese una Contraseña.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if (!Validar.ConfirmarContraseña(errorContraseña, errorConfirmarContraseña))
+            {
+                MessageBox.Show("La Contraseña ingresada es diferente a la ingresada en el paso anterior. Por favor, confirme nuevamente la contraseña.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             // Si todas las validaciones pasan, mostrar mensaje de éxito
             MessageBox.Show("El Usuario fue dado de alta con éxito con el ID: 1", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

@@ -105,6 +105,19 @@ namespace Equipo1
 
         }
 
+        public static bool ConfirmarContraseña(string Contraseña, string confirmation)
+        {
+            if (Contraseña == confirmation)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
         public static bool EsContraseñaValida(string Contraseña)
         {
             bool mayuscula = false;
