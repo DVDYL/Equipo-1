@@ -55,6 +55,8 @@
             this.Box_Telefono = new System.Windows.Forms.TextBox();
             this.Box_Mail_Confirm = new System.Windows.Forms.TextBox();
             this.Box_Pass_Confirm = new System.Windows.Forms.TextBox();
+            this.Label_N_Usuario = new System.Windows.Forms.Label();
+            this.Box_Usuario = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Boton_Confirmar
@@ -319,11 +321,31 @@
             this.Box_Pass_Confirm.Size = new System.Drawing.Size(140, 20);
             this.Box_Pass_Confirm.TabIndex = 11;
             // 
+            // Label_N_Usuario
+            // 
+            this.Label_N_Usuario.AutoSize = true;
+            this.Label_N_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_N_Usuario.Location = new System.Drawing.Point(239, 449);
+            this.Label_N_Usuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label_N_Usuario.Name = "Label_N_Usuario";
+            this.Label_N_Usuario.Size = new System.Drawing.Size(118, 18);
+            this.Label_N_Usuario.TabIndex = 21;
+            this.Label_N_Usuario.Text = "Nombre Usuario";
+            // 
+            // Box_Usuario
+            // 
+            this.Box_Usuario.Location = new System.Drawing.Point(432, 447);
+            this.Box_Usuario.Name = "Box_Usuario";
+            this.Box_Usuario.Size = new System.Drawing.Size(140, 20);
+            this.Box_Usuario.TabIndex = 22;
+            // 
             // UserAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 661);
+            this.Controls.Add(this.Box_Usuario);
+            this.Controls.Add(this.Label_N_Usuario);
             this.Controls.Add(this.Box_Pass_Confirm);
             this.Controls.Add(this.Box_Mail_Confirm);
             this.Controls.Add(this.Box_Telefono);
@@ -389,7 +411,8 @@
         private System.Windows.Forms.TextBox Box_Telefono;
         private System.Windows.Forms.TextBox Box_Mail_Confirm;
         private System.Windows.Forms.TextBox Box_Pass_Confirm;
-
+        private System.Windows.Forms.Label Label_N_Usuario;
+        private System.Windows.Forms.TextBox Box_Usuario;
     }
 }
 
