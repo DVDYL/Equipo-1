@@ -73,19 +73,27 @@ namespace Equipo1
             // No necesitamos hacer nada en este evento para esta validación
         } // Detecta Cambios en el campo "DNI"
 
-        private void Calendario_Nacimiento_ValueChanged(object sender, EventArgs e)
-        {
-            // Verificar si se ha seleccionado una fecha válida
-            if (Calendario_Nacimiento.Checked && Calendario_Nacimiento.Value != DateTime.MinValue)
-            {
-                // Obtener la fecha seleccionada
-                DateTime fechaSeleccionada = Calendario_Nacimiento.Value;
+        //private void Calendario_Nacimiento_ValueChanged(object sender, EventArgs e)
+        //{
+        //    // Verificar si se ha seleccionado una fecha válida
+        //    if (Calendario_Nacimiento.Checked && Calendario_Nacimiento.Value != DateTime.MinValue)
+        //    {
+        //        // Obtener la fecha seleccionada
+        //        DateTime fechaSeleccionada = Calendario_Nacimiento.Value;
 
-                // Verificar si la fecha seleccionada es posterior al día de hoy
-                if (fechaSeleccionada > DateTime.Today)
-                {
-                    // Mostrar mensaje de advertencia
-                    MessageBox.Show("No se puede seleccionar una fecha posterior al día de hoy.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        // Verificar si la fecha seleccionada es posterior al día de hoy
+        //        if (fechaSeleccionada > DateTime.Today)
+        //        {
+        //            // Mostrar mensaje de advertencia
+        //            MessageBox.Show("No se puede seleccionar una fecha posterior al día de hoy.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+        //            // Establecer la fecha de hoy como valor seleccionado
+        //            Calendario_Nacimiento.Value = DateTime.Today;
+        //        }
+        //        else
+        //        {
+        //            // Calcular la fecha límite para tener al menos 18 años
+        //            DateTime fechaLimite = DateTime.Today.AddYears(-18);
 
                     // Establecer la fecha de hoy como valor seleccionado
                     Calendario_Nacimiento.Value = DateTime.Today;
@@ -95,18 +103,15 @@ namespace Equipo1
 
         private void Box_Calle_TextChanged(object sender, EventArgs e)
         {
-
-        } // Detecta Cambios en el campo "Calle"
-
-        private void Box_Altura_TextChanged(object sender, EventArgs e)
-        {
-
-        } // Detecta Cambios en el campo "Altura"
-
-        private void Box_Depto_TextChanged(object sender, EventArgs e)
-        {
-
-        } // Detecta Cambios en el campo "Departamento"
+        //            // Verificar si la fecha seleccionada es posterior a la fecha límite
+        //            if (fechaSeleccionada > fechaLimite)
+        //            {
+        //                // Mostrar mensaje de advertencia
+        //                MessageBox.Show("Debe tener al menos 18 años de edad.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //            }
+        //        }
+        //    }
+        //} // Evalúa que el usuario no tenga menos de 18 años.
 
         private void Box_Mail_TextChanged(object sender, EventArgs e)
         {

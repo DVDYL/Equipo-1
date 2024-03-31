@@ -198,7 +198,7 @@ namespace Equipo1
                     numero = true;
                 }
             }
-            if (numero && mayuscula && Contraseña.Length > 8 && Contraseña.Length < 15)
+            if (numero && mayuscula && Contraseña.Length >= 8 && Contraseña.Length < 15)
             {
                 return true;
             }
