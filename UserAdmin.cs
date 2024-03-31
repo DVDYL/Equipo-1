@@ -55,7 +55,7 @@ namespace Equipo1
         private void Box_DNI_TextChanged(object sender, EventArgs e)
         {
             // No necesitamos hacer nada en este evento para esta validación
-        } // Detecta Cambios en el campo "Apellido"
+        } // Detecta Cambios en el campo "DNI"
 
         private void Calendario_Nacimiento_ValueChanged(object sender, EventArgs e)
         {
@@ -74,20 +74,8 @@ namespace Equipo1
                     // Establecer la fecha de hoy como valor seleccionado
                     Calendario_Nacimiento.Value = DateTime.Today;
                 }
-                else
-                {
-                    // Calcular la fecha límite para tener al menos 18 años
-                    DateTime fechaLimite = DateTime.Today.AddYears(-18);
-
-                    // Verificar si la fecha seleccionada es posterior a la fecha límite
-                    if (fechaSeleccionada > fechaLimite)
-                    {
-                        // Mostrar mensaje de advertencia
-                        MessageBox.Show("Debe tener al menos 18 años de edad.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
             }
-        } // Evalúa que el usuario no tenga menos de 18 años.
+        } // Detecta cambios en la fecha de nacimiento y evalúa que no sea posterior a hoy.
         private void Box_Mail_TextChanged(object sender, EventArgs e)
         {
 
@@ -101,7 +89,7 @@ namespace Equipo1
                 MessageBox.Show("Por favor, seleccione una operación y vuelva a intentarlo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ComboBox_ABM.Focus();
                 return;
-            }
+            } // Verifica que el combobox de tipo de operación no sea vacío.
 
             else if (ComboBox_Rol.SelectedIndex == -1)
             {
@@ -109,7 +97,7 @@ namespace Equipo1
                 MessageBox.Show("Por favor, seleccione un tipo de usuario y vuelva a intentarlo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ComboBox_Rol.Focus();
                 return;
-            }
+            } // Verifica que el combobox de tipo de usuario no sea vacío.
 
             string errorNombre = Validar.EsNombre(Box_Nombre.Text, "Nombre");
             if (errorNombre != null)
@@ -132,6 +120,14 @@ namespace Equipo1
                 return;
             }
 
+            DateTime fechaNacimiento = Calendario_Nacimiento.Value; // Verifica que el usuario tenga sea mayor de 18 años y menor de 65 a partir de hoy.
+            if (!Validar.EsEdadLaboral(fechaNacimiento))
+            {
+                // Mostrar mensaje de advertencia si la edad no es válida
+                MessageBox.Show("El usuario debe ser mayor de 18 años y menor de 65.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string errorCampoTelefono = Validar.EsTelefono(Box_Telefono.Text);
             if (errorCampoTelefono != null)
             {
@@ -142,36 +138,36 @@ namespace Equipo1
             string errorMail = Box_Mail.Text;
             if (string.IsNullOrEmpty(errorMail))
             {
-                MessageBox.Show("El campo no puede estar vacío. Por favor, ingrese un mail.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El campo Email no puede estar vacío. Por favor, ingrese un Email.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            else if (!Validar.EsCorreoElectronicoValido(errorMail)) //Si NO cumple con la validación, mostrará el mensaje.
+            else if (!Validar.EsMail(errorMail)) //Si NO cumple con la validación, mostrará el mensaje.
             {
-                MessageBox.Show("El mail ingresado es inválido, por favor, ingrese un mail válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El Email ingresado es inválido, por favor, ingrese un mail válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             string errorConfirmarMail = Box_Mail_Confirm.Text;
             if (string.IsNullOrEmpty(errorConfirmarMail))
             {
-                MessageBox.Show("El campo no puede estar vacío. Por favor, ingrese un mail.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El campo Email no puede estar vacío. Por favor, confirme su Email.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            else if (!Validar.ConfirmarCorreo(errorMail,errorConfirmarMail))
+            else if (!Validar.ConfirmarMail(errorMail,errorConfirmarMail))
             {
-                MessageBox.Show("El mail ingresado es diferente al ingresado en el paso anterior. Por favor, confirme nuevamente el mail.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El Email ingresado es diferente al ingresado en el paso anterior. Por favor, confirme nuevamente el Email.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             string errorContraseña = Box_Pass.Text;
             if (string.IsNullOrEmpty(errorContraseña))
             {
-                MessageBox.Show("El campo no puede estar vacío. Por favor, ingrese una Contraseña.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El campo Contraseña no puede estar vacío. Por favor, ingrese una Contraseña.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else if (!Validar.EsContraseñaValida(errorContraseña)) //Si NO cumple con la validación, mostrará el mensaje.
             {
-                MessageBox.Show("La contraseña ingresada es inválida, por favor, ingrese una Contraseña válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("La Contraseña ingresada es inválida, por favor, ingrese una Contraseña válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

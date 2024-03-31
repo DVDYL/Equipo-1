@@ -58,25 +58,36 @@ namespace Equipo1
             return null;
         }
 
+        public static bool EsEdadLaboral(DateTime fechaNacimiento)
+        {
+            // Calcular fecha de hace 18 años
+            DateTime fechaHace18 = DateTime.Today.AddYears(-18);
+            // Calcular fecha de hace 65 años
+            DateTime fechaHace65 = DateTime.Today.AddYears(-65);
+
+            // Verificar si la fecha de nacimiento está entre hace 18 y hace 65 años
+            return (fechaNacimiento < fechaHace18 && fechaNacimiento > fechaHace65);
+        }
+
         public static string EsTelefono(string texto)
         {
-            // Verificar si el texto tiene longitud diferente de 8 dígitos
-            if (texto.Length != 10)
+            // Verificar si el texto tiene longitud fuera del rango de 8 a 12 dígitos
+            if (texto.Length < 8 || texto.Length > 12)
             {
-                return "El campo Telefono debe tener exactamente 10 dígitos.";
+                return "El campo Teléfono debe tener entre 8 y 12 dígitos.";
             }
 
             // Verificar si el texto contiene algún carácter que no sea un dígito
             if (!texto.All(char.IsDigit))
             {
-                return "El campo Telefono debe contener únicamente dígitos numéricos.";
+                return "El campo Teléfono debe contener únicamente dígitos numéricos.";
             }
 
             // Si se cumplen todas las condiciones, el campo es válido
             return null;
         }
 
-        public static bool EsCorreoElectronicoValido(string correo)
+        public static bool EsMail(string correo)
         {
             // Patrón de expresión regular para validar un correo electrónico
             string patronCorreo = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
@@ -92,7 +103,7 @@ namespace Equipo1
             }
         }
 
-        public static bool ConfirmarCorreo(string correo, string confirmation)
+        public static bool ConfirmarMail(string correo, string confirmation)
         {
             if (correo == confirmation)
             {
