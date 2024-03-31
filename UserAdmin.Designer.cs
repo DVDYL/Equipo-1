@@ -348,6 +348,7 @@
             this.Box_Pass.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Box_Pass.Location = new System.Drawing.Point(168, 461);
             this.Box_Pass.Name = "Box_Pass";
+            this.Box_Pass.PasswordChar = '*';
             this.Box_Pass.Size = new System.Drawing.Size(140, 20);
             this.Box_Pass.TabIndex = 12;
             // 
@@ -372,6 +373,7 @@
             this.Box_Pass_Confirm.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Box_Pass_Confirm.Location = new System.Drawing.Point(567, 461);
             this.Box_Pass_Confirm.Name = "Box_Pass_Confirm";
+            this.Box_Pass_Confirm.PasswordChar = '*';
             this.Box_Pass_Confirm.Size = new System.Drawing.Size(140, 20);
             this.Box_Pass_Confirm.TabIndex = 13;
             // 
