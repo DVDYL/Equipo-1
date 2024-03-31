@@ -49,7 +49,7 @@
             this.Box_Nombre = new System.Windows.Forms.TextBox();
             this.Box_Apellido = new System.Windows.Forms.TextBox();
             this.Box_DNI = new System.Windows.Forms.TextBox();
-            this.Box_Dir = new System.Windows.Forms.TextBox();
+            this.Box_Calle = new System.Windows.Forms.TextBox();
             this.Box_Mail = new System.Windows.Forms.TextBox();
             this.Box_Pass = new System.Windows.Forms.TextBox();
             this.Box_Telefono = new System.Windows.Forms.TextBox();
@@ -57,8 +57,8 @@
             this.Box_Pass_Confirm = new System.Windows.Forms.TextBox();
             this.Label_Altura = new System.Windows.Forms.Label();
             this.Label_Departamento = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Box_Altura = new System.Windows.Forms.TextBox();
+            this.Box_Depto = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Boton_Confirmar
@@ -69,7 +69,7 @@
             this.Boton_Confirmar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Confirmar.Name = "Boton_Confirmar";
             this.Boton_Confirmar.Size = new System.Drawing.Size(88, 27);
-            this.Boton_Confirmar.TabIndex = 12;
+            this.Boton_Confirmar.TabIndex = 14;
             this.Boton_Confirmar.Text = "Confirmar";
             this.Boton_Confirmar.UseVisualStyleBackColor = true;
             this.Boton_Confirmar.Click += new System.EventHandler(this.Boton_Confirmar_Click);
@@ -82,7 +82,7 @@
             this.Boton_Cancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Cancelar.Name = "Boton_Cancelar";
             this.Boton_Cancelar.Size = new System.Drawing.Size(88, 27);
-            this.Boton_Cancelar.TabIndex = 13;
+            this.Boton_Cancelar.TabIndex = 15;
             this.Boton_Cancelar.Text = "Cancelar";
             this.Boton_Cancelar.UseVisualStyleBackColor = true;
             this.Boton_Cancelar.Click += new System.EventHandler(this.Boton_Cancelar_Click);
@@ -302,13 +302,14 @@
             this.Box_DNI.TabIndex = 4;
             this.Box_DNI.TextChanged += new System.EventHandler(this.Box_DNI_TextChanged);
             // 
-            // Box_Dir
+            // Box_Calle
             // 
-            this.Box_Dir.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Box_Dir.Location = new System.Drawing.Point(359, 373);
-            this.Box_Dir.Name = "Box_Dir";
-            this.Box_Dir.Size = new System.Drawing.Size(140, 22);
-            this.Box_Dir.TabIndex = 6;
+            this.Box_Calle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Box_Calle.Location = new System.Drawing.Point(359, 373);
+            this.Box_Calle.Name = "Box_Calle";
+            this.Box_Calle.Size = new System.Drawing.Size(140, 22);
+            this.Box_Calle.TabIndex = 6;
+            this.Box_Calle.TextChanged += new System.EventHandler(this.Box_Calle_TextChanged);
             // 
             // Box_Mail
             // 
@@ -316,7 +317,7 @@
             this.Box_Mail.Location = new System.Drawing.Point(359, 507);
             this.Box_Mail.Name = "Box_Mail";
             this.Box_Mail.Size = new System.Drawing.Size(140, 22);
-            this.Box_Mail.TabIndex = 8;
+            this.Box_Mail.TabIndex = 10;
             this.Box_Mail.TextChanged += new System.EventHandler(this.Box_Mail_TextChanged);
             // 
             // Box_Pass
@@ -325,7 +326,7 @@
             this.Box_Pass.Location = new System.Drawing.Point(359, 641);
             this.Box_Pass.Name = "Box_Pass";
             this.Box_Pass.Size = new System.Drawing.Size(140, 22);
-            this.Box_Pass.TabIndex = 10;
+            this.Box_Pass.TabIndex = 12;
             // 
             // Box_Telefono
             // 
@@ -333,7 +334,7 @@
             this.Box_Telefono.Location = new System.Drawing.Point(1566, 373);
             this.Box_Telefono.Name = "Box_Telefono";
             this.Box_Telefono.Size = new System.Drawing.Size(140, 22);
-            this.Box_Telefono.TabIndex = 7;
+            this.Box_Telefono.TabIndex = 9;
             // 
             // Box_Mail_Confirm
             // 
@@ -341,7 +342,7 @@
             this.Box_Mail_Confirm.Location = new System.Drawing.Point(779, 504);
             this.Box_Mail_Confirm.Name = "Box_Mail_Confirm";
             this.Box_Mail_Confirm.Size = new System.Drawing.Size(140, 22);
-            this.Box_Mail_Confirm.TabIndex = 9;
+            this.Box_Mail_Confirm.TabIndex = 11;
             // 
             // Box_Pass_Confirm
             // 
@@ -349,7 +350,7 @@
             this.Box_Pass_Confirm.Location = new System.Drawing.Point(779, 638);
             this.Box_Pass_Confirm.Name = "Box_Pass_Confirm";
             this.Box_Pass_Confirm.Size = new System.Drawing.Size(140, 22);
-            this.Box_Pass_Confirm.TabIndex = 11;
+            this.Box_Pass_Confirm.TabIndex = 13;
             // 
             // Label_Altura
             // 
@@ -371,33 +372,35 @@
             this.Label_Departamento.Location = new System.Drawing.Point(1008, 374);
             this.Label_Departamento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Departamento.Name = "Label_Departamento";
-            this.Label_Departamento.Size = new System.Drawing.Size(56, 20);
+            this.Label_Departamento.Size = new System.Drawing.Size(109, 20);
             this.Label_Departamento.TabIndex = 22;
-            this.Label_Departamento.Text = "Depto.";
+            this.Label_Departamento.Text = "Departamento";
             // 
-            // textBox1
+            // Box_Altura
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Location = new System.Drawing.Point(779, 373);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 22);
-            this.textBox1.TabIndex = 23;
+            this.Box_Altura.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Box_Altura.Location = new System.Drawing.Point(779, 373);
+            this.Box_Altura.Name = "Box_Altura";
+            this.Box_Altura.Size = new System.Drawing.Size(140, 22);
+            this.Box_Altura.TabIndex = 7;
+            this.Box_Altura.TextChanged += new System.EventHandler(this.Box_Altura_TextChanged);
             // 
-            // textBox2
+            // Box_Depto
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.Location = new System.Drawing.Point(1149, 373);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(140, 22);
-            this.textBox2.TabIndex = 24;
+            this.Box_Depto.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Box_Depto.Location = new System.Drawing.Point(1149, 373);
+            this.Box_Depto.Name = "Box_Depto";
+            this.Box_Depto.Size = new System.Drawing.Size(140, 22);
+            this.Box_Depto.TabIndex = 8;
+            this.Box_Depto.TextChanged += new System.EventHandler(this.Box_Depto_TextChanged);
             // 
             // UserAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1800, 850);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Box_Depto);
+            this.Controls.Add(this.Box_Altura);
             this.Controls.Add(this.Label_Departamento);
             this.Controls.Add(this.Label_Altura);
             this.Controls.Add(this.Box_Pass_Confirm);
@@ -405,7 +408,7 @@
             this.Controls.Add(this.Box_Telefono);
             this.Controls.Add(this.Box_Pass);
             this.Controls.Add(this.Box_Mail);
-            this.Controls.Add(this.Box_Dir);
+            this.Controls.Add(this.Box_Calle);
             this.Controls.Add(this.Box_DNI);
             this.Controls.Add(this.Box_Apellido);
             this.Controls.Add(this.Box_Nombre);
@@ -459,7 +462,7 @@
         private System.Windows.Forms.TextBox Box_Nombre;
         private System.Windows.Forms.TextBox Box_Apellido;
         private System.Windows.Forms.TextBox Box_DNI;
-        private System.Windows.Forms.TextBox Box_Dir;
+        private System.Windows.Forms.TextBox Box_Calle;
         private System.Windows.Forms.TextBox Box_Mail;
         private System.Windows.Forms.TextBox Box_Pass;
         private System.Windows.Forms.TextBox Box_Telefono;
@@ -467,8 +470,8 @@
         private System.Windows.Forms.TextBox Box_Pass_Confirm;
         private System.Windows.Forms.Label Label_Altura;
         private System.Windows.Forms.Label Label_Departamento;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Box_Altura;
+        private System.Windows.Forms.TextBox Box_Depto;
     }
 }
 

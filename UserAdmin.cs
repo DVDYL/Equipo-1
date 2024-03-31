@@ -36,6 +36,22 @@ namespace Equipo1
             Calendario_Nacimiento.Format = DateTimePickerFormat.Custom;
             Calendario_Nacimiento.CustomFormat = "dd/MM/yyyy";
         } // Esta Función prepara el formulario y sus restricciones
+        private string GenerarNombreUsuario(string nombre, string apellido, DateTime fechaNacimiento)
+        {
+            // Obtener las tres primeras letras del nombre
+            string primerasTresLetrasNombre = nombre.Length >= 3 ? nombre.Substring(0, 3) : nombre;
+
+            // Obtener las tres primeras letras del apellido
+            string primerasTresLetrasApellido = apellido.Length >= 3 ? apellido.Substring(0, 3) : apellido;
+
+            // Obtener los cuatro dígitos del año de nacimiento
+            string añoNacimiento = fechaNacimiento.Year.ToString().Substring(2, 2);
+
+            // Combinar las partes para formar el nombre de usuario
+            string nombreUsuario = $"{primerasTresLetrasNombre.ToUpper()}{primerasTresLetrasApellido.ToUpper()}{añoNacimiento}";
+
+            return nombreUsuario;
+        } // Función para autogenerar el nombre del usuario
 
         private void ComboBox_ABM_SelectedIndexChanged(object sender, EventArgs e) 
         {
@@ -76,6 +92,22 @@ namespace Equipo1
                 }
             }
         } // Detecta cambios en la fecha de nacimiento y evalúa que no sea posterior a hoy.
+
+        private void Box_Calle_TextChanged(object sender, EventArgs e)
+        {
+
+        } // Detecta Cambios en el campo "Calle"
+
+        private void Box_Altura_TextChanged(object sender, EventArgs e)
+        {
+
+        } // Detecta Cambios en el campo "Altura"
+
+        private void Box_Depto_TextChanged(object sender, EventArgs e)
+        {
+
+        } // Detecta Cambios en el campo "Departamento"
+
         private void Box_Mail_TextChanged(object sender, EventArgs e)
         {
 
@@ -113,10 +145,10 @@ namespace Equipo1
                 return;
             }
 
-            string errorCampoNumerico = Validar.EsDNI(Box_DNI.Text);
-            if (errorCampoNumerico != null)
+            string errorDNI = Validar.EsDNI(Box_DNI.Text);
+            if (errorDNI != null)
             {
-                MessageBox.Show(errorCampoNumerico, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorDNI, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -128,10 +160,31 @@ namespace Equipo1
                 return;
             }
 
-            string errorCampoTelefono = Validar.EsTelefono(Box_Telefono.Text);
-            if (errorCampoTelefono != null)
+            string errorCalle = Validar.EsCalle(Box_Calle.Text);
+            if (errorCalle != null)
             {
-                MessageBox.Show(errorCampoTelefono, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorCalle, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string errorAltura = Validar.EsAltura(Box_Altura.Text);
+            if (errorAltura != null)
+            {
+                MessageBox.Show(errorAltura, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string errorDepartamento = Validar.EsDepartamento(Box_Depto.Text);
+            if (errorDepartamento != null)
+            {
+                MessageBox.Show(errorDepartamento, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string errorTelefono = Validar.EsTelefono(Box_Telefono.Text);
+            if (errorTelefono != null)
+            {
+                MessageBox.Show(errorTelefono, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -167,7 +220,7 @@ namespace Equipo1
             }
             else if (!Validar.EsContraseñaValida(errorContraseña)) //Si NO cumple con la validación, mostrará el mensaje.
             {
-                MessageBox.Show("La Contraseña ingresada es inválida, por favor, ingrese una Contraseña válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("La Contraseña ingresada es inválida.\n\nUna contraseña válida contiene al menos una mayúscula, un número y tiene como mínimo 8 caracteres.\n\nPor favor, ingrese una Contraseña válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -184,7 +237,12 @@ namespace Equipo1
             }
 
             // Si todas las validaciones pasan, mostrar mensaje de éxito
-            MessageBox.Show("El Usuario fue dado de alta con éxito con el ID: 1", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Generar el nombre de usuario
+            string nombreUsuario = GenerarNombreUsuario(Box_Nombre.Text, Box_Apellido.Text, Calendario_Nacimiento.Value);
+
+            // Mensaje de éxito con el nombre de usuario generado
+            MessageBox.Show($"El usuario {nombreUsuario} fue dado de alta con éxito con el ID: 1", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             // Cerrar la ventana actual
             this.Close();
@@ -199,5 +257,7 @@ namespace Equipo1
                 this.Close();                 // Si el usuario selecciona "Sí", cierra el formulario
             }
         }
+
+
     }
 }

@@ -69,6 +69,72 @@ namespace Equipo1
             return (fechaNacimiento < fechaHace18 && fechaNacimiento > fechaHace65);
         }
 
+        public static string EsCalle(string texto)
+        {
+            // Verificar si la cadena está vacía o es nula
+            if (string.IsNullOrWhiteSpace(texto))
+            {
+                return "El campo Calle no puede estar vacío.";
+            }
+
+            // Verificar la longitud mínima y máxima
+            if (texto.Length < 3 || texto.Length > 50)
+            {
+                return "El campo Calle debe tener entre 3 y 50 caracteres.";
+            }
+
+            // Verificar si la cadena contiene caracteres especiales
+            if (!texto.All(c => char.IsLetterOrDigit(c) || char.IsWhiteSpace(c)))
+            {
+                return "El campo Calle no puede contener caracteres especiales.";
+            }
+
+            // Si se cumplen todas las condiciones, la calle es válida
+            return null;
+        }
+
+        public static string EsAltura(string texto)
+        {
+            // Verificar si la cadena está vacía o es nula
+            if (string.IsNullOrWhiteSpace(texto))
+            {
+                return "El campo Altura no puede estar vacío.";
+            }
+
+            // Verificar la longitud mínima y máxima
+            if (texto.Length < 1 || texto.Length > 8)
+            {
+                return "El campo Altura debe tener entre 1 y 8 caracteres.";
+            }
+
+            // Verificar si la cadena contiene caracteres especiales
+            if (!texto.All(char.IsDigit))
+            {
+                return "El campo Altura no puede contener caracteres especiales.";
+            }
+
+            // Si se cumplen todas las condiciones, la altura es válida
+            return null;
+        }
+
+        public static string EsDepartamento(string texto)
+        {
+            // Verificar si la cadena está vacía o es nula
+            if (string.IsNullOrWhiteSpace(texto))
+            {
+                return "El campo Departamento no puede estar vacío.";
+            }
+
+            // Verificar la longitud mínima y máxima
+            if (texto.Length < 2 || texto.Length > 5)
+            {
+                return "El campo Departamento debe tener entre 2 y 5 caracteres.";
+            }
+
+            // Si se cumplen todas las condiciones, el departamento es válido
+            return null;
+        }
+
         public static string EsTelefono(string texto)
         {
             // Verificar si el texto tiene longitud fuera del rango de 8 a 12 dígitos
@@ -116,19 +182,6 @@ namespace Equipo1
 
         }
 
-        public static bool ConfirmarContraseña(string Contraseña, string confirmation)
-        {
-            if (Contraseña == confirmation)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-
         public static bool EsContraseñaValida(string Contraseña)
         {
             bool mayuscula = false;
@@ -152,5 +205,20 @@ namespace Equipo1
             return false;
 
         }
+
+        public static bool ConfirmarContraseña(string Contraseña, string confirmation)
+        {
+            if (Contraseña == confirmation)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+
     }
 }
