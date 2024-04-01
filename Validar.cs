@@ -120,15 +120,15 @@ namespace Equipo1
         public static string EsDepartamento(string texto)
         {
             // Verificar si la cadena está vacía o es nula
-            if (string.IsNullOrWhiteSpace(texto))
-            {
-                return "El campo Departamento no puede estar vacío.";
-            }
+           // if (string.IsNullOrWhiteSpace(texto))
+            //{
+              //  return "El campo Departamento no puede estar vacío.";
+           //}  Se quita Validacion, se deja codigo.
 
             // Verificar la longitud mínima y máxima
-            if (texto.Length < 2 || texto.Length > 5)
+            if (texto.Length > 5)
             {
-                return "El campo Departamento debe tener entre 2 y 5 caracteres.";
+                return "El campo Departamento debe tener como maximo 5 caracteres.";
             }
 
             // Si se cumplen todas las condiciones, el departamento es válido
@@ -219,6 +219,22 @@ namespace Equipo1
 
         }
 
+        public static bool EsUsuario(string usuario)
+        {
+            // Verificar si el usuario tiene al menos 6 caracteres
+            if (usuario.Length < 6)
+                return false;
 
+            // Verificar si el usuario termina en dos dígitos
+            if (!char.IsDigit(usuario[usuario.Length - 1]) || !char.IsDigit(usuario[usuario.Length - 2]))
+                return false;
+
+            // Verificar si el usuario contiene espacios o caracteres especiales
+            if (Regex.IsMatch(usuario, @"\s") || !Regex.IsMatch(usuario, @"^[a-zA-Z0-9]+$"))
+                return false;
+
+            // Si pasa todas las validaciones, el usuario es válido
+            return true;
+        }
     }
 }

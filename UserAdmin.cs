@@ -251,19 +251,26 @@ namespace Equipo1
             this.Close();
         } // Confirma todos los campos, si está todo correcto, genera un ID de usuario.
 
-        private void Boton_Cancelar_Click(object sender, EventArgs e) // Preguntar al usuario si está seguro de cancelar cuando clickea "Cancelar"
+        private void Boton_Cancelar_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("¿Desea cancelar la operación?", "Confirmar Cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show("¿Desea cancelar la operación y volver al menú principal?", "Confirmar Cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (resultado == DialogResult.Yes)             // Verificar la respuesta del usuario
+            if (resultado == DialogResult.Yes)
             {
-                this.Close();                 // Si el usuario selecciona "Sí", cierra el formulario
+                // Cerrar el formulario actual (UserAdmin.cs)
+                this.Close(); // Esto cerrará el formulario UserAdmin y volverá automáticamente al formulario Menu si es que fue abierto desde allí
             }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult resultado = MessageBox.Show("¿Cancelar la operación y volver al menú principal?", "Confirmar Salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                // Cerrar el formulario actual (UserAdmin.cs)
+                this.Close();
+            }
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -301,5 +308,7 @@ namespace Equipo1
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+
     }
 }
