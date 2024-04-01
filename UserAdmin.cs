@@ -264,11 +264,12 @@ namespace Equipo1
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas salir del programa?", "Confirmar Salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show("¿Cancelar la operación y volver al menú principal?", "Confirmar Salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
-                Application.Exit(); // Si el usuario confirma, se cierra la aplicación
+                // Cerrar el formulario actual (UserAdmin.cs)
+                this.Close();
             }
         }
 
