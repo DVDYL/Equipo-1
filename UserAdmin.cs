@@ -301,5 +301,25 @@ namespace Equipo1
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void UserAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Box_Mail_Confirm_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Box_Pass_Confirm_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ComboBox_Rol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
