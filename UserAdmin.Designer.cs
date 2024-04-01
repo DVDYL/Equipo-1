@@ -89,7 +89,7 @@
             this.Boton_Confirmar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(186)))), ((int)(((byte)(53)))));
             this.Boton_Confirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_Confirmar.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Confirmar.Location = new System.Drawing.Point(1436, 1016);
+            this.Boton_Confirmar.Location = new System.Drawing.Point(1300, 992);
             this.Boton_Confirmar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Confirmar.Name = "Boton_Confirmar";
             this.Boton_Confirmar.Size = new System.Drawing.Size(216, 33);
@@ -107,7 +107,7 @@
             this.Boton_Cancelar.FlatAppearance.BorderSize = 0;
             this.Boton_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_Cancelar.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Cancelar.Location = new System.Drawing.Point(1660, 1016);
+            this.Boton_Cancelar.Location = new System.Drawing.Point(1578, 992);
             this.Boton_Cancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Cancelar.Name = "Boton_Cancelar";
             this.Boton_Cancelar.Size = new System.Drawing.Size(216, 33);
@@ -335,7 +335,7 @@
             // Box_Calle
             // 
             this.Box_Calle.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Box_Calle.Location = new System.Drawing.Point(525, 639);
+            this.Box_Calle.Location = new System.Drawing.Point(525, 640);
             this.Box_Calle.Name = "Box_Calle";
             this.Box_Calle.Size = new System.Drawing.Size(208, 20);
             this.Box_Calle.TabIndex = 6;
@@ -344,7 +344,7 @@
             // Box_Mail
             // 
             this.Box_Mail.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Box_Mail.Location = new System.Drawing.Point(1257, 848);
+            this.Box_Mail.Location = new System.Drawing.Point(1257, 846);
             this.Box_Mail.Name = "Box_Mail";
             this.Box_Mail.Size = new System.Drawing.Size(208, 20);
             this.Box_Mail.TabIndex = 10;
@@ -361,7 +361,7 @@
             // Box_Telefono
             // 
             this.Box_Telefono.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Box_Telefono.Location = new System.Drawing.Point(1623, 637);
+            this.Box_Telefono.Location = new System.Drawing.Point(1623, 640);
             this.Box_Telefono.Name = "Box_Telefono";
             this.Box_Telefono.Size = new System.Drawing.Size(208, 20);
             this.Box_Telefono.TabIndex = 9;
@@ -411,7 +411,7 @@
             // Box_Altura
             // 
             this.Box_Altura.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Box_Altura.Location = new System.Drawing.Point(891, 639);
+            this.Box_Altura.Location = new System.Drawing.Point(891, 640);
             this.Box_Altura.Name = "Box_Altura";
             this.Box_Altura.Size = new System.Drawing.Size(208, 20);
             this.Box_Altura.TabIndex = 7;
@@ -447,7 +447,7 @@
             // 
             this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
-            this.btnRestaurar.Location = new System.Drawing.Point(1841, 3);
+            this.btnRestaurar.Location = new System.Drawing.Point(1850, 3);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(44, 32);
             this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -460,7 +460,7 @@
             // 
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1809, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(1818, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(27, 35);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -472,7 +472,7 @@
             // 
             this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(1841, 3);
+            this.btnMaximizar.Location = new System.Drawing.Point(1850, 3);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(35, 32);
             this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -484,7 +484,7 @@
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1883, 3);
+            this.btnCerrar.Location = new System.Drawing.Point(1892, 3);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(33, 35);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -508,7 +508,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 38);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(364, 1041);
+            this.groupBox1.Size = new System.Drawing.Size(350, 1041);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Menú Principal";
@@ -524,7 +524,6 @@
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Seleccione una opción";
-            this.groupBox2.Visible = false;
             // 
             // groupBox3
             // 
@@ -536,7 +535,6 @@
             this.groupBox3.TabIndex = 26;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos de Identificación";
-            this.groupBox3.Visible = false;
             // 
             // groupBox4
             // 
@@ -548,7 +546,6 @@
             this.groupBox4.TabIndex = 27;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Datos de Localización";
-            this.groupBox4.Visible = false;
             // 
             // groupBox5
             // 
@@ -560,7 +557,6 @@
             this.groupBox5.TabIndex = 27;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Credenciales de Usuario";
-            this.groupBox5.Visible = false;
             // 
             // UserAdmin
             // 
