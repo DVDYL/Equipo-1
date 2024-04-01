@@ -219,6 +219,22 @@ namespace Equipo1
 
         }
 
+        public static bool EsUsuario(string usuario)
+        {
+            // Verificar si el usuario tiene al menos 6 caracteres
+            if (usuario.Length < 6)
+                return false;
 
+            // Verificar si el usuario termina en dos dígitos
+            if (!char.IsDigit(usuario[usuario.Length - 1]) || !char.IsDigit(usuario[usuario.Length - 2]))
+                return false;
+
+            // Verificar si el usuario contiene espacios o caracteres especiales
+            if (Regex.IsMatch(usuario, @"\s") || !Regex.IsMatch(usuario, @"^[a-zA-Z0-9]+$"))
+                return false;
+
+            // Si pasa todas las validaciones, el usuario es válido
+            return true;
+        }
     }
 }

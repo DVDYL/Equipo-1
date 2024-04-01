@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Form_Equipo1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,19 @@ namespace Equipo1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UserAdmin());
+
+            // Instanciar y mostrar el formulario de inicio de sesión
+            LogIn loginForm = new LogIn();
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                // Si el inicio de sesión es exitoso, iniciar la aplicación principal
+                Application.Run(new UserAdmin());
+            }
+            else
+            {
+                // Si el inicio de sesión falla (por ejemplo, si se cierra el formulario de inicio de sesión), salir de la aplicación
+                Application.Exit();
+            }
         }
     }
 }
