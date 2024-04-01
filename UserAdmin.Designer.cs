@@ -88,7 +88,7 @@
             this.Boton_Confirmar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(186)))), ((int)(((byte)(53)))));
             this.Boton_Confirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_Confirmar.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Confirmar.Location = new System.Drawing.Point(940, 820);
+            this.Boton_Confirmar.Location = new System.Drawing.Point(970, 828);
             this.Boton_Confirmar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Confirmar.Name = "Boton_Confirmar";
             this.Boton_Confirmar.Size = new System.Drawing.Size(216, 33);
@@ -105,7 +105,7 @@
             this.Boton_Cancelar.FlatAppearance.BorderSize = 0;
             this.Boton_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_Cancelar.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Cancelar.Location = new System.Drawing.Point(1218, 820);
+            this.Boton_Cancelar.Location = new System.Drawing.Point(1248, 828);
             this.Boton_Cancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Cancelar.Name = "Boton_Cancelar";
             this.Boton_Cancelar.Size = new System.Drawing.Size(216, 33);
@@ -119,7 +119,7 @@
             this.Label_ABM_Usuarios.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Label_ABM_Usuarios.AutoSize = true;
             this.Label_ABM_Usuarios.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_ABM_Usuarios.Location = new System.Drawing.Point(-4, 1);
+            this.Label_ABM_Usuarios.Location = new System.Drawing.Point(9, 1);
             this.Label_ABM_Usuarios.Margin = new System.Windows.Forms.Padding(0);
             this.Label_ABM_Usuarios.Name = "Label_ABM_Usuarios";
             this.Label_ABM_Usuarios.Size = new System.Drawing.Size(248, 37);
@@ -132,18 +132,17 @@
             this.ComboBox_Rol.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ComboBox_Rol.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBox_Rol.FormattingEnabled = true;
-            this.ComboBox_Rol.Location = new System.Drawing.Point(681, 195);
+            this.ComboBox_Rol.Location = new System.Drawing.Point(669, 189);
             this.ComboBox_Rol.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ComboBox_Rol.Name = "ComboBox_Rol";
             this.ComboBox_Rol.Size = new System.Drawing.Size(208, 29);
             this.ComboBox_Rol.TabIndex = 1;
-
             // 
             // Label_Tipo_Usuario
             // 
             this.Label_Tipo_Usuario.AutoSize = true;
             this.Label_Tipo_Usuario.Font = new System.Drawing.Font("Nunito", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Tipo_Usuario.Location = new System.Drawing.Point(668, 169);
+            this.Label_Tipo_Usuario.Location = new System.Drawing.Point(656, 163);
             this.Label_Tipo_Usuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Tipo_Usuario.Name = "Label_Tipo_Usuario";
             this.Label_Tipo_Usuario.Size = new System.Drawing.Size(135, 23);
@@ -155,7 +154,7 @@
             this.ComboBox_ABM.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ComboBox_ABM.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBox_ABM.FormattingEnabled = true;
-            this.ComboBox_ABM.Location = new System.Drawing.Point(309, 195);
+            this.ComboBox_ABM.Location = new System.Drawing.Point(297, 189);
             this.ComboBox_ABM.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ComboBox_ABM.Name = "ComboBox_ABM";
             this.ComboBox_ABM.Size = new System.Drawing.Size(208, 29);
@@ -166,7 +165,7 @@
             // 
             this.Label_Operacion.AutoSize = true;
             this.Label_Operacion.Font = new System.Drawing.Font("Nunito", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Operacion.Location = new System.Drawing.Point(288, 169);
+            this.Label_Operacion.Location = new System.Drawing.Point(276, 163);
             this.Label_Operacion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Operacion.Name = "Label_Operacion";
             this.Label_Operacion.Size = new System.Drawing.Size(90, 23);
@@ -177,7 +176,7 @@
             // 
             this.Label_Nombre.AutoSize = true;
             this.Label_Nombre.Font = new System.Drawing.Font("Nunito", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Nombre.Location = new System.Drawing.Point(176, 359);
+            this.Label_Nombre.Location = new System.Drawing.Point(164, 353);
             this.Label_Nombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Nombre.Name = "Label_Nombre";
             this.Label_Nombre.Size = new System.Drawing.Size(75, 23);
@@ -188,7 +187,7 @@
             // 
             this.Label_Apellido.AutoSize = true;
             this.Label_Apellido.Font = new System.Drawing.Font("Nunito", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Apellido.Location = new System.Drawing.Point(518, 359);
+            this.Label_Apellido.Location = new System.Drawing.Point(512, 353);
             this.Label_Apellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Apellido.Name = "Label_Apellido";
             this.Label_Apellido.Size = new System.Drawing.Size(74, 23);
@@ -199,7 +198,7 @@
             // 
             this.Label_Calle.AutoSize = true;
             this.Label_Calle.Font = new System.Drawing.Font("Nunito", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Calle.Location = new System.Drawing.Point(177, 539);
+            this.Label_Calle.Location = new System.Drawing.Point(165, 533);
             this.Label_Calle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Calle.Name = "Label_Calle";
             this.Label_Calle.Size = new System.Drawing.Size(49, 23);
@@ -210,7 +209,7 @@
             // 
             this.Label_Telefono.AutoSize = true;
             this.Label_Telefono.Font = new System.Drawing.Font("Nunito", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Telefono.Location = new System.Drawing.Point(1223, 537);
+            this.Label_Telefono.Location = new System.Drawing.Point(1211, 531);
             this.Label_Telefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Telefono.Name = "Label_Telefono";
             this.Label_Telefono.Size = new System.Drawing.Size(80, 23);
@@ -221,7 +220,7 @@
             // 
             this.Label_Email.AutoSize = true;
             this.Label_Email.Font = new System.Drawing.Font("Nunito", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Email.Location = new System.Drawing.Point(885, 715);
+            this.Label_Email.Location = new System.Drawing.Point(165, 705);
             this.Label_Email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Email.Name = "Label_Email";
             this.Label_Email.Size = new System.Drawing.Size(53, 23);
@@ -232,7 +231,7 @@
             // 
             this.Label_DNI.AutoSize = true;
             this.Label_DNI.Font = new System.Drawing.Font("Nunito", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_DNI.Location = new System.Drawing.Point(885, 359);
+            this.Label_DNI.Location = new System.Drawing.Point(860, 353);
             this.Label_DNI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_DNI.Name = "Label_DNI";
             this.Label_DNI.Size = new System.Drawing.Size(41, 23);
@@ -243,7 +242,7 @@
             // 
             this.Label_F_Nacimiento.AutoSize = true;
             this.Label_F_Nacimiento.Font = new System.Drawing.Font("Nunito", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_F_Nacimiento.Location = new System.Drawing.Point(1223, 359);
+            this.Label_F_Nacimiento.Location = new System.Drawing.Point(1211, 353);
             this.Label_F_Nacimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_F_Nacimiento.Name = "Label_F_Nacimiento";
             this.Label_F_Nacimiento.Size = new System.Drawing.Size(177, 23);
@@ -253,7 +252,7 @@
             // Calendario_Nacimiento
             // 
             this.Calendario_Nacimiento.Font = new System.Drawing.Font("Nunito", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Calendario_Nacimiento.Location = new System.Drawing.Point(1235, 383);
+            this.Calendario_Nacimiento.Location = new System.Drawing.Point(1222, 379);
             this.Calendario_Nacimiento.Name = "Calendario_Nacimiento";
             this.Calendario_Nacimiento.Size = new System.Drawing.Size(208, 27);
             this.Calendario_Nacimiento.TabIndex = 5;
@@ -262,7 +261,7 @@
             // 
             this.Label_ConfirmarEmail.AutoSize = true;
             this.Label_ConfirmarEmail.Font = new System.Drawing.Font("Nunito", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_ConfirmarEmail.Location = new System.Drawing.Point(1223, 713);
+            this.Label_ConfirmarEmail.Location = new System.Drawing.Point(512, 704);
             this.Label_ConfirmarEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_ConfirmarEmail.Name = "Label_ConfirmarEmail";
             this.Label_ConfirmarEmail.Size = new System.Drawing.Size(137, 23);
@@ -273,7 +272,7 @@
             // 
             this.Label_Contraseña.AutoSize = true;
             this.Label_Contraseña.Font = new System.Drawing.Font("Nunito", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Contraseña.Location = new System.Drawing.Point(176, 714);
+            this.Label_Contraseña.Location = new System.Drawing.Point(860, 705);
             this.Label_Contraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Contraseña.Name = "Label_Contraseña";
             this.Label_Contraseña.Size = new System.Drawing.Size(101, 23);
@@ -284,7 +283,7 @@
             // 
             this.Label_ConfirmarContraseña.AutoSize = true;
             this.Label_ConfirmarContraseña.Font = new System.Drawing.Font("Nunito", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_ConfirmarContraseña.Location = new System.Drawing.Point(518, 713);
+            this.Label_ConfirmarContraseña.Location = new System.Drawing.Point(1211, 705);
             this.Label_ConfirmarContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_ConfirmarContraseña.Name = "Label_ConfirmarContraseña";
             this.Label_ConfirmarContraseña.Size = new System.Drawing.Size(185, 23);
@@ -293,79 +292,86 @@
             // 
             // Box_Nombre
             // 
-            this.Box_Nombre.Location = new System.Drawing.Point(193, 385);
+            this.Box_Nombre.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_Nombre.Location = new System.Drawing.Point(181, 379);
             this.Box_Nombre.Name = "Box_Nombre";
-            this.Box_Nombre.Size = new System.Drawing.Size(208, 20);
+            this.Box_Nombre.Size = new System.Drawing.Size(208, 28);
             this.Box_Nombre.TabIndex = 2;
             this.Box_Nombre.TextChanged += new System.EventHandler(this.Box_Nombre_TextChanged);
             // 
             // Box_Apellido
             // 
-            this.Box_Apellido.Location = new System.Drawing.Point(536, 385);
+            this.Box_Apellido.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_Apellido.Location = new System.Drawing.Point(528, 379);
             this.Box_Apellido.Name = "Box_Apellido";
-            this.Box_Apellido.Size = new System.Drawing.Size(208, 20);
+            this.Box_Apellido.Size = new System.Drawing.Size(208, 28);
             this.Box_Apellido.TabIndex = 3;
             this.Box_Apellido.TextChanged += new System.EventHandler(this.Box_Apellido_TextChanged);
             // 
             // Box_DNI
             // 
-            this.Box_DNI.Location = new System.Drawing.Point(902, 385);
+            this.Box_DNI.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_DNI.Location = new System.Drawing.Point(875, 379);
             this.Box_DNI.Name = "Box_DNI";
-            this.Box_DNI.Size = new System.Drawing.Size(208, 20);
+            this.Box_DNI.Size = new System.Drawing.Size(208, 28);
             this.Box_DNI.TabIndex = 4;
             this.Box_DNI.TextChanged += new System.EventHandler(this.Box_DNI_TextChanged);
             // 
             // Box_Calle
             // 
-            this.Box_Calle.Location = new System.Drawing.Point(193, 567);
+            this.Box_Calle.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_Calle.Location = new System.Drawing.Point(181, 561);
             this.Box_Calle.Name = "Box_Calle";
-            this.Box_Calle.Size = new System.Drawing.Size(208, 20);
+            this.Box_Calle.Size = new System.Drawing.Size(208, 28);
             this.Box_Calle.TabIndex = 6;
             this.Box_Calle.TextChanged += new System.EventHandler(this.Box_Calle_TextChanged);
             // 
             // Box_Mail
             // 
-            this.Box_Mail.Location = new System.Drawing.Point(902, 739);
+            this.Box_Mail.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_Mail.Location = new System.Drawing.Point(181, 731);
             this.Box_Mail.Name = "Box_Mail";
-            this.Box_Mail.Size = new System.Drawing.Size(208, 20);
+            this.Box_Mail.Size = new System.Drawing.Size(208, 28);
             this.Box_Mail.TabIndex = 10;
             this.Box_Mail.TextChanged += new System.EventHandler(this.Box_Mail_TextChanged);
             // 
             // Box_Pass
             // 
-            this.Box_Pass.Location = new System.Drawing.Point(193, 739);
+            this.Box_Pass.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_Pass.Location = new System.Drawing.Point(875, 730);
             this.Box_Pass.Name = "Box_Pass";
-            this.Box_Pass.Size = new System.Drawing.Size(208, 20);
+            this.Box_Pass.Size = new System.Drawing.Size(208, 28);
             this.Box_Pass.TabIndex = 12;
             // 
             // Box_Telefono
             // 
-            this.Box_Telefono.Location = new System.Drawing.Point(1235, 566);
+            this.Box_Telefono.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_Telefono.Location = new System.Drawing.Point(1222, 560);
             this.Box_Telefono.Name = "Box_Telefono";
-            this.Box_Telefono.Size = new System.Drawing.Size(208, 20);
+            this.Box_Telefono.Size = new System.Drawing.Size(208, 28);
             this.Box_Telefono.TabIndex = 9;
             // 
             // Box_Mail_Confirm
             // 
-            this.Box_Mail_Confirm.Location = new System.Drawing.Point(1235, 738);
+            this.Box_Mail_Confirm.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_Mail_Confirm.Location = new System.Drawing.Point(528, 730);
             this.Box_Mail_Confirm.Name = "Box_Mail_Confirm";
-            this.Box_Mail_Confirm.Size = new System.Drawing.Size(208, 20);
+            this.Box_Mail_Confirm.Size = new System.Drawing.Size(208, 28);
             this.Box_Mail_Confirm.TabIndex = 11;
-
             // 
             // Box_Pass_Confirm
             // 
-            this.Box_Pass_Confirm.Location = new System.Drawing.Point(536, 739);
+            this.Box_Pass_Confirm.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_Pass_Confirm.Location = new System.Drawing.Point(1222, 730);
             this.Box_Pass_Confirm.Name = "Box_Pass_Confirm";
-            this.Box_Pass_Confirm.Size = new System.Drawing.Size(208, 20);
+            this.Box_Pass_Confirm.Size = new System.Drawing.Size(208, 28);
             this.Box_Pass_Confirm.TabIndex = 13;
-
             // 
             // Label_Altura
             // 
             this.Label_Altura.AutoSize = true;
             this.Label_Altura.Font = new System.Drawing.Font("Nunito", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Altura.Location = new System.Drawing.Point(518, 538);
+            this.Label_Altura.Location = new System.Drawing.Point(512, 532);
             this.Label_Altura.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Altura.Name = "Label_Altura";
             this.Label_Altura.Size = new System.Drawing.Size(57, 23);
@@ -376,7 +382,7 @@
             // 
             this.Label_Departamento.AutoSize = true;
             this.Label_Departamento.Font = new System.Drawing.Font("Nunito", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Departamento.Location = new System.Drawing.Point(885, 539);
+            this.Label_Departamento.Location = new System.Drawing.Point(860, 533);
             this.Label_Departamento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Departamento.Name = "Label_Departamento";
             this.Label_Departamento.Size = new System.Drawing.Size(125, 23);
@@ -385,17 +391,19 @@
             // 
             // Box_Altura
             // 
-            this.Box_Altura.Location = new System.Drawing.Point(536, 567);
+            this.Box_Altura.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_Altura.Location = new System.Drawing.Point(528, 561);
             this.Box_Altura.Name = "Box_Altura";
-            this.Box_Altura.Size = new System.Drawing.Size(208, 20);
+            this.Box_Altura.Size = new System.Drawing.Size(208, 28);
             this.Box_Altura.TabIndex = 7;
             this.Box_Altura.TextChanged += new System.EventHandler(this.Box_Altura_TextChanged);
             // 
             // Box_Depto
             // 
-            this.Box_Depto.Location = new System.Drawing.Point(902, 567);
+            this.Box_Depto.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_Depto.Location = new System.Drawing.Point(875, 561);
             this.Box_Depto.Name = "Box_Depto";
-            this.Box_Depto.Size = new System.Drawing.Size(208, 20);
+            this.Box_Depto.Size = new System.Drawing.Size(208, 28);
             this.Box_Depto.TabIndex = 8;
             this.Box_Depto.TextChanged += new System.EventHandler(this.Box_Depto_TextChanged);
             // 
@@ -491,7 +499,7 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Gainsboro;
             this.groupBox2.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(139, 99);
+            this.groupBox2.Location = new System.Drawing.Point(127, 93);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1337, 30);
             this.groupBox2.TabIndex = 25;
@@ -502,7 +510,7 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Gainsboro;
             this.groupBox3.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(139, 279);
+            this.groupBox3.Location = new System.Drawing.Point(127, 273);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(1337, 30);
             this.groupBox3.TabIndex = 26;
@@ -513,7 +521,7 @@
             // 
             this.groupBox4.BackColor = System.Drawing.Color.Gainsboro;
             this.groupBox4.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(139, 459);
+            this.groupBox4.Location = new System.Drawing.Point(127, 453);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(1337, 30);
             this.groupBox4.TabIndex = 27;
@@ -524,7 +532,7 @@
             // 
             this.groupBox5.BackColor = System.Drawing.Color.Gainsboro;
             this.groupBox5.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(139, 639);
+            this.groupBox5.Location = new System.Drawing.Point(127, 633);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(1337, 30);
             this.groupBox5.TabIndex = 27;
@@ -582,7 +590,6 @@
             this.MinimumSize = new System.Drawing.Size(720, 480);
             this.Name = "UserAdmin";
             this.Text = "ABM de Usuarios";
-
             this.BarraTitulo.ResumeLayout(false);
             this.BarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).EndInit();
