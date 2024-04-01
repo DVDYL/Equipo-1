@@ -63,3 +63,5 @@ C:\Users\david\source\repos\Equipo-1\obj\Debug\Equipo1.csproj.CoreCompileInputs.
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Form_Equipo1.exe
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Form_Equipo1.pdb
 C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Form_Equipo1.LogIn.resources
+C:\Users\david\source\repos\Equipo-1\obj\Debug\Form_Equipo1.LogIn.resources
+C:\Users\david\source\repos\Equipo-1\obj\Debug\Form_Equipo1.Menu.resources

@@ -40,6 +40,8 @@
             this.ConfirmNewPass = new System.Windows.Forms.TextBox();
             this.RecuperaPass = new System.Windows.Forms.Label();
             this.Logo = new System.Windows.Forms.GroupBox();
+            this.PassViewImg = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PassViewImg)).BeginInit();
             this.SuspendLayout();
             // 
             // Usuario
@@ -50,7 +52,6 @@
             this.Usuario.Name = "Usuario";
             this.Usuario.Size = new System.Drawing.Size(343, 34);
             this.Usuario.TabIndex = 0;
-            this.Usuario.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Label_Usuario
             // 
@@ -79,7 +80,8 @@
             this.Pass.Location = new System.Drawing.Point(415, 233);
             this.Pass.Name = "Pass";
             this.Pass.Size = new System.Drawing.Size(343, 34);
-            this.Pass.TabIndex = 2;
+            this.Pass.TabIndex = 1;
+            this.Pass.UseSystemPasswordChar = true;
             // 
             // Boton_Ingresar
             // 
@@ -87,7 +89,7 @@
             this.Boton_Ingresar.Location = new System.Drawing.Point(176, 560);
             this.Boton_Ingresar.Name = "Boton_Ingresar";
             this.Boton_Ingresar.Size = new System.Drawing.Size(174, 41);
-            this.Boton_Ingresar.TabIndex = 4;
+            this.Boton_Ingresar.TabIndex = 2;
             this.Boton_Ingresar.Text = "Ingresar";
             this.Boton_Ingresar.UseVisualStyleBackColor = true;
             this.Boton_Ingresar.Click += new System.EventHandler(this.Boton_Ingresar_Click);
@@ -164,12 +166,25 @@
             this.Logo.TabStop = false;
             this.Logo.Text = "LOGO";
             // 
+            // PassViewImg
+            // 
+            this.PassViewImg.Image = global::Form_Equipo1.Properties.Resources.PassView;
+            this.PassViewImg.Location = new System.Drawing.Point(777, 236);
+            this.PassViewImg.Name = "PassViewImg";
+            this.PassViewImg.Size = new System.Drawing.Size(37, 28);
+            this.PassViewImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PassViewImg.TabIndex = 12;
+            this.PassViewImg.TabStop = false;
+            this.PassViewImg.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PassViewImg_MouseDown);
+            this.PassViewImg.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PassViewImg_MouseUp);
+            // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(835, 636);
+            this.Controls.Add(this.PassViewImg);
             this.Controls.Add(this.Logo);
             this.Controls.Add(this.RecuperaPass);
             this.Controls.Add(this.Label_ConfirmNewPass);
@@ -186,6 +201,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "LogIn";
             this.Text = "Log In";
+            ((System.ComponentModel.ISupportInitialize)(this.PassViewImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +221,6 @@
         private System.Windows.Forms.TextBox ConfirmNewPass;
         private System.Windows.Forms.Label RecuperaPass;
         private System.Windows.Forms.GroupBox Logo;
+        private System.Windows.Forms.PictureBox PassViewImg;
     }
 }

@@ -14,11 +14,6 @@ namespace Form_Equipo1
             InitializeComponent();
         } // Función que inicia la ventana de Log In
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            // Eliminar esta función
-        } // Eliminar
-
         private void Boton_Ingresar_Click(object sender, EventArgs e)
         {
             // Obtener las credenciales ingresadas por el usuario
@@ -43,12 +38,22 @@ namespace Form_Equipo1
 
         private void Boton_Cancelar_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("¿Desea cancelar la operación?", "Confirmar Cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show("¿Desea salir del programa?", "Confirmar Cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)             // Verificar la respuesta del usuario
             {
                 this.Close();                 // Si el usuario selecciona "Sí", cierra el formulario
             }
         } // Pide confirmar la cancelación y si se acepta, sale del programa.
+
+        private void PassViewImg_MouseDown(object sender, MouseEventArgs e)
+        {
+            Pass.UseSystemPasswordChar = false; // Muestra la contraseña
+        }
+
+        private void PassViewImg_MouseUp(object sender, MouseEventArgs e)
+        {
+            Pass.UseSystemPasswordChar = true; // Oculta la contraseña
+        }
     }
 }
