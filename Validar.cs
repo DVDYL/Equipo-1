@@ -120,15 +120,15 @@ namespace Equipo1
         public static string EsDepartamento(string texto)
         {
             // Verificar si la cadena está vacía o es nula
-            if (string.IsNullOrWhiteSpace(texto))
-            {
-                return "El campo Departamento no puede estar vacío.";
-            }
+           // if (string.IsNullOrWhiteSpace(texto))
+            //{
+              //  return "El campo Departamento no puede estar vacío.";
+           //}  Se quita Validacion, se deja codigo.
 
             // Verificar la longitud mínima y máxima
-            if (texto.Length < 2 || texto.Length > 5)
+            if (texto.Length > 5)
             {
-                return "El campo Departamento debe tener entre 2 y 5 caracteres.";
+                return "El campo Departamento debe tener como maximo 5 caracteres.";
             }
 
             // Si se cumplen todas las condiciones, el departamento es válido
