@@ -59,7 +59,7 @@ namespace Equipo1
             Box_Pass.Text = "";
             Box_Pass_Confirm.Text = "";
 
-            // Ocultar los mensajes de error
+            // Volver a ocultar todos los mensajes de error
             Operacion_Null.Visible = false;
             Rol_Null.Visible = false;
             Nombre_Error.Visible = false;
@@ -167,7 +167,7 @@ namespace Equipo1
             {
                 // Completar el contenido del TextBox Nombre_Error con el error
                 Nombre_Error.Text = errorNombre;
-
+                Nombre_Error.Visible = true;
                 MessageBox.Show(errorNombre, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -181,7 +181,7 @@ namespace Equipo1
             {
                 // Completar el contenido del TextBox Apellido_Error con el error
                 Apellido_Error.Text = errorApellido;
-
+                Apellido_Error.Visible = true;
                 MessageBox.Show(errorApellido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -195,6 +195,7 @@ namespace Equipo1
             {
                 // Completar el contenido del TextBox DNI_Error con el error
                 DNI_Error.Text = errorDNI;
+                DNI_Error.Visible = true;
 
                 MessageBox.Show(errorDNI, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -209,6 +210,7 @@ namespace Equipo1
             if (errorEdad != null)
             {
                 Edad_Error.Text = errorEdad;
+                Edad_Error.Visible = true;
                 // Mostrar mensaje de advertencia si la edad no es válida
                 MessageBox.Show(errorEdad, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -223,6 +225,7 @@ namespace Equipo1
             {
                 // Completar el contenido del TextBox Calle_Error con el error
                 Calle_Error.Text = errorCalle;
+                Calle_Error.Visible = true;
                 MessageBox.Show(errorCalle, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -235,7 +238,7 @@ namespace Equipo1
             if (errorAltura != null)
             {
                 Altura_Error.Text = errorAltura; // Completar el contenido del TextBox Altura_Error con el error
-
+                Altura_Error.Visible = true;
                 MessageBox.Show(errorAltura, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -248,7 +251,7 @@ namespace Equipo1
             if (errorDepartamento != null)
             {
                 Depto_Error.Text = errorDepartamento; // Completar el contenido del TextBox Depto_Error con el error
-
+                Depto_Error.Visible = true;
                 MessageBox.Show(errorDepartamento, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -261,7 +264,7 @@ namespace Equipo1
             if (errorTelefono != null)
             {
                 Telefono_Error.Text = errorTelefono;
-
+                Telefono_Error.Visible = true;
                 MessageBox.Show(errorTelefono, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -274,7 +277,7 @@ namespace Equipo1
             if (errorMail !=null) //Si NO cumple con la validación, mostrará el mensaje.
             {
                 Mail_Error.Text = errorMail;
-
+                Mail_Error.Visible = true;
                 MessageBox.Show(errorMail, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -290,6 +293,7 @@ namespace Equipo1
             if (errorConfirmarMail != null)
             {
                 ConfirmMail_Error.Text = errorConfirmarMail;
+                ConfirmMail_Error.Visible = true;
                 MessageBox.Show(errorConfirmarMail, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -302,6 +306,7 @@ namespace Equipo1
             if (errorContraseña != null)
             {
                 Pass_Error.Text = errorContraseña;
+                Pass_Error.Visible = true;
                 MessageBox.Show(errorContraseña, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -317,6 +322,7 @@ namespace Equipo1
             if (errorConfirmarContraseña != null) 
             {
                 ConfirmPass_Error.Text = errorConfirmarContraseña;
+                ConfirmPass_Error.Visible = true;
                 MessageBox.Show(errorConfirmarContraseña, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
