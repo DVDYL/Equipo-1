@@ -63,9 +63,59 @@ namespace Form_Equipo1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Clientes {
+            get {
+                object obj = ResourceManager.GetObject("Clientes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ElectroHogarLogo {
+            get {
+                object obj = ResourceManager.GetObject("ElectroHogarLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PassView {
             get {
                 object obj = ResourceManager.GetObject("PassView", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Productos {
+            get {
+                object obj = ResourceManager.GetObject("Productos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Proveedores {
+            get {
+                object obj = ResourceManager.GetObject("Proveedores", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Stock {
+            get {
+                object obj = ResourceManager.GetObject("Stock", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -86,6 +136,16 @@ namespace Form_Equipo1.Properties {
         internal static System.Drawing.Bitmap UserAdmin1 {
             get {
                 object obj = ResourceManager.GetObject("UserAdmin1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ventas {
+            get {
+                object obj = ResourceManager.GetObject("Ventas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
