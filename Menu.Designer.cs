@@ -55,7 +55,7 @@
             // 
             this.MenuUserAdmin.AutoSize = true;
             this.MenuUserAdmin.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MenuUserAdmin.Location = new System.Drawing.Point(157, 299);
+            this.MenuUserAdmin.Location = new System.Drawing.Point(157, 308);
             this.MenuUserAdmin.Name = "MenuUserAdmin";
             this.MenuUserAdmin.Size = new System.Drawing.Size(126, 36);
             this.MenuUserAdmin.TabIndex = 0;
@@ -68,7 +68,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label1.Location = new System.Drawing.Point(627, 299);
+            this.label1.Location = new System.Drawing.Point(627, 308);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 36);
             this.label1.TabIndex = 1;
@@ -80,7 +80,7 @@
             this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label2.Location = new System.Drawing.Point(1129, 299);
+            this.label2.Location = new System.Drawing.Point(1129, 308);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 36);
             this.label2.TabIndex = 2;
@@ -92,7 +92,7 @@
             this.label3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label3.Location = new System.Drawing.Point(148, 608);
+            this.label3.Location = new System.Drawing.Point(148, 617);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(144, 36);
             this.label3.TabIndex = 3;
@@ -104,7 +104,7 @@
             this.label4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label4.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label4.Location = new System.Drawing.Point(672, 608);
+            this.label4.Location = new System.Drawing.Point(672, 617);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 36);
             this.label4.TabIndex = 4;
@@ -116,7 +116,7 @@
             this.label5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label5.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label5.Location = new System.Drawing.Point(1137, 608);
+            this.label5.Location = new System.Drawing.Point(1137, 617);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 36);
             this.label5.TabIndex = 5;
@@ -136,7 +136,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::Form_Equipo1.Properties.Resources.Productos;
-            this.pictureBox5.Location = new System.Drawing.Point(108, 434);
+            this.pictureBox5.Location = new System.Drawing.Point(108, 443);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(215, 171);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -146,7 +146,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::Form_Equipo1.Properties.Resources.Ventas;
-            this.pictureBox4.Location = new System.Drawing.Point(1073, 434);
+            this.pictureBox4.Location = new System.Drawing.Point(1073, 443);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(215, 171);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -156,7 +156,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Form_Equipo1.Properties.Resources.Stock;
-            this.pictureBox3.Location = new System.Drawing.Point(606, 434);
+            this.pictureBox3.Location = new System.Drawing.Point(606, 443);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(215, 171);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -166,7 +166,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Form_Equipo1.Properties.Resources.Clientes;
-            this.pictureBox2.Location = new System.Drawing.Point(1073, 125);
+            this.pictureBox2.Location = new System.Drawing.Point(1073, 134);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(215, 171);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -176,7 +176,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Form_Equipo1.Properties.Resources.Proveedores;
-            this.pictureBox1.Location = new System.Drawing.Point(606, 125);
+            this.pictureBox1.Location = new System.Drawing.Point(606, 134);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(215, 171);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -186,7 +186,7 @@
             // UserAdminImg
             // 
             this.UserAdminImg.Image = global::Form_Equipo1.Properties.Resources.UserAdmin1;
-            this.UserAdminImg.Location = new System.Drawing.Point(108, 125);
+            this.UserAdminImg.Location = new System.Drawing.Point(108, 134);
             this.UserAdminImg.Name = "UserAdminImg";
             this.UserAdminImg.Size = new System.Drawing.Size(215, 171);
             this.UserAdminImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
