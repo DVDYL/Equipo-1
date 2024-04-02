@@ -18,19 +18,18 @@ namespace Form_Equipo1
         private void Boton_Ingresar_Click(object sender, EventArgs e)
         {
             // Obtener las credenciales ingresadas por el usuario
-            string usuarioIngresado = Box_Usuario.Text;
-            string contraseñaIngresada = Box_Pass.Text;
-            string errorMessage; // Variable para almacenar el mensaje de error de la validación
+            string usuarioIngresado = Usuario.Text;
+            string contraseñaIngresada = Pass.Text;
 
-            // Verificar si el usuario existe y obtener el mensaje de error si no es válido
-            bool usuarioExiste = Validar.EsUsuario(usuarioIngresado, out errorMessage);
+            // Verificar si el usuario existe
+            bool usuarioExiste = Validar.EsUsuario(usuarioIngresado);
 
             if (usuarioExiste)
             {
                 // Verificar si la contraseña ingresada es válida
-                string errorContraseña = Validar.EsContraseña(contraseñaIngresada);
+                bool contraseñaValida = Validar.EsContraseñaValida(contraseñaIngresada);
 
-                if (errorContraseña == null)
+                if (contraseñaValida)
                 {
                     // Verificar si el usuario es el administrador
                     if (usuarioIngresado == UsuarioPorDefecto && contraseñaIngresada == ContraseñaPorDefecto)
@@ -43,25 +42,25 @@ namespace Form_Equipo1
                     else
                     {
                         // El usuario existe pero la contraseña no es la correcta
-                        MessageBox.Show("La contraseña ingresada para el usuario es incorrecta.\n\nCódigo de Error: 001", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("La contraseña ingresada para el usuario no es la correcta.", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    // Mostrar el mensaje de error devuelto por EsContraseña
-                    MessageBox.Show(errorContraseña, "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // La contraseña ingresada no es válida
+                    MessageBox.Show("La Contraseña ingresada es inválida.\n\nUna contraseña válida contiene al menos una mayúscula, un número y tiene como mínimo 8 caracteres.\n\nPor favor, ingrese una Contraseña válida.", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                // El usuario no existe, mostrar el mensaje de error obtenido de EsUsuario
-                MessageBox.Show(errorMessage, "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // El usuario no existe
+                MessageBox.Show("El Usuario no Existe", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        } // Controla que el usuario exista y que la contraseña sea válida.
 
         private void Boton_Cancelar_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("¿Desea salir del programa?\n\nSe cerrará la ventana y no se guardarán los datos.", "Confirmar Cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show("¿Desea salir del programa?", "Confirmar Cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)             // Verificar la respuesta del usuario
             {
@@ -71,13 +70,12 @@ namespace Form_Equipo1
 
         private void PassViewImg_MouseDown(object sender, MouseEventArgs e) // Muestra la contraseña al hacer click en el ojo
         {
-            Box_Pass.UseSystemPasswordChar = false; 
+            Pass.UseSystemPasswordChar = false; 
         }
 
         private void PassViewImg_MouseUp(object sender, MouseEventArgs e)
         {
-            Box_Pass.UseSystemPasswordChar = true; // Oculta la contraseña
+            Pass.UseSystemPasswordChar = true; // Oculta la contraseña
         } // Muestra la contraseña al hacer click en el ojo
-
     }
 }

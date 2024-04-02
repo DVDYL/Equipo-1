@@ -12,16 +12,16 @@ namespace Equipo1
     {
         public static string EsNombre(string text, string nombreCampo)
         {
-            // Verificar si el texto está vacío
-            if (string.IsNullOrWhiteSpace(text))
-            {
-                return $"No se especificó el {nombreCampo}.";
-            }
-
             // Verificar si el texto tiene menos de 3 caracteres
             if (text.Length < 3)
             {
                 return $"El {nombreCampo} debe tener al menos 3 caracteres.";
+            }
+
+            // Verificar si el texto está vacío
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                return $"No se especificó el {nombreCampo}.";
             }
 
             // Verificar si el texto contiene números
@@ -42,12 +42,6 @@ namespace Equipo1
 
         public static string EsDNI(string texto)
         {
-            // Verificar si el texto está vacío
-            if (string.IsNullOrEmpty(texto))
-            {
-                return "El campo DNI no puede estar vacío.";
-            }
-
             // Verificar si el texto tiene longitud diferente de 8 dígitos
             if (texto.Length != 8)
             {
@@ -57,31 +51,22 @@ namespace Equipo1
             // Verificar si el texto contiene algún carácter que no sea un dígito
             if (!texto.All(char.IsDigit))
             {
-                return "El campo DNI debe contener solo dígitos numéricos.";
+                return "El campo DNI debe contener únicamente dígitos numéricos.";
             }
 
             // Si se cumplen todas las condiciones, el campo es válido
             return null;
         }
 
-        public static string EsEdadLaboral(DateTime fechaNacimiento)
+        public static bool EsEdadLaboral(DateTime fechaNacimiento)
         {
+            // Calcular fecha de hace 18 años
+            DateTime fechaHace18 = DateTime.Today.AddYears(-18);
+            // Calcular fecha de hace 65 años
+            DateTime fechaHace65 = DateTime.Today.AddYears(-65);
 
-            DateTime fechaHace18 = DateTime.Today.AddYears(-18); // Calcular fecha de hace 18 años
-            DateTime fechaHace65 = DateTime.Today.AddYears(-65); // Calcular fecha de hace 65 años
-
-            if (fechaNacimiento >= fechaHace18) // Verificar si la fecha de nacimiento está entre hace 18 y hace 65 años
-            {
-                return "No se permite incorporar usuarios menores de edad.";
-            }
-            else if (fechaNacimiento <= fechaHace65)
-            {
-                return "No se permite incorporar usuarios en edad jubilatoria.";
-            }
-            else
-            {
-                return null; // Si la fecha de nacimiento cumple con los requisitos, no hay error
-            }
+            // Verificar si la fecha de nacimiento está entre hace 18 y hace 65 años
+            return (fechaNacimiento < fechaHace18 && fechaNacimiento > fechaHace65);
         }
 
         public static string EsCalle(string texto)
@@ -168,55 +153,37 @@ namespace Equipo1
             return null;
         }
 
-        public static string EsMail(string correo)
+        public static bool EsMail(string correo)
         {
-            // Verificar si el correo está vacío
-            if (string.IsNullOrEmpty(correo))
-            {
-                return "El campo de correo electrónico no puede estar vacío.";
-            }
-
             // Patrón de expresión regular para validar un correo electrónico
             string patronCorreo = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-
-            // Verificar si el correo cumple con el patrón
+            
+            // Lo que hacemos acá es asegurar que la persona ingrese el mail cumpliendo con el patrón.
             if (Regex.IsMatch(correo, patronCorreo))
             {
-                return null; // Si el correo es válido, retornar null indicando que no hay error
+                return true;
             }
-            else
+            else 
             {
-                return "El formato del correo electrónico no es válido.";
+                return false;
             }
         }
 
-        public static string ConfirmarMail(string correo, string confirmation)
+        public static bool ConfirmarMail(string correo, string confirmation)
         {
-            // Verificar si alguno de los campos está vacío
-            if (string.IsNullOrEmpty(correo) || string.IsNullOrEmpty(confirmation))
-            {
-                return "Ambos campos de correo electrónico son obligatorios.";
-            }
-
-            // Verificar si los correos electrónicos coinciden
             if (correo == confirmation)
             {
-                return null; // Si los correos coinciden, retornar null indicando que no hay error
+                return true;
             }
             else
             {
-                return "Los correos electrónicos no coinciden.";
+                return false;
             }
+
         }
 
-        public static string EsContraseña(string Contraseña)
+        public static bool EsContraseñaValida(string Contraseña)
         {
-            // Verificar si la contraseña está vacía
-            if (string.IsNullOrEmpty(Contraseña))
-            {
-                return "El campo de contraseña no puede estar vacío.";
-            }
-
             bool mayuscula = false;
             bool numero = false;
 
@@ -231,64 +198,40 @@ namespace Equipo1
                     numero = true;
                 }
             }
-
-            // Verificar si la contraseña cumple con los criterios de validez
             if (numero && mayuscula && Contraseña.Length >= 8 && Contraseña.Length < 15)
             {
-                return null; // Si la contraseña es válida, retornar null indicando que no hay error
+                return true;
             }
+            return false;
 
-            return "La contraseña debe tener al menos una mayúscula, un número y tener entre 8 y 14 caracteres.";
         }
 
-        public static string ConfirmarContraseña(string Contraseña, string confirmation)
+        public static bool ConfirmarContraseña(string Contraseña, string confirmation)
         {
-            // Verificar si alguno de los campos está vacío
-            if (string.IsNullOrEmpty(Contraseña) || string.IsNullOrEmpty(confirmation))
-            {
-                return "Ambos campos de contraseña son obligatorios.";
-            }
-
-            // Verificar si las contraseñas coinciden
             if (Contraseña == confirmation)
             {
-                return null; // Si las contraseñas coinciden, retornar null indicando que no hay error
+                return true;
             }
             else
             {
-                return "Las contraseñas no coinciden.";
-            }
-        }
-
-        public static bool EsUsuario(string usuario, out string errorMessage)
-        {
-            errorMessage = null; // Inicializar el mensaje de error como nulo
-
-            // Verificar si el usuario tiene al menos 6 caracteres
-            if (usuario.Length < 6)
-            {
-                errorMessage = "El usuario debe tener al menos 6 caracteres.";
                 return false;
             }
+
+        }
+
+        public static bool EsUsuario(string usuario)
+        {
+            // Verificar si el usuario tiene al menos 6 caracteres
+            if (usuario.Length < 6)
+                return false;
 
             // Verificar si el usuario termina en dos dígitos
             if (!char.IsDigit(usuario[usuario.Length - 1]) || !char.IsDigit(usuario[usuario.Length - 2]))
-            {
-                errorMessage = "El usuario debe terminar en dos dígitos.";
                 return false;
-            }
 
             // Verificar si el usuario contiene espacios o caracteres especiales
-            if (Regex.IsMatch(usuario, @"\s"))
-            {
-                errorMessage = "El usuario no puede contener espacios.";
+            if (Regex.IsMatch(usuario, @"\s") || !Regex.IsMatch(usuario, @"^[a-zA-Z0-9]+$"))
                 return false;
-            }
-            if (!Regex.IsMatch(usuario, @"^[a-zA-Z0-9]+$"))
-            {
-                errorMessage = "El usuario solo puede contener letras y números.";
-                return false;
-            }
 
             // Si pasa todas las validaciones, el usuario es válido
             return true;
