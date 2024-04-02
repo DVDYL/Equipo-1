@@ -247,8 +247,14 @@ namespace Equipo1
             // Mensaje de éxito con el nombre de usuario generado
             MessageBox.Show($"El usuario {nombreUsuario} fue dado de alta con éxito con el ID: 1", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Cerrar la ventana actual
-            this.Close();
+            DialogResult resultado = MessageBox.Show("¿Desea continuar en el Maestro de Usuarios?", "Confirmar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+           
+            if (resultado == DialogResult.No)
+            {
+                // Cerrar el formulario actual (UserAdmin.cs)
+                this.Close(); // Esto cerrará el formulario UserAdmin y volverá automáticamente al formulario Menu si es que fue abierto desde allí
+            }
+
         } // Confirma todos los campos, si está todo correcto, genera un ID de usuario.
 
         private void Boton_Cancelar_Click(object sender, EventArgs e)
