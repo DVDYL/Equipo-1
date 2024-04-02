@@ -67,3 +67,4 @@ C:\Users\david\source\repos\Equipo-1\obj\Debug\Form_Equipo1.LogIn.resources
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Form_Equipo1.Menu.resources
 C:\Users\yaly_\OneDrive\Desktop\TP CAI\obj\Debug\Form_Equipo1.LogIn.resources
 C:\Users\yaly_\OneDrive\Desktop\TP CAI\obj\Debug\Form_Equipo1.Menu.resources
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Form_Equipo1.Menu.resources

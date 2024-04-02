@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Usuario = new System.Windows.Forms.TextBox();
+            this.Box_Usuario = new System.Windows.Forms.TextBox();
             this.Label_Usuario = new System.Windows.Forms.Label();
             this.Label_Pass = new System.Windows.Forms.Label();
-            this.Pass = new System.Windows.Forms.TextBox();
+            this.Box_Pass = new System.Windows.Forms.TextBox();
             this.Boton_Ingresar = new System.Windows.Forms.Button();
             this.Boton_Cancelar = new System.Windows.Forms.Button();
             this.Label_NewPass = new System.Windows.Forms.Label();
@@ -39,19 +39,21 @@
             this.Label_ConfirmNewPass = new System.Windows.Forms.Label();
             this.ConfirmNewPass = new System.Windows.Forms.TextBox();
             this.RecuperaPass = new System.Windows.Forms.Label();
-            this.Logo = new System.Windows.Forms.GroupBox();
+            this.Nombre_Error = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PassViewImg = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PassViewImg)).BeginInit();
             this.SuspendLayout();
             // 
-            // Usuario
+            // Box_Usuario
             // 
-            this.Usuario.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.Usuario.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Usuario.Location = new System.Drawing.Point(415, 148);
-            this.Usuario.Name = "Usuario";
-            this.Usuario.Size = new System.Drawing.Size(343, 34);
-            this.Usuario.TabIndex = 0;
+            this.Box_Usuario.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Box_Usuario.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_Usuario.Location = new System.Drawing.Point(415, 148);
+            this.Box_Usuario.Name = "Box_Usuario";
+            this.Box_Usuario.Size = new System.Drawing.Size(343, 34);
+            this.Box_Usuario.TabIndex = 0;
             // 
             // Label_Usuario
             // 
@@ -73,15 +75,15 @@
             this.Label_Pass.TabIndex = 3;
             this.Label_Pass.Text = "Contraseña:";
             // 
-            // Pass
+            // Box_Pass
             // 
-            this.Pass.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.Pass.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pass.Location = new System.Drawing.Point(415, 233);
-            this.Pass.Name = "Pass";
-            this.Pass.Size = new System.Drawing.Size(343, 34);
-            this.Pass.TabIndex = 1;
-            this.Pass.UseSystemPasswordChar = true;
+            this.Box_Pass.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Box_Pass.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_Pass.Location = new System.Drawing.Point(415, 233);
+            this.Box_Pass.Name = "Box_Pass";
+            this.Box_Pass.Size = new System.Drawing.Size(343, 34);
+            this.Box_Pass.TabIndex = 1;
+            this.Box_Pass.UseSystemPasswordChar = true;
             // 
             // Boton_Ingresar
             // 
@@ -101,7 +103,7 @@
             this.Boton_Cancelar.Name = "Boton_Cancelar";
             this.Boton_Cancelar.Size = new System.Drawing.Size(174, 41);
             this.Boton_Cancelar.TabIndex = 5;
-            this.Boton_Cancelar.Text = "Cancelar";
+            this.Boton_Cancelar.Text = "Salir";
             this.Boton_Cancelar.UseVisualStyleBackColor = true;
             this.Boton_Cancelar.Click += new System.EventHandler(this.Boton_Cancelar_Click);
             // 
@@ -155,16 +157,26 @@
             this.RecuperaPass.TabIndex = 10;
             this.RecuperaPass.Text = "¿Olvidó su Contraseña?";
             // 
-            // Logo
+            // Nombre_Error
             // 
-            this.Logo.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Logo.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Logo.Location = new System.Drawing.Point(264, 32);
-            this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(308, 66);
-            this.Logo.TabIndex = 11;
-            this.Logo.TabStop = false;
-            this.Logo.Text = "LOGO";
+            this.Nombre_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Nombre_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nombre_Error.ForeColor = System.Drawing.Color.Red;
+            this.Nombre_Error.Location = new System.Drawing.Point(415, 188);
+            this.Nombre_Error.Multiline = true;
+            this.Nombre_Error.Name = "Nombre_Error";
+            this.Nombre_Error.Size = new System.Drawing.Size(343, 20);
+            this.Nombre_Error.TabIndex = 46;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Form_Equipo1.Properties.Resources.ElectroHogarLogo;
+            this.pictureBox1.Location = new System.Drawing.Point(97, 26);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(661, 86);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 47;
+            this.pictureBox1.TabStop = false;
             // 
             // PassViewImg
             // 
@@ -180,12 +192,14 @@
             // 
             // LogIn
             // 
+            this.AcceptButton = this.Boton_Ingresar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(835, 636);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Nombre_Error);
             this.Controls.Add(this.PassViewImg);
-            this.Controls.Add(this.Logo);
             this.Controls.Add(this.RecuperaPass);
             this.Controls.Add(this.Label_ConfirmNewPass);
             this.Controls.Add(this.ConfirmNewPass);
@@ -194,13 +208,14 @@
             this.Controls.Add(this.Boton_Cancelar);
             this.Controls.Add(this.Boton_Ingresar);
             this.Controls.Add(this.Label_Pass);
-            this.Controls.Add(this.Pass);
+            this.Controls.Add(this.Box_Pass);
             this.Controls.Add(this.Label_Usuario);
-            this.Controls.Add(this.Usuario);
+            this.Controls.Add(this.Box_Usuario);
             this.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "LogIn";
             this.Text = "Log In";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PassViewImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -209,10 +224,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox Usuario;
+        private System.Windows.Forms.TextBox Box_Usuario;
         private System.Windows.Forms.Label Label_Usuario;
         private System.Windows.Forms.Label Label_Pass;
-        private System.Windows.Forms.TextBox Pass;
+        private System.Windows.Forms.TextBox Box_Pass;
         private System.Windows.Forms.Button Boton_Ingresar;
         private System.Windows.Forms.Button Boton_Cancelar;
         private System.Windows.Forms.Label Label_NewPass;
@@ -220,7 +235,8 @@
         private System.Windows.Forms.Label Label_ConfirmNewPass;
         private System.Windows.Forms.TextBox ConfirmNewPass;
         private System.Windows.Forms.Label RecuperaPass;
-        private System.Windows.Forms.GroupBox Logo;
         private System.Windows.Forms.PictureBox PassViewImg;
+        private System.Windows.Forms.TextBox Nombre_Error;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

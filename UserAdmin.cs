@@ -17,18 +17,21 @@ namespace Equipo1
         {
             InitializeComponent(); // Inicializamos el formulario.
 
+            Operacion_Null.Visible = false; // Ocultar el TextBox Operacion_Null
+            Rol_Null.Visible = false; // Ocultar el TextBox Rol_Null
+
             // Agregar opciones al ComboBox de tipo de ABM una sola vez al cargar el formulario
-            ComboBox_ABM.Items.Add("01 - Alta");
-            ComboBox_ABM.Items.Add("02 - Modificación");
-            ComboBox_ABM.Items.Add("03 - Baja");
+            ComboBox_ABM.Items.Add("Alta");
+            ComboBox_ABM.Items.Add("Modificación");
+            ComboBox_ABM.Items.Add("Baja");
 
             // Desactivar la capacidad de edición del ComboBox_ABM
             ComboBox_ABM.DropDownStyle = ComboBoxStyle.DropDownList;
 
             // Agregar opciones al ComboBox de tipo de usuario una sola vez al cargar el formulario
-            ComboBox_Rol.Items.Add("01 - Administrador");
-            ComboBox_Rol.Items.Add("02 - Supervisor");
-            ComboBox_Rol.Items.Add("03 - Vendedor");
+            ComboBox_Rol.Items.Add("Administrador");
+            ComboBox_Rol.Items.Add("Supervisor");
+            ComboBox_Rol.Items.Add("Vendedor");
 
             // Desactivar la capacidad de edición del ComboBox_Rol
             ComboBox_Rol.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -37,6 +40,41 @@ namespace Equipo1
             Calendario_Nacimiento.Format = DateTimePickerFormat.Custom;
             Calendario_Nacimiento.CustomFormat = "dd/MM/yyyy";
         } // Esta Función prepara el formulario y sus restricciones
+
+        private void ResetearCampos()
+        {
+            // Reiniciar los valores de todos los campos del formulario a sus valores predeterminados
+            ComboBox_ABM.SelectedIndex = -1;
+            ComboBox_Rol.SelectedIndex = -1;
+            Box_Nombre.Text = "";
+            Box_Apellido.Text = "";
+            Box_DNI.Text = "";
+            Calendario_Nacimiento.Value = DateTime.Today;
+            Box_Calle.Text = "";
+            Box_Altura.Text = "";
+            Box_Depto.Text = "";
+            Box_Telefono.Text = "";
+            Box_Mail.Text = "";
+            Box_Mail_Confirm.Text = "";
+            Box_Pass.Text = "";
+            Box_Pass_Confirm.Text = "";
+
+            // Ocultar los mensajes de error
+            Operacion_Null.Visible = false;
+            Rol_Null.Visible = false;
+            Nombre_Error.Visible = false;
+            Apellido_Error.Visible = false;
+            DNI_Error.Visible = false;
+            Edad_Error.Visible = false;
+            Calle_Error.Visible = false;
+            Altura_Error.Visible = false;
+            Depto_Error.Visible = false;
+            Telefono_Error.Visible = false;
+            Mail_Error.Visible = false;
+            ConfirmMail_Error.Visible = false;
+            Pass_Error.Visible = false;
+            ConfirmPass_Error.Visible = false;
+        } // Blanquea el Formulario
 
         private string GenerarNombreUsuario(string nombre, string apellido, DateTime fechaNacimiento)
         {
@@ -75,27 +113,6 @@ namespace Equipo1
             // No necesitamos hacer nada en este evento para esta validación
         } // Detecta Cambios en el campo "DNI"
 
-        private void Calendario_Nacimiento_ValueChanged(object sender, EventArgs e)
-        {
-            // Verificar si se ha seleccionado una fecha válida
-            if (Calendario_Nacimiento.Checked && Calendario_Nacimiento.Value != DateTime.MinValue)
-            {
-                // Obtener la fecha seleccionada
-                DateTime fechaSeleccionada = Calendario_Nacimiento.Value;
-
-                // Verificar si la fecha seleccionada es posterior al día de hoy
-                if (fechaSeleccionada > DateTime.Today)
-                {
-                    // Mostrar mensaje de advertencia
-                    MessageBox.Show("No se puede seleccionar una fecha posterior al día de hoy.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    // Establecer la fecha de hoy como valor seleccionado
-                    Calendario_Nacimiento.Value = DateTime.Today;
-                }
-
-            }
-        } // Detecta cambios en la fecha de nacimiento y evalúa que no sea posterior a hoy.
-
         private void Box_Calle_TextChanged(object sender, EventArgs e)
         {
  
@@ -120,146 +137,266 @@ namespace Equipo1
         {
             if (ComboBox_ABM.SelectedIndex == -1)
             {
-                // Mostrar mensaje de advertencia cuando la operación está en blanco
-                MessageBox.Show("Por favor, seleccione una operación y vuelva a intentarlo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Operacion_Null.Visible = true; // Mostrar el TextBox Operacion_Null
+
+                MessageBox.Show("No se seleccionó ningún tipo de operación.\n\nPor favor, seleccione una operación y vuelva a intentarlo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning); // Mostrar mensaje de advertencia cuando la operación está en blanco
                 ComboBox_ABM.Focus();
                 return;
             } // Verifica que el combobox de tipo de operación no sea vacío.
-
-            else if (ComboBox_Rol.SelectedIndex == -1)
+            else
             {
+                Operacion_Null.Visible = false; // Ocultar el TextBox Operacion_Null si el combobox ABM no es Null
+            }
+
+            if (ComboBox_Rol.SelectedIndex == -1)
+            {
+                Rol_Null.Visible = true; // Mostrar el TextBox Rol_Null
+
                 // Mostrar mensaje de advertencia cuando el tipo de usuario está en blanco
-                MessageBox.Show("Por favor, seleccione un tipo de usuario y vuelva a intentarlo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No se seleccionó ningún tipo de usuario.\n\nPor favor, seleccione un tipo de usuario y vuelva a intentarlo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ComboBox_Rol.Focus();
                 return;
             } // Verifica que el combobox de tipo de usuario no sea vacío.
+            else
+            {
+                Rol_Null.Visible = false; // Ocultar el TextBox Rol_Null si el combobox Rol no es Null
+            }
 
             string errorNombre = Validar.EsNombre(Box_Nombre.Text, "Nombre");
             if (errorNombre != null)
             {
+                // Completar el contenido del TextBox Nombre_Error con el error
+                Nombre_Error.Text = errorNombre;
+
                 MessageBox.Show(errorNombre, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+            else
+            {
+                Nombre_Error.Visible = false; // Ocultar el TextBox Nombre_Error si el campo nombre no tiene errores.
             }
 
             string errorApellido = Validar.EsNombre(Box_Apellido.Text, "Apellido");
             if (errorApellido != null)
             {
+                // Completar el contenido del TextBox Apellido_Error con el error
+                Apellido_Error.Text = errorApellido;
+
                 MessageBox.Show(errorApellido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+            else
+            {
+                Apellido_Error.Visible = false; // Ocultar el TextBox Nombre_Error si el campo nombre no tiene errores.
             }
 
             string errorDNI = Validar.EsDNI(Box_DNI.Text);
             if (errorDNI != null)
             {
+                // Completar el contenido del TextBox DNI_Error con el error
+                DNI_Error.Text = errorDNI;
+
                 MessageBox.Show(errorDNI, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            else
+            {
+                DNI_Error.Visible = false; // Ocultar el TextBox Nombre_Error si el campo nombre no tiene errores.
+            }
 
             DateTime fechaNacimiento = Calendario_Nacimiento.Value; // Verifica que el usuario tenga sea mayor de 18 años y menor de 65 a partir de hoy.
-            if (!Validar.EsEdadLaboral(fechaNacimiento))
+            string errorEdad = Validar.EsEdadLaboral(fechaNacimiento);
+            if (errorEdad != null)
             {
+                Edad_Error.Text = errorEdad;
                 // Mostrar mensaje de advertencia si la edad no es válida
-                MessageBox.Show("El usuario debe ser mayor de 18 años y menor de 65.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(errorEdad, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
+            }
+            else
+            {
+                Edad_Error.Visible=false; 
             }
 
             string errorCalle = Validar.EsCalle(Box_Calle.Text);
             if (errorCalle != null)
             {
+                // Completar el contenido del TextBox Calle_Error con el error
+                Calle_Error.Text = errorCalle;
                 MessageBox.Show(errorCalle, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+            else
+            {
+                Calle_Error.Visible = false; // Ocultar el TextBox Calle_Error si el campo Calle no tiene errores.
             }
 
             string errorAltura = Validar.EsAltura(Box_Altura.Text);
             if (errorAltura != null)
             {
+                Altura_Error.Text = errorAltura; // Completar el contenido del TextBox Altura_Error con el error
+
                 MessageBox.Show(errorAltura, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+            else
+            {
+                Altura_Error.Visible = false; // Ocultar el TextBox Altura_Error si el campo Altura no tiene errores.
             }
 
             string errorDepartamento = Validar.EsDepartamento(Box_Depto.Text);
             if (errorDepartamento != null)
             {
+                Depto_Error.Text = errorDepartamento; // Completar el contenido del TextBox Depto_Error con el error
+
                 MessageBox.Show(errorDepartamento, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+            else
+            {
+                Depto_Error.Visible = false;
             }
 
             string errorTelefono = Validar.EsTelefono(Box_Telefono.Text);
             if (errorTelefono != null)
             {
+                Telefono_Error.Text = errorTelefono;
+
                 MessageBox.Show(errorTelefono, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            string errorMail = Box_Mail.Text;
-            if (string.IsNullOrEmpty(errorMail))
+            else
             {
-                MessageBox.Show("El campo Email no puede estar vacío. Por favor, ingrese un Email.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            else if (!Validar.EsMail(errorMail)) //Si NO cumple con la validación, mostrará el mensaje.
-            {
-                MessageBox.Show("El Email ingresado es inválido, por favor, ingrese un mail válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                Telefono_Error.Visible = false;
             }
 
-            string errorConfirmarMail = Box_Mail_Confirm.Text;
-            if (string.IsNullOrEmpty(errorConfirmarMail))
+            string errorMail = Validar.EsMail(Box_Mail.Text);
+            if (errorMail !=null) //Si NO cumple con la validación, mostrará el mensaje.
             {
-                MessageBox.Show("El campo Email no puede estar vacío. Por favor, confirme su Email.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Mail_Error.Text = errorMail;
+
+                MessageBox.Show(errorMail, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else if (!Validar.ConfirmarMail(errorMail,errorConfirmarMail))
+            else
             {
-                MessageBox.Show("El Email ingresado es diferente al ingresado en el paso anterior. Por favor, confirme nuevamente el Email.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Mail_Error.Visible = false;
+            }
+
+            string correo = Box_Mail.Text;
+            string correoConfirmado = Box_Mail_Confirm.Text;
+            string errorConfirmarMail = Validar.ConfirmarMail(correo, correoConfirmado);
+
+            if (errorConfirmarMail != null)
+            {
+                ConfirmMail_Error.Text = errorConfirmarMail;
+                MessageBox.Show(errorConfirmarMail, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            string errorContraseña = Box_Pass.Text;
-            if (string.IsNullOrEmpty(errorContraseña))
+            else
             {
-                MessageBox.Show("El campo Contraseña no puede estar vacío. Por favor, ingrese una Contraseña.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ConfirmMail_Error.Visible = false;
+            }
+
+            string errorContraseña = Validar.EsContraseña(Box_Pass.Text);
+            if (errorContraseña != null)
+            {
+                Pass_Error.Text = errorContraseña;
+                MessageBox.Show(errorContraseña, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            else if (!Validar.EsContraseñaValida(errorContraseña)) //Si NO cumple con la validación, mostrará el mensaje.
+            else 
             {
-                MessageBox.Show("La Contraseña ingresada es inválida.\n\nUna contraseña válida contiene al menos una mayúscula, un número y tiene como mínimo 8 caracteres.\n\nPor favor, ingrese una Contraseña válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Pass_Error.Visible = false;
+            }
+
+            string contraseña = Box_Pass.Text;
+            string contraseñaConfirmada = Box_Pass_Confirm.Text;
+            string errorConfirmarContraseña = Validar.ConfirmarContraseña(contraseña, contraseñaConfirmada);
+
+            if (errorConfirmarContraseña != null) 
+            {
+                ConfirmPass_Error.Text = errorConfirmarContraseña;
+                MessageBox.Show(errorConfirmarContraseña, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            string errorConfirmarContraseña = Box_Pass_Confirm.Text;
-            if (string.IsNullOrEmpty(errorConfirmarContraseña))
+            else
             {
-                MessageBox.Show("El campo no puede estar vacío. Por favor, ingrese una Contraseña.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            else if (!Validar.ConfirmarContraseña(errorContraseña, errorConfirmarContraseña))
-            {
-                MessageBox.Show("La Contraseña ingresada es diferente a la ingresada en el paso anterior. Por favor, confirme nuevamente la contraseña.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                ConfirmPass_Error.Visible = false;
             }
 
-            // Si todas las validaciones pasan, mostrar mensaje de éxito
+            // Si todas las validaciones pasan, mostrar mensaje de éxito.
 
-            // Generar el nombre de usuario
-            string nombreUsuario = GenerarNombreUsuario(Box_Nombre.Text, Box_Apellido.Text, Calendario_Nacimiento.Value);
+            string nombreUsuario = GenerarNombreUsuario(Box_Nombre.Text, Box_Apellido.Text, Calendario_Nacimiento.Value); // Generar el nombre de usuario
+            string operacionSeleccionada = ComboBox_ABM.SelectedItem.ToString();
 
-            // Mensaje de éxito con el nombre de usuario generado
-            MessageBox.Show($"El usuario {nombreUsuario} fue dado de alta con éxito con el ID: 1", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Mostrar un cuadro de diálogo de confirmación al usuario
+            DialogResult resultadoConfirmacion = MessageBox.Show($"¿Desea realizar la operación de {operacionSeleccionada} para el usuario {nombreUsuario}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            DialogResult resultado = MessageBox.Show("¿Desea continuar en el Maestro de Usuarios?", "Confirmar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-           
-            if (resultado == DialogResult.No)
+            if (resultadoConfirmacion == DialogResult.Yes)
             {
-                // Cerrar el formulario actual (UserAdmin.cs)
-                this.Close(); // Esto cerrará el formulario UserAdmin y volverá automáticamente al formulario Menu si es que fue abierto desde allí
+                // Mostrar mensaje de éxito con el nombre de usuario generado
+                MessageBox.Show($"Se ha realizado la operación de {operacionSeleccionada} para el usuario {nombreUsuario}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Preguntar al usuario si desea continuar en el Maestro de Usuarios
+                DialogResult resultadoContinuar = MessageBox.Show("¿Desea continuar en el ABM de Usuarios?", "Confirmar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultadoContinuar == DialogResult.No)
+                {
+                    // Cerrar el formulario actual (UserAdmin.cs)
+                    this.Close();
+                }
+                else
+                {
+                    // Restablecer todos los campos del formulario
+                    ResetearCampos();
+                }
             }
+            // Si el usuario elige "No" en el cuadro de diálogo de confirmación, no hacemos nada
 
         } // Confirma todos los campos, si está todo correcto, genera un ID de usuario.
 
+        private bool CamposCompletos()
+        {
+            // Verificar si al menos uno de los campos está lleno
+            return !string.IsNullOrWhiteSpace(Box_Nombre.Text) ||
+                   !string.IsNullOrWhiteSpace(Box_Apellido.Text) ||
+                   !string.IsNullOrWhiteSpace(Box_DNI.Text) ||
+                   !string.IsNullOrWhiteSpace(Box_Calle.Text) ||
+                   !string.IsNullOrWhiteSpace(Box_Altura.Text) ||
+                   !string.IsNullOrWhiteSpace(Box_Depto.Text) ||
+                   !string.IsNullOrWhiteSpace(Box_Telefono.Text) ||
+                   !string.IsNullOrWhiteSpace(Box_Mail.Text) ||
+                   !string.IsNullOrWhiteSpace(Box_Mail_Confirm.Text) ||
+                   !string.IsNullOrWhiteSpace(Box_Pass.Text) ||
+                   !string.IsNullOrWhiteSpace(Box_Pass_Confirm.Text);
+        } // Función auxiliar que ayuda a detectar que haya al menos un campo completo para que el botón "Limpiar" sea interactivo.
+
+        private void Boton_Limpiar_Click(object sender, EventArgs e)
+        {
+            // Verificar si al menos un campo está completo
+            if (CamposCompletos())
+            {
+                // Mostrar un cuadro de diálogo de confirmación
+                DialogResult confirmacion = MessageBox.Show("¿Desea borrar todos los datos?\n\nSe perderán todos los cambios que no se hayan guardado.", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (confirmacion == DialogResult.Yes)
+                {
+                    // Si el usuario elige "Sí", llamar al método para resetear los campos
+                    ResetearCampos();
+                }
+                // Si el usuario elige "No", no hacer nada
+            }
+            else
+            {
+                // Mostrar un mensaje de error
+                MessageBox.Show("No hay datos para limpiar.\n\nCódigo de Error: 004", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void Boton_Cancelar_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("¿Desea cancelar la operación y volver al menú principal?", "Confirmar Cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show("¿Desea cancelar la operación y volver al menú principal?\n\nSe perderán todos los datos que no se hayan guardado", "Confirmar Cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
@@ -304,6 +441,7 @@ namespace Equipo1
 
         }
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
+
         private extern static void ReleaseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
 
@@ -315,9 +453,6 @@ namespace Equipo1
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }
