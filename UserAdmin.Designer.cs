@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserAdmin));
             this.Boton_Confirmar = new System.Windows.Forms.Button();
             this.Boton_Cancelar = new System.Windows.Forms.Button();
@@ -71,6 +72,21 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.toolTip_MayudaUserAdmin = new System.Windows.Forms.ToolTip(this.components);
+            this.MayudaNombre = new System.Windows.Forms.Label();
+            this.MayudaApellido = new System.Windows.Forms.Label();
+            this.MayudaDNI = new System.Windows.Forms.Label();
+            this.MayudaCalle = new System.Windows.Forms.Label();
+            this.MayudaAltura = new System.Windows.Forms.Label();
+            this.MayudaDepto = new System.Windows.Forms.Label();
+            this.MayudaMail = new System.Windows.Forms.Label();
+            this.MayudaConfirMail = new System.Windows.Forms.Label();
+            this.MayudaContra = new System.Windows.Forms.Label();
+            this.MayudaConfirContra = new System.Windows.Forms.Label();
+            this.MayudaTelefono = new System.Windows.Forms.Label();
+            this.MayudaFechaNacimiento = new System.Windows.Forms.Label();
+            this.MayudaOper = new System.Windows.Forms.Label();
+            this.MayudaTipoUser = new System.Windows.Forms.Label();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -122,7 +138,7 @@
             this.Label_ABM_Usuarios.Location = new System.Drawing.Point(9, 1);
             this.Label_ABM_Usuarios.Margin = new System.Windows.Forms.Padding(0);
             this.Label_ABM_Usuarios.Name = "Label_ABM_Usuarios";
-            this.Label_ABM_Usuarios.Size = new System.Drawing.Size(248, 37);
+            this.Label_ABM_Usuarios.Size = new System.Drawing.Size(313, 45);
             this.Label_ABM_Usuarios.TabIndex = 20;
             this.Label_ABM_Usuarios.Text = "ABM de Usuarios";
             this.Label_ABM_Usuarios.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -135,7 +151,7 @@
             this.ComboBox_Rol.Location = new System.Drawing.Point(669, 189);
             this.ComboBox_Rol.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ComboBox_Rol.Name = "ComboBox_Rol";
-            this.ComboBox_Rol.Size = new System.Drawing.Size(208, 29);
+            this.ComboBox_Rol.Size = new System.Drawing.Size(208, 35);
             this.ComboBox_Rol.TabIndex = 1;
             // 
             // Label_Tipo_Usuario
@@ -145,7 +161,7 @@
             this.Label_Tipo_Usuario.Location = new System.Drawing.Point(656, 163);
             this.Label_Tipo_Usuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Tipo_Usuario.Name = "Label_Tipo_Usuario";
-            this.Label_Tipo_Usuario.Size = new System.Drawing.Size(135, 23);
+            this.Label_Tipo_Usuario.Size = new System.Drawing.Size(174, 29);
             this.Label_Tipo_Usuario.TabIndex = 4;
             this.Label_Tipo_Usuario.Text = "Tipo de Usuario";
             // 
@@ -157,7 +173,7 @@
             this.ComboBox_ABM.Location = new System.Drawing.Point(297, 189);
             this.ComboBox_ABM.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ComboBox_ABM.Name = "ComboBox_ABM";
-            this.ComboBox_ABM.Size = new System.Drawing.Size(208, 29);
+            this.ComboBox_ABM.Size = new System.Drawing.Size(208, 35);
             this.ComboBox_ABM.TabIndex = 0;
             this.ComboBox_ABM.SelectedIndexChanged += new System.EventHandler(this.ComboBox_ABM_SelectedIndexChanged);
             // 
@@ -168,7 +184,7 @@
             this.Label_Operacion.Location = new System.Drawing.Point(276, 163);
             this.Label_Operacion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Operacion.Name = "Label_Operacion";
-            this.Label_Operacion.Size = new System.Drawing.Size(90, 23);
+            this.Label_Operacion.Size = new System.Drawing.Size(117, 29);
             this.Label_Operacion.TabIndex = 6;
             this.Label_Operacion.Text = "Operación";
             // 
@@ -179,7 +195,7 @@
             this.Label_Nombre.Location = new System.Drawing.Point(164, 353);
             this.Label_Nombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Nombre.Name = "Label_Nombre";
-            this.Label_Nombre.Size = new System.Drawing.Size(75, 23);
+            this.Label_Nombre.Size = new System.Drawing.Size(96, 29);
             this.Label_Nombre.TabIndex = 7;
             this.Label_Nombre.Text = "Nombre";
             // 
@@ -190,7 +206,7 @@
             this.Label_Apellido.Location = new System.Drawing.Point(512, 353);
             this.Label_Apellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Apellido.Name = "Label_Apellido";
-            this.Label_Apellido.Size = new System.Drawing.Size(74, 23);
+            this.Label_Apellido.Size = new System.Drawing.Size(95, 29);
             this.Label_Apellido.TabIndex = 8;
             this.Label_Apellido.Text = "Apellido";
             // 
@@ -201,7 +217,7 @@
             this.Label_Calle.Location = new System.Drawing.Point(165, 533);
             this.Label_Calle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Calle.Name = "Label_Calle";
-            this.Label_Calle.Size = new System.Drawing.Size(49, 23);
+            this.Label_Calle.Size = new System.Drawing.Size(62, 29);
             this.Label_Calle.TabIndex = 9;
             this.Label_Calle.Text = "Calle";
             // 
@@ -212,7 +228,7 @@
             this.Label_Telefono.Location = new System.Drawing.Point(1211, 531);
             this.Label_Telefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Telefono.Name = "Label_Telefono";
-            this.Label_Telefono.Size = new System.Drawing.Size(80, 23);
+            this.Label_Telefono.Size = new System.Drawing.Size(103, 29);
             this.Label_Telefono.TabIndex = 10;
             this.Label_Telefono.Text = "Teléfono";
             // 
@@ -223,7 +239,7 @@
             this.Label_Email.Location = new System.Drawing.Point(165, 705);
             this.Label_Email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Email.Name = "Label_Email";
-            this.Label_Email.Size = new System.Drawing.Size(53, 23);
+            this.Label_Email.Size = new System.Drawing.Size(69, 29);
             this.Label_Email.TabIndex = 11;
             this.Label_Email.Text = "Email";
             // 
@@ -234,7 +250,7 @@
             this.Label_DNI.Location = new System.Drawing.Point(860, 353);
             this.Label_DNI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_DNI.Name = "Label_DNI";
-            this.Label_DNI.Size = new System.Drawing.Size(41, 23);
+            this.Label_DNI.Size = new System.Drawing.Size(53, 29);
             this.Label_DNI.TabIndex = 12;
             this.Label_DNI.Text = "DNI";
             // 
@@ -245,7 +261,7 @@
             this.Label_F_Nacimiento.Location = new System.Drawing.Point(1211, 353);
             this.Label_F_Nacimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_F_Nacimiento.Name = "Label_F_Nacimiento";
-            this.Label_F_Nacimiento.Size = new System.Drawing.Size(177, 23);
+            this.Label_F_Nacimiento.Size = new System.Drawing.Size(229, 29);
             this.Label_F_Nacimiento.TabIndex = 13;
             this.Label_F_Nacimiento.Text = "Fecha de Nacimiento";
             // 
@@ -254,7 +270,7 @@
             this.Calendario_Nacimiento.Font = new System.Drawing.Font("Nunito", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Calendario_Nacimiento.Location = new System.Drawing.Point(1222, 379);
             this.Calendario_Nacimiento.Name = "Calendario_Nacimiento";
-            this.Calendario_Nacimiento.Size = new System.Drawing.Size(208, 27);
+            this.Calendario_Nacimiento.Size = new System.Drawing.Size(208, 32);
             this.Calendario_Nacimiento.TabIndex = 5;
             // 
             // Label_ConfirmarEmail
@@ -264,7 +280,7 @@
             this.Label_ConfirmarEmail.Location = new System.Drawing.Point(512, 704);
             this.Label_ConfirmarEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_ConfirmarEmail.Name = "Label_ConfirmarEmail";
-            this.Label_ConfirmarEmail.Size = new System.Drawing.Size(137, 23);
+            this.Label_ConfirmarEmail.Size = new System.Drawing.Size(178, 29);
             this.Label_ConfirmarEmail.TabIndex = 16;
             this.Label_ConfirmarEmail.Text = "Confirmar Email";
             // 
@@ -275,7 +291,7 @@
             this.Label_Contraseña.Location = new System.Drawing.Point(860, 705);
             this.Label_Contraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Contraseña.Name = "Label_Contraseña";
-            this.Label_Contraseña.Size = new System.Drawing.Size(101, 23);
+            this.Label_Contraseña.Size = new System.Drawing.Size(130, 29);
             this.Label_Contraseña.TabIndex = 17;
             this.Label_Contraseña.Text = "Contraseña";
             // 
@@ -286,7 +302,7 @@
             this.Label_ConfirmarContraseña.Location = new System.Drawing.Point(1211, 705);
             this.Label_ConfirmarContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_ConfirmarContraseña.Name = "Label_ConfirmarContraseña";
-            this.Label_ConfirmarContraseña.Size = new System.Drawing.Size(185, 23);
+            this.Label_ConfirmarContraseña.Size = new System.Drawing.Size(239, 29);
             this.Label_ConfirmarContraseña.TabIndex = 18;
             this.Label_ConfirmarContraseña.Text = "Confirmar Contraseña";
             // 
@@ -295,7 +311,7 @@
             this.Box_Nombre.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Nombre.Location = new System.Drawing.Point(181, 379);
             this.Box_Nombre.Name = "Box_Nombre";
-            this.Box_Nombre.Size = new System.Drawing.Size(208, 28);
+            this.Box_Nombre.Size = new System.Drawing.Size(208, 34);
             this.Box_Nombre.TabIndex = 2;
             this.Box_Nombre.TextChanged += new System.EventHandler(this.Box_Nombre_TextChanged);
             // 
@@ -304,7 +320,7 @@
             this.Box_Apellido.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Apellido.Location = new System.Drawing.Point(528, 379);
             this.Box_Apellido.Name = "Box_Apellido";
-            this.Box_Apellido.Size = new System.Drawing.Size(208, 28);
+            this.Box_Apellido.Size = new System.Drawing.Size(208, 34);
             this.Box_Apellido.TabIndex = 3;
             this.Box_Apellido.TextChanged += new System.EventHandler(this.Box_Apellido_TextChanged);
             // 
@@ -313,8 +329,9 @@
             this.Box_DNI.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_DNI.Location = new System.Drawing.Point(875, 379);
             this.Box_DNI.Name = "Box_DNI";
-            this.Box_DNI.Size = new System.Drawing.Size(208, 28);
+            this.Box_DNI.Size = new System.Drawing.Size(208, 34);
             this.Box_DNI.TabIndex = 4;
+            this.toolTip_MayudaUserAdmin.SetToolTip(this.Box_DNI, "Indique DNI del usuario");
             this.Box_DNI.TextChanged += new System.EventHandler(this.Box_DNI_TextChanged);
             // 
             // Box_Calle
@@ -322,7 +339,7 @@
             this.Box_Calle.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Calle.Location = new System.Drawing.Point(181, 561);
             this.Box_Calle.Name = "Box_Calle";
-            this.Box_Calle.Size = new System.Drawing.Size(208, 28);
+            this.Box_Calle.Size = new System.Drawing.Size(208, 34);
             this.Box_Calle.TabIndex = 6;
             this.Box_Calle.TextChanged += new System.EventHandler(this.Box_Calle_TextChanged);
             // 
@@ -331,7 +348,7 @@
             this.Box_Mail.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Mail.Location = new System.Drawing.Point(181, 731);
             this.Box_Mail.Name = "Box_Mail";
-            this.Box_Mail.Size = new System.Drawing.Size(208, 28);
+            this.Box_Mail.Size = new System.Drawing.Size(208, 34);
             this.Box_Mail.TabIndex = 10;
             this.Box_Mail.TextChanged += new System.EventHandler(this.Box_Mail_TextChanged);
             // 
@@ -340,7 +357,7 @@
             this.Box_Pass.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Pass.Location = new System.Drawing.Point(875, 730);
             this.Box_Pass.Name = "Box_Pass";
-            this.Box_Pass.Size = new System.Drawing.Size(208, 28);
+            this.Box_Pass.Size = new System.Drawing.Size(208, 34);
             this.Box_Pass.TabIndex = 12;
             // 
             // Box_Telefono
@@ -348,7 +365,7 @@
             this.Box_Telefono.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Telefono.Location = new System.Drawing.Point(1222, 560);
             this.Box_Telefono.Name = "Box_Telefono";
-            this.Box_Telefono.Size = new System.Drawing.Size(208, 28);
+            this.Box_Telefono.Size = new System.Drawing.Size(208, 34);
             this.Box_Telefono.TabIndex = 9;
             // 
             // Box_Mail_Confirm
@@ -356,7 +373,7 @@
             this.Box_Mail_Confirm.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Mail_Confirm.Location = new System.Drawing.Point(528, 730);
             this.Box_Mail_Confirm.Name = "Box_Mail_Confirm";
-            this.Box_Mail_Confirm.Size = new System.Drawing.Size(208, 28);
+            this.Box_Mail_Confirm.Size = new System.Drawing.Size(208, 34);
             this.Box_Mail_Confirm.TabIndex = 11;
             // 
             // Box_Pass_Confirm
@@ -364,7 +381,7 @@
             this.Box_Pass_Confirm.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Pass_Confirm.Location = new System.Drawing.Point(1222, 730);
             this.Box_Pass_Confirm.Name = "Box_Pass_Confirm";
-            this.Box_Pass_Confirm.Size = new System.Drawing.Size(208, 28);
+            this.Box_Pass_Confirm.Size = new System.Drawing.Size(208, 34);
             this.Box_Pass_Confirm.TabIndex = 13;
             // 
             // Label_Altura
@@ -374,7 +391,7 @@
             this.Label_Altura.Location = new System.Drawing.Point(512, 532);
             this.Label_Altura.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Altura.Name = "Label_Altura";
-            this.Label_Altura.Size = new System.Drawing.Size(57, 23);
+            this.Label_Altura.Size = new System.Drawing.Size(75, 29);
             this.Label_Altura.TabIndex = 21;
             this.Label_Altura.Text = "Altura";
             // 
@@ -385,7 +402,7 @@
             this.Label_Departamento.Location = new System.Drawing.Point(860, 533);
             this.Label_Departamento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Departamento.Name = "Label_Departamento";
-            this.Label_Departamento.Size = new System.Drawing.Size(125, 23);
+            this.Label_Departamento.Size = new System.Drawing.Size(160, 29);
             this.Label_Departamento.TabIndex = 22;
             this.Label_Departamento.Text = "Departamento";
             // 
@@ -394,8 +411,9 @@
             this.Box_Altura.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Altura.Location = new System.Drawing.Point(528, 561);
             this.Box_Altura.Name = "Box_Altura";
-            this.Box_Altura.Size = new System.Drawing.Size(208, 28);
+            this.Box_Altura.Size = new System.Drawing.Size(208, 34);
             this.Box_Altura.TabIndex = 7;
+            this.toolTip_MayudaUserAdmin.SetToolTip(this.Box_Altura, "Indique la altura de la calle donde reside el usuario.");
             this.Box_Altura.TextChanged += new System.EventHandler(this.Box_Altura_TextChanged);
             // 
             // Box_Depto
@@ -403,8 +421,9 @@
             this.Box_Depto.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Depto.Location = new System.Drawing.Point(875, 561);
             this.Box_Depto.Name = "Box_Depto";
-            this.Box_Depto.Size = new System.Drawing.Size(208, 28);
+            this.Box_Depto.Size = new System.Drawing.Size(208, 34);
             this.Box_Depto.TabIndex = 8;
+            this.toolTip_MayudaUserAdmin.SetToolTip(this.Box_Depto, "Indique el departamento donde reside el usuario. Opcional.");
             this.Box_Depto.TextChanged += new System.EventHandler(this.Box_Depto_TextChanged);
             // 
             // BarraTitulo
@@ -539,15 +558,184 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Credenciales de Usuario";
             // 
+            // MayudaNombre
+            // 
+            this.MayudaNombre.AutoSize = true;
+            this.MayudaNombre.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaNombre.Location = new System.Drawing.Point(395, 388);
+            this.MayudaNombre.Name = "MayudaNombre";
+            this.MayudaNombre.Size = new System.Drawing.Size(16, 17);
+            this.MayudaNombre.TabIndex = 28;
+            this.MayudaNombre.Text = "?";
+            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaNombre, "Indique el nombre del usuario.");
+            this.MayudaNombre.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // MayudaApellido
+            // 
+            this.MayudaApellido.AutoSize = true;
+            this.MayudaApellido.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaApellido.Location = new System.Drawing.Point(742, 388);
+            this.MayudaApellido.Name = "MayudaApellido";
+            this.MayudaApellido.Size = new System.Drawing.Size(16, 17);
+            this.MayudaApellido.TabIndex = 29;
+            this.MayudaApellido.Text = "?";
+            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaApellido, "Indique apellido del usuario.");
+            // 
+            // MayudaDNI
+            // 
+            this.MayudaDNI.AutoSize = true;
+            this.MayudaDNI.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaDNI.Location = new System.Drawing.Point(1089, 388);
+            this.MayudaDNI.Name = "MayudaDNI";
+            this.MayudaDNI.Size = new System.Drawing.Size(16, 17);
+            this.MayudaDNI.TabIndex = 30;
+            this.MayudaDNI.Text = "?";
+            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaDNI, "Indique numero de DNI del usuario.");
+            // 
+            // MayudaCalle
+            // 
+            this.MayudaCalle.AutoSize = true;
+            this.MayudaCalle.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaCalle.Location = new System.Drawing.Point(395, 569);
+            this.MayudaCalle.Name = "MayudaCalle";
+            this.MayudaCalle.Size = new System.Drawing.Size(16, 17);
+            this.MayudaCalle.TabIndex = 31;
+            this.MayudaCalle.Text = "?";
+            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaCalle, "Indique el nombre de la calle donde reside el usuario.");
+            // 
+            // MayudaAltura
+            // 
+            this.MayudaAltura.AutoSize = true;
+            this.MayudaAltura.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaAltura.Location = new System.Drawing.Point(742, 570);
+            this.MayudaAltura.Name = "MayudaAltura";
+            this.MayudaAltura.Size = new System.Drawing.Size(16, 17);
+            this.MayudaAltura.TabIndex = 32;
+            this.MayudaAltura.Text = "?";
+            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaAltura, "Indique la altura de la calle donde reside el usuario.");
+            // 
+            // MayudaDepto
+            // 
+            this.MayudaDepto.AutoSize = true;
+            this.MayudaDepto.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaDepto.Location = new System.Drawing.Point(1089, 570);
+            this.MayudaDepto.Name = "MayudaDepto";
+            this.MayudaDepto.Size = new System.Drawing.Size(16, 17);
+            this.MayudaDepto.TabIndex = 33;
+            this.MayudaDepto.Text = "?";
+            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaDepto, "Indique el departamento donde reside el usuario. Campo opcional.");
+            // 
+            // MayudaMail
+            // 
+            this.MayudaMail.AutoSize = true;
+            this.MayudaMail.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaMail.Location = new System.Drawing.Point(395, 740);
+            this.MayudaMail.Name = "MayudaMail";
+            this.MayudaMail.Size = new System.Drawing.Size(16, 17);
+            this.MayudaMail.TabIndex = 34;
+            this.MayudaMail.Text = "?";
+            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaMail, "Indique el correo electronico del usuario.");
+            // 
+            // MayudaConfirMail
+            // 
+            this.MayudaConfirMail.AutoSize = true;
+            this.MayudaConfirMail.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaConfirMail.Location = new System.Drawing.Point(742, 739);
+            this.MayudaConfirMail.Name = "MayudaConfirMail";
+            this.MayudaConfirMail.Size = new System.Drawing.Size(16, 17);
+            this.MayudaConfirMail.TabIndex = 35;
+            this.MayudaConfirMail.Text = "?";
+            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaConfirMail, "Confirme el correo electronico del usuario.");
+            // 
+            // MayudaContra
+            // 
+            this.MayudaContra.AutoSize = true;
+            this.MayudaContra.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaContra.Location = new System.Drawing.Point(1089, 740);
+            this.MayudaContra.Name = "MayudaContra";
+            this.MayudaContra.Size = new System.Drawing.Size(16, 17);
+            this.MayudaContra.TabIndex = 36;
+            this.MayudaContra.Text = "?";
+            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaContra, "Indique la contraseña del usuario.");
+            // 
+            // MayudaConfirContra
+            // 
+            this.MayudaConfirContra.AutoSize = true;
+            this.MayudaConfirContra.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaConfirContra.Location = new System.Drawing.Point(1434, 740);
+            this.MayudaConfirContra.Name = "MayudaConfirContra";
+            this.MayudaConfirContra.Size = new System.Drawing.Size(16, 17);
+            this.MayudaConfirContra.TabIndex = 37;
+            this.MayudaConfirContra.Text = "?";
+            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaConfirContra, "Confirme la contraseña del Usuario");
+            // 
+            // MayudaTelefono
+            // 
+            this.MayudaTelefono.AutoSize = true;
+            this.MayudaTelefono.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaTelefono.Location = new System.Drawing.Point(1434, 570);
+            this.MayudaTelefono.Name = "MayudaTelefono";
+            this.MayudaTelefono.Size = new System.Drawing.Size(16, 17);
+            this.MayudaTelefono.TabIndex = 38;
+            this.MayudaTelefono.Text = "?";
+            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaTelefono, "Indique el telefono de contacto del usuario.");
+            // 
+            // MayudaFechaNacimiento
+            // 
+            this.MayudaFechaNacimiento.AutoSize = true;
+            this.MayudaFechaNacimiento.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaFechaNacimiento.Location = new System.Drawing.Point(1434, 388);
+            this.MayudaFechaNacimiento.Name = "MayudaFechaNacimiento";
+            this.MayudaFechaNacimiento.Size = new System.Drawing.Size(16, 17);
+            this.MayudaFechaNacimiento.TabIndex = 39;
+            this.MayudaFechaNacimiento.Text = "?";
+            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaFechaNacimiento, "Indique la fecha de nacimiento del usuario. Formato DD/MM/AAAA");
+            // 
+            // MayudaOper
+            // 
+            this.MayudaOper.AutoSize = true;
+            this.MayudaOper.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaOper.Location = new System.Drawing.Point(512, 198);
+            this.MayudaOper.Name = "MayudaOper";
+            this.MayudaOper.Size = new System.Drawing.Size(16, 17);
+            this.MayudaOper.TabIndex = 40;
+            this.MayudaOper.Text = "?";
+            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaOper, "Indique la operacion que desea realizar en el maestro.");
+            // 
+            // MayudaTipoUser
+            // 
+            this.MayudaTipoUser.AutoSize = true;
+            this.MayudaTipoUser.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaTipoUser.Location = new System.Drawing.Point(884, 198);
+            this.MayudaTipoUser.Name = "MayudaTipoUser";
+            this.MayudaTipoUser.Size = new System.Drawing.Size(16, 17);
+            this.MayudaTipoUser.TabIndex = 41;
+            this.MayudaTipoUser.Text = "?";
+            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaTipoUser, "Indique el tipo de usuario que desea.");
+            // 
             // UserAdmin
             // 
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1496, 897);
             this.ControlBox = false;
+            this.Controls.Add(this.MayudaTipoUser);
+            this.Controls.Add(this.MayudaOper);
+            this.Controls.Add(this.MayudaFechaNacimiento);
+            this.Controls.Add(this.MayudaTelefono);
+            this.Controls.Add(this.MayudaConfirContra);
+            this.Controls.Add(this.MayudaContra);
+            this.Controls.Add(this.MayudaConfirMail);
+            this.Controls.Add(this.MayudaMail);
+            this.Controls.Add(this.MayudaDepto);
+            this.Controls.Add(this.MayudaAltura);
+            this.Controls.Add(this.MayudaCalle);
+            this.Controls.Add(this.MayudaDNI);
+            this.Controls.Add(this.MayudaApellido);
+            this.Controls.Add(this.MayudaNombre);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -646,6 +834,21 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.ToolTip toolTip_MayudaUserAdmin;
+        private System.Windows.Forms.Label MayudaNombre;
+        private System.Windows.Forms.Label MayudaApellido;
+        private System.Windows.Forms.Label MayudaDNI;
+        private System.Windows.Forms.Label MayudaCalle;
+        private System.Windows.Forms.Label MayudaAltura;
+        private System.Windows.Forms.Label MayudaDepto;
+        private System.Windows.Forms.Label MayudaMail;
+        private System.Windows.Forms.Label MayudaConfirMail;
+        private System.Windows.Forms.Label MayudaContra;
+        private System.Windows.Forms.Label MayudaConfirContra;
+        private System.Windows.Forms.Label MayudaTelefono;
+        private System.Windows.Forms.Label MayudaFechaNacimiento;
+        private System.Windows.Forms.Label MayudaOper;
+        private System.Windows.Forms.Label MayudaTipoUser;
     }
 }
 
