@@ -7,7 +7,7 @@ namespace Form_Equipo1
     public partial class LogIn : Form
     {
         // Definir las credenciales de administrador
-        private const string UsuarioPorDefecto = "ELECTROADMIN24";
+        private const string UsuarioPorDefecto = "ADMINI24";
         private const string ContraseñaPorDefecto = "CAI20241";
 
         public LogIn()

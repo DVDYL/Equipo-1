@@ -13,32 +13,46 @@ namespace Equipo1
 {
     public partial class UserAdmin : Form
     {
+        private Dictionary<string, List<string>> usuariosPorRol = new Dictionary<string, List<string>>();
+
         public UserAdmin()
         {
-            InitializeComponent(); // Inicializamos el formulario.
 
+            InitializeComponent(); // Inicializamos el formulario.
+            
             Operacion_Null.Visible = false; // Ocultar el TextBox Operacion_Null
             Rol_Null.Visible = false; // Ocultar el TextBox Rol_Null
+            Label_Usuario.Visible = false; // Ocultar el TextBox Label_Usuario
+            ComboBox_Usuario.Visible = false;
 
             // Agregar opciones al ComboBox de tipo de ABM una sola vez al cargar el formulario
             ComboBox_ABM.Items.Add("Alta");
             ComboBox_ABM.Items.Add("Modificación");
             ComboBox_ABM.Items.Add("Baja");
 
-            // Desactivar la capacidad de edición del ComboBox_ABM
-            ComboBox_ABM.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            // Agregar opciones al ComboBox de tipo de usuario una sola vez al cargar el formulario
+            // Agregar opciones al ComboBox del rol una sola vez al cargar el formulario
             ComboBox_Rol.Items.Add("Administrador");
             ComboBox_Rol.Items.Add("Supervisor");
             ComboBox_Rol.Items.Add("Vendedor");
 
-            // Desactivar la capacidad de edición del ComboBox_Rol
+            // Asociar usuarios a roles
+            usuariosPorRol.Add("Administrador", new List<string> { "01 - ADMINI24" });
+            usuariosPorRol.Add("Supervisor", new List<string> { "02 - SUPERV24" });
+            usuariosPorRol.Add("Vendedor", new List<string> { "03 - VENDED24" });
+
+            // Manejar el evento SelectedIndexChanged del primer ComboBox
+            ComboBox_Rol.SelectedIndexChanged += ComboBox_Rol_SelectedIndexChanged;
+
+            // Desactivar la capacidad de edición de los tres ComboBox
+
+            ComboBox_ABM.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBox_Rol.DropDownStyle = ComboBoxStyle.DropDownList;
+            ComboBox_Usuario.DropDownStyle = ComboBoxStyle.DropDownList;
 
             // Establecer el formato de visualización predeterminado para la fecha de nacimiento
             Calendario_Nacimiento.Format = DateTimePickerFormat.Custom;
             Calendario_Nacimiento.CustomFormat = "dd/MM/yyyy";
+
         } // Esta Función prepara el formulario y sus restricciones
 
         private void ResetearCampos()
@@ -46,6 +60,7 @@ namespace Equipo1
             // Reiniciar los valores de todos los campos del formulario a sus valores predeterminados
             ComboBox_ABM.SelectedIndex = -1;
             ComboBox_Rol.SelectedIndex = -1;
+            ComboBox_Usuario.SelectedIndex = -1;
             Box_Nombre.Text = "";
             Box_Apellido.Text = "";
             Box_DNI.Text = "";
@@ -74,6 +89,11 @@ namespace Equipo1
             ConfirmMail_Error.Visible = false;
             Pass_Error.Visible = false;
             ConfirmPass_Error.Visible = false;
+
+            // Volver a ocultar el Combobox_Usuario
+            Label_Usuario.Visible = false; 
+            ComboBox_Usuario.Visible = false;
+
         } // Blanquea el Formulario
 
         private string GenerarNombreUsuario(string nombre, string apellido, DateTime fechaNacimiento)
@@ -93,10 +113,55 @@ namespace Equipo1
             return nombreUsuario;
         } // Función para autogenerar el nombre del usuario
 
-        private void ComboBox_ABM_SelectedIndexChanged(object sender, EventArgs e) 
+        private void ComboBox_ABM_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // La validación de este componente se deberá realizar cuando el usuario haga clic en el evento "Confirmar"
+            // Verificar si se ha seleccionado un elemento en ComboBox_ABM
+            if (ComboBox_ABM.SelectedIndex != -1)
+            {
+                // Verificar si se seleccionó "Modificación" o "Baja"
+                if (ComboBox_ABM.SelectedItem.ToString() == "Modificación" || ComboBox_ABM.SelectedItem.ToString() == "Baja")
+                {
+                    // Mostrar ComboBox_Usuario y Label_Usuario
+                    ComboBox_Usuario.Visible = true;
+                    Label_Usuario.Visible = true;
+                }
+                else
+                {
+                    // Ocultar ComboBox_Usuario y Label_Usuario
+                    ComboBox_Usuario.Visible = false;
+                    Label_Usuario.Visible = false;
+                }
+            }
+            else
+            {
+                // Si no se ha seleccionado ningún elemento en ComboBox_ABM, ocultar ComboBox_Usuario y Label_Usuario
+                ComboBox_Usuario.Visible = false;
+                Label_Usuario.Visible = false;
+            }
         } // Detecta Cambios en el campo "Operación"
+
+        private void ComboBox_Rol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Limpiar ComboBox_Usuario
+            ComboBox_Usuario.Items.Clear();
+
+            // Verificar si hay un elemento seleccionado en ComboBox_Rol
+            if (ComboBox_Rol.SelectedItem != null)
+            {
+                // Obtener el rol seleccionado
+                string selectedRol = ComboBox_Rol.SelectedItem.ToString();
+
+                // Verificar si el rol seleccionado existe en el diccionario
+                if (usuariosPorRol.ContainsKey(selectedRol))
+                {
+                    // Agregar usuarios asociados al rol seleccionado
+                    foreach (string usuario in usuariosPorRol[selectedRol])
+                    {
+                        ComboBox_Usuario.Items.Add(usuario);
+                    }
+                }
+            }
+        } // Detecta Cambios en el campo "Rol"
 
         private void Box_Nombre_TextChanged(object sender, EventArgs e)
         {
