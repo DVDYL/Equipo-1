@@ -66,21 +66,46 @@ namespace Equipo1
 
         public static string EsEdadLaboral(DateTime fechaNacimiento)
         {
+            {
+                DateTime fechaHoy = DateTime.Today;// Obtener la fecha de hoy
+                if
+                (fechaNacimiento >= fechaHoy) // Verificar si la fecha de nacimiento es mayor o igual al día de hoy
+                {
+                    return
+                    "No se puede seleccionar un día posterior a hoy."
+                    ;
+                }
 
-            DateTime fechaHace18 = DateTime.Today.AddYears(-18); // Calcular fecha de hace 18 años
-            DateTime fechaHace65 = DateTime.Today.AddYears(-65); // Calcular fecha de hace 65 años
+                else
+                {
+                    DateTime fechaHace18 = fechaHoy.AddYears(-18);
+                    // Calcular fecha de hace 18 años
+                    DateTime fechaHace65 = fechaHoy.AddYears(-65);
+                    // Calcular fecha de hace 65 años
 
-            if (fechaNacimiento >= fechaHace18) // Verificar si la fecha de nacimiento está entre hace 18 y hace 65 años
-            {
-                return "No se permite incorporar usuarios menores de edad.";
-            }
-            else if (fechaNacimiento <= fechaHace65)
-            {
-                return "No se permite incorporar usuarios en edad jubilatoria.";
-            }
-            else
-            {
-                return null; // Si la fecha de nacimiento cumple con los requisitos, no hay error
+                    if
+                    (fechaNacimiento >= fechaHace18) // Verificar si la fecha de nacimiento está entre hace 18 y hace 65 años
+
+                    {
+                        return
+                        "No se permite incorporar usuarios menores de edad."
+                        ;
+                    }
+
+                    else if
+                    (fechaNacimiento <= fechaHace65)
+                    {
+                        return
+                        "No se permite incorporar usuarios en edad jubilatoria."
+                        ;
+                    }
+
+                    else
+                    {
+                        return
+                        null; // Si la fecha de nacimiento cumple con los requisitos, no hay error
+                    }
+                }
             }
         }
 
