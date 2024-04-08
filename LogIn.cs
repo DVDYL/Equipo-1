@@ -23,12 +23,18 @@ namespace Form_Equipo1
             string errorMessage; // Variable para almacenar el mensaje de error de la validación
 
             // Verificar si el usuario existe y obtener el mensaje de error si no es válido
-            bool usuarioExiste = Validar.EsUsuario(usuarioIngresado, out errorMessage);
-
-            if (usuarioExiste)
+            //bool usuarioExiste = Validar.EsUsuario(usuarioIngresado, out errorMessage);
+            //comentado para que no revele información de la seguridad en el login. Cambio la validación solamente
+            //a un bien/mal.
+            bool UsuarioCorrecto = Validar.UsuarioValido(usuarioIngresado, out errorMessage);
+                
+            if (UsuarioCorrecto)
             {
                 // Verificar si la contraseña ingresada es válida
-                string errorContraseña = Validar.EsContraseña(contraseñaIngresada);
+                //string errorContraseña = Validar.EsContraseña(contraseñaIngresada);
+                //comentado para que no revele información de la seguridad en el login. Cambio la validación solamente
+                //a un bien/mal.
+                string errorContraseña = Validar.ContraseñaValida(contraseñaIngresada);
 
                 if (errorContraseña == null)
                 {
@@ -43,7 +49,7 @@ namespace Form_Equipo1
                     else
                     {
                         // El usuario existe pero la contraseña no es la correcta
-                        MessageBox.Show("La contraseña ingresada para el usuario es incorrecta.\n\nCódigo de Error: 001", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show( errorContraseña + "\n\nCódigo de Error: 001", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -79,5 +85,14 @@ namespace Form_Equipo1
             Box_Pass.UseSystemPasswordChar = true; // Oculta la contraseña
         } // Muestra la contraseña al hacer click en el ojo
 
+        private void Box_Usuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RecuperaPass_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
