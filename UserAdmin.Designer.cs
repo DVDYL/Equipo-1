@@ -154,10 +154,10 @@
             this.Label_ABM_Usuarios.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Label_ABM_Usuarios.AutoSize = true;
             this.Label_ABM_Usuarios.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_ABM_Usuarios.Location = new System.Drawing.Point(9, 1);
+            this.Label_ABM_Usuarios.Location = new System.Drawing.Point(-21, 1);
             this.Label_ABM_Usuarios.Margin = new System.Windows.Forms.Padding(0);
             this.Label_ABM_Usuarios.Name = "Label_ABM_Usuarios";
-            this.Label_ABM_Usuarios.Size = new System.Drawing.Size(248, 37);
+            this.Label_ABM_Usuarios.Size = new System.Drawing.Size(252, 36);
             this.Label_ABM_Usuarios.TabIndex = 20;
             this.Label_ABM_Usuarios.Text = "ABM de Usuarios";
             this.Label_ABM_Usuarios.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -333,7 +333,7 @@
             this.Box_Nombre.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Nombre.Location = new System.Drawing.Point(190, 355);
             this.Box_Nombre.Name = "Box_Nombre";
-            this.Box_Nombre.Size = new System.Drawing.Size(208, 28);
+            this.Box_Nombre.Size = new System.Drawing.Size(208, 29);
             this.Box_Nombre.TabIndex = 2;
             this.Box_Nombre.TextChanged += new System.EventHandler(this.Box_Nombre_TextChanged);
             // 
@@ -342,7 +342,7 @@
             this.Box_Apellido.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Apellido.Location = new System.Drawing.Point(537, 355);
             this.Box_Apellido.Name = "Box_Apellido";
-            this.Box_Apellido.Size = new System.Drawing.Size(208, 28);
+            this.Box_Apellido.Size = new System.Drawing.Size(208, 29);
             this.Box_Apellido.TabIndex = 3;
             this.Box_Apellido.TextChanged += new System.EventHandler(this.Box_Apellido_TextChanged);
             // 
@@ -351,7 +351,7 @@
             this.Box_DNI.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_DNI.Location = new System.Drawing.Point(884, 355);
             this.Box_DNI.Name = "Box_DNI";
-            this.Box_DNI.Size = new System.Drawing.Size(208, 28);
+            this.Box_DNI.Size = new System.Drawing.Size(208, 29);
             this.Box_DNI.TabIndex = 4;
             this.toolTip_MayudaUserAdmin.SetToolTip(this.Box_DNI, "Indique DNI del usuario");
             this.Box_DNI.TextChanged += new System.EventHandler(this.Box_DNI_TextChanged);
@@ -361,7 +361,7 @@
             this.Box_Calle.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Calle.Location = new System.Drawing.Point(189, 534);
             this.Box_Calle.Name = "Box_Calle";
-            this.Box_Calle.Size = new System.Drawing.Size(208, 28);
+            this.Box_Calle.Size = new System.Drawing.Size(208, 29);
             this.Box_Calle.TabIndex = 6;
             this.Box_Calle.TextChanged += new System.EventHandler(this.Box_Calle_TextChanged);
             // 
@@ -370,7 +370,7 @@
             this.Box_Mail.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Mail.Location = new System.Drawing.Point(189, 708);
             this.Box_Mail.Name = "Box_Mail";
-            this.Box_Mail.Size = new System.Drawing.Size(208, 28);
+            this.Box_Mail.Size = new System.Drawing.Size(208, 29);
             this.Box_Mail.TabIndex = 10;
             this.Box_Mail.TextChanged += new System.EventHandler(this.Box_Mail_TextChanged);
             // 
@@ -379,7 +379,7 @@
             this.Box_Pass.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Pass.Location = new System.Drawing.Point(883, 707);
             this.Box_Pass.Name = "Box_Pass";
-            this.Box_Pass.Size = new System.Drawing.Size(208, 28);
+            this.Box_Pass.Size = new System.Drawing.Size(208, 29);
             this.Box_Pass.TabIndex = 12;
             // 
             // Box_Telefono
@@ -387,7 +387,7 @@
             this.Box_Telefono.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Telefono.Location = new System.Drawing.Point(1230, 533);
             this.Box_Telefono.Name = "Box_Telefono";
-            this.Box_Telefono.Size = new System.Drawing.Size(208, 28);
+            this.Box_Telefono.Size = new System.Drawing.Size(208, 29);
             this.Box_Telefono.TabIndex = 9;
             // 
             // Box_Mail_Confirm
@@ -395,7 +395,7 @@
             this.Box_Mail_Confirm.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Mail_Confirm.Location = new System.Drawing.Point(536, 707);
             this.Box_Mail_Confirm.Name = "Box_Mail_Confirm";
-            this.Box_Mail_Confirm.Size = new System.Drawing.Size(208, 28);
+            this.Box_Mail_Confirm.Size = new System.Drawing.Size(208, 29);
             this.Box_Mail_Confirm.TabIndex = 11;
             // 
             // Box_Pass_Confirm
@@ -403,7 +403,7 @@
             this.Box_Pass_Confirm.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Pass_Confirm.Location = new System.Drawing.Point(1230, 707);
             this.Box_Pass_Confirm.Name = "Box_Pass_Confirm";
-            this.Box_Pass_Confirm.Size = new System.Drawing.Size(208, 28);
+            this.Box_Pass_Confirm.Size = new System.Drawing.Size(208, 29);
             this.Box_Pass_Confirm.TabIndex = 13;
             // 
             // Label_Altura
@@ -433,7 +433,7 @@
             this.Box_Altura.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Altura.Location = new System.Drawing.Point(536, 534);
             this.Box_Altura.Name = "Box_Altura";
-            this.Box_Altura.Size = new System.Drawing.Size(208, 28);
+            this.Box_Altura.Size = new System.Drawing.Size(208, 29);
             this.Box_Altura.TabIndex = 7;
             this.toolTip_MayudaUserAdmin.SetToolTip(this.Box_Altura, "Indique la altura de la calle donde reside el usuario.");
             this.Box_Altura.TextChanged += new System.EventHandler(this.Box_Altura_TextChanged);
@@ -443,7 +443,7 @@
             this.Box_Depto.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Depto.Location = new System.Drawing.Point(883, 534);
             this.Box_Depto.Name = "Box_Depto";
-            this.Box_Depto.Size = new System.Drawing.Size(208, 28);
+            this.Box_Depto.Size = new System.Drawing.Size(208, 29);
             this.Box_Depto.TabIndex = 8;
             this.toolTip_MayudaUserAdmin.SetToolTip(this.Box_Depto, "Indique el departamento donde reside el usuario. Opcional.");
             this.Box_Depto.TextChanged += new System.EventHandler(this.Box_Depto_TextChanged);
@@ -461,7 +461,7 @@
             this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.BarraTitulo.Name = "BarraTitulo";
-            this.BarraTitulo.Size = new System.Drawing.Size(1600, 38);
+            this.BarraTitulo.Size = new System.Drawing.Size(1540, 38);
             this.BarraTitulo.TabIndex = 23;
             this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
             // 
@@ -469,7 +469,7 @@
             // 
             this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
-            this.btnRestaurar.Location = new System.Drawing.Point(1492, 4);
+            this.btnRestaurar.Location = new System.Drawing.Point(1432, 4);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(44, 32);
             this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -482,7 +482,7 @@
             // 
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1449, 3);
+            this.btnMinimizar.Location = new System.Drawing.Point(1389, 3);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(27, 35);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -494,7 +494,7 @@
             // 
             this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(1494, 3);
+            this.btnMaximizar.Location = new System.Drawing.Point(1434, 3);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(35, 32);
             this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -506,7 +506,7 @@
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1549, 3);
+            this.btnCerrar.Location = new System.Drawing.Point(1489, 3);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(33, 35);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -589,6 +589,7 @@
             this.MayudaNombre.TabIndex = 28;
             this.MayudaNombre.Text = "?";
             this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaNombre, "Indique el nombre del usuario.");
+            this.MayudaNombre.Visible = false;
             // 
             // MayudaApellido
             // 
@@ -600,6 +601,7 @@
             this.MayudaApellido.TabIndex = 29;
             this.MayudaApellido.Text = "?";
             this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaApellido, "Indique apellido del usuario.");
+            this.MayudaApellido.Visible = false;
             // 
             // MayudaDNI
             // 
@@ -611,6 +613,7 @@
             this.MayudaDNI.TabIndex = 30;
             this.MayudaDNI.Text = "?";
             this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaDNI, "Indique numero de DNI del usuario.");
+            this.MayudaDNI.Visible = false;
             // 
             // MayudaCalle
             // 
@@ -622,6 +625,7 @@
             this.MayudaCalle.TabIndex = 31;
             this.MayudaCalle.Text = "?";
             this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaCalle, "Indique el nombre de la calle donde reside el usuario.");
+            this.MayudaCalle.Visible = false;
             // 
             // MayudaAltura
             // 
@@ -633,6 +637,7 @@
             this.MayudaAltura.TabIndex = 32;
             this.MayudaAltura.Text = "?";
             this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaAltura, "Indique la altura de la calle donde reside el usuario.");
+            this.MayudaAltura.Visible = false;
             // 
             // MayudaDepto
             // 
@@ -644,6 +649,7 @@
             this.MayudaDepto.TabIndex = 33;
             this.MayudaDepto.Text = "?";
             this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaDepto, "Indique el departamento donde reside el usuario. Campo opcional.");
+            this.MayudaDepto.Visible = false;
             // 
             // MayudaMail
             // 
@@ -655,6 +661,7 @@
             this.MayudaMail.TabIndex = 34;
             this.MayudaMail.Text = "?";
             this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaMail, "Indique el correo electronico del usuario.");
+            this.MayudaMail.Visible = false;
             // 
             // MayudaConfirMail
             // 
@@ -666,6 +673,7 @@
             this.MayudaConfirMail.TabIndex = 35;
             this.MayudaConfirMail.Text = "?";
             this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaConfirMail, "Confirme el correo electronico del usuario.");
+            this.MayudaConfirMail.Visible = false;
             // 
             // MayudaContra
             // 
@@ -677,6 +685,7 @@
             this.MayudaContra.TabIndex = 36;
             this.MayudaContra.Text = "?";
             this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaContra, "Indique la contraseña del usuario.");
+            this.MayudaContra.Visible = false;
             // 
             // MayudaConfirContra
             // 
@@ -688,6 +697,7 @@
             this.MayudaConfirContra.TabIndex = 37;
             this.MayudaConfirContra.Text = "?";
             this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaConfirContra, "Confirme la contraseña del Usuario");
+            this.MayudaConfirContra.Visible = false;
             // 
             // MayudaTelefono
             // 
@@ -699,6 +709,7 @@
             this.MayudaTelefono.TabIndex = 38;
             this.MayudaTelefono.Text = "?";
             this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaTelefono, "Indique el telefono de contacto del usuario.");
+            this.MayudaTelefono.Visible = false;
             // 
             // MayudaFechaNacimiento
             // 
@@ -710,6 +721,7 @@
             this.MayudaFechaNacimiento.TabIndex = 39;
             this.MayudaFechaNacimiento.Text = "?";
             this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaFechaNacimiento, "Indique la fecha de nacimiento del usuario. Formato DD/MM/AAAA");
+            this.MayudaFechaNacimiento.Visible = false;
             // 
             // MayudaOper
             // 
@@ -721,6 +733,7 @@
             this.MayudaOper.TabIndex = 40;
             this.MayudaOper.Text = "?";
             this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaOper, "Indique la operacion que desea realizar en el maestro.");
+            this.MayudaOper.Visible = false;
             // 
             // MayudaRol
             // 
@@ -732,6 +745,7 @@
             this.MayudaRol.TabIndex = 41;
             this.MayudaRol.Text = "?";
             this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaRol, "Indique el tipo de usuario que desea.");
+            this.MayudaRol.Visible = false;
             // 
             // Operacion_Null
             // 
@@ -942,7 +956,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1600, 870);
+            this.ClientSize = new System.Drawing.Size(1540, 868);
             this.ControlBox = false;
             this.Controls.Add(this.Label_Usuario);
             this.Controls.Add(this.ComboBox_Usuario);
