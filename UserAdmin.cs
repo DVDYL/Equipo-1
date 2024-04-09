@@ -471,6 +471,7 @@ namespace Equipo1
                 {
                     // Si el usuario elige "Sí", llamar al método para resetear los campos
                     ResetearCampos();
+                    LimpiarAlertas ();  // Habria que definir si el usuario desea eliminar las alertas o no (DEFINCION).
                 }
                 // Si el usuario elige "No", no hacer nada
             }
@@ -490,6 +491,31 @@ namespace Equipo1
                 // Cerrar el formulario actual (UserAdmin.cs)
                 this.Close(); // Esto cerrará el formulario UserAdmin y volverá automáticamente al formulario Menu si es que fue abierto desde allí
             }
+        }
+
+        private void LimpiarAlertas()
+        {
+            MayudaOper.Visible = false;
+            MayudaAltura.Visible = false;
+            MayudaApellido.Visible =false;
+            MayudaCalle.Visible = false;
+            MayudaConfirContra.Visible = false;
+            MayudaConfirMail.Visible = false;
+            MayudaContra.Visible = false;
+            MayudaDepto.Visible = false;
+            MayudaDNI.Visible = false;
+            MayudaFechaNacimiento.Visible = false;
+            MayudaMail.Visible = false;
+            MayudaNombre.Visible = false;
+            MayudaOper.Visible = false;
+            MayudaRol.Visible = false;
+            MayudaTelefono.Visible = false;
+
+        }
+
+        private void MayudaDepto_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
