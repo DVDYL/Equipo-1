@@ -55,7 +55,6 @@
             this.BarraTituloForm.Name = "BarraTituloForm";
             this.BarraTituloForm.Size = new System.Drawing.Size(1600, 38);
             this.BarraTituloForm.TabIndex = 0;
-            this.BarraTituloForm.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraTituloForm_Paint);
             this.BarraTituloForm.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.BarraTituloForm_MouseDoubleClick);
             this.BarraTituloForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTituloForm_MouseDown);
             // 

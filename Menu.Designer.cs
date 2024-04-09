@@ -55,7 +55,7 @@
             // 
             this.MenuUserAdmin.AutoSize = true;
             this.MenuUserAdmin.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MenuUserAdmin.Location = new System.Drawing.Point(183, 369);
+            this.MenuUserAdmin.Location = new System.Drawing.Point(192, 371);
             this.MenuUserAdmin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MenuUserAdmin.Name = "MenuUserAdmin";
             this.MenuUserAdmin.Size = new System.Drawing.Size(126, 36);
@@ -69,7 +69,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label1.Location = new System.Drawing.Point(732, 369);
+            this.label1.Location = new System.Drawing.Point(755, 371);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 36);
@@ -82,7 +82,7 @@
             this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label2.Location = new System.Drawing.Point(1317, 369);
+            this.label2.Location = new System.Drawing.Point(1326, 371);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 36);
@@ -95,7 +95,7 @@
             this.label3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label3.Location = new System.Drawing.Point(173, 712);
+            this.label3.Location = new System.Drawing.Point(183, 711);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(144, 36);
@@ -108,7 +108,7 @@
             this.label4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label4.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label4.Location = new System.Drawing.Point(784, 712);
+            this.label4.Location = new System.Drawing.Point(795, 711);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 36);
@@ -121,7 +121,7 @@
             this.label5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label5.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label5.Location = new System.Drawing.Point(1326, 712);
+            this.label5.Location = new System.Drawing.Point(1342, 711);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 36);
@@ -142,6 +142,7 @@
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.No;
             this.pictureBox5.Image = global::Form_Equipo1.Properties.Resources.Productos;
             this.pictureBox5.Location = new System.Drawing.Point(126, 511);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -153,6 +154,7 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.No;
             this.pictureBox4.Image = global::Form_Equipo1.Properties.Resources.Ventas;
             this.pictureBox4.Location = new System.Drawing.Point(1252, 511);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -164,6 +166,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.No;
             this.pictureBox3.Image = global::Form_Equipo1.Properties.Resources.Stock;
             this.pictureBox3.Location = new System.Drawing.Point(707, 511);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -175,6 +178,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.No;
             this.pictureBox2.Image = global::Form_Equipo1.Properties.Resources.Clientes;
             this.pictureBox2.Location = new System.Drawing.Point(1252, 171);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -186,6 +190,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.No;
             this.pictureBox1.Image = global::Form_Equipo1.Properties.Resources.Proveedores;
             this.pictureBox1.Location = new System.Drawing.Point(707, 171);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -197,6 +202,7 @@
             // 
             // UserAdminImg
             // 
+            this.UserAdminImg.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UserAdminImg.Image = global::Form_Equipo1.Properties.Resources.UserAdmin1;
             this.UserAdminImg.Location = new System.Drawing.Point(126, 171);
             this.UserAdminImg.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -210,7 +216,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::Form_Equipo1.Properties.Resources.ElectroHogarLogo;
-            this.pictureBox6.Location = new System.Drawing.Point(436, 46);
+            this.pictureBox6.Location = new System.Drawing.Point(436, 53);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(771, 99);
@@ -241,6 +247,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "Menu";
             this.Text = "Menu";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Menu_KeyDown);
             this.Controls.SetChildIndex(this.MenuUserAdmin, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);

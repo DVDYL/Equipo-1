@@ -79,10 +79,5 @@ namespace Form_Equipo1
         {
             this.WindowState = FormWindowState.Maximized;
         }
-
-        private void BarraTituloForm_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

@@ -17,7 +17,8 @@ namespace Form_Equipo1
         {
             InitializeComponent();
             TituloBarra = "Menú";
-        }
+            this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
+        } // Inicializa el menú de navegación.
 
         private void MenuUserAdmin_Click(object sender, EventArgs e) // Si hago click en la el nombre "usuarios", entro al ABM de Usuarios 
         {
@@ -51,21 +52,30 @@ namespace Form_Equipo1
             DialogResult result = MessageBox.Show("¿Está seguro de que desea volver al inicio de sesión?", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             // Verificar la respuesta del usuario
-            if (result == DialogResult.Yes)
+            if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
             {
-                // Si el usuario elige "Sí", cerrar la sesión
-                // Aquí puedes agregar cualquier lógica necesaria para cerrar la sesión, como restablecer las variables de sesión, etc.
-
-                // Por ejemplo, podrías borrar los datos de sesión o redirigir al formulario de inicio de sesión
-
-                // Redirigir al formulario de inicio de sesión (LogIn)
-                LogIn loginForm = new LogIn();
+                LogIn loginForm = new LogIn(); // Redirigir al formulario de inicio de sesión (LogIn)
                 loginForm.Show();
                 this.Hide(); // Ocultar el formulario actual
             }
             // Si el usuario elige "No", no hacer nada
         }
 
+        private void Menu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                DialogResult result = MessageBox.Show("¿Está seguro de que desea volver al inicio de sesión?", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                // Verificar la respuesta del usuario
+                if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
+                {
+                    LogIn loginForm = new LogIn(); // Redirigir al formulario de inicio de sesión (LogIn)
+                    loginForm.Show();
+                    this.Hide(); // Ocultar el formulario actual
+                }
+                // Si el usuario elige "No", no hacer nada
+            }
+        } // Manejo para el evento de apretar ESC en una ventana.
     }
 }

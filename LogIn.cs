@@ -9,11 +9,13 @@ namespace Form_Equipo1
         // Definir las credenciales de administrador
         private const string UsuarioPorDefecto = "ADMINI24";
         private const string ContraseñaPorDefecto = "CAI20241";
+        private const string MailPorDefecto = "Admin@EHogar.com";
 
         public LogIn()
         {
             InitializeComponent();
             TituloBarra = "LogIn"; // Establezco nombre que irá en el título de la barra
+            this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
         } // Función que inicia la ventana de Log In
 
         private void Boton_Ingresar_Click(object sender, EventArgs e)
@@ -27,6 +29,7 @@ namespace Form_Equipo1
             //bool usuarioExiste = Validar.EsUsuario(usuarioIngresado, out errorMessage);
             //comentado para que no revele información de la seguridad en el login. Cambio la validación solamente
             //a un bien/mal.
+
             bool UsuarioCorrecto = Validar.UsuarioValido(usuarioIngresado, out errorMessage);
                 
             if (UsuarioCorrecto)
@@ -83,17 +86,20 @@ namespace Form_Equipo1
 
         private void PassViewImg_MouseUp(object sender, MouseEventArgs e)
         {
-            Box_Pass.UseSystemPasswordChar = true; // Oculta la contraseña
-        } // Muestra la contraseña al hacer click en el ojo
+            Box_Pass.UseSystemPasswordChar = true; 
+        } // Oculta la contraseña al hacer click en el ojo
 
-        private void Box_Usuario_TextChanged(object sender, EventArgs e)
+        private void LogIn_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Escape)
+            {
+                DialogResult resultado = MessageBox.Show("¿Desea salir del programa?\n\nSe cerrará la ventana y no se guardarán los datos.", "Confirmar Cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-        }
-
-        private void RecuperaPass_Click(object sender, EventArgs e)
-        {
-
-        }
+                if (resultado == DialogResult.Yes)             // Verificar la respuesta del usuario
+                {
+                    this.Close();                 // Si el usuario selecciona "Sí", cierra el formulario
+                }
+            }
+        }  // Evento KeyDown para cerrar la ventana con la tecla ESC
     }
 }

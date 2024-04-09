@@ -285,7 +285,7 @@ namespace Equipo1
             }
         }
 
-        public static bool EsUsuario(string usuario, out string errorMessage)   //Este procedimiento se puede usar en el ABM de usuarios
+        public static bool EsUsuario(string usuario, out string errorMessage)   // Este procedimiento se puede usar en el ABM de usuarios
         {
             errorMessage = null; // Inicializar el mensaje de error como nulo
 
@@ -318,16 +318,19 @@ namespace Equipo1
             // Si pasa todas las validaciones, el usuario es válido
             return true;
         }
+
         public static bool UsuarioValido(string usuario, out string errorMessage)
         {
             errorMessage = null;
+
+            usuario = usuario.ToUpper(); // Convertir el usuario ingresado a mayúsculas
+
             if (string.IsNullOrEmpty(usuario))
             {
                 errorMessage = "Debe ingresar un Usuario";
                 return false;
             }
             else if (usuario != "ADMINI24")
-            //hardcodeado momentáneamente. Cuando tengamos el WS navegar todos los usuarios
             {
                 errorMessage = "Las credenciales ingresadas no son válidas.";
                 return false;

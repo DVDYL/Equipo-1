@@ -21,6 +21,7 @@ namespace Equipo1
 
             InitializeComponent(); // Inicializamos el formulario.
             TituloBarra = "ABM Usuarios"; //Establezco el nombre que irá en el título de la barra superior.
+            this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
 
             Operacion_Null.Visible = false; // Ocultar el TextBox Operacion_Null
             Rol_Null.Visible = false; // Ocultar el TextBox Rol_Null
@@ -446,18 +447,25 @@ namespace Equipo1
         private bool CamposCompletos()
         {
             // Verificar si al menos uno de los campos está lleno
-            return !string.IsNullOrWhiteSpace(Box_Nombre.Text) ||
-                   !string.IsNullOrWhiteSpace(Box_Apellido.Text) ||
-                   !string.IsNullOrWhiteSpace(Box_DNI.Text) ||
-                   !string.IsNullOrWhiteSpace(Box_Calle.Text) ||
-                   !string.IsNullOrWhiteSpace(Box_Altura.Text) ||
-                   !string.IsNullOrWhiteSpace(Box_Depto.Text) ||
-                   !string.IsNullOrWhiteSpace(Box_Telefono.Text) ||
-                   !string.IsNullOrWhiteSpace(Box_Mail.Text) ||
-                   !string.IsNullOrWhiteSpace(Box_Mail_Confirm.Text) ||
-                   !string.IsNullOrWhiteSpace(Box_Pass.Text) ||
-                   !string.IsNullOrWhiteSpace(Box_Pass_Confirm.Text);
-        } // Función auxiliar que ayuda a detectar que haya al menos un campo completo para que el botón "Limpiar" sea interactivo.
+            bool camposLlenos = !string.IsNullOrWhiteSpace(Box_Nombre.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Apellido.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_DNI.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Calle.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Altura.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Depto.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Telefono.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Mail.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Mail_Confirm.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Pass.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Pass_Confirm.Text);
+
+            // Verificar si los ComboBoxes no han sido desplegados y se ha seleccionado una opción
+            bool comboBoxesLlenos = ComboBox_Rol.DroppedDown == false && ComboBox_Rol.SelectedItem != null &&
+                                    ComboBox_ABM.DroppedDown == false && ComboBox_ABM.SelectedItem != null;
+
+            // Retorna verdadero si al menos uno de los campos de texto está lleno y los ComboBoxes no están desplegados y tienen una selección
+            return camposLlenos || comboBoxesLlenos;
+        }
 
         private void Boton_Limpiar_Click(object sender, EventArgs e)
         {
@@ -493,7 +501,7 @@ namespace Equipo1
             }
         }
 
-        private void LimpiarAlertas()
+        private void LimpiarAlertas() // ¿Por qué esta función está separada de "ResetearCampos"?
         {
             MayudaOper.Visible = false;
             MayudaAltura.Visible = false;
@@ -513,9 +521,18 @@ namespace Equipo1
 
         }
 
-        private void MayudaDepto_Click(object sender, EventArgs e)
+        private void UserAdmin_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Escape)
+            {
+                DialogResult resultado = MessageBox.Show("¿Desea cancelar la operación y volver al menú principal?\n\nSe perderán todos los datos que no se hayan guardado", "Confirmar Cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                if (resultado == DialogResult.Yes)
+                {
+                    // Cerrar el formulario actual (UserAdmin.cs)
+                    this.Close(); // Esto cerrará el formulario UserAdmin y volverá automáticamente al formulario Menu si es que fue abierto desde allí
+                }
+            }
         }
     }
 }
