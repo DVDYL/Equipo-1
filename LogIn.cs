@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Form_Equipo1
 {
-    public partial class LogIn : Form
+    public partial class LogIn : FormBase
     {
         // Definir las credenciales de administrador
         private const string UsuarioPorDefecto = "ADMINI24";
@@ -13,6 +13,7 @@ namespace Form_Equipo1
         public LogIn()
         {
             InitializeComponent();
+            TituloBarra = "LogIn"; // Establezco nombre que irá en el título de la barra
         } // Función que inicia la ventana de Log In
 
         private void Boton_Ingresar_Click(object sender, EventArgs e)
@@ -23,7 +24,7 @@ namespace Form_Equipo1
             string errorMessage; // Variable para almacenar el mensaje de error de la validación
 
             // Verificar si el usuario existe y obtener el mensaje de error si no es válido
-            bool usuarioExiste = Validar.EsUsuario(usuarioIngresado, out errorMessage);
+            //bool usuarioExiste = Validar.EsUsuario(usuarioIngresado, out errorMessage);
             //comentado para que no revele información de la seguridad en el login. Cambio la validación solamente
             //a un bien/mal.
             bool UsuarioCorrecto = Validar.UsuarioValido(usuarioIngresado, out errorMessage);

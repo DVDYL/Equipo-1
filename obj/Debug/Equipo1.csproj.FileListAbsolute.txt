@@ -80,3 +80,4 @@ C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Equipo1.cspro
 C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Equipo1.csproj.CoreCompileInputs.cache
 C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Form_Equipo1.exe
 C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Form_Equipo1.pdb
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Form_Equipo1.FormBase.resources

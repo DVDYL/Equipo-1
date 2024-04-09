@@ -11,11 +11,12 @@ using System.Windows.Forms;
 
 namespace Form_Equipo1
 {
-    public partial class Menu : Form
+    public partial class Menu : FormBase
     {
         public Menu()
         {
             InitializeComponent();
+            TituloBarra = "Menú";
         }
 
         private void MenuUserAdmin_Click(object sender, EventArgs e) // Si hago click en la el nombre "usuarios", entro al ABM de Usuarios 
