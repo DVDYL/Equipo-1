@@ -208,6 +208,7 @@ namespace Equipo1
 
                 MessageBox.Show("No se seleccionó ningún tipo de operación.\n\nPor favor, seleccione una operación y vuelva a intentarlo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning); // Mostrar mensaje de advertencia cuando la operación está en blanco
                 ComboBox_ABM.Focus();
+                MayudaOper.Visible = true;
                 return;
             } // Verifica que el combobox de tipo de operación no sea vacío.
             else
@@ -222,6 +223,7 @@ namespace Equipo1
                 // Mostrar mensaje de advertencia cuando el tipo de usuario está en blanco
                 MessageBox.Show("No se seleccionó ningún tipo de usuario.\n\nPor favor, seleccione un tipo de usuario y vuelva a intentarlo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ComboBox_Rol.Focus();
+                MayudaRol.Visible = true;
                 return;
             } // Verifica que el combobox de tipo de usuario no sea vacío.
             else
@@ -236,6 +238,7 @@ namespace Equipo1
                 Nombre_Error.Text = errorNombre;
                 Nombre_Error.Visible = true;
                 MessageBox.Show(errorNombre, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MayudaNombre.Visible = true;
                 return;
             }
             else
@@ -250,6 +253,7 @@ namespace Equipo1
                 Apellido_Error.Text = errorApellido;
                 Apellido_Error.Visible = true;
                 MessageBox.Show(errorApellido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MayudaApellido.Visible = true;
                 return;
             }
             else
@@ -265,6 +269,7 @@ namespace Equipo1
                 DNI_Error.Visible = true;
 
                 MessageBox.Show(errorDNI, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MayudaDNI.Visible = true;
                 return;
             }
             else
@@ -280,6 +285,7 @@ namespace Equipo1
                 Edad_Error.Visible = true;
                 // Mostrar mensaje de advertencia si la edad no es válida
                 MessageBox.Show(errorEdad, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MayudaFechaNacimiento.Visible = true;
                 return;
             }
             else
@@ -294,6 +300,7 @@ namespace Equipo1
                 Calle_Error.Text = errorCalle;
                 Calle_Error.Visible = true;
                 MessageBox.Show(errorCalle, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MayudaCalle.Visible = true;
                 return;
             }
             else
@@ -307,6 +314,7 @@ namespace Equipo1
                 Altura_Error.Text = errorAltura; // Completar el contenido del TextBox Altura_Error con el error
                 Altura_Error.Visible = true;
                 MessageBox.Show(errorAltura, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MayudaAltura.Visible = true;
                 return;
             }
             else
@@ -320,6 +328,7 @@ namespace Equipo1
                 Depto_Error.Text = errorDepartamento; // Completar el contenido del TextBox Depto_Error con el error
                 Depto_Error.Visible = true;
                 MessageBox.Show(errorDepartamento, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MayudaDepto.Visible = true;
                 return;
             }
             else
@@ -333,6 +342,7 @@ namespace Equipo1
                 Telefono_Error.Text = errorTelefono;
                 Telefono_Error.Visible = true;
                 MessageBox.Show(errorTelefono, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MayudaTelefono.Visible = true;
                 return;
             }
             else
@@ -346,6 +356,7 @@ namespace Equipo1
                 Mail_Error.Text = errorMail;
                 Mail_Error.Visible = true;
                 MessageBox.Show(errorMail, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MayudaMail.Visible = true;
                 return;
             }
             else
@@ -362,6 +373,7 @@ namespace Equipo1
                 ConfirmMail_Error.Text = errorConfirmarMail;
                 ConfirmMail_Error.Visible = true;
                 MessageBox.Show(errorConfirmarMail, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MayudaConfirMail.Visible = true;
                 return;
             }
             else
@@ -375,6 +387,7 @@ namespace Equipo1
                 Pass_Error.Text = errorContraseña;
                 Pass_Error.Visible = true;
                 MessageBox.Show(errorContraseña, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MayudaContra.Visible = true;
                 return;
             }
             else 
@@ -391,6 +404,7 @@ namespace Equipo1
                 ConfirmPass_Error.Text = errorConfirmarContraseña;
                 ConfirmPass_Error.Visible = true;
                 MessageBox.Show(errorConfirmarContraseña, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MayudaConfirContra.Visible = true;
                 return;
             }
             else
@@ -477,53 +491,5 @@ namespace Equipo1
                 this.Close(); // Esto cerrará el formulario UserAdmin y volverá automáticamente al formulario Menu si es que fue abierto desde allí
             }
         }
-
-        //private void btnCerrar_Click(object sender, EventArgs e)
-        //{
-        //    DialogResult resultado = MessageBox.Show("¿Cancelar la operación y volver al menú principal?", "Confirmar Salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-        //    if (resultado == DialogResult.Yes)
-        //    {
-        //        // Cerrar el formulario actual (UserAdmin.cs)
-        //        this.Close();
-        //    }
-        //}
-
-        //private void btnMinimizar_Click(object sender, EventArgs e)
-        //{
-        //    this.WindowState = FormWindowState.Minimized;
-        //}
-
-        //private void btnMaximizar_Click(object sender, EventArgs e)
-        //{
-        //    this.WindowState= FormWindowState.Maximized;
-        //    btnMaximizar.Visible = false;
-        //    btnRestaurar.Visible = true;
-        //}
-
-        //private void btnRestaurar_Click(object sender, EventArgs e)
-        //{
-        //    this.WindowState=FormWindowState.Normal;
-        //    btnRestaurar.Visible = false;
-        //    btnMaximizar.Visible = true;
-
-        //}
-
-        //private void form1_Load(object sender, EventArgs e) // importamos código para poder mover la ventana
-        //{
-
-        //}
-        //[DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
-
-        //private extern static void ReleaseCapture();
-        //[DllImport("user32.dll", EntryPoint = "SendMessage")]
-
-        //private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-        //private void BarraTitulo_MouseDown(object sender, MouseEventArgs e) // Le asignamos los eventos a la barra de título (header)
-        //{
-        //    ReleaseCapture();
-        //    SendMessage(this.Handle, 0x112, 0xf012, 0);
-        //}
     }
 }
