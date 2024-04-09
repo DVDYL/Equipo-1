@@ -16,6 +16,7 @@ namespace Equipo1
             if (string.IsNullOrWhiteSpace(text))
             {
                 return $"No se especificó el {nombreCampo}.";
+               
             }
 
             // Verificar si el texto tiene menos de 3 caracteres
