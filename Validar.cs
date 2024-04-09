@@ -343,7 +343,7 @@ namespace Equipo1
                 errorMessage = "Debe ingresar una Contraseña";
                 return errorMessage;
             }
-            if (contraseña != "CAI20232")
+            if (contraseña != "CAI20241")
             //hardcodeado momentáneamente. Cuando tengamos el WS comparar contraseña
             {
 

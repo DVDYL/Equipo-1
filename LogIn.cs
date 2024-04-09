@@ -23,7 +23,7 @@ namespace Form_Equipo1
             string errorMessage; // Variable para almacenar el mensaje de error de la validación
 
             // Verificar si el usuario existe y obtener el mensaje de error si no es válido
-            //bool usuarioExiste = Validar.EsUsuario(usuarioIngresado, out errorMessage);
+            bool usuarioExiste = Validar.EsUsuario(usuarioIngresado, out errorMessage);
             //comentado para que no revele información de la seguridad en el login. Cambio la validación solamente
             //a un bien/mal.
             bool UsuarioCorrecto = Validar.UsuarioValido(usuarioIngresado, out errorMessage);

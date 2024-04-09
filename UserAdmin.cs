@@ -25,6 +25,9 @@ namespace Equipo1
             Label_Usuario.Visible = false; // Ocultar el TextBox Label_Usuario
             ComboBox_Usuario.Visible = false;
 
+
+           
+
             // Agregar opciones al ComboBox de tipo de ABM una sola vez al cargar el formulario
             ComboBox_ABM.Items.Add("Alta");
             ComboBox_ABM.Items.Add("Modificación");
