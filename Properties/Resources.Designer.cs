@@ -83,6 +83,16 @@ namespace Form_Equipo1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Logo___Nunito_Sin_Fondo {
+            get {
+                object obj = ResourceManager.GetObject("Logo - Nunito Sin Fondo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PassView {
             get {
                 object obj = ResourceManager.GetObject("PassView", resourceCulture);

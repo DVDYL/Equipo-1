@@ -38,18 +38,17 @@
             this.NewPass = new System.Windows.Forms.TextBox();
             this.Label_ConfirmNewPass = new System.Windows.Forms.Label();
             this.ConfirmNewPass = new System.Windows.Forms.TextBox();
-            this.Nombre_Error = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PassViewImg = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PassViewImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // Box_Usuario
             // 
             this.Box_Usuario.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.Box_Usuario.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Box_Usuario.Location = new System.Drawing.Point(504, 191);
+            this.Box_Usuario.Location = new System.Drawing.Point(504, 205);
             this.Box_Usuario.Name = "Box_Usuario";
             this.Box_Usuario.Size = new System.Drawing.Size(343, 34);
             this.Box_Usuario.TabIndex = 0;
@@ -58,7 +57,7 @@
             // 
             this.Label_Usuario.AutoSize = true;
             this.Label_Usuario.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Usuario.Location = new System.Drawing.Point(92, 197);
+            this.Label_Usuario.Location = new System.Drawing.Point(92, 211);
             this.Label_Usuario.Name = "Label_Usuario";
             this.Label_Usuario.Size = new System.Drawing.Size(170, 28);
             this.Label_Usuario.TabIndex = 1;
@@ -68,7 +67,7 @@
             // 
             this.Label_Pass.AutoSize = true;
             this.Label_Pass.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Pass.Location = new System.Drawing.Point(92, 281);
+            this.Label_Pass.Location = new System.Drawing.Point(92, 295);
             this.Label_Pass.Name = "Label_Pass";
             this.Label_Pass.Size = new System.Drawing.Size(130, 28);
             this.Label_Pass.TabIndex = 3;
@@ -78,7 +77,7 @@
             // 
             this.Box_Pass.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.Box_Pass.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Box_Pass.Location = new System.Drawing.Point(504, 276);
+            this.Box_Pass.Location = new System.Drawing.Point(504, 290);
             this.Box_Pass.Name = "Box_Pass";
             this.Box_Pass.Size = new System.Drawing.Size(343, 34);
             this.Box_Pass.TabIndex = 1;
@@ -87,7 +86,7 @@
             // Boton_Ingresar
             // 
             this.Boton_Ingresar.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Ingresar.Location = new System.Drawing.Point(275, 552);
+            this.Boton_Ingresar.Location = new System.Drawing.Point(275, 566);
             this.Boton_Ingresar.Name = "Boton_Ingresar";
             this.Boton_Ingresar.Size = new System.Drawing.Size(174, 41);
             this.Boton_Ingresar.TabIndex = 2;
@@ -98,7 +97,7 @@
             // Boton_Cancelar
             // 
             this.Boton_Cancelar.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Cancelar.Location = new System.Drawing.Point(504, 552);
+            this.Boton_Cancelar.Location = new System.Drawing.Point(504, 566);
             this.Boton_Cancelar.Name = "Boton_Cancelar";
             this.Boton_Cancelar.Size = new System.Drawing.Size(174, 41);
             this.Boton_Cancelar.TabIndex = 5;
@@ -111,7 +110,7 @@
             this.Label_NewPass.AutoSize = true;
             this.Label_NewPass.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_NewPass.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.Label_NewPass.Location = new System.Drawing.Point(92, 365);
+            this.Label_NewPass.Location = new System.Drawing.Point(92, 379);
             this.Label_NewPass.Name = "Label_NewPass";
             this.Label_NewPass.Size = new System.Drawing.Size(198, 28);
             this.Label_NewPass.TabIndex = 7;
@@ -122,7 +121,7 @@
             this.NewPass.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.NewPass.Enabled = false;
             this.NewPass.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewPass.Location = new System.Drawing.Point(504, 361);
+            this.NewPass.Location = new System.Drawing.Point(504, 375);
             this.NewPass.Name = "NewPass";
             this.NewPass.Size = new System.Drawing.Size(343, 34);
             this.NewPass.TabIndex = 6;
@@ -132,7 +131,7 @@
             this.Label_ConfirmNewPass.AutoSize = true;
             this.Label_ConfirmNewPass.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_ConfirmNewPass.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.Label_ConfirmNewPass.Location = new System.Drawing.Point(92, 449);
+            this.Label_ConfirmNewPass.Location = new System.Drawing.Point(92, 463);
             this.Label_ConfirmNewPass.Name = "Label_ConfirmNewPass";
             this.Label_ConfirmNewPass.Size = new System.Drawing.Size(301, 28);
             this.Label_ConfirmNewPass.TabIndex = 9;
@@ -143,36 +142,15 @@
             this.ConfirmNewPass.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ConfirmNewPass.Enabled = false;
             this.ConfirmNewPass.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirmNewPass.Location = new System.Drawing.Point(504, 446);
+            this.ConfirmNewPass.Location = new System.Drawing.Point(504, 460);
             this.ConfirmNewPass.Name = "ConfirmNewPass";
             this.ConfirmNewPass.Size = new System.Drawing.Size(343, 34);
             this.ConfirmNewPass.TabIndex = 8;
             // 
-            // Nombre_Error
-            // 
-            this.Nombre_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Nombre_Error.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nombre_Error.ForeColor = System.Drawing.Color.Red;
-            this.Nombre_Error.Location = new System.Drawing.Point(504, 231);
-            this.Nombre_Error.Multiline = true;
-            this.Nombre_Error.Name = "Nombre_Error";
-            this.Nombre_Error.Size = new System.Drawing.Size(343, 20);
-            this.Nombre_Error.TabIndex = 46;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Form_Equipo1.Properties.Resources.ElectroHogarLogo;
-            this.pictureBox1.Location = new System.Drawing.Point(142, 58);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(661, 86);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 47;
-            this.pictureBox1.TabStop = false;
-            // 
             // PassViewImg
             // 
             this.PassViewImg.Image = global::Form_Equipo1.Properties.Resources.PassView;
-            this.PassViewImg.Location = new System.Drawing.Point(854, 277);
+            this.PassViewImg.Location = new System.Drawing.Point(854, 291);
             this.PassViewImg.Name = "PassViewImg";
             this.PassViewImg.Size = new System.Drawing.Size(41, 34);
             this.PassViewImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -181,6 +159,16 @@
             this.PassViewImg.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PassViewImg_MouseDown);
             this.PassViewImg.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PassViewImg_MouseUp);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Form_Equipo1.Properties.Resources.Logo___Nunito_Sin_Fondo;
+            this.pictureBox2.Location = new System.Drawing.Point(360, 48);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(229, 146);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 48;
+            this.pictureBox2.TabStop = false;
+            // 
             // LogIn
             // 
             this.AcceptButton = this.Boton_Ingresar;
@@ -188,9 +176,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(956, 637);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.PassViewImg);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.Nombre_Error);
             this.Controls.Add(this.Label_ConfirmNewPass);
             this.Controls.Add(this.ConfirmNewPass);
             this.Controls.Add(this.Label_NewPass);
@@ -216,11 +203,10 @@
             this.Controls.SetChildIndex(this.Label_NewPass, 0);
             this.Controls.SetChildIndex(this.ConfirmNewPass, 0);
             this.Controls.SetChildIndex(this.Label_ConfirmNewPass, 0);
-            this.Controls.SetChildIndex(this.Nombre_Error, 0);
-            this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.PassViewImg, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Controls.SetChildIndex(this.pictureBox2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.PassViewImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,7 +225,6 @@
         private System.Windows.Forms.Label Label_ConfirmNewPass;
         private System.Windows.Forms.TextBox ConfirmNewPass;
         private System.Windows.Forms.PictureBox PassViewImg;
-        private System.Windows.Forms.TextBox Nombre_Error;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
