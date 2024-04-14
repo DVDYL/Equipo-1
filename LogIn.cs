@@ -18,6 +18,7 @@ namespace Form_Equipo1
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
         } // Función que inicia la ventana de Log In
 
+        private int intentosFallidos = 0;
         private void Boton_Ingresar_Click(object sender, EventArgs e)
         {
             // Obtener las credenciales ingresadas por el usuario
@@ -67,7 +68,24 @@ namespace Form_Equipo1
                 // El usuario no existe, mostrar el mensaje de error obtenido de EsUsuario
                 MessageBox.Show(errorMessage, "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            // Incrementar el contador de intentos fallidos
+            intentosFallidos++;
+
+            // Si el usuario ha excedido el límite de intentos fallidos, bloquearlo
+            if (intentosFallidos >= 3)
+            {
+                MessageBox.Show("El usuario ha sido bloqueado. Contacte al Administrador para reactivarlo nuevamente", "Usuario Bloqueado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // Queda pendiente agregar que se inactive el usuario. Pasa a estado INACTIVO
+
+                this.Close();
+                // Se cierra la Pantalla de Login
+            }
+
         }
+        
+
+
 
         private void Boton_Cancelar_Click(object sender, EventArgs e)
         {

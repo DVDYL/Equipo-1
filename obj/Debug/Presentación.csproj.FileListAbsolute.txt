@@ -1,0 +1,14 @@
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\bin\Debug\Form_Equipo1.exe.config
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\bin\Debug\Form_Equipo1.exe
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\bin\Debug\Form_Equipo1.pdb
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentación.csproj.AssemblyReference.cache
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentación.csproj.SuggestedBindingRedirects.cache
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Form_Equipo1.FormBase.resources
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Form_Equipo1.LogIn.resources
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Form_Equipo1.Menu.resources
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Equipo1.UserAdmin.resources
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Form_Equipo1.Properties.Resources.resources
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentación.csproj.GenerateResource.cache
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentación.csproj.CoreCompileInputs.cache
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Form_Equipo1.exe
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Form_Equipo1.pdb
