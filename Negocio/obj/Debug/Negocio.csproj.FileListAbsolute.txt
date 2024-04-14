@@ -4,3 +4,9 @@ C:\Users\david\source\repos\Equipo-1\Negocio\obj\Debug\Negocio.csproj.AssemblyRe
 C:\Users\david\source\repos\Equipo-1\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
 C:\Users\david\source\repos\Equipo-1\Negocio\obj\Debug\Negocio.dll
 C:\Users\david\source\repos\Equipo-1\Negocio\obj\Debug\Negocio.pdb
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Negocio\bin\Debug\Negocio.dll
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Negocio\bin\Debug\Negocio.pdb
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Negocio\obj\Debug\Negocio.dll
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Negocio\obj\Debug\Negocio.pdb

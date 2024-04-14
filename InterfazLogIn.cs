@@ -48,12 +48,31 @@ namespace Equipo1
                     {
                         // El usuario existe pero la contraseña no es la correcta
                         MessageBox.Show(errorContraseña + "\n\nCódigo de Error: 001", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        // Incrementar el contador de intentos fallidos
+                        intentosFallidos++;
                     }
                 }
                 else
                 {
                     // Mostrar el mensaje de error devuelto por ContraseñaValida
                     MessageBox.Show(errorContraseña, "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Incrementar el contador de intentos fallidos
+                    intentosFallidos++;
+
+                    // Si el usuario ha excedido el límite de intentos fallidos, bloquearlo
+                    if (intentosFallidos == 3) //Habria que armar una funcion que resuleva esta logica.
+                    {
+                        MessageBox.Show("El usuario ha sido bloqueado. Contacte al Administrador para reactivarlo nuevamente", "Usuario Bloqueado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        // Queda pendiente agregar que se inactivo el usuario. Pasa a estado INACTIVO
+
+                        this.Close();
+                        // Se cierra la Pantalla de Login
+                    }
+                    else
+                    {
+                        MessageBox.Show("Le quedan " + (3 - intentosFallidos) + " intentos posibles.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
                 }
             }
             else
@@ -62,18 +81,6 @@ namespace Equipo1
                 MessageBox.Show(errorMessage, "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            // Incrementar el contador de intentos fallidos
-            intentosFallidos++;
-
-            // Si el usuario ha excedido el límite de intentos fallidos, bloquearlo
-            if (intentosFallidos >= 3)
-            {
-                MessageBox.Show("El usuario ha sido bloqueado. Contacte al Administrador para reactivarlo nuevamente", "Usuario Bloqueado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                // Queda pendiente agregar que se inactivo el usuario. Pasa a estado INACTIVO
-
-                this.Close();
-                // Se cierra la Pantalla de Login
-            }
 
         } // Valida las credenciales de usuario
 
