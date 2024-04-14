@@ -1,6 +1,6 @@
-﻿namespace Form_Equipo1
+﻿namespace Equipo1
 {
-    partial class LogIn
+    partial class InterfazLogIn
     {
         /// <summary>
         /// Required designer variable.
@@ -48,7 +48,7 @@
             // 
             this.Box_Usuario.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.Box_Usuario.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Box_Usuario.Location = new System.Drawing.Point(504, 205);
+            this.Box_Usuario.Location = new System.Drawing.Point(504, 236);
             this.Box_Usuario.Name = "Box_Usuario";
             this.Box_Usuario.Size = new System.Drawing.Size(343, 34);
             this.Box_Usuario.TabIndex = 0;
@@ -57,7 +57,7 @@
             // 
             this.Label_Usuario.AutoSize = true;
             this.Label_Usuario.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Usuario.Location = new System.Drawing.Point(92, 211);
+            this.Label_Usuario.Location = new System.Drawing.Point(92, 242);
             this.Label_Usuario.Name = "Label_Usuario";
             this.Label_Usuario.Size = new System.Drawing.Size(170, 28);
             this.Label_Usuario.TabIndex = 1;
@@ -67,7 +67,7 @@
             // 
             this.Label_Pass.AutoSize = true;
             this.Label_Pass.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Pass.Location = new System.Drawing.Point(92, 295);
+            this.Label_Pass.Location = new System.Drawing.Point(92, 326);
             this.Label_Pass.Name = "Label_Pass";
             this.Label_Pass.Size = new System.Drawing.Size(130, 28);
             this.Label_Pass.TabIndex = 3;
@@ -77,7 +77,7 @@
             // 
             this.Box_Pass.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.Box_Pass.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Box_Pass.Location = new System.Drawing.Point(504, 290);
+            this.Box_Pass.Location = new System.Drawing.Point(504, 321);
             this.Box_Pass.Name = "Box_Pass";
             this.Box_Pass.Size = new System.Drawing.Size(343, 34);
             this.Box_Pass.TabIndex = 1;
@@ -110,7 +110,7 @@
             this.Label_NewPass.AutoSize = true;
             this.Label_NewPass.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_NewPass.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.Label_NewPass.Location = new System.Drawing.Point(92, 379);
+            this.Label_NewPass.Location = new System.Drawing.Point(92, 410);
             this.Label_NewPass.Name = "Label_NewPass";
             this.Label_NewPass.Size = new System.Drawing.Size(198, 28);
             this.Label_NewPass.TabIndex = 7;
@@ -121,7 +121,7 @@
             this.NewPass.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.NewPass.Enabled = false;
             this.NewPass.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewPass.Location = new System.Drawing.Point(504, 375);
+            this.NewPass.Location = new System.Drawing.Point(504, 406);
             this.NewPass.Name = "NewPass";
             this.NewPass.Size = new System.Drawing.Size(343, 34);
             this.NewPass.TabIndex = 6;
@@ -131,7 +131,7 @@
             this.Label_ConfirmNewPass.AutoSize = true;
             this.Label_ConfirmNewPass.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_ConfirmNewPass.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.Label_ConfirmNewPass.Location = new System.Drawing.Point(92, 463);
+            this.Label_ConfirmNewPass.Location = new System.Drawing.Point(92, 494);
             this.Label_ConfirmNewPass.Name = "Label_ConfirmNewPass";
             this.Label_ConfirmNewPass.Size = new System.Drawing.Size(301, 28);
             this.Label_ConfirmNewPass.TabIndex = 9;
@@ -142,7 +142,7 @@
             this.ConfirmNewPass.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ConfirmNewPass.Enabled = false;
             this.ConfirmNewPass.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirmNewPass.Location = new System.Drawing.Point(504, 460);
+            this.ConfirmNewPass.Location = new System.Drawing.Point(504, 491);
             this.ConfirmNewPass.Name = "ConfirmNewPass";
             this.ConfirmNewPass.Size = new System.Drawing.Size(343, 34);
             this.ConfirmNewPass.TabIndex = 8;
@@ -150,7 +150,7 @@
             // PassViewImg
             // 
             this.PassViewImg.Image = global::Form_Equipo1.Properties.Resources.PassView;
-            this.PassViewImg.Location = new System.Drawing.Point(854, 291);
+            this.PassViewImg.Location = new System.Drawing.Point(854, 322);
             this.PassViewImg.Name = "PassViewImg";
             this.PassViewImg.Size = new System.Drawing.Size(41, 34);
             this.PassViewImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -162,18 +162,18 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Form_Equipo1.Properties.Resources.Logo___Nunito_Sin_Fondo;
-            this.pictureBox2.Location = new System.Drawing.Point(360, 48);
+            this.pictureBox2.Location = new System.Drawing.Point(353, 44);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(229, 146);
+            this.pictureBox2.Size = new System.Drawing.Size(278, 164);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 48;
             this.pictureBox2.TabStop = false;
             // 
-            // LogIn
+            // InterfazLogIn
             // 
             this.AcceptButton = this.Boton_Ingresar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(956, 637);
             this.Controls.Add(this.pictureBox2);
@@ -190,7 +190,7 @@
             this.Controls.Add(this.Box_Usuario);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KeyPreview = true;
-            this.Name = "LogIn";
+            this.Name = "InterfazLogIn";
             this.Text = "Log In";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LogIn_KeyDown);
             this.Controls.SetChildIndex(this.Box_Usuario, 0);

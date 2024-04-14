@@ -1,4 +1,4 @@
-﻿namespace Form_Equipo1
+﻿namespace Equipo1
 {
     partial class FormBase
     {
@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBase));
             this.BarraTituloForm = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnRestaurarForm = new System.Windows.Forms.PictureBox();
             this.btnMinimizarForm = new System.Windows.Forms.PictureBox();
             this.btnMaximizarForm = new System.Windows.Forms.PictureBox();
             this.btnCerrarForm = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.BarraTituloForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurarForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarForm)).BeginInit();
@@ -53,17 +53,26 @@
             this.BarraTituloForm.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarraTituloForm.Location = new System.Drawing.Point(0, 0);
             this.BarraTituloForm.Name = "BarraTituloForm";
-            this.BarraTituloForm.Size = new System.Drawing.Size(1600, 38);
+            this.BarraTituloForm.Size = new System.Drawing.Size(800, 38);
             this.BarraTituloForm.TabIndex = 0;
             this.BarraTituloForm.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.BarraTituloForm_MouseDoubleClick);
             this.BarraTituloForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTituloForm_MouseDown);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, -1);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 37);
+            this.label2.TabIndex = 1;
             // 
             // btnRestaurarForm
             // 
             this.btnRestaurarForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRestaurarForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurarForm.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurarForm.Image")));
-            this.btnRestaurarForm.Location = new System.Drawing.Point(1515, 0);
+            this.btnRestaurarForm.Location = new System.Drawing.Point(715, 0);
             this.btnRestaurarForm.Name = "btnRestaurarForm";
             this.btnRestaurarForm.Size = new System.Drawing.Size(40, 39);
             this.btnRestaurarForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -77,7 +86,7 @@
             this.btnMinimizarForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizarForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarForm.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarForm.Image")));
-            this.btnMinimizarForm.Location = new System.Drawing.Point(1477, -9);
+            this.btnMinimizarForm.Location = new System.Drawing.Point(677, -9);
             this.btnMinimizarForm.Name = "btnMinimizarForm";
             this.btnMinimizarForm.Size = new System.Drawing.Size(31, 35);
             this.btnMinimizarForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -90,7 +99,7 @@
             this.btnMaximizarForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaximizarForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximizarForm.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizarForm.Image")));
-            this.btnMaximizarForm.Location = new System.Drawing.Point(1525, 4);
+            this.btnMaximizarForm.Location = new System.Drawing.Point(725, 4);
             this.btnMaximizarForm.Name = "btnMaximizarForm";
             this.btnMaximizarForm.Size = new System.Drawing.Size(30, 32);
             this.btnMaximizarForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -103,7 +112,7 @@
             this.btnCerrarForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrarForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarForm.Image")));
-            this.btnCerrarForm.Location = new System.Drawing.Point(1558, 0);
+            this.btnCerrarForm.Location = new System.Drawing.Point(758, 0);
             this.btnCerrarForm.Name = "btnCerrarForm";
             this.btnCerrarForm.Size = new System.Drawing.Size(39, 42);
             this.btnCerrarForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -111,20 +120,10 @@
             this.btnCerrarForm.TabStop = false;
             this.btnCerrarForm.Click += new System.EventHandler(this.btnCerrarForm_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, -1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 37);
-            this.label2.TabIndex = 1;
-            // 
             // FormBase
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1600, 870);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(800, 435);
             this.Controls.Add(this.BarraTituloForm);
             this.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -1,6 +1,6 @@
-﻿namespace Form_Equipo1
+﻿namespace Equipo1
 {
-    partial class Menu
+    partial class InterfazMenu
     {
         /// <summary>
         /// Required designer variable.

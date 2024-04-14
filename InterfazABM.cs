@@ -1,32 +1,24 @@
-﻿using Form_Equipo1;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices; // importamos librería
 
 namespace Equipo1
 {
-    public partial class UserAdmin : FormBase
+    public partial class InterfazABM : FormBase
     {
-        private Dictionary<string, List<string>> usuariosPorRol = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> usuariosPorRol = new Dictionary<string, List<string>>(); // Lista de usuarios para validar sin WS
 
-        public UserAdmin()
+        public InterfazABM()
         {
-
             InitializeComponent(); // Inicializamos el formulario.
-            TituloBarra = "ABM Usuarios"; //Establezco el nombre que irá en el título de la barra superior.
+            TituloBarra = "ABM Usuarios"; // Colocar el nombre que irá en el título de la barra superior.
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
 
             Operacion_Null.Visible = false; // Ocultar el TextBox Operacion_Null
             Rol_Null.Visible = false; // Ocultar el TextBox Rol_Null
             Label_Usuario.Visible = false; // Ocultar el TextBox Label_Usuario
-            ComboBox_Usuario.Visible = false;
+            ComboBox_Usuario.Visible = false; // No mostrar el combobox de usuario por defecto
+            CheckActivo.Visible = false; // No mostrar el check "De Baja" por defecto
 
             // Agregar opciones al ComboBox de tipo de ABM una sola vez al cargar el formulario
             ComboBox_ABM.Items.Add("Alta");
@@ -38,7 +30,7 @@ namespace Equipo1
             ComboBox_Rol.Items.Add("Supervisor");
             ComboBox_Rol.Items.Add("Vendedor");
 
-            // Asociar usuarios a roles
+            // Asociar usuarios a roles (ELIMINAR AL CONECTAR EL WS)
             usuariosPorRol.Add("Administrador", new List<string> { "01 - ADMINI24" });
             usuariosPorRol.Add("Supervisor", new List<string> { "02 - SUPERV24" });
             usuariosPorRol.Add("Vendedor", new List<string> { "03 - VENDED24" });
@@ -46,8 +38,7 @@ namespace Equipo1
             // Manejar el evento SelectedIndexChanged del primer ComboBox
             ComboBox_Rol.SelectedIndexChanged += ComboBox_Rol_SelectedIndexChanged;
 
-            // Desactivar la capacidad de edición de los tres ComboBox
-
+            // Desactivar la capacidad de edición de los tres Comboboxes para evitar ingresos accidentales.
             ComboBox_ABM.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBox_Rol.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBox_Usuario.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -58,7 +49,7 @@ namespace Equipo1
 
         } // Esta Función prepara el formulario y sus restricciones
 
-        private void ResetearCampos()
+        private void Limpiar()
         {
             // Reiniciar los valores de todos los campos del formulario a sus valores predeterminados
             ComboBox_ABM.SelectedIndex = -1;
@@ -93,11 +84,53 @@ namespace Equipo1
             Pass_Error.Visible = false;
             ConfirmPass_Error.Visible = false;
 
-            // Volver a ocultar el Combobox_Usuario
+            // Ocultar todos los tooltips
+            MayudaOper.Visible = false;
+            MayudaAltura.Visible = false;
+            MayudaApellido.Visible = false;
+            MayudaCalle.Visible = false;
+            MayudaConfirContra.Visible = false;
+            MayudaConfirMail.Visible = false;
+            MayudaContra.Visible = false;
+            MayudaDepto.Visible = false;
+            MayudaDNI.Visible = false;
+            MayudaFechaNacimiento.Visible = false;
+            MayudaMail.Visible = false;
+            MayudaNombre.Visible = false;
+            MayudaOper.Visible = false;
+            MayudaRol.Visible = false;
+            MayudaTelefono.Visible = false;
+
+            // Volver a ocultar el Combobox_Usuario y el check "De Baja"
             Label_Usuario.Visible = false; 
             ComboBox_Usuario.Visible = false;
+            CheckActivo.Visible = false;
+
 
         } // Blanquea el Formulario
+
+        private bool CamposCompletos()
+        {
+            // Verificar si al menos uno de los campos está lleno
+            bool camposLlenos = !string.IsNullOrWhiteSpace(Box_Nombre.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Apellido.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_DNI.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Calle.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Altura.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Depto.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Telefono.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Mail.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Mail_Confirm.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Pass.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Pass_Confirm.Text);
+
+            // Verificar si los ComboBoxes no han sido desplegados y se ha seleccionado una opción
+            bool comboBoxesLlenos = ComboBox_Rol.DroppedDown == false && ComboBox_Rol.SelectedItem != null &&
+                                    ComboBox_ABM.DroppedDown == false && ComboBox_ABM.SelectedItem != null;
+
+            // Retorna verdadero si al menos uno de los campos de texto está lleno y los ComboBoxes no están desplegados y tienen una selección
+            return camposLlenos || comboBoxesLlenos;
+        } // Evalúa qué campos del formulario están completos
 
         private string GenerarNombreUsuario(string nombre, string apellido, DateTime fechaNacimiento)
         {
@@ -127,12 +160,14 @@ namespace Equipo1
                     // Mostrar ComboBox_Usuario y Label_Usuario
                     ComboBox_Usuario.Visible = true;
                     Label_Usuario.Visible = true;
+                    CheckActivo.Visible = true; 
                 }
                 else
                 {
                     // Ocultar ComboBox_Usuario y Label_Usuario
                     ComboBox_Usuario.Visible = false;
                     Label_Usuario.Visible = false;
+                    CheckActivo.Visible = false;
                 }
             }
             else
@@ -140,6 +175,7 @@ namespace Equipo1
                 // Si no se ha seleccionado ningún elemento en ComboBox_ABM, ocultar ComboBox_Usuario y Label_Usuario
                 ComboBox_Usuario.Visible = false;
                 Label_Usuario.Visible = false;
+                CheckActivo.Visible = false;
             }
         } // Detecta Cambios en el campo "Operación"
 
@@ -165,41 +201,6 @@ namespace Equipo1
                 }
             }
         } // Detecta Cambios en el campo "Rol"
-
-        private void Box_Nombre_TextChanged(object sender, EventArgs e)
-        {
-            // No necesitamos hacer nada en este evento para esta validación
-        } // Detecta Cambios en el campo "Nombre"
-
-        private void Box_Apellido_TextChanged(object sender, EventArgs e)
-        {
-
-        } // Detecta Cambios en el campo "Apellido"
-
-        private void Box_DNI_TextChanged(object sender, EventArgs e)
-        {
-            // No necesitamos hacer nada en este evento para esta validación
-        } // Detecta Cambios en el campo "DNI"
-
-        private void Box_Calle_TextChanged(object sender, EventArgs e)
-        {
- 
-        } // Detecta Cambios en el campo "Calle"
- 
-        private void Box_Altura_TextChanged(object sender, EventArgs e)
-        {
- 
-        } // Detecta Cambios en el campo "Altura"
- 
-        private void Box_Depto_TextChanged(object sender, EventArgs e)
-        {
- 
-        } // Detecta Cambios en el campo "Departamento"
-
-        private void Box_Mail_TextChanged(object sender, EventArgs e)
-        {
-
-        } // Detecta cambios en el campo "Email"
 
         private void Boton_Confirmar_Click(object sender, EventArgs e)
         {
@@ -437,35 +438,12 @@ namespace Equipo1
                 else
                 {
                     // Restablecer todos los campos del formulario
-                    ResetearCampos();
+                    Limpiar();
                 }
             }
             // Si el usuario elige "No" en el cuadro de diálogo de confirmación, no hacemos nada
 
         } // Confirma todos los campos, si está todo correcto, genera un ID de usuario.
-
-        private bool CamposCompletos()
-        {
-            // Verificar si al menos uno de los campos está lleno
-            bool camposLlenos = !string.IsNullOrWhiteSpace(Box_Nombre.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Apellido.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_DNI.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Calle.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Altura.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Depto.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Telefono.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Mail.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Mail_Confirm.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Pass.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Pass_Confirm.Text);
-
-            // Verificar si los ComboBoxes no han sido desplegados y se ha seleccionado una opción
-            bool comboBoxesLlenos = ComboBox_Rol.DroppedDown == false && ComboBox_Rol.SelectedItem != null &&
-                                    ComboBox_ABM.DroppedDown == false && ComboBox_ABM.SelectedItem != null;
-
-            // Retorna verdadero si al menos uno de los campos de texto está lleno y los ComboBoxes no están desplegados y tienen una selección
-            return camposLlenos || comboBoxesLlenos;
-        }
 
         private void Boton_Limpiar_Click(object sender, EventArgs e)
         {
@@ -477,9 +455,7 @@ namespace Equipo1
 
                 if (confirmacion == DialogResult.Yes)
                 {
-                    // Si el usuario elige "Sí", llamar al método para resetear los campos
-                    ResetearCampos();
-                    LimpiarAlertas ();  // Habria que definir si el usuario desea eliminar las alertas o no (DEFINCION).
+                    Limpiar();  // Si el usuario elige "Sí", llamar al método para resetear los campos
                 }
                 // Si el usuario elige "No", no hacer nada
             }
@@ -488,7 +464,7 @@ namespace Equipo1
                 // Mostrar un mensaje de error
                 MessageBox.Show("No hay datos para limpiar.\n\nCódigo de Error: 004", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        } // Maneja el evento del botón "Limpiar"
 
         private void Boton_Cancelar_Click(object sender, EventArgs e)
         {
@@ -499,27 +475,7 @@ namespace Equipo1
                 // Cerrar el formulario actual (UserAdmin.cs)
                 this.Close(); // Esto cerrará el formulario UserAdmin y volverá automáticamente al formulario Menu si es que fue abierto desde allí
             }
-        }
-
-        private void LimpiarAlertas() // ¿Por qué esta función está separada de "ResetearCampos"?
-        {
-            MayudaOper.Visible = false;
-            MayudaAltura.Visible = false;
-            MayudaApellido.Visible =false;
-            MayudaCalle.Visible = false;
-            MayudaConfirContra.Visible = false;
-            MayudaConfirMail.Visible = false;
-            MayudaContra.Visible = false;
-            MayudaDepto.Visible = false;
-            MayudaDNI.Visible = false;
-            MayudaFechaNacimiento.Visible = false;
-            MayudaMail.Visible = false;
-            MayudaNombre.Visible = false;
-            MayudaOper.Visible = false;
-            MayudaRol.Visible = false;
-            MayudaTelefono.Visible = false;
-
-        }
+        } // Maneja el evento del botón "Cancelar"
 
         private void UserAdmin_KeyDown(object sender, KeyEventArgs e)
         {
@@ -533,6 +489,74 @@ namespace Equipo1
                     this.Close(); // Esto cerrará el formulario UserAdmin y volverá automáticamente al formulario Menu si es que fue abierto desde allí
                 }
             }
+        } // Reacciona al evento de apretar la tecla ESC
+
+        private void CheckActivo_CheckedChanged(object sender, EventArgs e)
+        {
+            // Establecer que el usuario se pase a inactivo cuando se tilde esta opción
+        } // Detecta cambios en el check "De Baja"
+
+        private void IconoListaUsuarios_Click(object sender, EventArgs e) // Evento para abrir la lista de usuarios
+        {
+
+        }
+
+        private void IconoMenu_Click(object sender, EventArgs e)
+        {
+            // Mostrar un cuadro de diálogo de confirmación
+            DialogResult result = MessageBox.Show("¿Está seguro de que desea cerrar esta ventana? No se guardarán los cambios.", "Cerrar ventana", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            // Verificar la respuesta del usuario
+            if (result == DialogResult.Yes)
+            {
+                // Cerrar la ventana actual (InterfazABM)
+                this.Close();
+
+                // Crear una instancia de la ventana InterfazMenu
+                InterfazMenu menuForm = new InterfazMenu();
+
+                // Mostrar la ventana InterfazMenu
+                menuForm.Show();
+            }
+            // Si el usuario elige "No", no hacer nada
+        } // Evento para volver al menú principal
+
+        private void IconoCerrarSesion_Click(object sender, EventArgs e)
+        {
+            // Mostrar un cuadro de diálogo de confirmación
+            DialogResult result = MessageBox.Show("¿Está seguro de que desea cerrar la sesión? No se guardarán los cambios.", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            // Verificar la respuesta del usuario
+            if (result == DialogResult.Yes)
+            {
+                // Crear una nueva instancia de la ventana InterfazLogIn
+                InterfazLogIn loginForm = new InterfazLogIn();
+
+                // Manejar el evento Load de InterfazLogIn
+                loginForm.Load += (s, args) =>
+                {
+                    // Cerrar la ventana actual (InterfazMenu)
+                    this.Close();
+                };
+
+                // Mostrar la ventana InterfazLogIn
+                loginForm.Show();
+            }
+            // Si el usuario elige "No", no hacer nada
+        }
+
+        private void IconoCerrarSistema_Click(object sender, EventArgs e)
+        {
+            // Mostrar un cuadro de diálogo de confirmación
+            DialogResult result = MessageBox.Show("¿Está seguro de que desea cerrar el programa? No se guardarán los cambios.", "Cerrar programa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            // Verificar la respuesta del usuario
+            if (result == DialogResult.Yes)
+            {
+                // Cerrar la aplicación
+                Application.Exit();
+            }
+            // Si el usuario elige "No", no hacer nada
         }
     }
 }

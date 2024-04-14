@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices; // importamos librería
 using System.Windows.Forms;
-//using System.Runtime.InteropServices; // importamos librería
 
-namespace Form_Equipo1
+namespace Equipo1
 {
     public partial class FormBase : Form //Se crea nuevo formularo base para que el resto de los formularios hereden el formato.
     {

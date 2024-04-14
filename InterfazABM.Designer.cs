@@ -1,6 +1,6 @@
 ﻿namespace Equipo1
 {
-    partial class UserAdmin
+    partial class InterfazABM
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.Boton_Confirmar = new System.Windows.Forms.Button();
             this.Boton_Cancelar = new System.Windows.Forms.Button();
             this.ComboBox_Rol = new System.Windows.Forms.ComboBox();
@@ -60,11 +59,18 @@
             this.Box_Altura = new System.Windows.Forms.TextBox();
             this.Box_Depto = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Label_CerrarSistema = new System.Windows.Forms.Label();
+            this.Label_CerrarSesion = new System.Windows.Forms.Label();
+            this.Label_MenuPrincipal = new System.Windows.Forms.Label();
+            this.Label_ListaUsuarios = new System.Windows.Forms.Label();
+            this.IconoCerrarSistema = new System.Windows.Forms.PictureBox();
+            this.IconoCerrarSesion = new System.Windows.Forms.PictureBox();
+            this.IconoMenu = new System.Windows.Forms.PictureBox();
+            this.IconoListaUsuarios = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.toolTip_MayudaUserAdmin = new System.Windows.Forms.ToolTip(this.components);
             this.MayudaNombre = new System.Windows.Forms.Label();
             this.MayudaApellido = new System.Windows.Forms.Label();
             this.MayudaDNI = new System.Windows.Forms.Label();
@@ -98,6 +104,12 @@
             this.Label_Usuario = new System.Windows.Forms.Label();
             this.ComboBox_Usuario = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.CheckActivo = new System.Windows.Forms.CheckBox();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IconoCerrarSistema)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconoCerrarSesion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconoMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconoListaUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -309,7 +321,6 @@
             this.Box_Nombre.Name = "Box_Nombre";
             this.Box_Nombre.Size = new System.Drawing.Size(208, 28);
             this.Box_Nombre.TabIndex = 2;
-            this.Box_Nombre.TextChanged += new System.EventHandler(this.Box_Nombre_TextChanged);
             // 
             // Box_Apellido
             // 
@@ -318,7 +329,6 @@
             this.Box_Apellido.Name = "Box_Apellido";
             this.Box_Apellido.Size = new System.Drawing.Size(208, 28);
             this.Box_Apellido.TabIndex = 3;
-            this.Box_Apellido.TextChanged += new System.EventHandler(this.Box_Apellido_TextChanged);
             // 
             // Box_DNI
             // 
@@ -327,8 +337,6 @@
             this.Box_DNI.Name = "Box_DNI";
             this.Box_DNI.Size = new System.Drawing.Size(208, 28);
             this.Box_DNI.TabIndex = 4;
-            this.toolTip_MayudaUserAdmin.SetToolTip(this.Box_DNI, "Indique DNI del usuario");
-            this.Box_DNI.TextChanged += new System.EventHandler(this.Box_DNI_TextChanged);
             // 
             // Box_Calle
             // 
@@ -337,7 +345,6 @@
             this.Box_Calle.Name = "Box_Calle";
             this.Box_Calle.Size = new System.Drawing.Size(208, 28);
             this.Box_Calle.TabIndex = 6;
-            this.Box_Calle.TextChanged += new System.EventHandler(this.Box_Calle_TextChanged);
             // 
             // Box_Mail
             // 
@@ -346,7 +353,6 @@
             this.Box_Mail.Name = "Box_Mail";
             this.Box_Mail.Size = new System.Drawing.Size(208, 28);
             this.Box_Mail.TabIndex = 10;
-            this.Box_Mail.TextChanged += new System.EventHandler(this.Box_Mail_TextChanged);
             // 
             // Box_Pass
             // 
@@ -409,8 +415,6 @@
             this.Box_Altura.Name = "Box_Altura";
             this.Box_Altura.Size = new System.Drawing.Size(208, 28);
             this.Box_Altura.TabIndex = 7;
-            this.toolTip_MayudaUserAdmin.SetToolTip(this.Box_Altura, "Indique la altura de la calle donde reside el usuario.");
-            this.Box_Altura.TextChanged += new System.EventHandler(this.Box_Altura_TextChanged);
             // 
             // Box_Depto
             // 
@@ -419,19 +423,117 @@
             this.Box_Depto.Name = "Box_Depto";
             this.Box_Depto.Size = new System.Drawing.Size(208, 28);
             this.Box_Depto.TabIndex = 8;
-            this.toolTip_MayudaUserAdmin.SetToolTip(this.Box_Depto, "Indique el departamento donde reside el usuario. Opcional.");
-            this.Box_Depto.TextChanged += new System.EventHandler(this.Box_Depto_TextChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox1.Controls.Add(this.Label_CerrarSistema);
+            this.groupBox1.Controls.Add(this.Label_CerrarSesion);
+            this.groupBox1.Controls.Add(this.Label_MenuPrincipal);
+            this.groupBox1.Controls.Add(this.Label_ListaUsuarios);
+            this.groupBox1.Controls.Add(this.IconoCerrarSistema);
+            this.groupBox1.Controls.Add(this.IconoCerrarSesion);
+            this.groupBox1.Controls.Add(this.IconoMenu);
+            this.groupBox1.Controls.Add(this.IconoListaUsuarios);
             this.groupBox1.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 38);
+            this.groupBox1.Location = new System.Drawing.Point(0, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(99, 1041);
+            this.groupBox1.Size = new System.Drawing.Size(99, 1075);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
+            // 
+            // Label_CerrarSistema
+            // 
+            this.Label_CerrarSistema.AutoSize = true;
+            this.Label_CerrarSistema.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_CerrarSistema.Location = new System.Drawing.Point(14, 736);
+            this.Label_CerrarSistema.Name = "Label_CerrarSistema";
+            this.Label_CerrarSistema.Size = new System.Drawing.Size(70, 42);
+            this.Label_CerrarSistema.TabIndex = 68;
+            this.Label_CerrarSistema.Text = "Cerrar\r\nSistema";
+            this.Label_CerrarSistema.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Label_CerrarSesion
+            // 
+            this.Label_CerrarSesion.AutoSize = true;
+            this.Label_CerrarSesion.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_CerrarSesion.Location = new System.Drawing.Point(19, 559);
+            this.Label_CerrarSesion.Name = "Label_CerrarSesion";
+            this.Label_CerrarSesion.Size = new System.Drawing.Size(59, 42);
+            this.Label_CerrarSesion.TabIndex = 67;
+            this.Label_CerrarSesion.Text = "Cerrar\r\nSesión";
+            this.Label_CerrarSesion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Label_MenuPrincipal
+            // 
+            this.Label_MenuPrincipal.AutoSize = true;
+            this.Label_MenuPrincipal.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_MenuPrincipal.Location = new System.Drawing.Point(12, 383);
+            this.Label_MenuPrincipal.Name = "Label_MenuPrincipal";
+            this.Label_MenuPrincipal.Size = new System.Drawing.Size(72, 42);
+            this.Label_MenuPrincipal.TabIndex = 66;
+            this.Label_MenuPrincipal.Text = "Menú\r\nPrincipal";
+            this.Label_MenuPrincipal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Label_ListaUsuarios
+            // 
+            this.Label_ListaUsuarios.AutoSize = true;
+            this.Label_ListaUsuarios.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_ListaUsuarios.Location = new System.Drawing.Point(12, 208);
+            this.Label_ListaUsuarios.Name = "Label_ListaUsuarios";
+            this.Label_ListaUsuarios.Size = new System.Drawing.Size(74, 42);
+            this.Label_ListaUsuarios.TabIndex = 62;
+            this.Label_ListaUsuarios.Text = "Listar\r\nUsuarios";
+            this.Label_ListaUsuarios.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // IconoCerrarSistema
+            // 
+            this.IconoCerrarSistema.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IconoCerrarSistema.Image = global::Form_Equipo1.Properties.Resources.Cerrar_Programa;
+            this.IconoCerrarSistema.Location = new System.Drawing.Point(12, 678);
+            this.IconoCerrarSistema.Name = "IconoCerrarSistema";
+            this.IconoCerrarSistema.Size = new System.Drawing.Size(72, 55);
+            this.IconoCerrarSistema.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.IconoCerrarSistema.TabIndex = 65;
+            this.IconoCerrarSistema.TabStop = false;
+            this.IconoCerrarSistema.Click += new System.EventHandler(this.IconoCerrarSistema_Click);
+            // 
+            // IconoCerrarSesion
+            // 
+            this.IconoCerrarSesion.Cursor = System.Windows.Forms.Cursors.No;
+            this.IconoCerrarSesion.Image = global::Form_Equipo1.Properties.Resources.Cerrar_Sesion;
+            this.IconoCerrarSesion.Location = new System.Drawing.Point(12, 500);
+            this.IconoCerrarSesion.Name = "IconoCerrarSesion";
+            this.IconoCerrarSesion.Size = new System.Drawing.Size(72, 55);
+            this.IconoCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.IconoCerrarSesion.TabIndex = 64;
+            this.IconoCerrarSesion.TabStop = false;
+            this.IconoCerrarSesion.Click += new System.EventHandler(this.IconoCerrarSesion_Click);
+            // 
+            // IconoMenu
+            // 
+            this.IconoMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IconoMenu.Image = global::Form_Equipo1.Properties.Resources.Menú_Inicio;
+            this.IconoMenu.Location = new System.Drawing.Point(12, 325);
+            this.IconoMenu.Name = "IconoMenu";
+            this.IconoMenu.Size = new System.Drawing.Size(72, 55);
+            this.IconoMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.IconoMenu.TabIndex = 63;
+            this.IconoMenu.TabStop = false;
+            this.IconoMenu.Click += new System.EventHandler(this.IconoMenu_Click);
+            // 
+            // IconoListaUsuarios
+            // 
+            this.IconoListaUsuarios.Cursor = System.Windows.Forms.Cursors.No;
+            this.IconoListaUsuarios.Image = global::Form_Equipo1.Properties.Resources.Lista_Usuarios;
+            this.IconoListaUsuarios.Location = new System.Drawing.Point(12, 150);
+            this.IconoListaUsuarios.Name = "IconoListaUsuarios";
+            this.IconoListaUsuarios.Size = new System.Drawing.Size(72, 55);
+            this.IconoListaUsuarios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.IconoListaUsuarios.TabIndex = 62;
+            this.IconoListaUsuarios.TabStop = false;
+            this.IconoListaUsuarios.Click += new System.EventHandler(this.IconoListaUsuarios_Click);
             // 
             // groupBox2
             // 
@@ -486,7 +588,6 @@
             this.MayudaNombre.Size = new System.Drawing.Size(13, 15);
             this.MayudaNombre.TabIndex = 28;
             this.MayudaNombre.Text = "?";
-            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaNombre, "Indique el nombre del usuario.");
             this.MayudaNombre.Visible = false;
             // 
             // MayudaApellido
@@ -498,7 +599,6 @@
             this.MayudaApellido.Size = new System.Drawing.Size(13, 15);
             this.MayudaApellido.TabIndex = 29;
             this.MayudaApellido.Text = "?";
-            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaApellido, "Indique apellido del usuario.");
             this.MayudaApellido.Visible = false;
             // 
             // MayudaDNI
@@ -510,7 +610,6 @@
             this.MayudaDNI.Size = new System.Drawing.Size(13, 15);
             this.MayudaDNI.TabIndex = 30;
             this.MayudaDNI.Text = "?";
-            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaDNI, "Indique numero de DNI del usuario.");
             this.MayudaDNI.Visible = false;
             // 
             // MayudaCalle
@@ -522,7 +621,6 @@
             this.MayudaCalle.Size = new System.Drawing.Size(13, 15);
             this.MayudaCalle.TabIndex = 31;
             this.MayudaCalle.Text = "?";
-            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaCalle, "Indique el nombre de la calle donde reside el usuario.");
             this.MayudaCalle.Visible = false;
             // 
             // MayudaAltura
@@ -534,7 +632,6 @@
             this.MayudaAltura.Size = new System.Drawing.Size(13, 15);
             this.MayudaAltura.TabIndex = 32;
             this.MayudaAltura.Text = "?";
-            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaAltura, "Indique la altura de la calle donde reside el usuario.");
             this.MayudaAltura.Visible = false;
             // 
             // MayudaDepto
@@ -546,7 +643,6 @@
             this.MayudaDepto.Size = new System.Drawing.Size(13, 15);
             this.MayudaDepto.TabIndex = 33;
             this.MayudaDepto.Text = "?";
-            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaDepto, "Indique el departamento donde reside el usuario. Campo opcional.");
             this.MayudaDepto.Visible = false;
             // 
             // MayudaMail
@@ -558,7 +654,6 @@
             this.MayudaMail.Size = new System.Drawing.Size(13, 15);
             this.MayudaMail.TabIndex = 34;
             this.MayudaMail.Text = "?";
-            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaMail, "Indique el correo electronico del usuario.");
             this.MayudaMail.Visible = false;
             // 
             // MayudaConfirMail
@@ -570,7 +665,6 @@
             this.MayudaConfirMail.Size = new System.Drawing.Size(13, 15);
             this.MayudaConfirMail.TabIndex = 35;
             this.MayudaConfirMail.Text = "?";
-            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaConfirMail, "Confirme el correo electronico del usuario.");
             this.MayudaConfirMail.Visible = false;
             // 
             // MayudaContra
@@ -582,7 +676,6 @@
             this.MayudaContra.Size = new System.Drawing.Size(13, 15);
             this.MayudaContra.TabIndex = 36;
             this.MayudaContra.Text = "?";
-            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaContra, "Indique la contraseña del usuario.");
             this.MayudaContra.Visible = false;
             // 
             // MayudaConfirContra
@@ -594,7 +687,6 @@
             this.MayudaConfirContra.Size = new System.Drawing.Size(13, 15);
             this.MayudaConfirContra.TabIndex = 37;
             this.MayudaConfirContra.Text = "?";
-            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaConfirContra, "Confirme la contraseña del Usuario");
             this.MayudaConfirContra.Visible = false;
             // 
             // MayudaTelefono
@@ -606,7 +698,6 @@
             this.MayudaTelefono.Size = new System.Drawing.Size(13, 15);
             this.MayudaTelefono.TabIndex = 38;
             this.MayudaTelefono.Text = "?";
-            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaTelefono, "Indique el telefono de contacto del usuario.");
             this.MayudaTelefono.Visible = false;
             // 
             // MayudaFechaNacimiento
@@ -618,7 +709,6 @@
             this.MayudaFechaNacimiento.Size = new System.Drawing.Size(13, 15);
             this.MayudaFechaNacimiento.TabIndex = 39;
             this.MayudaFechaNacimiento.Text = "?";
-            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaFechaNacimiento, "Indique la fecha de nacimiento del usuario. Formato DD/MM/AAAA");
             this.MayudaFechaNacimiento.Visible = false;
             // 
             // MayudaOper
@@ -630,7 +720,6 @@
             this.MayudaOper.Size = new System.Drawing.Size(13, 15);
             this.MayudaOper.TabIndex = 40;
             this.MayudaOper.Text = "?";
-            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaOper, "Indique la operacion que desea realizar en el maestro.");
             this.MayudaOper.Visible = false;
             // 
             // MayudaRol
@@ -642,7 +731,6 @@
             this.MayudaRol.Size = new System.Drawing.Size(13, 15);
             this.MayudaRol.TabIndex = 41;
             this.MayudaRol.Text = "?";
-            this.toolTip_MayudaUserAdmin.SetToolTip(this.MayudaRol, "Indique el tipo de usuario que desea.");
             this.MayudaRol.Visible = false;
             // 
             // Operacion_Null
@@ -858,7 +946,19 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "ABM Usuarios";
             // 
-            // UserAdmin
+            // CheckActivo
+            // 
+            this.CheckActivo.AutoSize = true;
+            this.CheckActivo.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckActivo.Location = new System.Drawing.Point(1340, 180);
+            this.CheckActivo.Name = "CheckActivo";
+            this.CheckActivo.Size = new System.Drawing.Size(100, 29);
+            this.CheckActivo.TabIndex = 61;
+            this.CheckActivo.Text = "De Baja";
+            this.CheckActivo.UseVisualStyleBackColor = true;
+            this.CheckActivo.CheckedChanged += new System.EventHandler(this.CheckActivo_CheckedChanged);
+            // 
+            // InterfazABM
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -866,6 +966,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1550, 870);
             this.ControlBox = false;
+            this.Controls.Add(this.CheckActivo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Label_Usuario);
             this.Controls.Add(this.ComboBox_Usuario);
@@ -935,7 +1036,7 @@
             this.Controls.Add(this.Boton_Cancelar);
             this.Controls.Add(this.Boton_Confirmar);
             this.Font = new System.Drawing.Font("Nunito", 8.25F);
-            this.Name = "UserAdmin";
+            this.Name = "InterfazABM";
             this.Text = "ABM de Usuarios";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UserAdmin_KeyDown);
             this.Controls.SetChildIndex(this.Boton_Confirmar, 0);
@@ -1006,6 +1107,13 @@
             this.Controls.SetChildIndex(this.ComboBox_Usuario, 0);
             this.Controls.SetChildIndex(this.Label_Usuario, 0);
             this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.CheckActivo, 0);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IconoCerrarSistema)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconoCerrarSesion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconoMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconoListaUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1049,7 +1157,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ToolTip toolTip_MayudaUserAdmin;
         private System.Windows.Forms.Label MayudaNombre;
         private System.Windows.Forms.Label MayudaApellido;
         private System.Windows.Forms.Label MayudaDNI;
@@ -1083,6 +1190,15 @@
         private System.Windows.Forms.Label Label_Usuario;
         private System.Windows.Forms.ComboBox ComboBox_Usuario;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox CheckActivo;
+        private System.Windows.Forms.PictureBox IconoListaUsuarios;
+        private System.Windows.Forms.PictureBox IconoMenu;
+        private System.Windows.Forms.Label Label_ListaUsuarios;
+        private System.Windows.Forms.PictureBox IconoCerrarSistema;
+        private System.Windows.Forms.PictureBox IconoCerrarSesion;
+        private System.Windows.Forms.Label Label_CerrarSistema;
+        private System.Windows.Forms.Label Label_CerrarSesion;
+        private System.Windows.Forms.Label Label_MenuPrincipal;
     }
 }
 

@@ -61,45 +61,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormBase.cs">
+    <Compile Include="Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBase.Designer.cs">
-      <DependentUpon>FormBase.cs</DependentUpon>
+    <Compile Include="Ventana.Designer.cs">
+      <DependentUpon>Ventana.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="InterfazMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <Compile Include="InterfazMenu.Designer.cs">
+      <DependentUpon>InterfazMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogIn.cs">
+    <Compile Include="InterfazLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogIn.Designer.cs">
-      <DependentUpon>LogIn.cs</DependentUpon>
+    <Compile Include="InterfazLogIn.Designer.cs">
+      <DependentUpon>InterfazLogIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Validar.cs" />
-    <Compile Include="Persona.cs" />
-    <Compile Include="UserAdmin.cs">
+    <Compile Include="InterfazABM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserAdmin.Designer.cs">
-      <DependentUpon>UserAdmin.cs</DependentUpon>
+    <Compile Include="InterfazABM.Designer.cs">
+      <DependentUpon>InterfazABM.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormBase.resx">
-      <DependentUpon>FormBase.cs</DependentUpon>
+    <EmbeddedResource Include="Ventana.resx">
+      <DependentUpon>Ventana.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LogIn.resx">
-      <DependentUpon>LogIn.cs</DependentUpon>
+    <EmbeddedResource Include="InterfazLogIn.resx">
+      <DependentUpon>InterfazLogIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <EmbeddedResource Include="InterfazMenu.resx">
+      <DependentUpon>InterfazMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserAdmin.resx">
-      <DependentUpon>UserAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="InterfazABM.resx">
+      <DependentUpon>InterfazABM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -165,6 +163,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo - Nunito Sin Fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{8b34cb83-b232-4c13-9e16-a9928832cd28}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cerrar Programa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cerrar Sesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lista Usuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menú Inicio.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

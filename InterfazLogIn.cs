@@ -1,24 +1,24 @@
-﻿using Equipo1;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
-namespace Form_Equipo1
+namespace Equipo1
 {
-    public partial class LogIn : FormBase
+    public partial class InterfazLogIn : FormBase
     {
         // Definir las credenciales de administrador
         private const string UsuarioPorDefecto = "ADMINI24";
         private const string ContraseñaPorDefecto = "CAI20241";
-        private const string MailPorDefecto = "Admin@EHogar.com";
 
-        public LogIn()
+        // Iniciar el contador de ingresos fallidos en 0.
+        private int intentosFallidos = 0; 
+
+        public InterfazLogIn()
         {
             InitializeComponent();
-            TituloBarra = "LogIn"; // Establezco nombre que irá en el título de la barra
+            TituloBarra = "LogIn"; // Establecer el nombre que irá en el título de la barra superior de la ventana
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
         } // Función que inicia la ventana de Log In
 
-        private int intentosFallidos = 0;
         private void Boton_Ingresar_Click(object sender, EventArgs e)
         {
             // Obtener las credenciales ingresadas por el usuario
@@ -27,18 +27,11 @@ namespace Form_Equipo1
             string errorMessage; // Variable para almacenar el mensaje de error de la validación
 
             // Verificar si el usuario existe y obtener el mensaje de error si no es válido
-            //bool usuarioExiste = Validar.EsUsuario(usuarioIngresado, out errorMessage);
-            //comentado para que no revele información de la seguridad en el login. Cambio la validación solamente
-            //a un bien/mal.
-
             bool UsuarioCorrecto = Validar.UsuarioValido(usuarioIngresado, out errorMessage);
-                
+
             if (UsuarioCorrecto)
             {
                 // Verificar si la contraseña ingresada es válida
-                //string errorContraseña = Validar.EsContraseña(contraseñaIngresada);
-                //comentado para que no revele información de la seguridad en el login. Cambio la validación solamente
-                //a un bien/mal.
                 string errorContraseña = Validar.ContraseñaValida(contraseñaIngresada);
 
                 if (errorContraseña == null)
@@ -54,18 +47,18 @@ namespace Form_Equipo1
                     else
                     {
                         // El usuario existe pero la contraseña no es la correcta
-                        MessageBox.Show( errorContraseña + "\n\nCódigo de Error: 001", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(errorContraseña + "\n\nCódigo de Error: 001", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    // Mostrar el mensaje de error devuelto por EsContraseña
+                    // Mostrar el mensaje de error devuelto por ContraseñaValida
                     MessageBox.Show(errorContraseña, "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                // El usuario no existe, mostrar el mensaje de error obtenido de EsUsuario
+                // El usuario no existe, mostrar el mensaje de error obtenido de UsuarioValido
                 MessageBox.Show(errorMessage, "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
@@ -76,16 +69,13 @@ namespace Form_Equipo1
             if (intentosFallidos >= 3)
             {
                 MessageBox.Show("El usuario ha sido bloqueado. Contacte al Administrador para reactivarlo nuevamente", "Usuario Bloqueado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                // Queda pendiente agregar que se inactive el usuario. Pasa a estado INACTIVO
+                // Queda pendiente agregar que se inactivo el usuario. Pasa a estado INACTIVO
 
                 this.Close();
                 // Se cierra la Pantalla de Login
             }
 
-        }
-        
-
-
+        } // Valida las credenciales de usuario
 
         private void Boton_Cancelar_Click(object sender, EventArgs e)
         {

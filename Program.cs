@@ -1,5 +1,4 @@
-﻿using Form_Equipo1; // Asumiendo que Form_Equipo1 es el espacio de nombres donde se encuentra tu formulario personalizado Menu.cs
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,11 +18,11 @@ namespace Equipo1
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Instanciar y mostrar el formulario de inicio de sesión
-            LogIn loginForm = new LogIn();
+            InterfazLogIn loginForm = new InterfazLogIn();
             if (loginForm.ShowDialog() == DialogResult.OK)
             {
                 // Si el inicio de sesión es exitoso, iniciar la aplicación principal
-                Application.Run(new Form_Equipo1.Menu()); // Agregado el espacio de nombres completo del formulario personalizado
+                Application.Run(new Equipo1.InterfazMenu()); // Agregado el espacio de nombres completo del formulario personalizado
             }
             else
             {

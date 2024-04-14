@@ -1,50 +1,42 @@
-﻿using Equipo1;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
-namespace Form_Equipo1
+namespace Equipo1
 {
-    public partial class Menu : FormBase
+    public partial class InterfazMenu : FormBase
     {
-        public Menu()
+        public InterfazMenu()
         {
             InitializeComponent();
             TituloBarra = "Menú";
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
         } // Inicializa el menú de navegación.
 
-        private void MenuUserAdmin_Click(object sender, EventArgs e) // Si hago click en la el nombre "usuarios", entro al ABM de Usuarios 
+        private void MenuUserAdmin_Click(object sender, EventArgs e) // Si hago click en "usuarios", entro al ABM de Usuarios 
         {
             // Ocultar el formulario Menu
             this.Hide();
 
-            // Crear una instancia del formulario UserAdmin
-            UserAdmin userAdminForm = new UserAdmin();
+            // Crear una instancia del formulario InterfazABM
+            InterfazABM userAdminForm = new InterfazABM();
 
-            // Mostrar el formulario UserAdmin
+            // Mostrar el formulario InterfazABM
             userAdminForm.FormClosed += (s, args) => this.Show(); // Mostrar nuevamente el formulario Menu cuando se cierre UserAdmin
             userAdminForm.Show();
-        } 
+        }
 
-        private void UserAdminImg_Click(object sender, EventArgs e) // Si hago click en la imagen de usuarios, entro al ABM de Usuarios
+        private void UserAdminImg_Click(object sender, EventArgs e)
         {
-            // Ocultar el formulario Menu
+            // Crear una instancia del formulario InterfazABM
+            InterfazABM userAdminForm = new InterfazABM();
+
+            // Ocultar el formulario actual (Menu)
             this.Hide();
 
-            // Crear una instancia del formulario UserAdmin
-            UserAdmin userAdminForm = new UserAdmin();
-
-            // Mostrar el formulario UserAdmin
-            userAdminForm.FormClosed += (s, args) => this.Show(); // Mostrar nuevamente el formulario Menu cuando se cierre UserAdmin
+            // Mostrar el formulario InterfazABM
+            userAdminForm.FormClosed += (s, args) => this.Close(); // Cerrar la aplicación cuando se cierre UserAdmin
             userAdminForm.Show();
-        } 
+        }
 
         private void MenuLogOut_Click(object sender, EventArgs e) // Le pregunta al usuario si está seguro de que quiere cerrar la sesión
         {
@@ -54,7 +46,7 @@ namespace Form_Equipo1
             // Verificar la respuesta del usuario
             if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
             {
-                LogIn loginForm = new LogIn(); // Redirigir al formulario de inicio de sesión (LogIn)
+                InterfazLogIn loginForm = new InterfazLogIn(); // Redirigir al formulario de inicio de sesión (LogIn)
                 loginForm.Show();
                 this.Hide(); // Ocultar el formulario actual
             }
@@ -70,7 +62,7 @@ namespace Form_Equipo1
                 // Verificar la respuesta del usuario
                 if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
                 {
-                    LogIn loginForm = new LogIn(); // Redirigir al formulario de inicio de sesión (LogIn)
+                    InterfazLogIn loginForm = new InterfazLogIn(); // Redirigir al formulario de inicio de sesión (LogIn)
                     loginForm.Show();
                     this.Hide(); // Ocultar el formulario actual
                 }
