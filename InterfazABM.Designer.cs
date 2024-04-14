@@ -490,7 +490,7 @@
             // IconoCerrarSistema
             // 
             this.IconoCerrarSistema.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.IconoCerrarSistema.Image = global::Form_Equipo1.Properties.Resources.Cerrar_Programa;
+            this.IconoCerrarSistema.Image = global::Presentacion.Properties.Resources.Cerrar_Programa;
             this.IconoCerrarSistema.Location = new System.Drawing.Point(12, 678);
             this.IconoCerrarSistema.Name = "IconoCerrarSistema";
             this.IconoCerrarSistema.Size = new System.Drawing.Size(72, 55);
@@ -502,7 +502,7 @@
             // IconoCerrarSesion
             // 
             this.IconoCerrarSesion.Cursor = System.Windows.Forms.Cursors.No;
-            this.IconoCerrarSesion.Image = global::Form_Equipo1.Properties.Resources.Cerrar_Sesion;
+            this.IconoCerrarSesion.Image = global::Presentacion.Properties.Resources.Cerrar_Sesion;
             this.IconoCerrarSesion.Location = new System.Drawing.Point(12, 500);
             this.IconoCerrarSesion.Name = "IconoCerrarSesion";
             this.IconoCerrarSesion.Size = new System.Drawing.Size(72, 55);
@@ -514,7 +514,7 @@
             // IconoMenu
             // 
             this.IconoMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.IconoMenu.Image = global::Form_Equipo1.Properties.Resources.Menú_Inicio;
+            this.IconoMenu.Image = global::Presentacion.Properties.Resources.Menú_Inicio;
             this.IconoMenu.Location = new System.Drawing.Point(12, 325);
             this.IconoMenu.Name = "IconoMenu";
             this.IconoMenu.Size = new System.Drawing.Size(72, 55);
@@ -526,7 +526,7 @@
             // IconoListaUsuarios
             // 
             this.IconoListaUsuarios.Cursor = System.Windows.Forms.Cursors.No;
-            this.IconoListaUsuarios.Image = global::Form_Equipo1.Properties.Resources.Lista_Usuarios;
+            this.IconoListaUsuarios.Image = global::Presentacion.Properties.Resources.Lista_Usuarios;
             this.IconoListaUsuarios.Location = new System.Drawing.Point(12, 150);
             this.IconoListaUsuarios.Name = "IconoListaUsuarios";
             this.IconoListaUsuarios.Size = new System.Drawing.Size(72, 55);
@@ -906,7 +906,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Form_Equipo1.Properties.Resources.ElectroHogarLogo;
+            this.pictureBox2.Image = global::Presentacion.Properties.Resources.ElectroHogarLogo;
             this.pictureBox2.Location = new System.Drawing.Point(1345, 54);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(202, 33);

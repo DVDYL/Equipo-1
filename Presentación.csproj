@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{F5A92E83-C29C-4897-A7C8-608FA6F5575D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Form_Equipo1</RootNamespace>
-    <AssemblyName>Form_Equipo1</AssemblyName>
+    <RootNamespace>Presentacion</RootNamespace>
+    <AssemblyName>Presentacion</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -165,12 +165,6 @@
     <None Include="Resources\Logo - Nunito Sin Fondo.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Negocio\Negocio.csproj">
-      <Project>{8b34cb83-b232-4c13-9e16-a9928832cd28}</Project>
-      <Name>Negocio</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Cerrar Programa.png" />
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +175,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Menú Inicio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Negocio\Negocio.csproj">
+      <Project>{9007bbfb-cb3a-4634-abee-91e04e9a0bbb}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

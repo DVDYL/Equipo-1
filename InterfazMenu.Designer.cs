@@ -143,7 +143,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.No;
-            this.pictureBox5.Image = global::Form_Equipo1.Properties.Resources.Productos;
+            this.pictureBox5.Image = global::Presentacion.Properties.Resources.Productos;
             this.pictureBox5.Location = new System.Drawing.Point(126, 511);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox5.Name = "pictureBox5";
@@ -155,7 +155,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.No;
-            this.pictureBox4.Image = global::Form_Equipo1.Properties.Resources.Ventas;
+            this.pictureBox4.Image = global::Presentacion.Properties.Resources.Ventas;
             this.pictureBox4.Location = new System.Drawing.Point(1252, 511);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox4.Name = "pictureBox4";
@@ -167,7 +167,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.No;
-            this.pictureBox3.Image = global::Form_Equipo1.Properties.Resources.Stock;
+            this.pictureBox3.Image = global::Presentacion.Properties.Resources.Stock;
             this.pictureBox3.Location = new System.Drawing.Point(707, 511);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox3.Name = "pictureBox3";
@@ -179,7 +179,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.No;
-            this.pictureBox2.Image = global::Form_Equipo1.Properties.Resources.Clientes;
+            this.pictureBox2.Image = global::Presentacion.Properties.Resources.Clientes;
             this.pictureBox2.Location = new System.Drawing.Point(1252, 171);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox2.Name = "pictureBox2";
@@ -191,7 +191,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.No;
-            this.pictureBox1.Image = global::Form_Equipo1.Properties.Resources.Proveedores;
+            this.pictureBox1.Image = global::Presentacion.Properties.Resources.Proveedores;
             this.pictureBox1.Location = new System.Drawing.Point(707, 171);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox1.Name = "pictureBox1";
@@ -203,7 +203,7 @@
             // UserAdminImg
             // 
             this.UserAdminImg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.UserAdminImg.Image = global::Form_Equipo1.Properties.Resources.UserAdmin1;
+            this.UserAdminImg.Image = global::Presentacion.Properties.Resources.UserAdmin1;
             this.UserAdminImg.Location = new System.Drawing.Point(126, 171);
             this.UserAdminImg.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.UserAdminImg.Name = "UserAdminImg";
@@ -215,7 +215,7 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = global::Form_Equipo1.Properties.Resources.ElectroHogarLogo;
+            this.pictureBox6.Image = global::Presentacion.Properties.Resources.ElectroHogarLogo;
             this.pictureBox6.Location = new System.Drawing.Point(436, 53);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox6.Name = "pictureBox6";

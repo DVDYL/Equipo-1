@@ -149,7 +149,7 @@
             // 
             // PassViewImg
             // 
-            this.PassViewImg.Image = global::Form_Equipo1.Properties.Resources.PassView;
+            this.PassViewImg.Image = global::Presentacion.Properties.Resources.PassView;
             this.PassViewImg.Location = new System.Drawing.Point(854, 322);
             this.PassViewImg.Name = "PassViewImg";
             this.PassViewImg.Size = new System.Drawing.Size(41, 34);
@@ -161,7 +161,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Form_Equipo1.Properties.Resources.Logo___Nunito_Sin_Fondo;
+            this.pictureBox2.Image = global::Presentacion.Properties.Resources.Logo___Nunito_Sin_Fondo;
             this.pictureBox2.Location = new System.Drawing.Point(353, 44);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(278, 164);
