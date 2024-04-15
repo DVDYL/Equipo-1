@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WWUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WWUsuario.Designer.cs">
+      <DependentUpon>WWUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="WWUsuario.resx">
+      <DependentUpon>WWUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventana.resx">
       <DependentUpon>Ventana.cs</DependentUpon>
     </EmbeddedResource>
