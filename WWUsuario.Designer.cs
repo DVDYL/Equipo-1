@@ -41,6 +41,7 @@
             this.EMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Boton_AltaUsuario = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Usuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,7 +98,7 @@
             this.Usuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.Usuarios.RowHeadersWidth = 130;
             this.Usuarios.RowTemplate.Height = 40;
-            this.Usuarios.Size = new System.Drawing.Size(895, 392);
+            this.Usuarios.Size = new System.Drawing.Size(1285, 639);
             this.Usuarios.TabIndex = 0;
             this.Usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Usuarios_CellContentClickEditar);
             // 
@@ -151,9 +152,20 @@
             this.FechaAlta.Name = "FechaAlta";
             this.FechaAlta.ReadOnly = true;
             // 
+            // Boton_AltaUsuario
+            // 
+            this.Boton_AltaUsuario.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boton_AltaUsuario.Location = new System.Drawing.Point(816, 22);
+            this.Boton_AltaUsuario.Name = "Boton_AltaUsuario";
+            this.Boton_AltaUsuario.Size = new System.Drawing.Size(91, 29);
+            this.Boton_AltaUsuario.TabIndex = 1;
+            this.Boton_AltaUsuario.Text = "+ Nuevo";
+            this.Boton_AltaUsuario.UseVisualStyleBackColor = true;
+            // 
             // WWUsuario
             // 
-            this.ClientSize = new System.Drawing.Size(959, 473);
+            this.ClientSize = new System.Drawing.Size(1349, 749);
+            this.Controls.Add(this.Boton_AltaUsuario);
             this.Controls.Add(this.Usuarios);
             this.Name = "WWUsuario";
             this.Load += new System.EventHandler(this.WWUsuario_Load);
@@ -177,5 +189,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EMail;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaAlta;
+        private System.Windows.Forms.Button Boton_AltaUsuario;
     }
 }

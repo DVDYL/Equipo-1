@@ -20,7 +20,7 @@ namespace Presentacion
 
         private void WWUsuario_Load(object sender, EventArgs e)
         {
-            AdjustDatagridviewHeight();
+            // AdjustDatagridviewHeight();
         }
 
         private void AdjustDatagridviewHeight()

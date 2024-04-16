@@ -5,40 +5,34 @@ namespace Equipo1
 {
     public partial class InterfazMenu : FormBase
     {
-        public InterfazMenu()
+        public InterfazMenu() // Inicializa el menú de navegación 
         {
             InitializeComponent();
             TituloBarra = "Menú";
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
-        } // Inicializa el menú de navegación.
+        } 
 
-        private void MenuUserAdmin_Click(object sender, EventArgs e) // Si hago click en "usuarios", entro al ABM de Usuarios 
+        private void MenuUserAdmin_Click(object sender, EventArgs e) // Si hago click en la palabra "usuarios", entro al ABM de Usuarios 
         {
-            // Ocultar el formulario Menu
-            this.Hide();
+            this.Hide(); // Ocultar el formulario Menu
 
-            // Crear una instancia del formulario InterfazABM
-            InterfazABM userAdminForm = new InterfazABM();
+            InterfazABM InterfazABM = new InterfazABM(); // Crear una instancia del formulario InterfazABM
 
-            // Mostrar el formulario InterfazABM
-            userAdminForm.FormClosed += (s, args) => this.Show(); // Mostrar nuevamente el formulario Menu cuando se cierre UserAdmin
-            userAdminForm.Show();
+            InterfazABM.FormClosed += (s, args) => this.Show(); // Mostrar nuevamente el formulario Menu cuando se cierre InterfazABM
+            InterfazABM.Show(); // Mostrar el formulario InterfazABM
         }
 
-        private void UserAdminImg_Click(object sender, EventArgs e)
+        private void UserAdminImg_Click(object sender, EventArgs e) // Si hago click en el ícono de "usuarios", entro al ABM de Usuarios 
         {
-            // Crear una instancia del formulario InterfazABM
-            InterfazABM userAdminForm = new InterfazABM();
+            InterfazABM InterfazABM = new InterfazABM(); // Crear una instancia del formulario InterfazABM
 
-            // Ocultar el formulario actual (Menu)
-            this.Hide();
+            this.Hide(); // Ocultar el formulario Menu
 
-            // Mostrar el formulario InterfazABM
-            userAdminForm.FormClosed += (s, args) => this.Close(); // Cerrar la aplicación cuando se cierre UserAdmin
-            userAdminForm.Show();
-        }
+            InterfazABM.FormClosed += (s, args) => this.Close(); // Cerrar la aplicación cuando se cierre UserAdmin
+            InterfazABM.Show(); // Mostrar el formulario InterfazABM
+        } 
 
-        private void MenuLogOut_Click(object sender, EventArgs e) // Le pregunta al usuario si está seguro de que quiere cerrar la sesión
+        private void MenuLogOut_Click(object sender, EventArgs e) // Le pregunta al usuario si está seguro de que quiere cerrar la sesión 
         {
             // Mostrar un cuadro de diálogo de confirmación
             DialogResult result = MessageBox.Show("¿Está seguro de que desea volver al inicio de sesión?", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -53,7 +47,7 @@ namespace Equipo1
             // Si el usuario elige "No", no hacer nada
         }
 
-        private void Menu_KeyDown(object sender, KeyEventArgs e)
+        private void Menu_KeyDown(object sender, KeyEventArgs e) // Manejo para el evento de apretar ESC en una ventana 
         {
             if (e.KeyCode == Keys.Escape)
             {
@@ -68,6 +62,6 @@ namespace Equipo1
                 }
                 // Si el usuario elige "No", no hacer nada
             }
-        } // Manejo para el evento de apretar ESC en una ventana.
+        } 
     }
 }

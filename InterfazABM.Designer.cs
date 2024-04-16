@@ -501,7 +501,7 @@
             // 
             // IconoCerrarSesion
             // 
-            this.IconoCerrarSesion.Cursor = System.Windows.Forms.Cursors.No;
+            this.IconoCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.IconoCerrarSesion.Image = global::Presentacion.Properties.Resources.Cerrar_Sesion;
             this.IconoCerrarSesion.Location = new System.Drawing.Point(12, 500);
             this.IconoCerrarSesion.Name = "IconoCerrarSesion";

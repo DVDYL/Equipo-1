@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Presentacion;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Equipo1
@@ -8,7 +10,7 @@ namespace Equipo1
     {
         private Dictionary<string, List<string>> usuariosPorRol = new Dictionary<string, List<string>>(); // Lista de usuarios para validar sin WS
 
-        public InterfazABM()
+        public InterfazABM() // Esta Función prepara el formulario y sus restricciones
         {
             InitializeComponent(); // Inicializamos el formulario.
             TituloBarra = "ABM Usuarios"; // Colocar el nombre que irá en el título de la barra superior.
@@ -47,9 +49,9 @@ namespace Equipo1
             Calendario_Nacimiento.Format = DateTimePickerFormat.Custom;
             Calendario_Nacimiento.CustomFormat = "dd/MM/yyyy";
 
-        } // Esta Función prepara el formulario y sus restricciones
+        } 
 
-        private void Limpiar()
+        private void Limpiar() // Blanquea el Formulario de usuarios
         {
             // Reiniciar los valores de todos los campos del formulario a sus valores predeterminados
             ComboBox_ABM.SelectedIndex = -1;
@@ -107,9 +109,9 @@ namespace Equipo1
             CheckActivo.Visible = false;
 
 
-        } // Blanquea el Formulario
+        } 
 
-        private bool CamposCompletos()
+        private bool CamposCompletos() // Evalúa qué campos del formulario están completos
         {
             // Verificar si al menos uno de los campos está lleno
             bool camposLlenos = !string.IsNullOrWhiteSpace(Box_Nombre.Text) ||
@@ -130,7 +132,7 @@ namespace Equipo1
 
             // Retorna verdadero si al menos uno de los campos de texto está lleno y los ComboBoxes no están desplegados y tienen una selección
             return camposLlenos || comboBoxesLlenos;
-        } // Evalúa qué campos del formulario están completos
+        } 
 
         private string GenerarNombreUsuario(string nombre, string apellido, DateTime fechaNacimiento)
         {
@@ -477,7 +479,7 @@ namespace Equipo1
             }
         } // Maneja el evento del botón "Cancelar"
 
-        private void UserAdmin_KeyDown(object sender, KeyEventArgs e)
+        private void UserAdmin_KeyDown(object sender, KeyEventArgs e) // Reacciona al evento de apretar la tecla ESC 
         {
             if (e.KeyCode == Keys.Escape)
             {
@@ -489,19 +491,25 @@ namespace Equipo1
                     this.Close(); // Esto cerrará el formulario UserAdmin y volverá automáticamente al formulario Menu si es que fue abierto desde allí
                 }
             }
-        } // Reacciona al evento de apretar la tecla ESC
+        } 
 
-        private void CheckActivo_CheckedChanged(object sender, EventArgs e)
+        private void CheckActivo_CheckedChanged(object sender, EventArgs e) // Detecta cambios en el check "De Baja" 
         {
             // Establecer que el usuario se pase a inactivo cuando se tilde esta opción
-        } // Detecta cambios en el check "De Baja"
-
-        private void IconoListaUsuarios_Click(object sender, EventArgs e) // Evento para abrir la lista de usuarios
-        {
-
         }
 
-        private void IconoMenu_Click(object sender, EventArgs e)
+        private void IconoListaUsuarios_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            // Crear una instancia del formulario WWUsuario
+            WWUsuario listaUsuariosForm = new WWUsuario();
+
+            // Mostrar el formulario WWUsuario
+            listaUsuariosForm.Show();
+        }
+
+        private void IconoMenu_Click(object sender, EventArgs e) // Evento para volver al menú cuando se hace clic en el ícono del banner 
         {
             // Mostrar un cuadro de diálogo de confirmación
             DialogResult result = MessageBox.Show("¿Está seguro de que desea cerrar esta ventana? No se guardarán los cambios.", "Cerrar ventana", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -509,19 +517,24 @@ namespace Equipo1
             // Verificar la respuesta del usuario
             if (result == DialogResult.Yes)
             {
-                // Cerrar la ventana actual (InterfazABM)
-                this.Close();
 
-                // Crear una instancia de la ventana InterfazMenu
-                InterfazMenu menuForm = new InterfazMenu();
+                this.Hide();   // Ocultar la ventana actual (InterfazABM)
+
+                // Verificar si ya existe una instancia de InterfazMenu
+                InterfazMenu menuForm = Application.OpenForms.OfType<InterfazMenu>().FirstOrDefault();
+                if (menuForm == null)
+                {
+                    // Si no existe, crear una nueva instancia
+                    menuForm = new InterfazMenu();
+                }
 
                 // Mostrar la ventana InterfazMenu
                 menuForm.Show();
             }
             // Si el usuario elige "No", no hacer nada
-        } // Evento para volver al menú principal
+        }
 
-        private void IconoCerrarSesion_Click(object sender, EventArgs e)
+        private void IconoCerrarSesion_Click(object sender, EventArgs e) // Evento para volver al inicio de sesión cuando se hace clic en el ícono del banner 
         {
             // Mostrar un cuadro de diálogo de confirmación
             DialogResult result = MessageBox.Show("¿Está seguro de que desea cerrar la sesión? No se guardarán los cambios.", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -529,14 +542,17 @@ namespace Equipo1
             // Verificar la respuesta del usuario
             if (result == DialogResult.Yes)
             {
+                // Ocultar la ventana de menú (InterfazMenu)
+                this.Hide();
+
                 // Crear una nueva instancia de la ventana InterfazLogIn
                 InterfazLogIn loginForm = new InterfazLogIn();
 
-                // Manejar el evento Load de InterfazLogIn
-                loginForm.Load += (s, args) =>
+                // Manejar el evento FormClosed de InterfazLogIn para mostrar nuevamente la ventana de menú
+                loginForm.FormClosed += (s, args) =>
                 {
-                    // Cerrar la ventana actual (InterfazMenu)
-                    this.Close();
+                    // Mostrar la ventana de menú (InterfazMenu) cuando se cierre la ventana de inicio de sesión
+                    this.Show();
                 };
 
                 // Mostrar la ventana InterfazLogIn
@@ -545,7 +561,7 @@ namespace Equipo1
             // Si el usuario elige "No", no hacer nada
         }
 
-        private void IconoCerrarSistema_Click(object sender, EventArgs e)
+        private void IconoCerrarSistema_Click(object sender, EventArgs e) // Evento para volver al inicio de sesión cuando se hace clic en el ícono del banner  
         {
             // Mostrar un cuadro de diálogo de confirmación
             DialogResult result = MessageBox.Show("¿Está seguro de que desea cerrar el programa? No se guardarán los cambios.", "Cerrar programa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);

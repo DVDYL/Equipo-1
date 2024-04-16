@@ -31,3 +31,21 @@ C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentacion.Properties.Reso
 C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentación.csproj.CopyComplete
 C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentacion.exe
 C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentacion.pdb
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\bin\Debug\Presentacion.exe.config
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\bin\Debug\Presentacion.exe
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\bin\Debug\Presentacion.pdb
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\bin\Debug\Negocio.dll
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\bin\Debug\Negocio.pdb
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentación.csproj.AssemblyReference.cache
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentación.csproj.SuggestedBindingRedirects.cache
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.WWUsuario.resources
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Equipo1.FormBase.resources
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Equipo1.InterfazLogIn.resources
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Equipo1.InterfazMenu.resources
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Equipo1.InterfazABM.resources
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentación.csproj.GenerateResource.cache
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentación.csproj.CoreCompileInputs.cache
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentación.csproj.CopyComplete
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.exe
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.pdb
