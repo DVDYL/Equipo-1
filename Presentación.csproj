@@ -186,6 +186,10 @@
     <None Include="Resources\Menú Inicio.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Datos\Datos.csproj">
+      <Project>{f8d43c45-c075-4da7-97a7-401b6aa05e2a}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
     <ProjectReference Include="Negocio\Negocio.csproj">
       <Project>{9007bbfb-cb3a-4634-abee-91e04e9a0bbb}</Project>
       <Name>Negocio</Name>

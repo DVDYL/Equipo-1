@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Datos;
 
 namespace Presentacion
 {
@@ -20,7 +21,11 @@ namespace Presentacion
 
         private void WWUsuario_Load(object sender, EventArgs e)
         {
-            // AdjustDatagridviewHeight();
+                var bindingList = new BindingList<Cliente>(Cliente);
+                var source = new BindingSource(bindingList, null);
+                dataGridView1.DataSource = source;
+             //   dataGridView1.Columns["id"].Visible = false;
+             //   dataGridView1.Columns["fechaBaja"].Visible = false;
         }
 
         private void AdjustDatagridviewHeight()

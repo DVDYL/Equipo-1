@@ -85,6 +85,7 @@
             this.Usuarios.DefaultCellStyle = dataGridViewCellStyle3;
             this.Usuarios.EnableHeadersVisualStyles = false;
             this.Usuarios.Location = new System.Drawing.Point(12, 69);
+            this.Usuarios.MultiSelect = false;
             this.Usuarios.Name = "Usuarios";
             this.Usuarios.ReadOnly = true;
             this.Usuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -98,6 +99,7 @@
             this.Usuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.Usuarios.RowHeadersWidth = 130;
             this.Usuarios.RowTemplate.Height = 40;
+            this.Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Usuarios.Size = new System.Drawing.Size(1285, 639);
             this.Usuarios.TabIndex = 0;
             this.Usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Usuarios_CellContentClickEditar);
