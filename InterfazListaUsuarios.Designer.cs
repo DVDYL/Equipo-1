@@ -43,8 +43,7 @@
             this.FechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Boton_AltaUsuario = new System.Windows.Forms.Button();
             this.Boton_Cancelar = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.PanelFiltrado = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.Usuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +86,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.Usuarios.DefaultCellStyle = dataGridViewCellStyle3;
             this.Usuarios.EnableHeadersVisualStyles = false;
-            this.Usuarios.Location = new System.Drawing.Point(104, 183);
+            this.Usuarios.Location = new System.Drawing.Point(26, 197);
             this.Usuarios.MultiSelect = false;
             this.Usuarios.Name = "Usuarios";
             this.Usuarios.ReadOnly = true;
@@ -103,7 +102,7 @@
             this.Usuarios.RowHeadersWidth = 130;
             this.Usuarios.RowTemplate.Height = 40;
             this.Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Usuarios.Size = new System.Drawing.Size(1412, 528);
+            this.Usuarios.Size = new System.Drawing.Size(1529, 600);
             this.Usuarios.TabIndex = 0;
             this.Usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Usuarios_CellContentClickEditar);
             // 
@@ -160,7 +159,7 @@
             // Boton_AltaUsuario
             // 
             this.Boton_AltaUsuario.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_AltaUsuario.Location = new System.Drawing.Point(1397, 86);
+            this.Boton_AltaUsuario.Location = new System.Drawing.Point(1450, 85);
             this.Boton_AltaUsuario.Name = "Boton_AltaUsuario";
             this.Boton_AltaUsuario.Size = new System.Drawing.Size(105, 43);
             this.Boton_AltaUsuario.TabIndex = 1;
@@ -175,50 +174,33 @@
             this.Boton_Cancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.Boton_Cancelar.FlatAppearance.BorderSize = 0;
             this.Boton_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Boton_Cancelar.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Cancelar.Location = new System.Drawing.Point(1286, 745);
+            this.Boton_Cancelar.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boton_Cancelar.Location = new System.Drawing.Point(1418, 828);
             this.Boton_Cancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Cancelar.Name = "Boton_Cancelar";
-            this.Boton_Cancelar.Size = new System.Drawing.Size(216, 33);
+            this.Boton_Cancelar.Size = new System.Drawing.Size(137, 47);
             this.Boton_Cancelar.TabIndex = 17;
-            this.Boton_Cancelar.Text = "Cancelar";
+            this.Boton_Cancelar.Text = "Salir";
             this.Boton_Cancelar.UseVisualStyleBackColor = false;
             // 
-            // listBox1
+            // PanelFiltrado
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(117, 62);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1258, 94);
-            this.listBox1.TabIndex = 26;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox1.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(82, 804);
-            this.groupBox1.TabIndex = 27;
-            this.groupBox1.TabStop = false;
+            this.PanelFiltrado.FormattingEnabled = true;
+            this.PanelFiltrado.ItemHeight = 15;
+            this.PanelFiltrado.Location = new System.Drawing.Point(26, 61);
+            this.PanelFiltrado.Name = "PanelFiltrado";
+            this.PanelFiltrado.Size = new System.Drawing.Size(1403, 94);
+            this.PanelFiltrado.TabIndex = 26;
             // 
             // InterfazListaUsuarios
             // 
-            this.ClientSize = new System.Drawing.Size(1561, 803);
-            this.Controls.Add(this.listBox1);
+            this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.Controls.Add(this.PanelFiltrado);
             this.Controls.Add(this.Boton_Cancelar);
             this.Controls.Add(this.Boton_AltaUsuario);
             this.Controls.Add(this.Usuarios);
-            this.Controls.Add(this.groupBox1);
             this.Name = "InterfazListaUsuarios";
             this.Load += new System.EventHandler(this.WWUsuario_Load);
-            this.Controls.SetChildIndex(this.groupBox1, 0);
-            this.Controls.SetChildIndex(this.Usuarios, 0);
-            this.Controls.SetChildIndex(this.Boton_AltaUsuario, 0);
-            this.Controls.SetChildIndex(this.Boton_Cancelar, 0);
-            this.Controls.SetChildIndex(this.listBox1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.Usuarios)).EndInit();
             this.ResumeLayout(false);
 
@@ -241,7 +223,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaAlta;
         private System.Windows.Forms.Button Boton_AltaUsuario;
         private System.Windows.Forms.Button Boton_Cancelar;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ListBox PanelFiltrado;
     }
 }
