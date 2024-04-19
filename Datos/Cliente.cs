@@ -58,9 +58,9 @@ namespace Datos
 
         public string Host { get => _host; set => _host = value; }
 
-        public String ToString()
+        public override string ToString()
         {
-            return this.Apellido + ", " + this.Nombre + " (" + this.Dni + ")";
+            return $"{Apellido}, {Nombre} ({Dni})";
         }
 
     }

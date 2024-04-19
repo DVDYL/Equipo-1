@@ -1,4 +1,4 @@
-﻿namespace Equipo1
+﻿namespace Presentacion
 {
     partial class InterfazLogIn
     {
@@ -115,6 +115,7 @@
             this.Label_NewPass.Size = new System.Drawing.Size(198, 28);
             this.Label_NewPass.TabIndex = 7;
             this.Label_NewPass.Text = "Nueva Contraseña:";
+            this.Label_NewPass.Visible = false;
             // 
             // NewPass
             // 
@@ -125,6 +126,7 @@
             this.NewPass.Name = "NewPass";
             this.NewPass.Size = new System.Drawing.Size(343, 34);
             this.NewPass.TabIndex = 6;
+            this.NewPass.Visible = false;
             // 
             // Label_ConfirmNewPass
             // 
@@ -136,6 +138,7 @@
             this.Label_ConfirmNewPass.Size = new System.Drawing.Size(301, 28);
             this.Label_ConfirmNewPass.TabIndex = 9;
             this.Label_ConfirmNewPass.Text = "Confirmar Nueva Contraseña:";
+            this.Label_ConfirmNewPass.Visible = false;
             // 
             // ConfirmNewPass
             // 
@@ -146,6 +149,7 @@
             this.ConfirmNewPass.Name = "ConfirmNewPass";
             this.ConfirmNewPass.Size = new System.Drawing.Size(343, 34);
             this.ConfirmNewPass.TabIndex = 8;
+            this.ConfirmNewPass.Visible = false;
             // 
             // PassViewImg
             // 
@@ -191,7 +195,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KeyPreview = true;
             this.Name = "InterfazLogIn";
-            this.Text = "Log In";
+            this.Text = "Iniciar Sesión";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LogIn_KeyDown);
             this.Controls.SetChildIndex(this.Box_Usuario, 0);
             this.Controls.SetChildIndex(this.Label_Usuario, 0);

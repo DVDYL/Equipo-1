@@ -1,23 +1,25 @@
 ﻿using System;
 using System.Windows.Forms;
+using Negocio;
 
-namespace Equipo1
+namespace Presentacion
 {
-    public partial class InterfazLogIn : FormBase
+    public partial class InterfazLogIn : Ventana
     {
         // Definir las credenciales de administrador
         private const string UsuarioPorDefecto = "ADMINI24";
         private const string ContraseñaPorDefecto = "CAI20241";
 
         // Iniciar el contador de ingresos fallidos en 0.
-        private int intentosFallidos = 0; 
+        private int intentosFallidos = 0;
 
-        public InterfazLogIn()
+        public InterfazLogIn() // Función que inicia la ventana de Log In
         {
             InitializeComponent();
-            TituloBarra = "LogIn"; // Establecer el nombre que irá en el título de la barra superior de la ventana
+            this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
-        } // Función que inicia la ventana de Log In
+        }
+
 
         private void Boton_Ingresar_Click(object sender, EventArgs e)
         {

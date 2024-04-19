@@ -1,19 +1,20 @@
-﻿using Presentacion;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Negocio;
 
-namespace Equipo1
+namespace Presentacion
 {
-    public partial class InterfazABM : FormBase
+    public partial class InterfazAltaUsuarios : Ventana
     {
         private Dictionary<string, List<string>> usuariosPorRol = new Dictionary<string, List<string>>(); // Lista de usuarios para validar sin WS
 
-        public InterfazABM() // Esta Función prepara el formulario y sus restricciones
+        public InterfazAltaUsuarios() // Esta Función prepara el formulario y sus restricciones
         {
             InitializeComponent(); // Inicializamos el formulario.
-            TituloBarra = "ABM Usuarios"; // Colocar el nombre que irá en el título de la barra superior.
+            TituloBarra = "Alta de Usuarios"; // Colocar el nombre que irá en el título de la barra superior.
+            this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
 
             Operacion_Null.Visible = false; // Ocultar el TextBox Operacion_Null
@@ -502,11 +503,11 @@ namespace Equipo1
         {
             this.Hide();
 
-            // Crear una instancia del formulario WWUsuario
-            WWUsuario listaUsuariosForm = new WWUsuario();
+            // Crear una instancia del formulario InterfazListaUsuarios
+            InterfazListaUsuarios InterfazListaUsuarios = new InterfazListaUsuarios();
 
             // Mostrar el formulario WWUsuario
-            listaUsuariosForm.Show();
+            InterfazListaUsuarios.Show();
         }
 
         private void IconoMenu_Click(object sender, EventArgs e) // Evento para volver al menú cuando se hace clic en el ícono del banner 

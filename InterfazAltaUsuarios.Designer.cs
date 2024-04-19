@@ -1,6 +1,6 @@
-﻿namespace Equipo1
+﻿namespace Presentacion
 {
-    partial class InterfazABM
+    partial class InterfazAltaUsuarios
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -103,7 +103,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Label_Usuario = new System.Windows.Forms.Label();
             this.ComboBox_Usuario = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.CheckActivo = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconoCerrarSistema)).BeginInit();
@@ -439,7 +438,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(99, 1075);
+            this.groupBox1.Size = new System.Drawing.Size(99, 867);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             // 
@@ -936,16 +935,6 @@
             this.ComboBox_Usuario.Size = new System.Drawing.Size(208, 29);
             this.ComboBox_Usuario.TabIndex = 59;
             // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(46)))));
-            this.label1.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(208, 32);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "ABM Usuarios";
-            // 
             // CheckActivo
             // 
             this.CheckActivo.AutoSize = true;
@@ -958,7 +947,7 @@
             this.CheckActivo.UseVisualStyleBackColor = true;
             this.CheckActivo.CheckedChanged += new System.EventHandler(this.CheckActivo_CheckedChanged);
             // 
-            // InterfazABM
+            // InterfazAltaUsuarios
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -967,7 +956,6 @@
             this.ClientSize = new System.Drawing.Size(1550, 870);
             this.ControlBox = false;
             this.Controls.Add(this.CheckActivo);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.Label_Usuario);
             this.Controls.Add(this.ComboBox_Usuario);
             this.Controls.Add(this.pictureBox2);
@@ -1004,7 +992,6 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Box_Depto);
             this.Controls.Add(this.Box_Altura);
             this.Controls.Add(this.Label_Departamento);
@@ -1035,10 +1022,12 @@
             this.Controls.Add(this.ComboBox_Rol);
             this.Controls.Add(this.Boton_Cancelar);
             this.Controls.Add(this.Boton_Confirmar);
+            this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Nunito", 8.25F);
-            this.Name = "InterfazABM";
+            this.Name = "InterfazAltaUsuarios";
             this.Text = "ABM de Usuarios";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UserAdmin_KeyDown);
+            this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.Boton_Confirmar, 0);
             this.Controls.SetChildIndex(this.Boton_Cancelar, 0);
             this.Controls.SetChildIndex(this.ComboBox_Rol, 0);
@@ -1069,7 +1058,6 @@
             this.Controls.SetChildIndex(this.Label_Departamento, 0);
             this.Controls.SetChildIndex(this.Box_Altura, 0);
             this.Controls.SetChildIndex(this.Box_Depto, 0);
-            this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.groupBox2, 0);
             this.Controls.SetChildIndex(this.groupBox3, 0);
             this.Controls.SetChildIndex(this.groupBox4, 0);
@@ -1106,7 +1094,6 @@
             this.Controls.SetChildIndex(this.pictureBox2, 0);
             this.Controls.SetChildIndex(this.ComboBox_Usuario, 0);
             this.Controls.SetChildIndex(this.Label_Usuario, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.CheckActivo, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -1189,7 +1176,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label Label_Usuario;
         private System.Windows.Forms.ComboBox ComboBox_Usuario;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox CheckActivo;
         private System.Windows.Forms.PictureBox IconoListaUsuarios;
         private System.Windows.Forms.PictureBox IconoMenu;

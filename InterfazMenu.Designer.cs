@@ -1,4 +1,4 @@
-﻿namespace Equipo1
+﻿namespace Presentacion
 {
     partial class InterfazMenu
     {

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Equipo1
+namespace Presentacion
 {
     internal static class Program
     {
@@ -19,10 +16,14 @@ namespace Equipo1
 
             // Instanciar y mostrar el formulario de inicio de sesión
             InterfazLogIn loginForm = new InterfazLogIn();
+
+            // Establecer el título de la barra del formulario de inicio de sesión
+            loginForm.TituloBarra = "Iniciar Sesión";
+
             if (loginForm.ShowDialog() == DialogResult.OK)
             {
                 // Si el inicio de sesión es exitoso, iniciar la aplicación principal
-                Application.Run(new Equipo1.InterfazMenu()); // Agregado el espacio de nombres completo del formulario personalizado
+                Application.Run(new Presentacion.InterfazMenu()); // Agregado el espacio de nombres completo del formulario personalizado
             }
             else
             {

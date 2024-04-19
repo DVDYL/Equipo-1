@@ -1,6 +1,6 @@
-﻿namespace Equipo1
+﻿namespace Presentacion
 {
-    partial class FormBase
+    partial class Ventana
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBase));
-            this.BarraTituloForm = new System.Windows.Forms.Panel();
+            System.Windows.Forms.Panel BarraVentana;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventana));
             this.label2 = new System.Windows.Forms.Label();
             this.btnRestaurarForm = new System.Windows.Forms.PictureBox();
             this.btnMinimizarForm = new System.Windows.Forms.PictureBox();
             this.btnMaximizarForm = new System.Windows.Forms.PictureBox();
             this.btnCerrarForm = new System.Windows.Forms.PictureBox();
-            this.BarraTituloForm.SuspendLayout();
+            BarraVentana = new System.Windows.Forms.Panel();
+            BarraVentana.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurarForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizarForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarForm)).BeginInit();
             this.SuspendLayout();
             // 
-            // BarraTituloForm
+            // BarraVentana
             // 
-            this.BarraTituloForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(46)))));
-            this.BarraTituloForm.Controls.Add(this.label2);
-            this.BarraTituloForm.Controls.Add(this.btnRestaurarForm);
-            this.BarraTituloForm.Controls.Add(this.btnMinimizarForm);
-            this.BarraTituloForm.Controls.Add(this.btnMaximizarForm);
-            this.BarraTituloForm.Controls.Add(this.btnCerrarForm);
-            this.BarraTituloForm.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BarraTituloForm.Location = new System.Drawing.Point(0, 0);
-            this.BarraTituloForm.Name = "BarraTituloForm";
-            this.BarraTituloForm.Size = new System.Drawing.Size(800, 38);
-            this.BarraTituloForm.TabIndex = 0;
-            this.BarraTituloForm.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.BarraTituloForm_MouseDoubleClick);
-            this.BarraTituloForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTituloForm_MouseDown);
+            BarraVentana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(46)))));
+            BarraVentana.Controls.Add(this.label2);
+            BarraVentana.Controls.Add(this.btnRestaurarForm);
+            BarraVentana.Controls.Add(this.btnMinimizarForm);
+            BarraVentana.Controls.Add(this.btnMaximizarForm);
+            BarraVentana.Controls.Add(this.btnCerrarForm);
+            BarraVentana.Dock = System.Windows.Forms.DockStyle.Top;
+            BarraVentana.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            BarraVentana.Location = new System.Drawing.Point(0, 0);
+            BarraVentana.Name = "BarraVentana";
+            BarraVentana.Size = new System.Drawing.Size(800, 38);
+            BarraVentana.TabIndex = 0;
+            BarraVentana.UseWaitCursor = true;
+            BarraVentana.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.BarraTituloForm_MouseDoubleClick);
+            BarraVentana.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTituloForm_MouseDown);
             // 
             // label2
             // 
@@ -70,7 +73,7 @@
             // btnRestaurarForm
             // 
             this.btnRestaurarForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestaurarForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestaurarForm.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.btnRestaurarForm.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurarForm.Image")));
             this.btnRestaurarForm.Location = new System.Drawing.Point(715, 0);
             this.btnRestaurarForm.Name = "btnRestaurarForm";
@@ -78,6 +81,7 @@
             this.btnRestaurarForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnRestaurarForm.TabIndex = 2;
             this.btnRestaurarForm.TabStop = false;
+            this.btnRestaurarForm.UseWaitCursor = true;
             this.btnRestaurarForm.Visible = false;
             this.btnRestaurarForm.Click += new System.EventHandler(this.btnRestaurarForm_Click);
             // 
@@ -120,18 +124,17 @@
             this.btnCerrarForm.TabStop = false;
             this.btnCerrarForm.Click += new System.EventHandler(this.btnCerrarForm_Click);
             // 
-            // FormBase
+            // Ventana
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(800, 435);
-            this.Controls.Add(this.BarraTituloForm);
+            this.Controls.Add(BarraVentana);
             this.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "FormBase";
-            this.Text = "FormBase";
-            this.BarraTituloForm.ResumeLayout(false);
-            this.BarraTituloForm.PerformLayout();
+            this.Name = "Ventana";
+            BarraVentana.ResumeLayout(false);
+            BarraVentana.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurarForm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarForm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizarForm)).EndInit();
@@ -141,8 +144,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel BarraTituloForm;
         private System.Windows.Forms.PictureBox btnCerrarForm;
         private System.Windows.Forms.PictureBox btnMaximizarForm;
         private System.Windows.Forms.PictureBox btnMinimizarForm;

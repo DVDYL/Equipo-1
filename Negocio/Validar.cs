@@ -2,8 +2,7 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 
-
-namespace Equipo1
+namespace Negocio
 {
     public static class Validar
     {

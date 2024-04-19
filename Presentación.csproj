@@ -61,11 +61,71 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WWUsuario.cs">
+    <Compile Include="InterfazModificarProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WWUsuario.Designer.cs">
-      <DependentUpon>WWUsuario.cs</DependentUpon>
+    <Compile Include="InterfazModificarProveedores.Designer.cs">
+      <DependentUpon>InterfazModificarProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfazModificarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfazModificarUsuarios.Designer.cs">
+      <DependentUpon>InterfazModificarUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfazModificarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfazModificarProductos.Designer.cs">
+      <DependentUpon>InterfazModificarProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfazModificarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfazModificarClientes.Designer.cs">
+      <DependentUpon>InterfazModificarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfazListaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfazListaProductos.Designer.cs">
+      <DependentUpon>InterfazListaProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfazListaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfazListaClientes.Designer.cs">
+      <DependentUpon>InterfazListaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfazListaProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfazListaProveedores.Designer.cs">
+      <DependentUpon>InterfazListaProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfazAltaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfazAltaClientes.Designer.cs">
+      <DependentUpon>InterfazAltaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfazAltaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfazAltaProductos.Designer.cs">
+      <DependentUpon>InterfazAltaProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfazAltaProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfazAltaProveedores.Designer.cs">
+      <DependentUpon>InterfazAltaProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfazListaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfazListaUsuarios.Designer.cs">
+      <DependentUpon>InterfazListaUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventana.cs">
       <SubType>Form</SubType>
@@ -85,16 +145,19 @@
     <Compile Include="InterfazLogIn.Designer.cs">
       <DependentUpon>InterfazLogIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="InterfazABM.cs">
+    <Compile Include="InterfazAltaUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InterfazABM.Designer.cs">
-      <DependentUpon>InterfazABM.cs</DependentUpon>
+    <Compile Include="InterfazAltaUsuarios.Designer.cs">
+      <DependentUpon>InterfazAltaUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="WWUsuario.resx">
-      <DependentUpon>WWUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="InterfazListaUsuarios.resx">
+      <DependentUpon>InterfazListaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfazModificarUsuarios.resx">
+      <DependentUpon>InterfazModificarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana.resx">
       <DependentUpon>Ventana.cs</DependentUpon>
@@ -105,8 +168,8 @@
     <EmbeddedResource Include="InterfazMenu.resx">
       <DependentUpon>InterfazMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InterfazABM.resx">
-      <DependentUpon>InterfazABM.cs</DependentUpon>
+    <EmbeddedResource Include="InterfazAltaUsuarios.resx">
+      <DependentUpon>InterfazAltaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -186,10 +249,6 @@
     <None Include="Resources\Menú Inicio.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Datos\Datos.csproj">
-      <Project>{f8d43c45-c075-4da7-97a7-401b6aa05e2a}</Project>
-      <Name>Datos</Name>
-    </ProjectReference>
     <ProjectReference Include="Negocio\Negocio.csproj">
       <Project>{9007bbfb-cb3a-4634-abee-91e04e9a0bbb}</Project>
       <Name>Negocio</Name>

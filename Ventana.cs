@@ -2,9 +2,9 @@
 using System.Runtime.InteropServices; // importamos librería
 using System.Windows.Forms;
 
-namespace Equipo1
+namespace Presentacion
 {
-    public partial class FormBase : Form //Se crea nuevo formularo base para que el resto de los formularios hereden el formato.
+    public partial class Ventana : Form //Se crea nuevo formularo base para que el resto de los formularios hereden el formato.
     {
         private string tituloBarra;
 
@@ -18,15 +18,17 @@ namespace Equipo1
             }
         }
 
-        public FormBase() //Se inicializa el formulario.
+        public void ActualizarTituloBarra() //Se crea método, el cual marca lo que sería el tituloBarra
+        {
+            this.Text = tituloBarra;
+        }
+
+        public Ventana() //Se inicializa el formulario.
         {
             InitializeComponent();
         }
 
-        private void ActualizarTituloBarra() //Se crea método, el cual marca lo que sería el tituloBarra
-        {
-            this.Text = tituloBarra;
-        }
+
 
         public void btnCerrarForm_Click(object sender, EventArgs e) //Acción al hacer click en el boton de la X
         {

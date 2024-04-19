@@ -41,11 +41,13 @@ namespace Persistencia
         public void ModificarCliente(Guid idCliente, String direccion, String telefono, String email)
         {
             String path = "/api/Cliente/PatchCliente";
-            Dictionary<string, string> map = new Dictionary<string, string>();
-            map.Add("id", idCliente.ToString());
-            map.Add("direccion", direccion);
-            map.Add("telefono", telefono);
-            map.Add("email", email);
+            Dictionary<string, string> map = new Dictionary<string, string>
+            {
+                { "id", idCliente.ToString() },
+                { "direccion", direccion },
+                { "telefono", telefono },
+                { "email", email }
+            };
 
             var jsonRequest = JsonConvert.SerializeObject(map);
 
