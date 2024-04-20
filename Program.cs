@@ -17,9 +17,6 @@ namespace Presentacion
             // Instanciar y mostrar el formulario de inicio de sesión
             InterfazLogIn loginForm = new InterfazLogIn();
 
-            // Establecer el título de la barra del formulario de inicio de sesión
-            loginForm.TituloBarra = "Iniciar Sesión";
-
             if (loginForm.ShowDialog() == DialogResult.OK)
             {
                 // Si el inicio de sesión es exitoso, iniciar la aplicación principal

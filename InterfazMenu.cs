@@ -9,7 +9,6 @@ namespace Presentacion
         public InterfazMenu() // Inicializa el menú de navegación 
         {
             InitializeComponent();
-            TituloBarra = "Menú";
             this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
         } 

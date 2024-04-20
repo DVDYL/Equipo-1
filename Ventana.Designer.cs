@@ -31,26 +31,21 @@
             System.Windows.Forms.Panel BarraVentana;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventana));
             this.label2 = new System.Windows.Forms.Label();
-            this.btnRestaurarForm = new System.Windows.Forms.PictureBox();
-            this.btnMinimizarForm = new System.Windows.Forms.PictureBox();
-            this.btnMaximizarForm = new System.Windows.Forms.PictureBox();
-            this.btnCerrarForm = new System.Windows.Forms.PictureBox();
+            this.Boton_Minimizar = new System.Windows.Forms.PictureBox();
+            this.Boton_Cerrar = new System.Windows.Forms.PictureBox();
             BarraVentana = new System.Windows.Forms.Panel();
             BarraVentana.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRestaurarForm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarForm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMaximizarForm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarForm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Boton_Minimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Boton_Cerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // BarraVentana
             // 
             BarraVentana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(46)))));
             BarraVentana.Controls.Add(this.label2);
-            BarraVentana.Controls.Add(this.btnRestaurarForm);
-            BarraVentana.Controls.Add(this.btnMinimizarForm);
-            BarraVentana.Controls.Add(this.btnMaximizarForm);
-            BarraVentana.Controls.Add(this.btnCerrarForm);
+            BarraVentana.Controls.Add(this.Boton_Minimizar);
+            BarraVentana.Controls.Add(this.Boton_Cerrar);
+            BarraVentana.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             BarraVentana.Dock = System.Windows.Forms.DockStyle.Top;
             BarraVentana.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             BarraVentana.Location = new System.Drawing.Point(0, 0);
@@ -69,85 +64,58 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 37);
             this.label2.TabIndex = 1;
+            this.label2.UseWaitCursor = true;
             // 
-            // btnRestaurarForm
+            // Boton_Minimizar
             // 
-            this.btnRestaurarForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestaurarForm.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.btnRestaurarForm.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurarForm.Image")));
-            this.btnRestaurarForm.Location = new System.Drawing.Point(715, 0);
-            this.btnRestaurarForm.Name = "btnRestaurarForm";
-            this.btnRestaurarForm.Size = new System.Drawing.Size(40, 39);
-            this.btnRestaurarForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnRestaurarForm.TabIndex = 2;
-            this.btnRestaurarForm.TabStop = false;
-            this.btnRestaurarForm.UseWaitCursor = true;
-            this.btnRestaurarForm.Visible = false;
-            this.btnRestaurarForm.Click += new System.EventHandler(this.btnRestaurarForm_Click);
+            this.Boton_Minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Boton_Minimizar.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.Boton_Minimizar.Image = ((System.Drawing.Image)(resources.GetObject("Boton_Minimizar.Image")));
+            this.Boton_Minimizar.Location = new System.Drawing.Point(721, -1);
+            this.Boton_Minimizar.Name = "Boton_Minimizar";
+            this.Boton_Minimizar.Size = new System.Drawing.Size(31, 35);
+            this.Boton_Minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Boton_Minimizar.TabIndex = 2;
+            this.Boton_Minimizar.TabStop = false;
+            this.Boton_Minimizar.UseWaitCursor = true;
+            this.Boton_Minimizar.Click += new System.EventHandler(this.Boton_Minimizar_Click);
             // 
-            // btnMinimizarForm
+            // Boton_Cerrar
             // 
-            this.btnMinimizarForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizarForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizarForm.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarForm.Image")));
-            this.btnMinimizarForm.Location = new System.Drawing.Point(677, -9);
-            this.btnMinimizarForm.Name = "btnMinimizarForm";
-            this.btnMinimizarForm.Size = new System.Drawing.Size(31, 35);
-            this.btnMinimizarForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinimizarForm.TabIndex = 2;
-            this.btnMinimizarForm.TabStop = false;
-            this.btnMinimizarForm.Click += new System.EventHandler(this.btnMinimizarForm_Click);
-            // 
-            // btnMaximizarForm
-            // 
-            this.btnMaximizarForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximizarForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximizarForm.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizarForm.Image")));
-            this.btnMaximizarForm.Location = new System.Drawing.Point(725, 4);
-            this.btnMaximizarForm.Name = "btnMaximizarForm";
-            this.btnMaximizarForm.Size = new System.Drawing.Size(30, 32);
-            this.btnMaximizarForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMaximizarForm.TabIndex = 2;
-            this.btnMaximizarForm.TabStop = false;
-            this.btnMaximizarForm.Click += new System.EventHandler(this.btnMaximizarForm_Click);
-            // 
-            // btnCerrarForm
-            // 
-            this.btnCerrarForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrarForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarForm.Image")));
-            this.btnCerrarForm.Location = new System.Drawing.Point(758, 0);
-            this.btnCerrarForm.Name = "btnCerrarForm";
-            this.btnCerrarForm.Size = new System.Drawing.Size(39, 42);
-            this.btnCerrarForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrarForm.TabIndex = 2;
-            this.btnCerrarForm.TabStop = false;
-            this.btnCerrarForm.Click += new System.EventHandler(this.btnCerrarForm_Click);
+            this.Boton_Cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Boton_Cerrar.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.Boton_Cerrar.Image = ((System.Drawing.Image)(resources.GetObject("Boton_Cerrar.Image")));
+            this.Boton_Cerrar.Location = new System.Drawing.Point(758, 0);
+            this.Boton_Cerrar.Name = "Boton_Cerrar";
+            this.Boton_Cerrar.Size = new System.Drawing.Size(39, 42);
+            this.Boton_Cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Boton_Cerrar.TabIndex = 2;
+            this.Boton_Cerrar.TabStop = false;
+            this.Boton_Cerrar.UseWaitCursor = true;
+            this.Boton_Cerrar.Click += new System.EventHandler(this.Boton_Cerrar_Click);
             // 
             // Ventana
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 435);
             this.Controls.Add(BarraVentana);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Ventana";
             BarraVentana.ResumeLayout(false);
             BarraVentana.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRestaurarForm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarForm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMaximizarForm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarForm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Boton_Minimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Boton_Cerrar)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox btnCerrarForm;
-        private System.Windows.Forms.PictureBox btnMaximizarForm;
-        private System.Windows.Forms.PictureBox btnMinimizarForm;
-        private System.Windows.Forms.PictureBox btnRestaurarForm;
+        private System.Windows.Forms.PictureBox Boton_Cerrar;
+        private System.Windows.Forms.PictureBox Boton_Minimizar;
         private System.Windows.Forms.Label label2;
     }
 }

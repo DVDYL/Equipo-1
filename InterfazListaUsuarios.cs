@@ -10,7 +10,6 @@ namespace Presentacion
         public InterfazListaUsuarios()
         {
             InitializeComponent();
-            TituloBarra = "Listado de Usuarios";
             this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
         }
 
@@ -49,6 +48,11 @@ namespace Presentacion
 
             // Mostrar el formulario
             formInterfazAltaUsuarios.Show();
+        }
+
+        private void CheckActivo_CheckedChanged(object sender, EventArgs e) // Detecta cambios en el check "De Baja" 
+        {
+            // Establecer que el usuario se pase a inactivo cuando se tilde esta opción
         }
     }
 }

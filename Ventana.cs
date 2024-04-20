@@ -6,52 +6,31 @@ namespace Presentacion
 {
     public partial class Ventana : Form //Se crea nuevo formularo base para que el resto de los formularios hereden el formato.
     {
-        private string tituloBarra;
-
-        public string TituloBarra //Se crea propiedad para que se pueda actualizar el título en cada formulario.
-        {
-            get { return tituloBarra; }
-            set
-            {
-                tituloBarra = value;
-                ActualizarTituloBarra();
-            }
-        }
-
-        public void ActualizarTituloBarra() //Se crea método, el cual marca lo que sería el tituloBarra
-        {
-            this.Text = tituloBarra;
-        }
 
         public Ventana() //Se inicializa el formulario.
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
+            this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
         }
 
-
-
-        public void btnCerrarForm_Click(object sender, EventArgs e) //Acción al hacer click en el boton de la X
+        public void Boton_Cerrar_Click(object sender, EventArgs e) // Acción al hacer click en el botón de la X
         {
-            Application.Exit();
+            // Mostrar un cuadro de diálogo de confirmación al usuario
+            DialogResult resultado = MessageBox.Show("¿Está seguro de que desea salir?\n\nLos cambios que no se hayan guardado se perderán.", "Confirmar salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Verificar la respuesta del usuario
+            if (resultado == DialogResult.Yes)
+            {
+                // Si el usuario confirma, salir de la aplicación
+                Application.Exit();
+            }
+            // Si el usuario elige no salir, no se hace nada
         }
 
-        public void btnMaximizarForm_Click(object sender, EventArgs e) // Acción al apretar en botón maximizar
-        {
-            this.WindowState = FormWindowState.Maximized;
-            btnMaximizarForm.Visible = false;
-            btnRestaurarForm.Visible = true;
-        }
-
-        public void btnMinimizarForm_Click(object sender, EventArgs e)// Acción al apretar en botón minimizar
+        public void Boton_Minimizar_Click(object sender, EventArgs e)// Acción al apretar en botón minimizar
         {
             this.WindowState = FormWindowState.Minimized;
-        }
-
-        public void btnRestaurarForm_Click(object sender, EventArgs e)// Acción al apretar en botón restaurar
-        {
-            this.WindowState = FormWindowState.Normal;
-            btnRestaurarForm.Visible = false;
-            btnMaximizarForm.Visible = true;
         }
 
         //Se importa código que permite maniobrar la barra superior del formulario.
@@ -61,7 +40,6 @@ namespace Presentacion
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
 
         public extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
 
         public void BarraTituloForm_MouseDown(object sender, MouseEventArgs e) //Se pasan los métodos púbicos para poder tomarlos del resto de los formularios.
         {

@@ -50,4 +50,4 @@ C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazMenu.resourc
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazListaUsuarios.resources
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.Ventana.resources
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazAltaUsuarios.resources
-C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazModificarUsuarios.resources
+C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazModificarPass.resources

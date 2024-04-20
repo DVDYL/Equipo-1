@@ -67,11 +67,11 @@
     <Compile Include="InterfazModificarProveedores.Designer.cs">
       <DependentUpon>InterfazModificarProveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="InterfazModificarUsuarios.cs">
+    <Compile Include="InterfazModificarPass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InterfazModificarUsuarios.Designer.cs">
-      <DependentUpon>InterfazModificarUsuarios.cs</DependentUpon>
+    <Compile Include="InterfazModificarPass.Designer.cs">
+      <DependentUpon>InterfazModificarPass.cs</DependentUpon>
     </Compile>
     <Compile Include="InterfazModificarProductos.cs">
       <SubType>Form</SubType>
@@ -156,8 +156,8 @@
     <EmbeddedResource Include="InterfazListaUsuarios.resx">
       <DependentUpon>InterfazListaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InterfazModificarUsuarios.resx">
-      <DependentUpon>InterfazModificarUsuarios.cs</DependentUpon>
+    <EmbeddedResource Include="InterfazModificarPass.resx">
+      <DependentUpon>InterfazModificarPass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana.resx">
       <DependentUpon>Ventana.cs</DependentUpon>
