@@ -4,3 +4,9 @@ C:\Users\david\source\repos\Equipo-1\Datos\obj\Debug\Datos.csproj.AssemblyRefere
 C:\Users\david\source\repos\Equipo-1\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
 C:\Users\david\source\repos\Equipo-1\Datos\obj\Debug\Datos.dll
 C:\Users\david\source\repos\Equipo-1\Datos\obj\Debug\Datos.pdb
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Datos\bin\Debug\Datos.dll
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Datos\bin\Debug\Datos.pdb
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Datos\obj\Debug\Datos.dll
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Datos\obj\Debug\Datos.pdb
