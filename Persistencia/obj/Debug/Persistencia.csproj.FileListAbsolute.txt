@@ -9,3 +9,14 @@ C:\Users\david\source\repos\Equipo-1\Persistencia\obj\Debug\Persistencia.csproj.
 C:\Users\david\source\repos\Equipo-1\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
 C:\Users\david\source\repos\Equipo-1\Persistencia\obj\Debug\Persistencia.dll
 C:\Users\david\source\repos\Equipo-1\Persistencia\obj\Debug\Persistencia.pdb
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Persistencia\bin\Debug\Persistencia.dll
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Persistencia\bin\Debug\Persistencia.pdb
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Persistencia\bin\Debug\Datos.dll
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Persistencia\bin\Debug\Newtonsoft.Json.dll
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Persistencia\bin\Debug\Datos.pdb
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Persistencia\bin\Debug\Newtonsoft.Json.xml
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Persistencia\obj\Debug\Persistencia.csproj.AssemblyReference.cache
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Persistencia\obj\Debug\Persistencia.dll
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Persistencia\obj\Debug\Persistencia.pdb

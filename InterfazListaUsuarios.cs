@@ -76,5 +76,10 @@ namespace Presentacion
                 ventanaMenu.Show();
             }
         }
+
+        private void Usuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

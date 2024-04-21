@@ -17,3 +17,10 @@ C:\Users\david\source\repos\Equipo-1\Negocio\bin\Debug\Persistencia.pdb
 C:\Users\david\source\repos\Equipo-1\Negocio\bin\Debug\Datos.pdb
 C:\Users\david\source\repos\Equipo-1\Negocio\bin\Debug\Newtonsoft.Json.xml
 C:\Users\david\source\repos\Equipo-1\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Negocio\bin\Debug\Datos.dll
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Negocio\bin\Debug\Persistencia.dll
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Negocio\bin\Debug\Newtonsoft.Json.dll
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Negocio\bin\Debug\Datos.pdb
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Negocio\bin\Debug\Persistencia.pdb
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Negocio\bin\Debug\Newtonsoft.Json.xml
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Negocio\obj\Debug\Negocio.csproj.CopyComplete

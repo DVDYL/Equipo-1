@@ -106,7 +106,7 @@
             this.Usuarios.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -117,7 +117,7 @@
             this.Acciones});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
@@ -131,7 +131,7 @@
             this.Usuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle4.NullValue = null;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -147,6 +147,7 @@
             this.Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Usuarios.Size = new System.Drawing.Size(1529, 605);
             this.Usuarios.TabIndex = 0;
+            this.Usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Usuarios_CellContentClick);
             // 
             // Acciones
             // 
@@ -154,11 +155,11 @@
             this.Acciones.HeaderText = "Acciones";
             this.Acciones.Name = "Acciones";
             this.Acciones.ReadOnly = true;
-            this.Acciones.Width = 101;
+            this.Acciones.Width = 77;
             // 
             // InterfazListaUsuarios
             // 
-            this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.Boton_Salir);
             this.Controls.Add(this.Usuarios);
             this.Controls.Add(this.TituloVentana);
