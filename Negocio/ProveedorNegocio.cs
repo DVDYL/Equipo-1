@@ -15,4 +15,9 @@ namespace Negocio
 
     }
 
+    public List<Proveedor> listarProveedores()
+    {
+        return ProveedorService.GetProveedores();
+    }
+
 }

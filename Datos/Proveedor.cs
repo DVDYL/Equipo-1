@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class Proveedores
+    public class Proveedor
     {
         Guid _id;
         Guid _idcatproducto;
@@ -19,12 +19,12 @@ namespace Datos
         Guid _idusuario;
 
 
-        public Proveedores()
+        public Proveedor()
         {
             //
         }
 
-        public Proveedores(string nombre, string apellido,string email, int cuit)
+        public Proveedor(string nombre, string apellido,string email, int cuit)
         {
             _nombre = nombre;
             _apellido = apellido;

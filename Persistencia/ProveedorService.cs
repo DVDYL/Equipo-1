@@ -12,17 +12,17 @@ namespace Persistencia
 {
     public class ProveedorService
     {
-        public List<Proveedores> GetProveedores()
+        public List<Proveedor> GetProveedores()
         {
             String path = "/api/Proveedor/TraerProveedores";
-            List<Proveedores> Proveedores = new List<Proveedores>();
+            List<Proveedor> Proveedores = new List<Proveedor>();
             try
             {
                 HttpResponseMessage response = WebHelper.Get(path);
                 if (response.IsSuccessStatusCode)
                 {
                     var contentStream = response.Content.ReadAsStringAsync().Result;
-                    List<Proveedores> listadoProveedores = JsonConvert.DeserializeObject<List<Proveedores>>(contentStream);
+                    List<Proveedor> listadoProveedores = JsonConvert.DeserializeObject<List<Proveedor>>(contentStream);
                     return listadoProveedores;
                 }
                 else
