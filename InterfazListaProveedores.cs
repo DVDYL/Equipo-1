@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Datos;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +18,13 @@ namespace Presentacion
         {
             InitializeComponent();
         }
+
+        private void InterfazListaProveedores_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+
+
     }
 }

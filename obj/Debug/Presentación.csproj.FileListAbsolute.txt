@@ -65,3 +65,4 @@ C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentacion.Ventana.resourc
 C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentacion.InterfazLogIn.resources
 C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentacion.InterfazMenu.resources
 C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentacion.InterfazAltaUsuarios.resources
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentacion.InterfazListaProveedores.resources
