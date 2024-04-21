@@ -45,7 +45,7 @@
     <Compile Include="AltaProveedor.cs" />
     <Compile Include="Proveedor.cs" />
     <Compile Include="ModificarCliente.cs" />
-    <Compile Include="Cliente.cs" />
+    <Compile Include="Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

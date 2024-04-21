@@ -46,7 +46,7 @@
   <ItemGroup>
     <Compile Include="ProveedorService.cs" />
     <Compile Include="Utils\WebHelper.cs" />
-    <Compile Include="ClienteService.cs" />
+    <Compile Include="UsuarioService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

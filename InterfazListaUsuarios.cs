@@ -10,7 +10,7 @@ namespace Presentacion
 {
     public partial class InterfazListaUsuarios : Ventana
     {
-        private ClienteNegocio ClienteNegocio = new ClienteNegocio();
+        private UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
 
         public InterfazListaUsuarios()
         {
@@ -27,9 +27,9 @@ namespace Presentacion
         {
             try
             {
-                List<Cliente> clientes = ClienteNegocio.listarClientes();
+                List<Usuario> Usuario = UsuarioNegocio.ListarUsuarios();
 
-                var bindingList = new BindingList<Cliente>(clientes);
+                var bindingList = new BindingList<Usuario>(Usuario);
                 var source = new BindingSource(bindingList, null);
                 Usuarios.DataSource = source;
                 Usuarios.Columns["id"].Visible = false;

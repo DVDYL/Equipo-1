@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class Cliente
+    public class Usuario
     {
         Guid _id;
         String _nombre;
@@ -20,12 +20,12 @@ namespace Datos
         DateTime? _fechaBaja;
         String _host;
 
-        public Cliente()
+        public Usuario()
         {
             //
         }
 
-        public Cliente(string nombre, string apellido, int dni, string direccion, string telefono, string email, DateTime fechaNacimiento)
+        public Usuario(string nombre, string apellido, int dni, string direccion, string telefono, string email, DateTime fechaNacimiento)
         {
             _nombre = nombre;
             _apellido = apellido;
