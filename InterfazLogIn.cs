@@ -6,6 +6,7 @@ namespace Presentacion
 {
     public partial class InterfazLogIn : Ventana
     {
+
         // Definir las credenciales de administrador
         private const string UsuarioPorDefecto = "ADMINI24";
         private const string ContraseñaPorDefecto = "CAI20241";
@@ -16,8 +17,16 @@ namespace Presentacion
         public InterfazLogIn() // Función que inicia la ventana de Log In
         {
             InitializeComponent();
+
             this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
+
+        }
+
+        public void CambiarTextoTituloVentana()
+        {
+            // Llamada al método en la clase base para modificar el texto del Label
+            ModificarTextoTituloVentana("IniciarSesion");
         }
 
         private void Boton_Ingresar_Click(object sender, EventArgs e)

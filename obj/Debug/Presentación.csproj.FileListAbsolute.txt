@@ -50,4 +50,10 @@ C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazMenu.resourc
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazListaUsuarios.resources
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.Ventana.resources
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazAltaUsuarios.resources
-C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazModificarPass.resources
+C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazModificarClientes.resources
+C:\Users\david\source\repos\Equipo-1\bin\Debug\Datos.dll
+C:\Users\david\source\repos\Equipo-1\bin\Debug\Persistencia.dll
+C:\Users\david\source\repos\Equipo-1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\david\source\repos\Equipo-1\bin\Debug\Datos.pdb
+C:\Users\david\source\repos\Equipo-1\bin\Debug\Persistencia.pdb
+C:\Users\david\source\repos\Equipo-1\bin\Debug\Newtonsoft.Json.xml

@@ -10,11 +10,14 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class InterfazModificarClientes : Form
+    public partial class InterfazModificarClientes : Ventana
     {
-        public InterfazModificarClientes()
+        public void VentanaModificarCliente()
         {
             InitializeComponent();
+
         }
+
+
     }
 }

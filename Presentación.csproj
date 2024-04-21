@@ -67,12 +67,6 @@
     <Compile Include="InterfazModificarProveedores.Designer.cs">
       <DependentUpon>InterfazModificarProveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="InterfazModificarPass.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InterfazModificarPass.Designer.cs">
-      <DependentUpon>InterfazModificarPass.cs</DependentUpon>
-    </Compile>
     <Compile Include="InterfazModificarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,8 +150,8 @@
     <EmbeddedResource Include="InterfazListaUsuarios.resx">
       <DependentUpon>InterfazListaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InterfazModificarPass.resx">
-      <DependentUpon>InterfazModificarPass.cs</DependentUpon>
+    <EmbeddedResource Include="InterfazModificarClientes.resx">
+      <DependentUpon>InterfazModificarClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana.resx">
       <DependentUpon>Ventana.cs</DependentUpon>
@@ -249,6 +243,10 @@
     <None Include="Resources\Menú Inicio.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Datos\Datos.csproj">
+      <Project>{f8d43c45-c075-4da7-97a7-401b6aa05e2a}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
     <ProjectReference Include="Negocio\Negocio.csproj">
       <Project>{9007bbfb-cb3a-4634-abee-91e04e9a0bbb}</Project>
       <Name>Negocio</Name>
