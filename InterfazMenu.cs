@@ -63,6 +63,16 @@ namespace Presentacion
                 }
                 // Si el usuario elige "No", no hacer nada
             }
-        } 
+        }
+
+        private void IconoProveedores_Click(object sender, EventArgs e)
+        {
+            InterfazListaProveedores InterfazListaProveedores = new InterfazListaProveedores(); // Crear una instancia del formulario InterfazABM
+
+            this.Hide(); // Ocultar el formulario Menu
+
+            InterfazListaProveedores.FormClosed += (s, args) => this.Close(); // Cerrar la aplicación cuando se cierre UserAdmin
+            InterfazListaProveedores.Show(); // Mostrar el formulario InterfazABM
+        }
     }
 }

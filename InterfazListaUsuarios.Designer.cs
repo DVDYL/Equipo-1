@@ -159,7 +159,7 @@
             // 
             // InterfazListaUsuarios
             // 
-            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.ClientSize = new System.Drawing.Size(1600, 900);
             this.Controls.Add(this.Boton_Salir);
             this.Controls.Add(this.Usuarios);
             this.Controls.Add(this.TituloVentana);

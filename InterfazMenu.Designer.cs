@@ -39,13 +39,13 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.IconoProveedores = new System.Windows.Forms.PictureBox();
             this.UserAdminImg = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconoProveedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserAdminImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -186,17 +186,18 @@
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
+            // IconoProveedores
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.No;
-            this.pictureBox1.Image = global::Presentacion.Properties.Resources.Proveedores;
-            this.pictureBox1.Location = new System.Drawing.Point(668, 108);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(260, 200);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.IconoProveedores.Cursor = System.Windows.Forms.Cursors.No;
+            this.IconoProveedores.Image = global::Presentacion.Properties.Resources.Proveedores;
+            this.IconoProveedores.Location = new System.Drawing.Point(668, 108);
+            this.IconoProveedores.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.IconoProveedores.Name = "IconoProveedores";
+            this.IconoProveedores.Size = new System.Drawing.Size(260, 200);
+            this.IconoProveedores.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.IconoProveedores.TabIndex = 8;
+            this.IconoProveedores.TabStop = false;
+            this.IconoProveedores.Click += new System.EventHandler(this.IconoProveedores_Click);
             // 
             // UserAdminImg
             // 
@@ -221,7 +222,7 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.IconoProveedores);
             this.Controls.Add(this.UserAdminImg);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -238,7 +239,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconoProveedores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserAdminImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -255,7 +256,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button MenuLogOut;
         private System.Windows.Forms.PictureBox UserAdminImg;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox IconoProveedores;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;

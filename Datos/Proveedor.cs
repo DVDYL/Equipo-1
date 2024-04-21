@@ -31,6 +31,7 @@ namespace Datos
             _cuit = cuit;
             _email = email;
         }
+
         public Guid Id { get => _id; set => _id = value; }
 
         public Guid Idcatproducto { get => _idcatproducto; set => _idcatproducto = value; }

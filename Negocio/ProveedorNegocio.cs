@@ -13,11 +13,9 @@ namespace Negocio
         private ProveedorService proveedorService = new ProveedorService();
         private String idAdministrador = "70b37dc1-8fde-4840-be47-9ababd0ee7e5";
 
+        public List<Proveedor> listarProveedores()
+        {
+            return proveedorService.GetProveedores();
+        }
     }
-
-   // public List<Proveedor> listarProveedores()
-    //{
-      //  return ProveedorService.GetProveedores();
-    //}
-
 }
