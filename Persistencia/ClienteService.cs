@@ -10,20 +10,20 @@ using System.Threading.Tasks;
 
 namespace Persistencia
 {
-    public class UsuarioService
+    public class ClienteService
     {
-        public List<Usuario> GetUsuarios()
+        public List<Cliente> getClientes()
         {
-            String path = "/api/Cliente/TraerUsuariosActivos?id=70b37dc1-8fde-4840-be47-9ababd0ee7e5";
-            List<Usuario> Usuarios = new List<Usuario>();
+            String path = "/api/Cliente/GetClientes";
+            List<Cliente> clientes = new List<Cliente>();
             try
             {
                 HttpResponseMessage response = WebHelper.Get(path);
                 if (response.IsSuccessStatusCode)
                 {
                     var contentStream = response.Content.ReadAsStringAsync().Result;
-                    List<Usuario> listadoUsuarios = JsonConvert.DeserializeObject<List<Usuario>>(contentStream);
-                    return listadoUsuarios;
+                    List<Cliente> listadoClientes = JsonConvert.DeserializeObject<List<Cliente>>(contentStream);
+                    return listadoClientes;
                 }
                 else
                 {
@@ -34,20 +34,18 @@ namespace Persistencia
             {
                 Console.WriteLine($"Exception: {ex.Message}");
             }
-            return Usuarios;
+            return clientes;
 
         }
 
-        public void ModificarUsuario(Guid idUsuario, String direccion, String telefono, String email)
+        public void ModificarCliente(Guid idCliente, String direccion, String telefono, String email)
         {
-            String path = "/api/Usuario/PatchUsuario";
-            Dictionary<string, string> map = new Dictionary<string, string>
-            {
-                { "id", idUsuario.ToString() },
-                { "direccion", direccion },
-                { "telefono", telefono },
-                { "email", email }
-            };
+            String path = "/api/Cliente/PatchCliente";
+            Dictionary<string, string> map = new Dictionary<string, string>();
+            map.Add("id", idCliente.ToString());
+            map.Add("direccion", direccion);
+            map.Add("telefono", telefono);
+            map.Add("email", email);
 
             var jsonRequest = JsonConvert.SerializeObject(map);
 
@@ -70,11 +68,11 @@ namespace Persistencia
             }
         }
 
-        public void AgregarUsuario(AltaUsuario AltaUsuario)
+        public void AgregarCliente(AltaCliente altaCliente)
         {
-            String path = "/api/Usuario/AgregarUsuario";
+            String path = "/api/Cliente/AgregarCliente";
 
-            var jsonRequest = JsonConvert.SerializeObject(AltaUsuario);
+            var jsonRequest = JsonConvert.SerializeObject(altaCliente);
 
             try
             {
@@ -97,9 +95,9 @@ namespace Persistencia
             }
         }
 
-        public void BorrarUsuario(Guid idUsuario)
+        public void BorrarCliente(Guid idCliente)
         {
-            String path = "/api/Cliente/BajaUsuario?id=" + idUsuario;
+            String path = "/api/Cliente/BajaCliente?id=" + idCliente;
 
             try
             {
@@ -121,4 +119,3 @@ namespace Persistencia
         }
     }
 }
-

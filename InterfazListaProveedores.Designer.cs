@@ -96,6 +96,7 @@
             this.Proveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Proveedores.Size = new System.Drawing.Size(1529, 605);
             this.Proveedores.TabIndex = 1;
+            this.Proveedores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Proveedores_CellContentClick);
             // 
             // Acciones
             // 
@@ -109,7 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.Proveedores);
             this.Name = "InterfazListaProveedores";
             this.Text = "Form1";

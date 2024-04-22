@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AltaCliente.cs" />
+    <Compile Include="AltaUsuario.cs" />
     <Compile Include="AltaProveedor.cs" />
+    <Compile Include="Cliente.cs" />
     <Compile Include="Proveedor.cs" />
     <Compile Include="ModificarCliente.cs" />
     <Compile Include="Usuario.cs" />

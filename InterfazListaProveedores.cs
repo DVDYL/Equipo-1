@@ -44,5 +44,10 @@ namespace Presentacion
                 MessageBox.Show("Error al cargar los proveedores: " + ex.Message);
             }
         }
+
+        private void Proveedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

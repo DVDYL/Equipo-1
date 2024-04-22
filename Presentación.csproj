@@ -147,6 +147,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="InterfazListaClientes.resx">
+      <DependentUpon>InterfazListaClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InterfazListaProveedores.resx">
       <DependentUpon>InterfazListaProveedores.cs</DependentUpon>
     </EmbeddedResource>
