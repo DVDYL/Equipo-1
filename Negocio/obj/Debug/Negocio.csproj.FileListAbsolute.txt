@@ -24,3 +24,16 @@ C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Negocio\bin\Debug\Datos.pdb
 C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Negocio\bin\Debug\Persistencia.pdb
 C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Negocio\bin\Debug\Newtonsoft.Json.xml
 C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Negocio\bin\Debug\Negocio.dll
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Negocio\bin\Debug\Datos.dll
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Negocio\bin\Debug\Persistencia.dll
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Negocio\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Negocio\bin\Debug\Datos.pdb
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Negocio\bin\Debug\Persistencia.pdb
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Negocio\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Negocio\obj\Debug\Negocio.dll
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Negocio\obj\Debug\Negocio.pdb

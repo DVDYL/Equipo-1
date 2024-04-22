@@ -17,6 +17,8 @@ namespace Presentacion
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            dataGridView1.CellClick += Usuarios_CellClick;
         }
 
         private void InterfazListaUsuarios_Load(object sender, EventArgs e)
@@ -91,6 +93,27 @@ namespace Presentacion
                     this.Hide(); // Ocultar el formulario actual
                 }
                 // Si el usuario elige "No", no hacer nada
+            }
+        }
+        private void Usuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex < dataGridView1.Columns.Count)
+            {
+                DataGridViewColumn column = dataGridView1.Columns[e.ColumnIndex];
+                if (column.Name == "Visualizar")
+                {
+                    Console.WriteLine("Clic en Visualizar");
+                    string Mode = "DSP";
+                    MessageBox.Show("El valor de Mode es: " + Mode);
+                }
+                else
+                {
+                    MessageBox.Show("Clic en Visualizar");
+                }
+            }
+            else
+            {
+                Console.WriteLine("prueba");
             }
         }
     }
