@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Datos;
+﻿using Datos;
 using Persistencia;
+using System;
+using System.Collections.Generic;
 
 namespace Negocio
 {
@@ -12,6 +9,11 @@ namespace Negocio
     {
         private UsuarioService UsuarioService = new UsuarioService();
         private String idAdministrador = "70b37dc1-8fde-4840-be47-9ababd0ee7e5";
+
+        public List<UsuariosActivos> ListarUsuarios()
+        {
+            return UsuarioService.GetUsuarios();
+        }
 
         public void AgregarUsuario(string nombre, string apellido, int dni, string direccion, string telefono, string email, DateTime fechaNacimiento)
         {
@@ -24,15 +26,9 @@ namespace Negocio
             UsuarioService.ModificarUsuario(idUsuario, direccion, telefono, email);
         }
 
-        public List<Usuario> ListarUsuarios()
-        {
-            return UsuarioService.GetUsuarios();
-        }
-
         public void BorrarUsuario(Guid idUsuario)
         {
             UsuarioService.BorrarUsuario(idUsuario);
         }
     }
-
 }

@@ -3,26 +3,24 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Persistencia
 {
     public class UsuarioService
     {
-        public List<Usuario> GetUsuarios()
+        public List<UsuariosActivos> GetUsuarios()
         {
-            String path = "/api/Cliente/TraerUsuariosActivos?id=70b37dc1-8fde-4840-be47-9ababd0ee7e5";
-            List<Usuario> Usuarios = new List<Usuario>();
+            String path = "/api/Usuario/TraerUsuariosActivos?id=70b37dc1-8fde-4840-be47-9ababd0ee7e5";
+            List<UsuariosActivos> Usuarios = new List<UsuariosActivos>();
+
             try
             {
                 HttpResponseMessage response = WebHelper.Get(path);
                 if (response.IsSuccessStatusCode)
                 {
                     var contentStream = response.Content.ReadAsStringAsync().Result;
-                    List<Usuario> listadoUsuarios = JsonConvert.DeserializeObject<List<Usuario>>(contentStream);
+                    List<UsuariosActivos> listadoUsuarios = JsonConvert.DeserializeObject<List<UsuariosActivos>>(contentStream);
                     return listadoUsuarios;
                 }
                 else
@@ -35,7 +33,6 @@ namespace Persistencia
                 Console.WriteLine($"Exception: {ex.Message}");
             }
             return Usuarios;
-
         }
 
         public void ModificarUsuario(Guid idUsuario, String direccion, String telefono, String email)

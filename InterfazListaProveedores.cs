@@ -3,11 +3,6 @@ using Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion
@@ -31,17 +26,16 @@ namespace Presentacion
         {
             try
             {
-                List<Proveedor> Proveedor = ProveedorNegocio.listarProveedores();
+                List<TraerProveedores> Proveedor = ProveedorNegocio.listarProveedores();
 
-                var bindingList = new BindingList<Proveedor>(Proveedor);
+                var bindingList = new BindingList<TraerProveedores>(Proveedor);
                 var source = new BindingSource(bindingList, null);
                 Proveedores.DataSource = source;
                 Proveedores.Columns["id"].Visible = false;
-                Proveedores.Columns["fechaBaja"].Visible = false;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar los proveedores: " + ex.Message);
+                MessageBox.Show("Error al cargar los Proveedores: " + ex.Message);
             }
         }
 

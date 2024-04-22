@@ -68,3 +68,4 @@ C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentacion.InterfazAltaUsu
 C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentacion.InterfazListaProveedores.resources
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazListaProveedores.resources
 C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentacion.InterfazListaClientes.resources
+C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazListaClientes.resources

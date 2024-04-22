@@ -13,7 +13,7 @@ namespace Presentacion
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
         } 
 
-        private void MenuUserAdmin_Click(object sender, EventArgs e) // Si hago click en la palabra "usuarios", entro al ABM de Usuarios 
+        private void UsuariosTexto_Click(object sender, EventArgs e)  
         {
             this.Hide(); // Ocultar el formulario Menu
 
@@ -23,7 +23,7 @@ namespace Presentacion
             InterfazListaUsuarios.Show(); // Mostrar el formulario InterfazABM
         }
 
-        private void UserAdminImg_Click(object sender, EventArgs e) // Si hago click en el ícono de "usuarios", entro al ABM de Usuarios 
+        private void UsuariosIcono_Click(object sender, EventArgs e)  
         {
             InterfazListaUsuarios InterfazListaUsuarios = new InterfazListaUsuarios(); // Crear una instancia del formulario InterfazABM
 
@@ -31,7 +31,27 @@ namespace Presentacion
 
             InterfazListaUsuarios.FormClosed += (s, args) => this.Close(); // Cerrar la aplicación cuando se cierre UserAdmin
             InterfazListaUsuarios.Show(); // Mostrar el formulario InterfazABM
-        } 
+        }
+
+        private void ProveedoresIcono_Click(object sender, EventArgs e)
+        {
+            InterfazListaProveedores InterfazListaProveedores = new InterfazListaProveedores(); // Crear una instancia del formulario InterfazABM
+
+            this.Hide(); // Ocultar el formulario Menu
+
+            InterfazListaProveedores.FormClosed += (s, args) => this.Close(); // Cerrar la aplicación cuando se cierre UserAdmin
+            InterfazListaProveedores.Show(); // Mostrar el formulario InterfazABM
+        }
+
+        private void ProveedoresTexto_Click(object sender, EventArgs e)
+        {
+            InterfazListaProveedores InterfazListaProveedores = new InterfazListaProveedores(); // Crear una instancia del formulario InterfazABM
+
+            this.Hide(); // Ocultar el formulario Menu
+
+            InterfazListaProveedores.FormClosed += (s, args) => this.Close(); // Cerrar la aplicación cuando se cierre UserAdmin
+            InterfazListaProveedores.Show(); // Mostrar el formulario InterfazABM
+        }
 
         private void MenuLogOut_Click(object sender, EventArgs e) // Le pregunta al usuario si está seguro de que quiere cerrar la sesión 
         {
@@ -65,14 +85,6 @@ namespace Presentacion
             }
         }
 
-        private void IconoProveedores_Click(object sender, EventArgs e)
-        {
-            InterfazListaProveedores InterfazListaProveedores = new InterfazListaProveedores(); // Crear una instancia del formulario InterfazABM
 
-            this.Hide(); // Ocultar el formulario Menu
-
-            InterfazListaProveedores.FormClosed += (s, args) => this.Close(); // Cerrar la aplicación cuando se cierre UserAdmin
-            InterfazListaProveedores.Show(); // Mostrar el formulario InterfazABM
-        }
     }
 }

@@ -3,19 +3,16 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Persistencia
 {
     public class ProveedorService
     {
-        public List<Proveedor> GetProveedores()
+        public List<TraerProveedores> GetProveedores()
         {
             String path = "/api/Proveedor/TraerProveedores";
-            List<Proveedor> Proveedores = new List<Proveedor>();
+            List<TraerProveedores> Proveedores = new List<TraerProveedores>();
 
             try
             {
@@ -23,7 +20,7 @@ namespace Persistencia
                 if (response.IsSuccessStatusCode)
                 {
                     var contentStream = response.Content.ReadAsStringAsync().Result;
-                    List<Proveedor> listadoProveedores = JsonConvert.DeserializeObject<List<Proveedor>>(contentStream);
+                    List<TraerProveedores> listadoProveedores = JsonConvert.DeserializeObject<List<TraerProveedores>>(contentStream);
                     return listadoProveedores;
                 }
                 else

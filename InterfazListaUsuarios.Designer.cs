@@ -58,7 +58,7 @@
             this.PanelFiltrado.ItemHeight = 15;
             this.PanelFiltrado.Location = new System.Drawing.Point(26, 79);
             this.PanelFiltrado.Name = "PanelFiltrado";
-            this.PanelFiltrado.Size = new System.Drawing.Size(753, 49);
+            this.PanelFiltrado.Size = new System.Drawing.Size(570, 49);
             this.PanelFiltrado.TabIndex = 26;
             // 
             // Boton_Salir
@@ -69,7 +69,7 @@
             this.Boton_Salir.FlatAppearance.BorderSize = 0;
             this.Boton_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_Salir.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Salir.Location = new System.Drawing.Point(1418, 828);
+            this.Boton_Salir.Location = new System.Drawing.Point(642, 827);
             this.Boton_Salir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Salir.Name = "Boton_Salir";
             this.Boton_Salir.Size = new System.Drawing.Size(137, 47);
@@ -81,7 +81,7 @@
             // Boton_AltaUsuario
             // 
             this.Boton_AltaUsuario.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_AltaUsuario.Location = new System.Drawing.Point(1376, 79);
+            this.Boton_AltaUsuario.Location = new System.Drawing.Point(622, 79);
             this.Boton_AltaUsuario.Name = "Boton_AltaUsuario";
             this.Boton_AltaUsuario.Size = new System.Drawing.Size(157, 49);
             this.Boton_AltaUsuario.TabIndex = 1;
@@ -145,9 +145,8 @@
             this.Usuarios.RowTemplate.Height = 40;
             this.Usuarios.RowTemplate.ReadOnly = true;
             this.Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Usuarios.Size = new System.Drawing.Size(1529, 605);
+            this.Usuarios.Size = new System.Drawing.Size(753, 569);
             this.Usuarios.TabIndex = 0;
-            this.Usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Usuarios_CellContentClick);
             // 
             // Acciones
             // 
@@ -167,6 +166,7 @@
             this.Controls.Add(this.Boton_AltaUsuario);
             this.Name = "InterfazListaUsuarios";
             this.Load += new System.EventHandler(this.InterfazListaUsuarios_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ventana_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.Usuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
