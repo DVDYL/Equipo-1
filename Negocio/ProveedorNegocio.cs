@@ -14,5 +14,22 @@ namespace Negocio
         {
             return proveedorService.GetProveedores();
         }
+        public void AgregarProveedor(string nombre, string apellido, string cuit, string email)
+        {
+            AltaProveedor altaProveedor = new AltaProveedor(idAdministrador, nombre, apellido, cuit, email);
+            proveedorService.AgregarProveedor(altaProveedor);
+
+        }
+
+        public void ModificarProveedor(Guid idProveedor, Guid idUsuario, string nombre, string apellido, string email, string cuit)
+        {
+            proveedorService.ModificarProveedor(idProveedor, idUsuario, nombre, apellido, email, cuit);
+
+        }
+
+        public void BorrarProveedor(Guid idProveedor)
+        {
+            proveedorService.BorrarProveedor(idProveedor);
+        }
     }
 }

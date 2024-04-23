@@ -45,6 +45,8 @@
     <Compile Include="AltaUsuario.cs" />
     <Compile Include="AltaProveedor.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="ModificarProveedor.cs" />
+    <Compile Include="Proveedor.cs" />
     <Compile Include="TraerProveedores.cs" />
     <Compile Include="ModificarCliente.cs" />
     <Compile Include="UsuariosActivos.cs" />

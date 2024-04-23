@@ -14,7 +14,7 @@ namespace Datos
         String _email;
         int _cuit;
         DateTime _FechaAlta;
-        DateTime? _FechaBaja;
+        DateTime _FechaBaja;
 
         public TraerProveedores()
         {
@@ -44,7 +44,7 @@ namespace Datos
 
         public DateTime FechaAlta { get => _FechaAlta; set => _FechaAlta = value; }
 
-        public DateTime? FechaBaja { get => _FechaBaja; set => _FechaBaja = value; }
+        public DateTime FechaBaja { get => _FechaBaja; set => _FechaBaja = value; }
 
     }
 }

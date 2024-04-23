@@ -61,6 +61,37 @@ namespace Persistencia
                 Console.WriteLine($"Exception: {ex.Message}");
             }
         }
+        public void ModificarProveedor(Guid idProveedor, Guid idUsuario, string nombre, string apellido, string email, string cuit)
+        {
+            String path = "/api/Proveedor/ModificarProveedor";
+            Dictionary<string, string> map = new Dictionary<string, string>();
+            map.Add("id", idProveedor.ToString());
+            map.Add("idUsuario", idUsuario.ToString());
+            map.Add("nombre", nombre);
+            map.Add("apellido", apellido);
+            map.Add("email", email);
+            map.Add("cuit", cuit);
+
+            var jsonRequest = JsonConvert.SerializeObject(map);
+
+            try
+            {
+                HttpResponseMessage response = WebHelper.Patch(path, jsonRequest);
+                if (response.IsSuccessStatusCode)
+                {
+                    var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
+                    string respuesta = reader.ReadToEnd();
+                }
+                else
+                {
+                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception: {ex.Message}");
+            }
+        }
 
         public void BorrarProveedor(Guid idProveedor) //Validar Tema de Parametro
         {
