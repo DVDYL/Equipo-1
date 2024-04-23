@@ -31,3 +31,14 @@ C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Persistencia\obj\Debug\Persistenci
 C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
 C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Persistencia\obj\Debug\Persistencia.dll
 C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Persistencia\obj\Debug\Persistencia.pdb
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Persistencia\bin\Debug\Persistencia.dll
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Persistencia\bin\Debug\Persistencia.pdb
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Persistencia\bin\Debug\Datos.dll
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Persistencia\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Persistencia\bin\Debug\Datos.pdb
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Persistencia\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Persistencia\obj\Debug\Persistencia.csproj.AssemblyReference.cache
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Persistencia\obj\Debug\Persistencia.dll
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Persistencia\obj\Debug\Persistencia.pdb

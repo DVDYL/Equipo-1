@@ -21,15 +21,15 @@ namespace Datos
             //
         }
 
-        public UsuariosActivos(string Nombre, string Apellido, int DNI, string Direccion, string Usuario, string Rol)
+        public UsuariosActivos(string Nombre, string Apellido, int DNI, string Direccion, string NombreUsuario, string Host)
         {
             _id = Id;
             _nombre = Nombre;
             _apellido = Apellido;
             _dni = DNI;
             _direccion = Direccion;
-            _nombreUsuario = Usuario;
-            _host = Rol;
+            _nombreUsuario = NombreUsuario;
+            _host = Host;
         }
 
         public Guid Id { get => _id; set => _id = value; }
@@ -40,9 +40,9 @@ namespace Datos
 
         public int DNI { get => _dni; set => _dni = value; }
 
-        public string Usuario { get => _nombreUsuario; set => _nombreUsuario = value; }
+        public string NombreUsuario { get => _nombreUsuario; set => _nombreUsuario = value; }
 
-        public string Rol { get => _host; set => _host = value; }
+        public string Host { get => _host; set => _host = value; }
 
         public String ToString()
         {

@@ -95,3 +95,29 @@ C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\obj\Debug\Presentación.csproj.Cor
 C:\Users\Pajarito\source\repos\DVDYL\Equipo-1\obj\Debug\Presentación.csproj.CopyComplete
 C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\obj\Debug\Presentacion.exe
 C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\obj\Debug\Presentacion.pdb
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\bin\Debug\Presentacion.exe.config
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\bin\Debug\Presentacion.exe
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\bin\Debug\Presentacion.pdb
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\bin\Debug\Datos.dll
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\bin\Debug\Negocio.dll
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\bin\Debug\Persistencia.dll
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\bin\Debug\Datos.pdb
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\bin\Debug\Negocio.pdb
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\bin\Debug\Persistencia.pdb
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentación.csproj.AssemblyReference.cache
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.InterfazListaClientes.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.InterfazListaProveedores.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.InterfazListaUsuarios.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.InterfazModificarClientes.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.Ventana.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.InterfazLogIn.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.InterfazMenu.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.InterfazAltaUsuarios.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentación.csproj.GenerateResource.cache
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentación.csproj.CoreCompileInputs.cache
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentación.csproj.CopyComplete
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.exe
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.pdb
