@@ -124,7 +124,7 @@
   <data name="Visualizar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        6gAAAOoB+Ss1JgAAAetJREFUWEftVktOAkEQ5RwkXoLDsNSVEjfGE6gnMHoHdSskCgbRCCwYRkAISIyo
+        5AAAAOQBXaJ52AAAAetJREFUWEftVktOAkEQ5RwkXoLDsNSVEjfGE6gnMHoHdSskCgbRCCwYRkAISIyo
         CxITdaMrt/peLCc9Mz3Q00OIJrzkpTtdVa9q+jupBf4Nnp/cNJiNYFrcZg+KjwbVlUY130b/S0fa6IP+
         bAuhoFMruGqySXRqeQftbIq47VSW+u3yRzDJNCLmnbEiYwcIpXXJu83Sy/np4R4SrJLscyzoxyLQ2s0E
         A3XTfte73KJN3DxwDLZt1ZfEcjRoEzdzyGbyiY1HzsYkMdrGD86mGkM+DuvL4mIGCgV3e9SXB0GfYfdi
@@ -141,7 +141,7 @@
   <data name="Editar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        6gAAAOoB+Ss1JgAAAnhJREFUWEe9Vs9PE0EY7d+xF67ckcSb/hUkJMaLCRxNVILEGxcPRgUSL8TAzWgC
+        5AAAAOQBXaJ52AAAAnhJREFUWEe9Vs9PE0EY7d+xF67ckcSb/hUkJMaLCRxNVILEGxcPRgUSL8TAzWgC
         KjSEFvkhbW1hodhaKBQoIoGDN4MmcMP31m9wMoXdFmb6kpdvd3bmva/z7TfbmG0c7fneZmHuXrkw9wfX
         Z+RKJl7luExxB5rsrC/2KWOd62ufjhHdJnGwk+s0jXWW8jO/EN0lQXE/M7mlm5q0vhMUY81np98cLqcn
         HuG+rWlJUMSseWF5+iVic5KoltN3TGGy6CeeISKJ+K75TCe7Q6QaAxa3gv3grXxu6kAJ6vy/E+FJiGT9
@@ -161,7 +161,7 @@
   <data name="Eliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAH
-        XwAAB18B6nbFFgAAAWlJREFUWEftV1tKw1AUzDqysG6gv+5FxC9R3IRS7QKUaoNaF+Bfv12C3pG5QzjN
+        XgAAB14BODEn8gAAAWlJREFUWEftV1tKw1AUzDqysG6gv+5FxC9R3IRS7QKUaoNaF+Bfv12C3pG5QzjN
         aZKTm4+CB4bAPDKHmwbSauzsv17rhIWDmrZ5BgXvm9Vluv50oXm+v03XeZbAjY+VZ9BTfol0Uxyxij5e
         Hs7JLd42q4u2Bo6x4ZNCx54tcJbwV7DbPl6l65I8sNxt19fQCHjbWYvDE6KQbzA3Dk8IpDHNic4F+h5B
         Sfg/UojGXBL9bweNXcdWAv1vB0wmVBInvMBns/4GIlwLk04AvNWGctJY4w9MJqQwEeGkscYfmExIYSLC

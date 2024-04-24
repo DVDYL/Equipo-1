@@ -95,6 +95,7 @@ namespace Presentacion
                 // Si el usuario elige "No", no hacer nada
             }
         }
+
         private void Usuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex < dataGridView1.Columns.Count)
@@ -115,6 +116,57 @@ namespace Presentacion
             {
                 Console.WriteLine("prueba");
             }
+        }
+
+        private void UsuariosLupa_Click(object sender, EventArgs e)
+        {
+            // Obtener el texto ingresado en el TextBox UsuariosBuscador
+            string textoBusqueda = UsuariosBuscador.Text;
+
+            // Verificar si la lista de usuarios es nula o está vacía
+            if (Usuarios.DataSource == null || Usuarios.Rows.Count == 0)
+            {
+                // Manejar el caso en el que la lista de usuarios es nula o vacía
+                MessageBox.Show("La lista se encuentra vacía.\n\nNo hay usuarios para buscar.");
+            }
+            else
+            {
+                // Lista para almacenar los usuarios que coinciden con la búsqueda
+                List<UsuariosActivos> usuariosFiltrados = new List<UsuariosActivos>();
+
+                // Recorrer cada fila en el DataGridView Usuarios
+                foreach (DataGridViewRow fila in Usuarios.Rows)
+                {
+                    // Obtener el valor de la celda que contiene el nombre del usuario
+                    string nombreUsuario = fila.Cells["Nombre"].Value?.ToString();
+
+                    // Comparar si el texto de búsqueda coincide con el nombre de usuario actual
+                    if (!string.IsNullOrEmpty(nombreUsuario) && nombreUsuario.Contains(textoBusqueda))
+                    {
+                        // Agregar el usuario a la lista de usuarios filtrados
+                        usuariosFiltrados.Add((UsuariosActivos)fila.DataBoundItem);
+                    }
+                }
+
+                // Verificar si se encontraron usuarios que coinciden con la búsqueda
+                if (usuariosFiltrados.Count > 0)
+                {
+                    // Actualizar el DataSource del DataGridView con los usuarios filtrados
+                    var bindingList = new BindingList<UsuariosActivos>(usuariosFiltrados);
+                    var source = new BindingSource(bindingList, null);
+                    Usuarios.DataSource = source;
+                }
+                else
+                {
+                    // Mostrar un mensaje si no se encontraron usuarios que coincidan con la búsqueda
+                    MessageBox.Show("No se encontraron usuarios que coincidan con la búsqueda.");
+                }
+            }
+        }
+
+        private void BorrarFiltro_Click(object sender, EventArgs e)
+        {
+            CargarUsuarios();
         }
     }
 }

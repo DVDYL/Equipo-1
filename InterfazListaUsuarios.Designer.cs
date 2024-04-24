@@ -35,14 +35,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InterfazListaUsuarios));
             this.TituloVentana = new System.Windows.Forms.Label();
-            this.PanelFiltrado = new System.Windows.Forms.ListBox();
             this.Boton_Salir = new System.Windows.Forms.Button();
             this.Boton_AltaUsuario = new System.Windows.Forms.Button();
             this.Usuarios = new System.Windows.Forms.DataGridView();
             this.Visualizar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.UsuariosLupa = new System.Windows.Forms.PictureBox();
+            this.UsuariosBuscador = new System.Windows.Forms.TextBox();
+            this.BorrarFiltro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Usuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsuariosLupa)).BeginInit();
             this.SuspendLayout();
             // 
             // TituloVentana
@@ -54,14 +57,6 @@
             this.TituloVentana.Size = new System.Drawing.Size(75, 25);
             this.TituloVentana.TabIndex = 27;
             this.TituloVentana.Text = "DEMO";
-            // 
-            // PanelFiltrado
-            // 
-            this.PanelFiltrado.FormattingEnabled = true;
-            this.PanelFiltrado.Location = new System.Drawing.Point(26, 79);
-            this.PanelFiltrado.Name = "PanelFiltrado";
-            this.PanelFiltrado.Size = new System.Drawing.Size(570, 43);
-            this.PanelFiltrado.TabIndex = 26;
             // 
             // Boton_Salir
             // 
@@ -82,7 +77,7 @@
             // 
             // Boton_AltaUsuario
             // 
-            this.Boton_AltaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boton_AltaUsuario.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Boton_AltaUsuario.Location = new System.Drawing.Point(622, 79);
             this.Boton_AltaUsuario.Name = "Boton_AltaUsuario";
             this.Boton_AltaUsuario.Size = new System.Drawing.Size(157, 49);
@@ -108,7 +103,7 @@
             this.Usuarios.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -121,7 +116,7 @@
             this.Eliminar});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
@@ -135,7 +130,7 @@
             this.Usuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle4.NullValue = null;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -176,18 +171,51 @@
             this.Eliminar.ReadOnly = true;
             this.Eliminar.Width = 5;
             // 
+            // UsuariosLupa
+            // 
+            this.UsuariosLupa.Image = global::Presentacion.Properties.Resources.Lupa2;
+            this.UsuariosLupa.Location = new System.Drawing.Point(369, 87);
+            this.UsuariosLupa.Name = "UsuariosLupa";
+            this.UsuariosLupa.Size = new System.Drawing.Size(49, 34);
+            this.UsuariosLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.UsuariosLupa.TabIndex = 28;
+            this.UsuariosLupa.TabStop = false;
+            this.UsuariosLupa.Click += new System.EventHandler(this.UsuariosLupa_Click);
+            // 
+            // UsuariosBuscador
+            // 
+            this.UsuariosBuscador.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsuariosBuscador.Location = new System.Drawing.Point(26, 88);
+            this.UsuariosBuscador.Name = "UsuariosBuscador";
+            this.UsuariosBuscador.Size = new System.Drawing.Size(335, 32);
+            this.UsuariosBuscador.TabIndex = 30;
+            // 
+            // BorrarFiltro
+            // 
+            this.BorrarFiltro.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BorrarFiltro.Location = new System.Drawing.Point(410, 825);
+            this.BorrarFiltro.Name = "BorrarFiltro";
+            this.BorrarFiltro.Size = new System.Drawing.Size(203, 49);
+            this.BorrarFiltro.TabIndex = 31;
+            this.BorrarFiltro.Text = "Borrar Filtros";
+            this.BorrarFiltro.UseVisualStyleBackColor = true;
+            this.BorrarFiltro.Click += new System.EventHandler(this.BorrarFiltro_Click);
+            // 
             // InterfazListaUsuarios
             // 
             this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.Controls.Add(this.BorrarFiltro);
+            this.Controls.Add(this.UsuariosBuscador);
+            this.Controls.Add(this.UsuariosLupa);
             this.Controls.Add(this.Boton_Salir);
             this.Controls.Add(this.Usuarios);
             this.Controls.Add(this.TituloVentana);
-            this.Controls.Add(this.PanelFiltrado);
             this.Controls.Add(this.Boton_AltaUsuario);
             this.Name = "InterfazListaUsuarios";
             this.Load += new System.EventHandler(this.InterfazListaUsuarios_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ventana_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.Usuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsuariosLupa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,11 +229,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Button Boton_AltaUsuario;
         private System.Windows.Forms.Button Boton_Salir;
-        private System.Windows.Forms.ListBox PanelFiltrado;
         private System.Windows.Forms.Label TituloVentana;
         private System.Windows.Forms.DataGridView Usuarios;
         private System.Windows.Forms.DataGridViewImageColumn Visualizar;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
+        private System.Windows.Forms.PictureBox UsuariosLupa;
+        private System.Windows.Forms.TextBox UsuariosBuscador;
+        private System.Windows.Forms.Button BorrarFiltro;
     }
 }
