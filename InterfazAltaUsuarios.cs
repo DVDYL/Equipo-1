@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Negocio;
@@ -433,6 +434,23 @@ namespace Presentacion
                 Application.Exit();
             }
             // Si el usuario elige "No", no hacer nada
+        }
+        private void Box_DNI_Enter(object sender, EventArgs e)
+        {
+            if (Box_DNI.Text == "Texto predeterminado")
+            {
+                Box_DNI.Text = "";
+                Box_DNI.ForeColor = SystemColors.WindowText; // Restablecer el color del texto a negro si fue cambiado
+            }
+        }
+
+        private void Box_DNI_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Box_DNI.Text))
+            {
+                Box_DNI.Text = "Texto predeterminado";
+                Box_DNI.ForeColor = SystemColors.GrayText; // Establecer el color del texto a gris
+            }
         }
     }
 }

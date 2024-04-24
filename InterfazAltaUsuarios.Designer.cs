@@ -147,7 +147,7 @@
             this.Edad_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Edad_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Edad_Error.ForeColor = System.Drawing.Color.Red;
-            this.Edad_Error.Location = new System.Drawing.Point(455, 336);
+            this.Edad_Error.Location = new System.Drawing.Point(455, 348);
             this.Edad_Error.Multiline = true;
             this.Edad_Error.Name = "Edad_Error";
             this.Edad_Error.Size = new System.Drawing.Size(307, 20);
@@ -158,7 +158,7 @@
             this.ConfirmPass_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ConfirmPass_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConfirmPass_Error.ForeColor = System.Drawing.Color.Red;
-            this.ConfirmPass_Error.Location = new System.Drawing.Point(1252, 513);
+            this.ConfirmPass_Error.Location = new System.Drawing.Point(1252, 525);
             this.ConfirmPass_Error.Multiline = true;
             this.ConfirmPass_Error.Name = "ConfirmPass_Error";
             this.ConfirmPass_Error.Size = new System.Drawing.Size(314, 20);
@@ -169,7 +169,7 @@
             this.Pass_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Pass_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Pass_Error.ForeColor = System.Drawing.Color.Red;
-            this.Pass_Error.Location = new System.Drawing.Point(879, 511);
+            this.Pass_Error.Location = new System.Drawing.Point(879, 523);
             this.Pass_Error.Multiline = true;
             this.Pass_Error.Name = "Pass_Error";
             this.Pass_Error.Size = new System.Drawing.Size(311, 20);
@@ -180,7 +180,7 @@
             this.ConfirmMail_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ConfirmMail_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConfirmMail_Error.ForeColor = System.Drawing.Color.Red;
-            this.ConfirmMail_Error.Location = new System.Drawing.Point(1241, 336);
+            this.ConfirmMail_Error.Location = new System.Drawing.Point(1241, 348);
             this.ConfirmMail_Error.Multiline = true;
             this.ConfirmMail_Error.Name = "ConfirmMail_Error";
             this.ConfirmMail_Error.Size = new System.Drawing.Size(311, 20);
@@ -191,7 +191,7 @@
             this.Mail_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Mail_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Mail_Error.ForeColor = System.Drawing.Color.Red;
-            this.Mail_Error.Location = new System.Drawing.Point(879, 336);
+            this.Mail_Error.Location = new System.Drawing.Point(879, 348);
             this.Mail_Error.Multiline = true;
             this.Mail_Error.Name = "Mail_Error";
             this.Mail_Error.Size = new System.Drawing.Size(311, 20);
@@ -202,7 +202,7 @@
             this.Telefono_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Telefono_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Telefono_Error.ForeColor = System.Drawing.Color.Red;
-            this.Telefono_Error.Location = new System.Drawing.Point(452, 683);
+            this.Telefono_Error.Location = new System.Drawing.Point(452, 695);
             this.Telefono_Error.Multiline = true;
             this.Telefono_Error.Name = "Telefono_Error";
             this.Telefono_Error.Size = new System.Drawing.Size(307, 20);
@@ -213,7 +213,7 @@
             this.Calle_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Calle_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Calle_Error.ForeColor = System.Drawing.Color.Red;
-            this.Calle_Error.Location = new System.Drawing.Point(87, 683);
+            this.Calle_Error.Location = new System.Drawing.Point(87, 695);
             this.Calle_Error.Multiline = true;
             this.Calle_Error.Name = "Calle_Error";
             this.Calle_Error.Size = new System.Drawing.Size(311, 20);
@@ -224,7 +224,7 @@
             this.DNI_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DNI_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DNI_Error.ForeColor = System.Drawing.Color.Red;
-            this.DNI_Error.Location = new System.Drawing.Point(87, 336);
+            this.DNI_Error.Location = new System.Drawing.Point(87, 348);
             this.DNI_Error.Multiline = true;
             this.DNI_Error.Name = "DNI_Error";
             this.DNI_Error.Size = new System.Drawing.Size(311, 20);
@@ -235,7 +235,7 @@
             this.Apellido_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Apellido_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Apellido_Error.ForeColor = System.Drawing.Color.Red;
-            this.Apellido_Error.Location = new System.Drawing.Point(455, 511);
+            this.Apellido_Error.Location = new System.Drawing.Point(455, 523);
             this.Apellido_Error.Multiline = true;
             this.Apellido_Error.Name = "Apellido_Error";
             this.Apellido_Error.Size = new System.Drawing.Size(311, 20);
@@ -246,7 +246,7 @@
             this.Nombre_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Nombre_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nombre_Error.ForeColor = System.Drawing.Color.Red;
-            this.Nombre_Error.Location = new System.Drawing.Point(87, 511);
+            this.Nombre_Error.Location = new System.Drawing.Point(87, 523);
             this.Nombre_Error.Multiline = true;
             this.Nombre_Error.Name = "Nombre_Error";
             this.Nombre_Error.Size = new System.Drawing.Size(324, 20);
@@ -257,7 +257,7 @@
             this.Rol_Null.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Rol_Null.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Rol_Null.ForeColor = System.Drawing.Color.Red;
-            this.Rol_Null.Location = new System.Drawing.Point(1066, 687);
+            this.Rol_Null.Location = new System.Drawing.Point(1066, 699);
             this.Rol_Null.Name = "Rol_Null";
             this.Rol_Null.Size = new System.Drawing.Size(194, 16);
             this.Rol_Null.TabIndex = 44;
@@ -267,7 +267,7 @@
             // 
             this.MayudaRol.AutoSize = true;
             this.MayudaRol.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaRol.Location = new System.Drawing.Point(1328, 651);
+            this.MayudaRol.Location = new System.Drawing.Point(1328, 663);
             this.MayudaRol.Name = "MayudaRol";
             this.MayudaRol.Size = new System.Drawing.Size(13, 15);
             this.MayudaRol.TabIndex = 41;
@@ -278,7 +278,7 @@
             // 
             this.MayudaFechaNacimiento.AutoSize = true;
             this.MayudaFechaNacimiento.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaFechaNacimiento.Location = new System.Drawing.Point(718, 299);
+            this.MayudaFechaNacimiento.Location = new System.Drawing.Point(718, 311);
             this.MayudaFechaNacimiento.Name = "MayudaFechaNacimiento";
             this.MayudaFechaNacimiento.Size = new System.Drawing.Size(13, 15);
             this.MayudaFechaNacimiento.TabIndex = 39;
@@ -289,7 +289,7 @@
             // 
             this.MayudaTelefono.AutoSize = true;
             this.MayudaTelefono.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaTelefono.Location = new System.Drawing.Point(718, 651);
+            this.MayudaTelefono.Location = new System.Drawing.Point(718, 663);
             this.MayudaTelefono.Name = "MayudaTelefono";
             this.MayudaTelefono.Size = new System.Drawing.Size(13, 15);
             this.MayudaTelefono.TabIndex = 38;
@@ -300,7 +300,7 @@
             // 
             this.MayudaConfirContra.AutoSize = true;
             this.MayudaConfirContra.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaConfirContra.Location = new System.Drawing.Point(1518, 475);
+            this.MayudaConfirContra.Location = new System.Drawing.Point(1518, 487);
             this.MayudaConfirContra.Name = "MayudaConfirContra";
             this.MayudaConfirContra.Size = new System.Drawing.Size(13, 15);
             this.MayudaConfirContra.TabIndex = 37;
@@ -311,7 +311,7 @@
             // 
             this.MayudaContra.AutoSize = true;
             this.MayudaContra.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaContra.Location = new System.Drawing.Point(1145, 472);
+            this.MayudaContra.Location = new System.Drawing.Point(1145, 484);
             this.MayudaContra.Name = "MayudaContra";
             this.MayudaContra.Size = new System.Drawing.Size(13, 15);
             this.MayudaContra.TabIndex = 36;
@@ -322,7 +322,7 @@
             // 
             this.MayudaConfirMail.AutoSize = true;
             this.MayudaConfirMail.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaConfirMail.Location = new System.Drawing.Point(1518, 301);
+            this.MayudaConfirMail.Location = new System.Drawing.Point(1518, 313);
             this.MayudaConfirMail.Name = "MayudaConfirMail";
             this.MayudaConfirMail.Size = new System.Drawing.Size(13, 15);
             this.MayudaConfirMail.TabIndex = 35;
@@ -333,7 +333,7 @@
             // 
             this.MayudaMail.AutoSize = true;
             this.MayudaMail.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaMail.Location = new System.Drawing.Point(1145, 299);
+            this.MayudaMail.Location = new System.Drawing.Point(1145, 311);
             this.MayudaMail.Name = "MayudaMail";
             this.MayudaMail.Size = new System.Drawing.Size(13, 15);
             this.MayudaMail.TabIndex = 34;
@@ -344,7 +344,7 @@
             // 
             this.MayudaCalle.AutoSize = true;
             this.MayudaCalle.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaCalle.Location = new System.Drawing.Point(354, 651);
+            this.MayudaCalle.Location = new System.Drawing.Point(354, 663);
             this.MayudaCalle.Name = "MayudaCalle";
             this.MayudaCalle.Size = new System.Drawing.Size(13, 15);
             this.MayudaCalle.TabIndex = 31;
@@ -355,7 +355,7 @@
             // 
             this.MayudaDNI.AutoSize = true;
             this.MayudaDNI.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaDNI.Location = new System.Drawing.Point(354, 299);
+            this.MayudaDNI.Location = new System.Drawing.Point(354, 311);
             this.MayudaDNI.Name = "MayudaDNI";
             this.MayudaDNI.Size = new System.Drawing.Size(13, 15);
             this.MayudaDNI.TabIndex = 30;
@@ -366,7 +366,7 @@
             // 
             this.MayudaApellido.AutoSize = true;
             this.MayudaApellido.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaApellido.Location = new System.Drawing.Point(718, 472);
+            this.MayudaApellido.Location = new System.Drawing.Point(718, 484);
             this.MayudaApellido.Name = "MayudaApellido";
             this.MayudaApellido.Size = new System.Drawing.Size(13, 15);
             this.MayudaApellido.TabIndex = 29;
@@ -377,7 +377,7 @@
             // 
             this.MayudaNombre.AutoSize = true;
             this.MayudaNombre.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaNombre.Location = new System.Drawing.Point(354, 472);
+            this.MayudaNombre.Location = new System.Drawing.Point(354, 484);
             this.MayudaNombre.Name = "MayudaNombre";
             this.MayudaNombre.Size = new System.Drawing.Size(13, 15);
             this.MayudaNombre.TabIndex = 28;
@@ -387,7 +387,7 @@
             // Box_Pass_Confirm
             // 
             this.Box_Pass_Confirm.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Box_Pass_Confirm.Location = new System.Drawing.Point(1252, 464);
+            this.Box_Pass_Confirm.Location = new System.Drawing.Point(1252, 476);
             this.Box_Pass_Confirm.Name = "Box_Pass_Confirm";
             this.Box_Pass_Confirm.Size = new System.Drawing.Size(251, 32);
             this.Box_Pass_Confirm.TabIndex = 13;
@@ -395,7 +395,7 @@
             // Box_Mail_Confirm
             // 
             this.Box_Mail_Confirm.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Box_Mail_Confirm.Location = new System.Drawing.Point(1249, 290);
+            this.Box_Mail_Confirm.Location = new System.Drawing.Point(1249, 302);
             this.Box_Mail_Confirm.Name = "Box_Mail_Confirm";
             this.Box_Mail_Confirm.Size = new System.Drawing.Size(251, 32);
             this.Box_Mail_Confirm.TabIndex = 11;
@@ -403,7 +403,7 @@
             // Box_Telefono
             // 
             this.Box_Telefono.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Box_Telefono.Location = new System.Drawing.Point(452, 641);
+            this.Box_Telefono.Location = new System.Drawing.Point(452, 653);
             this.Box_Telefono.Name = "Box_Telefono";
             this.Box_Telefono.Size = new System.Drawing.Size(250, 32);
             this.Box_Telefono.TabIndex = 9;
@@ -411,7 +411,7 @@
             // Box_Pass
             // 
             this.Box_Pass.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Box_Pass.Location = new System.Drawing.Point(879, 464);
+            this.Box_Pass.Location = new System.Drawing.Point(879, 476);
             this.Box_Pass.Name = "Box_Pass";
             this.Box_Pass.Size = new System.Drawing.Size(251, 32);
             this.Box_Pass.TabIndex = 12;
@@ -419,7 +419,7 @@
             // Box_Mail
             // 
             this.Box_Mail.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Box_Mail.Location = new System.Drawing.Point(879, 290);
+            this.Box_Mail.Location = new System.Drawing.Point(879, 302);
             this.Box_Mail.Name = "Box_Mail";
             this.Box_Mail.Size = new System.Drawing.Size(251, 32);
             this.Box_Mail.TabIndex = 10;
@@ -427,7 +427,7 @@
             // Box_Calle
             // 
             this.Box_Calle.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Box_Calle.Location = new System.Drawing.Point(87, 641);
+            this.Box_Calle.Location = new System.Drawing.Point(87, 653);
             this.Box_Calle.Name = "Box_Calle";
             this.Box_Calle.Size = new System.Drawing.Size(250, 32);
             this.Box_Calle.TabIndex = 6;
@@ -435,15 +435,17 @@
             // Box_DNI
             // 
             this.Box_DNI.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Box_DNI.Location = new System.Drawing.Point(87, 290);
+            this.Box_DNI.Location = new System.Drawing.Point(87, 302);
             this.Box_DNI.Name = "Box_DNI";
             this.Box_DNI.Size = new System.Drawing.Size(250, 32);
             this.Box_DNI.TabIndex = 4;
+            this.Box_DNI.Enter += new System.EventHandler(this.Box_DNI_Leave);
+            this.Box_DNI.Leave += new System.EventHandler(this.Box_DNI_Leave);
             // 
             // Box_Apellido
             // 
             this.Box_Apellido.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Box_Apellido.Location = new System.Drawing.Point(455, 464);
+            this.Box_Apellido.Location = new System.Drawing.Point(455, 476);
             this.Box_Apellido.Name = "Box_Apellido";
             this.Box_Apellido.Size = new System.Drawing.Size(250, 32);
             this.Box_Apellido.TabIndex = 3;
@@ -451,7 +453,7 @@
             // Box_Nombre
             // 
             this.Box_Nombre.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Box_Nombre.Location = new System.Drawing.Point(87, 464);
+            this.Box_Nombre.Location = new System.Drawing.Point(87, 476);
             this.Box_Nombre.Name = "Box_Nombre";
             this.Box_Nombre.Size = new System.Drawing.Size(250, 32);
             this.Box_Nombre.TabIndex = 2;
@@ -460,7 +462,7 @@
             // 
             this.Label_ConfirmarContraseña.AutoSize = true;
             this.Label_ConfirmarContraseña.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_ConfirmarContraseña.Location = new System.Drawing.Point(1224, 415);
+            this.Label_ConfirmarContraseña.Location = new System.Drawing.Point(1224, 427);
             this.Label_ConfirmarContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_ConfirmarContraseña.Name = "Label_ConfirmarContraseña";
             this.Label_ConfirmarContraseña.Size = new System.Drawing.Size(227, 28);
@@ -471,7 +473,7 @@
             // 
             this.Label_Contraseña.AutoSize = true;
             this.Label_Contraseña.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Contraseña.Location = new System.Drawing.Point(857, 415);
+            this.Label_Contraseña.Location = new System.Drawing.Point(857, 427);
             this.Label_Contraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Contraseña.Name = "Label_Contraseña";
             this.Label_Contraseña.Size = new System.Drawing.Size(124, 28);
@@ -482,7 +484,7 @@
             // 
             this.Label_ConfirmarEmail.AutoSize = true;
             this.Label_ConfirmarEmail.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_ConfirmarEmail.Location = new System.Drawing.Point(1224, 238);
+            this.Label_ConfirmarEmail.Location = new System.Drawing.Point(1224, 250);
             this.Label_ConfirmarEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_ConfirmarEmail.Name = "Label_ConfirmarEmail";
             this.Label_ConfirmarEmail.Size = new System.Drawing.Size(168, 28);
@@ -492,7 +494,7 @@
             // Calendario_Nacimiento
             // 
             this.Calendario_Nacimiento.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Calendario_Nacimiento.Location = new System.Drawing.Point(455, 290);
+            this.Calendario_Nacimiento.Location = new System.Drawing.Point(455, 302);
             this.Calendario_Nacimiento.MaxDate = new System.DateTime(2025, 4, 2, 0, 0, 0, 0);
             this.Calendario_Nacimiento.MinDate = new System.DateTime(1958, 1, 1, 0, 0, 0, 0);
             this.Calendario_Nacimiento.Name = "Calendario_Nacimiento";
@@ -504,7 +506,7 @@
             // 
             this.Label_F_Nacimiento.AutoSize = true;
             this.Label_F_Nacimiento.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_F_Nacimiento.Location = new System.Drawing.Point(438, 238);
+            this.Label_F_Nacimiento.Location = new System.Drawing.Point(438, 250);
             this.Label_F_Nacimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_F_Nacimiento.Name = "Label_F_Nacimiento";
             this.Label_F_Nacimiento.Size = new System.Drawing.Size(215, 28);
@@ -515,7 +517,7 @@
             // 
             this.Label_DNI.AutoSize = true;
             this.Label_DNI.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_DNI.Location = new System.Drawing.Point(70, 238);
+            this.Label_DNI.Location = new System.Drawing.Point(70, 250);
             this.Label_DNI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_DNI.Name = "Label_DNI";
             this.Label_DNI.Size = new System.Drawing.Size(51, 28);
@@ -526,7 +528,7 @@
             // 
             this.Label_Email.AutoSize = true;
             this.Label_Email.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Email.Location = new System.Drawing.Point(857, 238);
+            this.Label_Email.Location = new System.Drawing.Point(857, 250);
             this.Label_Email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Email.Name = "Label_Email";
             this.Label_Email.Size = new System.Drawing.Size(65, 28);
@@ -537,7 +539,7 @@
             // 
             this.Label_Telefono.AutoSize = true;
             this.Label_Telefono.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Telefono.Location = new System.Drawing.Point(438, 588);
+            this.Label_Telefono.Location = new System.Drawing.Point(438, 600);
             this.Label_Telefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Telefono.Name = "Label_Telefono";
             this.Label_Telefono.Size = new System.Drawing.Size(96, 28);
@@ -548,7 +550,7 @@
             // 
             this.Label_Direccion.AutoSize = true;
             this.Label_Direccion.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Direccion.Location = new System.Drawing.Point(70, 588);
+            this.Label_Direccion.Location = new System.Drawing.Point(70, 600);
             this.Label_Direccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Direccion.Name = "Label_Direccion";
             this.Label_Direccion.Size = new System.Drawing.Size(102, 28);
@@ -559,7 +561,7 @@
             // 
             this.Label_Apellido.AutoSize = true;
             this.Label_Apellido.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Apellido.Location = new System.Drawing.Point(438, 415);
+            this.Label_Apellido.Location = new System.Drawing.Point(438, 427);
             this.Label_Apellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Apellido.Name = "Label_Apellido";
             this.Label_Apellido.Size = new System.Drawing.Size(90, 28);
@@ -570,7 +572,7 @@
             // 
             this.Label_Nombre.AutoSize = true;
             this.Label_Nombre.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Nombre.Location = new System.Drawing.Point(70, 415);
+            this.Label_Nombre.Location = new System.Drawing.Point(70, 427);
             this.Label_Nombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Nombre.Name = "Label_Nombre";
             this.Label_Nombre.Size = new System.Drawing.Size(91, 28);
@@ -581,7 +583,7 @@
             // 
             this.Label_Tipo_Usuario.AutoSize = true;
             this.Label_Tipo_Usuario.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Tipo_Usuario.Location = new System.Drawing.Point(1043, 588);
+            this.Label_Tipo_Usuario.Location = new System.Drawing.Point(1043, 600);
             this.Label_Tipo_Usuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Tipo_Usuario.Name = "Label_Tipo_Usuario";
             this.Label_Tipo_Usuario.Size = new System.Drawing.Size(44, 28);
@@ -593,7 +595,7 @@
             this.ComboBox_Rol.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ComboBox_Rol.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBox_Rol.FormattingEnabled = true;
-            this.ComboBox_Rol.Location = new System.Drawing.Point(1066, 640);
+            this.ComboBox_Rol.Location = new System.Drawing.Point(1066, 652);
             this.ComboBox_Rol.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ComboBox_Rol.Name = "ComboBox_Rol";
             this.ComboBox_Rol.Size = new System.Drawing.Size(250, 33);
