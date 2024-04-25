@@ -9,6 +9,7 @@ namespace Datos
     public class AltaUsuario
     {
         String _idUsuario;
+        int _host;
         String _nombre;
         String _apellido;
         int _dni;
@@ -16,11 +17,26 @@ namespace Datos
         String _telefono;
         String _email;
         DateTime _fechaNacimiento;
-        String _host;
+        String _nombreUsuario;
+        String _constraseña;
 
-        public AltaUsuario(string idUsuario, string nombre, string apellido, int dni, string direccion, string telefono, string email, DateTime fechaNacimiento, string host)
+
+        public AltaUsuario(
+            string idUsuario,
+            int host,
+            string nombre,
+            string apellido,
+            int dni,
+            string direccion,
+            string telefono,
+            string email,
+            DateTime fechaNacimiento,
+            string NombreUsuario,
+            string Contraseña
+            )
         {
             _idUsuario = idUsuario;
+            _host = host;
             _nombre = nombre;
             _apellido = apellido;
             _dni = dni;
@@ -28,16 +44,19 @@ namespace Datos
             _telefono = telefono;
             _email = email;
             _fechaNacimiento = fechaNacimiento;
-            _host = host;
+            _nombreUsuario = NombreUsuario;
+            _constraseña = Contraseña;
         }
 
         public string IdUsuario { get => _idUsuario; set => _idUsuario = value; }
+
+        public int Host { get => _host; set => _host = value; }
 
         public string Nombre { get => _nombre; set => _nombre = value; }
 
         public string Apellido { get => _apellido; set => _apellido = value; }
 
-        public int Dni { get => _dni; set => _dni = value; }
+        public int DNI { get => _dni; set => _dni = value; }
 
         public string Direccion { get => _direccion; set => _direccion = value; }
 
@@ -47,6 +66,8 @@ namespace Datos
 
         public DateTime FechaNacimiento { get => _fechaNacimiento; set => _fechaNacimiento = value; }
 
-        public string Host { get => _host; set => _host = value; }
+        public string NombreUsuario { get => _nombreUsuario; set => _nombreUsuario = value; }
+
+        public string Contraseña { get => _constraseña; set => _constraseña = value; }
     }
 }

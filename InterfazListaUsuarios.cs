@@ -55,28 +55,6 @@ namespace Presentacion
             formInterfazAltaUsuarios.Show();
         } // Evento cuando se hace clic en el Botón "+ Nuevo"
 
-        private void CheckActivo_CheckedChanged(object sender, EventArgs e) // Detecta cambios en el check "De Baja" 
-        {
-            // Establecer que el usuario se pase a inactivo cuando se tilde esta opción
-        }
-
-        private void Ventana_KeyDown(object sender, KeyEventArgs e) // Manejo para el evento de apretar ESC en una ventana 
-        {
-            if (e.KeyCode == Keys.Escape)
-            {
-                DialogResult result = MessageBox.Show("¿Está seguro de que desea volver al menú principal?", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                // Verificar la respuesta del usuario
-                if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
-                {
-                    InterfazMenu InterfazMenu = new InterfazMenu(); // Redirigir al formulario de inicio de sesión (LogIn)
-                    InterfazMenu.Show();
-                    this.Hide(); // Ocultar el formulario actual
-                }
-                // Si el usuario elige "No", no hacer nada
-            }
-        }
-
         private void Usuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex < dataGridView1.Columns.Count)
@@ -145,6 +123,52 @@ namespace Presentacion
             }
         }
 
+        private void LupaDNI_Click(object sender, EventArgs e)
+        {
+            // Obtener el texto ingresado en el TextBox UsuariosBuscador
+            string textoBusqueda = Box_BuscarDNI.Text;
+
+            // Verificar si la lista de usuarios es nula o está vacía
+            if (Usuarios.DataSource == null || Usuarios.Rows.Count == 0)
+            {
+                // Manejar el caso en el que la lista de usuarios es nula o vacía
+                MessageBox.Show("La lista se encuentra vacía.\n\nNo hay usuarios para buscar.");
+            }
+            else
+            {
+                // Lista para almacenar los usuarios que coinciden con la búsqueda
+                List<UsuariosActivos> usuariosFiltrados = new List<UsuariosActivos>();
+
+                // Recorrer cada fila en el DataGridView Usuarios
+                foreach (DataGridViewRow fila in Usuarios.Rows)
+                {
+                    // Obtener el valor de la celda que contiene el nombre del usuario
+                    string DNI = fila.Cells["DNI"].Value?.ToString();
+
+                    // Comparar si el texto de búsqueda coincide con el nombre de usuario actual
+                    if (!string.IsNullOrEmpty(DNI) && DNI.Contains(textoBusqueda))
+                    {
+                        // Agregar el usuario a la lista de usuarios filtrados
+                        usuariosFiltrados.Add((UsuariosActivos)fila.DataBoundItem);
+                    }
+                }
+
+                // Verificar si se encontraron usuarios que coinciden con la búsqueda
+                if (usuariosFiltrados.Count > 0)
+                {
+                    // Actualizar el DataSource del DataGridView con los usuarios filtrados
+                    var bindingList = new BindingList<UsuariosActivos>(usuariosFiltrados);
+                    var source = new BindingSource(bindingList, null);
+                    Usuarios.DataSource = source;
+                }
+                else
+                {
+                    // Mostrar un mensaje si no se encontraron usuarios que coincidan con la búsqueda
+                    MessageBox.Show("No se encontraron usuarios que coincidan con la búsqueda.");
+                }
+            }
+        }
+
         private void BorrarFiltro_Click(object sender, EventArgs e)
         {
             CargarUsuarios();
@@ -168,5 +192,24 @@ namespace Presentacion
                 ventanaMenu.Show();
             }
         }
+
+        private void Ventana_KeyDown(object sender, KeyEventArgs e) // Manejo para el evento de apretar ESC en una ventana 
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                DialogResult result = MessageBox.Show("¿Está seguro de que desea volver al menú principal?", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                // Verificar la respuesta del usuario
+                if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
+                {
+                    InterfazMenu InterfazMenu = new InterfazMenu(); // Redirigir al formulario de inicio de sesión (LogIn)
+                    InterfazMenu.Show();
+                    this.Hide(); // Ocultar el formulario actual
+                }
+                // Si el usuario elige "No", no hacer nada
+            }
+        }
+
+
     }
 }

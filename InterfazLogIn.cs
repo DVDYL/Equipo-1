@@ -23,12 +23,6 @@ namespace Presentacion
 
         }
 
-        public void CambiarTextoTituloVentana()
-        {
-            // Llamada al método en la clase base para modificar el texto del Label
-            ModificarTextoTituloVentana("IniciarSesion");
-        }
-
         private void Boton_Ingresar_Click(object sender, EventArgs e)
         {
             // Obtener las credenciales ingresadas por el usuario
@@ -82,7 +76,6 @@ namespace Presentacion
                     {
                         MessageBox.Show("Le quedan " + (3 - intentosFallidos) + " intentos posibles.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-
                 }
             }
             else
@@ -90,8 +83,6 @@ namespace Presentacion
                 // El usuario no existe, mostrar el mensaje de error obtenido de UsuarioValido
                 MessageBox.Show(errorMessage, "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
         } // Valida las credenciales de usuario
 
         private void Boton_Cancelar_Click(object sender, EventArgs e)
@@ -100,7 +91,7 @@ namespace Presentacion
 
             if (resultado == DialogResult.Yes)             // Verificar la respuesta del usuario
             {
-                this.Close();                 // Si el usuario selecciona "Sí", cierra el formulario
+                Application.Exit();               // Si el usuario selecciona "Sí", cierra el formulario
             }
         } // Pide confirmar la cancelación y si se acepta, sale del programa.
 

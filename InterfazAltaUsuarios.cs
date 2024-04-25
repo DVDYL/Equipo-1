@@ -3,117 +3,35 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Datos;
 using Negocio;
 
 namespace Presentacion
 {
     public partial class InterfazAltaUsuarios : Ventana
     {
+        private string host;
+
         public InterfazAltaUsuarios() // Esta Función prepara el formulario y sus restricciones
         {
             InitializeComponent(); // Inicializamos el formulario.
             this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
-
             Rol_Null.Visible = false; // Ocultar el TextBox Rol_Null
 
             // Establecer el formato de visualización predeterminado para la fecha de nacimiento
             Calendario_Nacimiento.Format = DateTimePickerFormat.Custom;
             Calendario_Nacimiento.CustomFormat = "dd/MM/yyyy";
 
-        } 
+            ComboBox_Rol.DropDownStyle = ComboBoxStyle.DropDownList; // Configurar el estilo para que el usuario no pueda escribir
+            ComboBox_Rol.Items.Add("Administrador");
+            ComboBox_Rol.Items.Add("Supervisor");
+            ComboBox_Rol.Items.Add("Vendedor");
+            ComboBox_Rol.SelectedIndex = -1; // Establecer el elemento vacío como seleccionado por defecto
+        }
 
-        private void Limpiar() // Blanquea el Formulario de usuarios
+        private void ControlarCampos()
         {
-            // Reiniciar los valores de todos los campos del formulario a sus valores predeterminados
-
-            ComboBox_Rol.SelectedIndex = -1;
-            Box_Nombre.Text = "";
-            Box_Apellido.Text = "";
-            Box_DNI.Text = "";
-            Calendario_Nacimiento.Value = DateTime.Today;
-            Box_Calle.Text = "";
-            Box_Telefono.Text = "";
-            Box_Mail.Text = "";
-            Box_Mail_Confirm.Text = "";
-            Box_Pass.Text = "";
-            Box_Pass_Confirm.Text = "";
-
-            // Volver a ocultar todos los mensajes de error
-
-            Rol_Null.Visible = false;
-            Nombre_Error.Visible = false;
-            Apellido_Error.Visible = false;
-            DNI_Error.Visible = false;
-            Edad_Error.Visible = false;
-            Calle_Error.Visible = false;
-            Telefono_Error.Visible = false;
-            Mail_Error.Visible = false;
-            ConfirmMail_Error.Visible = false;
-            Pass_Error.Visible = false;
-            ConfirmPass_Error.Visible = false;
-
-            // Ocultar todos los tooltips
-
-            MayudaApellido.Visible = false;
-            MayudaCalle.Visible = false;
-            MayudaConfirContra.Visible = false;
-            MayudaConfirMail.Visible = false;
-            MayudaContra.Visible = false;
-            MayudaDNI.Visible = false;
-            MayudaFechaNacimiento.Visible = false;
-            MayudaMail.Visible = false;
-            MayudaNombre.Visible = false;
-            MayudaRol.Visible = false;
-            MayudaTelefono.Visible = false;
-
-        } 
-
-        private bool CamposCompletos() // Evalúa qué campos del formulario están completos
-        {
-            // Verificar si al menos uno de los campos está lleno
-            bool camposLlenos = !string.IsNullOrWhiteSpace(Box_Nombre.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Apellido.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_DNI.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Calle.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Telefono.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Mail.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Mail_Confirm.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Pass.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Pass_Confirm.Text);
-
-            // Verificar si los ComboBoxes no han sido desplegados y se ha seleccionado una opción
-            bool comboBoxesLlenos = ComboBox_Rol.DroppedDown == false && ComboBox_Rol.SelectedItem != null;
-
-            // Retorna verdadero si al menos uno de los campos de texto está lleno y los ComboBoxes no están desplegados y tienen una selección
-            return camposLlenos || comboBoxesLlenos;
-        } 
-
-        private string GenerarNombreUsuario(string nombre, string apellido, DateTime fechaNacimiento)
-        {
-            // Obtener las tres primeras letras del nombre
-            string primerasTresLetrasNombre = nombre.Length >= 3 ? nombre.Substring(0, 3) : nombre;
-
-            // Obtener las tres primeras letras del apellido
-            string primerasTresLetrasApellido = apellido.Length >= 3 ? apellido.Substring(0, 3) : apellido;
-
-            // Obtener los cuatro dígitos del año de nacimiento
-            string añoNacimiento = fechaNacimiento.Year.ToString().Substring(2, 2);
-
-            // Combinar las partes para formar el nombre de usuario
-            string nombreUsuario = $"{primerasTresLetrasNombre.ToUpper()}{primerasTresLetrasApellido.ToUpper()}{añoNacimiento}";
-
-            return nombreUsuario;
-        } // Función para autogenerar el nombre del usuario
-
-        private void ComboBox_Rol_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //
-        } // Detecta Cambios en el campo "Rol"
-
-        private void Boton_Confirmar_Click(object sender, EventArgs e)
-        {
-
             if (ComboBox_Rol.SelectedIndex == -1)
             {
                 Rol_Null.Visible = true; // Mostrar el TextBox Rol_Null
@@ -188,7 +106,7 @@ namespace Presentacion
             }
             else
             {
-                Edad_Error.Visible=false; 
+                Edad_Error.Visible = false;
             }
 
             string errorCalle = Validar.EsCalle(Box_Calle.Text);
@@ -221,7 +139,7 @@ namespace Presentacion
             }
 
             string errorMail = Validar.EsMail(Box_Mail.Text);
-            if (errorMail !=null) //Si NO cumple con la validación, mostrará el mensaje.
+            if (errorMail != null) //Si NO cumple con la validación, mostrará el mensaje.
             {
                 Mail_Error.Text = errorMail;
                 Mail_Error.Visible = true;
@@ -260,7 +178,7 @@ namespace Presentacion
                 MayudaContra.Visible = true;
                 return;
             }
-            else 
+            else
             {
                 Pass_Error.Visible = false;
             }
@@ -269,7 +187,7 @@ namespace Presentacion
             string contraseñaConfirmada = Box_Pass_Confirm.Text;
             string errorConfirmarContraseña = Validar.ConfirmarContraseña(contraseña, contraseñaConfirmada);
 
-            if (errorConfirmarContraseña != null) 
+            if (errorConfirmarContraseña != null)
             {
                 ConfirmPass_Error.Text = errorConfirmarContraseña;
                 ConfirmPass_Error.Visible = true;
@@ -281,11 +199,134 @@ namespace Presentacion
             {
                 ConfirmPass_Error.Visible = false;
             }
+        }
 
-            // Si todas las validaciones pasan, mostrar mensaje de éxito.
+        private bool CamposCompletos() // Evalúa qué campos del formulario están completos
+        {
+            // Verificar si al menos uno de los campos está lleno
+            bool camposLlenos = !string.IsNullOrWhiteSpace(Box_Nombre.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Apellido.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_DNI.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Calle.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Telefono.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Mail.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Mail_Confirm.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Pass.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Pass_Confirm.Text);
+
+            // Verificar si los ComboBoxes no han sido desplegados y se ha seleccionado una opción
+            bool comboBoxesLlenos = ComboBox_Rol.DroppedDown == false && ComboBox_Rol.SelectedItem != null;
+
+            // Retorna verdadero si al menos uno de los campos de texto está lleno y los ComboBoxes no están desplegados y tienen una selección
+            return camposLlenos || comboBoxesLlenos;
+        }
+
+        private void Limpiar() // Blanquea el Formulario de usuarios
+        {
+            // Reiniciar los valores de todos los campos del formulario a sus valores predeterminados
+
+            ComboBox_Rol.SelectedIndex = -1;
+            Box_Nombre.Text = "";
+            Box_Apellido.Text = "";
+            Box_DNI.Text = "";
+            Calendario_Nacimiento.Value = DateTime.Today;
+            Box_Calle.Text = "";
+            Box_Telefono.Text = "";
+            Box_Mail.Text = "";
+            Box_Mail_Confirm.Text = "";
+            Box_Pass.Text = "";
+            Box_Pass_Confirm.Text = "";
+
+            // Volver a ocultar todos los mensajes de error
+
+            Rol_Null.Visible = false;
+            Nombre_Error.Visible = false;
+            Apellido_Error.Visible = false;
+            DNI_Error.Visible = false;
+            Edad_Error.Visible = false;
+            Calle_Error.Visible = false;
+            Telefono_Error.Visible = false;
+            Mail_Error.Visible = false;
+            ConfirmMail_Error.Visible = false;
+            Pass_Error.Visible = false;
+            ConfirmPass_Error.Visible = false;
+
+            // Ocultar todos los tooltips
+
+            MayudaApellido.Visible = false;
+            MayudaCalle.Visible = false;
+            MayudaConfirContra.Visible = false;
+            MayudaConfirMail.Visible = false;
+            MayudaContra.Visible = false;
+            MayudaDNI.Visible = false;
+            MayudaFechaNacimiento.Visible = false;
+            MayudaMail.Visible = false;
+            MayudaNombre.Visible = false;
+            MayudaRol.Visible = false;
+            MayudaTelefono.Visible = false;
+
+        } 
+
+        private string GenerarNombreUsuario(string nombre, string apellido, DateTime fechaNacimiento)
+        {
+            // Obtener las tres primeras letras del nombre
+            string primerasTresLetrasNombre = nombre.Length >= 3 ? nombre.Substring(0, 3) : nombre;
+
+            // Obtener las tres primeras letras del apellido
+            string primerasTresLetrasApellido = apellido.Length >= 3 ? apellido.Substring(0, 3) : apellido;
+
+            // Obtener los cuatro dígitos del año de nacimiento
+            string añoNacimiento = fechaNacimiento.Year.ToString().Substring(2, 2);
+
+            // Combinar las partes para formar el nombre de usuario
+            string nombreUsuario = $"{primerasTresLetrasNombre.ToUpper()}{primerasTresLetrasApellido.ToUpper()}{añoNacimiento}";
+
+            return nombreUsuario;
+        } // Función para autogenerar el nombre del usuario
+
+        private void CrearUsuario()
+        {
+            // Obtener el valor de 'host' basado en la selección del ComboBox_Rol
+            int host;
+            if (ComboBox_Rol.SelectedItem.ToString() == "Administrador")
+            {
+                host = 1;
+            }
+            else if (ComboBox_Rol.SelectedItem.ToString() == "Supervisor")
+            {
+                host = 2;
+            }
+            else
+            {
+                host = 3; // Valor predeterminado para otras opciones
+            }
+
+            // Crear un nuevo objeto AltaUsuario con los datos del formulario
+            UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
+            usuarioNegocio.AgregarUsuario(
+                "70b37dc1-8fde-4840-be47-9ababd0ee7e5",
+                host,
+                Box_Nombre.Text,
+                Box_Apellido.Text,
+                int.Parse(Box_DNI.Text),
+                Box_Calle.Text,
+                Box_Telefono.Text,
+                Box_Mail_Confirm.Text,
+                Calendario_Nacimiento.Value,
+                GenerarNombreUsuario(Box_Nombre.Text, Box_Apellido.Text, Calendario_Nacimiento.Value),
+                Box_Pass_Confirm.Text
+            );
+        }
+
+        private void Boton_Confirmar_Click(object sender, EventArgs e)
+        {
+            ControlarCampos();
+
+            CrearUsuario();
+            
+            // Si todas las validaciones pasan y el usuario se creó, mostrar un mensaje de éxito.
 
             string nombreUsuario = GenerarNombreUsuario(Box_Nombre.Text, Box_Apellido.Text, Calendario_Nacimiento.Value); // Generar el nombre de usuario
-
 
             // Mostrar un cuadro de diálogo de confirmación al usuario
             DialogResult resultadoConfirmacion = MessageBox.Show($"¿Desea realizar la operación de alta para el usuario {nombreUsuario}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -300,8 +341,9 @@ namespace Presentacion
 
                 if (resultadoContinuar == DialogResult.No)
                 {
-                    // Cerrar el formulario actual (UserAdmin.cs)
                     this.Close();
+                    InterfazListaUsuarios InterfazListaUsuarios = new InterfazListaUsuarios();
+                    InterfazListaUsuarios.Show();
                 }
                 else
                 {
@@ -309,7 +351,6 @@ namespace Presentacion
                     Limpiar();
                 }
             }
-            // Si el usuario elige "No" en el cuadro de diálogo de confirmación, no hacemos nada
 
         } // Confirma todos los campos, si está todo correcto, genera un ID de usuario.
 
@@ -336,12 +377,13 @@ namespace Presentacion
 
         private void Boton_Cancelar_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("¿Desea cancelar la operación y volver al menú principal?\n\nSe perderán todos los datos que no se hayan guardado", "Confirmar Cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show("¿Desea cancelar la operación y volver al listado de usuarios?\n\nSe perderán todos los datos que no se hayan guardado", "Confirmar Cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
-                // Cerrar el formulario actual (UserAdmin.cs)
-                this.Close(); // Esto cerrará el formulario UserAdmin y volverá automáticamente al formulario Menu si es que fue abierto desde allí
+                this.Hide();
+                InterfazListaUsuarios InterfazListaUsuarios = new InterfazListaUsuarios();
+                InterfazListaUsuarios.Show();
             }
         } // Maneja el evento del botón "Cancelar"
 
@@ -421,36 +463,6 @@ namespace Presentacion
             }
             // Si el usuario elige "No", no hacer nada
         }
-
-        private void IconoCerrarSistema_Click(object sender, EventArgs e) // Evento para volver al inicio de sesión cuando se hace clic en el ícono del banner  
-        {
-            // Mostrar un cuadro de diálogo de confirmación
-            DialogResult result = MessageBox.Show("¿Está seguro de que desea cerrar el programa? No se guardarán los cambios.", "Cerrar programa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            // Verificar la respuesta del usuario
-            if (result == DialogResult.Yes)
-            {
-                // Cerrar la aplicación
-                Application.Exit();
-            }
-            // Si el usuario elige "No", no hacer nada
-        }
-        private void Box_DNI_Enter(object sender, EventArgs e)
-        {
-            if (Box_DNI.Text == "Texto predeterminado")
-            {
-                Box_DNI.Text = "";
-                Box_DNI.ForeColor = SystemColors.WindowText; // Restablecer el color del texto a negro si fue cambiado
-            }
-        }
-
-        private void Box_DNI_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(Box_DNI.Text))
-            {
-                Box_DNI.Text = "Texto predeterminado";
-                Box_DNI.ForeColor = SystemColors.GrayText; // Establecer el color del texto a gris
-            }
-        }
+      
     }
 }
