@@ -14,6 +14,7 @@ namespace Datos
         public string Apellido { get; set; }
         public string Email { get; set; }
         public string Cuit { get; set; }
+
         public ModificarProveedor(Guid idProveedor,Guid idUsuario, string nombre, string apellido, string email, string cuit)
         {
             IdProveedor = idProveedor;

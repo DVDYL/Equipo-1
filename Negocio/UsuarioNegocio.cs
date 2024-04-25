@@ -15,9 +15,30 @@ namespace Negocio
             return UsuarioService.GetUsuarios();
         }
 
-        public void AgregarUsuario(string idUsuario, int host, string nombre, string apellido, int dni, string direccion, string telefono, string email, DateTime fechaNacimiento, string NombreUsuario, string Contraseña)
-        {
-            AltaUsuario altaUsuario = new AltaUsuario(idUsuario, host, nombre, apellido, dni, direccion, telefono, email, fechaNacimiento, NombreUsuario, Contraseña);
+        public void AgregarUsuario(
+        string idUsuario,
+        int host,
+        string nombre,
+        string apellido,
+        int dni,
+        string direccion,
+        string telefono,
+        string email,
+        DateTime fechaNacimiento,
+        string NombreUsuario,
+        string Contraseña) {
+            AltaUsuario altaUsuario = new AltaUsuario(
+        idUsuario,
+        host,
+        nombre,
+        apellido,
+        dni,
+        direccion,
+        telefono,
+        email,
+        fechaNacimiento,
+        NombreUsuario,
+        Contraseña);
             UsuarioService.AgregarUsuario(altaUsuario);
         }
 

@@ -20,6 +20,10 @@ namespace Datos
         String _nombreUsuario;
         String _constraseña;
 
+        public AltaUsuario()
+        {
+            //
+        }
 
         public AltaUsuario(
             string idUsuario,
