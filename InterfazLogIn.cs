@@ -48,41 +48,6 @@ namespace Presentacion
             // Obtener las credenciales ingresadas por el usuario
             string usuarioIngresado = Box_Usuario.Text;
             string contraseñaIngresada = Box_Pass.Text;
-
-            // Verificar si las credenciales son las del administrador
-            if (usuarioIngresado == UsuarioPorDefecto && contraseñaIngresada == ContraseñaPorDefecto)
-            {
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            else
-            {
-            // Verificar credenciales
-            string errorContraseña = Validar.ContraseñaValida(contraseñaIngresada);
-            string errorUsuario = Validar.EsUsuario(usuarioIngresado);
-
-                if (errorContraseña == null && errorUsuario == null)
-                {
-                    // Si tanto el usuario como la contraseña son válidos, iniciar sesión
-                //    string hash = IniciarSesion(usuarioIngresado, contraseñaIngresada); → CORREGIR ESTA LÍNEA
-
-                    // Cerrar el formulario de inicio de sesión
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
-                else
-                {
-                    // Mostrar mensaje de error de credenciales incorrectas
-                    MessageBox.Show("Credenciales incorrectas", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void Boton_Ingresar2_Click(object sender, EventArgs e)
-        {
-            // Obtener las credenciales ingresadas por el usuario
-            string usuarioIngresado = Box_Usuario.Text;
-            string contraseñaIngresada = Box_Pass.Text;
             string errorMessage; // Variable para almacenar el mensaje de error de la validación
 
             {
@@ -115,7 +80,7 @@ namespace Presentacion
                     intentosFallidos++;
 
                     // Si el usuario ha excedido el límite de intentos fallidos, bloquearlo
-                    if (intentosFallidos == 3) //Habria que armar una funcion que resuleva esta logica.
+                    if (intentosFallidos == 4) //Habria que armar una funcion que resuleva esta logica.
                     {
                         MessageBox.Show("El usuario ha sido bloqueado. Contacte al Administrador para reactivarlo nuevamente", "Usuario Bloqueado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         // Queda pendiente agregar que se inactivo el usuario. Pasa a estado INACTIVO
@@ -125,12 +90,16 @@ namespace Presentacion
                     }
                     else
                     {
-                        MessageBox.Show("Le quedan " + (3 - intentosFallidos) + " intentos posibles.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        if (intentosFallidos == 3)
+                        {
+                            MessageBox.Show("Le queda un intento para iniciar sesion, sino su usuario sera bloqueado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                 }
                 //     IniciarSesion();
             }
         } // Tomar de este método el contador de errores
+
 
         private void Boton_Cancelar_Click(object sender, EventArgs e)
         {
