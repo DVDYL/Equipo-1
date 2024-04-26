@@ -23,10 +23,13 @@ namespace Presentacion
 
         public void IniciarSesion()
         {
-            UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
-            UsuarioNegocio.IniciarSesion(Box_Usuario.Text, Box_Usuario.Text);
+            UsuarioNegocio IniciarSesion = new UsuarioNegocio();
+            IniciarSesion.IniciarSesion(Box_Usuario.Text, Box_Pass.Text);
 
-            MessageBox.Show("Número de hash:", "Este es tu Hash", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // ESTA LÍNEA TIENE QUE VALIDAR EL HASH
+
+            this.DialogResult = DialogResult.OK; // Si las credenciales son del administrador, ingresar directamente.
+            this.Close(); // Cerrar el formulario de inicio de sesión
         }
 
         private void Boton_Ingresar_Click(object sender, EventArgs e)
@@ -45,10 +48,9 @@ namespace Presentacion
             }
             else
             {
-
-                if (errorContraseña == null || errorUsuario == null)
+                if (errorUsuario == null || errorContraseña == null)
                 {
-                    IniciarSesion();
+                   IniciarSesion();
                 }
                 else
                 {
