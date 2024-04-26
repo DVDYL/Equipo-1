@@ -9,7 +9,7 @@ namespace Datos
     public class LogIn
     {
         String _nombreUsuario;
-        String _constraseña;
+        String _contraseña;
 
         public LogIn()
         {
@@ -19,12 +19,12 @@ namespace Datos
         public LogIn(string NombreUsuario, string Contraseña)
         {
             _nombreUsuario = NombreUsuario;
-            _constraseña = Contraseña;
+            _contraseña = Contraseña;
         }
 
         public string NombreUsuario { get => _nombreUsuario; set => _nombreUsuario = value; }
 
-        public string Contraseña { get => _constraseña; set => _constraseña = value; }
+        public string Contraseña { get => _contraseña; set => _contraseña = value; }
         
     }
 }

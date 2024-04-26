@@ -18,7 +18,7 @@ namespace Datos
         String _email;
         DateTime _fechaNacimiento;
         String _nombreUsuario;
-        String _constraseña;
+        String _contraseña;
 
         public AltaUsuario()
         {
@@ -49,7 +49,7 @@ namespace Datos
             _email = email;
             _fechaNacimiento = fechaNacimiento;
             _nombreUsuario = NombreUsuario;
-            _constraseña = Contraseña;
+            _contraseña = Contraseña;
         }
 
         public string IdUsuario { get => _idUsuario; set => _idUsuario = value; }
@@ -72,6 +72,6 @@ namespace Datos
 
         public string NombreUsuario { get => _nombreUsuario; set => _nombreUsuario = value; }
 
-        public string Contraseña { get => _constraseña; set => _constraseña = value; }
+        public string Contraseña { get => _contraseña; set => _contraseña = value; }
     }
 }
