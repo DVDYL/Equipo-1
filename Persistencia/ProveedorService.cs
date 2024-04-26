@@ -61,6 +61,7 @@ namespace Persistencia
                 Console.WriteLine($"Exception: {ex.Message}");
             }
         }
+
         public void ModificarProveedor(Guid idProveedor, Guid idUsuario, string nombre, string apellido, string email, string cuit)
         {
             String path = "/api/Proveedor/ModificarProveedor";

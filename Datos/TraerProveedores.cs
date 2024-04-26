@@ -12,24 +12,24 @@ namespace Datos
         String _nombre;
         String _apellido;
         String _email;
-        int _cuit;
-        DateTime _FechaAlta;
-        DateTime _FechaBaja;
+        String _cuit;
+        DateTime _fechaAlta;
+        DateTime? _fechaBaja;
 
         public TraerProveedores()
         {
             //
         }
 
-        public TraerProveedores(string Nombre, string Apellido,string Email, int CUIT, DateTime FechaAlta, DateTime FechaBaja)
+        public TraerProveedores(Guid Id, string Nombre, string Apellido,string Email, String CUIT, DateTime FechaAlta, DateTime? FechaBaja)
         {
             _id = Id;
             _nombre = Nombre;
             _apellido = Apellido;
             _email = Email;
             _cuit = CUIT;
-            _FechaAlta = FechaAlta;
-            _FechaBaja = FechaBaja;
+            _fechaAlta = FechaAlta;
+            _fechaBaja = FechaBaja;
         }
 
         public Guid Id { get => _id; set => _id = value; }
@@ -40,11 +40,11 @@ namespace Datos
 
         public string Email { get => _email; set => _email = value; }
 
-        public int CUIT { get => _cuit; set => _cuit = value; }
+        public String CUIT { get => _cuit; set => _cuit = value; }
 
-        public DateTime FechaAlta { get => _FechaAlta; set => _FechaAlta = value; }
+        public DateTime FechaAlta { get => _fechaAlta; set => _fechaAlta = value; }
 
-        public DateTime FechaBaja { get => _FechaBaja; set => _FechaBaja = value; }
+        public DateTime? FechaBaja { get => _fechaBaja; set => _fechaBaja = value; }
 
     }
 }

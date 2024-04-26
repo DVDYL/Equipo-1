@@ -14,6 +14,7 @@ namespace Negocio
         {
             return proveedorService.GetProveedores();
         }
+
         public void AgregarProveedor(string nombre, string apellido, string cuit, string email)
         {
             AltaProveedor altaProveedor = new AltaProveedor(idAdministrador, nombre, apellido, cuit, email);

@@ -99,24 +99,24 @@ namespace Presentacion
             MayudaRol.Visible = false;
             MayudaTelefono.Visible = false;
 
-        } 
+        }
 
-        private string GenerarNombreUsuario(string nombre, string apellido, DateTime fechaNacimiento)
+        private string GenerarNombreUsuario(string nombre, string apellido, string dni)
         {
-            // Obtener las tres primeras letras del nombre
-            string primerasTresLetrasNombre = nombre.Length >= 3 ? nombre.Substring(0, 3) : nombre;
+            // Obtener las dos primeras letras del nombre
+            string dosPrimerasLetrasNombre = nombre.Length >= 2 ? nombre.Substring(0, 2) : nombre;
 
-            // Obtener las tres primeras letras del apellido
-            string primerasTresLetrasApellido = apellido.Length >= 3 ? apellido.Substring(0, 3) : apellido;
+            // Obtener las dos primeras letras del apellido
+            string dosPrimerasLetrasApellido = apellido.Length >= 2 ? apellido.Substring(0, 2) : apellido;
 
-            // Obtener los cuatro dígitos del año de nacimiento
-            string añoNacimiento = fechaNacimiento.Year.ToString().Substring(2, 2);
+            // Obtener los tres últimos dígitos del DNI
+            string tresUltimosDigitosDNI = dni.Substring(dni.Length - 3);
 
             // Combinar las partes para formar el nombre de usuario
-            string nombreUsuario = $"{primerasTresLetrasNombre.ToUpper()}{primerasTresLetrasApellido.ToUpper()}{añoNacimiento}";
+            string nombreUsuario = $"G1{dosPrimerasLetrasNombre.ToUpper()}{dosPrimerasLetrasApellido.ToUpper()}{tresUltimosDigitosDNI}";
 
             return nombreUsuario;
-        } // Función para autogenerar el nombre del usuario
+        }
 
         private void CrearUsuario()
         {
@@ -157,7 +157,7 @@ namespace Presentacion
                                             Box_Telefono.Text,
                                             Box_Mail_Confirm.Text,
                                             Calendario_Nacimiento.Value,
-                                            GenerarNombreUsuario(Box_Nombre.Text, Box_Apellido.Text, Calendario_Nacimiento.Value),
+                                            GenerarNombreUsuario(Box_Nombre.Text, Box_Apellido.Text, Box_DNI.Text),
                                             Box_Pass_Confirm.Text
                                          );
         }
@@ -338,7 +338,7 @@ namespace Presentacion
             
             // Si todas las validaciones pasan y el usuario se creó, mostrar un mensaje de éxito.
 
-            string nombreUsuario = GenerarNombreUsuario(Box_Nombre.Text, Box_Apellido.Text, Calendario_Nacimiento.Value); // Generar el nombre de usuario
+            string nombreUsuario = GenerarNombreUsuario(Box_Nombre.Text, Box_Apellido.Text, Box_DNI.Text); // Generar el nombre de usuario
 
             // Mostrar un cuadro de diálogo de confirmación al usuario
             DialogResult resultadoConfirmacion = MessageBox.Show($"¿Desea realizar la operación de alta para el usuario {nombreUsuario}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

@@ -32,7 +32,7 @@ namespace Presentacion
                 var bindingList = new BindingList<TraerProveedores>(Proveedor);
                 var source = new BindingSource(bindingList, null);
                 Proveedores.DataSource = source;
-                Proveedores.Columns["id"].Visible = false;
+           //   Proveedores.Columns["id"].Visible = false;
             }
             catch (Exception ex)
             {

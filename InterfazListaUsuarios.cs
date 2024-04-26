@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows.Forms;
 using Datos;
 using Negocio;
@@ -30,22 +31,37 @@ namespace Presentacion
         {
             try
             {
-                List<UsuariosActivos> Usuario = UsuarioNegocio.ListarUsuarios();
+                List<UsuariosActivos> usuarios = UsuarioNegocio.ListarUsuarios();
 
-                var bindingList = new BindingList<UsuariosActivos>(Usuario);
-                var source = new BindingSource(bindingList, null);
-                Usuarios.DataSource = source;
-                Usuarios.Columns["id"].Visible = false;
+                // Filtrar usuarios cuyo NombreUsuario empiece por "G1"
+                usuarios = usuarios.Where(u => u.NombreUsuario.StartsWith("G1")).ToList();
 
-                foreach (DataGridViewRow fila in Usuarios.Rows)  //Esto es para que nos traiga solo el Host = 1.
+                // Reemplazar los valores de la columna HOST
+                foreach (UsuariosActivos usuario in usuarios)
                 {
-                    int host = Convert.ToInt32(fila.Cells["Host"].Value);
-                    if (host != 1)
+                    // Convertir Host a tipo numérico antes de la comparación
+                    int hostValue = Convert.ToInt32(usuario.Host);
+
+                    // Reemplazar los valores numéricos por su equivalente en texto
+                    if (hostValue == 1)
                     {
-                        fila.Visible = false;
+                        usuario.Host = "Administrador";
+                    }
+                    else if (hostValue == 2)
+                    {
+                        usuario.Host = "Supervisor";
+                    }
+                    else if (hostValue == 3)
+                    {
+                        usuario.Host = "Vendedor";
                     }
                 }
 
+                var bindingList = new BindingList<UsuariosActivos>(usuarios);
+                var source = new BindingSource(bindingList, null);
+                Usuarios.DataSource = source;
+                Usuarios.Columns["Host"].HeaderText = "Rol";
+                Usuarios.Columns["id"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -219,7 +235,5 @@ namespace Presentacion
                 // Si el usuario elige "No", no hacer nada
             }
         }
-
-
     }
 }
