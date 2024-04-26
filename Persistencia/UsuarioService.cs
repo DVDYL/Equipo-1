@@ -116,6 +116,30 @@ namespace Persistencia
                 Console.WriteLine($"Exception: {ex.Message}");
             }
         }
+
+        public void IniciarSesion(LogIn IniciarSesion)
+        {
+            String path = "/api/Usuario/Login";
+            var jsonRequest = JsonConvert.SerializeObject(IniciarSesion);
+
+            try
+            {
+                HttpResponseMessage response = WebHelper.Post(path, jsonRequest);
+                if (response.IsSuccessStatusCode)
+                {
+                    var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
+                    string respuesta = reader.ReadToEnd();
+                }
+                else
+                {
+                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception: {ex.Message}");
+            }
+        }
     }
 }
 

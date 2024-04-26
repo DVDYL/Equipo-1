@@ -51,5 +51,11 @@ namespace Negocio
         {
             UsuarioService.BorrarUsuario(idUsuario);
         }
+
+        public void IniciarSesion(string NombreUsuario, string Contraseña) 
+        {
+            LogIn IniciarSesion = new LogIn(NombreUsuario, Contraseña);
+            UsuarioService.IniciarSesion(IniciarSesion);
+        }
     }
 }

@@ -32,51 +32,138 @@ namespace Presentacion
 
         private void ControlarCampos()
         {
-            if (ComboBox_Rol.SelectedIndex == -1)
-            {
-                Rol_Null.Visible = true; // Mostrar el TextBox Rol_Null
 
-                // Mostrar mensaje de advertencia cuando el tipo de usuario está en blanco
-                MessageBox.Show("No se seleccionó ningún tipo de usuario.\n\nPor favor, seleccione un tipo de usuario y vuelva a intentarlo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private bool CamposCompletos() // Evalúa qué campos del formulario están completos
+        {
+            // Verificar si al menos uno de los campos está lleno
+            bool camposLlenos = !string.IsNullOrWhiteSpace(Box_Nombre.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Apellido.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_DNI.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Calle.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Telefono.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Mail.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Mail_Confirm.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Pass.Text) ||
+                                !string.IsNullOrWhiteSpace(Box_Pass_Confirm.Text);
+
+            // Verificar si los ComboBoxes no han sido desplegados y se ha seleccionado una opción
+            bool comboBoxesLlenos = ComboBox_Rol.DroppedDown == false && ComboBox_Rol.SelectedItem != null;
+
+            // Retorna verdadero si al menos uno de los campos de texto está lleno y los ComboBoxes no están desplegados y tienen una selección
+            return camposLlenos || comboBoxesLlenos;
+        }
+
+        private void Limpiar() // Blanquea el Formulario de usuarios
+        {
+            // Reiniciar los valores de todos los campos del formulario a sus valores predeterminados
+
+            ComboBox_Rol.SelectedIndex = -1;
+            Box_Nombre.Text = "";
+            Box_Apellido.Text = "";
+            Box_DNI.Text = "";
+            Calendario_Nacimiento.Value = DateTime.Today;
+            Box_Calle.Text = "";
+            Box_Telefono.Text = "";
+            Box_Mail.Text = "";
+            Box_Mail_Confirm.Text = "";
+            Box_Pass.Text = "";
+            Box_Pass_Confirm.Text = "";
+
+            // Volver a ocultar todos los mensajes de error
+
+            Rol_Null.Visible = false;
+            Nombre_Error.Visible = false;
+            Apellido_Error.Visible = false;
+            DNI_Error.Visible = false;
+            Edad_Error.Visible = false;
+            Calle_Error.Visible = false;
+            Telefono_Error.Visible = false;
+            Mail_Error.Visible = false;
+            ConfirmMail_Error.Visible = false;
+            Pass_Error.Visible = false;
+            ConfirmPass_Error.Visible = false;
+
+            // Ocultar todos los tooltips
+
+            MayudaApellido.Visible = false;
+            MayudaCalle.Visible = false;
+            MayudaConfirContra.Visible = false;
+            MayudaConfirMail.Visible = false;
+            MayudaContra.Visible = false;
+            MayudaDNI.Visible = false;
+            MayudaFechaNacimiento.Visible = false;
+            MayudaMail.Visible = false;
+            MayudaNombre.Visible = false;
+            MayudaRol.Visible = false;
+            MayudaTelefono.Visible = false;
+
+        } 
+
+        private string GenerarNombreUsuario(string nombre, string apellido, DateTime fechaNacimiento)
+        {
+            // Obtener las tres primeras letras del nombre
+            string primerasTresLetrasNombre = nombre.Length >= 3 ? nombre.Substring(0, 3) : nombre;
+
+            // Obtener las tres primeras letras del apellido
+            string primerasTresLetrasApellido = apellido.Length >= 3 ? apellido.Substring(0, 3) : apellido;
+
+            // Obtener los cuatro dígitos del año de nacimiento
+            string añoNacimiento = fechaNacimiento.Year.ToString().Substring(2, 2);
+
+            // Combinar las partes para formar el nombre de usuario
+            string nombreUsuario = $"{primerasTresLetrasNombre.ToUpper()}{primerasTresLetrasApellido.ToUpper()}{añoNacimiento}";
+
+            return nombreUsuario;
+        } // Función para autogenerar el nombre del usuario
+
+        private void CrearUsuario()
+        {
+            int host;
+
+            if (ComboBox_Rol.SelectedIndex != -1) // Verifica si se ha seleccionado un ítem en el ComboBox
+            {
+                if (ComboBox_Rol.SelectedItem.ToString() == "Administrador")
+                {
+                    host = 1;
+                }
+                else if (ComboBox_Rol.SelectedItem.ToString() == "Supervisor")
+                {
+                    host = 2;
+                }
+                else
+                {
+                    host = 3; // Valor predeterminado para otras opciones
+                }
+            }
+            else
+            {
+                // En caso de que no se haya seleccionado ningún ítem en el ComboBox
+                MessageBox.Show("Por favor, seleccione un tipo de usuario.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ComboBox_Rol.Focus();
-                MayudaRol.Visible = true;
-                return;
-            } // Verifica que el combobox de tipo de usuario no sea vacío.
-            else
-            {
-                Rol_Null.Visible = false; // Ocultar el TextBox Rol_Null si el combobox Rol no es Null
+                return; // Sale del método sin continuar la validación
             }
 
-            string errorNombre = Validar.EsNombre(Box_Nombre.Text, "Nombre");
-            if (errorNombre != null)
-            {
-                // Completar el contenido del TextBox Nombre_Error con el error
-                Nombre_Error.Text = errorNombre;
-                Nombre_Error.Visible = true;
-                MessageBox.Show(errorNombre, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MayudaNombre.Visible = true;
-                return;
-            }
-            else
-            {
-                Nombre_Error.Visible = false; // Ocultar el TextBox Nombre_Error si el campo nombre no tiene errores.
-            }
+            // Crear un nuevo objeto AltaUsuario con los datos del formulario
+            UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
+            usuarioNegocio.AgregarUsuario(
+                                            "70b37dc1-8fde-4840-be47-9ababd0ee7e5",
+                                            host,
+                                            Box_Nombre.Text,
+                                            Box_Apellido.Text,
+                                            int.Parse(Box_DNI.Text),
+                                            Box_Calle.Text,
+                                            Box_Telefono.Text,
+                                            Box_Mail_Confirm.Text,
+                                            Calendario_Nacimiento.Value,
+                                            GenerarNombreUsuario(Box_Nombre.Text, Box_Apellido.Text, Calendario_Nacimiento.Value),
+                                            Box_Pass_Confirm.Text
+                                         );
+        }
 
-            string errorApellido = Validar.EsNombre(Box_Apellido.Text, "Apellido");
-            if (errorApellido != null)
-            {
-                // Completar el contenido del TextBox Apellido_Error con el error
-                Apellido_Error.Text = errorApellido;
-                Apellido_Error.Visible = true;
-                MessageBox.Show(errorApellido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MayudaApellido.Visible = true;
-                return;
-            }
-            else
-            {
-                Apellido_Error.Visible = false; // Ocultar el TextBox Nombre_Error si el campo nombre no tiene errores.
-            }
-
+        private void Boton_Confirmar_Click(object sender, EventArgs e)
+        {
             string errorDNI = Validar.EsDNI(Box_DNI.Text);
             if (errorDNI != null)
             {
@@ -107,6 +194,36 @@ namespace Presentacion
             else
             {
                 Edad_Error.Visible = false;
+            }
+
+            string errorNombre = Validar.EsNombre(Box_Nombre.Text, "Nombre");
+            if (errorNombre != null)
+            {
+                // Completar el contenido del TextBox Nombre_Error con el error
+                Nombre_Error.Text = errorNombre;
+                Nombre_Error.Visible = true;
+                MessageBox.Show(errorNombre, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MayudaNombre.Visible = true;
+                return;
+            }
+            else
+            {
+                Nombre_Error.Visible = false; // Ocultar el TextBox Nombre_Error si el campo nombre no tiene errores.
+            }
+
+            string errorApellido = Validar.EsNombre(Box_Apellido.Text, "Apellido");
+            if (errorApellido != null)
+            {
+                // Completar el contenido del TextBox Apellido_Error con el error
+                Apellido_Error.Text = errorApellido;
+                Apellido_Error.Visible = true;
+                MessageBox.Show(errorApellido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MayudaApellido.Visible = true;
+                return;
+            }
+            else
+            {
+                Apellido_Error.Visible = false; // Ocultar el TextBox Nombre_Error si el campo nombre no tiene errores.
             }
 
             string errorCalle = Validar.EsCalle(Box_Calle.Text);
@@ -199,128 +316,23 @@ namespace Presentacion
             {
                 ConfirmPass_Error.Visible = false;
             }
-        }
 
-        private bool CamposCompletos() // Evalúa qué campos del formulario están completos
-        {
-            // Verificar si al menos uno de los campos está lleno
-            bool camposLlenos = !string.IsNullOrWhiteSpace(Box_Nombre.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Apellido.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_DNI.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Calle.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Telefono.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Mail.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Mail_Confirm.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Pass.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Pass_Confirm.Text);
-
-            // Verificar si los ComboBoxes no han sido desplegados y se ha seleccionado una opción
-            bool comboBoxesLlenos = ComboBox_Rol.DroppedDown == false && ComboBox_Rol.SelectedItem != null;
-
-            // Retorna verdadero si al menos uno de los campos de texto está lleno y los ComboBoxes no están desplegados y tienen una selección
-            return camposLlenos || comboBoxesLlenos;
-        }
-
-        private void Limpiar() // Blanquea el Formulario de usuarios
-        {
-            // Reiniciar los valores de todos los campos del formulario a sus valores predeterminados
-
-            ComboBox_Rol.SelectedIndex = -1;
-            Box_Nombre.Text = "";
-            Box_Apellido.Text = "";
-            Box_DNI.Text = "";
-            Calendario_Nacimiento.Value = DateTime.Today;
-            Box_Calle.Text = "";
-            Box_Telefono.Text = "";
-            Box_Mail.Text = "";
-            Box_Mail_Confirm.Text = "";
-            Box_Pass.Text = "";
-            Box_Pass_Confirm.Text = "";
-
-            // Volver a ocultar todos los mensajes de error
-
-            Rol_Null.Visible = false;
-            Nombre_Error.Visible = false;
-            Apellido_Error.Visible = false;
-            DNI_Error.Visible = false;
-            Edad_Error.Visible = false;
-            Calle_Error.Visible = false;
-            Telefono_Error.Visible = false;
-            Mail_Error.Visible = false;
-            ConfirmMail_Error.Visible = false;
-            Pass_Error.Visible = false;
-            ConfirmPass_Error.Visible = false;
-
-            // Ocultar todos los tooltips
-
-            MayudaApellido.Visible = false;
-            MayudaCalle.Visible = false;
-            MayudaConfirContra.Visible = false;
-            MayudaConfirMail.Visible = false;
-            MayudaContra.Visible = false;
-            MayudaDNI.Visible = false;
-            MayudaFechaNacimiento.Visible = false;
-            MayudaMail.Visible = false;
-            MayudaNombre.Visible = false;
-            MayudaRol.Visible = false;
-            MayudaTelefono.Visible = false;
-
-        } 
-
-        private string GenerarNombreUsuario(string nombre, string apellido, DateTime fechaNacimiento)
-        {
-            // Obtener las tres primeras letras del nombre
-            string primerasTresLetrasNombre = nombre.Length >= 3 ? nombre.Substring(0, 3) : nombre;
-
-            // Obtener las tres primeras letras del apellido
-            string primerasTresLetrasApellido = apellido.Length >= 3 ? apellido.Substring(0, 3) : apellido;
-
-            // Obtener los cuatro dígitos del año de nacimiento
-            string añoNacimiento = fechaNacimiento.Year.ToString().Substring(2, 2);
-
-            // Combinar las partes para formar el nombre de usuario
-            string nombreUsuario = $"{primerasTresLetrasNombre.ToUpper()}{primerasTresLetrasApellido.ToUpper()}{añoNacimiento}";
-
-            return nombreUsuario;
-        } // Función para autogenerar el nombre del usuario
-
-        private void CrearUsuario()
-        {
-            // Obtener el valor de 'host' basado en la selección del ComboBox_Rol
-            int host;
-            if (ComboBox_Rol.SelectedItem.ToString() == "Administrador")
+            if (ComboBox_Rol.SelectedIndex == -1)
             {
-                host = 1;
-            }
-            else if (ComboBox_Rol.SelectedItem.ToString() == "Supervisor")
-            {
-                host = 2;
-            }
+                Rol_Null.Visible = true; // Mostrar el TextBox Rol_Null
+
+                // Mostrar mensaje de advertencia cuando el tipo de usuario está en blanco
+                MessageBox.Show("No se seleccionó ningún tipo de usuario.\n\nPor favor, seleccione un tipo de usuario y vuelva a intentarlo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ComboBox_Rol.Focus();
+                MayudaRol.Visible = true;
+                return;
+            } // Verifica que el combobox de tipo de usuario no sea vacío.
             else
             {
-                host = 3; // Valor predeterminado para otras opciones
+                Rol_Null.Visible = false; // Ocultar el TextBox Rol_Null si el combobox Rol no es Null
             }
 
-            // Crear un nuevo objeto AltaUsuario con los datos del formulario
-            UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
-            usuarioNegocio.AgregarUsuario(
-                "70b37dc1-8fde-4840-be47-9ababd0ee7e5",
-                host,
-                Box_Nombre.Text,
-                Box_Apellido.Text,
-                int.Parse(Box_DNI.Text),
-                Box_Calle.Text,
-                Box_Telefono.Text,
-                Box_Mail_Confirm.Text,
-                Calendario_Nacimiento.Value,
-                GenerarNombreUsuario(Box_Nombre.Text, Box_Apellido.Text, Calendario_Nacimiento.Value),
-                Box_Pass_Confirm.Text
-            );
-        }
-
-        private void Boton_Confirmar_Click(object sender, EventArgs e)
-        {
-            ControlarCampos();
+            // Cuando las validaciones den todas OK, se crea el usuario,
 
             CrearUsuario();
             

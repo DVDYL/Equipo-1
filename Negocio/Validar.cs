@@ -281,57 +281,57 @@ namespace Negocio
             }
         }
 
-        public static bool EsUsuario(string usuario, out string errorMessage)   // Este procedimiento se puede usar en el ABM de usuarios
+        public static string EsUsuario(string usuario)   // Este procedimiento se puede usar en el ABM de usuarios
         {
-            errorMessage = null; // Inicializar el mensaje de error como nulo
+            string errorMessage = null; // Inicializar el mensaje de error como nulo
 
             // Verificar si el usuario tiene al menos 6 caracteres
             if (usuario.Length < 6)
             {
                 errorMessage = "El usuario debe tener al menos 6 caracteres.";
-                return false;
+                return errorMessage;
             }
 
             // Verificar si el usuario termina en dos dígitos
             if (!char.IsDigit(usuario[usuario.Length - 1]) || !char.IsDigit(usuario[usuario.Length - 2]))
             {
                 errorMessage = "El usuario debe terminar en dos dígitos.";
-                return false;
+                return errorMessage;
             }
 
             // Verificar si el usuario contiene espacios o caracteres especiales
             if (Regex.IsMatch(usuario, @"\s"))
             {
                 errorMessage = "El usuario no puede contener espacios.";
-                return false;
+                return errorMessage;
             }
             if (!Regex.IsMatch(usuario, @"^[a-zA-Z0-9]+$"))
             {
                 errorMessage = "El usuario solo puede contener letras y números.";
-                return false;
+                return errorMessage;
             }
 
             // Si pasa todas las validaciones, el usuario es válido
-            return true;
+            return errorMessage;
         }
 
-        public static bool UsuarioValido(string usuario, out string errorMessage)
+        public static string UsuarioValido(string usuario)
         {
-            errorMessage = null;
+            string errorMessage = null;
 
             usuario = usuario.ToUpper(); // Convertir el usuario ingresado a mayúsculas
 
             if (string.IsNullOrEmpty(usuario))
             {
                 errorMessage = "Debe ingresar un Usuario";
-                return false;
+                return errorMessage;
             }
             else if (usuario != "ADMINI24")
             {
                 errorMessage = "Las credenciales ingresadas no son válidas.";
-                return false;
+                return errorMessage;
             }
-            return true;
+            return errorMessage;
         }
 
         public static string ContraseñaValida(string contraseña)
