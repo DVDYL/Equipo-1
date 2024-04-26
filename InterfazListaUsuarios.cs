@@ -36,6 +36,16 @@ namespace Presentacion
                 var source = new BindingSource(bindingList, null);
                 Usuarios.DataSource = source;
                 Usuarios.Columns["id"].Visible = false;
+
+                foreach (DataGridViewRow fila in Usuarios.Rows)  //Esto es para que nos traiga solo el Host = 1.
+                {
+                    int host = Convert.ToInt32(fila.Cells["Host"].Value);
+                    if (host != 1)
+                    {
+                        fila.Visible = false;
+                    }
+                }
+
             }
             catch (Exception ex)
             {
