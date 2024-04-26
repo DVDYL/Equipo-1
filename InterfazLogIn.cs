@@ -8,8 +8,8 @@ namespace Presentacion
     public partial class InterfazLogIn : Ventana
     {
         // Definir las credenciales de administrador
-        private const string UsuarioPorDefecto = "ADMINI24";
-        private const string ContraseñaPorDefecto = "CAI20241";
+        private const string UsuarioDefault = "ADMINI24";
+        private const string ContraseñaDefault = "CAI20241";
 
         // Iniciar el contador de ingresos fallidos en 0.
         private int intentosFallidos = 0;
@@ -21,60 +21,37 @@ namespace Presentacion
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
         }
 
-        private bool EsHashValido(string hash)
+        public void IniciarSesion()
         {
-            // Expresión regular para verificar el formato específico
-            string pattern = @"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$";
+            UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
+            UsuarioNegocio.IniciarSesion(Box_Usuario.Text, Box_Usuario.Text);
 
-            // Verificar si el hash coincide con el formato esperado
-            return Regex.IsMatch(hash, pattern, RegexOptions.IgnoreCase);
+            MessageBox.Show("Número de hash:", "Este es tu Hash", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
-        //private string IniciarSesion(string usuario, string contraseña) → CORREGIR ESTE MÉTODO
-        //{
-        //UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
-        //string hash = usuarioNegocio.IniciarSesion(usuario, contraseña);
-
-        ////  Verificar si el hash recibido es válido
-        //if (!EsHashValido(hash))
-        //{
-        //throw new Exception("Error al iniciar sesión: se recibió un hash inválido");
-        //}
-        //return hash;
-        //}
 
         private void Boton_Ingresar_Click(object sender, EventArgs e)
         {
             // Obtener las credenciales ingresadas por el usuario
-            string usuarioIngresado = Box_Usuario.Text;
-            string contraseñaIngresada = Box_Pass.Text;
-            string errorMessage; // Variable para almacenar el mensaje de error de la validación
+            string Usuario = Box_Usuario.Text;
+            string Contraseña = Box_Pass.Text;
+            string errorUsuario = Validar.UserLogin(Usuario);
+            string errorContraseña = Validar.PassLogin(Contraseña);
 
+            // Verificar primero si el usuario es el administrador
+            if (Usuario == UsuarioDefault && Contraseña == ContraseñaDefault)
             {
-                // Verificar si la contraseña ingresada es válida
-                string errorContraseña = Validar.ContraseñaValida(contraseñaIngresada);
+                this.DialogResult = DialogResult.OK; // Si las credenciales son del administrador, ingresar directamente.
+                this.Close(); // Cerrar el formulario de inicio de sesión
+            }
+            else
+            {
 
-                if (errorContraseña == null)
+                if (errorContraseña == null || errorUsuario == null)
                 {
-                    // Verificar si el usuario es el administrador
-                    if (usuarioIngresado == UsuarioPorDefecto && contraseñaIngresada == ContraseñaPorDefecto)
-                    {
-                        // Si las credenciales son correctas, establecer DialogResult.OK
-                        this.DialogResult = DialogResult.OK;
-                        // Cerrar el formulario de inicio de sesión
-                        this.Close();
-                    }
-                    else
-                    {
-                        // El usuario existe pero la contraseña no es la correcta
-                        MessageBox.Show(errorContraseña + "\n\nCódigo de Error: 001", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        // Incrementar el contador de intentos fallidos
-                        intentosFallidos++;
-                    }
+                    IniciarSesion();
                 }
                 else
                 {
-                    // Mostrar el mensaje de error devuelto por ContraseñaValida
                     MessageBox.Show(errorContraseña, "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     // Incrementar el contador de intentos fallidos
                     intentosFallidos++;
@@ -96,7 +73,6 @@ namespace Presentacion
                         }
                     }
                 }
-                //     IniciarSesion();
             }
         } // Tomar de este método el contador de errores
 

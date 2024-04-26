@@ -127,8 +127,13 @@ namespace Persistencia
                 HttpResponseMessage response = WebHelper.Post(path, jsonRequest);
                 if (response.IsSuccessStatusCode)
                 {
-                    var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
-                    string respuesta = reader.ReadToEnd();
+                    var contentStream = response.Content.ReadAsStreamAsync().Result;
+                    using (var reader = new StreamReader(contentStream))
+                    {
+                        string responseContent = reader.ReadToEnd();
+                        string hash = responseContent; // hash del body
+                        Console.WriteLine($"Hash: {hash}");
+                    }
                 }
                 else
                 {
