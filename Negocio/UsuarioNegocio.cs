@@ -55,8 +55,8 @@ namespace Negocio
         public string IniciarSesion(string NombreUsuario, string Contraseña)
         {
             LogIn IniciarSesion = new LogIn(NombreUsuario, Contraseña);
-            string hash = UsuarioService.IniciarSesion(IniciarSesion);
-            return hash;
+            string id = UsuarioService.IniciarSesion(IniciarSesion);
+            return id;
         }
     }
 }

@@ -25,49 +25,64 @@ namespace Presentacion
         {
             UsuarioNegocio iniciarSesion = new UsuarioNegocio();
 
-            string hash = iniciarSesion.IniciarSesion(Box_Usuario.Text, Box_Pass.Text); // almacenar el hash del id de usuario.
+            string id = iniciarSesion.IniciarSesion(Box_Usuario.Text, Box_Pass.Text); // Almacenar el hash del id de usuario
             string Usuario = Box_Usuario.Text;
             string Contraseña = Box_Pass.Text;
             string errorUsuario = Validar.UserLogin(Usuario);
             string errorContraseña = Validar.PassLogin(Contraseña);
-
-            if (Usuario == UsuarioDefault && Contraseña == ContraseñaDefault) // si el usuario es el administrador, iniciar sesión directamente.
-            {
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-
-            if (errorUsuario == null || errorContraseña == null) // si la consistencia del nombre de usuario y contraseña son correctos, buscar el id.
-            {
-                if (string.IsNullOrEmpty(hash)) // si no es usuario, advertirlo?.
-                {
-                    intentosFallidos++; // esto está raro, puedo no obtener un hash cuando las credenciales son incorrectas, pero a qué usuario bloqueo?
-                }
-                else
-                {
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
-            }
-            else
-            {
-                intentosFallidos++;
-            }
-        }
-
-        private void Boton_Ingresar_Click(object sender, EventArgs e)
-        {
+ 
             // Validar si se ingresó usuario y contraseña
             if (string.IsNullOrWhiteSpace(Box_Usuario.Text) || string.IsNullOrWhiteSpace(Box_Pass.Text))
             {
                 MessageBox.Show("Por favor, ingrese usuario y contraseña.", "Campos Vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Salir del método sin continuar con el inicio de sesión
             }
+ 
+            // Verificar si el usuario es el administrador
+            if (Usuario == UsuarioDefault && Contraseña == ContraseñaDefault)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            // Verificar si hay errores en el nombre de usuario y contraseña
+            if (errorUsuario == null && errorContraseña == null)
+ 
+                // Acá iría una lógica para buscar al usuario en la lista de usuarios.
+                //Si está: 
+            {
+                if (Validar.EsID(id.Substring(1, 36)) == 1)
+                {
+                    // El hash es válido, permitir el acceso
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else if (Validar.EsID(id.Substring(1, 36)) == 0)
+                {
+                    MessageBox.Show("El usuario no existe en el servidor o\n\nEl servidor está caído", "ERROR 102", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (Validar.EsID(id.Substring(1, 36)) == 2)
+                {
+                    // Las credenciales son incorrectas, mostrar mensaje de error
+                    MessageBox.Show("Credenciales Incorrectas.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    intentosFallidos++;
+                }
+                }
+            else
+            {
+                 // Mostrar mensaje si las credenciales son incorrectas
+                 MessageBox.Show("Por favor, ingrese un usuario y contraseña válidos.", "Atención!.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                 return; // Salir del método sin continuar con el inicio de sesión ni contar errores
+            }
+        }
 
+
+        private void Boton_Ingresar_Click(object sender, EventArgs e)
+        {
             IniciarSesion();
 
             if (intentosFallidos == 3)
             {
+                // falta validación para 3 errores + 4to exitoso.
                 MessageBox.Show("Se han alcanzado los tres intentos permitidos para iniciar sesión\n\nDe haber un intento fallido más, el usuario será bloqueado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (intentosFallidos == 4)
@@ -75,8 +90,9 @@ namespace Presentacion
                 MessageBox.Show("El usuario ha sido bloqueado. Contacte al Administrador para reactivarlo nuevamente", "Usuario Bloqueado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 // Llamar a un método que pase el usuario a inactivo.
+                // ++intentosFallidos al .txt
 
-                this.Close();
+                Application.Exit();
             }
         }
 

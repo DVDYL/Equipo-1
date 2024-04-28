@@ -378,5 +378,27 @@ namespace Negocio
 
             return "Las credenciales ingresadas son incorrectas";
         }
+        public static int EsID(string texto) // VALIDAR
+        {
+            // Verificar si el texto está vacío
+            if (string.IsNullOrEmpty(texto))
+            {
+                return 0; // Devuelve 0 si el texto está vacío
+            }
+
+            // Expresión regular para validar un UUID en formato de hash
+            string patron = @"^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$";
+
+            // Verifica si el texto coincide con el patrón de expresión regular
+            if (Regex.IsMatch(texto, patron))
+            {
+                return 1; // Devuelve 1 si el texto es un hash UUID válido
+            }
+            else
+            {
+                return 2; // Devuelve 2 si el texto no es un hash UUID válido
+            }
+        }
+
     }
 }
