@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Datos;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -54,6 +56,22 @@ namespace Negocio
             if (!texto.All(char.IsDigit))
             {
                 return "El campo DNI debe contener solo dígitos numéricos.";
+            }
+
+            // Verificar si el número de DNI ya existe en la lista de usuarios
+
+            UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
+            List<UsuariosActivos> usuarios = usuarioNegocio.ListarUsuarios();
+            usuarios = usuarios.Where(u => u.NombreUsuario.StartsWith("G1")).ToList(); // Filtrar usuarios cuyo NombreUsuario empiece por "G1"
+
+            string dni = texto;
+            int dniNumero;
+            if (int.TryParse(dni, out dniNumero))
+            {
+                if (usuarios.Exists(u => u.DNI == dniNumero))
+                {
+                    return "No se puede dar de alta un DNI en uso.";
+                }
             }
 
             // Si se cumplen todas las condiciones, el campo es válido

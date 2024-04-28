@@ -129,8 +129,8 @@
             // 
             this.Boton_Limpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.Boton_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Boton_Limpiar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.Boton_Limpiar.FlatAppearance.BorderSize = 0;
+            this.Boton_Limpiar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.Boton_Limpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_Limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_Limpiar.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Boton_Limpiar.Location = new System.Drawing.Point(1048, 812);
@@ -150,7 +150,7 @@
             this.Edad_Error.Location = new System.Drawing.Point(455, 348);
             this.Edad_Error.Multiline = true;
             this.Edad_Error.Name = "Edad_Error";
-            this.Edad_Error.Size = new System.Drawing.Size(250, 20);
+            this.Edad_Error.Size = new System.Drawing.Size(320, 20);
             this.Edad_Error.TabIndex = 56;
             // 
             // ConfirmPass_Error
@@ -161,7 +161,7 @@
             this.ConfirmPass_Error.Location = new System.Drawing.Point(1252, 525);
             this.ConfirmPass_Error.Multiline = true;
             this.ConfirmPass_Error.Name = "ConfirmPass_Error";
-            this.ConfirmPass_Error.Size = new System.Drawing.Size(314, 20);
+            this.ConfirmPass_Error.Size = new System.Drawing.Size(320, 20);
             this.ConfirmPass_Error.TabIndex = 55;
             // 
             // Pass_Error
@@ -172,7 +172,7 @@
             this.Pass_Error.Location = new System.Drawing.Point(879, 523);
             this.Pass_Error.Multiline = true;
             this.Pass_Error.Name = "Pass_Error";
-            this.Pass_Error.Size = new System.Drawing.Size(311, 20);
+            this.Pass_Error.Size = new System.Drawing.Size(320, 20);
             this.Pass_Error.TabIndex = 54;
             // 
             // ConfirmMail_Error
@@ -180,10 +180,10 @@
             this.ConfirmMail_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ConfirmMail_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConfirmMail_Error.ForeColor = System.Drawing.Color.Red;
-            this.ConfirmMail_Error.Location = new System.Drawing.Point(1241, 348);
+            this.ConfirmMail_Error.Location = new System.Drawing.Point(1249, 348);
             this.ConfirmMail_Error.Multiline = true;
             this.ConfirmMail_Error.Name = "ConfirmMail_Error";
-            this.ConfirmMail_Error.Size = new System.Drawing.Size(311, 20);
+            this.ConfirmMail_Error.Size = new System.Drawing.Size(320, 20);
             this.ConfirmMail_Error.TabIndex = 53;
             // 
             // Mail_Error
@@ -194,7 +194,7 @@
             this.Mail_Error.Location = new System.Drawing.Point(879, 348);
             this.Mail_Error.Multiline = true;
             this.Mail_Error.Name = "Mail_Error";
-            this.Mail_Error.Size = new System.Drawing.Size(311, 20);
+            this.Mail_Error.Size = new System.Drawing.Size(320, 20);
             this.Mail_Error.TabIndex = 52;
             // 
             // Telefono_Error
@@ -205,7 +205,7 @@
             this.Telefono_Error.Location = new System.Drawing.Point(452, 695);
             this.Telefono_Error.Multiline = true;
             this.Telefono_Error.Name = "Telefono_Error";
-            this.Telefono_Error.Size = new System.Drawing.Size(307, 20);
+            this.Telefono_Error.Size = new System.Drawing.Size(320, 20);
             this.Telefono_Error.TabIndex = 51;
             // 
             // Calle_Error
@@ -216,7 +216,7 @@
             this.Calle_Error.Location = new System.Drawing.Point(87, 695);
             this.Calle_Error.Multiline = true;
             this.Calle_Error.Name = "Calle_Error";
-            this.Calle_Error.Size = new System.Drawing.Size(311, 20);
+            this.Calle_Error.Size = new System.Drawing.Size(320, 20);
             this.Calle_Error.TabIndex = 48;
             // 
             // DNI_Error
@@ -227,7 +227,7 @@
             this.DNI_Error.Location = new System.Drawing.Point(87, 348);
             this.DNI_Error.Multiline = true;
             this.DNI_Error.Name = "DNI_Error";
-            this.DNI_Error.Size = new System.Drawing.Size(250, 20);
+            this.DNI_Error.Size = new System.Drawing.Size(320, 20);
             this.DNI_Error.TabIndex = 47;
             // 
             // Apellido_Error
@@ -238,7 +238,7 @@
             this.Apellido_Error.Location = new System.Drawing.Point(455, 523);
             this.Apellido_Error.Multiline = true;
             this.Apellido_Error.Name = "Apellido_Error";
-            this.Apellido_Error.Size = new System.Drawing.Size(311, 20);
+            this.Apellido_Error.Size = new System.Drawing.Size(320, 20);
             this.Apellido_Error.TabIndex = 46;
             // 
             // Nombre_Error
@@ -249,7 +249,7 @@
             this.Nombre_Error.Location = new System.Drawing.Point(87, 523);
             this.Nombre_Error.Multiline = true;
             this.Nombre_Error.Name = "Nombre_Error";
-            this.Nombre_Error.Size = new System.Drawing.Size(324, 20);
+            this.Nombre_Error.Size = new System.Drawing.Size(320, 20);
             this.Nombre_Error.TabIndex = 45;
             // 
             // Rol_Null
@@ -498,7 +498,7 @@
             this.Calendario_Nacimiento.Name = "Calendario_Nacimiento";
             this.Calendario_Nacimiento.Size = new System.Drawing.Size(250, 32);
             this.Calendario_Nacimiento.TabIndex = 2;
-            this.Calendario_Nacimiento.Value = new System.DateTime(2024, 4, 2, 0, 0, 0, 0);
+            this.Calendario_Nacimiento.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             // 
             // Label_F_Nacimiento
             // 
@@ -603,8 +603,8 @@
             // 
             this.Boton_Cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.Boton_Cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Boton_Cancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.Boton_Cancelar.FlatAppearance.BorderSize = 0;
+            this.Boton_Cancelar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.Boton_Cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_Cancelar.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Boton_Cancelar.Location = new System.Drawing.Point(1292, 812);
@@ -618,11 +618,10 @@
             // 
             // Boton_Confirmar
             // 
-            this.Boton_Confirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(46)))));
+            this.Boton_Confirmar.BackColor = System.Drawing.Color.Khaki;
             this.Boton_Confirmar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Boton_Confirmar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(46)))));
-            this.Boton_Confirmar.FlatAppearance.BorderSize = 0;
-            this.Boton_Confirmar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(186)))), ((int)(((byte)(53)))));
+            this.Boton_Confirmar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.Boton_Confirmar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_Confirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_Confirmar.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Boton_Confirmar.Location = new System.Drawing.Point(804, 812);

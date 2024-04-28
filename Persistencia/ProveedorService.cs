@@ -116,6 +116,5 @@ namespace Persistencia
                 Console.WriteLine($"Exception: {ex.Message}");
             }
         }
-
     }
 }

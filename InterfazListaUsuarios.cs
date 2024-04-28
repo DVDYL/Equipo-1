@@ -149,7 +149,7 @@ namespace Presentacion
                 else
                 {
                     // Mostrar un mensaje si no se encontraron usuarios que coincidan con la búsqueda
-                    MessageBox.Show("No se encontraron usuarios que coincidan con la búsqueda.");
+                    MessageBox.Show("No se encontraron usuarios que coincidan con este nombre.");
                 }
             }
         }
@@ -200,7 +200,7 @@ namespace Presentacion
                 else
                 {
                     // Mostrar un mensaje si no se encontraron usuarios que coincidan con la búsqueda
-                    MessageBox.Show("No se encontraron usuarios que coincidan con la búsqueda.");
+                    MessageBox.Show("No se encontraron usuarios que coincidan con este DNI.");
                 }
             }
         }

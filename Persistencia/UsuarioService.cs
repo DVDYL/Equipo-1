@@ -117,9 +117,11 @@ namespace Persistencia
             }
         }
 
-        public void IniciarSesion(LogIn IniciarSesion)
+        public string IniciarSesion(LogIn IniciarSesion)
         {
-            String path = "/api/Usuario/Login";
+            string hash = null; // Variable para almacenar el hash
+
+            string path = "/api/Usuario/Login";
             var jsonRequest = JsonConvert.SerializeObject(IniciarSesion);
 
             try
@@ -131,7 +133,7 @@ namespace Persistencia
                     using (var reader = new StreamReader(contentStream))
                     {
                         string responseContent = reader.ReadToEnd();
-                        string hash = responseContent; // hash del body
+                        hash = responseContent; // Asignar el hash del body
                         Console.WriteLine($"Hash: {hash}");
                     }
                 }
@@ -144,6 +146,8 @@ namespace Persistencia
             {
                 Console.WriteLine($"Exception: {ex.Message}");
             }
+
+            return hash; // Retornar el hash obtenido
         }
     }
 }

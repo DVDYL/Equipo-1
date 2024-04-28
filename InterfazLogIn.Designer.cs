@@ -52,7 +52,7 @@
             this.Box_Usuario.Location = new System.Drawing.Point(396, 433);
             this.Box_Usuario.Name = "Box_Usuario";
             this.Box_Usuario.Size = new System.Drawing.Size(343, 34);
-            this.Box_Usuario.TabIndex = 0;
+            this.Box_Usuario.TabIndex = 1;
             // 
             // Label_Usuario
             // 
@@ -60,9 +60,9 @@
             this.Label_Usuario.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_Usuario.Location = new System.Drawing.Point(36, 429);
             this.Label_Usuario.Name = "Label_Usuario";
-            this.Label_Usuario.Size = new System.Drawing.Size(265, 43);
+            this.Label_Usuario.Size = new System.Drawing.Size(322, 43);
             this.Label_Usuario.TabIndex = 1;
-            this.Label_Usuario.Text = "Email o Usuario:";
+            this.Label_Usuario.Text = "Nombre de Usuario:";
             // 
             // Label_Pass
             // 
@@ -81,29 +81,41 @@
             this.Box_Pass.Location = new System.Drawing.Point(396, 529);
             this.Box_Pass.Name = "Box_Pass";
             this.Box_Pass.Size = new System.Drawing.Size(343, 34);
-            this.Box_Pass.TabIndex = 1;
+            this.Box_Pass.TabIndex = 2;
             this.Box_Pass.UseSystemPasswordChar = true;
             // 
             // Boton_Ingresar
             // 
+            this.Boton_Ingresar.BackColor = System.Drawing.Color.Khaki;
+            this.Boton_Ingresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Boton_Ingresar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.Boton_Ingresar.FlatAppearance.BorderSize = 0;
+            this.Boton_Ingresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.Boton_Ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_Ingresar.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Ingresar.Location = new System.Drawing.Point(141, 792);
+            this.Boton_Ingresar.Location = new System.Drawing.Point(120, 792);
             this.Boton_Ingresar.Name = "Boton_Ingresar";
-            this.Boton_Ingresar.Size = new System.Drawing.Size(194, 58);
-            this.Boton_Ingresar.TabIndex = 2;
+            this.Boton_Ingresar.Size = new System.Drawing.Size(200, 50);
+            this.Boton_Ingresar.TabIndex = 3;
             this.Boton_Ingresar.Text = "Ingresar";
-            this.Boton_Ingresar.UseVisualStyleBackColor = true;
+            this.Boton_Ingresar.UseVisualStyleBackColor = false;
             this.Boton_Ingresar.Click += new System.EventHandler(this.Boton_Ingresar_Click);
             // 
             // Boton_Cancelar
             // 
+            this.Boton_Cancelar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Boton_Cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Boton_Cancelar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.Boton_Cancelar.FlatAppearance.BorderSize = 0;
+            this.Boton_Cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.Boton_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_Cancelar.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Cancelar.Location = new System.Drawing.Point(424, 792);
+            this.Boton_Cancelar.Location = new System.Drawing.Point(483, 792);
             this.Boton_Cancelar.Name = "Boton_Cancelar";
-            this.Boton_Cancelar.Size = new System.Drawing.Size(194, 58);
-            this.Boton_Cancelar.TabIndex = 5;
+            this.Boton_Cancelar.Size = new System.Drawing.Size(200, 50);
+            this.Boton_Cancelar.TabIndex = 4;
             this.Boton_Cancelar.Text = "Salir";
-            this.Boton_Cancelar.UseVisualStyleBackColor = true;
+            this.Boton_Cancelar.UseVisualStyleBackColor = false;
             this.Boton_Cancelar.Click += new System.EventHandler(this.Boton_Cancelar_Click);
             // 
             // Label_NewPass

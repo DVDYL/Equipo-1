@@ -23,61 +23,62 @@ namespace Presentacion
 
         public void IniciarSesion()
         {
-            UsuarioNegocio IniciarSesion = new UsuarioNegocio();
-            IniciarSesion.IniciarSesion(Box_Usuario.Text, Box_Pass.Text);
+            UsuarioNegocio iniciarSesion = new UsuarioNegocio();
 
-            // ESTA LÍNEA TIENE QUE VALIDAR EL HASH
-
-            this.DialogResult = DialogResult.OK; // Si las credenciales son del administrador, ingresar directamente.
-            this.Close(); // Cerrar el formulario de inicio de sesión
-        }
-
-        private void Boton_Ingresar_Click(object sender, EventArgs e)
-        {
-            // Obtener las credenciales ingresadas por el usuario
+            string hash = iniciarSesion.IniciarSesion(Box_Usuario.Text, Box_Pass.Text); // almacenar el hash del id de usuario.
             string Usuario = Box_Usuario.Text;
             string Contraseña = Box_Pass.Text;
             string errorUsuario = Validar.UserLogin(Usuario);
             string errorContraseña = Validar.PassLogin(Contraseña);
 
-            // Verificar primero si el usuario es el administrador
-            if (Usuario == UsuarioDefault && Contraseña == ContraseñaDefault)
+            if (Usuario == UsuarioDefault && Contraseña == ContraseñaDefault) // si el usuario es el administrador, iniciar sesión directamente.
             {
-                this.DialogResult = DialogResult.OK; // Si las credenciales son del administrador, ingresar directamente.
-                this.Close(); // Cerrar el formulario de inicio de sesión
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
-            else
+
+            if (errorUsuario == null || errorContraseña == null) // si la consistencia del nombre de usuario y contraseña son correctos, buscar el id.
             {
-                if (errorUsuario == null || errorContraseña == null)
+                if (string.IsNullOrEmpty(hash)) // si no es usuario, advertirlo?.
                 {
-                   IniciarSesion();
+                    intentosFallidos++; // esto está raro, puedo no obtener un hash cuando las credenciales son incorrectas, pero a qué usuario bloqueo?
                 }
                 else
                 {
-                    MessageBox.Show(errorContraseña, "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    // Incrementar el contador de intentos fallidos
-                    intentosFallidos++;
-
-                    // Si el usuario ha excedido el límite de intentos fallidos, bloquearlo
-                    if (intentosFallidos == 4) //Habria que armar una funcion que resuleva esta logica.
-                    {
-                        MessageBox.Show("El usuario ha sido bloqueado. Contacte al Administrador para reactivarlo nuevamente", "Usuario Bloqueado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        // Queda pendiente agregar que se inactivo el usuario. Pasa a estado INACTIVO
-
-                        this.Close();
-                        // Se cierra la Pantalla de Login
-                    }
-                    else
-                    {
-                        if (intentosFallidos == 3)
-                        {
-                            MessageBox.Show("Le queda un intento para iniciar sesion, sino su usuario sera bloqueado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
             }
-        } // Tomar de este método el contador de errores
+            else
+            {
+                intentosFallidos++;
+            }
+        }
 
+        private void Boton_Ingresar_Click(object sender, EventArgs e)
+        {
+            // Validar si se ingresó usuario y contraseña
+            if (string.IsNullOrWhiteSpace(Box_Usuario.Text) || string.IsNullOrWhiteSpace(Box_Pass.Text))
+            {
+                MessageBox.Show("Por favor, ingrese usuario y contraseña.", "Campos Vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Salir del método sin continuar con el inicio de sesión
+            }
+
+            IniciarSesion();
+
+            if (intentosFallidos == 3)
+            {
+                MessageBox.Show("Se han alcanzado los tres intentos permitidos para iniciar sesión\n\nDe haber un intento fallido más, el usuario será bloqueado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (intentosFallidos == 4)
+            {
+                MessageBox.Show("El usuario ha sido bloqueado. Contacte al Administrador para reactivarlo nuevamente", "Usuario Bloqueado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                // Llamar a un método que pase el usuario a inactivo.
+
+                this.Close();
+            }
+        }
 
         private void Boton_Cancelar_Click(object sender, EventArgs e)
         {

@@ -10,8 +10,6 @@ namespace Presentacion
 {
     public partial class InterfazAltaUsuarios : Ventana
     {
-        private string host;
-
         public InterfazAltaUsuarios() // Esta Función prepara el formulario y sus restricciones
         {
             InitializeComponent(); // Inicializamos el formulario.
@@ -30,9 +28,237 @@ namespace Presentacion
             ComboBox_Rol.SelectedIndex = -1; // Establecer el elemento vacío como seleccionado por defecto
         }
 
-        private void ControlarCampos()
+        private int ControlarCampos()
         {
+            int ContarErrores = 0; // Contador de errores
 
+            string errorDNI = Validar.EsDNI(Box_DNI.Text);
+            if (errorDNI != null)
+            {
+                // Completar el contenido del TextBox DNI_Error con el error
+                DNI_Error.Text = errorDNI;
+                DNI_Error.Visible = true;
+
+                MessageBox.Show(errorDNI, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MayudaDNI.Visible = true;
+                ContarErrores++;
+            }
+            else
+            {
+                DNI_Error.Visible = false;
+                MayudaDNI.Visible = false;
+            }
+
+            if (ContarErrores >= 1)
+            {
+                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+            }
+
+            DateTime fechaNacimiento = Calendario_Nacimiento.Value; // Verifica que el usuario tenga sea mayor de 18 años y menor de 65 a partir de hoy.
+            string errorEdad = Validar.EsEdadLaboral(fechaNacimiento);
+            if (errorEdad != null)
+            {
+                Edad_Error.Text = errorEdad;
+                Edad_Error.Visible = true;
+                MessageBox.Show(errorEdad, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MayudaFechaNacimiento.Visible = true;
+                ContarErrores++;
+            }
+            else
+            {
+                Edad_Error.Visible = false;
+                MayudaFechaNacimiento.Visible = false;
+            }
+
+            if (ContarErrores >= 1)
+            {
+                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+            }
+
+            string errorNombre = Validar.EsNombre(Box_Nombre.Text, "Nombre");
+            if (errorNombre != null)
+            {
+                Nombre_Error.Text = errorNombre;
+                Nombre_Error.Visible = true;
+                MessageBox.Show(errorNombre, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MayudaNombre.Visible = true;
+                ContarErrores++;
+            }
+            else
+            {
+                Nombre_Error.Visible = false;
+                MayudaNombre.Visible = false;
+            }
+
+            if (ContarErrores >= 1)
+            {
+                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+            }
+
+            string errorApellido = Validar.EsNombre(Box_Apellido.Text, "Apellido");
+            if (errorApellido != null)
+            {
+                // Completar el contenido del TextBox Apellido_Error con el error
+                Apellido_Error.Text = errorApellido;
+                Apellido_Error.Visible = true;
+                MessageBox.Show(errorApellido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MayudaApellido.Visible = true;
+                ContarErrores++;
+            }
+            else
+            {
+                Apellido_Error.Visible = false;
+                MayudaApellido.Visible = false;
+            }
+
+            if (ContarErrores >= 1)
+            {
+                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+            }
+
+            string errorCalle = Validar.EsCalle(Box_Calle.Text);
+            if (errorCalle != null)
+            {
+                // Completar el contenido del TextBox Calle_Error con el error
+                Calle_Error.Text = errorCalle;
+                Calle_Error.Visible = true;
+                MessageBox.Show(errorCalle, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MayudaCalle.Visible = true;
+                ContarErrores++;
+            }
+            else
+            {
+                Calle_Error.Visible = false;
+                MayudaCalle.Visible = false;// Ocultar el TextBox Calle_Error si el campo Calle no tiene errores.
+            }
+
+            if (ContarErrores >= 1)
+            {
+                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+            }
+
+            string errorTelefono = Validar.EsTelefono(Box_Telefono.Text);
+            if (errorTelefono != null)
+            {
+                Telefono_Error.Text = errorTelefono;
+                Telefono_Error.Visible = true;
+                MessageBox.Show(errorTelefono, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MayudaTelefono.Visible = true;
+                ContarErrores++;
+            }
+            else
+            {
+                Telefono_Error.Visible = false;
+                MayudaTelefono.Visible = false;
+            }
+
+            if (ContarErrores >= 1)
+            {
+                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+            }
+
+            string errorMail = Validar.EsMail(Box_Mail.Text);
+            if (errorMail != null) //Si NO cumple con la validación, mostrará el mensaje.
+            {
+                Mail_Error.Text = errorMail;
+                Mail_Error.Visible = true;
+                MessageBox.Show(errorMail, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MayudaMail.Visible = true;
+                ContarErrores++;
+            }
+            else
+            {
+                Mail_Error.Visible = false;
+                MayudaMail.Visible = false;
+            }
+
+            if (ContarErrores >= 1)
+            {
+                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+            }
+
+            string correo = Box_Mail.Text;
+            string correoConfirmado = Box_Mail_Confirm.Text;
+            string errorConfirmarMail = Validar.ConfirmarMail(correo, correoConfirmado);
+
+            if (errorConfirmarMail != null)
+            {
+                ConfirmMail_Error.Text = errorConfirmarMail;
+                ConfirmMail_Error.Visible = true;
+                MessageBox.Show(errorConfirmarMail, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MayudaConfirMail.Visible = true;
+                ContarErrores++;
+            }
+            else
+            {
+                ConfirmMail_Error.Visible = false;
+                MayudaConfirMail.Visible = false;
+            }
+
+            if (ContarErrores >= 1)
+            {
+                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+            }
+
+            string errorContraseña = Validar.EsContraseña(Box_Pass.Text);
+            if (errorContraseña != null)
+            {
+                Pass_Error.Text = errorContraseña;
+                Pass_Error.Visible = true;
+                MessageBox.Show(errorContraseña, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MayudaContra.Visible = true;
+                ContarErrores++;
+            }
+            else
+            {
+                Pass_Error.Visible = false;
+                MayudaContra.Visible = false;
+            }
+
+            if (ContarErrores >= 1)
+            {
+                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+            }
+
+            string contraseña = Box_Pass.Text;
+            string contraseñaConfirmada = Box_Pass_Confirm.Text;
+            string errorConfirmarContraseña = Validar.ConfirmarContraseña(contraseña, contraseñaConfirmada);
+
+            if (errorConfirmarContraseña != null)
+            {
+                ConfirmPass_Error.Text = errorConfirmarContraseña;
+                ConfirmPass_Error.Visible = true;
+                MessageBox.Show(errorConfirmarContraseña, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MayudaConfirContra.Visible = true;
+                ContarErrores++;
+            }
+            else
+            {
+                ConfirmPass_Error.Visible = false;
+                MayudaConfirContra.Visible = false;
+            }
+
+            if (ContarErrores >= 1)
+            {
+                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+            }
+
+            if (ComboBox_Rol.SelectedIndex == -1)
+            {
+                Rol_Null.Visible = true; // Mostrar el TextBox Rol_Null
+
+                // Mostrar mensaje de advertencia cuando el tipo de usuario está en blanco
+                MessageBox.Show("No se seleccionó ningún tipo de usuario.\n\nPor favor, seleccione un tipo de usuario y vuelva a intentarlo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ComboBox_Rol.Focus();
+                MayudaRol.Visible = true;
+                ContarErrores++;
+            } // Verifica que el combobox de tipo de usuario no sea vacío.
+            else
+            {
+                Rol_Null.Visible = false; // Ocultar el TextBox Rol_Null si el combobox Rol no es Null
+                MayudaRol.Visible = false;
+            }
+            return ContarErrores; // Devolver true si no hay errores, false si hay errores
         }
 
         private bool CamposCompletos() // Evalúa qué campos del formulario están completos
@@ -164,206 +390,40 @@ namespace Presentacion
 
         private void Boton_Confirmar_Click(object sender, EventArgs e)
         {
-            string errorDNI = Validar.EsDNI(Box_DNI.Text);
-            if (errorDNI != null)
-            {
-                // Completar el contenido del TextBox DNI_Error con el error
-                DNI_Error.Text = errorDNI;
-                DNI_Error.Visible = true;
+            int contadorErrores = ControlarCampos();
 
-                MessageBox.Show(errorDNI, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MayudaDNI.Visible = true;
-                return;
-            }
-            else
+            if (contadorErrores == 0)
             {
-                DNI_Error.Visible = false; // Ocultar el TextBox Nombre_Error si el campo nombre no tiene errores.
-            }
+                CrearUsuario();
 
-            DateTime fechaNacimiento = Calendario_Nacimiento.Value; // Verifica que el usuario tenga sea mayor de 18 años y menor de 65 a partir de hoy.
-            string errorEdad = Validar.EsEdadLaboral(fechaNacimiento);
-            if (errorEdad != null)
-            {
-                Edad_Error.Text = errorEdad;
-                Edad_Error.Visible = true;
-                // Mostrar mensaje de advertencia si la edad no es válida
-                MessageBox.Show(errorEdad, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                MayudaFechaNacimiento.Visible = true;
-                return;
-            }
-            else
-            {
-                Edad_Error.Visible = false;
-            }
+                // Si todas las validaciones pasan y el usuario se creó, mostrar un mensaje de éxito.
 
-            string errorNombre = Validar.EsNombre(Box_Nombre.Text, "Nombre");
-            if (errorNombre != null)
-            {
-                // Completar el contenido del TextBox Nombre_Error con el error
-                Nombre_Error.Text = errorNombre;
-                Nombre_Error.Visible = true;
-                MessageBox.Show(errorNombre, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MayudaNombre.Visible = true;
-                return;
-            }
-            else
-            {
-                Nombre_Error.Visible = false; // Ocultar el TextBox Nombre_Error si el campo nombre no tiene errores.
-            }
+                string nombreUsuario = GenerarNombreUsuario(Box_Nombre.Text, Box_Apellido.Text, Box_DNI.Text); // Generar el nombre de usuario
 
-            string errorApellido = Validar.EsNombre(Box_Apellido.Text, "Apellido");
-            if (errorApellido != null)
-            {
-                // Completar el contenido del TextBox Apellido_Error con el error
-                Apellido_Error.Text = errorApellido;
-                Apellido_Error.Visible = true;
-                MessageBox.Show(errorApellido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MayudaApellido.Visible = true;
-                return;
-            }
-            else
-            {
-                Apellido_Error.Visible = false; // Ocultar el TextBox Nombre_Error si el campo nombre no tiene errores.
-            }
+                // Mostrar un cuadro de diálogo de confirmación al usuario
+                DialogResult resultadoConfirmacion = MessageBox.Show($"¿Desea realizar la operación de alta para el usuario {nombreUsuario}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            string errorCalle = Validar.EsCalle(Box_Calle.Text);
-            if (errorCalle != null)
-            {
-                // Completar el contenido del TextBox Calle_Error con el error
-                Calle_Error.Text = errorCalle;
-                Calle_Error.Visible = true;
-                MessageBox.Show(errorCalle, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MayudaCalle.Visible = true;
-                return;
-            }
-            else
-            {
-                Calle_Error.Visible = false; // Ocultar el TextBox Calle_Error si el campo Calle no tiene errores.
-            }
-
-            string errorTelefono = Validar.EsTelefono(Box_Telefono.Text);
-            if (errorTelefono != null)
-            {
-                Telefono_Error.Text = errorTelefono;
-                Telefono_Error.Visible = true;
-                MessageBox.Show(errorTelefono, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MayudaTelefono.Visible = true;
-                return;
-            }
-            else
-            {
-                Telefono_Error.Visible = false;
-            }
-
-            string errorMail = Validar.EsMail(Box_Mail.Text);
-            if (errorMail != null) //Si NO cumple con la validación, mostrará el mensaje.
-            {
-                Mail_Error.Text = errorMail;
-                Mail_Error.Visible = true;
-                MessageBox.Show(errorMail, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MayudaMail.Visible = true;
-                return;
-            }
-            else
-            {
-                Mail_Error.Visible = false;
-            }
-
-            string correo = Box_Mail.Text;
-            string correoConfirmado = Box_Mail_Confirm.Text;
-            string errorConfirmarMail = Validar.ConfirmarMail(correo, correoConfirmado);
-
-            if (errorConfirmarMail != null)
-            {
-                ConfirmMail_Error.Text = errorConfirmarMail;
-                ConfirmMail_Error.Visible = true;
-                MessageBox.Show(errorConfirmarMail, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                MayudaConfirMail.Visible = true;
-                return;
-            }
-            else
-            {
-                ConfirmMail_Error.Visible = false;
-            }
-
-            string errorContraseña = Validar.EsContraseña(Box_Pass.Text);
-            if (errorContraseña != null)
-            {
-                Pass_Error.Text = errorContraseña;
-                Pass_Error.Visible = true;
-                MessageBox.Show(errorContraseña, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                MayudaContra.Visible = true;
-                return;
-            }
-            else
-            {
-                Pass_Error.Visible = false;
-            }
-
-            string contraseña = Box_Pass.Text;
-            string contraseñaConfirmada = Box_Pass_Confirm.Text;
-            string errorConfirmarContraseña = Validar.ConfirmarContraseña(contraseña, contraseñaConfirmada);
-
-            if (errorConfirmarContraseña != null)
-            {
-                ConfirmPass_Error.Text = errorConfirmarContraseña;
-                ConfirmPass_Error.Visible = true;
-                MessageBox.Show(errorConfirmarContraseña, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                MayudaConfirContra.Visible = true;
-                return;
-            }
-            else
-            {
-                ConfirmPass_Error.Visible = false;
-            }
-
-            if (ComboBox_Rol.SelectedIndex == -1)
-            {
-                Rol_Null.Visible = true; // Mostrar el TextBox Rol_Null
-
-                // Mostrar mensaje de advertencia cuando el tipo de usuario está en blanco
-                MessageBox.Show("No se seleccionó ningún tipo de usuario.\n\nPor favor, seleccione un tipo de usuario y vuelva a intentarlo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                ComboBox_Rol.Focus();
-                MayudaRol.Visible = true;
-                return;
-            } // Verifica que el combobox de tipo de usuario no sea vacío.
-            else
-            {
-                Rol_Null.Visible = false; // Ocultar el TextBox Rol_Null si el combobox Rol no es Null
-            }
-
-            // Cuando las validaciones den todas OK, se crea el usuario,
-
-            CrearUsuario();
-            
-            // Si todas las validaciones pasan y el usuario se creó, mostrar un mensaje de éxito.
-
-            string nombreUsuario = GenerarNombreUsuario(Box_Nombre.Text, Box_Apellido.Text, Box_DNI.Text); // Generar el nombre de usuario
-
-            // Mostrar un cuadro de diálogo de confirmación al usuario
-            DialogResult resultadoConfirmacion = MessageBox.Show($"¿Desea realizar la operación de alta para el usuario {nombreUsuario}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (resultadoConfirmacion == DialogResult.Yes)
-            {
-                // Mostrar mensaje de éxito con el nombre de usuario generado
-                MessageBox.Show($"Se ha realizado la operación de alta para el usuario {nombreUsuario}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Preguntar al usuario si desea continuar en el Maestro de Usuarios
-                DialogResult resultadoContinuar = MessageBox.Show("¿Desea continuar en el ABM de Usuarios?", "Confirmar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (resultadoContinuar == DialogResult.No)
+                if (resultadoConfirmacion == DialogResult.Yes)
                 {
-                    this.Close();
-                    InterfazListaUsuarios InterfazListaUsuarios = new InterfazListaUsuarios();
-                    InterfazListaUsuarios.Show();
-                }
-                else
-                {
-                    // Restablecer todos los campos del formulario
-                    Limpiar();
+                    // Mostrar mensaje de éxito con el nombre de usuario generado
+                    MessageBox.Show($"Se ha realizado la operación de alta para el usuario {nombreUsuario}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Preguntar al usuario si desea continuar en el Maestro de Usuarios
+                    DialogResult resultadoContinuar = MessageBox.Show("¿Desea continuar en el ABM de Usuarios?", "Confirmar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (resultadoContinuar == DialogResult.No)
+                    {
+                        this.Close();
+                        InterfazListaUsuarios InterfazListaUsuarios = new InterfazListaUsuarios();
+                        InterfazListaUsuarios.Show();
+                    }
+                    else
+                    {
+                        // Restablecer todos los campos del formulario
+                        Limpiar();
+                    }
                 }
             }
-
         } // Confirma todos los campos, si está todo correcto, genera un ID de usuario.
 
         private void Boton_Limpiar_Click(object sender, EventArgs e)
@@ -475,6 +535,5 @@ namespace Presentacion
             }
             // Si el usuario elige "No", no hacer nada
         }
-      
     }
 }
