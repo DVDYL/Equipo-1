@@ -108,6 +108,11 @@ namespace Presentacion
             // Obtener el texto ingresado en el TextBox UsuariosBuscador
             string textoBusqueda = UsuariosBuscador.Text;
 
+            if (string.IsNullOrEmpty(textoBusqueda))
+            {
+                CargarUsuarios();
+            }
+
             // Verificar si la lista de usuarios es nula o está vacía
             if (Usuarios.DataSource == null || Usuarios.Rows.Count == 0)
             {
@@ -153,6 +158,11 @@ namespace Presentacion
         {
             // Obtener el texto ingresado en el TextBox UsuariosBuscador
             string textoBusqueda = Box_BuscarDNI.Text;
+
+            if(string.IsNullOrEmpty(textoBusqueda))
+            {
+                CargarUsuarios();
+            }
 
             // Verificar si la lista de usuarios es nula o está vacía
             if (Usuarios.DataSource == null || Usuarios.Rows.Count == 0)
