@@ -19,6 +19,8 @@ namespace Presentacion
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
         }
 
+
+
         private void Ventana_KeyDown(object sender, KeyEventArgs e) // Manejo para el evento de apretar ESC en una ventana 
         {
             if (e.KeyCode == Keys.Escape)
@@ -34,6 +36,11 @@ namespace Presentacion
                 }
                 // Si el usuario elige "No", no hacer nada
             }
+        }
+
+        private void InterfazModificarProveedores_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

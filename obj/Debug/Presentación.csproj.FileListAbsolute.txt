@@ -127,3 +127,5 @@ C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazModificarPro
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazModificarProveedores.resources
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazReportes.resources
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazVentas.resources
+C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazAltaProductos.resources
+C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazAltaProveedores.resources

@@ -7,30 +7,29 @@ namespace Negocio
 {
     public class ProveedorNegocio
     {
-        private ProveedorService proveedorService = new ProveedorService();
-        private String idAdministrador = "70b37dc1-8fde-4840-be47-9ababd0ee7e5";
+        private ProveedorService ProveedorService = new ProveedorService();
+        public String idUsuario = "70b37dc1-8fde-4840-be47-9ababd0ee7e5";
 
         public List<TraerProveedores> listarProveedores()
         {
-            return proveedorService.GetProveedores();
+            return ProveedorService.GetProveedores();
         }
 
-        public void AgregarProveedor(string nombre, string apellido, string cuit, string email)
+        public void AgregarProveedor(string idUsuario, string Nombre, string Apellido, string CUIT, string email)
         {
-            AltaProveedor altaProveedor = new AltaProveedor(idAdministrador, nombre, apellido, cuit, email);
-            proveedorService.AgregarProveedor(altaProveedor);
-
+            AltaProveedor altaProveedor = new AltaProveedor(idUsuario, Nombre, Apellido, CUIT, email);
+            ProveedorService.AgregarProveedor(altaProveedor);
         }
 
-        public void ModificarProveedor(Guid idProveedor, Guid idUsuario, string nombre, string apellido, string email, string cuit)
+        public void ModificarProveedor(Guid idProveedor, Guid idUsuario, string Nombre, string Apellido, string email, string CUIT)
         {
-            proveedorService.ModificarProveedor(idProveedor, idUsuario, nombre, apellido, email, cuit);
+            ProveedorService.ModificarProveedor(idProveedor, idUsuario, Nombre, Apellido, email, CUIT);
 
         }
 
         public void BorrarProveedor(Guid idProveedor)
         {
-            proveedorService.BorrarProveedor(idProveedor);
+            ProveedorService.BorrarProveedor(idProveedor);
         }
     }
 }

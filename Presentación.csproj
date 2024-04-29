@@ -166,6 +166,9 @@
     <EmbeddedResource Include="InterfazAltaProductos.resx">
       <DependentUpon>InterfazAltaProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InterfazAltaProveedores.resx">
+      <DependentUpon>InterfazAltaProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InterfazListaClientes.resx">
       <DependentUpon>InterfazListaClientes.cs</DependentUpon>
     </EmbeddedResource>

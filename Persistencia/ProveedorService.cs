@@ -62,16 +62,16 @@ namespace Persistencia
             }
         }
 
-        public void ModificarProveedor(Guid idProveedor, Guid idUsuario, string nombre, string apellido, string email, string cuit)
+        public void ModificarProveedor(Guid idProveedor, Guid idUsuario, string Nombre, string Apellido, string email, string CUIT)
         {
             String path = "/api/Proveedor/ModificarProveedor";
             Dictionary<string, string> map = new Dictionary<string, string>();
             map.Add("id", idProveedor.ToString());
             map.Add("idUsuario", idUsuario.ToString());
-            map.Add("nombre", nombre);
-            map.Add("apellido", apellido);
+            map.Add("nombre", Nombre);
+            map.Add("apellido", Apellido);
             map.Add("email", email);
-            map.Add("cuit", cuit);
+            map.Add("cuit", CUIT);
 
             var jsonRequest = JsonConvert.SerializeObject(map);
 
