@@ -50,3 +50,16 @@ C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Negocio\obj\Debug\Negoc
 C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Negocio\obj\Debug\Negocio.dll
 C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Negocio\obj\Debug\Negocio.pdb
+C:\Users\delfi\Source\Repos\Equipo-1\Negocio\bin\Debug\Negocio.dll
+C:\Users\delfi\Source\Repos\Equipo-1\Negocio\bin\Debug\Negocio.pdb
+C:\Users\delfi\Source\Repos\Equipo-1\Negocio\bin\Debug\Datos.dll
+C:\Users\delfi\Source\Repos\Equipo-1\Negocio\bin\Debug\Persistencia.dll
+C:\Users\delfi\Source\Repos\Equipo-1\Negocio\bin\Debug\Newtonsoft.Json.dll
+C:\Users\delfi\Source\Repos\Equipo-1\Negocio\bin\Debug\Datos.pdb
+C:\Users\delfi\Source\Repos\Equipo-1\Negocio\bin\Debug\Persistencia.pdb
+C:\Users\delfi\Source\Repos\Equipo-1\Negocio\bin\Debug\Newtonsoft.Json.xml
+C:\Users\delfi\Source\Repos\Equipo-1\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\delfi\Source\Repos\Equipo-1\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\delfi\Source\Repos\Equipo-1\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\delfi\Source\Repos\Equipo-1\Negocio\obj\Debug\Negocio.dll
+C:\Users\delfi\Source\Repos\Equipo-1\Negocio\obj\Debug\Negocio.pdb

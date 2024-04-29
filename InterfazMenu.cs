@@ -96,5 +96,10 @@ namespace Presentacion
                 // Si el usuario elige "No", no hacer nada
             }
         }
+
+        private void InterfazMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

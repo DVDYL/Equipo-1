@@ -49,29 +49,31 @@
             // 
             this.Box_Usuario.BackColor = System.Drawing.Color.Gainsboro;
             this.Box_Usuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Box_Usuario.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Usuario.Location = new System.Drawing.Point(396, 433);
             this.Box_Usuario.Name = "Box_Usuario";
-            this.Box_Usuario.Size = new System.Drawing.Size(343, 35);
+            this.Box_Usuario.Size = new System.Drawing.Size(343, 31);
             this.Box_Usuario.TabIndex = 1;
             // 
             // Label_Usuario
             // 
             this.Label_Usuario.AutoSize = true;
-            this.Label_Usuario.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Usuario.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Label_Usuario.Location = new System.Drawing.Point(36, 429);
             this.Label_Usuario.Name = "Label_Usuario";
-            this.Label_Usuario.Size = new System.Drawing.Size(322, 43);
+            this.Label_Usuario.Size = new System.Drawing.Size(305, 37);
             this.Label_Usuario.TabIndex = 1;
             this.Label_Usuario.Text = "Nombre de Usuario:";
             // 
             // Label_Pass
             // 
             this.Label_Pass.AutoSize = true;
-            this.Label_Pass.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Pass.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Label_Pass.Location = new System.Drawing.Point(36, 525);
             this.Label_Pass.Name = "Label_Pass";
-            this.Label_Pass.Size = new System.Drawing.Size(200, 43);
+            this.Label_Pass.Size = new System.Drawing.Size(192, 37);
             this.Label_Pass.TabIndex = 3;
             this.Label_Pass.Text = "Contraseña:";
             // 
@@ -79,10 +81,10 @@
             // 
             this.Box_Pass.BackColor = System.Drawing.Color.Gainsboro;
             this.Box_Pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Box_Pass.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_Pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Pass.Location = new System.Drawing.Point(396, 529);
             this.Box_Pass.Name = "Box_Pass";
-            this.Box_Pass.Size = new System.Drawing.Size(343, 35);
+            this.Box_Pass.Size = new System.Drawing.Size(343, 31);
             this.Box_Pass.TabIndex = 2;
             this.Box_Pass.UseSystemPasswordChar = true;
             // 
@@ -94,7 +96,7 @@
             this.Boton_Ingresar.FlatAppearance.BorderSize = 0;
             this.Boton_Ingresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_Ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Boton_Ingresar.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boton_Ingresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Boton_Ingresar.Location = new System.Drawing.Point(120, 792);
             this.Boton_Ingresar.Name = "Boton_Ingresar";
             this.Boton_Ingresar.Size = new System.Drawing.Size(200, 50);
@@ -111,7 +113,7 @@
             this.Boton_Cancelar.FlatAppearance.BorderSize = 0;
             this.Boton_Cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Boton_Cancelar.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boton_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Boton_Cancelar.Location = new System.Drawing.Point(483, 792);
             this.Boton_Cancelar.Name = "Boton_Cancelar";
             this.Boton_Cancelar.Size = new System.Drawing.Size(200, 50);
@@ -123,11 +125,11 @@
             // Label_NewPass
             // 
             this.Label_NewPass.AutoSize = true;
-            this.Label_NewPass.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_NewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_NewPass.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.Label_NewPass.Location = new System.Drawing.Point(36, 628);
             this.Label_NewPass.Name = "Label_NewPass";
-            this.Label_NewPass.Size = new System.Drawing.Size(305, 43);
+            this.Label_NewPass.Size = new System.Drawing.Size(293, 37);
             this.Label_NewPass.TabIndex = 7;
             this.Label_NewPass.Text = "Nueva Contraseña:";
             this.Label_NewPass.Visible = false;
@@ -137,21 +139,21 @@
             this.NewPass.BackColor = System.Drawing.Color.Gainsboro;
             this.NewPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NewPass.Enabled = false;
-            this.NewPass.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewPass.Location = new System.Drawing.Point(396, 632);
             this.NewPass.Name = "NewPass";
-            this.NewPass.Size = new System.Drawing.Size(343, 35);
+            this.NewPass.Size = new System.Drawing.Size(343, 31);
             this.NewPass.TabIndex = 6;
             this.NewPass.Visible = false;
             // 
             // Label_ConfirmNewPass
             // 
             this.Label_ConfirmNewPass.AutoSize = true;
-            this.Label_ConfirmNewPass.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_ConfirmNewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_ConfirmNewPass.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.Label_ConfirmNewPass.Location = new System.Drawing.Point(36, 703);
             this.Label_ConfirmNewPass.Name = "Label_ConfirmNewPass";
-            this.Label_ConfirmNewPass.Size = new System.Drawing.Size(359, 43);
+            this.Label_ConfirmNewPass.Size = new System.Drawing.Size(343, 37);
             this.Label_ConfirmNewPass.TabIndex = 9;
             this.Label_ConfirmNewPass.Text = "Confirmar Contraseña:";
             this.Label_ConfirmNewPass.Visible = false;
@@ -161,16 +163,17 @@
             this.ConfirmNewPass.BackColor = System.Drawing.Color.Gainsboro;
             this.ConfirmNewPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ConfirmNewPass.Enabled = false;
-            this.ConfirmNewPass.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirmNewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConfirmNewPass.Location = new System.Drawing.Point(396, 707);
             this.ConfirmNewPass.Name = "ConfirmNewPass";
-            this.ConfirmNewPass.Size = new System.Drawing.Size(343, 35);
+            this.ConfirmNewPass.Size = new System.Drawing.Size(343, 31);
             this.ConfirmNewPass.TabIndex = 8;
             this.ConfirmNewPass.Visible = false;
             // 
             // PassViewImg
             // 
-            this.PassViewImg.Image = global::Presentacion.Properties.Resources.PassView;
+            this.PassViewImg.BackColor = System.Drawing.Color.Transparent;
+            this.PassViewImg.Image = global::Presentacion.Properties.Resources.ojo1;
             this.PassViewImg.Location = new System.Drawing.Point(744, 529);
             this.PassViewImg.Name = "PassViewImg";
             this.PassViewImg.Size = new System.Drawing.Size(41, 34);
@@ -182,22 +185,23 @@
             // 
             // LogoInicio
             // 
-            this.LogoInicio.Image = global::Presentacion.Properties.Resources.Logo___Nunito_Sin_Fondo;
+            this.LogoInicio.Image = global::Presentacion.Properties.Resources.electro_hogar1;
             this.LogoInicio.Location = new System.Drawing.Point(4, 62);
             this.LogoInicio.Name = "LogoInicio";
             this.LogoInicio.Size = new System.Drawing.Size(790, 331);
             this.LogoInicio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LogoInicio.TabIndex = 48;
             this.LogoInicio.TabStop = false;
+            this.LogoInicio.Click += new System.EventHandler(this.LogoInicio_Click);
             // 
             // Label_TituloVentana
             // 
             this.Label_TituloVentana.AutoSize = true;
             this.Label_TituloVentana.BackColor = System.Drawing.Color.Transparent;
-            this.Label_TituloVentana.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_TituloVentana.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_TituloVentana.Location = new System.Drawing.Point(2, 0);
             this.Label_TituloVentana.Name = "Label_TituloVentana";
-            this.Label_TituloVentana.Size = new System.Drawing.Size(165, 28);
+            this.Label_TituloVentana.Size = new System.Drawing.Size(164, 25);
             this.Label_TituloVentana.TabIndex = 49;
             this.Label_TituloVentana.Text = "Inicio de Sesión";
             // 
@@ -207,7 +211,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 900);
+            this.ClientSize = new System.Drawing.Size(800, 788);
             this.Controls.Add(this.Label_TituloVentana);
             this.Controls.Add(this.PassViewImg);
             this.Controls.Add(this.Label_ConfirmNewPass);
@@ -222,8 +226,11 @@
             this.Controls.Add(this.Box_Usuario);
             this.Controls.Add(this.LogoInicio);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.Name = "InterfazLogIn";
             this.Text = "Iniciar Sesión";
+            this.TransparencyKey = System.Drawing.Color.WhiteSmoke;
+            this.Load += new System.EventHandler(this.InterfazLogIn_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LogIn_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.PassViewImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoInicio)).EndInit();

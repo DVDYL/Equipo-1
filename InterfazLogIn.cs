@@ -128,5 +128,15 @@ namespace Presentacion
                 }
             }
         }  // Evento KeyDown para cerrar la ventana con la tecla ESC
+
+        private void InterfazLogIn_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogoInicio_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

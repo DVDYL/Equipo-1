@@ -46,6 +46,9 @@ namespace Presentacion
             }
         }
 
+        private void SeparatorPersona_Enter(object sender, EventArgs e)
+        {
 
+        }
     }
 }

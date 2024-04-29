@@ -295,5 +295,35 @@
   <ItemGroup>
     <None Include="Resources\Lupa2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\electro hogar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\electro hogar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ojo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa debil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa fuerte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\provedor amarillo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\electro hogar %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

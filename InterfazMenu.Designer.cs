@@ -52,12 +52,14 @@
             // UsuariosTexto
             // 
             this.UsuariosTexto.AutoSize = true;
+            this.UsuariosTexto.BackColor = System.Drawing.Color.White;
             this.UsuariosTexto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.UsuariosTexto.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsuariosTexto.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsuariosTexto.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.UsuariosTexto.Location = new System.Drawing.Point(149, 311);
             this.UsuariosTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UsuariosTexto.Name = "UsuariosTexto";
-            this.UsuariosTexto.Size = new System.Drawing.Size(150, 43);
+            this.UsuariosTexto.Size = new System.Drawing.Size(144, 37);
             this.UsuariosTexto.TabIndex = 0;
             this.UsuariosTexto.Text = "Usuarios";
             this.UsuariosTexto.Click += new System.EventHandler(this.UsuariosIcono_Click);
@@ -67,12 +69,12 @@
             this.ProveedoresTexto.AutoSize = true;
             this.ProveedoresTexto.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ProveedoresTexto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ProveedoresTexto.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProveedoresTexto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ProveedoresTexto.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProveedoresTexto.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ProveedoresTexto.Location = new System.Drawing.Point(695, 311);
             this.ProveedoresTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProveedoresTexto.Name = "ProveedoresTexto";
-            this.ProveedoresTexto.Size = new System.Drawing.Size(208, 43);
+            this.ProveedoresTexto.Size = new System.Drawing.Size(196, 37);
             this.ProveedoresTexto.TabIndex = 1;
             this.ProveedoresTexto.Text = "Proveedores";
             this.ProveedoresTexto.Click += new System.EventHandler(this.ProveedoresIcono_Click);
@@ -82,12 +84,12 @@
             this.ClientesTexto.AutoSize = true;
             this.ClientesTexto.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientesTexto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ClientesTexto.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientesTexto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ClientesTexto.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientesTexto.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientesTexto.Location = new System.Drawing.Point(1297, 311);
             this.ClientesTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ClientesTexto.Name = "ClientesTexto";
-            this.ClientesTexto.Size = new System.Drawing.Size(140, 43);
+            this.ClientesTexto.Size = new System.Drawing.Size(131, 37);
             this.ClientesTexto.TabIndex = 2;
             this.ClientesTexto.Text = "Clientes";
             this.ClientesTexto.Click += new System.EventHandler(this.ClientesIcono_Click);
@@ -97,12 +99,12 @@
             this.ProductosTexto.AutoSize = true;
             this.ProductosTexto.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ProductosTexto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ProductosTexto.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductosTexto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ProductosTexto.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductosTexto.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ProductosTexto.Location = new System.Drawing.Point(138, 714);
             this.ProductosTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProductosTexto.Name = "ProductosTexto";
-            this.ProductosTexto.Size = new System.Drawing.Size(172, 43);
+            this.ProductosTexto.Size = new System.Drawing.Size(162, 37);
             this.ProductosTexto.TabIndex = 3;
             this.ProductosTexto.Text = "Productos";
             this.ProductosTexto.Click += new System.EventHandler(this.ProductosIcono_Click);
@@ -112,12 +114,12 @@
             this.ReportesTexto.AutoSize = true;
             this.ReportesTexto.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ReportesTexto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ReportesTexto.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReportesTexto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ReportesTexto.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReportesTexto.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ReportesTexto.Location = new System.Drawing.Point(1286, 714);
             this.ReportesTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ReportesTexto.Name = "ReportesTexto";
-            this.ReportesTexto.Size = new System.Drawing.Size(155, 43);
+            this.ReportesTexto.Size = new System.Drawing.Size(145, 37);
             this.ReportesTexto.TabIndex = 4;
             this.ReportesTexto.Text = "Reportes";
             this.ReportesTexto.Click += new System.EventHandler(this.ReportesIcono_Click);
@@ -127,12 +129,12 @@
             this.VentasTexto.AutoSize = true;
             this.VentasTexto.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.VentasTexto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.VentasTexto.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VentasTexto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.VentasTexto.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VentasTexto.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.VentasTexto.Location = new System.Drawing.Point(741, 714);
             this.VentasTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.VentasTexto.Name = "VentasTexto";
-            this.VentasTexto.Size = new System.Drawing.Size(122, 43);
+            this.VentasTexto.Size = new System.Drawing.Size(117, 37);
             this.VentasTexto.TabIndex = 5;
             this.VentasTexto.Text = "Ventas";
             this.VentasTexto.Click += new System.EventHandler(this.VentasIcono_Click);
@@ -144,7 +146,7 @@
             this.BotonSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Khaki;
             this.BotonSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.BotonSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BotonSalir.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BotonSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BotonSalir.Location = new System.Drawing.Point(1372, 808);
             this.BotonSalir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BotonSalir.Name = "BotonSalir";
@@ -234,10 +236,10 @@
             // 
             // InterfazMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.ProductosIcono);
             this.Controls.Add(this.VentasIcono);
             this.Controls.Add(this.ReportesIcono);
@@ -254,6 +256,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "InterfazMenu";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.InterfazMenu_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Menu_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.ProductosIcono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.VentasIcono)).EndInit();

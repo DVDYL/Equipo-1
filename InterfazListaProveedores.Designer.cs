@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Proveedores = new System.Windows.Forms.DataGridView();
             this.Prueba = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Boton_Salir = new System.Windows.Forms.Button();
@@ -56,56 +56,56 @@
             this.Proveedores.AllowUserToDeleteRows = false;
             this.Proveedores.AllowUserToResizeColumns = false;
             this.Proveedores.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.NullValue = null;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.Proveedores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.NullValue = null;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.Proveedores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.Proveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.Proveedores.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.Proveedores.BackgroundColor = System.Drawing.SystemColors.Control;
             this.Proveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Proveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Proveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.Proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Proveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Prueba});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Proveedores.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Proveedores.DefaultCellStyle = dataGridViewCellStyle8;
             this.Proveedores.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Proveedores.Location = new System.Drawing.Point(24, 204);
             this.Proveedores.MultiSelect = false;
             this.Proveedores.Name = "Proveedores";
             this.Proveedores.ReadOnly = true;
             this.Proveedores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle4.NullValue = null;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Proveedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle9.NullValue = null;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.Proveedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.Proveedores.RowHeadersWidth = 15;
             this.Proveedores.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Proveedores.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.Proveedores.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Proveedores.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.Proveedores.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Proveedores.RowTemplate.Height = 40;
             this.Proveedores.RowTemplate.ReadOnly = true;
             this.Proveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -121,7 +121,7 @@
             this.Prueba.ReadOnly = true;
             this.Prueba.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Prueba.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Prueba.Width = 58;
+            this.Prueba.Width = 57;
             // 
             // Boton_Salir
             // 
@@ -130,7 +130,7 @@
             this.Boton_Salir.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.Boton_Salir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Boton_Salir.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boton_Salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Boton_Salir.Location = new System.Drawing.Point(571, 829);
             this.Boton_Salir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Salir.Name = "Boton_Salir";
@@ -147,7 +147,8 @@
             this.BotonAltaProveedores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Khaki;
             this.BotonAltaProveedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.BotonAltaProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BotonAltaProveedores.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BotonAltaProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BotonAltaProveedores.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BotonAltaProveedores.Location = new System.Drawing.Point(611, 91);
             this.BotonAltaProveedores.Name = "BotonAltaProveedores";
             this.BotonAltaProveedores.Size = new System.Drawing.Size(157, 49);
@@ -159,37 +160,39 @@
             // CUIT_Label
             // 
             this.CUIT_Label.AutoSize = true;
-            this.CUIT_Label.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CUIT_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CUIT_Label.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.CUIT_Label.Location = new System.Drawing.Point(27, 135);
             this.CUIT_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CUIT_Label.Name = "CUIT_Label";
-            this.CUIT_Label.Size = new System.Drawing.Size(173, 28);
+            this.CUIT_Label.Size = new System.Drawing.Size(170, 25);
             this.CUIT_Label.TabIndex = 41;
             this.CUIT_Label.Text = "Buscar por CUIT";
             // 
             // Nombre_Label
             // 
             this.Nombre_Label.AutoSize = true;
-            this.Nombre_Label.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nombre_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nombre_Label.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Nombre_Label.Location = new System.Drawing.Point(27, 75);
             this.Nombre_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Nombre_Label.Name = "Nombre_Label";
-            this.Nombre_Label.Size = new System.Drawing.Size(202, 28);
+            this.Nombre_Label.Size = new System.Drawing.Size(197, 25);
             this.Nombre_Label.TabIndex = 40;
             this.Nombre_Label.Text = "Buscar por Nombre";
             // 
             // CUITBuscador
             // 
-            this.CUITBuscador.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CUITBuscador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CUITBuscador.Location = new System.Drawing.Point(246, 131);
             this.CUITBuscador.Name = "CUITBuscador";
-            this.CUITBuscador.Size = new System.Drawing.Size(278, 32);
+            this.CUITBuscador.Size = new System.Drawing.Size(278, 29);
             this.CUITBuscador.TabIndex = 39;
             // 
             // CUITLupa
             // 
             this.CUITLupa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CUITLupa.Image = global::Presentacion.Properties.Resources.Lupa2;
+            this.CUITLupa.Image = global::Presentacion.Properties.Resources.lupa_fuerte;
             this.CUITLupa.Location = new System.Drawing.Point(543, 131);
             this.CUITLupa.Name = "CUITLupa";
             this.CUITLupa.Size = new System.Drawing.Size(49, 34);
@@ -200,16 +203,16 @@
             // 
             // ProveedoresBuscador
             // 
-            this.ProveedoresBuscador.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProveedoresBuscador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProveedoresBuscador.Location = new System.Drawing.Point(246, 74);
             this.ProveedoresBuscador.Name = "ProveedoresBuscador";
-            this.ProveedoresBuscador.Size = new System.Drawing.Size(278, 32);
+            this.ProveedoresBuscador.Size = new System.Drawing.Size(278, 29);
             this.ProveedoresBuscador.TabIndex = 37;
             // 
             // ProveedoresLupa
             // 
             this.ProveedoresLupa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ProveedoresLupa.Image = global::Presentacion.Properties.Resources.Lupa2;
+            this.ProveedoresLupa.Image = global::Presentacion.Properties.Resources.lupa_fuerte;
             this.ProveedoresLupa.Location = new System.Drawing.Point(543, 74);
             this.ProveedoresLupa.Name = "ProveedoresLupa";
             this.ProveedoresLupa.Size = new System.Drawing.Size(49, 34);
@@ -224,7 +227,7 @@
             this.Boton_BorrarFiltro.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.Boton_BorrarFiltro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_BorrarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Boton_BorrarFiltro.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boton_BorrarFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Boton_BorrarFiltro.Location = new System.Drawing.Point(321, 829);
             this.Boton_BorrarFiltro.Name = "Boton_BorrarFiltro";
             this.Boton_BorrarFiltro.Size = new System.Drawing.Size(194, 42);
@@ -240,7 +243,7 @@
             this.Boton_Modificar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.Boton_Modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Boton_Modificar.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boton_Modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Boton_Modificar.Location = new System.Drawing.Point(79, 829);
             this.Boton_Modificar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Modificar.Name = "Boton_Modificar";
@@ -252,9 +255,9 @@
             // 
             // InterfazListaProveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 900);
+            this.ClientSize = new System.Drawing.Size(800, 788);
             this.Controls.Add(this.Boton_Modificar);
             this.Controls.Add(this.Boton_BorrarFiltro);
             this.Controls.Add(this.CUIT_Label);
