@@ -535,10 +535,5 @@ namespace Presentacion
             }
             // Si el usuario elige "No", no hacer nada
         }
-
-        private void SeparatorPersona_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\obj"
   ],
-  "SelectedNode": "\\Equipo1.sln",
+  "SelectedNode": "\\InterfazMenu.cs",
   "PreviewInSolutionExplorer": false
 }
