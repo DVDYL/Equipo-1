@@ -1,4 +1,5 @@
 ﻿using Negocio;
+using Datos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,8 +21,58 @@ namespace Presentacion
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
         }
 
+        private int ControlarCampos()
+        {
+            int ContarErrores = 0; // Contador de errores
+
+            string errorNombre = Validar.EsNombre(Nombre_Box.Text, "Nombre");
+            if (errorNombre != null)
+            {
+                
+                MessageBox.Show(errorNombre, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MayudaNombre.Visible = true;
+                ContarErrores++;
+            }
+            else
+            {
+                MayudaNombre.Visible = true;
+
+            }
+
+            if (ContarErrores >= 1)
+            {
+                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+            }
+
+            string errorApellido = Validar.EsNombre(Apellido_Box.Text, "Apellido");
+            if (errorApellido != null)
+            {
+                // Completar el contenido del TextBox Apellido_Error con el error
+              
+                MessageBox.Show(errorApellido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MayudaApellido.Visible = true;
+                ContarErrores++;
+            }
+            else
+            {
+                
+                MayudaApellido.Visible = false;
+            }
+
+            if (ContarErrores >= 1)
+            {
+                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+            }
+
+            //Faktan Validaciones de Mail/Confirmar Mail(Ya existen), Habria que agregar CUIT en clase Validar. 
+
+            return ContarErrores; // Devolver true si no hay errores, false si hay errores
+        }
+
         private void Boton_Confirmar_Click(object sender, EventArgs e)
         {
+            int contadorErrores = ControlarCampos();
+
             // Crear un nuevo objeto AgregarProveedor con los datos del formulario
             ProveedorNegocio AltaProveedor = new ProveedorNegocio();
             AltaProveedor.AgregarProveedor("70b37dc1-8fde-4840-be47-9ababd0ee7e5", Nombre_Box.Text,Apellido_Box.Text,ConfirMail_Box.Text,CUIT_Box.Text);
@@ -58,5 +109,15 @@ namespace Presentacion
                 }
             }
         }  // Evento KeyDown para cerrar la ventana con la tecla ESC
+
+        private void Nombre_Box_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MayudaDNI_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

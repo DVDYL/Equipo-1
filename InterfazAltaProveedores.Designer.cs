@@ -39,8 +39,8 @@
             this.MayudaTelefono = new System.Windows.Forms.Label();
             this.MayudaConfirMail = new System.Windows.Forms.Label();
             this.MayudaMail = new System.Windows.Forms.Label();
-            this.MayudaCalle = new System.Windows.Forms.Label();
-            this.MayudaDNI = new System.Windows.Forms.Label();
+            this.MayudaApellido = new System.Windows.Forms.Label();
+            this.MayudaNombre = new System.Windows.Forms.Label();
             this.ConfirMail_Box = new System.Windows.Forms.TextBox();
             this.CUIT_Box = new System.Windows.Forms.TextBox();
             this.Email_Box = new System.Windows.Forms.TextBox();
@@ -188,27 +188,28 @@
             this.MayudaMail.Text = "?";
             this.MayudaMail.Visible = false;
             // 
-            // MayudaCalle
+            // MayudaApellido
             // 
-            this.MayudaCalle.AutoSize = true;
-            this.MayudaCalle.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaCalle.Location = new System.Drawing.Point(721, 309);
-            this.MayudaCalle.Name = "MayudaCalle";
-            this.MayudaCalle.Size = new System.Drawing.Size(13, 15);
-            this.MayudaCalle.TabIndex = 112;
-            this.MayudaCalle.Text = "?";
-            this.MayudaCalle.Visible = false;
+            this.MayudaApellido.AutoSize = true;
+            this.MayudaApellido.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaApellido.Location = new System.Drawing.Point(721, 309);
+            this.MayudaApellido.Name = "MayudaApellido";
+            this.MayudaApellido.Size = new System.Drawing.Size(13, 15);
+            this.MayudaApellido.TabIndex = 112;
+            this.MayudaApellido.Text = "?";
+            this.MayudaApellido.Visible = false;
             // 
-            // MayudaDNI
+            // MayudaNombre
             // 
-            this.MayudaDNI.AutoSize = true;
-            this.MayudaDNI.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaDNI.Location = new System.Drawing.Point(721, 176);
-            this.MayudaDNI.Name = "MayudaDNI";
-            this.MayudaDNI.Size = new System.Drawing.Size(13, 15);
-            this.MayudaDNI.TabIndex = 111;
-            this.MayudaDNI.Text = "?";
-            this.MayudaDNI.Visible = false;
+            this.MayudaNombre.AutoSize = true;
+            this.MayudaNombre.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaNombre.Location = new System.Drawing.Point(721, 176);
+            this.MayudaNombre.Name = "MayudaNombre";
+            this.MayudaNombre.Size = new System.Drawing.Size(13, 15);
+            this.MayudaNombre.TabIndex = 111;
+            this.MayudaNombre.Text = "?";
+            this.MayudaNombre.Visible = false;
+            this.MayudaNombre.Click += new System.EventHandler(this.MayudaDNI_Click);
             // 
             // ConfirMail_Box
             // 
@@ -217,7 +218,7 @@
             this.ConfirMail_Box.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConfirMail_Box.Location = new System.Drawing.Point(432, 569);
             this.ConfirMail_Box.Name = "ConfirMail_Box";
-            this.ConfirMail_Box.Size = new System.Drawing.Size(251, 31);
+            this.ConfirMail_Box.Size = new System.Drawing.Size(251, 32);
             this.ConfirMail_Box.TabIndex = 103;
             // 
             // CUIT_Box
@@ -227,7 +228,7 @@
             this.CUIT_Box.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CUIT_Box.Location = new System.Drawing.Point(432, 702);
             this.CUIT_Box.Name = "CUIT_Box";
-            this.CUIT_Box.Size = new System.Drawing.Size(250, 31);
+            this.CUIT_Box.Size = new System.Drawing.Size(250, 32);
             this.CUIT_Box.TabIndex = 104;
             // 
             // Email_Box
@@ -237,7 +238,7 @@
             this.Email_Box.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Email_Box.Location = new System.Drawing.Point(432, 436);
             this.Email_Box.Name = "Email_Box";
-            this.Email_Box.Size = new System.Drawing.Size(251, 31);
+            this.Email_Box.Size = new System.Drawing.Size(251, 32);
             this.Email_Box.TabIndex = 102;
             // 
             // Apellido_Box
@@ -247,7 +248,7 @@
             this.Apellido_Box.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Apellido_Box.Location = new System.Drawing.Point(432, 303);
             this.Apellido_Box.Name = "Apellido_Box";
-            this.Apellido_Box.Size = new System.Drawing.Size(250, 31);
+            this.Apellido_Box.Size = new System.Drawing.Size(250, 32);
             this.Apellido_Box.TabIndex = 101;
             // 
             // Nombre_Box
@@ -257,8 +258,9 @@
             this.Nombre_Box.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nombre_Box.Location = new System.Drawing.Point(432, 170);
             this.Nombre_Box.Name = "Nombre_Box";
-            this.Nombre_Box.Size = new System.Drawing.Size(250, 31);
+            this.Nombre_Box.Size = new System.Drawing.Size(250, 32);
             this.Nombre_Box.TabIndex = 100;
+            this.Nombre_Box.TextChanged += new System.EventHandler(this.Nombre_Box_TextChanged);
             // 
             // Label_ConfirmarEmail
             // 
@@ -319,7 +321,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 900);
+            this.ClientSize = new System.Drawing.Size(800, 788);
             this.Controls.Add(this.Boton_Cancelar);
             this.Controls.Add(this.Boton_Confirmar);
             this.Controls.Add(this.SeparatorPersona);
@@ -331,8 +333,8 @@
             this.Controls.Add(this.MayudaTelefono);
             this.Controls.Add(this.MayudaConfirMail);
             this.Controls.Add(this.MayudaMail);
-            this.Controls.Add(this.MayudaCalle);
-            this.Controls.Add(this.MayudaDNI);
+            this.Controls.Add(this.MayudaApellido);
+            this.Controls.Add(this.MayudaNombre);
             this.Controls.Add(this.ConfirMail_Box);
             this.Controls.Add(this.CUIT_Box);
             this.Controls.Add(this.Email_Box);
@@ -363,8 +365,8 @@
         private System.Windows.Forms.Label MayudaTelefono;
         private System.Windows.Forms.Label MayudaConfirMail;
         private System.Windows.Forms.Label MayudaMail;
-        private System.Windows.Forms.Label MayudaCalle;
-        private System.Windows.Forms.Label MayudaDNI;
+        private System.Windows.Forms.Label MayudaApellido;
+        private System.Windows.Forms.Label MayudaNombre;
         private System.Windows.Forms.TextBox ConfirMail_Box;
         private System.Windows.Forms.TextBox CUIT_Box;
         private System.Windows.Forms.TextBox Email_Box;
