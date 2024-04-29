@@ -116,7 +116,7 @@ namespace Presentacion
                 return ContarErrores; // Detener la ejecución y devolver el contador de errores
             }
 
-            string errorCalle = Validar.EsCalle(Box_Calle.Text);
+            string errorCalle = Validar.EsDepartamento(Box_Calle.Text);
             if (errorCalle != null)
             {
                 // Completar el contenido del TextBox Calle_Error con el error

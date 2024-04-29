@@ -3,6 +3,7 @@ using Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Presentacion
@@ -28,6 +29,10 @@ namespace Presentacion
             try
             {
                 List<TraerProveedores> Proveedor = ProveedorNegocio.listarProveedores();
+
+                //    Proveedor = ProveedorNegocio.listarProveedores().Where(u => u.Email.Contains("@G1")).ToList();
+
+                // Acá iría algún filtro para que solo se vean nuestros proveedores.
 
                 var bindingList = new BindingList<TraerProveedores>(Proveedor);
                 var source = new BindingSource(bindingList, null);

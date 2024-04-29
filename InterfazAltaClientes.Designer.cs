@@ -56,6 +56,7 @@
             this.Controls.Add(this.Boton_Salir);
             this.Name = "InterfazAltaClientes";
             this.Text = "Alta de Clientes";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ventana_KeyDown);
             this.ResumeLayout(false);
 
         }
