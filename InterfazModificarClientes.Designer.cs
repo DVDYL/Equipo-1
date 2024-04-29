@@ -284,6 +284,7 @@
             this.Boton_Cancelar.TabIndex = 76;
             this.Boton_Cancelar.Text = "Cancelar";
             this.Boton_Cancelar.UseVisualStyleBackColor = false;
+            this.Boton_Cancelar.Click += new System.EventHandler(this.Boton_Cancelar_Click);
             // 
             // Boton_Confirmar
             // 
@@ -301,6 +302,7 @@
             this.Boton_Confirmar.TabIndex = 75;
             this.Boton_Confirmar.Text = "Confirmar";
             this.Boton_Confirmar.UseVisualStyleBackColor = false;
+            this.Boton_Confirmar.Click += new System.EventHandler(this.Boton_Confirmar_Click);
             // 
             // InterfazModificarClientes
             // 
@@ -331,7 +333,8 @@
             this.Controls.Add(this.Label_Telefono);
             this.Controls.Add(this.Label_Direccion);
             this.Name = "InterfazModificarClientes";
-            this.Text = "Form1";
+            this.Text = "Modificar Clientes";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ventana_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

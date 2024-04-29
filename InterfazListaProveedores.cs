@@ -42,43 +42,7 @@ namespace Presentacion
 
         private void Proveedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-
-        private void Ventana_KeyDown(object sender, KeyEventArgs e) // Manejo para el evento de apretar ESC en una ventana 
-        {
-            if (e.KeyCode == Keys.Escape)
-            {
-                DialogResult result = MessageBox.Show("¿Está seguro de que desea volver al menú principal?", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                // Verificar la respuesta del usuario
-                if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
-                {
-                    InterfazMenu InterfazMenu = new InterfazMenu(); // Redirigir al formulario de inicio de sesión (LogIn)
-                    InterfazMenu.Show();
-                    this.Hide(); // Ocultar el formulario actual
-                }
-                // Si el usuario elige "No", no hacer nada
-            }
-        }
-
-        private void Boton_Salir_Click(object sender, EventArgs e)
-        {
-            // Mostrar un cuadro de diálogo para confirmar la acción
-            DialogResult resultado = MessageBox.Show("¿Desea volver al menú principal?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            // Verificar la respuesta del usuario
-            if (resultado == DialogResult.Yes)
-            {
-                // Ocultar la ventana actual
-                this.Hide();
-
-                // Crear una instancia de la ventana InterfazMenu
-                InterfazMenu ventanaMenu = new InterfazMenu();
-
-                // Mostrar la ventana InterfazMenu
-                ventanaMenu.Show();
-            }
+            // Maneja la selección de una línea en la tabla.
         }
 
         private void ProveedoresLupa_Click(object sender, EventArgs e)
@@ -132,22 +96,10 @@ namespace Presentacion
             }
         }
 
-        private void Boton_AltaUsuario_Click(object sender, EventArgs e)
-        {
-            // Crear una instancia del formulario InterfazAltaUsuarios
-            InterfazAltaProveedores formInterfazAltaProveedores = new InterfazAltaProveedores();
-
-            // Ocultar el formulario actual (InterfazListaUsuarios)
-            this.Hide();
-
-            // Mostrar el formulario
-            formInterfazAltaProveedores.Show();
-        }
-
-        private void LupaBuscar_Click(object sender, EventArgs e)
+        private void CUITLupa_Click(object sender, EventArgs e)
         {
             // Obtener el texto ingresado en el TextBox UsuariosBuscador
-            string textoBusqueda = BuscadorCUIT.Text;
+            string textoBusqueda = CUITBuscador.Text;
 
             if (string.IsNullOrEmpty(textoBusqueda))
             {
@@ -158,7 +110,7 @@ namespace Presentacion
             if (Proveedores.DataSource == null || Proveedores.Rows.Count == 0)
             {
                 // Manejar el caso en el que la lista de usuarios es nula o vacía
-                MessageBox.Show("La lista se encuentra vacía.\n\nNo hay usuarios para buscar.");
+                MessageBox.Show("La lista se encuentra vacía.\n\nNo hay proveedores para buscar.");
             }
             else
             {
@@ -196,9 +148,59 @@ namespace Presentacion
 
         }
 
-        private void BorrarFiltro_Click(object sender, EventArgs e)
+        private void BotonAltaProveedores_Click(object sender, EventArgs e)
+        {
+            InterfazAltaProveedores AltaProveedores = new InterfazAltaProveedores();
+            this.Hide();
+            AltaProveedores.Show(); // Mostrar el formulario
+        }
+
+        private void Boton_Modificar_Click(object sender, EventArgs e)
+        {
+            InterfazModificarProveedores ModificarProveedores = new InterfazModificarProveedores();
+            this.Hide();
+            ModificarProveedores.Show(); // Mostrar el formulario
+        }
+
+        private void Boton_BorrarFiltro_Click(object sender, EventArgs e)
         {
             CargarProveedores();
+        }
+
+        private void Boton_Salir_Click(object sender, EventArgs e)
+        {
+            // Mostrar un cuadro de diálogo para confirmar la acción
+            DialogResult resultado = MessageBox.Show("¿Desea volver al menú principal?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Verificar la respuesta del usuario
+            if (resultado == DialogResult.Yes)
+            {
+                // Ocultar la ventana actual
+                this.Hide();
+
+                // Crear una instancia de la ventana InterfazMenu
+                InterfazMenu ventanaMenu = new InterfazMenu();
+
+                // Mostrar la ventana InterfazMenu
+                ventanaMenu.Show();
+            }
+        }
+
+        private void Ventana_KeyDown(object sender, KeyEventArgs e) // Manejo para el evento de apretar ESC en una ventana 
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                DialogResult result = MessageBox.Show("¿Está seguro de que desea volver al menú principal?", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                // Verificar la respuesta del usuario
+                if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
+                {
+                    InterfazMenu InterfazMenu = new InterfazMenu(); // Redirigir al formulario de inicio de sesión (LogIn)
+                    InterfazMenu.Show();
+                    this.Hide(); // Ocultar el formulario actual
+                }
+                // Si el usuario elige "No", no hacer nada
+            }
         }
     }
 }

@@ -71,14 +71,10 @@ namespace Presentacion
 
         private void Boton_AltaUsuario_Click(object sender, EventArgs e)
         {
-            // Crear una instancia del formulario InterfazAltaUsuarios
-            InterfazAltaUsuarios formInterfazAltaUsuarios = new InterfazAltaUsuarios();
+            InterfazAltaUsuarios InterfazAltaUsuarios = new InterfazAltaUsuarios();
 
-            // Ocultar el formulario actual (InterfazListaUsuarios)
             this.Hide();
-
-            // Mostrar el formulario
-            formInterfazAltaUsuarios.Show();
+            InterfazAltaUsuarios.Show();
         } // Evento cuando se hace clic en el Botón "+ Nuevo"
 
         private void Usuarios_CellClick(object sender, DataGridViewCellEventArgs e)

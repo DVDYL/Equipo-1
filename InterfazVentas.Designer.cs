@@ -1,6 +1,6 @@
 ﻿namespace Presentacion
 {
-    partial class InterfazAltaClientes
+    partial class InterfazVentas
     {
         /// <summary>
         /// Required designer variable.
@@ -39,7 +39,7 @@
             this.Boton_Salir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_Salir.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Salir.Location = new System.Drawing.Point(1361, 814);
+            this.Boton_Salir.Location = new System.Drawing.Point(1361, 818);
             this.Boton_Salir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Salir.Name = "Boton_Salir";
             this.Boton_Salir.Size = new System.Drawing.Size(190, 42);
@@ -48,14 +48,15 @@
             this.Boton_Salir.UseVisualStyleBackColor = false;
             this.Boton_Salir.Click += new System.EventHandler(this.Boton_Salir_Click);
             // 
-            // InterfazAltaClientes
+            // InterfazVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1600, 900);
             this.Controls.Add(this.Boton_Salir);
-            this.Name = "InterfazAltaClientes";
-            this.Text = "Alta de Clientes";
+            this.Name = "InterfazVentas";
+            this.Text = "Ventas";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ventana_KeyDown);
             this.ResumeLayout(false);
 
         }

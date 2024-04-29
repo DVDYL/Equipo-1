@@ -13,16 +13,6 @@ namespace Presentacion
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
         } 
 
-        private void UsuariosTexto_Click(object sender, EventArgs e)  
-        {
-            this.Hide(); // Ocultar el formulario Menu
-
-            InterfazListaUsuarios InterfazListaUsuarios = new InterfazListaUsuarios(); // Crear una instancia del formulario InterfazABM
-
-            InterfazListaUsuarios.FormClosed += (s, args) => this.Show(); // Mostrar nuevamente el formulario Menu cuando se cierre InterfazABM
-            InterfazListaUsuarios.Show(); // Mostrar el formulario InterfazABM
-        }
-
         private void UsuariosIcono_Click(object sender, EventArgs e)  
         {
             InterfazListaUsuarios InterfazListaUsuarios = new InterfazListaUsuarios(); // Crear una instancia del formulario InterfazABM
@@ -35,25 +25,47 @@ namespace Presentacion
 
         private void ProveedoresIcono_Click(object sender, EventArgs e)
         {
-            InterfazListaProveedores InterfazListaProveedores = new InterfazListaProveedores(); // Crear una instancia del formulario InterfazABM
+            InterfazListaProveedores ListaProveedores = new InterfazListaProveedores(); // Crear una instancia del formulario InterfazABM
 
             this.Hide(); // Ocultar el formulario Menu
 
-            InterfazListaProveedores.FormClosed += (s, args) => this.Close(); // Cerrar la aplicación cuando se cierre UserAdmin
-            InterfazListaProveedores.Show(); // Mostrar el formulario InterfazABM
+            ListaProveedores.FormClosed += (s, args) => this.Close(); // Cerrar la aplicación cuando se cierre UserAdmin
+            ListaProveedores.Show(); // Mostrar el formulario InterfazABM
         }
 
-        private void ProveedoresTexto_Click(object sender, EventArgs e)
+        private void ClientesIcono_Click(object sender, EventArgs e)
         {
-            InterfazListaProveedores InterfazListaProveedores = new InterfazListaProveedores(); // Crear una instancia del formulario InterfazABM
-
-            this.Hide(); // Ocultar el formulario Menu
-
-            InterfazListaProveedores.FormClosed += (s, args) => this.Close(); // Cerrar la aplicación cuando se cierre UserAdmin
-            InterfazListaProveedores.Show(); // Mostrar el formulario InterfazABM
+            InterfazListaClientes ListaClientes = new InterfazListaClientes();
+            this.Hide(); // Ocultar el formulario actual
+            ListaClientes.FormClosed += (s, args) => this.Close();
+            ListaClientes.Show();
         }
 
-        private void MenuLogOut_Click(object sender, EventArgs e) // Le pregunta al usuario si está seguro de que quiere cerrar la sesión 
+        private void ProductosIcono_Click(object sender, EventArgs e)
+        {
+            InterfazListaProductos ListaProductos = new InterfazListaProductos();
+            this.Hide(); // Ocultar el formulario actual
+            ListaProductos.FormClosed += (s, args) => this.Close();
+            ListaProductos.Show();
+        }
+
+        private void VentasIcono_Click(object sender, EventArgs e)
+        {
+            InterfazVentas ListaVentas = new InterfazVentas();
+            this.Hide(); // Ocultar el formulario actual
+            ListaVentas.FormClosed += (s, args) => this.Close();
+            ListaVentas.Show();
+        }
+
+        private void ReportesIcono_Click(object sender, EventArgs e)
+        {
+            InterfazReportes ListaReportes = new InterfazReportes();
+            this.Hide(); // Ocultar el formulario actual
+            ListaReportes.FormClosed += (s, args) => this.Close();
+            ListaReportes.Show();
+        }
+
+        private void BotonSalir_Click(object sender, EventArgs e) // Le pregunta al usuario si está seguro de que quiere cerrar la sesión 
         {
             // Mostrar un cuadro de diálogo de confirmación
             DialogResult result = MessageBox.Show("¿Está seguro de que desea volver al inicio de sesión?", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -61,8 +73,8 @@ namespace Presentacion
             // Verificar la respuesta del usuario
             if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
             {
-                InterfazLogIn InterfazLogIn = new InterfazLogIn(); // Redirigir al formulario de inicio de sesión (LogIn)
-                InterfazLogIn.Show();
+                InterfazLogIn LogIn = new InterfazLogIn(); // Redirigir al formulario de inicio de sesión (LogIn)
+                LogIn.Show();
                 this.Hide(); // Ocultar el formulario actual
             }
             // Si el usuario elige "No", no hacer nada
@@ -77,13 +89,12 @@ namespace Presentacion
                 // Verificar la respuesta del usuario
                 if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
                 {
-                    InterfazLogIn InterfazLogIn = new InterfazLogIn(); // Redirigir al formulario de inicio de sesión (LogIn)
-                    InterfazLogIn.Show();
+                    InterfazLogIn LogIn = new InterfazLogIn(); // Redirigir al formulario de inicio de sesión (LogIn)
+                    LogIn.Show();
                     this.Hide(); // Ocultar el formulario actual
                 }
                 // Si el usuario elige "No", no hacer nada
             }
         }
-
     }
 }

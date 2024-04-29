@@ -47,11 +47,12 @@
             // 
             // Box_Usuario
             // 
-            this.Box_Usuario.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.Box_Usuario.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_Usuario.BackColor = System.Drawing.Color.Gainsboro;
+            this.Box_Usuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Box_Usuario.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Usuario.Location = new System.Drawing.Point(396, 433);
             this.Box_Usuario.Name = "Box_Usuario";
-            this.Box_Usuario.Size = new System.Drawing.Size(343, 34);
+            this.Box_Usuario.Size = new System.Drawing.Size(343, 35);
             this.Box_Usuario.TabIndex = 1;
             // 
             // Label_Usuario
@@ -76,11 +77,12 @@
             // 
             // Box_Pass
             // 
-            this.Box_Pass.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.Box_Pass.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_Pass.BackColor = System.Drawing.Color.Gainsboro;
+            this.Box_Pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Box_Pass.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Pass.Location = new System.Drawing.Point(396, 529);
             this.Box_Pass.Name = "Box_Pass";
-            this.Box_Pass.Size = new System.Drawing.Size(343, 34);
+            this.Box_Pass.Size = new System.Drawing.Size(343, 35);
             this.Box_Pass.TabIndex = 2;
             this.Box_Pass.UseSystemPasswordChar = true;
             // 
@@ -132,12 +134,13 @@
             // 
             // NewPass
             // 
-            this.NewPass.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.NewPass.BackColor = System.Drawing.Color.Gainsboro;
+            this.NewPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NewPass.Enabled = false;
-            this.NewPass.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewPass.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewPass.Location = new System.Drawing.Point(396, 632);
             this.NewPass.Name = "NewPass";
-            this.NewPass.Size = new System.Drawing.Size(343, 34);
+            this.NewPass.Size = new System.Drawing.Size(343, 35);
             this.NewPass.TabIndex = 6;
             this.NewPass.Visible = false;
             // 
@@ -155,12 +158,13 @@
             // 
             // ConfirmNewPass
             // 
-            this.ConfirmNewPass.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.ConfirmNewPass.BackColor = System.Drawing.Color.Gainsboro;
+            this.ConfirmNewPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ConfirmNewPass.Enabled = false;
-            this.ConfirmNewPass.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirmNewPass.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConfirmNewPass.Location = new System.Drawing.Point(396, 707);
             this.ConfirmNewPass.Name = "ConfirmNewPass";
-            this.ConfirmNewPass.Size = new System.Drawing.Size(343, 34);
+            this.ConfirmNewPass.Size = new System.Drawing.Size(343, 35);
             this.ConfirmNewPass.TabIndex = 8;
             this.ConfirmNewPass.Visible = false;
             // 

@@ -62,6 +62,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InterfazReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfazReportes.Designer.cs">
+      <DependentUpon>InterfazReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfazVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfazVentas.Designer.cs">
+      <DependentUpon>InterfazVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfazModificarProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,8 +160,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="InterfazAltaClientes.resx">
+      <DependentUpon>InterfazAltaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfazAltaProductos.resx">
+      <DependentUpon>InterfazAltaProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InterfazListaClientes.resx">
       <DependentUpon>InterfazListaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfazListaProductos.resx">
+      <DependentUpon>InterfazListaProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfazListaProveedores.resx">
       <DependentUpon>InterfazListaProveedores.cs</DependentUpon>
@@ -159,6 +180,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfazModificarClientes.resx">
       <DependentUpon>InterfazModificarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfazModificarProductos.resx">
+      <DependentUpon>InterfazModificarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfazModificarProveedores.resx">
+      <DependentUpon>InterfazModificarProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfazReportes.resx">
+      <DependentUpon>InterfazReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfazVentas.resx">
+      <DependentUpon>InterfazVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana.resx">
       <DependentUpon>Ventana.cs</DependentUpon>
