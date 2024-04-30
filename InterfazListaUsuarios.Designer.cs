@@ -157,6 +157,7 @@
             this.Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Usuarios.Size = new System.Drawing.Size(750, 570);
             this.Usuarios.TabIndex = 0;
+            this.Usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Usuarios_CellContentClick);
             // 
             // Prueba
             // 

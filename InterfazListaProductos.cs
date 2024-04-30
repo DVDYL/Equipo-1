@@ -22,6 +22,10 @@ namespace Presentacion
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
         }
 
+        private void InterfazListaProductos_Load(object sender, EventArgs e)
+        {
+            CargarProductos();
+        }
         private void Boton_AltaProducto_Click(object sender, EventArgs e)
         {
             InterfazAltaProductos AltaProductos = new InterfazAltaProductos();
@@ -65,11 +69,6 @@ namespace Presentacion
             }
         }
 
-        private void InterfazListaProductos_Load (object sender, EventArgs e)
-        {
-            CargarProductos();
-        }
-
         private void CargarProductos()
         {
             try
@@ -80,8 +79,8 @@ namespace Presentacion
 
                 var bindingList = new BindingList<TraerProductos>(Producto);
                 var source = new BindingSource(bindingList, null);
-               Productos.DataSource = source;
-               Productos.Columns["id"].Visible = false;
+                Productos.DataSource = source;
+                Productos.Columns["id"].Visible = false;
             }
             catch (Exception ex)
             {

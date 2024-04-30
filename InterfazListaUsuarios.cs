@@ -251,5 +251,10 @@ namespace Presentacion
                 // Si el usuario elige "No", no hacer nada
             }
         }
+
+        private void Usuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
