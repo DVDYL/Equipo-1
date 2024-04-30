@@ -28,10 +28,10 @@ namespace Negocio
                 return $"El {nombreCampo} no puede tener números.";
             }
 
-            // Verificar si el texto contiene caracteres especiales
-            if (text.Any(c => !char.IsLetterOrDigit(c)))
+            // Verificar si el texto contiene caracteres especiales excepto espacios
+            if (text.Any(c => !char.IsLetterOrDigit(c) && !char.IsWhiteSpace(c)))
             {
-                return $"El {nombreCampo} no puede tener caracteres especiales.";
+                return $"El {nombreCampo} no puede tener caracteres especiales."; // Saco al espaciado como "caracter especial".
             }
 
             // Si pasa todas las condiciones, el texto es válido
@@ -195,8 +195,8 @@ namespace Negocio
                 return "Ambos campos de correo electrónico son obligatorios.";
             }
 
-            // Verificar si los correos electrónicos coinciden
-            if (correo == confirmation)
+            // Verificar si los correos electrónicos coinciden ignorando mayúsculas y minúsculas
+            if (correo.Equals(confirmation, StringComparison.OrdinalIgnoreCase))
             {
                 return null; // Si los correos coinciden, retornar null indicando que no hay error
             }
@@ -397,8 +397,8 @@ namespace Negocio
 
             ProveedorNegocio ProveedorNegocio = new ProveedorNegocio();
             List<TraerProveedores> Proveedores = ProveedorNegocio.listarProveedores();
-         //   Proveedores = ProveedorNegocio.listarProveedores().Where(u => u.CUIT.Contains(texto)).ToList();
-            Proveedores = ProveedorNegocio.listarProveedores().Where(u => u.Email.Contains("G1") && u.CUIT.Contains(texto)).ToList();
+            Proveedores = ProveedorNegocio.listarProveedores().Where(u => u.CUIT.Contains(texto)).ToList();
+            // Proveedores = ProveedorNegocio.listarProveedores().Where(u => u.Email.Contains("G1") && u.CUIT.Contains(texto)).ToList();
 
             // Verificar si se encontró algún CUIT
             if (Proveedores.Count > 0)

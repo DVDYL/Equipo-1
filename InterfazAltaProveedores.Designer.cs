@@ -36,7 +36,7 @@
             this.CUIT_Error = new System.Windows.Forms.TextBox();
             this.Apellido_Error = new System.Windows.Forms.TextBox();
             this.Nombre_Error = new System.Windows.Forms.TextBox();
-            this.MayudaTelefono = new System.Windows.Forms.Label();
+            this.MayudaCUIT = new System.Windows.Forms.Label();
             this.MayudaConfirMail = new System.Windows.Forms.Label();
             this.MayudaMail = new System.Windows.Forms.Label();
             this.MayudaApellido = new System.Windows.Forms.Label();
@@ -155,16 +155,16 @@
             this.Nombre_Error.Size = new System.Drawing.Size(311, 20);
             this.Nombre_Error.TabIndex = 116;
             // 
-            // MayudaTelefono
+            // MayudaCUIT
             // 
-            this.MayudaTelefono.AutoSize = true;
-            this.MayudaTelefono.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaTelefono.Location = new System.Drawing.Point(721, 711);
-            this.MayudaTelefono.Name = "MayudaTelefono";
-            this.MayudaTelefono.Size = new System.Drawing.Size(13, 15);
-            this.MayudaTelefono.TabIndex = 115;
-            this.MayudaTelefono.Text = "?";
-            this.MayudaTelefono.Visible = false;
+            this.MayudaCUIT.AutoSize = true;
+            this.MayudaCUIT.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaCUIT.Location = new System.Drawing.Point(721, 711);
+            this.MayudaCUIT.Name = "MayudaCUIT";
+            this.MayudaCUIT.Size = new System.Drawing.Size(13, 15);
+            this.MayudaCUIT.TabIndex = 115;
+            this.MayudaCUIT.Text = "?";
+            this.MayudaCUIT.Visible = false;
             // 
             // MayudaConfirMail
             // 
@@ -328,7 +328,7 @@
             this.Controls.Add(this.CUIT_Error);
             this.Controls.Add(this.Apellido_Error);
             this.Controls.Add(this.Nombre_Error);
-            this.Controls.Add(this.MayudaTelefono);
+            this.Controls.Add(this.MayudaCUIT);
             this.Controls.Add(this.MayudaConfirMail);
             this.Controls.Add(this.MayudaMail);
             this.Controls.Add(this.MayudaApellido);
@@ -361,7 +361,7 @@
         private System.Windows.Forms.TextBox CUIT_Error;
         private System.Windows.Forms.TextBox Apellido_Error;
         private System.Windows.Forms.TextBox Nombre_Error;
-        private System.Windows.Forms.Label MayudaTelefono;
+        private System.Windows.Forms.Label MayudaCUIT;
         private System.Windows.Forms.Label MayudaConfirMail;
         private System.Windows.Forms.Label MayudaMail;
         private System.Windows.Forms.Label MayudaApellido;

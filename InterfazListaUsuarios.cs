@@ -98,6 +98,14 @@ namespace Presentacion
                 Console.WriteLine("prueba");
             }
         }
+        private void Limpiar() // Blanquea el Formulario de usuarios
+        {
+            // Reiniciar los valores de todos los campos del formulario a sus valores predeterminados
+
+            Box_BuscarDNI.Text = "";
+            UsuariosBuscador.Text = "";
+
+        }
 
         private void UsuariosLupa_Click(object sender, EventArgs e)
         {
@@ -107,6 +115,7 @@ namespace Presentacion
             if (string.IsNullOrEmpty(textoBusqueda))
             {
                 CargarUsuarios();
+                Limpiar();
             }
 
             // Verificar si la lista de usuarios es nula o está vacía
@@ -158,6 +167,7 @@ namespace Presentacion
             if(string.IsNullOrEmpty(textoBusqueda))
             {
                 CargarUsuarios();
+                Limpiar();
             }
 
             // Verificar si la lista de usuarios es nula o está vacía

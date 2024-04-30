@@ -129,3 +129,11 @@ C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazReportes.res
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazVentas.resources
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazAltaProductos.resources
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazAltaProveedores.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.InterfazAltaClientes.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.InterfazAltaProductos.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.InterfazAltaProveedores.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.InterfazListaProductos.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.InterfazModificarProductos.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.InterfazModificarProveedores.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.InterfazReportes.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.InterfazVentas.resources

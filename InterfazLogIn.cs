@@ -26,7 +26,7 @@ namespace Presentacion
             UsuarioNegocio iniciarSesion = new UsuarioNegocio();
 
             string id = iniciarSesion.IniciarSesion(Box_Usuario.Text, Box_Pass.Text); // Almacenar el hash del id de usuario
-            string Usuario = Box_Usuario.Text;
+            string Usuario = Box_Usuario.Text.ToUpper(); // Permitir que la persona ingrese minusculas en el campo "Nombre de usuario"
             string Contraseña = Box_Pass.Text;
             string errorUsuario = Validar.UserLogin(Usuario);
             string errorContraseña = Validar.PassLogin(Contraseña);

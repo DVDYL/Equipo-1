@@ -153,6 +153,15 @@ namespace Presentacion
 
         }
 
+        private void Limpiar() // Blanquea el Formulario de usuarios
+        {
+            // Reiniciar los valores de todos los campos del formulario a sus valores predeterminados
+
+            ProveedoresBuscador.Text = "";
+            CUITBuscador.Text = "";
+
+        }
+
         private void BotonAltaProveedores_Click(object sender, EventArgs e)
         {
             InterfazAltaProveedores AltaProveedores = new InterfazAltaProveedores();
@@ -170,6 +179,7 @@ namespace Presentacion
         private void Boton_BorrarFiltro_Click(object sender, EventArgs e)
         {
             CargarProveedores();
+            Limpiar();
         }
 
         private void Boton_Salir_Click(object sender, EventArgs e)

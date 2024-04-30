@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteService.cs" />
+    <Compile Include="ProductoService.cs" />
     <Compile Include="ProveedorService.cs" />
     <Compile Include="Utils\WebHelper.cs" />
     <Compile Include="UsuarioService.cs" />

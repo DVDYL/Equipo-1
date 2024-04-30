@@ -145,6 +145,35 @@ namespace Presentacion
             AltaProveedor.AgregarProveedor("70b37dc1-8fde-4840-be47-9ababd0ee7e5", Nombre_Box.Text, Apellido_Box.Text, ConfirMail_Box.Text, CUIT_Box.Text);
         }
 
+        private void Limpiar() // Blanquea el Formulario de usuarios
+        {
+            // Reiniciar los valores de todos los campos del formulario a sus valores predeterminados
+
+            Nombre_Box.Text = "";
+            Apellido_Box.Text = "";
+            Email_Box.Text = "";
+            ConfirMail_Box.Text = "";
+            CUIT_Box.Text = "";
+
+            // Volver a ocultar todos los mensajes de error
+
+            Nombre_Error.Visible = false;
+            Mail_Error.Visible = false;
+            Apellido_Error.Visible = false;
+            ConfirMail_Error.Visible = false;
+            CUIT_Error.Visible = false;
+
+
+            // Ocultar todos los tooltips
+
+            MayudaNombre.Visible = false;
+            MayudaApellido.Visible = false;
+            MayudaMail.Visible = false;
+            MayudaConfirMail.Visible = false;
+            MayudaCUIT.Visible = false;
+            
+        }
+
         private void Boton_Confirmar_Click(object sender, EventArgs e)
         {
             int contadorErrores = ControlarCampos();
@@ -172,8 +201,8 @@ namespace Presentacion
                     }
                     else
                     {
-                        // Restablecer todos los campos del formulario
-                       // Limpiar();
+                       // Restablecer todos los campos del formulario
+                       Limpiar();
                     }
                 }
             }

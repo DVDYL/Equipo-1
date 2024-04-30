@@ -44,10 +44,17 @@
     <Compile Include="AltaCliente.cs" />
     <Compile Include="AltaUsuario.cs" />
     <Compile Include="AltaProveedor.cs" />
+    <Compile Include="BajaCliente.cs" />
+    <Compile Include="BajaProducto.cs" />
+    <Compile Include="BajaProveedor.cs" />
+    <Compile Include="BajaUsuario.cs" />
     <Compile Include="LogIn.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="ModificarProducto.cs" />
     <Compile Include="ModificarProveedor.cs" />
+    <Compile Include="Producto.cs" />
     <Compile Include="Proveedor.cs" />
+    <Compile Include="TraerProductos.cs" />
     <Compile Include="TraerProveedores.cs" />
     <Compile Include="ModificarCliente.cs" />
     <Compile Include="UsuariosActivos.cs" />
