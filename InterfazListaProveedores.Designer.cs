@@ -85,7 +85,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.Proveedores.DefaultCellStyle = dataGridViewCellStyle3;
             this.Proveedores.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Proveedores.Location = new System.Drawing.Point(24, 204);
+            this.Proveedores.Location = new System.Drawing.Point(47, 215);
             this.Proveedores.MultiSelect = false;
             this.Proveedores.Name = "Proveedores";
             this.Proveedores.ReadOnly = true;
@@ -107,7 +107,7 @@
             this.Proveedores.RowTemplate.Height = 40;
             this.Proveedores.RowTemplate.ReadOnly = true;
             this.Proveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Proveedores.Size = new System.Drawing.Size(898, 570);
+            this.Proveedores.Size = new System.Drawing.Size(1270, 450);
             this.Proveedores.TabIndex = 4;
             this.Proveedores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Proveedores_CellContentClick);
             // 
@@ -119,7 +119,7 @@
             this.Boton_Salir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_Salir.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Salir.Location = new System.Drawing.Point(684, 817);
+            this.Boton_Salir.Location = new System.Drawing.Point(1096, 691);
             this.Boton_Salir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Salir.Name = "Boton_Salir";
             this.Boton_Salir.Size = new System.Drawing.Size(190, 42);
@@ -136,7 +136,7 @@
             this.BotonAltaProveedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.BotonAltaProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BotonAltaProveedores.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BotonAltaProveedores.Location = new System.Drawing.Point(744, 97);
+            this.BotonAltaProveedores.Location = new System.Drawing.Point(1129, 98);
             this.BotonAltaProveedores.Name = "BotonAltaProveedores";
             this.BotonAltaProveedores.Size = new System.Drawing.Size(157, 49);
             this.BotonAltaProveedores.TabIndex = 3;
@@ -147,29 +147,29 @@
             // CUIT_Label
             // 
             this.CUIT_Label.AutoSize = true;
-            this.CUIT_Label.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CUIT_Label.Location = new System.Drawing.Point(62, 135);
+            this.CUIT_Label.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CUIT_Label.Location = new System.Drawing.Point(62, 139);
             this.CUIT_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CUIT_Label.Name = "CUIT_Label";
-            this.CUIT_Label.Size = new System.Drawing.Size(173, 28);
+            this.CUIT_Label.Size = new System.Drawing.Size(198, 32);
             this.CUIT_Label.TabIndex = 41;
             this.CUIT_Label.Text = "Buscar por CUIT";
             // 
             // Nombre_Label
             // 
             this.Nombre_Label.AutoSize = true;
-            this.Nombre_Label.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nombre_Label.Location = new System.Drawing.Point(62, 75);
+            this.Nombre_Label.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nombre_Label.Location = new System.Drawing.Point(62, 79);
             this.Nombre_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Nombre_Label.Name = "Nombre_Label";
-            this.Nombre_Label.Size = new System.Drawing.Size(202, 28);
+            this.Nombre_Label.Size = new System.Drawing.Size(215, 32);
             this.Nombre_Label.TabIndex = 40;
-            this.Nombre_Label.Text = "Buscar por Nombre";
+            this.Nombre_Label.Text = "Buscar Proveedor";
             // 
             // CUITBuscador
             // 
             this.CUITBuscador.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CUITBuscador.Location = new System.Drawing.Point(281, 131);
+            this.CUITBuscador.Location = new System.Drawing.Point(301, 135);
             this.CUITBuscador.Name = "CUITBuscador";
             this.CUITBuscador.Size = new System.Drawing.Size(278, 32);
             this.CUITBuscador.TabIndex = 2;
@@ -178,7 +178,7 @@
             // 
             this.CUITLupa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CUITLupa.Image = global::Presentacion.Properties.Resources.Lupa2;
-            this.CUITLupa.Location = new System.Drawing.Point(578, 131);
+            this.CUITLupa.Location = new System.Drawing.Point(598, 135);
             this.CUITLupa.Name = "CUITLupa";
             this.CUITLupa.Size = new System.Drawing.Size(49, 34);
             this.CUITLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -189,7 +189,7 @@
             // ProveedoresBuscador
             // 
             this.ProveedoresBuscador.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProveedoresBuscador.Location = new System.Drawing.Point(281, 74);
+            this.ProveedoresBuscador.Location = new System.Drawing.Point(301, 78);
             this.ProveedoresBuscador.Name = "ProveedoresBuscador";
             this.ProveedoresBuscador.Size = new System.Drawing.Size(278, 32);
             this.ProveedoresBuscador.TabIndex = 1;
@@ -198,7 +198,7 @@
             // 
             this.ProveedoresLupa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ProveedoresLupa.Image = global::Presentacion.Properties.Resources.Lupa2;
-            this.ProveedoresLupa.Location = new System.Drawing.Point(578, 74);
+            this.ProveedoresLupa.Location = new System.Drawing.Point(598, 78);
             this.ProveedoresLupa.Name = "ProveedoresLupa";
             this.ProveedoresLupa.Size = new System.Drawing.Size(49, 34);
             this.ProveedoresLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -213,7 +213,7 @@
             this.Boton_BorrarFiltro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_BorrarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_BorrarFiltro.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_BorrarFiltro.Location = new System.Drawing.Point(434, 817);
+            this.Boton_BorrarFiltro.Location = new System.Drawing.Point(846, 691);
             this.Boton_BorrarFiltro.Name = "Boton_BorrarFiltro";
             this.Boton_BorrarFiltro.Size = new System.Drawing.Size(194, 42);
             this.Boton_BorrarFiltro.TabIndex = 6;
@@ -229,7 +229,7 @@
             this.Boton_Modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_Modificar.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Modificar.Location = new System.Drawing.Point(192, 817);
+            this.Boton_Modificar.Location = new System.Drawing.Point(604, 691);
             this.Boton_Modificar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Modificar.Name = "Boton_Modificar";
             this.Boton_Modificar.Size = new System.Drawing.Size(190, 42);
@@ -242,7 +242,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 900);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.Boton_Modificar);
             this.Controls.Add(this.Boton_BorrarFiltro);
             this.Controls.Add(this.CUIT_Label);

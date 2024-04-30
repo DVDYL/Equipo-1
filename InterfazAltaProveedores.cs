@@ -239,5 +239,5 @@ namespace Presentacion
                 }
             }
         }  // Evento KeyDown para cerrar la ventana con la tecla ESC
-    }
+        }
 }

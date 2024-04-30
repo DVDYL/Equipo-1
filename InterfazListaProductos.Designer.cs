@@ -52,8 +52,8 @@
             this.Boton_Modificar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.Boton_Modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Boton_Modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Modificar.Location = new System.Drawing.Point(74, 824);
+            this.Boton_Modificar.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boton_Modificar.Location = new System.Drawing.Point(79, 696);
             this.Boton_Modificar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Modificar.Name = "Boton_Modificar";
             this.Boton_Modificar.Size = new System.Drawing.Size(190, 42);
@@ -68,10 +68,11 @@
             this.BorrarFiltro.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.BorrarFiltro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.BorrarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BorrarFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BorrarFiltro.Location = new System.Drawing.Point(312, 824);
+            this.BorrarFiltro.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BorrarFiltro.Location = new System.Drawing.Point(317, 696);
+            this.BorrarFiltro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BorrarFiltro.Name = "BorrarFiltro";
-            this.BorrarFiltro.Size = new System.Drawing.Size(193, 42);
+            this.BorrarFiltro.Size = new System.Drawing.Size(192, 42);
             this.BorrarFiltro.TabIndex = 55;
             this.BorrarFiltro.Text = "Borrar Filtros";
             this.BorrarFiltro.UseVisualStyleBackColor = false;
@@ -83,8 +84,8 @@
             this.Boton_Salir.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.Boton_Salir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Boton_Salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Salir.Location = new System.Drawing.Point(556, 824);
+            this.Boton_Salir.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boton_Salir.Location = new System.Drawing.Point(561, 696);
             this.Boton_Salir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Salir.Name = "Boton_Salir";
             this.Boton_Salir.Size = new System.Drawing.Size(190, 42);
@@ -96,29 +97,30 @@
             // ProductoDescripcion
             // 
             this.ProductoDescripcion.AutoSize = true;
-            this.ProductoDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductoDescripcion.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductoDescripcion.Location = new System.Drawing.Point(21, 141);
             this.ProductoDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProductoDescripcion.Name = "ProductoDescripcion";
-            this.ProductoDescripcion.Size = new System.Drawing.Size(198, 25);
+            this.ProductoDescripcion.Size = new System.Drawing.Size(229, 32);
             this.ProductoDescripcion.TabIndex = 53;
             this.ProductoDescripcion.Text = "Buscar Descripción";
             // 
             // ProductoLabel
             // 
             this.ProductoLabel.AutoSize = true;
-            this.ProductoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductoLabel.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductoLabel.Location = new System.Drawing.Point(21, 70);
             this.ProductoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProductoLabel.Name = "ProductoLabel";
-            this.ProductoLabel.Size = new System.Drawing.Size(171, 25);
+            this.ProductoLabel.Size = new System.Drawing.Size(200, 32);
             this.ProductoLabel.TabIndex = 52;
             this.ProductoLabel.Text = "Buscar Producto";
             // 
             // Box_BuscarDNI
             // 
             this.Box_BuscarDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Box_BuscarDNI.Location = new System.Drawing.Point(240, 137);
+            this.Box_BuscarDNI.Location = new System.Drawing.Point(254, 143);
+            this.Box_BuscarDNI.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Box_BuscarDNI.Name = "Box_BuscarDNI";
             this.Box_BuscarDNI.Size = new System.Drawing.Size(278, 29);
             this.Box_BuscarDNI.TabIndex = 51;
@@ -127,9 +129,10 @@
             // 
             this.LupaDNI.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LupaDNI.Image = global::Presentacion.Properties.Resources.Lupa2;
-            this.LupaDNI.Location = new System.Drawing.Point(537, 137);
+            this.LupaDNI.Location = new System.Drawing.Point(540, 139);
+            this.LupaDNI.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.LupaDNI.Name = "LupaDNI";
-            this.LupaDNI.Size = new System.Drawing.Size(49, 34);
+            this.LupaDNI.Size = new System.Drawing.Size(49, 33);
             this.LupaDNI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LupaDNI.TabIndex = 50;
             this.LupaDNI.TabStop = false;
@@ -137,7 +140,8 @@
             // UsuariosBuscador
             // 
             this.UsuariosBuscador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsuariosBuscador.Location = new System.Drawing.Point(240, 69);
+            this.UsuariosBuscador.Location = new System.Drawing.Point(254, 75);
+            this.UsuariosBuscador.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.UsuariosBuscador.Name = "UsuariosBuscador";
             this.UsuariosBuscador.Size = new System.Drawing.Size(278, 29);
             this.UsuariosBuscador.TabIndex = 49;
@@ -146,9 +150,10 @@
             // 
             this.UsuariosLupa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UsuariosLupa.Image = global::Presentacion.Properties.Resources.Lupa2;
-            this.UsuariosLupa.Location = new System.Drawing.Point(537, 69);
+            this.UsuariosLupa.Location = new System.Drawing.Point(540, 71);
+            this.UsuariosLupa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.UsuariosLupa.Name = "UsuariosLupa";
-            this.UsuariosLupa.Size = new System.Drawing.Size(49, 34);
+            this.UsuariosLupa.Size = new System.Drawing.Size(49, 33);
             this.UsuariosLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.UsuariosLupa.TabIndex = 48;
             this.UsuariosLupa.TabStop = false;
@@ -161,10 +166,11 @@
             this.Boton_AltaProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Khaki;
             this.Boton_AltaProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_AltaProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Boton_AltaProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_AltaProducto.Location = new System.Drawing.Point(622, 97);
+            this.Boton_AltaProducto.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boton_AltaProducto.Location = new System.Drawing.Point(602, 96);
+            this.Boton_AltaProducto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_AltaProducto.Name = "Boton_AltaProducto";
-            this.Boton_AltaProducto.Size = new System.Drawing.Size(157, 49);
+            this.Boton_AltaProducto.Size = new System.Drawing.Size(158, 48);
             this.Boton_AltaProducto.TabIndex = 47;
             this.Boton_AltaProducto.Text = "+ Nuevo";
             this.Boton_AltaProducto.UseVisualStyleBackColor = false;
@@ -176,9 +182,11 @@
             this.Productos.AllowUserToDeleteRows = false;
             this.Productos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.Productos.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.Productos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Productos.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Productos.Location = new System.Drawing.Point(27, 197);
+            this.Productos.Location = new System.Drawing.Point(20, 215);
+            this.Productos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Productos.MultiSelect = false;
             this.Productos.Name = "Productos";
             this.Productos.ReadOnly = true;
@@ -187,15 +195,15 @@
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Productos.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Productos.Size = new System.Drawing.Size(752, 562);
+            this.Productos.Size = new System.Drawing.Size(750, 450);
             this.Productos.TabIndex = 46;
             this.Productos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Productos_CellContentClick);
             // 
             // InterfazListaProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 900);
+            this.ClientSize = new System.Drawing.Size(800, 768);
             this.Controls.Add(this.Boton_Modificar);
             this.Controls.Add(this.BorrarFiltro);
             this.Controls.Add(this.Boton_Salir);

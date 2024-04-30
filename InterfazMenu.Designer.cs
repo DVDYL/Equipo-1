@@ -54,7 +54,7 @@
             this.UsuariosTexto.AutoSize = true;
             this.UsuariosTexto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UsuariosTexto.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsuariosTexto.Location = new System.Drawing.Point(149, 311);
+            this.UsuariosTexto.Location = new System.Drawing.Point(109, 284);
             this.UsuariosTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UsuariosTexto.Name = "UsuariosTexto";
             this.UsuariosTexto.Size = new System.Drawing.Size(150, 43);
@@ -69,7 +69,7 @@
             this.ProveedoresTexto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ProveedoresTexto.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProveedoresTexto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ProveedoresTexto.Location = new System.Drawing.Point(695, 311);
+            this.ProveedoresTexto.Location = new System.Drawing.Point(552, 284);
             this.ProveedoresTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProveedoresTexto.Name = "ProveedoresTexto";
             this.ProveedoresTexto.Size = new System.Drawing.Size(208, 43);
@@ -84,7 +84,7 @@
             this.ClientesTexto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClientesTexto.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClientesTexto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientesTexto.Location = new System.Drawing.Point(1297, 311);
+            this.ClientesTexto.Location = new System.Drawing.Point(1078, 284);
             this.ClientesTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ClientesTexto.Name = "ClientesTexto";
             this.ClientesTexto.Size = new System.Drawing.Size(140, 43);
@@ -99,7 +99,7 @@
             this.ProductosTexto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ProductosTexto.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductosTexto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ProductosTexto.Location = new System.Drawing.Point(138, 714);
+            this.ProductosTexto.Location = new System.Drawing.Point(98, 598);
             this.ProductosTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProductosTexto.Name = "ProductosTexto";
             this.ProductosTexto.Size = new System.Drawing.Size(172, 43);
@@ -114,7 +114,7 @@
             this.ReportesTexto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ReportesTexto.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportesTexto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ReportesTexto.Location = new System.Drawing.Point(1286, 714);
+            this.ReportesTexto.Location = new System.Drawing.Point(1067, 598);
             this.ReportesTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ReportesTexto.Name = "ReportesTexto";
             this.ReportesTexto.Size = new System.Drawing.Size(155, 43);
@@ -129,7 +129,7 @@
             this.VentasTexto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.VentasTexto.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VentasTexto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.VentasTexto.Location = new System.Drawing.Point(741, 714);
+            this.VentasTexto.Location = new System.Drawing.Point(598, 598);
             this.VentasTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.VentasTexto.Name = "VentasTexto";
             this.VentasTexto.Size = new System.Drawing.Size(122, 43);
@@ -145,7 +145,7 @@
             this.BotonSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.BotonSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BotonSalir.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BotonSalir.Location = new System.Drawing.Point(1372, 808);
+            this.BotonSalir.Location = new System.Drawing.Point(1134, 685);
             this.BotonSalir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BotonSalir.Name = "BotonSalir";
             this.BotonSalir.Size = new System.Drawing.Size(183, 49);
@@ -158,7 +158,7 @@
             // 
             this.ProductosIcono.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ProductosIcono.Image = global::Presentacion.Properties.Resources.Productos;
-            this.ProductosIcono.Location = new System.Drawing.Point(94, 511);
+            this.ProductosIcono.Location = new System.Drawing.Point(54, 395);
             this.ProductosIcono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ProductosIcono.Name = "ProductosIcono";
             this.ProductosIcono.Size = new System.Drawing.Size(260, 200);
@@ -171,7 +171,7 @@
             // 
             this.VentasIcono.Cursor = System.Windows.Forms.Cursors.Hand;
             this.VentasIcono.Image = global::Presentacion.Properties.Resources.Ventas;
-            this.VentasIcono.Location = new System.Drawing.Point(668, 511);
+            this.VentasIcono.Location = new System.Drawing.Point(525, 395);
             this.VentasIcono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.VentasIcono.Name = "VentasIcono";
             this.VentasIcono.Size = new System.Drawing.Size(260, 200);
@@ -184,7 +184,7 @@
             // 
             this.ReportesIcono.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ReportesIcono.Image = global::Presentacion.Properties.Resources.Stock;
-            this.ReportesIcono.Location = new System.Drawing.Point(1236, 511);
+            this.ReportesIcono.Location = new System.Drawing.Point(1017, 395);
             this.ReportesIcono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ReportesIcono.Name = "ReportesIcono";
             this.ReportesIcono.Size = new System.Drawing.Size(260, 200);
@@ -197,7 +197,7 @@
             // 
             this.ClientesIcono.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClientesIcono.Image = global::Presentacion.Properties.Resources.Clientes;
-            this.ClientesIcono.Location = new System.Drawing.Point(1236, 108);
+            this.ClientesIcono.Location = new System.Drawing.Point(1017, 81);
             this.ClientesIcono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ClientesIcono.Name = "ClientesIcono";
             this.ClientesIcono.Size = new System.Drawing.Size(260, 200);
@@ -210,7 +210,7 @@
             // 
             this.ProveedoresIcono.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ProveedoresIcono.Image = global::Presentacion.Properties.Resources.Proveedores;
-            this.ProveedoresIcono.Location = new System.Drawing.Point(668, 108);
+            this.ProveedoresIcono.Location = new System.Drawing.Point(525, 81);
             this.ProveedoresIcono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ProveedoresIcono.Name = "ProveedoresIcono";
             this.ProveedoresIcono.Size = new System.Drawing.Size(260, 200);
@@ -223,7 +223,7 @@
             // 
             this.UsuariosIcono.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UsuariosIcono.Image = global::Presentacion.Properties.Resources.UserAdmin1;
-            this.UsuariosIcono.Location = new System.Drawing.Point(94, 108);
+            this.UsuariosIcono.Location = new System.Drawing.Point(54, 81);
             this.UsuariosIcono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.UsuariosIcono.Name = "UsuariosIcono";
             this.UsuariosIcono.Size = new System.Drawing.Size(260, 200);
@@ -237,7 +237,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.ProductosIcono);
             this.Controls.Add(this.VentasIcono);
             this.Controls.Add(this.ReportesIcono);

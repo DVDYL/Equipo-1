@@ -68,7 +68,7 @@
             this.Boton_Salir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_Salir.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Salir.Location = new System.Drawing.Point(569, 823);
+            this.Boton_Salir.Location = new System.Drawing.Point(573, 695);
             this.Boton_Salir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Salir.Name = "Boton_Salir";
             this.Boton_Salir.Size = new System.Drawing.Size(190, 42);
@@ -133,7 +133,7 @@
             this.Usuarios.DefaultCellStyle = dataGridViewCellStyle3;
             this.Usuarios.EnableHeadersVisualStyles = false;
             this.Usuarios.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Usuarios.Location = new System.Drawing.Point(25, 200);
+            this.Usuarios.Location = new System.Drawing.Point(25, 215);
             this.Usuarios.MultiSelect = false;
             this.Usuarios.Name = "Usuarios";
             this.Usuarios.ReadOnly = true;
@@ -155,7 +155,7 @@
             this.Usuarios.RowTemplate.Height = 40;
             this.Usuarios.RowTemplate.ReadOnly = true;
             this.Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Usuarios.Size = new System.Drawing.Size(750, 570);
+            this.Usuarios.Size = new System.Drawing.Size(750, 451);
             this.Usuarios.TabIndex = 0;
             this.Usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Usuarios_CellContentClick);
             // 
@@ -197,7 +197,7 @@
             this.BorrarFiltro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.BorrarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BorrarFiltro.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BorrarFiltro.Location = new System.Drawing.Point(325, 823);
+            this.BorrarFiltro.Location = new System.Drawing.Point(329, 695);
             this.BorrarFiltro.Name = "BorrarFiltro";
             this.BorrarFiltro.Size = new System.Drawing.Size(193, 42);
             this.BorrarFiltro.TabIndex = 4;
@@ -233,9 +233,9 @@
             this.Nombre_Label.Location = new System.Drawing.Point(19, 73);
             this.Nombre_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Nombre_Label.Name = "Nombre_Label";
-            this.Nombre_Label.Size = new System.Drawing.Size(202, 28);
+            this.Nombre_Label.Size = new System.Drawing.Size(160, 28);
             this.Nombre_Label.TabIndex = 34;
-            this.Nombre_Label.Text = "Buscar por Nombre";
+            this.Nombre_Label.Text = "Buscar Usuario";
             // 
             // DNI_Label
             // 
@@ -250,7 +250,7 @@
             // 
             // InterfazListaUsuarios
             // 
-            this.ClientSize = new System.Drawing.Size(800, 900);
+            this.ClientSize = new System.Drawing.Size(800, 768);
             this.Controls.Add(this.DNI_Label);
             this.Controls.Add(this.Nombre_Label);
             this.Controls.Add(this.Box_BuscarDNI);

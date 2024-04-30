@@ -52,7 +52,7 @@
             this.Clientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Clientes.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Clientes.Location = new System.Drawing.Point(25, 200);
+            this.Clientes.Location = new System.Drawing.Point(25, 215);
             this.Clientes.MultiSelect = false;
             this.Clientes.Name = "Clientes";
             this.Clientes.ReadOnly = true;
@@ -61,7 +61,7 @@
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Clientes.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Clientes.Size = new System.Drawing.Size(750, 570);
+            this.Clientes.Size = new System.Drawing.Size(750, 450);
             this.Clientes.TabIndex = 1;
             this.Clientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Clientes_CellContentClick);
             // 
@@ -83,9 +83,9 @@
             this.Label_Email.Location = new System.Drawing.Point(19, 73);
             this.Label_Email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Email.Name = "Label_Email";
-            this.Label_Email.Size = new System.Drawing.Size(202, 28);
+            this.Label_Email.Size = new System.Drawing.Size(154, 28);
             this.Label_Email.TabIndex = 41;
-            this.Label_Email.Text = "Buscar por Nombre";
+            this.Label_Email.Text = "Buscar Cliente";
             // 
             // Box_BuscarDNI
             // 
@@ -134,7 +134,7 @@
             this.Boton_AltaCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_AltaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_AltaCliente.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_AltaCliente.Location = new System.Drawing.Point(620, 100);
+            this.Boton_AltaCliente.Location = new System.Drawing.Point(603, 98);
             this.Boton_AltaCliente.Name = "Boton_AltaCliente";
             this.Boton_AltaCliente.Size = new System.Drawing.Size(157, 49);
             this.Boton_AltaCliente.TabIndex = 36;
@@ -150,7 +150,7 @@
             this.Boton_Modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_Modificar.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Modificar.Location = new System.Drawing.Point(72, 827);
+            this.Boton_Modificar.Location = new System.Drawing.Point(79, 697);
             this.Boton_Modificar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Modificar.Name = "Boton_Modificar";
             this.Boton_Modificar.Size = new System.Drawing.Size(190, 42);
@@ -166,7 +166,7 @@
             this.BorrarFiltro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.BorrarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BorrarFiltro.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BorrarFiltro.Location = new System.Drawing.Point(310, 827);
+            this.BorrarFiltro.Location = new System.Drawing.Point(317, 697);
             this.BorrarFiltro.Name = "BorrarFiltro";
             this.BorrarFiltro.Size = new System.Drawing.Size(193, 42);
             this.BorrarFiltro.TabIndex = 44;
@@ -181,7 +181,7 @@
             this.Boton_Salir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_Salir.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Salir.Location = new System.Drawing.Point(554, 827);
+            this.Boton_Salir.Location = new System.Drawing.Point(561, 697);
             this.Boton_Salir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Salir.Name = "Boton_Salir";
             this.Boton_Salir.Size = new System.Drawing.Size(190, 42);
@@ -194,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 900);
+            this.ClientSize = new System.Drawing.Size(800, 768);
             this.Controls.Add(this.Boton_Modificar);
             this.Controls.Add(this.BorrarFiltro);
             this.Controls.Add(this.Boton_Salir);
