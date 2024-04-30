@@ -6,7 +6,23 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    internal class BajaCliente
+    public class BajaCliente
     {
+        Guid _id;
+       
+
+        public BajaCliente()
+        {
+            //
+        }
+
+        public BajaCliente(Guid idCliente)
+        {
+            _id = idCliente;
+        }
+
+        public Guid idCliente { get => _id; set => _id = value; }
+
+
     }
 }
