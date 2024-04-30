@@ -214,50 +214,50 @@
             // 
             this.ConfirMail_Box.BackColor = System.Drawing.Color.Gainsboro;
             this.ConfirMail_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ConfirMail_Box.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirMail_Box.Location = new System.Drawing.Point(431, 480);
+            this.ConfirMail_Box.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirMail_Box.Location = new System.Drawing.Point(431, 475);
             this.ConfirMail_Box.Name = "ConfirMail_Box";
-            this.ConfirMail_Box.Size = new System.Drawing.Size(251, 27);
+            this.ConfirMail_Box.Size = new System.Drawing.Size(251, 31);
             this.ConfirMail_Box.TabIndex = 103;
             // 
             // CUIT_Box
             // 
             this.CUIT_Box.BackColor = System.Drawing.Color.Gainsboro;
             this.CUIT_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.CUIT_Box.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CUIT_Box.Location = new System.Drawing.Point(432, 585);
+            this.CUIT_Box.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CUIT_Box.Location = new System.Drawing.Point(432, 580);
             this.CUIT_Box.Name = "CUIT_Box";
-            this.CUIT_Box.Size = new System.Drawing.Size(250, 27);
+            this.CUIT_Box.Size = new System.Drawing.Size(250, 31);
             this.CUIT_Box.TabIndex = 104;
             // 
             // Email_Box
             // 
             this.Email_Box.BackColor = System.Drawing.Color.Gainsboro;
             this.Email_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Email_Box.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email_Box.Location = new System.Drawing.Point(433, 374);
+            this.Email_Box.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Email_Box.Location = new System.Drawing.Point(433, 369);
             this.Email_Box.Name = "Email_Box";
-            this.Email_Box.Size = new System.Drawing.Size(251, 27);
+            this.Email_Box.Size = new System.Drawing.Size(251, 31);
             this.Email_Box.TabIndex = 102;
             // 
             // Apellido_Box
             // 
             this.Apellido_Box.BackColor = System.Drawing.Color.Gainsboro;
             this.Apellido_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Apellido_Box.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Apellido_Box.Location = new System.Drawing.Point(431, 268);
+            this.Apellido_Box.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Apellido_Box.Location = new System.Drawing.Point(431, 263);
             this.Apellido_Box.Name = "Apellido_Box";
-            this.Apellido_Box.Size = new System.Drawing.Size(250, 27);
+            this.Apellido_Box.Size = new System.Drawing.Size(250, 31);
             this.Apellido_Box.TabIndex = 101;
             // 
             // Nombre_Box
             // 
             this.Nombre_Box.BackColor = System.Drawing.Color.Gainsboro;
             this.Nombre_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Nombre_Box.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nombre_Box.Location = new System.Drawing.Point(431, 162);
+            this.Nombre_Box.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nombre_Box.Location = new System.Drawing.Point(431, 157);
             this.Nombre_Box.Name = "Nombre_Box";
-            this.Nombre_Box.Size = new System.Drawing.Size(250, 27);
+            this.Nombre_Box.Size = new System.Drawing.Size(250, 31);
             this.Nombre_Box.TabIndex = 100;
             // 
             // Label_ConfirmarEmail

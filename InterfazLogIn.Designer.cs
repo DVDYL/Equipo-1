@@ -50,7 +50,7 @@
             this.Box_Usuario.BackColor = System.Drawing.Color.Gainsboro;
             this.Box_Usuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Box_Usuario.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Box_Usuario.Location = new System.Drawing.Point(396, 395);
+            this.Box_Usuario.Location = new System.Drawing.Point(396, 415);
             this.Box_Usuario.Name = "Box_Usuario";
             this.Box_Usuario.Size = new System.Drawing.Size(343, 35);
             this.Box_Usuario.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             this.Label_Usuario.AutoSize = true;
             this.Label_Usuario.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Usuario.Location = new System.Drawing.Point(36, 391);
+            this.Label_Usuario.Location = new System.Drawing.Point(36, 411);
             this.Label_Usuario.Name = "Label_Usuario";
             this.Label_Usuario.Size = new System.Drawing.Size(322, 43);
             this.Label_Usuario.TabIndex = 1;
@@ -69,7 +69,7 @@
             // 
             this.Label_Pass.AutoSize = true;
             this.Label_Pass.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Pass.Location = new System.Drawing.Point(36, 462);
+            this.Label_Pass.Location = new System.Drawing.Point(36, 482);
             this.Label_Pass.Name = "Label_Pass";
             this.Label_Pass.Size = new System.Drawing.Size(200, 43);
             this.Label_Pass.TabIndex = 3;
@@ -80,7 +80,7 @@
             this.Box_Pass.BackColor = System.Drawing.Color.Gainsboro;
             this.Box_Pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Box_Pass.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Box_Pass.Location = new System.Drawing.Point(396, 466);
+            this.Box_Pass.Location = new System.Drawing.Point(396, 486);
             this.Box_Pass.Name = "Box_Pass";
             this.Box_Pass.Size = new System.Drawing.Size(343, 35);
             this.Box_Pass.TabIndex = 2;
@@ -95,7 +95,7 @@
             this.Boton_Ingresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_Ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_Ingresar.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Ingresar.Location = new System.Drawing.Point(120, 683);
+            this.Boton_Ingresar.Location = new System.Drawing.Point(141, 683);
             this.Boton_Ingresar.Name = "Boton_Ingresar";
             this.Boton_Ingresar.Size = new System.Drawing.Size(200, 50);
             this.Boton_Ingresar.TabIndex = 3;
@@ -112,7 +112,7 @@
             this.Boton_Cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_Cancelar.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Cancelar.Location = new System.Drawing.Point(483, 683);
+            this.Boton_Cancelar.Location = new System.Drawing.Point(434, 683);
             this.Boton_Cancelar.Name = "Boton_Cancelar";
             this.Boton_Cancelar.Size = new System.Drawing.Size(200, 50);
             this.Boton_Cancelar.TabIndex = 4;
@@ -125,7 +125,7 @@
             this.Label_NewPass.AutoSize = true;
             this.Label_NewPass.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_NewPass.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.Label_NewPass.Location = new System.Drawing.Point(36, 534);
+            this.Label_NewPass.Location = new System.Drawing.Point(36, 545);
             this.Label_NewPass.Name = "Label_NewPass";
             this.Label_NewPass.Size = new System.Drawing.Size(305, 43);
             this.Label_NewPass.TabIndex = 7;
@@ -138,7 +138,7 @@
             this.NewPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NewPass.Enabled = false;
             this.NewPass.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewPass.Location = new System.Drawing.Point(396, 538);
+            this.NewPass.Location = new System.Drawing.Point(396, 549);
             this.NewPass.Name = "NewPass";
             this.NewPass.Size = new System.Drawing.Size(343, 35);
             this.NewPass.TabIndex = 6;
@@ -171,7 +171,7 @@
             // PassViewImg
             // 
             this.PassViewImg.Image = global::Presentacion.Properties.Resources.PassView;
-            this.PassViewImg.Location = new System.Drawing.Point(744, 466);
+            this.PassViewImg.Location = new System.Drawing.Point(744, 486);
             this.PassViewImg.Name = "PassViewImg";
             this.PassViewImg.Size = new System.Drawing.Size(41, 34);
             this.PassViewImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

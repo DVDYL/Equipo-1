@@ -69,6 +69,7 @@
             this.Boton_Cancelar.TabIndex = 99;
             this.Boton_Cancelar.Text = "Cancelar";
             this.Boton_Cancelar.UseVisualStyleBackColor = false;
+            this.Boton_Cancelar.Click += new System.EventHandler(this.Boton_Cancelar_Click);
             // 
             // Boton_Confirmar
             // 
@@ -86,6 +87,7 @@
             this.Boton_Confirmar.TabIndex = 98;
             this.Boton_Confirmar.Text = "Confirmar";
             this.Boton_Confirmar.UseVisualStyleBackColor = false;
+            this.Boton_Confirmar.Click += new System.EventHandler(this.Boton_Confirmar_Click);
             // 
             // SeparatorPersona
             // 

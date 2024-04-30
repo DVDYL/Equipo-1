@@ -294,6 +294,11 @@ namespace Negocio
                 return "El campo de contraseña no puede estar vacío.";
             }
 
+            if (Contraseña.Contains(" "))
+            {
+                return "El campo de contraseña no puede contener espacios en blanco.";
+            }
+
             bool mayuscula = false;
             bool numero = false;
 
@@ -357,18 +362,20 @@ namespace Negocio
                 return "El correo electrónico debe tener el dominio @G1.com.";
             }
 
-            //// Verificar si el mail ya existe en la lista de usuarios
+            if (texto.Contains(" "))
+            {
+                return "El correo electrónico no puede contener espacios en blanco.";
+            }
 
-            //ProveedorNegocio ProveedorNegocio = new ProveedorNegocio();
-            //List<TraerProveedores> Proveedores = ProveedorNegocio.listarProveedores();
-            //Proveedores = ProveedorNegocio.listarProveedores().Where(u => u.Email.Equals(texto)).ToList();
+            // Verificar si el mail ya existe en la lista de usuarios
 
-            //// Verificar si se encontró algún Mail
-            //if (Proveedores.Count > 0)
-            //{
-            //    // Si se encontró al menos un CUIT, significa que ya está en uso
-            //    return "No se puede dar de alta un Mail en uso.";
-            //}
+            ProveedorNegocio ProveedorNegocio = new ProveedorNegocio();
+            List<TraerProveedores> Proveedores = ProveedorNegocio.listarProveedores();
+
+            if (Proveedores.Any(u => u != null && u.Email != null && u.Email.Trim().Equals(texto.Trim(), StringComparison.OrdinalIgnoreCase)))
+            {
+                return "No se puede dar de alta un correo electrónico en uso.";
+            }
 
             return null;
         }
@@ -393,12 +400,17 @@ namespace Negocio
                 return "El campo CUIT debe contener solo dígitos numéricos.";
             }
 
+            // Verificar si el número de CUIT empieza en 2 o en 3
+            if (texto[0] != '2' && texto[0] != '3')
+            {
+                return "El primer dígito del CUIT debe ser 2 o 3.";
+            }
+
             // Verificar si el número de CUIT ya existe en la lista de usuarios
 
             ProveedorNegocio ProveedorNegocio = new ProveedorNegocio();
             List<TraerProveedores> Proveedores = ProveedorNegocio.listarProveedores();
             Proveedores = ProveedorNegocio.listarProveedores().Where(u => u.CUIT.Contains(texto)).ToList();
-            // Proveedores = ProveedorNegocio.listarProveedores().Where(u => u.Email.Contains("G1") && u.CUIT.Contains(texto)).ToList();
 
             // Verificar si se encontró algún CUIT
             if (Proveedores.Count > 0)

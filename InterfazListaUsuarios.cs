@@ -135,8 +135,8 @@ namespace Presentacion
                     // Obtener el valor de la celda que contiene el nombre del usuario
                     string nombreUsuario = fila.Cells["Nombre"].Value?.ToString();
 
-                    // Comparar si el texto de búsqueda coincide con el nombre de usuario actual
-                    if (!string.IsNullOrEmpty(nombreUsuario) && nombreUsuario.Contains(textoBusqueda))
+                    // Comparar si el texto de búsqueda coincide con el nombre de usuario actual (No importa mayúscula o minúscula)
+                    if (!string.IsNullOrEmpty(nombreUsuario) && nombreUsuario.ToLower().Contains(textoBusqueda.ToLower()))
                     {
                         // Agregar el usuario a la lista de usuarios filtrados
                         usuariosFiltrados.Add((UsuariosActivos)fila.DataBoundItem);

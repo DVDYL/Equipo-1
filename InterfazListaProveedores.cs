@@ -30,9 +30,10 @@ namespace Presentacion
             {
                 List<TraerProveedores> Proveedor = ProveedorNegocio.listarProveedores();
 
-                //    Proveedor = ProveedorNegocio.listarProveedores().Where(u => u.Email.Contains("@G1")).ToList();
-
-                // Acá iría algún filtro para que solo se vean nuestros proveedores.
+                if (Proveedor != null)
+                {
+                    Proveedor = Proveedor.Where(u => u != null && u.Email != null && u.Email.Contains("@G1")).ToList();
+                }
 
                 var bindingList = new BindingList<TraerProveedores>(Proveedor);
                 var source = new BindingSource(bindingList, null);
@@ -153,13 +154,10 @@ namespace Presentacion
 
         }
 
-        private void Limpiar() // Blanquea el Formulario de usuarios
+        private void Limpiar() // Blanquea campos de búsqueda
         {
-            // Reiniciar los valores de todos los campos del formulario a sus valores predeterminados
-
             ProveedoresBuscador.Text = "";
             CUITBuscador.Text = "";
-
         }
 
         private void BotonAltaProveedores_Click(object sender, EventArgs e)
