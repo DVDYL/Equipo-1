@@ -65,12 +65,7 @@ namespace Presentacion
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void InterfazListaProductos_Load(object sender, EventArgs e)
+        private void InterfazListaProductos_Load (object sender, EventArgs e)
         {
             CargarProductos();
         }
@@ -81,17 +76,22 @@ namespace Presentacion
             {
                 List<TraerProductos> Producto = ProductoNegocio.listarProductos();
 
-                //Pendiente configuracion campos en GRID.
+               
 
                 var bindingList = new BindingList<TraerProductos>(Producto);
                 var source = new BindingSource(bindingList, null);
-               //  Productos.DataSource = source;
-                // Productos.Columns["id"].Visible = false;
+               Productos.DataSource = source;
+               Productos.Columns["id"].Visible = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar los Productos: " + ex.Message);
             }
+        }
+
+        private void Productos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -187,7 +187,7 @@
             this.Productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Productos.Size = new System.Drawing.Size(750, 570);
             this.Productos.TabIndex = 46;
-            this.Productos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.Productos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Productos_CellContentClick);
             // 
             // InterfazListaProductos
             // 
