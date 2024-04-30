@@ -145,3 +145,11 @@ C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentacion.InterfazModific
 C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentacion.InterfazModificarProveedores.resources
 C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentacion.InterfazReportes.resources
 C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentacion.InterfazVentas.resources
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazAltaClientes.resources
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazAltaProductos.resources
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazAltaProveedores.resources
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazListaProductos.resources
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazModificarProductos.resources
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazModificarProveedores.resources
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazReportes.resources
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazVentas.resources

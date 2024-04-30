@@ -16,6 +16,7 @@ namespace Presentacion
             this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
             Rol_Null.Visible = false; // Ocultar el TextBox Rol_Null
+            this.Size = new Size(1600, 900);
 
             // Establecer el formato de visualización predeterminado para la fecha de nacimiento
             Calendario_Nacimiento.Format = DateTimePickerFormat.Custom;
