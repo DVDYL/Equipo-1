@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Datos;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace Presentacion
 {
     public partial class InterfazListaProductos : Ventana
     {
+        private ProductoNegocio ProductoNegocio = new ProductoNegocio();
         public InterfazListaProductos()
         {
             InitializeComponent();
@@ -59,6 +62,35 @@ namespace Presentacion
                     this.Hide(); // Ocultar el formulario actual
                 }
                 // Si el usuario elige "No", no hacer nada
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void InterfazListaProductos_Load(object sender, EventArgs e)
+        {
+            CargarProductos();
+        }
+
+        private void CargarProductos()
+        {
+            try
+            {
+                List<TraerProductos> Producto = ProductoNegocio.listarProductos();
+
+                //Pendiente configuracion campos en GRID.
+
+                var bindingList = new BindingList<TraerProductos>(Producto);
+                var source = new BindingSource(bindingList, null);
+               //  Productos.DataSource = source;
+                // Productos.Columns["id"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los Productos: " + ex.Message);
             }
         }
     }

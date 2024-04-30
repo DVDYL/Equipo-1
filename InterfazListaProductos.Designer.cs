@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Boton_Modificar = new System.Windows.Forms.Button();
             this.BorrarFiltro = new System.Windows.Forms.Button();
             this.Boton_Salir = new System.Windows.Forms.Button();
@@ -39,10 +39,10 @@
             this.UsuariosBuscador = new System.Windows.Forms.TextBox();
             this.UsuariosLupa = new System.Windows.Forms.PictureBox();
             this.Boton_AltaProducto = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Productos = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.LupaDNI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosLupa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Productos)).BeginInit();
             this.SuspendLayout();
             // 
             // Boton_Modificar
@@ -120,7 +120,7 @@
             this.Box_BuscarDNI.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_BuscarDNI.Location = new System.Drawing.Point(240, 137);
             this.Box_BuscarDNI.Name = "Box_BuscarDNI";
-            this.Box_BuscarDNI.Size = new System.Drawing.Size(278, 32);
+            this.Box_BuscarDNI.Size = new System.Drawing.Size(278, 33);
             this.Box_BuscarDNI.TabIndex = 51;
             // 
             // LupaDNI
@@ -139,7 +139,7 @@
             this.UsuariosBuscador.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsuariosBuscador.Location = new System.Drawing.Point(240, 69);
             this.UsuariosBuscador.Name = "UsuariosBuscador";
-            this.UsuariosBuscador.Size = new System.Drawing.Size(278, 32);
+            this.UsuariosBuscador.Size = new System.Drawing.Size(278, 33);
             this.UsuariosBuscador.TabIndex = 49;
             // 
             // UsuariosLupa
@@ -170,29 +170,30 @@
             this.Boton_AltaProducto.UseVisualStyleBackColor = false;
             this.Boton_AltaProducto.Click += new System.EventHandler(this.Boton_AltaProducto_Click);
             // 
-            // dataGridView1
+            // Productos
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 197);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(750, 570);
-            this.dataGridView1.TabIndex = 46;
+            this.Productos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.Productos.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.Productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Productos.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Productos.Location = new System.Drawing.Point(27, 197);
+            this.Productos.MultiSelect = false;
+            this.Productos.Name = "Productos";
+            this.Productos.ReadOnly = true;
+            this.Productos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.Productos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Productos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.Productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Productos.Size = new System.Drawing.Size(750, 570);
+            this.Productos.TabIndex = 46;
+            this.Productos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // InterfazListaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 900);
+            this.ClientSize = new System.Drawing.Size(800, 788);
             this.Controls.Add(this.Boton_Modificar);
             this.Controls.Add(this.BorrarFiltro);
             this.Controls.Add(this.Boton_Salir);
@@ -203,13 +204,13 @@
             this.Controls.Add(this.UsuariosBuscador);
             this.Controls.Add(this.UsuariosLupa);
             this.Controls.Add(this.Boton_AltaProducto);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Productos);
             this.Name = "InterfazListaProductos";
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ventana_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.LupaDNI)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosLupa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Productos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,6 +228,6 @@
         private System.Windows.Forms.TextBox UsuariosBuscador;
         private System.Windows.Forms.PictureBox UsuariosLupa;
         private System.Windows.Forms.Button Boton_AltaProducto;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Productos;
     }
 }
