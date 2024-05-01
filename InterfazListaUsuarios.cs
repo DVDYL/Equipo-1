@@ -27,7 +27,7 @@ namespace Presentacion
             CargarUsuarios();
         }
 
-        private void CargarUsuarios()
+        public void CargarUsuarios()
         {
             try
             {

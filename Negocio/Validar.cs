@@ -8,6 +8,57 @@ namespace Negocio
 {
     public static class Validar
     {
+        //public static string EsPersona(int id, List<Cliente> clientes, List<TraerProveedores> proveedores, List<UsuariosActivos> usuarios)
+        //{
+        //    string idStr = id.ToString(); // Convertir el DNI a string para facilitar la comparación
+
+        //    if (idStr.Length == 8) // Longitud de un DNI
+        //    {
+        //        // Es un DNI
+        //        if (clientes.Any(c => c.DNI == idStr))
+        //        {
+        //            return "El DNI pertenece a un cliente.";
+        //        }
+        //        else if (proveedores.Any(p => p.CUIT.Substring(2, 8) == idStr))
+        //        {
+        //            return "El DNI pertenece a un proveedor.";
+        //        }
+        //        else if (usuarios.Any(u => u.DNI == idStr))
+        //        {
+        //            return "El DNI pertenece a un usuario.";
+        //        }
+        //        else
+        //        {
+        //            return "El DNI no pertenece a ninguna persona registrada.";
+        //        }
+        //    }
+        //    else if (idStr.Length == 11) // Longitud de un CUIT
+        //    {
+        //        // Es un CUIT
+        //        string dni = idStr.Substring(2, 8); // Obtener los dígitos del DNI
+        //        if (clientes.Any(c => c.DNI == dni))
+        //        {
+        //            return "El CUIT pertenece a un cliente.";
+        //        }
+        //        else if (proveedores.Any(p => p.CUIT.Substring(2, 8) == dni))
+        //        {
+        //            return "El CUIT pertenece a un proveedor.";
+        //        }
+        //        else if (usuarios.Any(u => u.DNI == dni))
+        //        {
+        //            return "El CUIT pertenece a un usuario.";
+        //        }
+        //        else
+        //        {
+        //            return "El CUIT no pertenece a ninguna persona registrada.";
+        //        }
+        //    }
+        //    else
+        //    {
+        //        return "El ID ingresado no es válido.";
+        //    }
+        //}
+
         public static string EsNombre(string text, string nombreCampo)
         {
             // Verificar si el texto está vacío
@@ -421,6 +472,29 @@ namespace Negocio
 
             // Si se cumplen todas las condiciones, el campo es válido
             return null;
+        }
+
+        public static string NumeroHost(string nombreUsuario)
+        {
+            // Listar todos los usuarios activos
+            UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
+            List<UsuariosActivos> usuarios = UsuarioNegocio.ListarUsuarios();
+
+            // Buscar el usuario por el nombre de usuario ingresado
+            UsuariosActivos usuarioEncontrado = usuarios.FirstOrDefault(u => u.NombreUsuario.Equals(nombreUsuario, StringComparison.OrdinalIgnoreCase));
+
+            // Si se encuentra el usuario, devolver su número de host
+            if (usuarioEncontrado != null)
+            {
+                return usuarioEncontrado.Host;
+            }
+            else
+            {
+                // Si no se encuentra el usuario, devolver -1 como un string
+                return null;
+
+                // throw new InvalidOperationException("El usuario ingresado no se encuentra en la lista de usuarios activos.");
+            }
         }
     }
 }

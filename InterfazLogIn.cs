@@ -7,6 +7,11 @@ namespace Presentacion
 {
     public partial class InterfazLogIn : Ventana
     {
+        // Variable miembro para almacenar el número de host del usuario
+        public string Host { get; set; }
+
+        public static InterfazLogIn Instancia { get; private set; }
+
         // Definir las credenciales de administrador
         private const string UsuarioDefault = "ADMINI24";
         private const string ContraseñaDefault = "CAI20241";
@@ -19,6 +24,7 @@ namespace Presentacion
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
+            Instancia = this;
         }
 
         public void IniciarSesion()
@@ -53,9 +59,12 @@ namespace Presentacion
                 // Si está:
                 if (Validar.EsID(id.Substring(1, 36)) == 1)
                 {
+                    // Guardar el número de host del usuario
+                    Host = Validar.NumeroHost(Usuario);
+
                     // El hash es válido, permitir el acceso
                     this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    this.Hide();
                 }
                 else if (Validar.EsID(id.Substring(1, 36)) == 0)
                 {
