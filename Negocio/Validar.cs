@@ -2,62 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text.RegularExpressions;
 
 namespace Negocio
 {
     public static class Validar
     {
-        //public static string EsPersona(int id, List<Cliente> clientes, List<TraerProveedores> proveedores, List<UsuariosActivos> usuarios)
-        //{
-        //    string idStr = id.ToString(); // Convertir el DNI a string para facilitar la comparación
-
-        //    if (idStr.Length == 8) // Longitud de un DNI
-        //    {
-        //        // Es un DNI
-        //        if (clientes.Any(c => c.DNI == idStr))
-        //        {
-        //            return "El DNI pertenece a un cliente.";
-        //        }
-        //        else if (proveedores.Any(p => p.CUIT.Substring(2, 8) == idStr))
-        //        {
-        //            return "El DNI pertenece a un proveedor.";
-        //        }
-        //        else if (usuarios.Any(u => u.DNI == idStr))
-        //        {
-        //            return "El DNI pertenece a un usuario.";
-        //        }
-        //        else
-        //        {
-        //            return "El DNI no pertenece a ninguna persona registrada.";
-        //        }
-        //    }
-        //    else if (idStr.Length == 11) // Longitud de un CUIT
-        //    {
-        //        // Es un CUIT
-        //        string dni = idStr.Substring(2, 8); // Obtener los dígitos del DNI
-        //        if (clientes.Any(c => c.DNI == dni))
-        //        {
-        //            return "El CUIT pertenece a un cliente.";
-        //        }
-        //        else if (proveedores.Any(p => p.CUIT.Substring(2, 8) == dni))
-        //        {
-        //            return "El CUIT pertenece a un proveedor.";
-        //        }
-        //        else if (usuarios.Any(u => u.DNI == dni))
-        //        {
-        //            return "El CUIT pertenece a un usuario.";
-        //        }
-        //        else
-        //        {
-        //            return "El CUIT no pertenece a ninguna persona registrada.";
-        //        }
-        //    }
-        //    else
-        //    {
-        //        return "El ID ingresado no es válido.";
-        //    }
-        //}
 
         public static string EsNombre(string text, string nombreCampo)
         {
@@ -109,7 +60,7 @@ namespace Negocio
                 return "El campo DNI debe contener solo dígitos numéricos.";
             }
 
-            // Verificar si el número de DNI ya existe en la lista de usuarios
+            // Verificar si el número de DNI ya existe en la lista de usuarios, clientes y proveedores
 
             UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
             List<UsuariosActivos> usuarios = usuarioNegocio.ListarUsuarios();
@@ -117,14 +68,41 @@ namespace Negocio
 
             string dni = texto;
             int dniNumero;
+
             if (int.TryParse(dni, out dniNumero))
             {
                 if (usuarios.Exists(u => u.DNI == dniNumero))
                 {
-                    return "No se puede dar de alta un DNI en uso.";
+                    return "Este DNI ya existe como usuario.";
                 }
             }
 
+            ClienteNegocio clientenegocio = new ClienteNegocio();
+            List<Cliente> clientes = clientenegocio.listarClientes();
+            //    clientes = clientes.Where(u => u.NombreUsuario.StartsWith("G1")).ToList(); // Filtrar usuarios cuyo NombreUsuario empiece por "G1"
+
+            // Verificar si el número de DNI asociado ya existe en la lista de clientes
+            if (int.TryParse(dni, out dniNumero))
+            {
+                if (clientes.Exists(u => u.DNI == dniNumero))
+                {
+                    return "Este DNI ya existe como cliente.";
+                }
+
+            }
+
+            // Verificar si el número de DNI ya existe en la lista de proveedores
+
+            ProveedorNegocio ProveedorNegocio = new ProveedorNegocio();
+            List<TraerProveedores> Proveedores = ProveedorNegocio.listarProveedores();
+            Proveedores = ProveedorNegocio.listarProveedores().Where(u => u.CUIT.Contains(texto)).ToList();
+
+            // Verificar si se encontró algún CUIT
+            if (Proveedores.Count > 0)
+            {
+                // Si se encontró al menos un CUIT, significa que ya está en uso
+                return "No se puede dar de alta al DNI de un proveedor.";
+            }
             // Si se cumplen todas las condiciones, el campo es válido
             return null;
         }
@@ -155,7 +133,7 @@ namespace Negocio
                 return "El primer dígito del CUIT debe ser 2 o 3.";
             }
 
-            // Verificar si el número de CUIT ya existe en la lista de usuarios
+            // Verificar si el número de CUIT ya existe en la lista de proveedores
 
             ProveedorNegocio ProveedorNegocio = new ProveedorNegocio();
             List<TraerProveedores> Proveedores = ProveedorNegocio.listarProveedores();
@@ -168,6 +146,20 @@ namespace Negocio
                 return "No se puede dar de alta un CUIT en uso.";
             }
 
+            // Verificar si el número de DNI asociado ya existe en la lista de usuarios
+            if (int.TryParse(texto.Substring(2, 8), out int DNI))
+            {
+            UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
+            List<UsuariosActivos> usuarios = UsuarioNegocio.ListarUsuarios();
+            usuarios = UsuarioNegocio.ListarUsuarios().Where(u => u.DNI == DNI).ToList();
+
+                // Verificar si se encontró algún CUIT
+                if (usuarios.Count > 0)
+            {
+                // Si se encontró al menos un CUIT, significa que ya está en uso
+                return "No se puede dar de alta un como proveedor a un usuario.";
+            }
+            }
             // Si se cumplen todas las condiciones, el campo es válido
             return null;
         }
@@ -259,26 +251,49 @@ namespace Negocio
             return null;
         }
 
-        public static string EsMail(string correo)
+        public static string EsMail(string texto)
         {
             // Verificar si el correo está vacío
-            if (string.IsNullOrEmpty(correo))
+            if (string.IsNullOrEmpty(texto))
             {
                 return "El campo de correo electrónico no puede estar vacío.";
             }
 
-            // Patrón de expresión regular para validar un correo electrónico
-            string patronCorreo = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            // Patrón de expresión regular para validar un correo electrónico con dominio @G1.com
+            string patronCorreo = @"^[a-zA-Z0-9._%+-]+@G1\.com$";
 
             // Verificar si el correo cumple con el patrón
-            if (Regex.IsMatch(correo, patronCorreo))
+            if (!Regex.IsMatch(texto, patronCorreo))
             {
-                return null; // Si el correo es válido, retornar null indicando que no hay error
+                return "El correo electrónico debe tener el dominio @G1.com.";
             }
-            else
+
+            if (texto.Contains(" "))
             {
-                return "El formato del correo electrónico no es válido.";
+                return "El correo electrónico no puede contener espacios en blanco.";
             }
+
+            // Verificar si el mail ya existe en la lista de proveedores
+
+            ProveedorNegocio ProveedorNegocio = new ProveedorNegocio();
+            List<TraerProveedores> Proveedores = ProveedorNegocio.listarProveedores();
+
+            if (Proveedores.Any(u => u != null && u.Email != null && u.Email.Trim().Equals(texto.Trim(), StringComparison.OrdinalIgnoreCase)))
+            {
+                return "No se puede dar de alta un correo electrónico de un proveedor para un usuario.";
+            }
+
+            // Verificar si el mail ya existe en la lista de clientes
+
+            ClienteNegocio clientenegocio = new ClienteNegocio();
+            List<Cliente> clientes = clientenegocio.listarClientes();
+
+            if (clientes.Any(u => u != null && u.Email != null && u.Email.Trim().Equals(texto.Trim(), StringComparison.OrdinalIgnoreCase)))
+            {
+                return "No se puede dar de alta un correo electrónico de un cliente para un usuario.";
+            }
+
+            return null;
         }
 
         public static string ConfirmarMail(string correo, string confirmation)
@@ -461,7 +476,7 @@ namespace Negocio
                 return "El correo electrónico no puede contener espacios en blanco.";
             }
 
-            // Verificar si el mail ya existe en la lista de usuarios
+            // Verificar si el mail ya existe en la lista de proveedores
 
             ProveedorNegocio ProveedorNegocio = new ProveedorNegocio();
             List<TraerProveedores> Proveedores = ProveedorNegocio.listarProveedores();
@@ -471,11 +486,72 @@ namespace Negocio
                 return "No se puede dar de alta un correo electrónico en uso.";
             }
 
+            // Verificar si el mail ya existe en la lista de clientes
+
+            ClienteNegocio clientenegocio = new ClienteNegocio();
+            List<Cliente> clientes = clientenegocio.listarClientes();
+
+            if (clientes.Any(u => u != null && u.Email != null && u.Email.Trim().Equals(texto.Trim(), StringComparison.OrdinalIgnoreCase)))
+            {
+                return "No se puede dar de alta un correo electrónico de un cliente para un proveedor.";
+            }
+
+            return null;
+        }
+
+        public static string MailCliente(string texto)
+        {
+            // Verificar si el correo está vacío
+            if (string.IsNullOrEmpty(texto))
+            {
+                return "El campo de correo electrónico no puede estar vacío.";
+            }
+
+            // Patrón de expresión regular para validar un correo electrónico con dominio @G1.com
+            string patronCorreo = @"^[a-zA-Z0-9._%+-]+@G1\.com$";
+
+            // Verificar si el correo cumple con el patrón
+            if (!Regex.IsMatch(texto, patronCorreo))
+            {
+                return "El correo electrónico debe tener el dominio @G1.com.";
+            }
+
+            if (texto.Contains(" "))
+            {
+                return "El correo electrónico no puede contener espacios en blanco.";
+            }
+
+            // Verificar si el mail ya existe en la lista de clientes
+
+            ClienteNegocio clientenegocio = new ClienteNegocio();
+            List<Cliente> clientes = clientenegocio.listarClientes();
+
+            if (clientes.Any(u => u != null && u.Email != null && u.Email.Trim().Equals(texto.Trim(), StringComparison.OrdinalIgnoreCase)))
+            {
+                return "No se puede dar de alta un correo electrónico en uso.";
+            }
+
+            // Verificar si el mail ya existe en la lista de proveedores
+
+            ProveedorNegocio ProveedorNegocio = new ProveedorNegocio();
+            List<TraerProveedores> Proveedores = ProveedorNegocio.listarProveedores();
+
+            if (Proveedores.Any(u => u != null && u.Email != null && u.Email.Trim().Equals(texto.Trim(), StringComparison.OrdinalIgnoreCase)))
+            {
+                return "No se puede dar de alta el correo electrónico de un proveedor para un cliente.";
+            }
+
             return null;
         }
 
         public static string NumeroHost(string nombreUsuario)
         {
+            if (nombreUsuario == "ADMINI24")
+            {
+                // Devuelves el número de host para el administrador
+                return "1";
+            }
+
             // Listar todos los usuarios activos
             UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
             List<UsuariosActivos> usuarios = UsuarioNegocio.ListarUsuarios();
@@ -496,7 +572,6 @@ namespace Negocio
                 // throw new InvalidOperationException("El usuario ingresado no se encuentra en la lista de usuarios activos.");
             }
         }
-
 
         //public static int CodigoProducto(string msj) // Pedir un número entre 1 y 37 
         //{

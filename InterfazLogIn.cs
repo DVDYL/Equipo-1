@@ -47,6 +47,7 @@ namespace Presentacion
             // Verificar si el usuario es el administrador
             if (Usuario == UsuarioDefault && Contraseña == ContraseñaDefault)
             {
+                Host = Validar.NumeroHost(Usuario);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
                 return; // Salir del método después de permitir el acceso al administrador

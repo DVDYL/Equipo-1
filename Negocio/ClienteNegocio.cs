@@ -11,13 +11,12 @@ namespace Negocio
     public class ClienteNegocio
     {
         private  ClienteService clienteService = new ClienteService();
-        private String idAdministrador = "70b37dc1-8fde-4840-be47-9ababd0ee7e5";
+        private String idUsuario = "70b37dc1-8fde-4840-be47-9ababd0ee7e5";
 
-        public void agregarCliente(string nombre, string apellido, int dni, string direccion, string telefono, string email, DateTime fechaNacimiento)
+        public void agregarCliente(string idUsuario, string nombre, string apellido, int dni, string direccion, string telefono, string email, DateTime fechaNacimiento, string host)
         {
-            AltaCliente altaCliente = new AltaCliente(idAdministrador, nombre, apellido, dni, direccion, telefono, email, fechaNacimiento, "test");
+            AltaCliente altaCliente = new AltaCliente(idUsuario, nombre, apellido, dni, direccion, telefono, email, fechaNacimiento, "1");
             clienteService.AgregarCliente(altaCliente);
-
         }
 
         public void modificarCliente(Guid idCliente, string direccion, string telefono, string email)

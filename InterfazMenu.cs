@@ -29,7 +29,7 @@ namespace Presentacion
             }
             else
             {
-                MessageBox.Show("ERROR 201: Este nivel de usuario no tiene acceso al listado de proveedores", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ERROR 201: Este nivel de usuario no tiene acceso al módulo de Usuarios", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -50,7 +50,7 @@ namespace Presentacion
             }
             else
             {
-                MessageBox.Show("ERROR 201: Este nivel de usuario no tiene acceso al listado de proveedores", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ERROR 201: Este nivel de usuario no tiene acceso al módulo de Proveedores", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -68,7 +68,7 @@ namespace Presentacion
             }
             else
             {
-                MessageBox.Show("ERROR 201: Este nivel de usuario no tiene acceso al listado de proveedores", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ERROR 201: Este nivel de usuario no tiene acceso al módulo de Clientes", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -86,7 +86,7 @@ namespace Presentacion
             }
             else
             {
-                MessageBox.Show("ERROR 201: Este nivel de usuario no tiene acceso al listado de proveedores", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ERROR 201: Este nivel de usuario no tiene acceso al módulo de Productos", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -104,7 +104,7 @@ namespace Presentacion
             }
             else
             {
-                MessageBox.Show("ERROR 201: Este nivel de usuario no tiene acceso al listado de proveedores", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ERROR 201: Este nivel de usuario no tiene acceso al módulo de Ventas", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -119,7 +119,7 @@ namespace Presentacion
         private void BotonSalir_Click(object sender, EventArgs e) // Le pregunta al usuario si está seguro de que quiere cerrar la sesión 
         {
             // Mostrar un cuadro de diálogo de confirmación
-            DialogResult result = MessageBox.Show("¿Está seguro de que desea volver al inicio de sesión?", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("¿Desea volver al inicio de sesión?\n\nSe cerrará la sesión actual.", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             // Verificar la respuesta del usuario
             if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
@@ -135,7 +135,7 @@ namespace Presentacion
         {
             if (e.KeyCode == Keys.Escape)
             {
-                DialogResult result = MessageBox.Show("¿Está seguro de que desea volver al inicio de sesión?", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("¿Desea volver al inicio de sesión?\n\nSe cerrará la sesión actual.", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 // Verificar la respuesta del usuario
                 if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
