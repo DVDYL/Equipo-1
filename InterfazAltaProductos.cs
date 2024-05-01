@@ -17,6 +17,13 @@ namespace Presentacion
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
+            ComboBox_Categoria.DropDownStyle = ComboBoxStyle.DropDownList; // Configurar el estilo para que el usuario no pueda escribir
+            ComboBox_Categoria.Items.Add("Audio");
+            ComboBox_Categoria.Items.Add("Celulares");
+            ComboBox_Categoria.Items.Add("ElectroHogar");
+            ComboBox_Categoria.Items.Add("Informatica");
+            ComboBox_Categoria.Items.Add("Smart TV");
+
         }
 
         private void Boton_Salir_Click(object sender, EventArgs e)
@@ -36,6 +43,11 @@ namespace Presentacion
                 // Mostrar la ventana InterfazMenu
                 ListaProductos.Show();
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

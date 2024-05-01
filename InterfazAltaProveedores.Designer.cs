@@ -217,7 +217,7 @@
             this.ConfirMail_Box.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConfirMail_Box.Location = new System.Drawing.Point(431, 475);
             this.ConfirMail_Box.Name = "ConfirMail_Box";
-            this.ConfirMail_Box.Size = new System.Drawing.Size(251, 31);
+            this.ConfirMail_Box.Size = new System.Drawing.Size(251, 32);
             this.ConfirMail_Box.TabIndex = 103;
             // 
             // CUIT_Box
@@ -227,7 +227,7 @@
             this.CUIT_Box.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CUIT_Box.Location = new System.Drawing.Point(432, 580);
             this.CUIT_Box.Name = "CUIT_Box";
-            this.CUIT_Box.Size = new System.Drawing.Size(250, 31);
+            this.CUIT_Box.Size = new System.Drawing.Size(250, 32);
             this.CUIT_Box.TabIndex = 104;
             // 
             // Email_Box
@@ -237,7 +237,7 @@
             this.Email_Box.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Email_Box.Location = new System.Drawing.Point(433, 369);
             this.Email_Box.Name = "Email_Box";
-            this.Email_Box.Size = new System.Drawing.Size(251, 31);
+            this.Email_Box.Size = new System.Drawing.Size(251, 32);
             this.Email_Box.TabIndex = 102;
             // 
             // Apellido_Box
@@ -247,7 +247,7 @@
             this.Apellido_Box.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Apellido_Box.Location = new System.Drawing.Point(431, 263);
             this.Apellido_Box.Name = "Apellido_Box";
-            this.Apellido_Box.Size = new System.Drawing.Size(250, 31);
+            this.Apellido_Box.Size = new System.Drawing.Size(250, 32);
             this.Apellido_Box.TabIndex = 101;
             // 
             // Nombre_Box
@@ -257,7 +257,7 @@
             this.Nombre_Box.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nombre_Box.Location = new System.Drawing.Point(431, 157);
             this.Nombre_Box.Name = "Nombre_Box";
-            this.Nombre_Box.Size = new System.Drawing.Size(250, 31);
+            this.Nombre_Box.Size = new System.Drawing.Size(250, 32);
             this.Nombre_Box.TabIndex = 100;
             // 
             // Label_ConfirmarEmail
@@ -273,7 +273,6 @@
             // 
             // Nombre_Label
             // 
-            this.Nombre_Label.AutoSize = true;
             this.Nombre_Label.Font = new System.Drawing.Font("Nunito", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nombre_Label.Location = new System.Drawing.Point(70, 154);
             this.Nombre_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
