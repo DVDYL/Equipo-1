@@ -16,3 +16,9 @@ C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Datos\obj\Debug\Datos.c
 C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
 C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Datos\obj\Debug\Datos.dll
 C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Datos\obj\Debug\Datos.pdb
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Datos\obj\Debug\Datos.dll
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Datos\obj\Debug\Datos.pdb
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Datos\bin\Debug\Datos.dll
+C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\Datos\bin\Debug\Datos.pdb

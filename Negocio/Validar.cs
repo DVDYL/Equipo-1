@@ -366,7 +366,10 @@ namespace Negocio
             }
         }
 
-        public static string UserLogin(string usuario)   // Verificar cómo se ingresa el usuario en el login
+
+
+        ////COMENTADO. No tiene sentido usarlo en el login.(Ver)
+        /*public static string UserLogin(string usuario)   // Verificar cómo se ingresa el usuario en el login
         {
             string errorMessage = "Las credenciales ingresadas son incorrectas"; // Inicializar el mensaje de error como nulo
 
@@ -393,9 +396,9 @@ namespace Negocio
             }
 
             return null; // Si pasa todas las validaciones, el usuario es válido
-        }
+        }*/
 
-        public static string PassLogin(string Contraseña)
+        /*public static string PassLogin(string Contraseña)
         {
             // Verificar si la contraseña está vacía
             if (string.IsNullOrEmpty(Contraseña))
@@ -430,7 +433,7 @@ namespace Negocio
             }
 
             return "Las credenciales ingresadas son incorrectas";
-        }
+        }*/
 
         public static int EsID(string texto) // VALIDAR ??
         {
