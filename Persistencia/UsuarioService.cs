@@ -155,6 +155,12 @@ namespace Persistencia
 
             return id; // Retornar el id obtenido
         }
+
+        /*public class SessionData
+        {
+            public string Usuario { get; set; }
+            public int Host { get; set;}
+        }*/
     }
 }
 

@@ -5,6 +5,8 @@ using System.IO;
 using Negocio;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Collections.Generic;
+using Datos;
 
 namespace Presentacion
 {
@@ -37,8 +39,8 @@ namespace Presentacion
             string id = iniciarSesion.IniciarSesion(Box_Usuario.Text, Box_Pass.Text); // Almacenar el hash del id de usuario
             string Usuario = Box_Usuario.Text.ToUpper(); // Permitir que la persona ingrese minusculas en el campo "Nombre de usuario"
             string Contraseña = Box_Pass.Text;
-            string errorUsuario = null;// Validar.UserLogin(Usuario);
-            string errorContraseña = null;// Validar.PassLogin(Contraseña);
+            string errorUsuario = null;// Validar.UserLogin(Usuario);//REVISAR
+            string errorContraseña = null;// Validar.PassLogin(Contraseña);//REVISAR
 
 
 
@@ -71,7 +73,7 @@ namespace Presentacion
                     ResetearIntentosFallidos(Usuario);
                     // El hash es válido, permitir el acceso
                     this.DialogResult = DialogResult.OK;
-                    this.Hide();                
+                    this.Hide();
                 }
                 else if (Validar.EsID(id.Substring(1, 36)) == 0)
                 {
@@ -95,84 +97,95 @@ namespace Presentacion
 
         private void CargarTXT(string Usuario)
         {
-            //Cargo la ruta del TXT
-            string nombreArchivo = "Usuarios.txt";
-            string directorio = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CAI", "Equipo1");
-            string path = Path.Combine(directorio, nombreArchivo);
-            try
+            UsuarioNegocio negocio = new UsuarioNegocio();
+            List<UsuariosActivos> listaUsuarios = negocio.ListarUsuarios();
+
+            // Filtrar usuarios cuyo NombreUsuario empiece por "G1"
+            listaUsuarios = listaUsuarios.Where(u => u.NombreUsuario.StartsWith("G1")).ToList();
+
+            UsuariosActivos usuarioEncontrado = listaUsuarios.Find(u => u.NombreUsuario == Usuario);
+
+            if (usuarioEncontrado != null)
             {
-                if (!Directory.Exists(directorio))  //Crea las carpetas si no existen
-                {
-                    Directory.CreateDirectory(directorio);
-                }
-                if (!File.Exists(path))
-                {
-                    File.WriteAllText(path, Usuario + ";1" + Environment.NewLine);
-                }
-                else
-                {
-                    string[] lineasTXT = File.ReadAllLines(path);
-                    bool UsuarioExiste = lineasTXT.Any(linea => linea.StartsWith(Usuario + ";"));
 
-
-                    if (!UsuarioExiste)
+                //Cargo la ruta del TXT
+                string nombreArchivo = "Usuarios.txt";
+                string directorio = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CAI", "Equipo1");
+                string path = Path.Combine(directorio, nombreArchivo);
+                try
+                {
+                    if (!Directory.Exists(directorio))  //Crea las carpetas si no existen
                     {
-                        using (StreamWriter writer = File.AppendText(path))
-                        {
-                            writer.WriteLine(Usuario + ";1;");   //Si llega acá es porque ya falló un intento.
-                        }
+                        Directory.CreateDirectory(directorio);
+                    }
+                    if (!File.Exists(path))
+                    {
+                        File.WriteAllText(path, Usuario + ";1" + Environment.NewLine);
                     }
                     else
                     {
-                        // Si existe tenemos que editarlo
-                        int indexUsuario = -1;
-                        for (int i = 0; i < lineasTXT.Length; i++) //Acá ubico el index en el array del usuario que está ingresando
+                        string[] lineasTXT = File.ReadAllLines(path);
+                        bool UsuarioExiste = lineasTXT.Any(linea => linea.StartsWith(Usuario + ";"));
+
+
+                        if (!UsuarioExiste)
                         {
-                            if (lineasTXT[i].StartsWith(Usuario + ";"))
+                            using (StreamWriter writer = File.AppendText(path))
                             {
-                                indexUsuario = i;
-                                break;
+                                writer.WriteLine(Usuario + ";1;");   //Si llega acá es porque ya falló un intento.
                             }
                         }
-
-                        if (indexUsuario != -1)
+                        else
                         {
-                            string[] parametros = lineasTXT[indexUsuario].Split(';');
-                            int intentos = int.Parse(parametros[1]);
-                            intentos++;
-                            // Mantener la fecha del último cambio de contraseña
-                            string fechaUltimoCambio = parametros.Length > 2 ? parametros[2] : ""; //Esto es un condicional. Si existe parametro 2 lo pone. si no existe pone vacío
-
-                            lineasTXT[indexUsuario] = Usuario + ";" + intentos.ToString() + ";" + fechaUltimoCambio;
-
-                            File.WriteAllLines(path, lineasTXT);
-
-                            if (intentos == 3)
+                            // Si existe tenemos que editarlo
+                            int indexUsuario = -1;
+                            for (int i = 0; i < lineasTXT.Length; i++) //Acá ubico el index en el array del usuario que está ingresando
                             {
-                                // falta validación para 3 errores + 4to exitoso.
-                                MessageBox.Show("Se han alcanzado los tres intentos permitidos para iniciar sesión.\n\nDe haber un intento fallido más, el usuario será bloqueado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                if (lineasTXT[i].StartsWith(Usuario + ";"))
+                                {
+                                    indexUsuario = i;
+                                    break;
+                                }
                             }
-                            else if (intentos >= 4)
+
+                            if (indexUsuario != -1)
                             {
-                                MessageBox.Show("El usuario ha sido bloqueado. Contacte al Administrador del Sistema para reactivarlo nuevamente", "Usuario Bloqueado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                string[] parametros = lineasTXT[indexUsuario].Split(';');
+                                int intentos = int.Parse(parametros[1]);
+                                intentos++;
+                                // Mantener la fecha del último cambio de contraseña
+                                string fechaUltimoCambio = parametros.Length > 2 ? parametros[2] : ""; //Esto es un condicional. Si existe parametro 2 lo pone. si no existe pone vacío
 
-                                // Llamar a un método que pase el usuario a inactivo.
+                                lineasTXT[indexUsuario] = Usuario + ";" + intentos.ToString() + ";" + fechaUltimoCambio;
 
-                                Application.Exit();
+                                File.WriteAllLines(path, lineasTXT);
+
+                                if (intentos == 3)
+                                {
+                                    // falta validación para 3 errores + 4to exitoso.
+                                    MessageBox.Show("Se han alcanzado los tres intentos permitidos para iniciar sesión.\n\nDe haber un intento fallido más, el usuario será bloqueado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
+                                else if (intentos >= 4)
+                                {
+                                    MessageBox.Show("El usuario ha sido bloqueado. Contacte al Administrador del Sistema para reactivarlo nuevamente", "Usuario Bloqueado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                                    // Llamar a un método que pase el usuario a inactivo.
+
+                                    Application.Exit();
+                                }
                             }
                         }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
             }
         }
 
         private void ResetearIntentosFallidos(string Usuario)
         {
-            Console.WriteLine("Reseteando intentos fallidos para el usuario: " + Usuario); // Mensaje de depuración
             string nombreArchivo = "Usuarios.txt";
             string directorio = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CAI", "Equipo1");
             string path = Path.Combine(directorio, nombreArchivo);
@@ -197,6 +210,9 @@ namespace Presentacion
                         {
                             string[] parametros = lineasTXT[i].Split(';');
                             lineasTXT[i] = Usuario + ";" + "0" + ";" + parametros[2]; //Actualizo el valor de intentos fallidos a 0
+
+                            SetearSession(Usuario);
+
                             break;
                         }
                     }
@@ -207,6 +223,20 @@ namespace Presentacion
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+            }
+        }
+
+        private void SetearSession(string NombreUsuario)
+        {
+            UsuarioNegocio negocio = new UsuarioNegocio();
+            List<UsuariosActivos> listaUsuarios = negocio.ListarUsuarios();
+            listaUsuarios = listaUsuarios.Where(u => u.NombreUsuario.StartsWith("G1")).ToList();
+            UsuariosActivos usuario = listaUsuarios.FirstOrDefault(u => u.NombreUsuario == NombreUsuario);
+
+            if (usuario != null)
+            {
+                //this.Tag = new SessionData { Usuario = NombreUsuario, Host = usuario.Host};
+
             }
         }
 
