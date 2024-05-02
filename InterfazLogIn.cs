@@ -196,7 +196,7 @@ namespace Presentacion
                         if (lineasTXT[i].StartsWith(Usuario + ";"))
                         {
                             string[] parametros = lineasTXT[i].Split(';');
-                            lineasTXT[i] = Usuario + ";" + parametros[1] + ";" + parametros[2];
+                            lineasTXT[i] = Usuario + ";" + "0" + ";" + parametros[2]; //Actualizo el valor de intentos fallidos a 0
                             break;
                         }
                     }
