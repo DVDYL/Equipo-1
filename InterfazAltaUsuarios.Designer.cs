@@ -33,8 +33,6 @@
             this.SeparatorPersona = new System.Windows.Forms.GroupBox();
             this.Boton_Limpiar = new System.Windows.Forms.Button();
             this.Edad_Error = new System.Windows.Forms.TextBox();
-            this.ConfirmPass_Error = new System.Windows.Forms.TextBox();
-            this.Pass_Error = new System.Windows.Forms.TextBox();
             this.ConfirmMail_Error = new System.Windows.Forms.TextBox();
             this.Mail_Error = new System.Windows.Forms.TextBox();
             this.Telefono_Error = new System.Windows.Forms.TextBox();
@@ -46,25 +44,19 @@
             this.MayudaRol = new System.Windows.Forms.Label();
             this.MayudaFechaNacimiento = new System.Windows.Forms.Label();
             this.MayudaTelefono = new System.Windows.Forms.Label();
-            this.MayudaConfirContra = new System.Windows.Forms.Label();
-            this.MayudaContra = new System.Windows.Forms.Label();
             this.MayudaConfirMail = new System.Windows.Forms.Label();
             this.MayudaMail = new System.Windows.Forms.Label();
             this.MayudaCalle = new System.Windows.Forms.Label();
             this.MayudaDNI = new System.Windows.Forms.Label();
             this.MayudaApellido = new System.Windows.Forms.Label();
             this.MayudaNombre = new System.Windows.Forms.Label();
-            this.Box_Pass_Confirm = new System.Windows.Forms.TextBox();
             this.Box_Mail_Confirm = new System.Windows.Forms.TextBox();
             this.Box_Telefono = new System.Windows.Forms.TextBox();
-            this.Box_Pass = new System.Windows.Forms.TextBox();
             this.Box_Mail = new System.Windows.Forms.TextBox();
             this.Box_Calle = new System.Windows.Forms.TextBox();
             this.Box_DNI = new System.Windows.Forms.TextBox();
             this.Box_Apellido = new System.Windows.Forms.TextBox();
             this.Box_Nombre = new System.Windows.Forms.TextBox();
-            this.Label_ConfirmarContraseña = new System.Windows.Forms.Label();
-            this.Label_Contraseña = new System.Windows.Forms.Label();
             this.Label_ConfirmarEmail = new System.Windows.Forms.Label();
             this.Calendario_Nacimiento = new System.Windows.Forms.DateTimePicker();
             this.Label_F_Nacimiento = new System.Windows.Forms.Label();
@@ -86,6 +78,14 @@
             this.IconoMenu = new System.Windows.Forms.PictureBox();
             this.IconoListaUsuarios = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Label_Contraseña = new System.Windows.Forms.Label();
+            this.Label_ConfirmarContraseña = new System.Windows.Forms.Label();
+            this.Box_Pass = new System.Windows.Forms.TextBox();
+            this.Box_Pass_Confirm = new System.Windows.Forms.TextBox();
+            this.MayudaContra = new System.Windows.Forms.Label();
+            this.MayudaConfirContra = new System.Windows.Forms.Label();
+            this.Pass_Error = new System.Windows.Forms.TextBox();
+            this.ConfirmPass_Error = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconoCerrarSesion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconoMenu)).BeginInit();
@@ -152,28 +152,6 @@
             this.Edad_Error.Name = "Edad_Error";
             this.Edad_Error.Size = new System.Drawing.Size(320, 20);
             this.Edad_Error.TabIndex = 56;
-            // 
-            // ConfirmPass_Error
-            // 
-            this.ConfirmPass_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ConfirmPass_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirmPass_Error.ForeColor = System.Drawing.Color.Red;
-            this.ConfirmPass_Error.Location = new System.Drawing.Point(1045, 420);
-            this.ConfirmPass_Error.Multiline = true;
-            this.ConfirmPass_Error.Name = "ConfirmPass_Error";
-            this.ConfirmPass_Error.Size = new System.Drawing.Size(292, 20);
-            this.ConfirmPass_Error.TabIndex = 55;
-            // 
-            // Pass_Error
-            // 
-            this.Pass_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Pass_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pass_Error.ForeColor = System.Drawing.Color.Red;
-            this.Pass_Error.Location = new System.Drawing.Point(731, 420);
-            this.Pass_Error.Multiline = true;
-            this.Pass_Error.Name = "Pass_Error";
-            this.Pass_Error.Size = new System.Drawing.Size(306, 20);
-            this.Pass_Error.TabIndex = 54;
             // 
             // ConfirmMail_Error
             // 
@@ -296,28 +274,6 @@
             this.MayudaTelefono.Text = "?";
             this.MayudaTelefono.Visible = false;
             // 
-            // MayudaConfirContra
-            // 
-            this.MayudaConfirContra.AutoSize = true;
-            this.MayudaConfirContra.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaConfirContra.Location = new System.Drawing.Point(1299, 388);
-            this.MayudaConfirContra.Name = "MayudaConfirContra";
-            this.MayudaConfirContra.Size = new System.Drawing.Size(13, 13);
-            this.MayudaConfirContra.TabIndex = 37;
-            this.MayudaConfirContra.Text = "?";
-            this.MayudaConfirContra.Visible = false;
-            // 
-            // MayudaContra
-            // 
-            this.MayudaContra.AutoSize = true;
-            this.MayudaContra.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaContra.Location = new System.Drawing.Point(988, 388);
-            this.MayudaContra.Name = "MayudaContra";
-            this.MayudaContra.Size = new System.Drawing.Size(13, 13);
-            this.MayudaContra.TabIndex = 36;
-            this.MayudaContra.Text = "?";
-            this.MayudaContra.Visible = false;
-            // 
             // MayudaConfirMail
             // 
             this.MayudaConfirMail.AutoSize = true;
@@ -384,14 +340,6 @@
             this.MayudaNombre.Text = "?";
             this.MayudaNombre.Visible = false;
             // 
-            // Box_Pass_Confirm
-            // 
-            this.Box_Pass_Confirm.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Box_Pass_Confirm.Location = new System.Drawing.Point(1042, 378);
-            this.Box_Pass_Confirm.Name = "Box_Pass_Confirm";
-            this.Box_Pass_Confirm.Size = new System.Drawing.Size(251, 32);
-            this.Box_Pass_Confirm.TabIndex = 11;
-            // 
             // Box_Mail_Confirm
             // 
             this.Box_Mail_Confirm.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -407,14 +355,6 @@
             this.Box_Telefono.Name = "Box_Telefono";
             this.Box_Telefono.Size = new System.Drawing.Size(250, 32);
             this.Box_Telefono.TabIndex = 6;
-            // 
-            // Box_Pass
-            // 
-            this.Box_Pass.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Box_Pass.Location = new System.Drawing.Point(731, 378);
-            this.Box_Pass.Name = "Box_Pass";
-            this.Box_Pass.Size = new System.Drawing.Size(251, 32);
-            this.Box_Pass.TabIndex = 9;
             // 
             // Box_Mail
             // 
@@ -455,28 +395,6 @@
             this.Box_Nombre.Name = "Box_Nombre";
             this.Box_Nombre.Size = new System.Drawing.Size(250, 32);
             this.Box_Nombre.TabIndex = 3;
-            // 
-            // Label_ConfirmarContraseña
-            // 
-            this.Label_ConfirmarContraseña.AutoSize = true;
-            this.Label_ConfirmarContraseña.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_ConfirmarContraseña.Location = new System.Drawing.Point(1020, 344);
-            this.Label_ConfirmarContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Label_ConfirmarContraseña.Name = "Label_ConfirmarContraseña";
-            this.Label_ConfirmarContraseña.Size = new System.Drawing.Size(227, 28);
-            this.Label_ConfirmarContraseña.TabIndex = 18;
-            this.Label_ConfirmarContraseña.Text = "Confirmar Contraseña";
-            // 
-            // Label_Contraseña
-            // 
-            this.Label_Contraseña.AutoSize = true;
-            this.Label_Contraseña.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Contraseña.Location = new System.Drawing.Point(711, 344);
-            this.Label_Contraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Label_Contraseña.Name = "Label_Contraseña";
-            this.Label_Contraseña.Size = new System.Drawing.Size(124, 28);
-            this.Label_Contraseña.TabIndex = 17;
-            this.Label_Contraseña.Text = "Contraseña";
             // 
             // Label_ConfirmarEmail
             // 
@@ -731,6 +649,88 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos de Identificación";
             // 
+            // Label_Contraseña
+            // 
+            this.Label_Contraseña.AutoSize = true;
+            this.Label_Contraseña.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Contraseña.Location = new System.Drawing.Point(711, 344);
+            this.Label_Contraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label_Contraseña.Name = "Label_Contraseña";
+            this.Label_Contraseña.Size = new System.Drawing.Size(124, 28);
+            this.Label_Contraseña.TabIndex = 17;
+            this.Label_Contraseña.Text = "Contraseña";
+            // 
+            // Label_ConfirmarContraseña
+            // 
+            this.Label_ConfirmarContraseña.AutoSize = true;
+            this.Label_ConfirmarContraseña.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_ConfirmarContraseña.Location = new System.Drawing.Point(1020, 344);
+            this.Label_ConfirmarContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label_ConfirmarContraseña.Name = "Label_ConfirmarContraseña";
+            this.Label_ConfirmarContraseña.Size = new System.Drawing.Size(227, 28);
+            this.Label_ConfirmarContraseña.TabIndex = 18;
+            this.Label_ConfirmarContraseña.Text = "Confirmar Contraseña";
+            // 
+            // Box_Pass
+            // 
+            this.Box_Pass.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_Pass.Location = new System.Drawing.Point(731, 378);
+            this.Box_Pass.Name = "Box_Pass";
+            this.Box_Pass.Size = new System.Drawing.Size(251, 32);
+            this.Box_Pass.TabIndex = 9;
+            // 
+            // Box_Pass_Confirm
+            // 
+            this.Box_Pass_Confirm.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_Pass_Confirm.Location = new System.Drawing.Point(1042, 378);
+            this.Box_Pass_Confirm.Name = "Box_Pass_Confirm";
+            this.Box_Pass_Confirm.Size = new System.Drawing.Size(251, 32);
+            this.Box_Pass_Confirm.TabIndex = 11;
+            // 
+            // MayudaContra
+            // 
+            this.MayudaContra.AutoSize = true;
+            this.MayudaContra.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaContra.Location = new System.Drawing.Point(988, 388);
+            this.MayudaContra.Name = "MayudaContra";
+            this.MayudaContra.Size = new System.Drawing.Size(13, 13);
+            this.MayudaContra.TabIndex = 36;
+            this.MayudaContra.Text = "?";
+            this.MayudaContra.Visible = false;
+            // 
+            // MayudaConfirContra
+            // 
+            this.MayudaConfirContra.AutoSize = true;
+            this.MayudaConfirContra.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaConfirContra.Location = new System.Drawing.Point(1299, 388);
+            this.MayudaConfirContra.Name = "MayudaConfirContra";
+            this.MayudaConfirContra.Size = new System.Drawing.Size(13, 13);
+            this.MayudaConfirContra.TabIndex = 37;
+            this.MayudaConfirContra.Text = "?";
+            this.MayudaConfirContra.Visible = false;
+            // 
+            // Pass_Error
+            // 
+            this.Pass_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Pass_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pass_Error.ForeColor = System.Drawing.Color.Red;
+            this.Pass_Error.Location = new System.Drawing.Point(731, 420);
+            this.Pass_Error.Multiline = true;
+            this.Pass_Error.Name = "Pass_Error";
+            this.Pass_Error.Size = new System.Drawing.Size(306, 20);
+            this.Pass_Error.TabIndex = 54;
+            // 
+            // ConfirmPass_Error
+            // 
+            this.ConfirmPass_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ConfirmPass_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirmPass_Error.ForeColor = System.Drawing.Color.Red;
+            this.ConfirmPass_Error.Location = new System.Drawing.Point(1045, 420);
+            this.ConfirmPass_Error.Multiline = true;
+            this.ConfirmPass_Error.Name = "ConfirmPass_Error";
+            this.ConfirmPass_Error.Size = new System.Drawing.Size(292, 20);
+            this.ConfirmPass_Error.TabIndex = 55;
+            // 
             // InterfazAltaUsuarios
             // 
             this.AllowDrop = true;
@@ -822,17 +822,13 @@
         private System.Windows.Forms.Label Label_F_Nacimiento;
         private System.Windows.Forms.DateTimePicker Calendario_Nacimiento;
         private System.Windows.Forms.Label Label_ConfirmarEmail;
-        private System.Windows.Forms.Label Label_Contraseña;
-        private System.Windows.Forms.Label Label_ConfirmarContraseña;
         private System.Windows.Forms.TextBox Box_Nombre;
         private System.Windows.Forms.TextBox Box_Apellido;
         private System.Windows.Forms.TextBox Box_DNI;
         private System.Windows.Forms.TextBox Box_Calle;
         private System.Windows.Forms.TextBox Box_Mail;
-        private System.Windows.Forms.TextBox Box_Pass;
         private System.Windows.Forms.TextBox Box_Telefono;
         private System.Windows.Forms.TextBox Box_Mail_Confirm;
-        private System.Windows.Forms.TextBox Box_Pass_Confirm;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label MayudaNombre;
@@ -841,8 +837,6 @@
         private System.Windows.Forms.Label MayudaCalle;
         private System.Windows.Forms.Label MayudaMail;
         private System.Windows.Forms.Label MayudaConfirMail;
-        private System.Windows.Forms.Label MayudaContra;
-        private System.Windows.Forms.Label MayudaConfirContra;
         private System.Windows.Forms.Label MayudaTelefono;
         private System.Windows.Forms.Label MayudaFechaNacimiento;
         private System.Windows.Forms.Label MayudaRol;
@@ -854,8 +848,6 @@
         private System.Windows.Forms.TextBox Telefono_Error;
         private System.Windows.Forms.TextBox Mail_Error;
         private System.Windows.Forms.TextBox ConfirmMail_Error;
-        private System.Windows.Forms.TextBox Pass_Error;
-        private System.Windows.Forms.TextBox ConfirmPass_Error;
         private System.Windows.Forms.TextBox Edad_Error;
         private System.Windows.Forms.Button Boton_Limpiar;
         private System.Windows.Forms.PictureBox IconoListaUsuarios;
@@ -867,6 +859,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label Label_Contraseña;
+        private System.Windows.Forms.Label Label_ConfirmarContraseña;
+        private System.Windows.Forms.TextBox Box_Pass;
+        private System.Windows.Forms.TextBox Box_Pass_Confirm;
+        private System.Windows.Forms.Label MayudaContra;
+        private System.Windows.Forms.Label MayudaConfirContra;
+        private System.Windows.Forms.TextBox Pass_Error;
+        private System.Windows.Forms.TextBox ConfirmPass_Error;
     }
 }
 

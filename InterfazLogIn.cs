@@ -80,6 +80,52 @@ namespace Presentacion
             }
         }
 
+        //public void PrimerIngreso()
+        //{
+        //    string errorContraseña = Validar.EsContraseña(Box_Pass.Text);
+        //    if (errorContraseña != null)
+        //    {
+        //        Pass_Error.Text = errorContraseña;
+        //        Pass_Error.Visible = true;
+        //        MessageBox.Show(errorContraseña, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        MayudaContra.Visible = true;
+        //        ContarErrores++;
+        //    }
+        //    else
+        //    {
+        //        Pass_Error.Visible = false;
+        //        MayudaContra.Visible = false;
+        //    }
+
+        //    if (ContarErrores >= 1)
+        //    {
+        //        return ContarErrores; // Detener la ejecución y devolver el contador de errores
+        //    }
+
+        //    string contraseña = Box_Pass.Text;
+        //    string contraseñaConfirmada = Box_Pass_Confirm.Text;
+        //    string errorConfirmarContraseña = Validar.ConfirmarContraseña(contraseña, contraseñaConfirmada);
+
+        //    if (errorConfirmarContraseña != null)
+        //    {
+        //        ConfirmPass_Error.Text = errorConfirmarContraseña;
+        //        ConfirmPass_Error.Visible = true;
+        //        MessageBox.Show(errorConfirmarContraseña, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        MayudaConfirContra.Visible = true;
+        //        ContarErrores++;
+        //    }
+        //    else
+        //    {
+        //        ConfirmPass_Error.Visible = false;
+        //        MayudaConfirContra.Visible = false;
+        //    }
+
+        //    if (ContarErrores >= 1)
+        //    {
+        //        return ContarErrores; // Detener la ejecución y devolver el contador de errores
+        //    }
+        //}
+
         private void CargarTXT(string Usuario)
         {
             UsuarioNegocio negocio = new UsuarioNegocio();

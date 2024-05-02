@@ -510,7 +510,6 @@ namespace Negocio
             }
             else
             {
-                // Si no se encuentra el usuario, devolver -1 como un string
                 return null;
 
                 // throw new InvalidOperationException("El usuario ingresado no se encuentra en la lista de usuarios activos.");
