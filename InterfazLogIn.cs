@@ -21,9 +21,6 @@ namespace Presentacion
         private const string UsuarioDefault = "ADMINI24";
         private const string ContraseñaDefault = "CAI20241";
 
-        // Iniciar el contador de ingresos fallidos en 0.
-        private int intentosFallidos = 0;
-
         public InterfazLogIn() // Función que inicia la ventana de Log In
         {
             InitializeComponent();
@@ -39,59 +36,47 @@ namespace Presentacion
             string id = iniciarSesion.IniciarSesion(Box_Usuario.Text, Box_Pass.Text); // Almacenar el hash del id de usuario
             string Usuario = Box_Usuario.Text.ToUpper(); // Permitir que la persona ingrese minusculas en el campo "Nombre de usuario"
             string Contraseña = Box_Pass.Text;
-            string errorUsuario = null;// Validar.UserLogin(Usuario);//REVISAR
-            string errorContraseña = null;// Validar.PassLogin(Contraseña);//REVISAR
+            string errorUsuario = Validar.CampoEnBlanco(Usuario);//REVISAR
+            string errorContraseña = Validar.CampoEnBlanco(Contraseña);//REVISAR
 
-
-
-
-            // Validar si se ingresó usuario y contraseña
-            if (string.IsNullOrWhiteSpace(Box_Usuario.Text) || string.IsNullOrWhiteSpace(Box_Pass.Text))
+            if (errorUsuario == "1") // Verificar si hay errores en el nombre de usuario y contraseña
             {
-                MessageBox.Show("Por favor, ingrese usuario y contraseña.", "Campos Vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; // Salir del método sin continuar con el inicio de sesión
+                MessageBox.Show("No se ingresó el usuario.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return; // Salir del método sin continuar con el inicio de sesión ni contar errores
             }
 
-            // Verificar si el usuario es el administrador
+            if (errorContraseña == "1") // Verificar si hay errores en el nombre de usuario y contraseña
+            {
+                MessageBox.Show("No se ingresó la contraseña.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return; // Salir del método sin continuar con el inicio de sesión ni contar errores
+            }
+
             if (Usuario == UsuarioDefault && Contraseña == ContraseñaDefault)
             {
-                Host = Validar.NumeroHost(Usuario);
+                Host = Validar.NumeroHost(Usuario); // capturo el host para usarlo en el menú.
                 this.DialogResult = DialogResult.OK;
                 this.Close();
                 return; // Salir del método después de permitir el acceso al administrador
             }
 
-            // Verificar si hay errores en el nombre de usuario y contraseña
-            if (errorUsuario == null && errorContraseña == null)
+            if (Validar.EsID(id.Substring(1, 36)) == 0)
             {
-                // Acá iría una lógica para buscar al usuario en la lista de usuarios.
-                // Si está:
-                if (Validar.EsID(id.Substring(1, 36)) == 1)
-                {
-                    // Guardar el número de host del usuario
-                    Host = Validar.NumeroHost(Usuario);
-                    ResetearIntentosFallidos(Usuario);
-                    // El hash es válido, permitir el acceso
-                    this.DialogResult = DialogResult.OK;
-                    this.Hide();
-                }
-                else if (Validar.EsID(id.Substring(1, 36)) == 0)
-                {
-                    MessageBox.Show("El usuario no existe en el servidor o\n\nEl servidor está caído", "ERROR 102", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (Validar.EsID(id.Substring(1, 36)) == 2)
-                {
-                    // Las credenciales son incorrectas, mostrar mensaje de error
-                    MessageBox.Show("Credenciales Incorrectas.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    CargarTXT(Usuario);
-                    //Hay que llamar a esto solamente cuando la contraseña está mal, pero el usuario existe
-                }
+                MessageBox.Show("El usuario no existe en el servidor o\n\nEl servidor está caído", "ERROR 101", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+
+            if (Validar.EsID(id.Substring(1, 36)) == 2) //Hay que llamar a esto solamente cuando la contraseña está mal, pero el usuario existe
             {
-                // Mostrar mensaje si las credenciales son incorrectas
-                MessageBox.Show("Por favor, ingrese un usuario y contraseña válidos.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return; // Salir del método sin continuar con el inicio de sesión ni contar errores
+                MessageBox.Show("Credenciales Incorrectas.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CargarTXT(Usuario); 
+            }
+
+            if (Validar.EsID(id.Substring(1, 36)) == 1) // El hash es válido, permitir el acceso
+            {
+                Host = Validar.NumeroHost(Usuario); // Guardar el número de host del usuario
+                ResetearIntentosFallidos(Usuario); // volver el contador de errores a 0.
+
+                this.DialogResult = DialogResult.OK;
+                this.Hide(); // cerrar el login.
             }
         }
 
@@ -236,15 +221,12 @@ namespace Presentacion
             if (usuario != null)
             {
                 //this.Tag = new SessionData { Usuario = NombreUsuario, Host = usuario.Host};
-
             }
         }
 
         private void Boton_Ingresar_Click(object sender, EventArgs e)
         {
             IniciarSesion();
-
-
         }
 
         private void Boton_Cancelar_Click(object sender, EventArgs e)

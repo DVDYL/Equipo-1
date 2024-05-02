@@ -366,74 +366,15 @@ namespace Negocio
             }
         }
 
-
-
-        ////COMENTADO. No tiene sentido usarlo en el login.(Ver)
-        /*public static string UserLogin(string usuario)   // Verificar cómo se ingresa el usuario en el login
+        public static string CampoEnBlanco(string texto)   // Verificar cómo se ingresa el usuario en el login
         {
-            string errorMessage = "Las credenciales ingresadas son incorrectas"; // Inicializar el mensaje de error como nulo
-
-            // Verificar si el usuario tiene al menos 6 caracteres
-            if (usuario.Length < 6)
+            if (string.IsNullOrEmpty(texto))
             {
-                return errorMessage;
+                return "1";
             }
 
-            // Verificar si el usuario termina en dos dígitos
-            if (!char.IsDigit(usuario[usuario.Length - 1]) || !char.IsDigit(usuario[usuario.Length - 2]))
-            {
-                return errorMessage;
-            }
-
-            // Verificar si el usuario contiene espacios o caracteres especiales
-            if (Regex.IsMatch(usuario, @"\s"))
-            {
-                return errorMessage;
-            }
-            if (!Regex.IsMatch(usuario, @"^[a-zA-Z0-9]+$"))
-            {
-                return errorMessage;
-            }
-
-            return null; // Si pasa todas las validaciones, el usuario es válido
-        }*/
-
-        /*public static string PassLogin(string Contraseña)
-        {
-            // Verificar si la contraseña está vacía
-            if (string.IsNullOrEmpty(Contraseña))
-            {
-                return "El campo de contraseña no puede estar vacío.";
-            }
-
-            if (Contraseña.Contains(" "))
-            {
-                return "El campo de contraseña no puede contener espacios en blanco.";
-            }
-
-            bool mayuscula = false;
-            bool numero = false;
-
-            for (int i = 0; i < Contraseña.Length; i++)
-            {
-                if (Char.IsUpper(Contraseña, i))
-                {
-                    mayuscula = true;
-                }
-                else if (Char.IsDigit(Contraseña, i))
-                {
-                    numero = true;
-                }
-            }
-
-            // Verificar si la contraseña cumple con los criterios de validez
-            if (numero && mayuscula && Contraseña.Length >= 8 && Contraseña.Length < 15)
-            {
-                return null; // Si la contraseña es válida, retornar null indicando que no hay error
-            }
-
-            return "Las credenciales ingresadas son incorrectas";
-        }*/
+            return "0";
+        }
 
         public static int EsID(string texto) // VALIDAR ??
         {
