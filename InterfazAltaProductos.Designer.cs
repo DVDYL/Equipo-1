@@ -28,34 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Boton_Salir = new System.Windows.Forms.Button();
+            this.Boton_Cancelar = new System.Windows.Forms.Button();
             this.SeparatorProducto = new System.Windows.Forms.Label();
             this.Nombre_Label = new System.Windows.Forms.Label();
-            this.Nombre_Box = new System.Windows.Forms.TextBox();
+            this.Box_Nombre = new System.Windows.Forms.TextBox();
             this.Precio_Label = new System.Windows.Forms.Label();
-            this.Precio_Box = new System.Windows.Forms.TextBox();
+            this.Box_Precio = new System.Windows.Forms.TextBox();
             this.Stock_Label = new System.Windows.Forms.Label();
-            this.Stock_Box = new System.Windows.Forms.TextBox();
+            this.Box_Stock = new System.Windows.Forms.TextBox();
             this.ComboBox_Categoria = new System.Windows.Forms.ComboBox();
             this.Categoria_Label = new System.Windows.Forms.Label();
+            this.Boton_Limpiar = new System.Windows.Forms.Button();
+            this.Boton_Confirmar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Boton_Salir
+            // Boton_Cancelar
             // 
-            this.Boton_Salir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.Boton_Salir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Boton_Salir.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
-            this.Boton_Salir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
-            this.Boton_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Boton_Salir.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Salir.Location = new System.Drawing.Point(561, 672);
-            this.Boton_Salir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Boton_Salir.Name = "Boton_Salir";
-            this.Boton_Salir.Size = new System.Drawing.Size(190, 42);
-            this.Boton_Salir.TabIndex = 7;
-            this.Boton_Salir.Text = "Salir";
-            this.Boton_Salir.UseVisualStyleBackColor = false;
-            this.Boton_Salir.Click += new System.EventHandler(this.Boton_Salir_Click);
+            this.Boton_Cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            this.Boton_Cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Boton_Cancelar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.Boton_Cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.Boton_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Boton_Cancelar.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boton_Cancelar.Location = new System.Drawing.Point(567, 682);
+            this.Boton_Cancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Boton_Cancelar.Name = "Boton_Cancelar";
+            this.Boton_Cancelar.Size = new System.Drawing.Size(153, 43);
+            this.Boton_Cancelar.TabIndex = 7;
+            this.Boton_Cancelar.Text = "Cancelar";
+            this.Boton_Cancelar.UseVisualStyleBackColor = false;
+            this.Boton_Cancelar.Click += new System.EventHandler(this.Boton_Salir_Click);
             // 
             // SeparatorProducto
             // 
@@ -79,15 +81,15 @@
             this.Nombre_Label.TabIndex = 108;
             this.Nombre_Label.Text = "Nombre:";
             // 
-            // Nombre_Box
+            // Box_Nombre
             // 
-            this.Nombre_Box.BackColor = System.Drawing.Color.Gainsboro;
-            this.Nombre_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Nombre_Box.Font = new System.Drawing.Font("Nunito", 18F);
-            this.Nombre_Box.Location = new System.Drawing.Point(431, 263);
-            this.Nombre_Box.Name = "Nombre_Box";
-            this.Nombre_Box.Size = new System.Drawing.Size(250, 32);
-            this.Nombre_Box.TabIndex = 100;
+            this.Box_Nombre.BackColor = System.Drawing.Color.Gainsboro;
+            this.Box_Nombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Box_Nombre.Font = new System.Drawing.Font("Nunito", 18F);
+            this.Box_Nombre.Location = new System.Drawing.Point(431, 263);
+            this.Box_Nombre.Name = "Box_Nombre";
+            this.Box_Nombre.Size = new System.Drawing.Size(250, 32);
+            this.Box_Nombre.TabIndex = 100;
             // 
             // Precio_Label
             // 
@@ -99,15 +101,15 @@
             this.Precio_Label.TabIndex = 111;
             this.Precio_Label.Text = "Precio:";
             // 
-            // Precio_Box
+            // Box_Precio
             // 
-            this.Precio_Box.BackColor = System.Drawing.Color.Gainsboro;
-            this.Precio_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Precio_Box.Font = new System.Drawing.Font("Nunito", 18F);
-            this.Precio_Box.Location = new System.Drawing.Point(433, 369);
-            this.Precio_Box.Name = "Precio_Box";
-            this.Precio_Box.Size = new System.Drawing.Size(250, 32);
-            this.Precio_Box.TabIndex = 112;
+            this.Box_Precio.BackColor = System.Drawing.Color.Gainsboro;
+            this.Box_Precio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Box_Precio.Font = new System.Drawing.Font("Nunito", 18F);
+            this.Box_Precio.Location = new System.Drawing.Point(433, 369);
+            this.Box_Precio.Name = "Box_Precio";
+            this.Box_Precio.Size = new System.Drawing.Size(250, 32);
+            this.Box_Precio.TabIndex = 112;
             // 
             // Stock_Label
             // 
@@ -119,15 +121,15 @@
             this.Stock_Label.TabIndex = 113;
             this.Stock_Label.Text = "Stock:";
             // 
-            // Stock_Box
+            // Box_Stock
             // 
-            this.Stock_Box.BackColor = System.Drawing.Color.Gainsboro;
-            this.Stock_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Stock_Box.Font = new System.Drawing.Font("Nunito", 18F);
-            this.Stock_Box.Location = new System.Drawing.Point(431, 475);
-            this.Stock_Box.Name = "Stock_Box";
-            this.Stock_Box.Size = new System.Drawing.Size(251, 32);
-            this.Stock_Box.TabIndex = 114;
+            this.Box_Stock.BackColor = System.Drawing.Color.Gainsboro;
+            this.Box_Stock.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Box_Stock.Font = new System.Drawing.Font("Nunito", 18F);
+            this.Box_Stock.Location = new System.Drawing.Point(431, 475);
+            this.Box_Stock.Name = "Box_Stock";
+            this.Box_Stock.Size = new System.Drawing.Size(251, 32);
+            this.Box_Stock.TabIndex = 114;
             // 
             // ComboBox_Categoria
             // 
@@ -149,21 +151,55 @@
             this.Categoria_Label.TabIndex = 108;
             this.Categoria_Label.Text = "Categoria:";
             // 
+            // Boton_Limpiar
+            // 
+            this.Boton_Limpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Boton_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Boton_Limpiar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.Boton_Limpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.Boton_Limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Boton_Limpiar.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boton_Limpiar.Location = new System.Drawing.Point(369, 682);
+            this.Boton_Limpiar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Boton_Limpiar.Name = "Boton_Limpiar";
+            this.Boton_Limpiar.Size = new System.Drawing.Size(153, 43);
+            this.Boton_Limpiar.TabIndex = 116;
+            this.Boton_Limpiar.Text = "Limpiar";
+            this.Boton_Limpiar.UseVisualStyleBackColor = false;
+            // 
+            // Boton_Confirmar
+            // 
+            this.Boton_Confirmar.BackColor = System.Drawing.Color.Khaki;
+            this.Boton_Confirmar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Boton_Confirmar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.Boton_Confirmar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.Boton_Confirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Boton_Confirmar.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boton_Confirmar.Location = new System.Drawing.Point(171, 682);
+            this.Boton_Confirmar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Boton_Confirmar.Name = "Boton_Confirmar";
+            this.Boton_Confirmar.Size = new System.Drawing.Size(153, 43);
+            this.Boton_Confirmar.TabIndex = 117;
+            this.Boton_Confirmar.Text = "Confirmar";
+            this.Boton_Confirmar.UseVisualStyleBackColor = false;
+            // 
             // InterfazAltaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 768);
+            this.Controls.Add(this.Boton_Confirmar);
+            this.Controls.Add(this.Boton_Limpiar);
             this.Controls.Add(this.Categoria_Label);
             this.Controls.Add(this.ComboBox_Categoria);
-            this.Controls.Add(this.Stock_Box);
+            this.Controls.Add(this.Box_Stock);
             this.Controls.Add(this.Stock_Label);
-            this.Controls.Add(this.Precio_Box);
+            this.Controls.Add(this.Box_Precio);
             this.Controls.Add(this.Precio_Label);
-            this.Controls.Add(this.Nombre_Box);
+            this.Controls.Add(this.Box_Nombre);
             this.Controls.Add(this.Nombre_Label);
             this.Controls.Add(this.SeparatorProducto);
-            this.Controls.Add(this.Boton_Salir);
+            this.Controls.Add(this.Boton_Cancelar);
             this.Name = "InterfazAltaProductos";
             this.Text = "Alta de Productos";
             this.ResumeLayout(false);
@@ -173,15 +209,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Button Boton_Salir;
+        private System.Windows.Forms.Button Boton_Cancelar;
         private System.Windows.Forms.Label SeparatorProducto;
         private System.Windows.Forms.Label Nombre_Label;
-        private System.Windows.Forms.TextBox Nombre_Box;
+        private System.Windows.Forms.TextBox Box_Nombre;
         private System.Windows.Forms.Label Precio_Label;
-        private System.Windows.Forms.TextBox Precio_Box;
+        private System.Windows.Forms.TextBox Box_Precio;
         private System.Windows.Forms.Label Stock_Label;
-        private System.Windows.Forms.TextBox Stock_Box;
+        private System.Windows.Forms.TextBox Box_Stock;
         private System.Windows.Forms.ComboBox ComboBox_Categoria;
         private System.Windows.Forms.Label Categoria_Label;
+        private System.Windows.Forms.Button Boton_Limpiar;
+        private System.Windows.Forms.Button Boton_Confirmar;
     }
 }

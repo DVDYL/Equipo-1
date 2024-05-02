@@ -232,7 +232,7 @@
             this.Box_Telefono.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Telefono.Location = new System.Drawing.Point(428, 438);
             this.Box_Telefono.Name = "Box_Telefono";
-            this.Box_Telefono.Size = new System.Drawing.Size(250, 32);
+            this.Box_Telefono.Size = new System.Drawing.Size(250, 33);
             this.Box_Telefono.TabIndex = 62;
             // 
             // Box_Calle
@@ -240,7 +240,7 @@
             this.Box_Calle.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Calle.Location = new System.Drawing.Point(73, 438);
             this.Box_Calle.Name = "Box_Calle";
-            this.Box_Calle.Size = new System.Drawing.Size(250, 32);
+            this.Box_Calle.Size = new System.Drawing.Size(250, 33);
             this.Box_Calle.TabIndex = 61;
             // 
             // Box_DNI
@@ -248,7 +248,7 @@
             this.Box_DNI.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_DNI.Location = new System.Drawing.Point(73, 165);
             this.Box_DNI.Name = "Box_DNI";
-            this.Box_DNI.Size = new System.Drawing.Size(250, 32);
+            this.Box_DNI.Size = new System.Drawing.Size(250, 33);
             this.Box_DNI.TabIndex = 57;
             // 
             // Box_Apellido
@@ -256,7 +256,7 @@
             this.Box_Apellido.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Apellido.Location = new System.Drawing.Point(428, 298);
             this.Box_Apellido.Name = "Box_Apellido";
-            this.Box_Apellido.Size = new System.Drawing.Size(250, 32);
+            this.Box_Apellido.Size = new System.Drawing.Size(250, 33);
             this.Box_Apellido.TabIndex = 60;
             // 
             // Box_Nombre
@@ -264,7 +264,7 @@
             this.Box_Nombre.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Nombre.Location = new System.Drawing.Point(73, 298);
             this.Box_Nombre.Name = "Box_Nombre";
-            this.Box_Nombre.Size = new System.Drawing.Size(250, 32);
+            this.Box_Nombre.Size = new System.Drawing.Size(250, 33);
             this.Box_Nombre.TabIndex = 59;
             // 
             // Calendario_Nacimiento
@@ -274,7 +274,7 @@
             this.Calendario_Nacimiento.MaxDate = new System.DateTime(2025, 4, 2, 0, 0, 0, 0);
             this.Calendario_Nacimiento.MinDate = new System.DateTime(1958, 1, 1, 0, 0, 0, 0);
             this.Calendario_Nacimiento.Name = "Calendario_Nacimiento";
-            this.Calendario_Nacimiento.Size = new System.Drawing.Size(250, 32);
+            this.Calendario_Nacimiento.Size = new System.Drawing.Size(250, 33);
             this.Calendario_Nacimiento.TabIndex = 58;
             this.Calendario_Nacimiento.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             // 
@@ -393,7 +393,7 @@
             this.Box_Mail_Confirm.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Mail_Confirm.Location = new System.Drawing.Point(429, 572);
             this.Box_Mail_Confirm.Name = "Box_Mail_Confirm";
-            this.Box_Mail_Confirm.Size = new System.Drawing.Size(251, 32);
+            this.Box_Mail_Confirm.Size = new System.Drawing.Size(251, 33);
             this.Box_Mail_Confirm.TabIndex = 83;
             // 
             // Box_Mail
@@ -401,7 +401,7 @@
             this.Box_Mail.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Mail.Location = new System.Drawing.Point(73, 572);
             this.Box_Mail.Name = "Box_Mail";
-            this.Box_Mail.Size = new System.Drawing.Size(251, 32);
+            this.Box_Mail.Size = new System.Drawing.Size(251, 33);
             this.Box_Mail.TabIndex = 82;
             // 
             // Label_ConfirmarEmail
