@@ -403,6 +403,22 @@ namespace Negocio
             }
         }
 
+        public static string EsStock(string valor, string campo)
+        {
+            string error = "";
+
+            if (!int.TryParse(valor, out int salida))
+            {
+                error = "El campo " + campo + " no es numérico." + Environment.NewLine;
+            }
+            else if (salida <= 0)
+            {
+                error = "El campo " + campo + " no es positivo." + Environment.NewLine;
+            }
+
+            return error;
+        }
+
         public static string MailProveedor(string texto)
         {
             // Verificar si el correo está vacío

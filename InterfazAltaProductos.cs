@@ -70,6 +70,24 @@ namespace Presentacion
                 return ContarErrores; // Detener la ejecución y devolver el contador de errores
             }
 
+            string errorStock = Validar.EsStock(Box_Stock.Text, "Stock");
+            if (errorStock != null)
+            {
+                //Stock_Error.Text = errorStock;
+                //Stock_Error.Visible = true;
+                MessageBox.Show(errorNombre, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ContarErrores++;
+            }
+            else
+            {
+                //Stock_Error.Visible = false;
+                //MayudaStock.Visible = false;
+            }
+            if (ContarErrores >= 1)
+            {
+                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+            }
+
             if (ComboBox_Categoria.SelectedIndex == -1)
             {
                //Categoria_Null.Visible = true; // Mostrar el TextBox Rol_Null
