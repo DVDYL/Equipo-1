@@ -230,9 +230,7 @@ namespace Presentacion
                                 !string.IsNullOrWhiteSpace(Box_Calle.Text) ||
                                 !string.IsNullOrWhiteSpace(Box_Telefono.Text) ||
                                 !string.IsNullOrWhiteSpace(Box_Mail.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Mail_Confirm.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Pass.Text) ||
-                                !string.IsNullOrWhiteSpace(Box_Pass_Confirm.Text);
+                                !string.IsNullOrWhiteSpace(Box_Mail_Confirm.Text);
 
             // Verificar si los ComboBoxes no han sido desplegados y se ha seleccionado una opción
             bool comboBoxesLlenos = ComboBox_Rol.DroppedDown == false && ComboBox_Rol.SelectedItem != null;
@@ -254,8 +252,6 @@ namespace Presentacion
             Box_Telefono.Text = "";
             Box_Mail.Text = "";
             Box_Mail_Confirm.Text = "";
-            Box_Pass.Text = "";
-            Box_Pass_Confirm.Text = "";
 
             // Volver a ocultar todos los mensajes de error
 
@@ -268,16 +264,12 @@ namespace Presentacion
             Telefono_Error.Visible = false;
             Mail_Error.Visible = false;
             ConfirmMail_Error.Visible = false;
-            Pass_Error.Visible = false;
-            ConfirmPass_Error.Visible = false;
 
             // Ocultar todos los tooltips
 
             MayudaApellido.Visible = false;
             MayudaCalle.Visible = false;
-            MayudaConfirContra.Visible = false;
             MayudaConfirMail.Visible = false;
-            MayudaContra.Visible = false;
             MayudaDNI.Visible = false;
             MayudaFechaNacimiento.Visible = false;
             MayudaMail.Visible = false;
