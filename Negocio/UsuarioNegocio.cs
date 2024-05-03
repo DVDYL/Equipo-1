@@ -26,7 +26,8 @@ namespace Negocio
         string email,
         DateTime fechaNacimiento,
         string NombreUsuario,
-        string Contraseña) {
+        string Contraseña)
+        {
             AltaUsuario altaUsuario = new AltaUsuario(
         idUsuario,
         host,
@@ -60,7 +61,7 @@ namespace Negocio
         }
         public void CambiarContraseña(string nombreUsuario, string contraseña, string contraseñaNueva)
         {
-            CambiarContraseña cambiarContraseña = new CambiarContraseña(nombreUsuario, contraseña, contraseñaNueva);
+            UsuarioService.CambiarContraseña(nombreUsuario, contraseña, contraseñaNueva);
         }
     }
 }

@@ -88,7 +88,7 @@
             this.Box_Nombre.Font = new System.Drawing.Font("Nunito", 18F);
             this.Box_Nombre.Location = new System.Drawing.Point(431, 263);
             this.Box_Nombre.Name = "Box_Nombre";
-            this.Box_Nombre.Size = new System.Drawing.Size(250, 32);
+            this.Box_Nombre.Size = new System.Drawing.Size(250, 33);
             this.Box_Nombre.TabIndex = 100;
             // 
             // Precio_Label
@@ -108,7 +108,7 @@
             this.Box_Precio.Font = new System.Drawing.Font("Nunito", 18F);
             this.Box_Precio.Location = new System.Drawing.Point(433, 369);
             this.Box_Precio.Name = "Box_Precio";
-            this.Box_Precio.Size = new System.Drawing.Size(250, 32);
+            this.Box_Precio.Size = new System.Drawing.Size(250, 33);
             this.Box_Precio.TabIndex = 112;
             // 
             // Stock_Label
@@ -128,7 +128,7 @@
             this.Box_Stock.Font = new System.Drawing.Font("Nunito", 18F);
             this.Box_Stock.Location = new System.Drawing.Point(431, 475);
             this.Box_Stock.Name = "Box_Stock";
-            this.Box_Stock.Size = new System.Drawing.Size(251, 32);
+            this.Box_Stock.Size = new System.Drawing.Size(251, 33);
             this.Box_Stock.TabIndex = 114;
             // 
             // ComboBox_Categoria
@@ -138,7 +138,7 @@
             this.ComboBox_Categoria.FormattingEnabled = true;
             this.ComboBox_Categoria.Location = new System.Drawing.Point(431, 154);
             this.ComboBox_Categoria.Name = "ComboBox_Categoria";
-            this.ComboBox_Categoria.Size = new System.Drawing.Size(250, 33);
+            this.ComboBox_Categoria.Size = new System.Drawing.Size(250, 34);
             this.ComboBox_Categoria.TabIndex = 115;
             // 
             // Categoria_Label
@@ -147,9 +147,9 @@
             this.Categoria_Label.Location = new System.Drawing.Point(70, 154);
             this.Categoria_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Categoria_Label.Name = "Categoria_Label";
-            this.Categoria_Label.Size = new System.Drawing.Size(136, 39);
+            this.Categoria_Label.Size = new System.Drawing.Size(150, 39);
             this.Categoria_Label.TabIndex = 108;
-            this.Categoria_Label.Text = "Categoria:";
+            this.Categoria_Label.Text = "Categoría:";
             // 
             // Boton_Limpiar
             // 
@@ -185,7 +185,7 @@
             // 
             // InterfazAltaProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 768);
             this.Controls.Add(this.Boton_Confirmar);

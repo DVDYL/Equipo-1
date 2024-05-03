@@ -158,11 +158,29 @@ namespace Persistencia
         }
         public void CambiarContraseña(string nombreUsuario, string contraseña, string contraseñaNueva)
         {
-            /*string path = "/api/Usuario/CambiarContraseña";
+            string path = "/api/Usuario/CambiarContraseña";
             Dictionary<string, string> map = new Dictionary<string, string>();
             map.Add("nombreUsuario", nombreUsuario);
             map.Add("contraseña", contraseña);
-            map.Add("contraseñaNueva", contraseñaNueva);*/
+            map.Add("contraseñaNueva", contraseñaNueva);
+            var jsonRequest = JsonConvert.SerializeObject(map);
+            try
+            {
+                HttpResponseMessage response = WebHelper.Patch(path, jsonRequest);
+                if (response.IsSuccessStatusCode)
+                {
+                    var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
+                    string respuesta = reader.ReadToEnd();
+                }
+                else
+                {
+                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception: {ex.Message}");
+            }
         }
 
     }
