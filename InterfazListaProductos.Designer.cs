@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Boton_Modificar = new System.Windows.Forms.Button();
             this.BorrarFiltro = new System.Windows.Forms.Button();
             this.Boton_Salir = new System.Windows.Forms.Button();
@@ -40,6 +40,7 @@
             this.UsuariosLupa = new System.Windows.Forms.PictureBox();
             this.Boton_AltaProducto = new System.Windows.Forms.Button();
             this.Productos = new System.Windows.Forms.DataGridView();
+            this.Boton_Eliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LupaDNI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosLupa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Productos)).BeginInit();
@@ -56,7 +57,7 @@
             this.Boton_Modificar.Location = new System.Drawing.Point(79, 696);
             this.Boton_Modificar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Modificar.Name = "Boton_Modificar";
-            this.Boton_Modificar.Size = new System.Drawing.Size(190, 42);
+            this.Boton_Modificar.Size = new System.Drawing.Size(152, 42);
             this.Boton_Modificar.TabIndex = 56;
             this.Boton_Modificar.Text = "Modificar";
             this.Boton_Modificar.UseVisualStyleBackColor = false;
@@ -69,10 +70,10 @@
             this.BorrarFiltro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.BorrarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BorrarFiltro.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BorrarFiltro.Location = new System.Drawing.Point(317, 696);
+            this.BorrarFiltro.Location = new System.Drawing.Point(409, 696);
             this.BorrarFiltro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BorrarFiltro.Name = "BorrarFiltro";
-            this.BorrarFiltro.Size = new System.Drawing.Size(192, 42);
+            this.BorrarFiltro.Size = new System.Drawing.Size(191, 42);
             this.BorrarFiltro.TabIndex = 55;
             this.BorrarFiltro.Text = "Borrar Filtros";
             this.BorrarFiltro.UseVisualStyleBackColor = false;
@@ -85,10 +86,10 @@
             this.Boton_Salir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_Salir.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Salir.Location = new System.Drawing.Point(561, 696);
+            this.Boton_Salir.Location = new System.Drawing.Point(623, 696);
             this.Boton_Salir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Salir.Name = "Boton_Salir";
-            this.Boton_Salir.Size = new System.Drawing.Size(190, 42);
+            this.Boton_Salir.Size = new System.Drawing.Size(137, 42);
             this.Boton_Salir.TabIndex = 54;
             this.Boton_Salir.Text = "Salir";
             this.Boton_Salir.UseVisualStyleBackColor = false;
@@ -192,18 +193,32 @@
             this.Productos.ReadOnly = true;
             this.Productos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.Productos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Productos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Productos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.Productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Productos.Size = new System.Drawing.Size(750, 450);
             this.Productos.TabIndex = 46;
             this.Productos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Productos_CellContentClick);
+            // 
+            // Boton_Eliminar
+            // 
+            this.Boton_Eliminar.BackColor = System.Drawing.Color.IndianRed;
+            this.Boton_Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Boton_Eliminar.Font = new System.Drawing.Font("Nunito", 20.25F);
+            this.Boton_Eliminar.Location = new System.Drawing.Point(254, 696);
+            this.Boton_Eliminar.Name = "Boton_Eliminar";
+            this.Boton_Eliminar.Size = new System.Drawing.Size(136, 42);
+            this.Boton_Eliminar.TabIndex = 57;
+            this.Boton_Eliminar.Text = "Eliminar";
+            this.Boton_Eliminar.UseVisualStyleBackColor = false;
+            this.Boton_Eliminar.Click += new System.EventHandler(this.Boton_Eliminar_Click);
             // 
             // InterfazListaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 768);
+            this.Controls.Add(this.Boton_Eliminar);
             this.Controls.Add(this.Boton_Modificar);
             this.Controls.Add(this.BorrarFiltro);
             this.Controls.Add(this.Boton_Salir);
@@ -240,5 +255,6 @@
         private System.Windows.Forms.PictureBox UsuariosLupa;
         private System.Windows.Forms.Button Boton_AltaProducto;
         private System.Windows.Forms.DataGridView Productos;
+        private System.Windows.Forms.Button Boton_Eliminar;
     }
 }

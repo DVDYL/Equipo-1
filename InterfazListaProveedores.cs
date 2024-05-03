@@ -38,7 +38,7 @@ namespace Presentacion
                 var bindingList = new BindingList<TraerProveedores>(Proveedor);
                 var source = new BindingSource(bindingList, null);
                 Proveedores.DataSource = source;
-                Proveedores.Columns["id"].Visible = false;
+                Proveedores.Columns["ID"].Visible = true; //Paso a true la visibilidad de la columna ID
             }
             catch (Exception ex)
             {
@@ -213,6 +213,32 @@ namespace Presentacion
                     this.Hide(); // Ocultar el formulario actual
                 }
                 // Si el usuario elige "No", no hacer nada
+            }
+        }
+
+        private void EliminarProveedor()
+        {
+            ProveedorNegocio BajaProveedor = new ProveedorNegocio();
+            //BajaProveedor.BorrarProveedor(ACÁ SE DEBERÍA ESPECIFICAR DE QUÉ CELDA SALE EL DATO DEL IDPROVEEDOR);
+        }
+        private void Boton_Eliminar_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay una fila seleccionada dentro del GRID
+            if (Proveedores.SelectedRows.Count > 0)
+            {
+                // Obtener el índice de la fila seleccionada
+                int indiceFila = Proveedores.SelectedRows[0].Index;
+
+                // Obtener el valor de la celda "ID" de la fila seleccionada
+                string id = Proveedores.Rows[indiceFila].Cells["ID"].Value.ToString();
+
+                // Por medio del id, eliminamos el proveedor
+                // Por ejemplo:
+                EliminarProveedor(); //Acá debería ir el id dentro del método.
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una fila antes de intentar eliminar.");
             }
         }
     }

@@ -40,6 +40,7 @@
             this.Boton_Modificar = new System.Windows.Forms.Button();
             this.BorrarFiltro = new System.Windows.Forms.Button();
             this.Boton_Salir = new System.Windows.Forms.Button();
+            this.Boton_Eliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Clientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LupaDNI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosLupa)).BeginInit();
@@ -153,7 +154,7 @@
             this.Boton_Modificar.Location = new System.Drawing.Point(79, 697);
             this.Boton_Modificar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Modificar.Name = "Boton_Modificar";
-            this.Boton_Modificar.Size = new System.Drawing.Size(190, 42);
+            this.Boton_Modificar.Size = new System.Drawing.Size(148, 42);
             this.Boton_Modificar.TabIndex = 45;
             this.Boton_Modificar.Text = "Modificar";
             this.Boton_Modificar.UseVisualStyleBackColor = false;
@@ -166,9 +167,9 @@
             this.BorrarFiltro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.BorrarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BorrarFiltro.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BorrarFiltro.Location = new System.Drawing.Point(317, 697);
+            this.BorrarFiltro.Location = new System.Drawing.Point(436, 697);
             this.BorrarFiltro.Name = "BorrarFiltro";
-            this.BorrarFiltro.Size = new System.Drawing.Size(193, 42);
+            this.BorrarFiltro.Size = new System.Drawing.Size(199, 42);
             this.BorrarFiltro.TabIndex = 44;
             this.BorrarFiltro.Text = "Borrar Filtros";
             this.BorrarFiltro.UseVisualStyleBackColor = false;
@@ -181,20 +182,34 @@
             this.Boton_Salir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_Salir.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Salir.Location = new System.Drawing.Point(561, 697);
+            this.Boton_Salir.Location = new System.Drawing.Point(660, 697);
             this.Boton_Salir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Salir.Name = "Boton_Salir";
-            this.Boton_Salir.Size = new System.Drawing.Size(190, 42);
+            this.Boton_Salir.Size = new System.Drawing.Size(115, 42);
             this.Boton_Salir.TabIndex = 43;
             this.Boton_Salir.Text = "Salir";
             this.Boton_Salir.UseVisualStyleBackColor = false;
             this.Boton_Salir.Click += new System.EventHandler(this.Boton_Salir_Click);
+            // 
+            // Boton_Eliminar
+            // 
+            this.Boton_Eliminar.BackColor = System.Drawing.Color.IndianRed;
+            this.Boton_Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Boton_Eliminar.Font = new System.Drawing.Font("Nunito", 20.25F);
+            this.Boton_Eliminar.Location = new System.Drawing.Point(261, 697);
+            this.Boton_Eliminar.Name = "Boton_Eliminar";
+            this.Boton_Eliminar.Size = new System.Drawing.Size(142, 42);
+            this.Boton_Eliminar.TabIndex = 46;
+            this.Boton_Eliminar.Text = "Eliminar";
+            this.Boton_Eliminar.UseVisualStyleBackColor = false;
+            this.Boton_Eliminar.Click += new System.EventHandler(this.Boton_Eliminar_Click);
             // 
             // InterfazListaClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 768);
+            this.Controls.Add(this.Boton_Eliminar);
             this.Controls.Add(this.Boton_Modificar);
             this.Controls.Add(this.BorrarFiltro);
             this.Controls.Add(this.Boton_Salir);
@@ -231,5 +246,6 @@
         private System.Windows.Forms.Button Boton_Modificar;
         private System.Windows.Forms.Button BorrarFiltro;
         private System.Windows.Forms.Button Boton_Salir;
+        private System.Windows.Forms.Button Boton_Eliminar;
     }
 }

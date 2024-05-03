@@ -92,5 +92,31 @@ namespace Presentacion
         {
 
         }
+
+        private void EliminarProducto()
+        {
+            ProductoNegocio BajaProproducto= new ProductoNegocio();
+            //BajaProducto.BorrarProproducto(ACÁ SE DEBERÍA ESPECIFICAR DE QUÉ CELDA SALE EL DATO DEL IDPRODUCTO);
+        }
+        private void Boton_Eliminar_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay una fila seleccionada dentro del GRID
+            if (Productos.SelectedRows.Count > 0)
+            {
+                // Obtener el índice de la fila seleccionada
+                int indiceFila = Productos.SelectedRows[0].Index;
+
+                // Obtener el valor de la celda "ID" de la fila seleccionada
+                string id = Productos.Rows[indiceFila].Cells["ID"].Value.ToString();
+
+                // Por medio del id, eliminamos el proveedor
+                // Por ejemplo:
+                EliminarProducto(); //Acá debería ir el id dentro del método.
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una fila antes de intentar eliminar.");
+            }
+        }
     }
 }

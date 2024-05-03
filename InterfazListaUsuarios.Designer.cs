@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TituloVentana = new System.Windows.Forms.Label();
             this.Boton_Salir = new System.Windows.Forms.Button();
             this.Boton_AltaUsuario = new System.Windows.Forms.Button();
@@ -45,6 +45,7 @@
             this.LupaDNI = new System.Windows.Forms.PictureBox();
             this.Nombre_Label = new System.Windows.Forms.Label();
             this.DNI_Label = new System.Windows.Forms.Label();
+            this.Boton_Eliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Usuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosLupa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LupaDNI)).BeginInit();
@@ -100,37 +101,37 @@
             this.Usuarios.AllowUserToDeleteRows = false;
             this.Usuarios.AllowUserToResizeColumns = false;
             this.Usuarios.AllowUserToResizeRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.NullValue = null;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            this.Usuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.NullValue = null;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.Usuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.Usuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.Usuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.Usuarios.BackgroundColor = System.Drawing.SystemColors.Control;
             this.Usuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.Usuarios.ColumnHeadersHeight = 25;
             this.Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Usuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Prueba});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Usuarios.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Usuarios.DefaultCellStyle = dataGridViewCellStyle8;
             this.Usuarios.EnableHeadersVisualStyles = false;
             this.Usuarios.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Usuarios.Location = new System.Drawing.Point(25, 215);
@@ -138,19 +139,19 @@
             this.Usuarios.Name = "Usuarios";
             this.Usuarios.ReadOnly = true;
             this.Usuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle14.NullValue = null;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Usuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle9.NullValue = null;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.Usuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.Usuarios.RowHeadersWidth = 15;
             this.Usuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Usuarios.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Usuarios.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.Usuarios.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Usuarios.RowTemplate.Height = 40;
             this.Usuarios.RowTemplate.ReadOnly = true;
@@ -197,7 +198,7 @@
             this.BorrarFiltro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.BorrarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BorrarFiltro.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BorrarFiltro.Location = new System.Drawing.Point(329, 695);
+            this.BorrarFiltro.Location = new System.Drawing.Point(129, 695);
             this.BorrarFiltro.Name = "BorrarFiltro";
             this.BorrarFiltro.Size = new System.Drawing.Size(193, 42);
             this.BorrarFiltro.TabIndex = 4;
@@ -248,9 +249,23 @@
             this.DNI_Label.TabIndex = 35;
             this.DNI_Label.Text = "Buscar por DNI";
             // 
+            // Boton_Eliminar
+            // 
+            this.Boton_Eliminar.BackColor = System.Drawing.Color.IndianRed;
+            this.Boton_Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Boton_Eliminar.Font = new System.Drawing.Font("Nunito", 20.25F);
+            this.Boton_Eliminar.Location = new System.Drawing.Point(372, 695);
+            this.Boton_Eliminar.Name = "Boton_Eliminar";
+            this.Boton_Eliminar.Size = new System.Drawing.Size(161, 42);
+            this.Boton_Eliminar.TabIndex = 36;
+            this.Boton_Eliminar.Text = "Eliminar";
+            this.Boton_Eliminar.UseVisualStyleBackColor = false;
+            this.Boton_Eliminar.Click += new System.EventHandler(this.Boton_Eliminar_Click);
+            // 
             // InterfazListaUsuarios
             // 
             this.ClientSize = new System.Drawing.Size(800, 768);
+            this.Controls.Add(this.Boton_Eliminar);
             this.Controls.Add(this.DNI_Label);
             this.Controls.Add(this.Nombre_Label);
             this.Controls.Add(this.Box_BuscarDNI);
@@ -292,5 +307,6 @@
         private System.Windows.Forms.Label Nombre_Label;
         private System.Windows.Forms.Label DNI_Label;
         private System.Windows.Forms.DataGridViewTextBoxColumn Prueba;
+        private System.Windows.Forms.Button Boton_Eliminar;
     }
 }
