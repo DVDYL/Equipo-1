@@ -17,11 +17,15 @@ namespace Presentacion
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
+            Boton_Modificar.Visible = false;
+            Boton_Eliminar.Visible = false;
         }
 
         private void InterfazListaProveedores_Load(object sender, EventArgs e)
         {
             CargarProveedores();
+            Boton_Modificar.Visible = false;
+            Boton_Eliminar.Visible = false;
         }
 
         private void CargarProveedores()
@@ -59,6 +63,8 @@ namespace Presentacion
             if (string.IsNullOrEmpty(textoBusqueda))
             {
                 CargarProveedores();
+                Boton_Modificar.Visible = false;
+                Boton_Eliminar.Visible = false;
             }
 
             // Verificar si la lista de usuarios es nula o está vacía
@@ -66,6 +72,8 @@ namespace Presentacion
             {
                 // Manejar el caso en el que la lista de usuarios es nula o vacía
                 MessageBox.Show("La lista se encuentra vacía.\n\nNo hay usuarios para buscar.");
+                Boton_Modificar.Visible = false;
+                Boton_Eliminar.Visible = false;
             }
             else
             {
@@ -79,7 +87,7 @@ namespace Presentacion
                     string nombreProveedor = fila.Cells["Nombre"].Value?.ToString();
 
                     // Comparar si el texto de búsqueda coincide con el nombre de usuario actual
-                    if (!string.IsNullOrEmpty(nombreProveedor) && nombreProveedor.Contains(textoBusqueda))
+                    if (!string.IsNullOrEmpty(nombreProveedor) && nombreProveedor.ToLower().Contains(textoBusqueda.ToLower()))
                     {
                         // Agregar el usuario a la lista de usuarios filtrados
                         proveedoresFiltrados.Add((TraerProveedores)fila.DataBoundItem);
@@ -93,6 +101,8 @@ namespace Presentacion
                     var bindingList = new BindingList<TraerProveedores>(proveedoresFiltrados);
                     var source = new BindingSource(bindingList, null);
                     Proveedores.DataSource = source;
+                    Boton_Modificar.Visible = true;
+                    Boton_Eliminar.Visible = true;
                 }
                 else
                 {
@@ -144,20 +154,25 @@ namespace Presentacion
                     var bindingList = new BindingList<TraerProveedores>(proveedoresFiltrados);
                     var source = new BindingSource(bindingList, null);
                     Proveedores.DataSource = source;
+                    Boton_Modificar.Visible = true;
+                    Boton_Eliminar.Visible = true;
                 }
                 else
                 {
                     // Mostrar un mensaje si no se encontraron usuarios que coincidan con la búsqueda
                     MessageBox.Show("No se encontraron usuarios que coincidan con la búsqueda.");
+                    Boton_Modificar.Visible = false;
+                    Boton_Eliminar.Visible = false;
                 }
             }
-
         }
 
         private void Limpiar() // Blanquea campos de búsqueda
         {
             ProveedoresBuscador.Text = "";
             CUITBuscador.Text = "";
+            Boton_Modificar.Visible = false;
+            Boton_Eliminar.Visible = false;
         }
 
         private void BotonAltaProveedores_Click(object sender, EventArgs e)
@@ -178,6 +193,33 @@ namespace Presentacion
         {
             CargarProveedores();
             Limpiar();
+        }
+
+        private void EliminarProveedor()
+        {
+            ProveedorNegocio BajaProveedor = new ProveedorNegocio();
+            //BajaProveedor.BorrarProveedor(ACÁ SE DEBERÍA ESPECIFICAR DE QUÉ CELDA SALE EL DATO DEL IDPROVEEDOR);
+        }
+
+        private void Boton_Eliminar_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay una fila seleccionada dentro del GRID
+            if (Proveedores.SelectedRows.Count > 0)
+            {
+                // Obtener el índice de la fila seleccionada
+                int indiceFila = Proveedores.SelectedRows[0].Index;
+
+                // Obtener el valor de la celda "ID" de la fila seleccionada
+                string id = Proveedores.Rows[indiceFila].Cells["ID"].Value.ToString();
+
+                // Por medio del id, eliminamos el proveedor
+                // Por ejemplo:
+                EliminarProveedor(); //Acá debería ir el id dentro del método.
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una fila antes de intentar eliminar.");
+            }
         }
 
         private void Boton_Salir_Click(object sender, EventArgs e)
@@ -213,32 +255,6 @@ namespace Presentacion
                     this.Hide(); // Ocultar el formulario actual
                 }
                 // Si el usuario elige "No", no hacer nada
-            }
-        }
-
-        private void EliminarProveedor()
-        {
-            ProveedorNegocio BajaProveedor = new ProveedorNegocio();
-            //BajaProveedor.BorrarProveedor(ACÁ SE DEBERÍA ESPECIFICAR DE QUÉ CELDA SALE EL DATO DEL IDPROVEEDOR);
-        }
-        private void Boton_Eliminar_Click(object sender, EventArgs e)
-        {
-            // Verificar si hay una fila seleccionada dentro del GRID
-            if (Proveedores.SelectedRows.Count > 0)
-            {
-                // Obtener el índice de la fila seleccionada
-                int indiceFila = Proveedores.SelectedRows[0].Index;
-
-                // Obtener el valor de la celda "ID" de la fila seleccionada
-                string id = Proveedores.Rows[indiceFila].Cells["ID"].Value.ToString();
-
-                // Por medio del id, eliminamos el proveedor
-                // Por ejemplo:
-                EliminarProveedor(); //Acá debería ir el id dentro del método.
-            }
-            else
-            {
-                MessageBox.Show("Selecciona una fila antes de intentar eliminar.");
             }
         }
     }

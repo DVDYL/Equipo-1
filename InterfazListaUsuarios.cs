@@ -20,6 +20,7 @@ namespace Presentacion
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             dataGridView1.CellClick += Usuarios_CellClick;
+            Boton_Eliminar.Visible = false; // ocultar el botón eliminar hasta que se haya buscado un usuario.
         }
 
         private void InterfazListaUsuarios_Load(object sender, EventArgs e)
@@ -97,14 +98,15 @@ namespace Presentacion
             {
                 Console.WriteLine("prueba");
             }
-        }
+        } // ¿Esta función no hace nada?
+
         private void Limpiar() // Blanquea el Formulario de usuarios
         {
             // Reiniciar los valores de todos los campos del formulario a sus valores predeterminados
 
             Box_BuscarDNI.Text = "";
             UsuariosBuscador.Text = "";
-
+            Boton_Eliminar.Visible = false; 
         }
 
         private void UsuariosLupa_Click(object sender, EventArgs e)
@@ -116,6 +118,7 @@ namespace Presentacion
             {
                 CargarUsuarios();
                 Limpiar();
+                Boton_Eliminar.Visible = false;
             }
 
             // Verificar si la lista de usuarios es nula o está vacía
@@ -123,6 +126,7 @@ namespace Presentacion
             {
                 // Manejar el caso en el que la lista de usuarios es nula o vacía
                 MessageBox.Show("La lista se encuentra vacía.\n\nNo hay usuarios para buscar.");
+                Boton_Eliminar.Visible = false;
             }
             else
             {
@@ -150,6 +154,7 @@ namespace Presentacion
                     var bindingList = new BindingList<UsuariosActivos>(usuariosFiltrados);
                     var source = new BindingSource(bindingList, null);
                     Usuarios.DataSource = source;
+                    Boton_Eliminar.Visible = true;
                 }
                 else
                 {
@@ -168,6 +173,7 @@ namespace Presentacion
             {
                 CargarUsuarios();
                 Limpiar();
+                Boton_Eliminar.Visible = false;
             }
 
             // Verificar si la lista de usuarios es nula o está vacía
@@ -175,6 +181,7 @@ namespace Presentacion
             {
                 // Manejar el caso en el que la lista de usuarios es nula o vacía
                 MessageBox.Show("La lista se encuentra vacía.\n\nNo hay usuarios para buscar.");
+                Boton_Eliminar.Visible = false;
             }
             else
             {
@@ -202,6 +209,7 @@ namespace Presentacion
                     var bindingList = new BindingList<UsuariosActivos>(usuariosFiltrados);
                     var source = new BindingSource(bindingList, null);
                     Usuarios.DataSource = source;
+                    Boton_Eliminar.Visible = true;
                 }
                 else
                 {
@@ -214,6 +222,34 @@ namespace Presentacion
         private void BorrarFiltro_Click(object sender, EventArgs e)
         {
             CargarUsuarios();
+            Boton_Eliminar.Visible = false;
+        }
+
+        private void EliminarUsuario()
+        {
+            UsuarioNegocio BajaUsuario = new UsuarioNegocio();
+            //BajaUsuario.BorrarUsuario(ACÁ SE DEBERÍA ESPECIFICAR DE QUÉ CELDA SALE EL DATO DEL ID/IDUsuario);
+        }
+
+        private void Boton_Eliminar_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay una fila seleccionada dentro del GRID
+            if (Usuarios.SelectedRows.Count > 0)
+            {
+                // Obtener el índice de la fila seleccionada
+                int indiceFila = Usuarios.SelectedRows[0].Index;
+
+                // Obtener el valor de la celda "ID" de la fila seleccionada
+                string id = Usuarios.Rows[indiceFila].Cells["ID"].Value.ToString();
+
+                // Por medio del id, eliminamos el proveedor
+                // Por ejemplo:
+                EliminarUsuario(); //Acá debería ir el id dentro del método.
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una fila antes de intentar eliminar.");
+            }
         }
 
         private void Boton_Salir_Click(object sender, EventArgs e)
@@ -249,37 +285,6 @@ namespace Presentacion
                     this.Hide(); // Ocultar el formulario actual
                 }
                 // Si el usuario elige "No", no hacer nada
-            }
-        }
-
-        private void Usuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void EliminarUsuario()
-        {
-            UsuarioNegocio BajaUsuario = new UsuarioNegocio();
-            //BajaUsuario.BorrarUsuario(ACÁ SE DEBERÍA ESPECIFICAR DE QUÉ CELDA SALE EL DATO DEL ID/IDUsuario);
-        }
-        private void Boton_Eliminar_Click(object sender, EventArgs e)
-        {
-            // Verificar si hay una fila seleccionada dentro del GRID
-            if (Usuarios.SelectedRows.Count > 0)
-            {
-                // Obtener el índice de la fila seleccionada
-                int indiceFila = Usuarios.SelectedRows[0].Index;
-
-                // Obtener el valor de la celda "ID" de la fila seleccionada
-                string id = Usuarios.Rows[indiceFila].Cells["ID"].Value.ToString();
-
-                // Por medio del id, eliminamos el proveedor
-                // Por ejemplo:
-                EliminarUsuario(); //Acá debería ir el id dentro del método.
-            }
-            else
-            {
-                MessageBox.Show("Selecciona una fila antes de intentar eliminar.");
             }
         }
     }

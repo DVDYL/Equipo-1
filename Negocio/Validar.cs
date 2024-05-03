@@ -402,20 +402,54 @@ namespace Negocio
             }
         }
 
+        //public static string EsStock(string valor, string campo)
+        //{
+
+        //    string error = "";
+
+        //    if (!int.TryParse(valor, out int salida))
+        //    {
+        //        error = "El campo " + campo + " no es numérico." + Environment.NewLine;
+        //    }
+        //    else if (salida <= 0)
+        //    {
+        //        error = "El campo " + campo + " no es positivo." + Environment.NewLine;
+        //    }
+
+        //    return error;
+        //}
+
         public static string EsStock(string valor, string campo)
         {
-            string error = "";
-
-            if (!int.TryParse(valor, out int salida))
+            // Verificar si el valor está vacío o nulo
+            if (string.IsNullOrEmpty(valor))
             {
-                error = "El campo " + campo + " no es numérico." + Environment.NewLine;
-            }
-            else if (salida <= 0)
-            {
-                error = "El campo " + campo + " no es positivo." + Environment.NewLine;
+                return "El campo " + campo + " no puede estar vacío.";
             }
 
-            return error;
+            // Verificar si el valor contiene caracteres no numéricos
+            if (!int.TryParse(valor, out _))
+            {
+                return "El campo " + campo + " no puede contener letras ni caracteres especiales.";
+            }
+
+            // Convertir el valor a entero
+            int stock = int.Parse(valor);
+
+            // Verificar si el valor es menor o igual a cero
+            if (stock <= 0)
+            {
+                return "El campo " + campo + " debe ser un número positivo.";
+            }
+
+            // Verificar si el valor es mayor a 1000
+            if (stock > 1000)
+            {
+                return "El campo " + campo + " no puede ser mayor a 1000.";
+            }
+
+            // Si todas las validaciones pasan, devolver null
+            return null;
         }
 
         public static string MailProveedor(string texto)

@@ -36,11 +36,11 @@
             this.Telefono_Error = new System.Windows.Forms.TextBox();
             this.Calle_Error = new System.Windows.Forms.TextBox();
             this.DNI_Error = new System.Windows.Forms.TextBox();
-            this.MayudaTelefono = new System.Windows.Forms.Label();
+            this.MayudaCUIT = new System.Windows.Forms.Label();
             this.MayudaConfirMail = new System.Windows.Forms.Label();
             this.MayudaMail = new System.Windows.Forms.Label();
-            this.MayudaCalle = new System.Windows.Forms.Label();
-            this.MayudaDNI = new System.Windows.Forms.Label();
+            this.MayudaApellido = new System.Windows.Forms.Label();
+            this.MayudaCategoria = new System.Windows.Forms.Label();
             this.ConfirMail_Box = new System.Windows.Forms.TextBox();
             this.CUIT_Box = new System.Windows.Forms.TextBox();
             this.Email_Box = new System.Windows.Forms.TextBox();
@@ -155,24 +155,26 @@
             this.DNI_Error.Size = new System.Drawing.Size(311, 20);
             this.DNI_Error.TabIndex = 93;
             // 
-            // MayudaTelefono
+            // MayudaCUIT
             // 
-            this.MayudaTelefono.AutoSize = true;
-            this.MayudaTelefono.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaTelefono.Location = new System.Drawing.Point(712, 595);
-            this.MayudaTelefono.Name = "MayudaTelefono";
-            this.MayudaTelefono.Size = new System.Drawing.Size(13, 15);
-            this.MayudaTelefono.TabIndex = 92;
-            this.MayudaTelefono.Text = "?";
-            this.MayudaTelefono.Visible = false;
+            this.MayudaCUIT.AutoSize = true;
+            this.MayudaCUIT.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaCUIT.Font = new System.Drawing.Font("Nunito", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MayudaCUIT.Location = new System.Drawing.Point(712, 595);
+            this.MayudaCUIT.Name = "MayudaCUIT";
+            this.MayudaCUIT.Size = new System.Drawing.Size(15, 17);
+            this.MayudaCUIT.TabIndex = 92;
+            this.MayudaCUIT.Text = "?";
+            this.MayudaCUIT.Visible = false;
             // 
             // MayudaConfirMail
             // 
             this.MayudaConfirMail.AutoSize = true;
             this.MayudaConfirMail.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaConfirMail.Font = new System.Drawing.Font("Nunito", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MayudaConfirMail.Location = new System.Drawing.Point(712, 480);
             this.MayudaConfirMail.Name = "MayudaConfirMail";
-            this.MayudaConfirMail.Size = new System.Drawing.Size(13, 15);
+            this.MayudaConfirMail.Size = new System.Drawing.Size(15, 17);
             this.MayudaConfirMail.TabIndex = 91;
             this.MayudaConfirMail.Text = "?";
             this.MayudaConfirMail.Visible = false;
@@ -181,34 +183,37 @@
             // 
             this.MayudaMail.AutoSize = true;
             this.MayudaMail.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaMail.Font = new System.Drawing.Font("Nunito", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MayudaMail.Location = new System.Drawing.Point(712, 367);
             this.MayudaMail.Name = "MayudaMail";
-            this.MayudaMail.Size = new System.Drawing.Size(13, 15);
+            this.MayudaMail.Size = new System.Drawing.Size(15, 17);
             this.MayudaMail.TabIndex = 90;
             this.MayudaMail.Text = "?";
             this.MayudaMail.Visible = false;
             // 
-            // MayudaCalle
+            // MayudaApellido
             // 
-            this.MayudaCalle.AutoSize = true;
-            this.MayudaCalle.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaCalle.Location = new System.Drawing.Point(712, 251);
-            this.MayudaCalle.Name = "MayudaCalle";
-            this.MayudaCalle.Size = new System.Drawing.Size(13, 15);
-            this.MayudaCalle.TabIndex = 89;
-            this.MayudaCalle.Text = "?";
-            this.MayudaCalle.Visible = false;
+            this.MayudaApellido.AutoSize = true;
+            this.MayudaApellido.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaApellido.Font = new System.Drawing.Font("Nunito", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MayudaApellido.Location = new System.Drawing.Point(712, 251);
+            this.MayudaApellido.Name = "MayudaApellido";
+            this.MayudaApellido.Size = new System.Drawing.Size(15, 17);
+            this.MayudaApellido.TabIndex = 89;
+            this.MayudaApellido.Text = "?";
+            this.MayudaApellido.Visible = false;
             // 
-            // MayudaDNI
+            // MayudaCategoria
             // 
-            this.MayudaDNI.AutoSize = true;
-            this.MayudaDNI.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaDNI.Location = new System.Drawing.Point(712, 152);
-            this.MayudaDNI.Name = "MayudaDNI";
-            this.MayudaDNI.Size = new System.Drawing.Size(13, 15);
-            this.MayudaDNI.TabIndex = 88;
-            this.MayudaDNI.Text = "?";
-            this.MayudaDNI.Visible = false;
+            this.MayudaCategoria.AutoSize = true;
+            this.MayudaCategoria.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaCategoria.Font = new System.Drawing.Font("Nunito", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MayudaCategoria.Location = new System.Drawing.Point(712, 152);
+            this.MayudaCategoria.Name = "MayudaCategoria";
+            this.MayudaCategoria.Size = new System.Drawing.Size(15, 17);
+            this.MayudaCategoria.TabIndex = 88;
+            this.MayudaCategoria.Text = "?";
+            this.MayudaCategoria.Visible = false;
             // 
             // ConfirMail_Box
             // 
@@ -317,7 +322,7 @@
             // 
             // InterfazModificarProveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 768);
             this.Controls.Add(this.Boton_Cancelar);
@@ -328,11 +333,11 @@
             this.Controls.Add(this.Telefono_Error);
             this.Controls.Add(this.Calle_Error);
             this.Controls.Add(this.DNI_Error);
-            this.Controls.Add(this.MayudaTelefono);
+            this.Controls.Add(this.MayudaCUIT);
             this.Controls.Add(this.MayudaConfirMail);
             this.Controls.Add(this.MayudaMail);
-            this.Controls.Add(this.MayudaCalle);
-            this.Controls.Add(this.MayudaDNI);
+            this.Controls.Add(this.MayudaApellido);
+            this.Controls.Add(this.MayudaCategoria);
             this.Controls.Add(this.ConfirMail_Box);
             this.Controls.Add(this.CUIT_Box);
             this.Controls.Add(this.Email_Box);
@@ -362,11 +367,11 @@
         private System.Windows.Forms.TextBox Telefono_Error;
         private System.Windows.Forms.TextBox Calle_Error;
         private System.Windows.Forms.TextBox DNI_Error;
-        private System.Windows.Forms.Label MayudaTelefono;
+        private System.Windows.Forms.Label MayudaCUIT;
         private System.Windows.Forms.Label MayudaConfirMail;
         private System.Windows.Forms.Label MayudaMail;
-        private System.Windows.Forms.Label MayudaCalle;
-        private System.Windows.Forms.Label MayudaDNI;
+        private System.Windows.Forms.Label MayudaApellido;
+        private System.Windows.Forms.Label MayudaCategoria;
         private System.Windows.Forms.TextBox ConfirMail_Box;
         private System.Windows.Forms.TextBox CUIT_Box;
         private System.Windows.Forms.TextBox Email_Box;

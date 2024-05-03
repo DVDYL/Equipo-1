@@ -18,7 +18,7 @@ namespace Negocio
             return ProductoService.GetProductos();
         }
 
-        public void AgregarProductos(int idCategoria, Guid idUsuario, Guid idProveedor, string Nombre, int Precio, int Stock)
+        public void AgregarProductos(int idCategoria, string idUsuario, string idProveedor, string Nombre, int Precio, int Stock)
         {
             AltaProducto altaProducto= new AltaProducto(idCategoria,idUsuario,idProveedor,Nombre, Precio, Stock);
             ProductoService.AgregarProductos(altaProducto);

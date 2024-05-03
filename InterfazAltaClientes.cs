@@ -284,7 +284,7 @@ namespace Presentacion
                 if (resultadoConfirmacion == DialogResult.Yes)
                 {
                     // Mostrar mensaje de éxito con el nombre de usuario generado
-                    MessageBox.Show($"Se ha realizado la operación de alta para el cliente {Box_Nombre.Text + Box_Apellido.Text}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Se ha realizado la operación de alta para el cliente {Box_Nombre.Text + " " + Box_Apellido.Text}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // Preguntar al usuario si desea continuar en el Maestro de Usuarios
                     DialogResult resultadoContinuar = MessageBox.Show("¿Desea seguir cargando clientes?", "Confirmar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

@@ -51,7 +51,7 @@
             BarraVentana.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             BarraVentana.Location = new System.Drawing.Point(0, 0);
             BarraVentana.Name = "BarraVentana";
-            BarraVentana.Size = new System.Drawing.Size(800, 38);
+            BarraVentana.Size = new System.Drawing.Size(1366, 38);
             BarraVentana.TabIndex = 0;
             BarraVentana.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTituloForm_MouseDown);
             // 
@@ -69,7 +69,7 @@
             this.Boton_Minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Boton_Minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Boton_Minimizar.Image = ((System.Drawing.Image)(resources.GetObject("Boton_Minimizar.Image")));
-            this.Boton_Minimizar.Location = new System.Drawing.Point(719, -1);
+            this.Boton_Minimizar.Location = new System.Drawing.Point(1285, -1);
             this.Boton_Minimizar.Name = "Boton_Minimizar";
             this.Boton_Minimizar.Size = new System.Drawing.Size(31, 35);
             this.Boton_Minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -82,7 +82,7 @@
             this.Boton_Cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Boton_Cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Boton_Cerrar.Image = ((System.Drawing.Image)(resources.GetObject("Boton_Cerrar.Image")));
-            this.Boton_Cerrar.Location = new System.Drawing.Point(756, 0);
+            this.Boton_Cerrar.Location = new System.Drawing.Point(1322, 0);
             this.Boton_Cerrar.Name = "Boton_Cerrar";
             this.Boton_Cerrar.Size = new System.Drawing.Size(39, 42);
             this.Boton_Cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -94,10 +94,10 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(BarraVentana);
             this.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Ventana";
