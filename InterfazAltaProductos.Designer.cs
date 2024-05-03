@@ -48,6 +48,8 @@
             this.MayudaPrecio = new System.Windows.Forms.Label();
             this.MayudaNombre = new System.Windows.Forms.Label();
             this.MayudaCategoria = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ComboBox_Proveedor = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // Boton_Cancelar
@@ -95,13 +97,13 @@
             this.Box_Nombre.Font = new System.Drawing.Font("Nunito", 18F);
             this.Box_Nombre.Location = new System.Drawing.Point(431, 286);
             this.Box_Nombre.Name = "Box_Nombre";
-            this.Box_Nombre.Size = new System.Drawing.Size(250, 31);
+            this.Box_Nombre.Size = new System.Drawing.Size(250, 32);
             this.Box_Nombre.TabIndex = 100;
             // 
             // Precio_Label
             // 
             this.Precio_Label.Font = new System.Drawing.Font("Nunito", 21.75F);
-            this.Precio_Label.Location = new System.Drawing.Point(70, 398);
+            this.Precio_Label.Location = new System.Drawing.Point(70, 388);
             this.Precio_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Precio_Label.Name = "Precio_Label";
             this.Precio_Label.Size = new System.Drawing.Size(136, 39);
@@ -113,15 +115,15 @@
             this.Box_Precio.BackColor = System.Drawing.Color.Gainsboro;
             this.Box_Precio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Box_Precio.Font = new System.Drawing.Font("Nunito", 18F);
-            this.Box_Precio.Location = new System.Drawing.Point(433, 401);
+            this.Box_Precio.Location = new System.Drawing.Point(433, 393);
             this.Box_Precio.Name = "Box_Precio";
-            this.Box_Precio.Size = new System.Drawing.Size(250, 31);
+            this.Box_Precio.Size = new System.Drawing.Size(250, 32);
             this.Box_Precio.TabIndex = 112;
             // 
             // Stock_Label
             // 
             this.Stock_Label.Font = new System.Drawing.Font("Nunito", 21.75F);
-            this.Stock_Label.Location = new System.Drawing.Point(70, 515);
+            this.Stock_Label.Location = new System.Drawing.Point(70, 487);
             this.Stock_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Stock_Label.Name = "Stock_Label";
             this.Stock_Label.Size = new System.Drawing.Size(136, 39);
@@ -133,9 +135,9 @@
             this.Box_Stock.BackColor = System.Drawing.Color.Gainsboro;
             this.Box_Stock.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Box_Stock.Font = new System.Drawing.Font("Nunito", 18F);
-            this.Box_Stock.Location = new System.Drawing.Point(431, 518);
+            this.Box_Stock.Location = new System.Drawing.Point(431, 492);
             this.Box_Stock.Name = "Box_Stock";
-            this.Box_Stock.Size = new System.Drawing.Size(251, 31);
+            this.Box_Stock.Size = new System.Drawing.Size(251, 32);
             this.Box_Stock.TabIndex = 114;
             // 
             // ComboBox_Categoria
@@ -240,7 +242,7 @@
             this.MayudaStock.AutoSize = true;
             this.MayudaStock.BackColor = System.Drawing.Color.LightGray;
             this.MayudaStock.Font = new System.Drawing.Font("Nunito", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MayudaStock.Location = new System.Drawing.Point(717, 525);
+            this.MayudaStock.Location = new System.Drawing.Point(717, 503);
             this.MayudaStock.Name = "MayudaStock";
             this.MayudaStock.Size = new System.Drawing.Size(15, 17);
             this.MayudaStock.TabIndex = 121;
@@ -252,7 +254,7 @@
             this.MayudaPrecio.AutoSize = true;
             this.MayudaPrecio.BackColor = System.Drawing.Color.LightGray;
             this.MayudaPrecio.Font = new System.Drawing.Font("Nunito", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MayudaPrecio.Location = new System.Drawing.Point(717, 410);
+            this.MayudaPrecio.Location = new System.Drawing.Point(717, 404);
             this.MayudaPrecio.Name = "MayudaPrecio";
             this.MayudaPrecio.Size = new System.Drawing.Size(15, 17);
             this.MayudaPrecio.TabIndex = 120;
@@ -283,11 +285,32 @@
             this.MayudaCategoria.Text = "?";
             this.MayudaCategoria.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Nunito", 21.75F);
+            this.label1.Location = new System.Drawing.Point(70, 580);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(170, 39);
+            this.label1.TabIndex = 126;
+            this.label1.Text = "Proveedor:";
+            // 
+            // ComboBox_Proveedor
+            // 
+            this.ComboBox_Proveedor.FormattingEnabled = true;
+            this.ComboBox_Proveedor.Location = new System.Drawing.Point(431, 575);
+            this.ComboBox_Proveedor.Name = "ComboBox_Proveedor";
+            this.ComboBox_Proveedor.Size = new System.Drawing.Size(250, 44);
+            this.ComboBox_Proveedor.TabIndex = 127;
+            this.ComboBox_Proveedor.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // InterfazAltaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 768);
+            this.Controls.Add(this.ComboBox_Proveedor);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Stock_Error);
             this.Controls.Add(this.Precio_Error);
             this.Controls.Add(this.Nombre_Error);
@@ -338,5 +361,7 @@
         private System.Windows.Forms.Label MayudaPrecio;
         private System.Windows.Forms.Label MayudaNombre;
         private System.Windows.Forms.Label MayudaCategoria;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox ComboBox_Proveedor;
     }
 }

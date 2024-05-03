@@ -1,4 +1,5 @@
-﻿using Negocio;
+﻿using Datos;
+using Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace Presentacion
 {
     public partial class InterfazAltaProductos : Ventana
     {
+        private ProveedorNegocio ProveedorNegocio = new ProveedorNegocio();
         public InterfazAltaProductos()
         {
             InitializeComponent();
@@ -25,7 +27,24 @@ namespace Presentacion
             ComboBox_Categoria.Items.Add("ElectroHogar");
             ComboBox_Categoria.Items.Add("Informática");
             ComboBox_Categoria.Items.Add("Smart TV");
+
+            List<TraerProveedores> Proveedor = ProveedorNegocio.listarProveedores();
+
+            if (Proveedor != null)
+            {
+                Proveedor = Proveedor.Where(u => u != null && u.Email != null && u.Email.Contains("@G1") && u.FechaBaja == null).ToList();
+             
+            }
+
+            ComboBox_Proveedor.DataSource = Proveedor;
+            ComboBox_Proveedor.DisplayMember = "nombre"; //+"apellido"
+            ComboBox_Proveedor.ValueMember = "id";
+            
         }
+
+       
+
+        
 
         private void CrearProducto()
         {
@@ -244,6 +263,11 @@ namespace Presentacion
                 }
                 // Si el usuario elige "No", no hacer nada
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
