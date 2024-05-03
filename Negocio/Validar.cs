@@ -260,17 +260,22 @@ namespace Negocio
             }
 
             // Patrón de expresión regular para validar un correo electrónico con dominio @G1.com
-            string patronCorreo = @"^[a-zA-Z0-9._%+-]+@G1\.com$";
+            string patronCorreo = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
+            string patronDominio = @"@G1\.com$";
 
             // Verificar si el correo cumple con el patrón
             if (!Regex.IsMatch(texto, patronCorreo))
             {
-                return "El correo electrónico debe tener el dominio @G1.com.";
+                return "El correo electrónico es inválido.";
             }
 
             if (texto.Contains(" "))
             {
                 return "El correo electrónico no puede contener espacios en blanco.";
+            }
+            if (!Regex.IsMatch(texto, patronDominio))
+            {
+                return "El correo electrónico debe tener el dominio @G1.com";
             }
 
             // Verificar si el mail ya existe en la lista de proveedores

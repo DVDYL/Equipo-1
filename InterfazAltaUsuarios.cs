@@ -287,7 +287,7 @@ namespace Presentacion
 
         }
 
-        private string GenerarNombreUsuario(string nombre, string apellido, string dni)
+        private string GenerarCredenciales(string nombre, string apellido, string dni)
         {
             // Obtener las dos primeras letras del nombre
             string dosPrimerasLetrasNombre = nombre.Length >= 2 ? nombre.Substring(0, 2) : nombre;
@@ -343,8 +343,8 @@ namespace Presentacion
                                             Box_Telefono.Text,
                                             Box_Mail_Confirm.Text,
                                             Calendario_Nacimiento.Value,
-                                            GenerarNombreUsuario(Box_Nombre.Text, Box_Apellido.Text, Box_DNI.Text),
-                                            Box_Pass_Confirm.Text
+                                            GenerarCredenciales(Box_Nombre.Text, Box_Apellido.Text, Box_DNI.Text),
+                                            GenerarCredenciales(Box_Nombre.Text, Box_Apellido.Text, Box_DNI.Text)
                                          );
         }
 
@@ -358,7 +358,7 @@ namespace Presentacion
 
                 // Si todas las validaciones pasan y el usuario se creó, mostrar un mensaje de éxito.
 
-                string nombreUsuario = GenerarNombreUsuario(Box_Nombre.Text, Box_Apellido.Text, Box_DNI.Text); // Generar el nombre de usuario
+                string nombreUsuario = GenerarCredenciales(Box_Nombre.Text, Box_Apellido.Text, Box_DNI.Text); // Generar el nombre de usuario
 
                 // Mostrar un cuadro de diálogo de confirmación al usuario
                 DialogResult resultadoConfirmacion = MessageBox.Show($"¿Desea realizar la operación de alta para el usuario {nombreUsuario}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -366,7 +366,7 @@ namespace Presentacion
                 if (resultadoConfirmacion == DialogResult.Yes)
                 {
                     // Mostrar mensaje de éxito con el nombre de usuario generado
-                    MessageBox.Show($"Se ha realizado la operación de alta para el usuario {nombreUsuario}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Se ha realizado la operación de alta para el usuario {nombreUsuario}. Su contraseña es la misma que su nombre de usuario.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // Preguntar al usuario si desea continuar en el Maestro de Usuarios
                     DialogResult resultadoContinuar = MessageBox.Show("¿Desea continuar en el ABM de Usuarios?", "Confirmar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
