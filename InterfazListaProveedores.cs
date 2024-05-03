@@ -38,7 +38,7 @@ namespace Presentacion
                 var bindingList = new BindingList<TraerProveedores>(Proveedor);
                 var source = new BindingSource(bindingList, null);
                 Proveedores.DataSource = source;
-                Proveedores.Columns["ID"].Visible = true; //Paso a true la visibilidad de la columna ID
+                Proveedores.Columns["ID"].Visible = false; //Paso a true la visibilidad de la columna ID
             }
             catch (Exception ex)
             {

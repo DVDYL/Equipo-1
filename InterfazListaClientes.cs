@@ -34,21 +34,22 @@ namespace Presentacion
             {
                 List<Cliente> Cliente = ClienteNegocio.listarClientes();
 
+                if (Cliente != null)
+                {
+                    Cliente = Cliente.Where(u => u != null && u.Email != null && u.Email.Contains("@G1")).ToList();
+                }
+
                 var bindingList = new BindingList<Cliente>(Cliente);
                 var source = new BindingSource(bindingList, null);
                 Clientes.DataSource = source;
                 Clientes.Columns["id"].Visible = false;
                 Clientes.Columns["fechaBaja"].Visible = false;
+                Clientes.Columns["Host"].Visible = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar los clientes: " + ex.Message);
             }
-        }
-
-        private void Clientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void Boton_AltaCliente_Click(object sender, EventArgs e)

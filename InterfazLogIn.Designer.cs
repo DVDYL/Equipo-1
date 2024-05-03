@@ -53,7 +53,7 @@
             this.Box_Usuario.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Usuario.Location = new System.Drawing.Point(396, 415);
             this.Box_Usuario.Name = "Box_Usuario";
-            this.Box_Usuario.Size = new System.Drawing.Size(343, 37);
+            this.Box_Usuario.Size = new System.Drawing.Size(343, 35);
             this.Box_Usuario.TabIndex = 1;
             // 
             // Label_Usuario
@@ -62,7 +62,7 @@
             this.Label_Usuario.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_Usuario.Location = new System.Drawing.Point(36, 411);
             this.Label_Usuario.Name = "Label_Usuario";
-            this.Label_Usuario.Size = new System.Drawing.Size(303, 44);
+            this.Label_Usuario.Size = new System.Drawing.Size(322, 43);
             this.Label_Usuario.TabIndex = 1;
             this.Label_Usuario.Text = "Nombre de Usuario:";
             // 
@@ -72,7 +72,7 @@
             this.Label_Pass.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_Pass.Location = new System.Drawing.Point(36, 482);
             this.Label_Pass.Name = "Label_Pass";
-            this.Label_Pass.Size = new System.Drawing.Size(190, 44);
+            this.Label_Pass.Size = new System.Drawing.Size(200, 43);
             this.Label_Pass.TabIndex = 3;
             this.Label_Pass.Text = "Contraseña:";
             // 
@@ -83,7 +83,7 @@
             this.Box_Pass.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Pass.Location = new System.Drawing.Point(396, 486);
             this.Box_Pass.Name = "Box_Pass";
-            this.Box_Pass.Size = new System.Drawing.Size(343, 37);
+            this.Box_Pass.Size = new System.Drawing.Size(343, 35);
             this.Box_Pass.TabIndex = 2;
             this.Box_Pass.UseSystemPasswordChar = true;
             // 
@@ -128,7 +128,7 @@
             this.Label_NewPass.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Label_NewPass.Location = new System.Drawing.Point(36, 545);
             this.Label_NewPass.Name = "Label_NewPass";
-            this.Label_NewPass.Size = new System.Drawing.Size(290, 44);
+            this.Label_NewPass.Size = new System.Drawing.Size(305, 43);
             this.Label_NewPass.TabIndex = 7;
             this.Label_NewPass.Text = "Nueva Contraseña:";
             this.Label_NewPass.Visible = false;
@@ -141,7 +141,7 @@
             this.NewPass.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewPass.Location = new System.Drawing.Point(396, 549);
             this.NewPass.Name = "NewPass";
-            this.NewPass.Size = new System.Drawing.Size(343, 37);
+            this.NewPass.Size = new System.Drawing.Size(343, 35);
             this.NewPass.TabIndex = 6;
             this.NewPass.Visible = false;
             // 
@@ -152,7 +152,7 @@
             this.Label_ConfirmNewPass.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Label_ConfirmNewPass.Location = new System.Drawing.Point(36, 609);
             this.Label_ConfirmNewPass.Name = "Label_ConfirmNewPass";
-            this.Label_ConfirmNewPass.Size = new System.Drawing.Size(340, 44);
+            this.Label_ConfirmNewPass.Size = new System.Drawing.Size(359, 43);
             this.Label_ConfirmNewPass.TabIndex = 9;
             this.Label_ConfirmNewPass.Text = "Confirmar Contraseña:";
             this.Label_ConfirmNewPass.Visible = false;
@@ -165,7 +165,7 @@
             this.ConfirmNewPass.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConfirmNewPass.Location = new System.Drawing.Point(396, 613);
             this.ConfirmNewPass.Name = "ConfirmNewPass";
-            this.ConfirmNewPass.Size = new System.Drawing.Size(343, 37);
+            this.ConfirmNewPass.Size = new System.Drawing.Size(343, 35);
             this.ConfirmNewPass.TabIndex = 8;
             this.ConfirmNewPass.Visible = false;
             // 
@@ -198,7 +198,7 @@
             this.Label_TituloVentana.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_TituloVentana.Location = new System.Drawing.Point(2, 0);
             this.Label_TituloVentana.Name = "Label_TituloVentana";
-            this.Label_TituloVentana.Size = new System.Drawing.Size(158, 29);
+            this.Label_TituloVentana.Size = new System.Drawing.Size(165, 28);
             this.Label_TituloVentana.TabIndex = 49;
             this.Label_TituloVentana.Text = "Inicio de Sesión";
             // 
@@ -218,7 +218,7 @@
             this.CambiarClave.Text = "Cambiar";
             this.CambiarClave.UseVisualStyleBackColor = false;
             this.CambiarClave.Visible = false;
-            this.CambiarClave.Click += new System.EventHandler(this.CambiarClave_Click);
+        //    this.CambiarClave.Click += new System.EventHandler(this.CambiarClave_Click);
             // 
             // InterfazLogIn
             // 

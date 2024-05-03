@@ -27,7 +27,6 @@ namespace Presentacion
             this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
             Instancia = this;
-
         }
 
         public void IniciarSesion()
@@ -89,6 +88,7 @@ namespace Presentacion
                     Boton_Ingresar.Visible = false;
                     CambiarClave.Visible = true;
                     PassViewImg.Enabled = false;
+
                     MessageBox.Show("Por favor, ingrese una nueva contraseña", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
@@ -103,6 +103,7 @@ namespace Presentacion
                 }
             }
         }
+
         private void CargarTXT(string Usuario)
         {
             UsuarioNegocio negocio = new UsuarioNegocio();
@@ -248,7 +249,7 @@ namespace Presentacion
             {
                 Console.WriteLine(ex.ToString());
             }
-        }
+        } // No está usando el host del método de validar?
 
         private void SetearSession(string NombreUsuario)
         {
@@ -261,48 +262,49 @@ namespace Presentacion
             {
                 //this.Tag = new SessionData { Usuario = NombreUsuario, Host = usuario.Host};
             }
-        }
+        } // Ya se captura el hash desde la clase validar. Eliminar método?
 
         private void Boton_Ingresar_Click(object sender, EventArgs e)
         {
             IniciarSesion();
-        }
+        } // No hacen falta dos botones, solo editamos el texto del mismo y listo.
 
-        private void CambiarClave_Click(object sender, EventArgs e)
-        {
-            string usuario = Box_Usuario.Text;
-            string contraseña = Box_Pass.Text;
-            string nuevaContraseña = NewPass.Text;
-            string confirmacionContraseña = ConfirmNewPass.Text;
-            if (nuevaContraseña != confirmacionContraseña)
-            {
-                MessageBox.Show("La nueva contraseña y la confirmación no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                string errorNuevaContraseña = Validar.EsContraseña(nuevaContraseña);
-                if (errorNuevaContraseña != null)
-                {
-                    MessageBox.Show(errorNuevaContraseña, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    try
-                    {
-                        UsuarioNegocio negocio = new UsuarioNegocio();
-                        negocio.CambiarContraseña(usuario, contraseña, nuevaContraseña);
-                        Host = Validar.NumeroHost(usuario);
-                        this.DialogResult = DialogResult.OK;
-                        this.Hide();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error al cambiar la contraseña: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+        //private void CambiarClave_Click(object sender, EventArgs e)
+        //{
+        //    string usuario = Box_Usuario.Text;
+        //    string contraseña = Box_Pass.Text;
+        //    string nuevaContraseña = NewPass.Text;
+        //    string confirmacionContraseña = ConfirmNewPass.Text;
+        //    if (nuevaContraseña != confirmacionContraseña) // Por qué está acá? Ya es un método de validar.
+        //    {
+        //        MessageBox.Show("La nueva contraseña y la confirmación no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //    else
+        //    {
+        //        string errorNuevaContraseña = Validar.EsContraseña(nuevaContraseña);
+        //        if (errorNuevaContraseña != null)
+        //        {
+        //            MessageBox.Show(errorNuevaContraseña, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //        else
+        //        {
+        //            try
+        //            {
+        //                UsuarioNegocio negocio = new UsuarioNegocio();
+        //                negocio.CambiarContraseña(usuario, contraseña, nuevaContraseña);
+        //                Host = Validar.NumeroHost(usuario);
+        //                this.DialogResult = DialogResult.OK;
+        //                this.Hide();
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                MessageBox.Show("Error al cambiar la contraseña: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //            }
 
-                }
-            }
-        }
+        //        }
+        //    }
+        //} // No tiene que ser un método separado de ingresar. Hay que eliminar este y meter todo ahí.
+
         private void Boton_Cancelar_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show("¿Desea salir del programa?\n\nSe cerrará la ventana y no se guardarán los datos.", "Confirmar Cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

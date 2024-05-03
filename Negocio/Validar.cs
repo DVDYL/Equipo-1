@@ -9,7 +9,6 @@ namespace Negocio
 {
     public static class Validar
     {
-
         public static string EsNombre(string text, string nombreCampo)
         {
             // Verificar si el texto está vacío
