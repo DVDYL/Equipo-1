@@ -360,20 +360,9 @@ namespace Presentacion
                     // Mostrar mensaje de éxito con el nombre de usuario generado
                     MessageBox.Show($"Se ha realizado la operación de alta para el usuario {nombreUsuario}. Su contraseña es la misma que su nombre de usuario.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Preguntar al usuario si desea continuar en el Maestro de Usuarios
-                    DialogResult resultadoContinuar = MessageBox.Show("¿Desea continuar en el ABM de Usuarios?", "Confirmar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    if (resultadoContinuar == DialogResult.No)
-                    {
                         this.Close();
                         InterfazListaUsuarios InterfazListaUsuarios = new InterfazListaUsuarios();
                         InterfazListaUsuarios.Show();
-                    }
-                    else
-                    {
-                        // Restablecer todos los campos del formulario
-                        Limpiar();
-                    }
                 }
             }
         } // Confirma todos los campos, si está todo correcto, genera un ID de usuario.

@@ -1,6 +1,7 @@
 ﻿using Datos;
 using Newtonsoft.Json;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
@@ -155,12 +156,15 @@ namespace Persistencia
 
             return id; // Retornar el id obtenido
         }
-
-        /*public class SessionData
+        public void CambiarContraseña(string nombreUsuario, string contraseña, string contraseñaNueva)
         {
-            public string Usuario { get; set; }
-            public int Host { get; set;}
-        }*/
+            /*string path = "/api/Usuario/CambiarContraseña";
+            Dictionary<string, string> map = new Dictionary<string, string>();
+            map.Add("nombreUsuario", nombreUsuario);
+            map.Add("contraseña", contraseña);
+            map.Add("contraseñaNueva", contraseñaNueva);*/
+        }
+
     }
 }
 

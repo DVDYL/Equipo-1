@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InterfazMenu));
             this.UsuariosTexto = new System.Windows.Forms.Label();
             this.ProveedoresTexto = new System.Windows.Forms.Label();
             this.ClientesTexto = new System.Windows.Forms.Label();
@@ -57,7 +58,7 @@
             this.UsuariosTexto.Location = new System.Drawing.Point(109, 284);
             this.UsuariosTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UsuariosTexto.Name = "UsuariosTexto";
-            this.UsuariosTexto.Size = new System.Drawing.Size(150, 43);
+            this.UsuariosTexto.Size = new System.Drawing.Size(143, 44);
             this.UsuariosTexto.TabIndex = 0;
             this.UsuariosTexto.Text = "Usuarios";
             this.UsuariosTexto.Click += new System.EventHandler(this.UsuariosIcono_Click);
@@ -72,7 +73,7 @@
             this.ProveedoresTexto.Location = new System.Drawing.Point(552, 284);
             this.ProveedoresTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProveedoresTexto.Name = "ProveedoresTexto";
-            this.ProveedoresTexto.Size = new System.Drawing.Size(208, 43);
+            this.ProveedoresTexto.Size = new System.Drawing.Size(199, 44);
             this.ProveedoresTexto.TabIndex = 1;
             this.ProveedoresTexto.Text = "Proveedores";
             this.ProveedoresTexto.Click += new System.EventHandler(this.ProveedoresIcono_Click);
@@ -87,7 +88,7 @@
             this.ClientesTexto.Location = new System.Drawing.Point(1078, 284);
             this.ClientesTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ClientesTexto.Name = "ClientesTexto";
-            this.ClientesTexto.Size = new System.Drawing.Size(140, 43);
+            this.ClientesTexto.Size = new System.Drawing.Size(133, 44);
             this.ClientesTexto.TabIndex = 2;
             this.ClientesTexto.Text = "Clientes";
             this.ClientesTexto.Click += new System.EventHandler(this.ClientesIcono_Click);
@@ -102,7 +103,7 @@
             this.ProductosTexto.Location = new System.Drawing.Point(98, 598);
             this.ProductosTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProductosTexto.Name = "ProductosTexto";
-            this.ProductosTexto.Size = new System.Drawing.Size(172, 43);
+            this.ProductosTexto.Size = new System.Drawing.Size(165, 44);
             this.ProductosTexto.TabIndex = 3;
             this.ProductosTexto.Text = "Productos";
             this.ProductosTexto.Click += new System.EventHandler(this.ProductosIcono_Click);
@@ -117,7 +118,7 @@
             this.ReportesTexto.Location = new System.Drawing.Point(1067, 598);
             this.ReportesTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ReportesTexto.Name = "ReportesTexto";
-            this.ReportesTexto.Size = new System.Drawing.Size(155, 43);
+            this.ReportesTexto.Size = new System.Drawing.Size(150, 44);
             this.ReportesTexto.TabIndex = 4;
             this.ReportesTexto.Text = "Reportes";
             this.ReportesTexto.Click += new System.EventHandler(this.ReportesIcono_Click);
@@ -132,7 +133,7 @@
             this.VentasTexto.Location = new System.Drawing.Point(598, 598);
             this.VentasTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.VentasTexto.Name = "VentasTexto";
-            this.VentasTexto.Size = new System.Drawing.Size(122, 43);
+            this.VentasTexto.Size = new System.Drawing.Size(117, 44);
             this.VentasTexto.TabIndex = 5;
             this.VentasTexto.Text = "Ventas";
             this.VentasTexto.Click += new System.EventHandler(this.VentasIcono_Click);
@@ -222,7 +223,7 @@
             // UsuariosIcono
             // 
             this.UsuariosIcono.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.UsuariosIcono.Image = global::Presentacion.Properties.Resources.UserAdmin1;
+            this.UsuariosIcono.Image = ((System.Drawing.Image)(resources.GetObject("UsuariosIcono.Image")));
             this.UsuariosIcono.Location = new System.Drawing.Point(54, 81);
             this.UsuariosIcono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.UsuariosIcono.Name = "UsuariosIcono";
@@ -234,7 +235,7 @@
             // 
             // InterfazMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1366, 768);

@@ -275,7 +275,7 @@ namespace Negocio
             }
             if (!Regex.IsMatch(texto, patronDominio))
             {
-                return "El correo electrónico debe tener el dominio @G1.com";
+                return "El correo electrónico ser del dominio @G1.com";
             }
 
             // Verificar si el mail ya existe en la lista de proveedores

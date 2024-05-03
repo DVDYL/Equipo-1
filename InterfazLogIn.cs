@@ -27,6 +27,7 @@ namespace Presentacion
             this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
             Instancia = this;
+
         }
 
         public void IniciarSesion()
@@ -36,8 +37,8 @@ namespace Presentacion
             string id = iniciarSesion.IniciarSesion(Box_Usuario.Text, Box_Pass.Text); // Almacenar el hash del id de usuario
             string Usuario = Box_Usuario.Text.ToUpper(); // Permitir que la persona ingrese minusculas en el campo "Nombre de usuario"
             string Contraseña = Box_Pass.Text;
-            string errorUsuario = Validar.CampoEnBlanco(Usuario);//REVISAR
-            string errorContraseña = Validar.CampoEnBlanco(Contraseña);//REVISAR
+            string errorUsuario = Validar.CampoEnBlanco(Usuario);
+            string errorContraseña = Validar.CampoEnBlanco(Contraseña);
 
             if (errorUsuario == "1") // Verificar si hay errores en el nombre de usuario y contraseña
             {
@@ -72,60 +73,36 @@ namespace Presentacion
 
             if (Validar.EsID(id.Substring(1, 36)) == 1) // El hash es válido, permitir el acceso
             {
-                Host = Validar.NumeroHost(Usuario); // Guardar el número de host del usuario
                 ResetearIntentosFallidos(Usuario); // volver el contador de errores a 0.
+                if (Usuario == Contraseña)
+                {
+                    Box_Usuario.Enabled = false;
+                    Box_Pass.Enabled = false;
+                    NewPass.Visible = true;
+                    NewPass.Enabled = true;
+                    ConfirmNewPass.Visible = true;
+                    ConfirmNewPass.Enabled = true;
+                    Label_NewPass.Visible = true;
+                    Label_NewPass.Enabled = true;
+                    Label_ConfirmNewPass.Visible = true;
+                    Label_ConfirmNewPass.Enabled = true;
+                    Boton_Ingresar.Visible = false;
+                    CambiarClave.Visible = true;
+                    PassViewImg.Enabled = false;
+                    MessageBox.Show("Por favor, ingrese una nueva contraseña", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                this.DialogResult = DialogResult.OK;
-                this.Hide(); // cerrar el login.
+
+                }
+                else
+                {
+                    Host = Validar.NumeroHost(Usuario); // Guardar el número de host del usuario
+
+
+                    this.DialogResult = DialogResult.OK;
+                    this.Hide(); // cerrar el login.
+                }
             }
         }
-
-        //public void PrimerIngreso()
-        //{
-        //    string errorContraseña = Validar.EsContraseña(Box_Pass.Text);
-        //    if (errorContraseña != null)
-        //    {
-        //        Pass_Error.Text = errorContraseña;
-        //        Pass_Error.Visible = true;
-        //        MessageBox.Show(errorContraseña, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //        MayudaContra.Visible = true;
-        //        ContarErrores++;
-        //    }
-        //    else
-        //    {
-        //        Pass_Error.Visible = false;
-        //        MayudaContra.Visible = false;
-        //    }
-
-        //    if (ContarErrores >= 1)
-        //    {
-        //        return ContarErrores; // Detener la ejecución y devolver el contador de errores
-        //    }
-
-        //    string contraseña = Box_Pass.Text;
-        //    string contraseñaConfirmada = Box_Pass_Confirm.Text;
-        //    string errorConfirmarContraseña = Validar.ConfirmarContraseña(contraseña, contraseñaConfirmada);
-
-        //    if (errorConfirmarContraseña != null)
-        //    {
-        //        ConfirmPass_Error.Text = errorConfirmarContraseña;
-        //        ConfirmPass_Error.Visible = true;
-        //        MessageBox.Show(errorConfirmarContraseña, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //        MayudaConfirContra.Visible = true;
-        //        ContarErrores++;
-        //    }
-        //    else
-        //    {
-        //        ConfirmPass_Error.Visible = false;
-        //        MayudaConfirContra.Visible = false;
-        //    }
-
-        //    if (ContarErrores >= 1)
-        //    {
-        //        return ContarErrores; // Detener la ejecución y devolver el contador de errores
-        //    }
-        //}
-
         private void CargarTXT(string Usuario)
         {
             UsuarioNegocio negocio = new UsuarioNegocio();
@@ -231,10 +208,13 @@ namespace Presentacion
                 {
                     // Si el archivo no existe, lo creamos y escribimos la información del usuario actual
                     File.WriteAllText(path, Usuario + ";0;");
+                    SetearSession(Usuario);
                 }
                 else
                 {
                     string[] lineasTXT = File.ReadAllLines(path);
+                    bool ExisteUsuario = false;
+
                     for (int i = 0; i < lineasTXT.Length; i++)
                     {
                         if (lineasTXT[i].StartsWith(Usuario + ";"))
@@ -244,9 +224,22 @@ namespace Presentacion
 
                             SetearSession(Usuario);
 
+                            ExisteUsuario = true;
+
                             break;
                         }
                     }
+
+                    if (!ExisteUsuario)
+                    {
+                        string[] nuevaLinea = {Usuario + ";0;"};
+                        List<string> lineasLista = lineasTXT.ToList();
+                        lineasLista.AddRange(nuevaLinea);
+                        lineasTXT = lineasLista.ToArray();
+
+                        SetearSession(Usuario);
+                    }
+
                     File.WriteAllLines(path, lineasTXT);
                 }
 
@@ -275,6 +268,41 @@ namespace Presentacion
             IniciarSesion();
         }
 
+        private void CambiarClave_Click(object sender, EventArgs e)
+        {
+            string usuario = Box_Usuario.Text;
+            string contraseña = Box_Pass.Text;
+            string nuevaContraseña = NewPass.Text;
+            string confirmacionContraseña = ConfirmNewPass.Text;
+            if (nuevaContraseña != confirmacionContraseña)
+            {
+                MessageBox.Show("La nueva contraseña y la confirmación no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string errorNuevaContraseña = Validar.EsContraseña(nuevaContraseña);
+                if (errorNuevaContraseña != null)
+                {
+                    MessageBox.Show(errorNuevaContraseña, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    try
+                    {
+                        UsuarioNegocio negocio = new UsuarioNegocio();
+                        negocio.CambiarContraseña(usuario, contraseña, nuevaContraseña);
+                        Host = Validar.NumeroHost(usuario);
+                        this.DialogResult = DialogResult.OK;
+                        this.Hide();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al cambiar la contraseña: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+            }
+        }
         private void Boton_Cancelar_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show("¿Desea salir del programa?\n\nSe cerrará la ventana y no se guardarán los datos.", "Confirmar Cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

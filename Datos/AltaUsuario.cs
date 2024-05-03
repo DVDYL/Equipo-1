@@ -51,23 +51,6 @@ namespace Datos
             _fechaNacimiento = fechaNacimiento;
             _nombreUsuario = NombreUsuario;
             _contraseña = Contraseña;
-            //Guardamos datos del nuevo usuario en el .txt. NO BORRAR
-            /*string nombreArchivo = "Usuarios.txt";
-            string directorio = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CAI", "Equipo1");
-            string path = Path.Combine(directorio, nombreArchivo);
-            try
-            {
-                if (!Directory.Exists(directorio))
-                {
-                    Directory.CreateDirectory(directorio);
-                }
-                using (StreamWriter writer = File.AppendText(path))
-                    writer.WriteLine(idUsuario.ToString() + ";" + NombreUsuario + ";" + DateTime.Now.ToString() + ";" + host.ToString() + ";" + "0");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }*/
         }
 
         public string IdUsuario { get => _idUsuario; set => _idUsuario = value; }

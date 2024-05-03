@@ -58,5 +58,9 @@ namespace Negocio
             string id = UsuarioService.IniciarSesion(IniciarSesion);
             return id;
         }
+        public void CambiarContraseña(string nombreUsuario, string contraseña, string contraseñaNueva)
+        {
+            CambiarContraseña cambiarContraseña = new CambiarContraseña(nombreUsuario, contraseña, contraseñaNueva);
+        }
     }
 }

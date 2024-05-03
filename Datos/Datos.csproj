@@ -49,6 +49,7 @@
     <Compile Include="BajaProducto.cs" />
     <Compile Include="BajaProveedor.cs" />
     <Compile Include="BajaUsuario.cs" />
+    <Compile Include="CambiarContraseña.cs" />
     <Compile Include="LogIn.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="ModificarProducto.cs" />
