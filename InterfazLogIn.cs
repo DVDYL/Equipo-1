@@ -165,6 +165,7 @@ namespace Presentacion
                                 // Mantener la fecha del último cambio de contraseña
                                 string fechaUltimoCambio = parametros.Length > 2 ? parametros[2] : ""; //Esto es un condicional. Si existe parametro 2 lo pone. si no existe pone vacío
 
+
                                 lineasTXT[indexUsuario] = Usuario + ";" + intentos.ToString() + ";" + fechaUltimoCambio;
 
                                 File.WriteAllLines(path, lineasTXT);
@@ -262,48 +263,52 @@ namespace Presentacion
             {
                 //this.Tag = new SessionData { Usuario = NombreUsuario, Host = usuario.Host};
             }
-        } // Ya se captura el hash desde la clase validar. Eliminar método?
+        } // Ya se captura el hash desde la clase validar. Eliminar método? si
 
         private void Boton_Ingresar_Click(object sender, EventArgs e)
         {
             IniciarSesion();
-        } // No hacen falta dos botones, solo editamos el texto del mismo y listo.
+        }
 
-        //private void CambiarClave_Click(object sender, EventArgs e)
-        //{
-        //    string usuario = Box_Usuario.Text;
-        //    string contraseña = Box_Pass.Text;
-        //    string nuevaContraseña = NewPass.Text;
-        //    string confirmacionContraseña = ConfirmNewPass.Text;
-        //    if (nuevaContraseña != confirmacionContraseña) // Por qué está acá? Ya es un método de validar.
-        //    {
-        //        MessageBox.Show("La nueva contraseña y la confirmación no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //    else
-        //    {
-        //        string errorNuevaContraseña = Validar.EsContraseña(nuevaContraseña);
-        //        if (errorNuevaContraseña != null)
-        //        {
-        //            MessageBox.Show(errorNuevaContraseña, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        }
-        //        else
-        //        {
-        //            try
-        //            {
-        //                UsuarioNegocio negocio = new UsuarioNegocio();
-        //                negocio.CambiarContraseña(usuario, contraseña, nuevaContraseña);
-        //                Host = Validar.NumeroHost(usuario);
-        //                this.DialogResult = DialogResult.OK;
-        //                this.Hide();
-        //            }
-        //            catch (Exception ex)
-        //            {
-        //                MessageBox.Show("Error al cambiar la contraseña: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //            }
+        private void CambiarClave_Click(object sender, EventArgs e)
+        {
+            string usuario = Box_Usuario.Text;
+            string contraseña = Box_Pass.Text;
+            string nuevaContraseña = NewPass.Text;
+            string confirmacionContraseña = ConfirmNewPass.Text;
 
-        //        }
-        //    }
-        //} // No tiene que ser un método separado de ingresar. Hay que eliminar este y meter todo ahí.
+            string errorNuevaContraseña = Validar.ConfirmarContraseña(nuevaContraseña, confirmacionContraseña);
+            if (errorNuevaContraseña != null)
+            {
+                MessageBox.Show(errorNuevaContraseña, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                errorNuevaContraseña = Validar.EsContraseña(nuevaContraseña);
+                if (errorNuevaContraseña != null)
+                {
+                    MessageBox.Show(errorNuevaContraseña, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    try
+                    {
+                        UsuarioNegocio negocio = new UsuarioNegocio();
+                        negocio.CambiarContraseña(usuario, contraseña, nuevaContraseña);
+                        Host = Validar.NumeroHost(usuario);
+                        MessageBox.Show("Contraseña actualizada con éxito!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ActualizarFechaTXT(usuario);
+                        this.DialogResult = DialogResult.OK;
+                        this.Hide();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al cambiar la contraseña: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+            }
+        }
 
         private void Boton_Cancelar_Click(object sender, EventArgs e)
         {
@@ -337,5 +342,93 @@ namespace Presentacion
                 }
             }
         }  // Evento KeyDown para cerrar la ventana con la tecla ESC
+        private void ActualizarFechaTXT(string usuario) //Acá va a cargar la fecha de cambio de contraseña
+        {
+            string nombreArchivo = "Usuarios.txt";
+            string directorio = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CAI", "Equipo1");
+            string path = Path.Combine(directorio, nombreArchivo);
+
+            if (!Directory.Exists(directorio))
+            {
+                Directory.CreateDirectory(directorio);
+            }
+            if (!File.Exists(path))
+            {
+                File.WriteAllText(path, "");
+            }
+                string[] lineasTXT = File.ReadAllLines(path);
+            for (int i = 0; i < lineasTXT.Length; i++)
+            {
+                if (lineasTXT[i].StartsWith(usuario + ";"))
+                {
+                    string[] parametros = lineasTXT[i].Split(';');
+                    lineasTXT[i] = usuario + ";" + parametros[1] + ";" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+                    File.WriteAllLines(path, lineasTXT);
+                    break;
+                }
+                else
+                {
+                    using (StreamWriter writer = File.AppendText(path))
+                    {
+                        writer.WriteLine(usuario + ";0;" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    }
+                }
+            }
+        }
+
     }
 }
+
+
+
+
+
+/*private bool primerLogin = true; // Variable para controlar si es el primer inicio de sesión
+
+private void Boton_Ingresar_Click(object sender, EventArgs e)
+{
+    if (primerLogin)
+    {
+        // Si es el primer inicio de sesión, realizamos el cambio de clave
+        string usuario = Box_Usuario.Text;
+        string contraseña = Box_Pass.Text;
+        string nuevaContraseña = NewPass.Text;
+        string confirmacionContraseña = ConfirmNewPass.Text;
+
+        if (nuevaContraseña != confirmacionContraseña)
+        {
+            MessageBox.Show("La nueva contraseña y la confirmación no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
+
+        string errorNuevaContraseña = Validar.EsContraseña(nuevaContraseña);
+        if (errorNuevaContraseña != null)
+        {
+            MessageBox.Show(errorNuevaContraseña, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
+
+        try
+        {
+            UsuarioNegocio negocio = new UsuarioNegocio();
+            negocio.CambiarContraseña(usuario, contraseña, nuevaContraseña);
+            Host = Validar.NumeroHost(usuario);
+
+            // Cambiamos el texto del botón y la bandera primerLogin
+            Boton_Ingresar.Text = "Iniciar Sesión";
+            primerLogin = false;
+
+            MessageBox.Show("Contraseña cambiada correctamente. Por favor, inicie sesión con su nueva contraseña.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error al cambiar la contraseña: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+    else
+    {
+        // Si no es el primer inicio de sesión, simplemente iniciamos sesión
+        IniciarSesion();
+    }
+}*/
