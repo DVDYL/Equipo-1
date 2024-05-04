@@ -93,6 +93,23 @@ namespace Presentacion
 
 
                 }
+                else if(Validar.ContraseñaExpirada(Usuario))     //Valido si la contraseña expiró
+                {
+                    MessageBox.Show("La contraseña expiró. Debe cambiarla antes de continuar.", "Contraseña Expirada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Box_Usuario.Enabled = false;
+                    Box_Pass.Enabled = false;
+                    NewPass.Visible = true;
+                    NewPass.Enabled = true;
+                    ConfirmNewPass.Visible = true;
+                    ConfirmNewPass.Enabled = true;
+                    Label_NewPass.Visible = true;
+                    Label_NewPass.Enabled = true;
+                    Label_ConfirmNewPass.Visible = true;
+                    Label_ConfirmNewPass.Enabled = true;
+                    Boton_Ingresar.Visible = false;
+                    CambiarClave.Visible = true;
+                    PassViewImg.Enabled = false;
+                }
                 else
                 {
                     Host = Validar.NumeroHost(Usuario); // Guardar el número de host del usuario
@@ -288,6 +305,10 @@ namespace Presentacion
                 if (errorNuevaContraseña != null)
                 {
                     MessageBox.Show(errorNuevaContraseña, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (contraseña == nuevaContraseña)
+                {
+                    MessageBox.Show("La contraseña no puede ser igual a la actual.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
