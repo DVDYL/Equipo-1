@@ -38,7 +38,7 @@ namespace Persistencia
 
         }
 
-        public void ModificarCliente(Guid idCliente, String direccion, String telefono, String email)
+        public void ModificarCliente(string idCliente, String direccion, String telefono, String email)
         {
             String path = "/api/Cliente/PatchCliente";
             Dictionary<string, string> map = new Dictionary<string, string>();
@@ -95,7 +95,7 @@ namespace Persistencia
             }
         }
 
-        public void BorrarCliente(Guid idCliente)
+        public void BorrarCliente(string idCliente)
         {
             String path = "/api/Cliente/BajaCliente?id=" + idCliente;
 

@@ -4,7 +4,7 @@ namespace Datos
 {
     public class ModificarCliente
     {
-        public Guid IdCliente { get; set; }
+        public string IdCliente { get; set; }
 
         public string Direccion { get; set; }
 
@@ -12,7 +12,7 @@ namespace Datos
 
         public string Email { get; set; }
 
-        public ModificarCliente(Guid idCliente, string direccion, string telefono, string email)
+        public ModificarCliente(string idCliente, string direccion, string telefono, string email)
         {
             IdCliente = idCliente;
             Direccion = direccion;

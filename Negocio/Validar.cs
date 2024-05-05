@@ -572,6 +572,7 @@ namespace Negocio
                 // throw new InvalidOperationException("El usuario ingresado no se encuentra en la lista de usuarios activos.");
             }
         }
+
         public static bool ContraseñaExpirada(string usuario)
         {
             string nombreArchivo = "Usuarios.txt";
@@ -608,7 +609,8 @@ namespace Negocio
             }
             return false;
         }
-            //public static int CodigoProducto(string msj) // Pedir un número entre 1 y 37 
+
+        //public static int CodigoProducto(string msj) // Pedir un número entre 1 y 37 
             //{
             //    int valor;
             //    bool valido = true;

@@ -104,6 +104,7 @@
             this.Clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Clientes.Size = new System.Drawing.Size(1260, 460);
             this.Clientes.TabIndex = 1;
+            this.Clientes.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Listado_RowHeaderMouseClick);
             // 
             // DNILabel
             // 

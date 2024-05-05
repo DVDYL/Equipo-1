@@ -100,8 +100,8 @@ namespace Presentacion
                     var bindingList = new BindingList<Cliente>(ClientesFiltrados);
                     var source = new BindingSource(bindingList, null);
                     Clientes.DataSource = source;
-                    Boton_Modificar.Visible = true;
-                    Boton_Eliminar.Visible = true;
+               //     Boton_Modificar.Visible = true;
+               //     Boton_Eliminar.Visible = true;
                 }
                 else
                 {
@@ -189,31 +189,69 @@ namespace Presentacion
             Boton_Eliminar.Visible = false;
         }
 
-        private void Boton_Modificar_Click(object sender, EventArgs e)
+        private void Listado_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            // Falta el llamado al servicio
+            // Mostrar los botones de Modificar y Eliminar
+            Boton_Modificar.Visible = true;
+            Boton_Eliminar.Visible = true;
         }
 
-        private void EliminarCliente()
+        public void Boton_Modificar_Click(object sender, EventArgs e)
+        {
+            // Verificar si se ha seleccionado una fila en el DataGridView
+            if (Clientes.SelectedRows.Count > 0)
+            {
+                // Obtener los datos de la fila seleccionada
+                DataGridViewRow filaSeleccionada = Clientes.SelectedRows[0];
+
+                // Obtener los valores de las celdas de la fila seleccionada
+                string idCliente = filaSeleccionada.Cells["id"].Value.ToString(); // Lo voy a reutilizar para el patch y el delete
+
+                string direccion = filaSeleccionada.Cells["Direccion"].Value.ToString();
+                string telefono = filaSeleccionada.Cells["Telefono"].Value.ToString();
+                string email = filaSeleccionada.Cells["Email"].Value.ToString();
+
+                InterfazModificarClientes modificarClientes = new InterfazModificarClientes(idCliente);
+                modificarClientes.ActualizarTextBox(direccion, telefono, email); // Levanto los datos de la lista y me los llevo a otra ventana.
+
+                modificarClientes.Show();
+                this.Hide(); // ocultar la lista de usuarios momentáneamente.
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione una fila antes de hacer clic en Modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void EliminarCliente(string idCliente)
         {
             ClienteNegocio BajaCliente = new ClienteNegocio();
-            //BajaCliente.BorrarCliente(ACÁ SE DEBERÍA ESPECIFICAR DE QUÉ CELDA SALE EL DATO DEL IDCliente);
+            BajaCliente.BorrarCliente(idCliente);
+            CargarClientes();
         }
 
         private void Boton_Eliminar_Click(object sender, EventArgs e)
         {
-            // Verificar si hay una fila seleccionada dentro del GRID
             if (Clientes.SelectedRows.Count > 0)
             {
-                // Obtener el índice de la fila seleccionada
-                int indiceFila = Clientes.SelectedRows[0].Index;
+                // Obtener los datos de la fila seleccionada
+                DataGridViewRow filaSeleccionada = Clientes.SelectedRows[0];
 
-                // Obtener el valor de la celda "ID" de la fila seleccionada
-                string id = Clientes.Rows[indiceFila].Cells["ID"].Value.ToString();
+                // Obtener los valores de las celdas de la fila seleccionada
+                string idCliente = filaSeleccionada.Cells["id"].Value.ToString();
 
-                // Por medio del id, eliminamos el proveedor
-                // Por ejemplo:
-                EliminarCliente(); //Acá debería ir el id dentro del método.
+                // Mostrar un cuadro de diálogo de confirmación al usuario
+                DialogResult resultadoConfirmacion = MessageBox.Show($"¿Está seguro que desea eliminar este cliente?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (resultadoConfirmacion == DialogResult.Yes)
+                {
+                    EliminarCliente(idCliente);
+                    // Insertar acá el código para volver a llamar a la lista de clientes actualizada, así evitamos que se intente modificar algo dado de baja.
+                }
+                else
+                {
+                    MessageBox.Show("La eliminación del cliente ha sido cancelada.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {

@@ -11,7 +11,7 @@ namespace Negocio
     public class ClienteNegocio
     {
         private  ClienteService clienteService = new ClienteService();
-        private String idUsuario = "70b37dc1-8fde-4840-be47-9ababd0ee7e5";
+        private String id = "70b37dc1-8fde-4840-be47-9ababd0ee7e5";
 
         public void agregarCliente(string idUsuario, string nombre, string apellido, int dni, string direccion, string telefono, string email, DateTime fechaNacimiento, string host)
         {
@@ -19,10 +19,9 @@ namespace Negocio
             clienteService.AgregarCliente(altaCliente);
         }
 
-        public void modificarCliente(Guid idCliente, string direccion, string telefono, string email)
+        public void modificarCliente(string id, string direccion, string telefono, string email)
         {
-            clienteService.ModificarCliente(idCliente, direccion, telefono, email);
-
+            clienteService.ModificarCliente(id, direccion, telefono, email);
         }
 
         public List<Cliente> listarClientes()
@@ -30,7 +29,7 @@ namespace Negocio
             return clienteService.getClientes();
         }
 
-        public void borrarCliente(Guid idCliente)
+        public void BorrarCliente(string idCliente)
         {
             clienteService.BorrarCliente(idCliente);
         }

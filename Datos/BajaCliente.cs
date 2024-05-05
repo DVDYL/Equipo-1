@@ -8,21 +8,19 @@ namespace Datos
 {
     public class BajaCliente
     {
-        Guid _id;
-       
+        string _id;
 
         public BajaCliente()
         {
             //
         }
 
-        public BajaCliente(Guid idCliente)
+        public BajaCliente(string idCliente)
         {
             _id = idCliente;
         }
 
-        public Guid idCliente { get => _id; set => _id = value; }
-
+        public string idCliente { get => _id; set => _id = value; }
 
     }
 }

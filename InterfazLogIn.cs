@@ -280,12 +280,61 @@ namespace Presentacion
             {
                 //this.Tag = new SessionData { Usuario = NombreUsuario, Host = usuario.Host};
             }
-        } // Ya se captura el hash desde la clase validar. Eliminar método? si
+        } // Ya se captura el hash desde la clase validar. Eliminar método? si → No se puede eliminar hasta sacarlo de ResetearIntentosFallidos
 
         private void Boton_Ingresar_Click(object sender, EventArgs e)
         {
             IniciarSesion();
         }
+
+        /*private bool primerLogin = true; // Variable para controlar si es el primer inicio de sesión
+
+private void Boton_Ingresar_Click(object sender, EventArgs e)
+{
+    if (primerLogin)
+    {
+        // Si es el primer inicio de sesión, realizamos el cambio de clave
+        string usuario = Box_Usuario.Text;
+        string contraseña = Box_Pass.Text;
+        string nuevaContraseña = NewPass.Text;
+        string confirmacionContraseña = ConfirmNewPass.Text;
+
+        if (nuevaContraseña != confirmacionContraseña)
+        {
+            MessageBox.Show("La nueva contraseña y la confirmación no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
+
+        string errorNuevaContraseña = Validar.EsContraseña(nuevaContraseña);
+        if (errorNuevaContraseña != null)
+        {
+            MessageBox.Show(errorNuevaContraseña, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
+
+        try
+        {
+            UsuarioNegocio negocio = new UsuarioNegocio();
+            negocio.CambiarContraseña(usuario, contraseña, nuevaContraseña);
+            Host = Validar.NumeroHost(usuario);
+
+            // Cambiamos el texto del botón y la bandera primerLogin
+            Boton_Ingresar.Text = "Iniciar Sesión";
+            primerLogin = false;
+
+            MessageBox.Show("Contraseña cambiada correctamente. Por favor, inicie sesión con su nueva contraseña.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error al cambiar la contraseña: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+    else
+    {
+        // Si no es el primer inicio de sesión, simplemente iniciamos sesión
+        IniciarSesion();
+    }
+}*/
 
         private void CambiarClave_Click(object sender, EventArgs e)
         {
@@ -363,6 +412,7 @@ namespace Presentacion
                 }
             }
         }  // Evento KeyDown para cerrar la ventana con la tecla ESC
+
         private void ActualizarFechaTXT(string usuario) //Acá va a cargar la fecha de cambio de contraseña
         {
             string nombreArchivo = "Usuarios.txt";
@@ -405,51 +455,3 @@ namespace Presentacion
 
 
 
-/*private bool primerLogin = true; // Variable para controlar si es el primer inicio de sesión
-
-private void Boton_Ingresar_Click(object sender, EventArgs e)
-{
-    if (primerLogin)
-    {
-        // Si es el primer inicio de sesión, realizamos el cambio de clave
-        string usuario = Box_Usuario.Text;
-        string contraseña = Box_Pass.Text;
-        string nuevaContraseña = NewPass.Text;
-        string confirmacionContraseña = ConfirmNewPass.Text;
-
-        if (nuevaContraseña != confirmacionContraseña)
-        {
-            MessageBox.Show("La nueva contraseña y la confirmación no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return;
-        }
-
-        string errorNuevaContraseña = Validar.EsContraseña(nuevaContraseña);
-        if (errorNuevaContraseña != null)
-        {
-            MessageBox.Show(errorNuevaContraseña, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return;
-        }
-
-        try
-        {
-            UsuarioNegocio negocio = new UsuarioNegocio();
-            negocio.CambiarContraseña(usuario, contraseña, nuevaContraseña);
-            Host = Validar.NumeroHost(usuario);
-
-            // Cambiamos el texto del botón y la bandera primerLogin
-            Boton_Ingresar.Text = "Iniciar Sesión";
-            primerLogin = false;
-
-            MessageBox.Show("Contraseña cambiada correctamente. Por favor, inicie sesión con su nueva contraseña.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("Error al cambiar la contraseña: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-    }
-    else
-    {
-        // Si no es el primer inicio de sesión, simplemente iniciamos sesión
-        IniciarSesion();
-    }
-}*/

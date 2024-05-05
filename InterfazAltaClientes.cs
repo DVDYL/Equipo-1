@@ -256,8 +256,8 @@ namespace Presentacion
             host = "1";
             
             // Crear un nuevo objeto AltaUsuario con los datos del formulario
-            ClienteNegocio usuarioNegocio = new ClienteNegocio();
-            usuarioNegocio.agregarCliente(
+            ClienteNegocio ClienteNegocio = new ClienteNegocio();
+            ClienteNegocio.agregarCliente(
                                             "70b37dc1-8fde-4840-be47-9ababd0ee7e5",
                                             Box_Nombre.Text,
                                             Box_Apellido.Text,
@@ -279,7 +279,7 @@ namespace Presentacion
                 CrearCliente();
 
                 // Mostrar un cuadro de diálogo de confirmación al usuario
-                DialogResult resultadoConfirmacion = MessageBox.Show($"¿Desea realizar la operación de alta para el cliente {Box_Nombre.Text + Box_Apellido.Text}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult resultadoConfirmacion = MessageBox.Show($"¿Desea realizar la operación de alta para el cliente {Box_Nombre.Text + " " + Box_Apellido.Text}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultadoConfirmacion == DialogResult.Yes)
                 {
