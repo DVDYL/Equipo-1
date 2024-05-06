@@ -159,7 +159,8 @@
             // 
             this.MayudaCUIT.AutoSize = true;
             this.MayudaCUIT.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaCUIT.Location = new System.Drawing.Point(688, 594);
+            this.MayudaCUIT.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MayudaCUIT.Location = new System.Drawing.Point(717, 591);
             this.MayudaCUIT.Name = "MayudaCUIT";
             this.MayudaCUIT.Size = new System.Drawing.Size(13, 15);
             this.MayudaCUIT.TabIndex = 115;
@@ -170,7 +171,8 @@
             // 
             this.MayudaConfirMail.AutoSize = true;
             this.MayudaConfirMail.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaConfirMail.Location = new System.Drawing.Point(688, 487);
+            this.MayudaConfirMail.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MayudaConfirMail.Location = new System.Drawing.Point(717, 484);
             this.MayudaConfirMail.Name = "MayudaConfirMail";
             this.MayudaConfirMail.Size = new System.Drawing.Size(13, 15);
             this.MayudaConfirMail.TabIndex = 114;
@@ -181,7 +183,8 @@
             // 
             this.MayudaMail.AutoSize = true;
             this.MayudaMail.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaMail.Location = new System.Drawing.Point(688, 380);
+            this.MayudaMail.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MayudaMail.Location = new System.Drawing.Point(717, 377);
             this.MayudaMail.Name = "MayudaMail";
             this.MayudaMail.Size = new System.Drawing.Size(13, 15);
             this.MayudaMail.TabIndex = 113;
@@ -192,7 +195,8 @@
             // 
             this.MayudaApellido.AutoSize = true;
             this.MayudaApellido.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaApellido.Location = new System.Drawing.Point(688, 273);
+            this.MayudaApellido.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MayudaApellido.Location = new System.Drawing.Point(717, 270);
             this.MayudaApellido.Name = "MayudaApellido";
             this.MayudaApellido.Size = new System.Drawing.Size(13, 15);
             this.MayudaApellido.TabIndex = 112;
@@ -203,7 +207,8 @@
             // 
             this.MayudaNombre.AutoSize = true;
             this.MayudaNombre.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaNombre.Location = new System.Drawing.Point(688, 168);
+            this.MayudaNombre.Font = new System.Drawing.Font("Nunito", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MayudaNombre.Location = new System.Drawing.Point(717, 165);
             this.MayudaNombre.Name = "MayudaNombre";
             this.MayudaNombre.Size = new System.Drawing.Size(13, 15);
             this.MayudaNombre.TabIndex = 111;
@@ -316,7 +321,7 @@
             // 
             // InterfazAltaProveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 768);
             this.Controls.Add(this.Boton_Cancelar);

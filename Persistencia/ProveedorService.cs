@@ -62,7 +62,7 @@ namespace Persistencia
             }
         }
 
-        public void ModificarProveedor(Guid idProveedor, Guid idUsuario, string Nombre, string Apellido, string email, string CUIT)
+        public void ModificarProveedor(string idProveedor, string idUsuario, string Nombre, string Apellido, string email, string CUIT)
         {
             String path = "/api/Proveedor/ModificarProveedor";
             Dictionary<string, string> map = new Dictionary<string, string>();
@@ -94,7 +94,7 @@ namespace Persistencia
             }
         }
 
-        public void BorrarProveedor(Guid idProveedor) //Validar Tema de Parametro
+        public void BorrarProveedor(string idProveedor) //Validar Tema de Parametro
         {
             String path = "/api/Proveedor/BajaProveedor" + idProveedor;
 

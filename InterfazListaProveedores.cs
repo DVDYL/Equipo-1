@@ -24,8 +24,6 @@ namespace Presentacion
         private void InterfazListaProveedores_Load(object sender, EventArgs e)
         {
             CargarProveedores();
-            Boton_Modificar.Visible = false;
-            Boton_Eliminar.Visible = false;
         }
 
         private void CargarProveedores()
@@ -50,9 +48,10 @@ namespace Presentacion
             }
         }
 
-        private void Proveedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Listado_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            // Maneja la selección de una línea en la tabla.
+            Boton_Modificar.Visible = true;
+            Boton_Eliminar.Visible = true;
         }
 
         private void ProveedoresLupa_Click(object sender, EventArgs e)
@@ -175,6 +174,12 @@ namespace Presentacion
             Boton_Eliminar.Visible = false;
         }
 
+        private void Boton_BorrarFiltro_Click(object sender, EventArgs e)
+        {
+            CargarProveedores();
+            Limpiar();
+        }
+
         private void BotonAltaProveedores_Click(object sender, EventArgs e)
         {
             InterfazAltaProveedores AltaProveedores = new InterfazAltaProveedores();
@@ -184,37 +189,62 @@ namespace Presentacion
 
         private void Boton_Modificar_Click(object sender, EventArgs e)
         {
-            InterfazModificarProveedores ModificarProveedores = new InterfazModificarProveedores();
-            this.Hide();
-            ModificarProveedores.Show(); // Mostrar el formulario
+            // Verificar si se ha seleccionado una fila en el DataGridView
+            if (Proveedores.SelectedRows.Count > 0)
+            {
+                // Obtener los datos de la fila seleccionada
+                DataGridViewRow filaSeleccionada = Proveedores.SelectedRows[0];
+
+                // Obtener los valores de las celdas de la fila seleccionada
+                string idProveedor = filaSeleccionada.Cells["id"].Value.ToString(); // Lo voy a reutilizar para el patch y el delete
+                string idUsuario = idProveedor; // hace falta declarla acá? Creo que no.
+                string nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                string apellido = filaSeleccionada.Cells["Apellido"].Value.ToString();
+                string email = filaSeleccionada.Cells["Email"].Value.ToString();
+                string CUIT = filaSeleccionada.Cells["CUIT"].Value.ToString();
+
+                InterfazModificarProveedores ModificarProveedores = new InterfazModificarProveedores(idProveedor);
+                ModificarProveedores.ActualizarTextBox(nombre, apellido, email, CUIT); // Levanto los datos de la lista y me los llevo a otra ventana.
+
+                this.Hide(); // ocultar la lista de proveedores momentáneamente.
+                ModificarProveedores.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione una fila antes de hacer clic en Modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
-        private void Boton_BorrarFiltro_Click(object sender, EventArgs e)
-        {
-            CargarProveedores();
-            Limpiar();
-        }
-
-        private void EliminarProveedor()
+        private void EliminarProveedor(string idProveedor)
         {
             ProveedorNegocio BajaProveedor = new ProveedorNegocio();
-            //BajaProveedor.BorrarProveedor(ACÁ SE DEBERÍA ESPECIFICAR DE QUÉ CELDA SALE EL DATO DEL IDPROVEEDOR);
+            BajaProveedor.BorrarProveedor(idProveedor);
+            CargarProveedores();
         }
 
         private void Boton_Eliminar_Click(object sender, EventArgs e)
         {
-            // Verificar si hay una fila seleccionada dentro del GRID
             if (Proveedores.SelectedRows.Count > 0)
             {
-                // Obtener el índice de la fila seleccionada
-                int indiceFila = Proveedores.SelectedRows[0].Index;
+                // Obtener los datos de la fila seleccionada
+                DataGridViewRow filaSeleccionada = Proveedores.SelectedRows[0];
 
-                // Obtener el valor de la celda "ID" de la fila seleccionada
-                string id = Proveedores.Rows[indiceFila].Cells["ID"].Value.ToString();
+                // Obtener los valores de las celdas de la fila seleccionada
+                string idProveedor = filaSeleccionada.Cells["id"].Value.ToString();
 
-                // Por medio del id, eliminamos el proveedor
-                // Por ejemplo:
-                EliminarProveedor(); //Acá debería ir el id dentro del método.
+                // Mostrar un cuadro de diálogo de confirmación al usuario
+                DialogResult resultadoConfirmacion = MessageBox.Show($"¿Está seguro que desea eliminar este proveedor?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (resultadoConfirmacion == DialogResult.Yes)
+                {
+                    EliminarProveedor(idProveedor);
+                    // Insertar acá el código para volver a llamar a la lista de Proveedores actualizada, así evitamos que se intente modificar algo dado de baja.
+                }
+                else
+                {
+                    MessageBox.Show("La eliminación del proveedor ha sido cancelada.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {

@@ -113,7 +113,7 @@
             this.Proveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Proveedores.Size = new System.Drawing.Size(1260, 460);
             this.Proveedores.TabIndex = 4;
-            this.Proveedores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Proveedores_CellContentClick);
+            this.Proveedores.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Listado_RowHeaderMouseClick);
             // 
             // Boton_Salir
             // 

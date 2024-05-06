@@ -31,21 +31,21 @@
             this.Boton_Cancelar = new System.Windows.Forms.Button();
             this.Boton_Confirmar = new System.Windows.Forms.Button();
             this.SeparatorPersona = new System.Windows.Forms.GroupBox();
-            this.ConfirmMail_Error = new System.Windows.Forms.TextBox();
+            this.ConfirMail_Error = new System.Windows.Forms.TextBox();
             this.Mail_Error = new System.Windows.Forms.TextBox();
-            this.Telefono_Error = new System.Windows.Forms.TextBox();
-            this.Calle_Error = new System.Windows.Forms.TextBox();
-            this.DNI_Error = new System.Windows.Forms.TextBox();
+            this.CUIT_Error = new System.Windows.Forms.TextBox();
+            this.Apellido_Error = new System.Windows.Forms.TextBox();
+            this.Nombre_Error = new System.Windows.Forms.TextBox();
             this.MayudaCUIT = new System.Windows.Forms.Label();
             this.MayudaConfirMail = new System.Windows.Forms.Label();
             this.MayudaMail = new System.Windows.Forms.Label();
             this.MayudaApellido = new System.Windows.Forms.Label();
-            this.MayudaCategoria = new System.Windows.Forms.Label();
-            this.ConfirMail_Box = new System.Windows.Forms.TextBox();
+            this.MayudaNombre = new System.Windows.Forms.Label();
+            this.Box_ConfirMail = new System.Windows.Forms.TextBox();
             this.CUIT_Box = new System.Windows.Forms.TextBox();
-            this.Email_Box = new System.Windows.Forms.TextBox();
-            this.Apellido_Box = new System.Windows.Forms.TextBox();
-            this.Nombre_Box = new System.Windows.Forms.TextBox();
+            this.Box_Mail = new System.Windows.Forms.TextBox();
+            this.Box_Apellido = new System.Windows.Forms.TextBox();
+            this.Box_Nombre = new System.Windows.Forms.TextBox();
             this.Label_ConfirmarEmail = new System.Windows.Forms.Label();
             this.Nombre_Label = new System.Windows.Forms.Label();
             this.Label_Email = new System.Windows.Forms.Label();
@@ -100,16 +100,16 @@
             this.SeparatorPersona.TabStop = false;
             this.SeparatorPersona.Text = "Modificar Proveedor";
             // 
-            // ConfirmMail_Error
+            // ConfirMail_Error
             // 
-            this.ConfirmMail_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ConfirmMail_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirmMail_Error.ForeColor = System.Drawing.Color.Red;
-            this.ConfirmMail_Error.Location = new System.Drawing.Point(423, 509);
-            this.ConfirmMail_Error.Multiline = true;
-            this.ConfirmMail_Error.Name = "ConfirmMail_Error";
-            this.ConfirmMail_Error.Size = new System.Drawing.Size(311, 20);
-            this.ConfirmMail_Error.TabIndex = 97;
+            this.ConfirMail_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ConfirMail_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirMail_Error.ForeColor = System.Drawing.Color.Red;
+            this.ConfirMail_Error.Location = new System.Drawing.Point(423, 509);
+            this.ConfirMail_Error.Multiline = true;
+            this.ConfirMail_Error.Name = "ConfirMail_Error";
+            this.ConfirMail_Error.Size = new System.Drawing.Size(311, 20);
+            this.ConfirMail_Error.TabIndex = 97;
             // 
             // Mail_Error
             // 
@@ -122,38 +122,38 @@
             this.Mail_Error.Size = new System.Drawing.Size(311, 20);
             this.Mail_Error.TabIndex = 96;
             // 
-            // Telefono_Error
+            // CUIT_Error
             // 
-            this.Telefono_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Telefono_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Telefono_Error.ForeColor = System.Drawing.Color.Red;
-            this.Telefono_Error.Location = new System.Drawing.Point(423, 623);
-            this.Telefono_Error.Multiline = true;
-            this.Telefono_Error.Name = "Telefono_Error";
-            this.Telefono_Error.Size = new System.Drawing.Size(307, 20);
-            this.Telefono_Error.TabIndex = 95;
+            this.CUIT_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CUIT_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CUIT_Error.ForeColor = System.Drawing.Color.Red;
+            this.CUIT_Error.Location = new System.Drawing.Point(423, 623);
+            this.CUIT_Error.Multiline = true;
+            this.CUIT_Error.Name = "CUIT_Error";
+            this.CUIT_Error.Size = new System.Drawing.Size(307, 20);
+            this.CUIT_Error.TabIndex = 95;
             // 
-            // Calle_Error
+            // Apellido_Error
             // 
-            this.Calle_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Calle_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Calle_Error.ForeColor = System.Drawing.Color.Red;
-            this.Calle_Error.Location = new System.Drawing.Point(423, 282);
-            this.Calle_Error.Multiline = true;
-            this.Calle_Error.Name = "Calle_Error";
-            this.Calle_Error.Size = new System.Drawing.Size(311, 20);
-            this.Calle_Error.TabIndex = 94;
+            this.Apellido_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Apellido_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Apellido_Error.ForeColor = System.Drawing.Color.Red;
+            this.Apellido_Error.Location = new System.Drawing.Point(423, 282);
+            this.Apellido_Error.Multiline = true;
+            this.Apellido_Error.Name = "Apellido_Error";
+            this.Apellido_Error.Size = new System.Drawing.Size(311, 20);
+            this.Apellido_Error.TabIndex = 94;
             // 
-            // DNI_Error
+            // Nombre_Error
             // 
-            this.DNI_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DNI_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DNI_Error.ForeColor = System.Drawing.Color.Red;
-            this.DNI_Error.Location = new System.Drawing.Point(423, 183);
-            this.DNI_Error.Multiline = true;
-            this.DNI_Error.Name = "DNI_Error";
-            this.DNI_Error.Size = new System.Drawing.Size(311, 20);
-            this.DNI_Error.TabIndex = 93;
+            this.Nombre_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Nombre_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nombre_Error.ForeColor = System.Drawing.Color.Red;
+            this.Nombre_Error.Location = new System.Drawing.Point(423, 183);
+            this.Nombre_Error.Multiline = true;
+            this.Nombre_Error.Name = "Nombre_Error";
+            this.Nombre_Error.Size = new System.Drawing.Size(311, 20);
+            this.Nombre_Error.TabIndex = 93;
             // 
             // MayudaCUIT
             // 
@@ -203,27 +203,27 @@
             this.MayudaApellido.Text = "?";
             this.MayudaApellido.Visible = false;
             // 
-            // MayudaCategoria
+            // MayudaNombre
             // 
-            this.MayudaCategoria.AutoSize = true;
-            this.MayudaCategoria.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaCategoria.Font = new System.Drawing.Font("Nunito", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MayudaCategoria.Location = new System.Drawing.Point(712, 152);
-            this.MayudaCategoria.Name = "MayudaCategoria";
-            this.MayudaCategoria.Size = new System.Drawing.Size(15, 17);
-            this.MayudaCategoria.TabIndex = 88;
-            this.MayudaCategoria.Text = "?";
-            this.MayudaCategoria.Visible = false;
+            this.MayudaNombre.AutoSize = true;
+            this.MayudaNombre.BackColor = System.Drawing.Color.LightGray;
+            this.MayudaNombre.Font = new System.Drawing.Font("Nunito", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MayudaNombre.Location = new System.Drawing.Point(712, 152);
+            this.MayudaNombre.Name = "MayudaNombre";
+            this.MayudaNombre.Size = new System.Drawing.Size(15, 17);
+            this.MayudaNombre.TabIndex = 88;
+            this.MayudaNombre.Text = "?";
+            this.MayudaNombre.Visible = false;
             // 
-            // ConfirMail_Box
+            // Box_ConfirMail
             // 
-            this.ConfirMail_Box.BackColor = System.Drawing.Color.Gainsboro;
-            this.ConfirMail_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ConfirMail_Box.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirMail_Box.Location = new System.Drawing.Point(423, 472);
-            this.ConfirMail_Box.Name = "ConfirMail_Box";
-            this.ConfirMail_Box.Size = new System.Drawing.Size(251, 31);
-            this.ConfirMail_Box.TabIndex = 5;
+            this.Box_ConfirMail.BackColor = System.Drawing.Color.Gainsboro;
+            this.Box_ConfirMail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Box_ConfirMail.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_ConfirMail.Location = new System.Drawing.Point(423, 472);
+            this.Box_ConfirMail.Name = "Box_ConfirMail";
+            this.Box_ConfirMail.Size = new System.Drawing.Size(251, 31);
+            this.Box_ConfirMail.TabIndex = 5;
             // 
             // CUIT_Box
             // 
@@ -235,35 +235,35 @@
             this.CUIT_Box.Size = new System.Drawing.Size(250, 31);
             this.CUIT_Box.TabIndex = 6;
             // 
-            // Email_Box
+            // Box_Mail
             // 
-            this.Email_Box.BackColor = System.Drawing.Color.Gainsboro;
-            this.Email_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Email_Box.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email_Box.Location = new System.Drawing.Point(423, 360);
-            this.Email_Box.Name = "Email_Box";
-            this.Email_Box.Size = new System.Drawing.Size(251, 31);
-            this.Email_Box.TabIndex = 3;
+            this.Box_Mail.BackColor = System.Drawing.Color.Gainsboro;
+            this.Box_Mail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Box_Mail.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_Mail.Location = new System.Drawing.Point(423, 360);
+            this.Box_Mail.Name = "Box_Mail";
+            this.Box_Mail.Size = new System.Drawing.Size(251, 31);
+            this.Box_Mail.TabIndex = 3;
             // 
-            // Apellido_Box
+            // Box_Apellido
             // 
-            this.Apellido_Box.BackColor = System.Drawing.Color.Gainsboro;
-            this.Apellido_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Apellido_Box.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Apellido_Box.Location = new System.Drawing.Point(423, 245);
-            this.Apellido_Box.Name = "Apellido_Box";
-            this.Apellido_Box.Size = new System.Drawing.Size(250, 31);
-            this.Apellido_Box.TabIndex = 2;
+            this.Box_Apellido.BackColor = System.Drawing.Color.Gainsboro;
+            this.Box_Apellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Box_Apellido.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_Apellido.Location = new System.Drawing.Point(423, 245);
+            this.Box_Apellido.Name = "Box_Apellido";
+            this.Box_Apellido.Size = new System.Drawing.Size(250, 31);
+            this.Box_Apellido.TabIndex = 2;
             // 
-            // Nombre_Box
+            // Box_Nombre
             // 
-            this.Nombre_Box.BackColor = System.Drawing.Color.Gainsboro;
-            this.Nombre_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Nombre_Box.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nombre_Box.Location = new System.Drawing.Point(423, 146);
-            this.Nombre_Box.Name = "Nombre_Box";
-            this.Nombre_Box.Size = new System.Drawing.Size(250, 31);
-            this.Nombre_Box.TabIndex = 1;
+            this.Box_Nombre.BackColor = System.Drawing.Color.Gainsboro;
+            this.Box_Nombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Box_Nombre.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_Nombre.Location = new System.Drawing.Point(423, 146);
+            this.Box_Nombre.Name = "Box_Nombre";
+            this.Box_Nombre.Size = new System.Drawing.Size(250, 31);
+            this.Box_Nombre.TabIndex = 1;
             // 
             // Label_ConfirmarEmail
             // 
@@ -328,21 +328,21 @@
             this.Controls.Add(this.Boton_Cancelar);
             this.Controls.Add(this.Boton_Confirmar);
             this.Controls.Add(this.SeparatorPersona);
-            this.Controls.Add(this.ConfirmMail_Error);
+            this.Controls.Add(this.ConfirMail_Error);
             this.Controls.Add(this.Mail_Error);
-            this.Controls.Add(this.Telefono_Error);
-            this.Controls.Add(this.Calle_Error);
-            this.Controls.Add(this.DNI_Error);
+            this.Controls.Add(this.CUIT_Error);
+            this.Controls.Add(this.Apellido_Error);
+            this.Controls.Add(this.Nombre_Error);
             this.Controls.Add(this.MayudaCUIT);
             this.Controls.Add(this.MayudaConfirMail);
             this.Controls.Add(this.MayudaMail);
             this.Controls.Add(this.MayudaApellido);
-            this.Controls.Add(this.MayudaCategoria);
-            this.Controls.Add(this.ConfirMail_Box);
+            this.Controls.Add(this.MayudaNombre);
+            this.Controls.Add(this.Box_ConfirMail);
             this.Controls.Add(this.CUIT_Box);
-            this.Controls.Add(this.Email_Box);
-            this.Controls.Add(this.Apellido_Box);
-            this.Controls.Add(this.Nombre_Box);
+            this.Controls.Add(this.Box_Mail);
+            this.Controls.Add(this.Box_Apellido);
+            this.Controls.Add(this.Box_Nombre);
             this.Controls.Add(this.Label_ConfirmarEmail);
             this.Controls.Add(this.Nombre_Label);
             this.Controls.Add(this.Label_Email);
@@ -362,21 +362,21 @@
         private System.Windows.Forms.Button Boton_Cancelar;
         private System.Windows.Forms.Button Boton_Confirmar;
         private System.Windows.Forms.GroupBox SeparatorPersona;
-        private System.Windows.Forms.TextBox ConfirmMail_Error;
+        private System.Windows.Forms.TextBox ConfirMail_Error;
         private System.Windows.Forms.TextBox Mail_Error;
-        private System.Windows.Forms.TextBox Telefono_Error;
-        private System.Windows.Forms.TextBox Calle_Error;
-        private System.Windows.Forms.TextBox DNI_Error;
+        private System.Windows.Forms.TextBox CUIT_Error;
+        private System.Windows.Forms.TextBox Apellido_Error;
+        private System.Windows.Forms.TextBox Nombre_Error;
         private System.Windows.Forms.Label MayudaCUIT;
         private System.Windows.Forms.Label MayudaConfirMail;
         private System.Windows.Forms.Label MayudaMail;
         private System.Windows.Forms.Label MayudaApellido;
-        private System.Windows.Forms.Label MayudaCategoria;
-        private System.Windows.Forms.TextBox ConfirMail_Box;
+        private System.Windows.Forms.Label MayudaNombre;
+        private System.Windows.Forms.TextBox Box_ConfirMail;
         private System.Windows.Forms.TextBox CUIT_Box;
-        private System.Windows.Forms.TextBox Email_Box;
-        private System.Windows.Forms.TextBox Apellido_Box;
-        private System.Windows.Forms.TextBox Nombre_Box;
+        private System.Windows.Forms.TextBox Box_Mail;
+        private System.Windows.Forms.TextBox Box_Apellido;
+        private System.Windows.Forms.TextBox Box_Nombre;
         private System.Windows.Forms.Label Label_ConfirmarEmail;
         private System.Windows.Forms.Label Nombre_Label;
         private System.Windows.Forms.Label Label_Email;

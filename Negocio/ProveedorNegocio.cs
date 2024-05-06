@@ -21,13 +21,13 @@ namespace Negocio
             ProveedorService.AgregarProveedor(altaProveedor);
         }
 
-        public void ModificarProveedor(Guid idProveedor, Guid idUsuario, string Nombre, string Apellido, string email, string CUIT)
+        public void ModificarProveedor(string idProveedor, string idUsuario, string Nombre, string Apellido, string email, string CUIT)
         {
             ProveedorService.ModificarProveedor(idProveedor, idUsuario, Nombre, Apellido, email, CUIT);
 
         }
 
-        public void BorrarProveedor(Guid idProveedor)
+        public void BorrarProveedor(string idProveedor)
         {
             ProveedorService.BorrarProveedor(idProveedor);
         }

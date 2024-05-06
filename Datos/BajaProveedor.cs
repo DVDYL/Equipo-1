@@ -8,23 +8,23 @@ namespace Datos
 {
     public class BajaProveedor
     {
-        Guid _id;
-        Guid _idUsuario;
+        string _id;
+        string _idUsuario;
 
         public BajaProveedor()
         {
             //
         }
 
-        public BajaProveedor(Guid idProveedor, Guid idUsuario)
+        public BajaProveedor(string idProveedor, string idUsuario)
         {
             _id = idProveedor;
             _idUsuario = idUsuario;
         }
 
-        public Guid idProveedor { get => _id; set => _id = value; }
+        public string idProveedor { get => _id; set => _id = value; }
 
-        public Guid idUsuario { get => _idUsuario; set => _idUsuario = value; }
+        public string idUsuario { get => _idUsuario; set => _idUsuario = value; }
 
     }
 }

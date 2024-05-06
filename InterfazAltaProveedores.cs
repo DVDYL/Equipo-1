@@ -118,21 +118,19 @@ namespace Presentacion
                 CUIT_Error.Visible = true;
 
                 MessageBox.Show(errorCUIT, "Verificar CUIT", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-               // MayudaDNI.Visible = true;
+                MayudaCUIT.Visible = true;
                 ContarErrores++;
             }
             else
             {
                 CUIT_Error.Visible = false;
-                // MayudaDNI.Visible = false;
+                MayudaCUIT.Visible = false;
             }
 
             if (ContarErrores >= 1)
             {
                 return ContarErrores; // Detener la ejecución y devolver el contador de errores
             }
-
-            //Faltan Validaciones de Mail/Confirmar Mail(Ya existen), Habria que agregar CUIT en clase Validar. 
 
             return ContarErrores; // Devolver true si no hay errores, false si hay errores
         }
