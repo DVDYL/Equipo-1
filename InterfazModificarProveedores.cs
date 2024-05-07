@@ -149,14 +149,7 @@ namespace Presentacion
             }
 
             return ContarErrores; // Devolver true si no hay errores, false si hay errores
-        }
-
-        private void InterfazModificarProveedores_Load(object sender, EventArgs e)
-        {
-            // Acá falta el get de la lista de proveedores, pero de la fila seleccionada, dato por dato:
-            // Nombre_Box = Nombre
-            // Apellido_Box = Apellido .....
-        }
+        } // Cómo harías para llevarlo a la validadora? Es necesario?
 
         private void Boton_Confirmar_Click(object sender, EventArgs e)
         {
