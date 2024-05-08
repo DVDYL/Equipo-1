@@ -21,8 +21,8 @@ namespace Presentacion
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
-            Boton_Modificar.Visible = false;
-            Boton_Eliminar.Visible = false;
+            Boton_Modificar.Visible = true;
+            Boton_Eliminar.Visible = true;
         }
 
         private void InterfazListaClientes_Load(object sender, EventArgs e)
@@ -62,8 +62,8 @@ namespace Presentacion
             if (string.IsNullOrEmpty(textoBusqueda))
             {
                 CargarClientes();
-                Boton_Modificar.Visible = false;
-                Boton_Eliminar.Visible = false;
+                Boton_Modificar.Visible = true;
+                Boton_Eliminar.Visible = true;
             }
 
             // Verificar si la lista de usuarios es nula o está vacía
@@ -71,8 +71,8 @@ namespace Presentacion
             {
                 // Manejar el caso en el que la lista de usuarios es nula o vacía
                 MessageBox.Show("La lista se encuentra vacía.\n\nNo hay clientes para buscar.");
-                Boton_Modificar.Visible = false;
-                Boton_Eliminar.Visible = false;
+                Boton_Modificar.Visible = true;
+                Boton_Eliminar.Visible = true;
             }
             else
             {
@@ -120,8 +120,8 @@ namespace Presentacion
             {
                 CargarClientes();
                 //   Limpiar();
-                Boton_Eliminar.Visible = false;
-                Boton_Modificar.Visible = false;
+                Boton_Eliminar.Visible = true;
+                Boton_Modificar.Visible = true;
             }
 
             // Verificar si la lista de Clientes es nula o está vacía
@@ -129,7 +129,7 @@ namespace Presentacion
             {
                 // Manejar el caso en el que la lista de Cliente es nula o vacía
                 MessageBox.Show("La lista se encuentra vacía.\n\nNo hay clientes para buscar.");
-                Boton_Eliminar.Visible = false;
+                Boton_Eliminar.Visible = true;
             }
             else
             {
@@ -185,8 +185,8 @@ namespace Presentacion
         {
             ClienteBuscador.Text = "";
             Box_BuscarDNI.Text = "";
-            Boton_Modificar.Visible = false;
-            Boton_Eliminar.Visible = false;
+            Boton_Modificar.Visible = true;
+            Boton_Eliminar.Visible = true;
         }
 
         private void Listado_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

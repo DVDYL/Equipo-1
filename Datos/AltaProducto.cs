@@ -9,9 +9,9 @@ namespace Datos
     public class AltaProducto
     {
         int _idCategoria;
-        String _idUsuario;
+        string _idUsuario;
         string _idProveedor;
-        String _nombre;
+        string _nombre;
         int _precio;
         int _stock;
 
