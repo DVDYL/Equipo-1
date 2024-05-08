@@ -222,6 +222,7 @@ namespace Presentacion
         private void BorrarFiltro_Click(object sender, EventArgs e)
         {
             CargarUsuarios();
+            Limpiar();
             Boton_Eliminar.Visible = false;
         }
 

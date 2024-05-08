@@ -350,7 +350,7 @@
             this.Controls.Add(this.Label_Apellido);
             this.Name = "InterfazModificarProveedores";
             this.Text = "Modificar Proveedor";
-            this.Load += new System.EventHandler(this.InterfazModificarProveedores_Load);
+            //this.Load += new System.EventHandler(this.InterfazModificarProveedores_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ventana_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();

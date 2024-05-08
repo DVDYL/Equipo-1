@@ -195,7 +195,7 @@
             this.BorrarFiltro.TabIndex = 4;
             this.BorrarFiltro.Text = "Borrar Filtros";
             this.BorrarFiltro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BorrarFiltro.UseVisualStyleBackColor = false;
+            this.BorrarFiltro.UseVisualStyleBackColor = true;
             this.BorrarFiltro.Click += new System.EventHandler(this.BorrarFiltro_Click);
             // 
             // Box_BuscarDNI
