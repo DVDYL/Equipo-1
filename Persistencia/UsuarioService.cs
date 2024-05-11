@@ -95,10 +95,9 @@ namespace Persistencia
             }
         }
 
-        public void BorrarUsuario(Guid idUsuario)
+        public void BorrarUsuario(string idUsuario)
         {
-            String path = "/api/Cliente/BajaUsuario?id=" + idUsuario;
-
+            String path = "/api/Usuario/BajaUsuario"    +   idUsuario;
             try
             {
                 HttpResponseMessage response = WebHelper.Delete(path);

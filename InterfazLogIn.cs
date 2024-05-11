@@ -67,7 +67,7 @@ namespace Presentacion
             if (Validar.EsID(id.Substring(1, 36)) == 2) //Hay que llamar a esto solamente cuando la contraseña está mal, pero el usuario existe
             {
                 MessageBox.Show("Credenciales Incorrectas.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                CargarTXT(Usuario); 
+                CargarTXT(Usuario, id); 
             }
 
             if (Validar.EsID(id.Substring(1, 36)) == 1) // El hash es válido, permitir el acceso
@@ -121,7 +121,7 @@ namespace Presentacion
             }
         }
 
-        private void CargarTXT(string Usuario)
+        private void CargarTXT(string Usuario, string id)
         {
             UsuarioNegocio negocio = new UsuarioNegocio();
             List<UsuariosActivos> listaUsuarios = negocio.ListarUsuarios();
@@ -194,10 +194,10 @@ namespace Presentacion
                                 }
                                 else if (intentos >= 4)
                                 {
+                                    UsuarioNegocio negocioUser = new UsuarioNegocio();
+                                    negocioUser.BorrarUsuario(id);
+
                                     MessageBox.Show("El usuario ha sido bloqueado. Contacte al Administrador del Sistema para reactivarlo nuevamente", "Usuario Bloqueado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                                    // Llamar a un método que pase el usuario a inactivo.
-
                                     Application.Exit();
                                 }
                             }

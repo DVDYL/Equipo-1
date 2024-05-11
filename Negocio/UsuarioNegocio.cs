@@ -48,7 +48,7 @@ namespace Negocio
             UsuarioService.ModificarUsuario(idUsuario, direccion, telefono, email);
         }
 
-        public void BorrarUsuario(Guid idUsuario)
+        public void BorrarUsuario(string idUsuario)
         {
             UsuarioService.BorrarUsuario(idUsuario);
         }
