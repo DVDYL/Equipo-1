@@ -21,8 +21,8 @@ namespace Presentacion
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
             this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
-            Boton_Modificar.Visible = true;
-            Boton_Eliminar.Visible = true;
+            Boton_Modificar.Visible = false;
+            Boton_Eliminar.Visible = false;
         }
 
         private void InterfazListaClientes_Load(object sender, EventArgs e)
@@ -45,7 +45,6 @@ namespace Presentacion
                 var source = new BindingSource(bindingList, null);
                 Clientes.DataSource = source;
                 Clientes.Columns["id"].Visible = false;
-                Clientes.Columns["fechaBaja"].Visible = false;
                 Clientes.Columns["Host"].Visible = false;
             }
             catch (Exception ex)
@@ -62,8 +61,8 @@ namespace Presentacion
             if (string.IsNullOrEmpty(textoBusqueda))
             {
                 CargarClientes();
-                Boton_Modificar.Visible = true;
-                Boton_Eliminar.Visible = true;
+                Boton_Modificar.Visible = false;
+                Boton_Eliminar.Visible = false;
             }
 
             // Verificar si la lista de usuarios es nula o está vacía
@@ -71,8 +70,8 @@ namespace Presentacion
             {
                 // Manejar el caso en el que la lista de usuarios es nula o vacía
                 MessageBox.Show("La lista se encuentra vacía.\n\nNo hay clientes para buscar.");
-                Boton_Modificar.Visible = true;
-                Boton_Eliminar.Visible = true;
+                Boton_Modificar.Visible = false;
+                Boton_Eliminar.Visible = false;
             }
             else
             {
@@ -100,8 +99,8 @@ namespace Presentacion
                     var bindingList = new BindingList<Cliente>(ClientesFiltrados);
                     var source = new BindingSource(bindingList, null);
                     Clientes.DataSource = source;
-               //     Boton_Modificar.Visible = true;
-               //     Boton_Eliminar.Visible = true;
+                    Boton_Modificar.Visible = true;
+                    Boton_Eliminar.Visible = true;
                 }
                 else
                 {
@@ -119,7 +118,6 @@ namespace Presentacion
             if (string.IsNullOrEmpty(textoBusqueda))
             {
                 CargarClientes();
-                //   Limpiar();
                 Boton_Eliminar.Visible = true;
                 Boton_Modificar.Visible = true;
             }
@@ -185,8 +183,8 @@ namespace Presentacion
         {
             ClienteBuscador.Text = "";
             Box_BuscarDNI.Text = "";
-            Boton_Modificar.Visible = true;
-            Boton_Eliminar.Visible = true;
+            Boton_Modificar.Visible = false;
+            Boton_Eliminar.Visible = false;
         }
 
         private void Listado_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

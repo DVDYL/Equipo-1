@@ -32,11 +32,17 @@ namespace Datos
         }
 
         public Guid Id { get => _id; set => _id = value; }
+
         public int IDCategoria { get => _idCategoria; set => _idCategoria = value; }
+
         public string Nombre { get => _nombre; set => _nombre = value; }
+
         public DateTime FechaAlta { get => _fechaAlta; set => _fechaAlta = value; }
+
         public DateTime? FechaBaja { get => _fechaBaja; set => _fechaBaja = value; }
+
         public int Precio { get => _precio; set => _precio = value; }
+
         public int Stock { get => _stock; set => _stock = value; }
     }
 }

@@ -66,8 +66,6 @@
             this.Label_Direccion = new System.Windows.Forms.Label();
             this.Label_Apellido = new System.Windows.Forms.Label();
             this.Label_Nombre = new System.Windows.Forms.Label();
-            this.Label_Tipo_Usuario = new System.Windows.Forms.Label();
-            this.ComboBox_Rol = new System.Windows.Forms.ComboBox();
             this.Boton_Cancelar = new System.Windows.Forms.Button();
             this.Boton_Confirmar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -78,6 +76,8 @@
             this.IconoMenu = new System.Windows.Forms.PictureBox();
             this.IconoListaUsuarios = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.ComboBox_Rol = new System.Windows.Forms.ComboBox();
+            this.Label_Tipo_Usuario = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconoCerrarSesion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconoMenu)).BeginInit();
@@ -229,7 +229,7 @@
             this.Rol_Null.ForeColor = System.Drawing.Color.Red;
             this.Rol_Null.Location = new System.Drawing.Point(765, 427);
             this.Rol_Null.Name = "Rol_Null";
-            this.Rol_Null.Size = new System.Drawing.Size(194, 17);
+            this.Rol_Null.Size = new System.Drawing.Size(194, 16);
             this.Rol_Null.TabIndex = 44;
             this.Rol_Null.Text = "Este campo no puede estar vacío";
             // 
@@ -337,7 +337,7 @@
             this.Box_Mail_Confirm.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Mail_Confirm.Location = new System.Drawing.Point(1042, 240);
             this.Box_Mail_Confirm.Name = "Box_Mail_Confirm";
-            this.Box_Mail_Confirm.Size = new System.Drawing.Size(251, 33);
+            this.Box_Mail_Confirm.Size = new System.Drawing.Size(251, 32);
             this.Box_Mail_Confirm.TabIndex = 8;
             // 
             // Box_Telefono
@@ -345,7 +345,7 @@
             this.Box_Telefono.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Telefono.Location = new System.Drawing.Point(360, 554);
             this.Box_Telefono.Name = "Box_Telefono";
-            this.Box_Telefono.Size = new System.Drawing.Size(250, 33);
+            this.Box_Telefono.Size = new System.Drawing.Size(250, 32);
             this.Box_Telefono.TabIndex = 6;
             // 
             // Box_Mail
@@ -353,7 +353,7 @@
             this.Box_Mail.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Mail.Location = new System.Drawing.Point(731, 240);
             this.Box_Mail.Name = "Box_Mail";
-            this.Box_Mail.Size = new System.Drawing.Size(251, 33);
+            this.Box_Mail.Size = new System.Drawing.Size(251, 32);
             this.Box_Mail.TabIndex = 7;
             // 
             // Box_Calle
@@ -361,7 +361,7 @@
             this.Box_Calle.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Calle.Location = new System.Drawing.Point(43, 554);
             this.Box_Calle.Name = "Box_Calle";
-            this.Box_Calle.Size = new System.Drawing.Size(250, 33);
+            this.Box_Calle.Size = new System.Drawing.Size(250, 32);
             this.Box_Calle.TabIndex = 5;
             // 
             // Box_DNI
@@ -369,7 +369,7 @@
             this.Box_DNI.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_DNI.Location = new System.Drawing.Point(43, 240);
             this.Box_DNI.Name = "Box_DNI";
-            this.Box_DNI.Size = new System.Drawing.Size(250, 33);
+            this.Box_DNI.Size = new System.Drawing.Size(250, 32);
             this.Box_DNI.TabIndex = 1;
             // 
             // Box_Apellido
@@ -377,7 +377,7 @@
             this.Box_Apellido.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Apellido.Location = new System.Drawing.Point(360, 391);
             this.Box_Apellido.Name = "Box_Apellido";
-            this.Box_Apellido.Size = new System.Drawing.Size(250, 33);
+            this.Box_Apellido.Size = new System.Drawing.Size(250, 32);
             this.Box_Apellido.TabIndex = 4;
             // 
             // Box_Nombre
@@ -385,7 +385,7 @@
             this.Box_Nombre.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Nombre.Location = new System.Drawing.Point(43, 391);
             this.Box_Nombre.Name = "Box_Nombre";
-            this.Box_Nombre.Size = new System.Drawing.Size(250, 33);
+            this.Box_Nombre.Size = new System.Drawing.Size(250, 32);
             this.Box_Nombre.TabIndex = 3;
             // 
             // Label_ConfirmarEmail
@@ -395,7 +395,7 @@
             this.Label_ConfirmarEmail.Location = new System.Drawing.Point(1020, 206);
             this.Label_ConfirmarEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_ConfirmarEmail.Name = "Label_ConfirmarEmail";
-            this.Label_ConfirmarEmail.Size = new System.Drawing.Size(162, 29);
+            this.Label_ConfirmarEmail.Size = new System.Drawing.Size(168, 28);
             this.Label_ConfirmarEmail.TabIndex = 16;
             this.Label_ConfirmarEmail.Text = "Confirmar Email";
             // 
@@ -406,7 +406,7 @@
             this.Calendario_Nacimiento.MaxDate = new System.DateTime(2025, 4, 2, 0, 0, 0, 0);
             this.Calendario_Nacimiento.MinDate = new System.DateTime(1958, 1, 1, 0, 0, 0, 0);
             this.Calendario_Nacimiento.Name = "Calendario_Nacimiento";
-            this.Calendario_Nacimiento.Size = new System.Drawing.Size(250, 33);
+            this.Calendario_Nacimiento.Size = new System.Drawing.Size(250, 32);
             this.Calendario_Nacimiento.TabIndex = 2;
             this.Calendario_Nacimiento.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             // 
@@ -417,7 +417,7 @@
             this.Label_F_Nacimiento.Location = new System.Drawing.Point(343, 206);
             this.Label_F_Nacimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_F_Nacimiento.Name = "Label_F_Nacimiento";
-            this.Label_F_Nacimiento.Size = new System.Drawing.Size(209, 29);
+            this.Label_F_Nacimiento.Size = new System.Drawing.Size(215, 28);
             this.Label_F_Nacimiento.TabIndex = 13;
             this.Label_F_Nacimiento.Text = "Fecha de Nacimiento";
             // 
@@ -428,7 +428,7 @@
             this.Label_DNI.Location = new System.Drawing.Point(28, 206);
             this.Label_DNI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_DNI.Name = "Label_DNI";
-            this.Label_DNI.Size = new System.Drawing.Size(50, 29);
+            this.Label_DNI.Size = new System.Drawing.Size(51, 28);
             this.Label_DNI.TabIndex = 12;
             this.Label_DNI.Text = "DNI";
             // 
@@ -439,7 +439,7 @@
             this.Label_Email.Location = new System.Drawing.Point(711, 206);
             this.Label_Email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Email.Name = "Label_Email";
-            this.Label_Email.Size = new System.Drawing.Size(64, 29);
+            this.Label_Email.Size = new System.Drawing.Size(65, 28);
             this.Label_Email.TabIndex = 11;
             this.Label_Email.Text = "Email";
             // 
@@ -450,7 +450,7 @@
             this.Label_Telefono.Location = new System.Drawing.Point(343, 520);
             this.Label_Telefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Telefono.Name = "Label_Telefono";
-            this.Label_Telefono.Size = new System.Drawing.Size(94, 29);
+            this.Label_Telefono.Size = new System.Drawing.Size(96, 28);
             this.Label_Telefono.TabIndex = 10;
             this.Label_Telefono.Text = "Teléfono";
             // 
@@ -461,7 +461,7 @@
             this.Label_Direccion.Location = new System.Drawing.Point(28, 520);
             this.Label_Direccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Direccion.Name = "Label_Direccion";
-            this.Label_Direccion.Size = new System.Drawing.Size(101, 29);
+            this.Label_Direccion.Size = new System.Drawing.Size(102, 28);
             this.Label_Direccion.TabIndex = 9;
             this.Label_Direccion.Text = "Dirección";
             // 
@@ -472,7 +472,7 @@
             this.Label_Apellido.Location = new System.Drawing.Point(343, 357);
             this.Label_Apellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Apellido.Name = "Label_Apellido";
-            this.Label_Apellido.Size = new System.Drawing.Size(90, 29);
+            this.Label_Apellido.Size = new System.Drawing.Size(90, 28);
             this.Label_Apellido.TabIndex = 8;
             this.Label_Apellido.Text = "Apellido";
             // 
@@ -483,31 +483,9 @@
             this.Label_Nombre.Location = new System.Drawing.Point(28, 357);
             this.Label_Nombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Nombre.Name = "Label_Nombre";
-            this.Label_Nombre.Size = new System.Drawing.Size(89, 29);
+            this.Label_Nombre.Size = new System.Drawing.Size(91, 28);
             this.Label_Nombre.TabIndex = 7;
             this.Label_Nombre.Text = "Nombre";
-            // 
-            // Label_Tipo_Usuario
-            // 
-            this.Label_Tipo_Usuario.AutoSize = true;
-            this.Label_Tipo_Usuario.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Tipo_Usuario.Location = new System.Drawing.Point(713, 355);
-            this.Label_Tipo_Usuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Label_Tipo_Usuario.Name = "Label_Tipo_Usuario";
-            this.Label_Tipo_Usuario.Size = new System.Drawing.Size(44, 29);
-            this.Label_Tipo_Usuario.TabIndex = 4;
-            this.Label_Tipo_Usuario.Text = "Rol";
-            // 
-            // ComboBox_Rol
-            // 
-            this.ComboBox_Rol.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ComboBox_Rol.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboBox_Rol.FormattingEnabled = true;
-            this.ComboBox_Rol.Location = new System.Drawing.Point(731, 388);
-            this.ComboBox_Rol.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ComboBox_Rol.Name = "ComboBox_Rol";
-            this.ComboBox_Rol.Size = new System.Drawing.Size(250, 34);
-            this.ComboBox_Rol.TabIndex = 12;
             // 
             // Boton_Cancelar
             // 
@@ -568,7 +546,7 @@
             this.label4.Location = new System.Drawing.Point(1083, 23);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 29);
+            this.label4.Size = new System.Drawing.Size(146, 28);
             this.label4.TabIndex = 68;
             this.label4.Text = "Cerrar Sesión";
             // 
@@ -579,7 +557,7 @@
             this.label3.Location = new System.Drawing.Point(607, 23);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(152, 29);
+            this.label3.Size = new System.Drawing.Size(159, 28);
             this.label3.TabIndex = 67;
             this.label3.Text = "Volver al Menú";
             // 
@@ -590,7 +568,7 @@
             this.label1.Location = new System.Drawing.Point(156, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(209, 29);
+            this.label1.Size = new System.Drawing.Size(221, 28);
             this.label1.TabIndex = 66;
             this.label1.Text = "Ver Lista de Usuarios";
             // 
@@ -640,6 +618,28 @@
             this.groupBox3.TabIndex = 26;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos de Identificación";
+            // 
+            // ComboBox_Rol
+            // 
+            this.ComboBox_Rol.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ComboBox_Rol.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBox_Rol.FormattingEnabled = true;
+            this.ComboBox_Rol.Location = new System.Drawing.Point(731, 388);
+            this.ComboBox_Rol.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ComboBox_Rol.Name = "ComboBox_Rol";
+            this.ComboBox_Rol.Size = new System.Drawing.Size(250, 33);
+            this.ComboBox_Rol.TabIndex = 12;
+            // 
+            // Label_Tipo_Usuario
+            // 
+            this.Label_Tipo_Usuario.AutoSize = true;
+            this.Label_Tipo_Usuario.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Tipo_Usuario.Location = new System.Drawing.Point(713, 355);
+            this.Label_Tipo_Usuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label_Tipo_Usuario.Name = "Label_Tipo_Usuario";
+            this.Label_Tipo_Usuario.Size = new System.Drawing.Size(44, 28);
+            this.Label_Tipo_Usuario.TabIndex = 4;
+            this.Label_Tipo_Usuario.Text = "Rol";
             // 
             // InterfazAltaUsuarios
             // 
@@ -713,8 +713,6 @@
 
         private System.Windows.Forms.Button Boton_Confirmar;
         private System.Windows.Forms.Button Boton_Cancelar;
-        private System.Windows.Forms.ComboBox ComboBox_Rol;
-        private System.Windows.Forms.Label Label_Tipo_Usuario;
         private System.Windows.Forms.Label Label_Nombre;
         private System.Windows.Forms.Label Label_Apellido;
         private System.Windows.Forms.Label Label_Direccion;
@@ -761,6 +759,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox ComboBox_Rol;
+        private System.Windows.Forms.Label Label_Tipo_Usuario;
     }
 }
 

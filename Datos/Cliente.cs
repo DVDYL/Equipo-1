@@ -9,7 +9,7 @@ namespace Datos
     public class Cliente
     {
         
-        Guid _id;
+        String _id;
         String _nombre;
         String _apellido;
         int _dni;
@@ -26,8 +26,9 @@ namespace Datos
             //
         }
 
-        public Cliente(string nombre, string apellido, int dni, string direccion, string telefono, string email, DateTime fechaNacimiento)
+        public Cliente(string id, string nombre, string apellido, int dni, string direccion, string telefono, string email, DateTime fechaNacimiento, DateTime fechaAlta, DateTime fechaBaja, string Host)
         {
+            _id = id;
             _nombre = nombre;
             _apellido = apellido;
             _dni = dni;
@@ -35,9 +36,12 @@ namespace Datos
             _telefono = telefono;
             _email = email;
             _fechaNacimiento = fechaNacimiento;
+            _fechaAlta = fechaAlta;
+            _fechaBaja = fechaBaja;
+            _host = Host;
         }
 
-        public Guid Id { get => _id; set => _id = value; }
+        public string Id { get => _id; set => _id = value; }
 
         public string Nombre { get => _nombre; set => _nombre = value; }
 

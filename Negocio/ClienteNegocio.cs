@@ -11,7 +11,7 @@ namespace Negocio
     public class ClienteNegocio
     {
         private  ClienteService clienteService = new ClienteService();
-        private String id = "70b37dc1-8fde-4840-be47-9ababd0ee7e5";
+        private  String id = "70b37dc1-8fde-4840-be47-9ababd0ee7e5";
 
         public void agregarCliente(string idUsuario, string nombre, string apellido, int dni, string direccion, string telefono, string email, DateTime fechaNacimiento, string host)
         {
@@ -28,6 +28,12 @@ namespace Negocio
         {
             return clienteService.getClientes();
         }
+
+        //public void TraerCliente(string idUsuario, string nombre, string apellido, int dni, string direccion, string telefono, string email, DateTime fechaNacimiento, DateTime fechaAlta, DateTime fechaBaja, string host)
+        //{
+        //    Cliente VerCliente = new Cliente(idUsuario, nombre, apellido, dni, direccion, telefono, email, fechaNacimiento, fechaAlta, fechaBaja, host);
+        //    VerCliente.TraerCliente(VerCliente);
+        //}
 
         public void BorrarCliente(string idCliente)
         {

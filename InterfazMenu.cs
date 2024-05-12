@@ -95,7 +95,7 @@ namespace Presentacion
             InterfazLogIn interfazLogIn = InterfazLogIn.Instancia;
 
             // Verificar el valor de Host pero como pongo Interfaz Login? 
-            if (interfazLogIn.Host == "2" || interfazLogIn.Host == "3")
+            if (interfazLogIn.Host == "1" || interfazLogIn.Host == "2" || interfazLogIn.Host == "3") // SACAR EL 1 PARA LA ENTREGA FINAL
             {
                 InterfazVentas ListaVentas = new InterfazVentas();
             this.Hide(); // Ocultar el formulario actual
