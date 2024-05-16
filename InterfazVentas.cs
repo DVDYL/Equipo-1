@@ -562,6 +562,8 @@ namespace Presentacion
             }
         }
 
+        
+
         private void Ventana_KeyDown(object sender, KeyEventArgs e) // Manejo para el evento de apretar ESC en una ventana 
         {
             if (e.KeyCode == Keys.Escape)
@@ -579,5 +581,29 @@ namespace Presentacion
             }
 
         }
+
+        private void Boton_Limpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+        }
+
+        private void LimpiarCampos()
+        {
+            Producto1_Descripcion.Text = "";
+            Producto1_MontoUnitario.Text = "";
+            Producto2_Descripcion.Text = "";
+            Producto2_MontoUnitario.Text = "";
+            Producto3_Descripcion.Text = "";
+            Producto3_MontoUnitario.Text = "";
+            Producto4_Descripcion.Text = "";
+            Producto4_MontoUnitario.Text = "";
+            //Combobox_Producto1Cantidad.SelectedItem = null;
+            //ComboBox_Producto1.SelectedItem = null; Ver manejo de combobox, dejo comentado porque pincha
+            Producto1_MontoTotal.Text = "";
+            Producto2_MontoTotal.Text = "";
+            Producto3_MontoTotal.Text = "";
+            Producto4_MontoTotal.Text = "";
+        }
     }
+
 }

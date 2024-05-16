@@ -69,7 +69,7 @@
             this.Producto4_MontoTotal = new System.Windows.Forms.TextBox();
             this.Producto4_Descripcion = new System.Windows.Forms.TextBox();
             this.Monto_Final = new System.Windows.Forms.TextBox();
-            this.Boton_Eliminar = new System.Windows.Forms.Button();
+            this.Boton_Limpiar = new System.Windows.Forms.Button();
             this.Boton_Modificar = new System.Windows.Forms.Button();
             this.Label_IDProducto = new System.Windows.Forms.Label();
             this.textBox18 = new System.Windows.Forms.TextBox();
@@ -128,7 +128,7 @@
             this.Box_DNI.Location = new System.Drawing.Point(527, 126);
             this.Box_DNI.Name = "Box_DNI";
             this.Box_DNI.ReadOnly = true;
-            this.Box_DNI.Size = new System.Drawing.Size(268, 32);
+            this.Box_DNI.Size = new System.Drawing.Size(268, 33);
             this.Box_DNI.TabIndex = 63;
             // 
             // Box_Direccion
@@ -137,7 +137,7 @@
             this.Box_Direccion.Location = new System.Drawing.Point(527, 180);
             this.Box_Direccion.Name = "Box_Direccion";
             this.Box_Direccion.ReadOnly = true;
-            this.Box_Direccion.Size = new System.Drawing.Size(268, 32);
+            this.Box_Direccion.Size = new System.Drawing.Size(268, 33);
             this.Box_Direccion.TabIndex = 65;
             // 
             // Box_Telefono
@@ -146,7 +146,7 @@
             this.Box_Telefono.Location = new System.Drawing.Point(130, 182);
             this.Box_Telefono.Name = "Box_Telefono";
             this.Box_Telefono.ReadOnly = true;
-            this.Box_Telefono.Size = new System.Drawing.Size(240, 32);
+            this.Box_Telefono.Size = new System.Drawing.Size(240, 33);
             this.Box_Telefono.TabIndex = 62;
             // 
             // Box_Mail
@@ -155,7 +155,7 @@
             this.Box_Mail.Location = new System.Drawing.Point(1041, 126);
             this.Box_Mail.Name = "Box_Mail";
             this.Box_Mail.ReadOnly = true;
-            this.Box_Mail.Size = new System.Drawing.Size(268, 32);
+            this.Box_Mail.Size = new System.Drawing.Size(268, 33);
             this.Box_Mail.TabIndex = 61;
             // 
             // Calendario_Operacion
@@ -165,7 +165,7 @@
             this.Calendario_Operacion.MaxDate = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
             this.Calendario_Operacion.MinDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             this.Calendario_Operacion.Name = "Calendario_Operacion";
-            this.Calendario_Operacion.Size = new System.Drawing.Size(268, 32);
+            this.Calendario_Operacion.Size = new System.Drawing.Size(268, 33);
             this.Calendario_Operacion.TabIndex = 58;
             this.Calendario_Operacion.Value = new System.DateTime(2024, 5, 12, 0, 0, 0, 0);
             // 
@@ -399,7 +399,7 @@
             this.Producto1_Descripcion.Location = new System.Drawing.Point(309, 342);
             this.Producto1_Descripcion.Name = "Producto1_Descripcion";
             this.Producto1_Descripcion.ReadOnly = true;
-            this.Producto1_Descripcion.Size = new System.Drawing.Size(455, 32);
+            this.Producto1_Descripcion.Size = new System.Drawing.Size(455, 33);
             this.Producto1_Descripcion.TabIndex = 109;
             this.Producto1_Descripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -409,7 +409,7 @@
             this.Producto1_MontoTotal.Location = new System.Drawing.Point(1138, 342);
             this.Producto1_MontoTotal.Name = "Producto1_MontoTotal";
             this.Producto1_MontoTotal.ReadOnly = true;
-            this.Producto1_MontoTotal.Size = new System.Drawing.Size(171, 32);
+            this.Producto1_MontoTotal.Size = new System.Drawing.Size(171, 33);
             this.Producto1_MontoTotal.TabIndex = 111;
             this.Producto1_MontoTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -419,7 +419,7 @@
             this.Producto1_MontoUnitario.Location = new System.Drawing.Point(936, 342);
             this.Producto1_MontoUnitario.Name = "Producto1_MontoUnitario";
             this.Producto1_MontoUnitario.ReadOnly = true;
-            this.Producto1_MontoUnitario.Size = new System.Drawing.Size(171, 32);
+            this.Producto1_MontoUnitario.Size = new System.Drawing.Size(171, 33);
             this.Producto1_MontoUnitario.TabIndex = 112;
             this.Producto1_MontoUnitario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -429,7 +429,7 @@
             this.Producto2_MontoUnitario.Location = new System.Drawing.Point(936, 393);
             this.Producto2_MontoUnitario.Name = "Producto2_MontoUnitario";
             this.Producto2_MontoUnitario.ReadOnly = true;
-            this.Producto2_MontoUnitario.Size = new System.Drawing.Size(171, 32);
+            this.Producto2_MontoUnitario.Size = new System.Drawing.Size(171, 33);
             this.Producto2_MontoUnitario.TabIndex = 116;
             this.Producto2_MontoUnitario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -439,7 +439,7 @@
             this.Producto2_MontoTotal.Location = new System.Drawing.Point(1138, 393);
             this.Producto2_MontoTotal.Name = "Producto2_MontoTotal";
             this.Producto2_MontoTotal.ReadOnly = true;
-            this.Producto2_MontoTotal.Size = new System.Drawing.Size(171, 32);
+            this.Producto2_MontoTotal.Size = new System.Drawing.Size(171, 33);
             this.Producto2_MontoTotal.TabIndex = 115;
             this.Producto2_MontoTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -449,7 +449,7 @@
             this.Producto2_Descripcion.Location = new System.Drawing.Point(309, 393);
             this.Producto2_Descripcion.Name = "Producto2_Descripcion";
             this.Producto2_Descripcion.ReadOnly = true;
-            this.Producto2_Descripcion.Size = new System.Drawing.Size(455, 32);
+            this.Producto2_Descripcion.Size = new System.Drawing.Size(455, 33);
             this.Producto2_Descripcion.TabIndex = 113;
             this.Producto2_Descripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -459,7 +459,7 @@
             this.Producto3_MontoUnitario.Location = new System.Drawing.Point(936, 444);
             this.Producto3_MontoUnitario.Name = "Producto3_MontoUnitario";
             this.Producto3_MontoUnitario.ReadOnly = true;
-            this.Producto3_MontoUnitario.Size = new System.Drawing.Size(171, 32);
+            this.Producto3_MontoUnitario.Size = new System.Drawing.Size(171, 33);
             this.Producto3_MontoUnitario.TabIndex = 120;
             this.Producto3_MontoUnitario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -469,7 +469,7 @@
             this.Producto3_MontoTotal.Location = new System.Drawing.Point(1138, 444);
             this.Producto3_MontoTotal.Name = "Producto3_MontoTotal";
             this.Producto3_MontoTotal.ReadOnly = true;
-            this.Producto3_MontoTotal.Size = new System.Drawing.Size(171, 32);
+            this.Producto3_MontoTotal.Size = new System.Drawing.Size(171, 33);
             this.Producto3_MontoTotal.TabIndex = 119;
             this.Producto3_MontoTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -479,7 +479,7 @@
             this.Producto3_Descripcion.Location = new System.Drawing.Point(309, 444);
             this.Producto3_Descripcion.Name = "Producto3_Descripcion";
             this.Producto3_Descripcion.ReadOnly = true;
-            this.Producto3_Descripcion.Size = new System.Drawing.Size(455, 32);
+            this.Producto3_Descripcion.Size = new System.Drawing.Size(455, 33);
             this.Producto3_Descripcion.TabIndex = 117;
             this.Producto3_Descripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -489,7 +489,7 @@
             this.Producto4_MontoUnitario.Location = new System.Drawing.Point(936, 495);
             this.Producto4_MontoUnitario.Name = "Producto4_MontoUnitario";
             this.Producto4_MontoUnitario.ReadOnly = true;
-            this.Producto4_MontoUnitario.Size = new System.Drawing.Size(171, 32);
+            this.Producto4_MontoUnitario.Size = new System.Drawing.Size(171, 33);
             this.Producto4_MontoUnitario.TabIndex = 124;
             this.Producto4_MontoUnitario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -499,7 +499,7 @@
             this.Producto4_MontoTotal.Location = new System.Drawing.Point(1138, 495);
             this.Producto4_MontoTotal.Name = "Producto4_MontoTotal";
             this.Producto4_MontoTotal.ReadOnly = true;
-            this.Producto4_MontoTotal.Size = new System.Drawing.Size(171, 32);
+            this.Producto4_MontoTotal.Size = new System.Drawing.Size(171, 33);
             this.Producto4_MontoTotal.TabIndex = 123;
             this.Producto4_MontoTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -509,7 +509,7 @@
             this.Producto4_Descripcion.Location = new System.Drawing.Point(309, 495);
             this.Producto4_Descripcion.Name = "Producto4_Descripcion";
             this.Producto4_Descripcion.ReadOnly = true;
-            this.Producto4_Descripcion.Size = new System.Drawing.Size(455, 32);
+            this.Producto4_Descripcion.Size = new System.Drawing.Size(455, 33);
             this.Producto4_Descripcion.TabIndex = 121;
             this.Producto4_Descripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -519,24 +519,25 @@
             this.Monto_Final.Location = new System.Drawing.Point(1011, 589);
             this.Monto_Final.Name = "Monto_Final";
             this.Monto_Final.ReadOnly = true;
-            this.Monto_Final.Size = new System.Drawing.Size(248, 42);
+            this.Monto_Final.Size = new System.Drawing.Size(248, 43);
             this.Monto_Final.TabIndex = 125;
             this.Monto_Final.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Boton_Eliminar
+            // Boton_Limpiar
             // 
-            this.Boton_Eliminar.BackColor = System.Drawing.Color.Gainsboro;
-            this.Boton_Eliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Boton_Eliminar.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.Boton_Eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
-            this.Boton_Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Boton_Eliminar.Font = new System.Drawing.Font("Nunito", 20.25F);
-            this.Boton_Eliminar.Location = new System.Drawing.Point(972, 700);
-            this.Boton_Eliminar.Name = "Boton_Eliminar";
-            this.Boton_Eliminar.Size = new System.Drawing.Size(150, 40);
-            this.Boton_Eliminar.TabIndex = 127;
-            this.Boton_Eliminar.Text = "Limpiar";
-            this.Boton_Eliminar.UseVisualStyleBackColor = false;
+            this.Boton_Limpiar.BackColor = System.Drawing.Color.Gainsboro;
+            this.Boton_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Boton_Limpiar.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.Boton_Limpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
+            this.Boton_Limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Boton_Limpiar.Font = new System.Drawing.Font("Nunito", 20.25F);
+            this.Boton_Limpiar.Location = new System.Drawing.Point(972, 700);
+            this.Boton_Limpiar.Name = "Boton_Limpiar";
+            this.Boton_Limpiar.Size = new System.Drawing.Size(150, 40);
+            this.Boton_Limpiar.TabIndex = 127;
+            this.Boton_Limpiar.Text = "Limpiar";
+            this.Boton_Limpiar.UseVisualStyleBackColor = false;
+            this.Boton_Limpiar.Click += new System.EventHandler(this.Boton_Limpiar_Click);
             // 
             // Boton_Modificar
             // 
@@ -570,7 +571,7 @@
             this.textBox18.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox18.Location = new System.Drawing.Point(394, 625);
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(268, 32);
+            this.textBox18.Size = new System.Drawing.Size(268, 33);
             this.textBox18.TabIndex = 130;
             // 
             // textBox19
@@ -579,7 +580,7 @@
             this.textBox19.Location = new System.Drawing.Point(166, 625);
             this.textBox19.Name = "textBox19";
             this.textBox19.ReadOnly = true;
-            this.textBox19.Size = new System.Drawing.Size(216, 32);
+            this.textBox19.Size = new System.Drawing.Size(216, 33);
             this.textBox19.TabIndex = 129;
             // 
             // Label_Promocion
@@ -679,7 +680,7 @@
             this.Controls.Add(this.textBox19);
             this.Controls.Add(this.Label_Promocion);
             this.Controls.Add(this.Label_IDProducto);
-            this.Controls.Add(this.Boton_Eliminar);
+            this.Controls.Add(this.Boton_Limpiar);
             this.Controls.Add(this.Boton_Modificar);
             this.Controls.Add(this.Monto_Final);
             this.Controls.Add(this.Producto4_MontoUnitario);
@@ -773,7 +774,7 @@
         private System.Windows.Forms.TextBox Producto4_MontoTotal;
         private System.Windows.Forms.TextBox Producto4_Descripcion;
         private System.Windows.Forms.TextBox Monto_Final;
-        private System.Windows.Forms.Button Boton_Eliminar;
+        private System.Windows.Forms.Button Boton_Limpiar;
         private System.Windows.Forms.Button Boton_Modificar;
         private System.Windows.Forms.Label Label_IDProducto;
         private System.Windows.Forms.TextBox textBox18;
