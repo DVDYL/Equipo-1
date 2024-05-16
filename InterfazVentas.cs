@@ -597,12 +597,27 @@ namespace Presentacion
             Producto3_MontoUnitario.Text = "";
             Producto4_Descripcion.Text = "";
             Producto4_MontoUnitario.Text = "";
-            //Combobox_Producto1Cantidad.SelectedItem = null;
-            //ComboBox_Producto1.SelectedItem = null; Ver manejo de combobox, dejo comentado porque pincha
+            Combobox_Producto1Cantidad.Items.Clear();
+            ComboBox_Producto1.Items.Clear();
+            Combobox_Producto2Cantidad.Items.Clear();
+            ComboBox_Producto2.Items.Clear();
+            Combobox_Producto3Cantidad.Items.Clear();
+            ComboBox_Producto3.Items.Clear();
+            Combobox_Producto4Cantidad.Items.Clear();
+            ComboBox_Producto4.Items.Clear();
+            ComboBox_Clientes.Items.Clear();
+            Box_DNI.Text = "";
+            Box_Direccion.Text = "";
+            Box_Telefono.Text = "";
+            Box_Mail.Text = "";
             Producto1_MontoTotal.Text = "";
             Producto2_MontoTotal.Text = "";
             Producto3_MontoTotal.Text = "";
             Producto4_MontoTotal.Text = "";
+            Monto_Final.Text = "";
+
+            CargarClientes(); // Acá tengo que traerme la lista de nombres de los clientes.
+            CargarProductos(); // Acá tengo que traerme la lista de productos.
         }
     }
 
