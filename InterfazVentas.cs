@@ -436,6 +436,15 @@ namespace Presentacion
                 Combobox_Producto4Cantidad.Items.Add(i);
             }
         }
+        public void CalcularDescuentoClienteNuevo()
+        {
+            //Acá tendríamos que poner el calculo del descuento teniendo en cuenta si el cliente tiene registrada alguna venta o no (deberíamos utilizar el GetVentaByCliente)
+        }
+
+        public void CalcularDescuentoElectroHogar()
+        {
+            // Se debería poder filtrar por idCategoría = 3, un totalizador con esos montos filtrados, y si es >=100000 multiplicarlo por 0.05, y guardar ese resultado como descuento
+        }
 
         public void CalcularMontoTotal4()
         {
