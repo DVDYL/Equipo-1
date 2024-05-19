@@ -16,8 +16,8 @@ namespace Presentacion
         public InterfazAltaClientes()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
-            this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
+            StartPosition = FormStartPosition.CenterScreen;
+            KeyPreview = true;
 
             // Establecer el formato de visualización predeterminado para la fecha de nacimiento
             Calendario_Nacimiento.Format = DateTimePickerFormat.Custom;
@@ -68,7 +68,7 @@ namespace Presentacion
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores;
             }
 
             string errorNombre = Validar.EsNombre(Box_Nombre.Text, "Nombre");
@@ -88,13 +88,12 @@ namespace Presentacion
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores;
             }
 
             string errorApellido = Validar.EsNombre(Box_Apellido.Text, "Apellido");
             if (errorApellido != null)
             {
-                // Completar el contenido del TextBox Apellido_Error con el error
                 Apellido_Error.Text = errorApellido;
                 Apellido_Error.Visible = true;
                 MessageBox.Show(errorApellido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -109,13 +108,12 @@ namespace Presentacion
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores;
             }
 
             string errorCalle = Validar.EsDepartamento(Box_Calle.Text);
             if (errorCalle != null)
             {
-                // Completar el contenido del TextBox Calle_Error con el error
                 Calle_Error.Text = errorCalle;
                 Calle_Error.Visible = true;
                 MessageBox.Show(errorCalle, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -125,12 +123,12 @@ namespace Presentacion
             else
             {
                 Calle_Error.Visible = false;
-                MayudaCalle.Visible = false;// Ocultar el TextBox Calle_Error si el campo Calle no tiene errores.
+                MayudaCalle.Visible = false;
             }
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores;
             }
 
             string errorTelefono = Validar.EsTelefono(Box_Telefono.Text);
@@ -150,11 +148,11 @@ namespace Presentacion
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores; 
             }
 
             string errorMail = Validar.MailCliente(Box_Mail.Text);
-            if (errorMail != null) //Si NO cumple con la validación, mostrará el mensaje.
+            if (errorMail != null) 
             {
                 Mail_Error.Text = errorMail;
                 Mail_Error.Visible = true;
@@ -170,7 +168,7 @@ namespace Presentacion
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores; 
             }
 
             string correo = Box_Mail.Text;
@@ -193,7 +191,7 @@ namespace Presentacion
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores;
             }
             return ContarErrores; // Devolver true si no hay errores, false si hay errores
         }
@@ -278,26 +276,22 @@ namespace Presentacion
             {
                 CrearCliente();
 
-                // Mostrar un cuadro de diálogo de confirmación al usuario
                 DialogResult resultadoConfirmacion = MessageBox.Show($"¿Desea realizar la operación de alta para el cliente {Box_Nombre.Text + " " + Box_Apellido.Text}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultadoConfirmacion == DialogResult.Yes)
                 {
-                    // Mostrar mensaje de éxito con el nombre de usuario generado
                     MessageBox.Show($"Se ha realizado la operación de alta para el cliente {Box_Nombre.Text + " " + Box_Apellido.Text}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Preguntar al usuario si desea continuar en el Maestro de Usuarios
                     DialogResult resultadoContinuar = MessageBox.Show("¿Desea seguir cargando clientes?", "Confirmar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (resultadoContinuar == DialogResult.No)
                     {
-                        this.Close();
+                        Close();
                         InterfazListaClientes ListaUsuarios = new InterfazListaClientes();
                         ListaUsuarios.Show();
                     }
                     else
                     {
-                        // Restablecer todos los campos del formulario
                         Limpiar();
                     }
                 }
@@ -306,34 +300,29 @@ namespace Presentacion
 
         private void Boton_Limpiar_Click(object sender, EventArgs e)
         {
-            // Verificar si al menos un campo está completo
-            if (CamposCompletos())
+            if (CamposCompletos()) // Verificar si al menos un campo está completo
             {
-                // Mostrar un cuadro de diálogo de confirmación
                 DialogResult confirmacion = MessageBox.Show("¿Desea borrar todos los datos?\n\nSe perderán todos los cambios que no se hayan guardado.", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (confirmacion == DialogResult.Yes)
                 {
-                    Limpiar();  // Si el usuario elige "Sí", llamar al método para resetear los campos
+                    Limpiar();
                 }
                 // Si el usuario elige "No", no hacer nada
             }
             else
             {
-                // Mostrar un mensaje de error
-                MessageBox.Show("No hay datos para limpiar.", "Código de Error: 301", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No hay datos para limpiar.", "Formulario Vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         } // Maneja el evento del botón "Limpiar"
 
         private void Boton_Salir_Click(object sender, EventArgs e)
         {
-            // Mostrar un cuadro de diálogo para confirmar la acción
             DialogResult resultado = MessageBox.Show("¿Desea volver al listado de usuarios?\n\nLos cambios realizados no se guardarán.", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // Verificar la respuesta del usuario
             if (resultado == DialogResult.Yes)
             {
-                this.Hide();
+                Hide();
                 InterfazListaClientes ListaClientes = new InterfazListaClientes();
                 ListaClientes.Show();
             }
@@ -350,7 +339,7 @@ namespace Presentacion
                 {
                     InterfazMenu InterfazMenu = new InterfazMenu(); // Redirigir al formulario de inicio de sesión (LogIn)
                     InterfazMenu.Show();
-                    this.Hide(); // Ocultar el formulario actual
+                    Hide(); // Ocultar el formulario actual
                 }
                 // Si el usuario elige "No", no hacer nada
             }

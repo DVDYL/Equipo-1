@@ -1,13 +1,5 @@
-﻿using Datos;
-using Negocio;
+﻿using Negocio;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion
@@ -19,8 +11,8 @@ namespace Presentacion
         public InterfazModificarClientes(string idCliente)
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
-            this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
+            StartPosition = FormStartPosition.CenterScreen;
+            KeyPreview = true;
             this.idCliente = idCliente;
         }
 
@@ -39,17 +31,16 @@ namespace Presentacion
             string errorCalle = Validar.EsDepartamento(Box_Direccion.Text);
             if (errorCalle != null)
             {
-                // Completar el contenido del TextBox Calle_Error con el error
                 Calle_Error.Text = errorCalle;
                 Calle_Error.Visible = true;
-                MessageBox.Show(errorCalle, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorCalle, "Revisar el dato:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 MayudaCalle.Visible = true;
                 ContarErrores++;
             }
             else
             {
                 Calle_Error.Visible = false;
-                MayudaCalle.Visible = false;// Ocultar el TextBox Calle_Error si el campo Calle no tiene errores.
+                MayudaCalle.Visible = false;
             }
 
             if (ContarErrores >= 1)
@@ -62,7 +53,7 @@ namespace Presentacion
             {
                 Telefono_Error.Text = errorTelefono;
                 Telefono_Error.Visible = true;
-                MessageBox.Show(errorTelefono, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorTelefono, "Revisar el dato:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 MayudaTelefono.Visible = true;
                 ContarErrores++;
             }
@@ -74,18 +65,18 @@ namespace Presentacion
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores;
             }
 
             if (Box_Mail.Text != correoOriginal)
             {
                 string errorMail = Validar.MailCliente(Box_Mail.Text);
 
-            if (errorMail != null) //Si NO cumple con la validación, mostrará el mensaje.
+            if (errorMail != null) 
             {
                 Mail_Error.Text = errorMail;
                 Mail_Error.Visible = true;
-                MessageBox.Show(errorMail, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorMail, "Revisar el dato:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 MayudaMail.Visible = true;
                 ContarErrores++;
             }
@@ -98,7 +89,7 @@ namespace Presentacion
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores;
             }
 
             string correo = Box_Mail.Text;
@@ -109,7 +100,7 @@ namespace Presentacion
             {
                 ConfirmMail_Error.Text = errorConfirmarMail;
                 ConfirmMail_Error.Visible = true;
-                MessageBox.Show(errorConfirmarMail, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(errorConfirmarMail, "Revisar el dato:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 MayudaConfirMail.Visible = true;
                 ContarErrores++;
             }
@@ -121,7 +112,7 @@ namespace Presentacion
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores; 
             }
             return ContarErrores; // Devolver true si no hay errores, false si hay errores
         }
@@ -132,7 +123,6 @@ namespace Presentacion
 
             if (contadorErrores == 0)
             {
-                // Mostrar un cuadro de diálogo de confirmación al usuario
                 DialogResult resultadoConfirmacion = MessageBox.Show($"¿Desea realizar la modificación?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultadoConfirmacion == DialogResult.Yes)
@@ -141,17 +131,16 @@ namespace Presentacion
 
                     MessageBox.Show($"Se ha realizado la modificación con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    this.Close();
-
+                    Close();
                     InterfazListaClientes ListaClientes = new InterfazListaClientes();
                     ListaClientes.Show();
                 }
                 else
                 {
-                        // No hacer nada si se elige que no. 
+                // No hacer nada si se elige que no. 
                 }
             }
-        } // Confirma todos los campos, si está todo correcto, se modifica al cliente.
+        } 
 
         public void ModificarCliente(string idCliente)
         {
@@ -167,18 +156,17 @@ namespace Presentacion
 
         private void Boton_Cancelar_Click(object sender, EventArgs e)
         {
-            // Mostrar un cuadro de diálogo de confirmación al usuario
             DialogResult resultadoConfirmacion = MessageBox.Show($"¿Desea cancelar la modificación?\n\nNo se guardará ningún cambio.", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultadoConfirmacion == DialogResult.Yes)
             {
-                this.Close();
+                Close();
                 InterfazListaClientes ListaClientes = new InterfazListaClientes();
                 ListaClientes.Show();
             }
             else
             {
-                // No hacer nada si se elige que no. 
+            // No hacer nada si se elige que no. 
             }
         }
 
@@ -188,12 +176,11 @@ namespace Presentacion
             {
                 DialogResult result = MessageBox.Show("¿Está seguro que desea salir? \n\nNo se guardarán los cambios realizados.", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                // Verificar la respuesta del usuario
-                if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
+                if (result == DialogResult.Yes) 
                 {
-                    InterfazListaClientes ListaClientes = new InterfazListaClientes(); // Redirigir al listado de clientes
+                    InterfazListaClientes ListaClientes = new InterfazListaClientes();
                     ListaClientes.Show();
-                    this.Close(); // Cerrar el formulario actual
+                    Close();
                 }
                 // Si el usuario elige "No", no hacer nada
             }

@@ -19,8 +19,8 @@ namespace Presentacion
         public InterfazModificarProveedores(string idProveedor)
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
-            this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
+            StartPosition = FormStartPosition.CenterScreen;
+            KeyPreview = true; 
             this.idProveedor = idProveedor;
         }
 
@@ -40,17 +40,16 @@ namespace Presentacion
             string errorNombre = Validar.EsNombre(Box_Nombre.Text, "Nombre");
             if (errorNombre != null)
             {
-                // Completar el contenido del TextBox Calle_Error con el error
                 Nombre_Error.Text = errorNombre;
                 Nombre_Error.Visible = true;
-                MessageBox.Show(errorNombre, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorNombre, "Verificar el Nombre", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 MayudaNombre.Visible = true;
                 ContarErrores++;
             }
             else
             {
                 Nombre_Error.Visible = false;
-                MayudaNombre.Visible = false;// Ocultar el TextBox Calle_Error si el campo Calle no tiene errores.
+                MayudaNombre.Visible = false;
             }
 
             if (ContarErrores >= 1)
@@ -61,33 +60,32 @@ namespace Presentacion
             string errorApellido = Validar.EsNombre(Box_Nombre.Text, "Apellido");
             if (errorApellido != null)
             {
-                // Completar el contenido del TextBox Calle_Error con el error
                 Nombre_Error.Text = errorApellido;
                 Nombre_Error.Visible = true;
-                MessageBox.Show(errorApellido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorApellido, "Verificar el Apellido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 MayudaNombre.Visible = true;
                 ContarErrores++;
             }
             else
             {
                 Nombre_Error.Visible = false;
-                MayudaApellido.Visible = false;// Ocultar el TextBox Calle_Error si el campo Calle no tiene errores.
+                MayudaApellido.Visible = false;
             }
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores; 
             }
 
             if (Box_Mail.Text != correoOriginal)
             {
                 string errorMail = Validar.MailCliente(Box_Mail.Text);
 
-                if (errorMail != null) //Si NO cumple con la validación, mostrará el mensaje.
+                if (errorMail != null)
                 {
                     Mail_Error.Text = errorMail;
                     Mail_Error.Visible = true;
-                    MessageBox.Show(errorMail, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(errorMail, "Verificar el Mail", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     MayudaMail.Visible = true;
                     ContarErrores++;
                 }
@@ -149,7 +147,7 @@ namespace Presentacion
             }
 
             return ContarErrores; // Devolver true si no hay errores, false si hay errores
-        } // Cómo harías para llevarlo a la validadora? Es necesario?
+        } 
 
         private void Boton_Confirmar_Click(object sender, EventArgs e)
         {
@@ -157,8 +155,7 @@ namespace Presentacion
 
             if (contadorErrores == 0)
             {
-                // Mostrar un cuadro de diálogo de confirmación al usuario
-                DialogResult resultadoConfirmacion = MessageBox.Show($"¿Desea realizar la modificación al proveedor {Box_Nombre.Text + " " + Box_Apellido.Text}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult resultadoConfirmacion = MessageBox.Show($"¿Desea realizar la modificación al proveedor {Box_Nombre.Text + " " + Box_Apellido.Text}?", "Confirmar Cambios", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultadoConfirmacion == DialogResult.Yes)
                 {
@@ -166,8 +163,7 @@ namespace Presentacion
 
                     MessageBox.Show($"Se ha realizado la modificación con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    this.Close();
-
+                    Close();
                     InterfazListaProveedores ListaProveedores = new InterfazListaProveedores();
                     ListaProveedores.Show();
                 }
@@ -197,12 +193,11 @@ namespace Presentacion
         {
             DialogResult result = MessageBox.Show("¿Está seguro de que desea volver al listado de proveedores?", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // Verificar la respuesta del usuario
-            if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
+            if (result == DialogResult.Yes) 
             {
-                InterfazListaProveedores Proveedores = new InterfazListaProveedores(); // Redirigir al formulario de proveedores
+                InterfazListaProveedores Proveedores = new InterfazListaProveedores();
                 Proveedores.Show();
-                this.Hide(); // Ocultar el formulario actual
+                Hide();
             }
             // Si el usuario elige "No", no hacer nada
         }
@@ -213,12 +208,11 @@ namespace Presentacion
             {
                 DialogResult result = MessageBox.Show("¿Está seguro de que desea volver al listado de proveedores?", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                // Verificar la respuesta del usuario
-                if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
+                if (result == DialogResult.Yes) 
                 {
-                    InterfazListaProveedores Proveedores = new InterfazListaProveedores(); // Redirigir al formulario de proveedores
+                    InterfazListaProveedores Proveedores = new InterfazListaProveedores(); 
                     Proveedores.Show();
-                    this.Hide(); // Ocultar el formulario actual
+                    Hide();
                 }
                 // Si el usuario elige "No", no hacer nada
             }

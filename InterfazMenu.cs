@@ -9,8 +9,8 @@ namespace Presentacion
         public InterfazMenu() // Inicializa el menú de navegación 
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
-            this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
+            StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
+            KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
         }
 
         private void UsuariosIcono_Click(object sender, EventArgs e)
@@ -22,9 +22,9 @@ namespace Presentacion
             {
                 InterfazListaUsuarios InterfazListaUsuarios = new InterfazListaUsuarios(); // Crear una instancia del formulario InterfazABM
 
-                this.Hide(); // Ocultar el formulario Menu
+                Hide(); // Ocultar el formulario Menu
 
-                InterfazListaUsuarios.FormClosed += (s, args) => this.Close(); // Cerrar la aplicación cuando se cierre UserAdmin
+                InterfazListaUsuarios.FormClosed += (s, args) => Close(); // Cerrar la aplicación cuando se cierre UserAdmin
                 InterfazListaUsuarios.Show(); // Mostrar el formulario InterfazABM
             }
             else
@@ -37,20 +37,18 @@ namespace Presentacion
         {
             InterfazLogIn interfazLogIn = InterfazLogIn.Instancia;
 
-            // Verificar el valor de Host pero como pongo Interfaz Login? 
             if ( interfazLogIn.Host == "1")
             {
-                // Ocultar la interfaz antes de mostrar la siguiente
-                this.Hide(); // Ocultar el formulario Menu
+                Hide(); // Ocultar el formulario Menu
 
-                InterfazListaProveedores ListaProveedores = new InterfazListaProveedores(); // Crear una instancia del formulario InterfazABM
+                InterfazListaProveedores ListaProveedores = new InterfazListaProveedores(); 
 
-                ListaProveedores.FormClosed += (s, args) => this.Close(); // Cerrar la aplicación cuando se cierre UserAdmin
-                ListaProveedores.Show(); // Mostrar el formulario InterfazABM
+                ListaProveedores.FormClosed += (s, args) => Close(); 
+                ListaProveedores.Show(); 
             }
             else
             {
-                MessageBox.Show("ERROR 201: Este nivel de usuario no tiene acceso al módulo de Proveedores", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Este nivel de usuario no tiene acceso al módulo de Proveedores", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -58,17 +56,16 @@ namespace Presentacion
         {
             InterfazLogIn interfazLogIn = InterfazLogIn.Instancia;
 
-            // Verificar el valor de Host pero como pongo Interfaz Login? 
-            if (interfazLogIn.Host == "1") // EN LA TABLA DE PERMISOS, NO SE ACLARA QUÉ HOST PUEDE INGRESAR, QUÉ HACEMOS?
+            if (interfazLogIn.Host == "1" || interfazLogIn.Host == "2" || interfazLogIn.Host == "3") // SACAR EL 1 PARA LA ENTREGA FINAL
             {
                 InterfazListaClientes ListaClientes = new InterfazListaClientes();
-                this.Hide(); // Ocultar el formulario actual
-                ListaClientes.FormClosed += (s, args) => this.Close();
+                Hide();
+                ListaClientes.FormClosed += (s, args) => Close();
                 ListaClientes.Show();
             }
             else
             {
-                MessageBox.Show("ERROR 201: Este nivel de usuario no tiene acceso al módulo de Clientes", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Este nivel de usuario no tiene acceso al módulo de Clientes", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -76,17 +73,16 @@ namespace Presentacion
         {
             InterfazLogIn interfazLogIn = InterfazLogIn.Instancia;
 
-            // Verificar el valor de Host pero como pongo Interfaz Login? 
             if (interfazLogIn.Host == "1" || interfazLogIn.Host == "2")
             {
                 InterfazListaProductos ListaProductos = new InterfazListaProductos();
-                this.Hide(); // Ocultar el formulario actual
-                ListaProductos.FormClosed += (s, args) => this.Close();
+                Hide();
+                ListaProductos.FormClosed += (s, args) => Close();
                 ListaProductos.Show();
             }
             else
             {
-                MessageBox.Show("ERROR 201: Este nivel de usuario no tiene acceso al módulo de Productos", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Este nivel de usuario no tiene acceso al módulo de Productos", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -94,39 +90,36 @@ namespace Presentacion
         {
             InterfazLogIn interfazLogIn = InterfazLogIn.Instancia;
 
-            // Verificar el valor de Host pero como pongo Interfaz Login? 
             if (interfazLogIn.Host == "1" || interfazLogIn.Host == "2" || interfazLogIn.Host == "3") // SACAR EL 1 PARA LA ENTREGA FINAL
             {
                 InterfazVentas ListaVentas = new InterfazVentas();
-            this.Hide(); // Ocultar el formulario actual
-            ListaVentas.FormClosed += (s, args) => this.Close();
-            ListaVentas.Show();
+                Hide(); 
+                ListaVentas.FormClosed += (s, args) => Close();
+                ListaVentas.Show();
             }
             else
             {
-                MessageBox.Show("ERROR 201: Este nivel de usuario no tiene acceso al módulo de Ventas", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Este nivel de usuario no tiene acceso al módulo de Ventas", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
-        private void ReportesIcono_Click(object sender, EventArgs e) // En teoría, a esta opción principal, pueden entrar todos.
+        private void ReportesIcono_Click(object sender, EventArgs e)
         {
-                InterfazReportes ListaReportes = new InterfazReportes();
-                this.Hide(); // Ocultar el formulario actual
-                ListaReportes.FormClosed += (s, args) => this.Close();
-                ListaReportes.Show();
+            InterfazRepoMenu MenuReportes = new InterfazRepoMenu();
+            Hide(); // Ocultar el formulario actual
+            MenuReportes.FormClosed += (s, args) => Close();
+            MenuReportes.Show();
         }
 
-        private void BotonSalir_Click(object sender, EventArgs e) // Le pregunta al usuario si está seguro de que quiere cerrar la sesión 
+        private void BotonSalir_Click(object sender, EventArgs e)
         {
-            // Mostrar un cuadro de diálogo de confirmación
             DialogResult result = MessageBox.Show("¿Desea volver al inicio de sesión?\n\nSe cerrará la sesión actual.", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // Verificar la respuesta del usuario
             if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
             {
-                InterfazLogIn LogIn = new InterfazLogIn(); // Redirigir al formulario de inicio de sesión (LogIn)
+                InterfazLogIn LogIn = new InterfazLogIn(); // Redirigir al LogIn
                 LogIn.Show();
-                this.Hide(); // Ocultar el formulario actual
+                Hide();
             }
             // Si el usuario elige "No", no hacer nada
         }
@@ -137,12 +130,11 @@ namespace Presentacion
             {
                 DialogResult result = MessageBox.Show("¿Desea volver al inicio de sesión?\n\nSe cerrará la sesión actual.", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                // Verificar la respuesta del usuario
                 if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
                 {
-                    InterfazLogIn LogIn = new InterfazLogIn(); // Redirigir al formulario de inicio de sesión (LogIn)
+                    InterfazLogIn LogIn = new InterfazLogIn();
                     LogIn.Show();
-                    this.Hide(); // Ocultar el formulario actual
+                    Hide();
                 }
                 // Si el usuario elige "No", no hacer nada
             }

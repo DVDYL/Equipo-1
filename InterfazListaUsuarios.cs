@@ -13,14 +13,14 @@ namespace Presentacion
     {
         private UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
 
-        public InterfazListaUsuarios()
+        public InterfazListaUsuarios() // Las filas 1 y 2 están raras, las tenés que declarar sí o sí acá? Por qué? En otros formularios no fue necesario.
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
-            this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            dataGridView1.CellClick += Usuarios_CellClick;
-            Boton_Eliminar.Visible = false; // ocultar el botón eliminar hasta que se haya buscado un usuario.
+            StartPosition = FormStartPosition.CenterScreen;
+            KeyPreview = true;
+       //     dataGridView1 = new DataGridView(); // 1
+       //     dataGridView1.CellClick += Usuarios_CellClick; // 2
+            Boton_Eliminar.Visible = false;
         }
 
         private void InterfazListaUsuarios_Load(object sender, EventArgs e)
@@ -73,37 +73,34 @@ namespace Presentacion
         private void Boton_AltaUsuario_Click(object sender, EventArgs e)
         {
             InterfazAltaUsuarios InterfazAltaUsuarios = new InterfazAltaUsuarios();
-
-            this.Hide();
+            Hide();
             InterfazAltaUsuarios.Show();
-        } // Evento cuando se hace clic en el Botón "+ Nuevo"
+        } 
 
-        private void Usuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        //private void Usuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (e.RowIndex >= 0 && e.ColumnIndex < dataGridView1.Columns.Count)
+        //    {
+        //        DataGridViewColumn column = dataGridView1.Columns[e.ColumnIndex];
+        //        if (column.Name == "Visualizar")
+        //        {
+        //            Console.WriteLine("Clic en Visualizar");
+        //            string Mode = "DSP";
+        //            MessageBox.Show("El valor de Mode es: " + Mode);
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Clic en Visualizar");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("prueba");
+        //    }
+        //} // ¿Esta función no hace nada?, la eliminamos??
+
+        private void Limpiar() 
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex < dataGridView1.Columns.Count)
-            {
-                DataGridViewColumn column = dataGridView1.Columns[e.ColumnIndex];
-                if (column.Name == "Visualizar")
-                {
-                    Console.WriteLine("Clic en Visualizar");
-                    string Mode = "DSP";
-                    MessageBox.Show("El valor de Mode es: " + Mode);
-                }
-                else
-                {
-                    MessageBox.Show("Clic en Visualizar");
-                }
-            }
-            else
-            {
-                Console.WriteLine("prueba");
-            }
-        } // ¿Esta función no hace nada?
-
-        private void Limpiar() // Blanquea el Formulario de usuarios
-        {
-            // Reiniciar los valores de todos los campos del formulario a sus valores predeterminados
-
             Box_BuscarDNI.Text = "";
             UsuariosBuscador.Text = "";
             Boton_Eliminar.Visible = false; 
@@ -111,8 +108,7 @@ namespace Presentacion
 
         private void UsuariosLupa_Click(object sender, EventArgs e)
         {
-            // Obtener el texto ingresado en el TextBox UsuariosBuscador
-            string textoBusqueda = UsuariosBuscador.Text;
+            string textoBusqueda = UsuariosBuscador.Text; // Obtener el texto ingresado en el TextBox UsuariosBuscador
 
             if (string.IsNullOrEmpty(textoBusqueda))
             {
@@ -166,10 +162,9 @@ namespace Presentacion
 
         private void LupaDNI_Click(object sender, EventArgs e)
         {
-            // Obtener el texto ingresado en el TextBox UsuariosBuscador
-            string textoBusqueda = Box_BuscarDNI.Text;
+            string textoBusqueda = Box_BuscarDNI.Text; // Obtener el texto ingresado en el TextBox UsuariosBuscador
 
-            if(string.IsNullOrEmpty(textoBusqueda))
+            if (string.IsNullOrEmpty(textoBusqueda))
             {
                 CargarUsuarios();
                 Limpiar();
@@ -226,10 +221,11 @@ namespace Presentacion
             Boton_Eliminar.Visible = false;
         }
 
-        private void EliminarUsuario()
+        private void EliminarUsuario() // EliminarUsuario(idUsuario)
         {
             UsuarioNegocio BajaUsuario = new UsuarioNegocio();
             //BajaUsuario.BorrarUsuario(ACÁ SE DEBERÍA ESPECIFICAR DE QUÉ CELDA SALE EL DATO DEL ID/IDUsuario);
+            
         }
 
         private void Boton_Eliminar_Click(object sender, EventArgs e)
@@ -243,9 +239,7 @@ namespace Presentacion
                 // Obtener el valor de la celda "ID" de la fila seleccionada
                 string id = Usuarios.Rows[indiceFila].Cells["ID"].Value.ToString();
 
-                // Por medio del id, eliminamos el proveedor
-                // Por ejemplo:
-                EliminarUsuario(); //Acá debería ir el id dentro del método.
+                EliminarUsuario(); // EliminarUsuario(idUsuario)
             }
             else
             {
@@ -255,19 +249,12 @@ namespace Presentacion
 
         private void Boton_Salir_Click(object sender, EventArgs e)
         {
-            // Mostrar un cuadro de diálogo para confirmar la acción
             DialogResult resultado = MessageBox.Show("¿Desea volver al menú principal?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // Verificar la respuesta del usuario
             if (resultado == DialogResult.Yes)
             {
-                // Ocultar la ventana actual
-                this.Hide();
-
-                // Crear una instancia de la ventana InterfazMenu
+                Hide();
                 InterfazMenu ventanaMenu = new InterfazMenu();
-
-                // Mostrar la ventana InterfazMenu
                 ventanaMenu.Show();
             }
         }
@@ -278,12 +265,11 @@ namespace Presentacion
             {
                 DialogResult result = MessageBox.Show("¿Está seguro de que desea volver al menú principal?", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                // Verificar la respuesta del usuario
-                if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
+                if (result == DialogResult.Yes)
                 {
-                    InterfazMenu InterfazMenu = new InterfazMenu(); // Redirigir al formulario de inicio de sesión (LogIn)
+                    InterfazMenu InterfazMenu = new InterfazMenu();
                     InterfazMenu.Show();
-                    this.Hide(); // Ocultar el formulario actual
+                    Hide();
                 }
                 // Si el usuario elige "No", no hacer nada
             }

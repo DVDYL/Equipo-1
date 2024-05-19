@@ -15,8 +15,8 @@ namespace Presentacion
         public InterfazListaProveedores()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
-            this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
+            StartPosition = FormStartPosition.CenterScreen;
+            KeyPreview = true;
             Boton_Modificar.Visible = false;
             Boton_Eliminar.Visible = false;
         }
@@ -40,7 +40,7 @@ namespace Presentacion
                 var bindingList = new BindingList<TraerProveedores>(Proveedor);
                 var source = new BindingSource(bindingList, null);
                 Proveedores.DataSource = source;
-                Proveedores.Columns["ID"].Visible = false; //Paso a true la visibilidad de la columna ID
+                Proveedores.Columns["ID"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -56,8 +56,7 @@ namespace Presentacion
 
         private void ProveedoresLupa_Click(object sender, EventArgs e)
         {
-            // Obtener el texto ingresado en el TextBox UsuariosBuscador
-            string textoBusqueda = ProveedoresBuscador.Text;
+            string textoBusqueda = ProveedoresBuscador.Text; // Obtener el texto ingresado en el TextBox UsuariosBuscador
 
             if (string.IsNullOrEmpty(textoBusqueda))
             {
@@ -69,7 +68,6 @@ namespace Presentacion
             // Verificar si la lista de usuarios es nula o está vacía
             if (Proveedores.DataSource == null || Proveedores.Rows.Count == 0)
             {
-                // Manejar el caso en el que la lista de usuarios es nula o vacía
                 MessageBox.Show("La lista se encuentra vacía.\n\nNo hay usuarios para buscar.");
                 Boton_Modificar.Visible = false;
                 Boton_Eliminar.Visible = false;
@@ -105,7 +103,6 @@ namespace Presentacion
                 }
                 else
                 {
-                    // Mostrar un mensaje si no se encontraron usuarios que coincidan con la búsqueda
                     MessageBox.Show("No se encontraron usuarios que coincidan con la búsqueda.");
                 }
             }
@@ -113,8 +110,7 @@ namespace Presentacion
 
         private void CUITLupa_Click(object sender, EventArgs e)
         {
-            // Obtener el texto ingresado en el TextBox UsuariosBuscador
-            string textoBusqueda = CUITBuscador.Text;
+            string textoBusqueda = CUITBuscador.Text; // Obtener el texto ingresado en el TextBox UsuariosBuscador
 
             if (string.IsNullOrEmpty(textoBusqueda))
             {
@@ -158,7 +154,6 @@ namespace Presentacion
                 }
                 else
                 {
-                    // Mostrar un mensaje si no se encontraron usuarios que coincidan con la búsqueda
                     MessageBox.Show("No se encontraron usuarios que coincidan con la búsqueda.");
                     Boton_Modificar.Visible = false;
                     Boton_Eliminar.Visible = false;
@@ -183,8 +178,8 @@ namespace Presentacion
         private void BotonAltaProveedores_Click(object sender, EventArgs e)
         {
             InterfazAltaProveedores AltaProveedores = new InterfazAltaProveedores();
-            this.Hide();
-            AltaProveedores.Show(); // Mostrar el formulario
+            Hide();
+            AltaProveedores.Show();
         }
 
         private void Boton_Modificar_Click(object sender, EventArgs e)
@@ -206,9 +201,8 @@ namespace Presentacion
                 InterfazModificarProveedores ModificarProveedores = new InterfazModificarProveedores(idProveedor);
                 ModificarProveedores.ActualizarTextBox(nombre, apellido, email, CUIT); // Levanto los datos de la lista y me los llevo a otra ventana.
 
-                this.Hide(); // ocultar la lista de proveedores momentáneamente.
+                Hide();
                 ModificarProveedores.Show();
-
             }
             else
             {
@@ -239,6 +233,7 @@ namespace Presentacion
                 if (resultadoConfirmacion == DialogResult.Yes)
                 {
                     EliminarProveedor(idProveedor);
+                    // CargarProveedores();
                     // Insertar acá el código para volver a llamar a la lista de Proveedores actualizada, así evitamos que se intente modificar algo dado de baja.
                 }
                 else
@@ -254,35 +249,27 @@ namespace Presentacion
 
         private void Boton_Salir_Click(object sender, EventArgs e)
         {
-            // Mostrar un cuadro de diálogo para confirmar la acción
             DialogResult resultado = MessageBox.Show("¿Desea volver al menú principal?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // Verificar la respuesta del usuario
             if (resultado == DialogResult.Yes)
             {
-                // Ocultar la ventana actual
-                this.Hide();
-
-                // Crear una instancia de la ventana InterfazMenu
+                Hide();
                 InterfazMenu ventanaMenu = new InterfazMenu();
-
-                // Mostrar la ventana InterfazMenu
                 ventanaMenu.Show();
             }
         }
 
-        private void Ventana_KeyDown(object sender, KeyEventArgs e) // Manejo para el evento de apretar ESC en una ventana 
+        private void Ventana_KeyDown(object sender, KeyEventArgs e) 
         {
             if (e.KeyCode == Keys.Escape)
             {
                 DialogResult result = MessageBox.Show("¿Está seguro de que desea volver al menú principal?", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                // Verificar la respuesta del usuario
-                if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
+                if (result == DialogResult.Yes) 
                 {
-                    InterfazMenu InterfazMenu = new InterfazMenu(); // Redirigir al formulario de inicio de sesión (LogIn)
+                    InterfazMenu InterfazMenu = new InterfazMenu();
                     InterfazMenu.Show();
-                    this.Hide(); // Ocultar el formulario actual
+                    Hide();
                 }
                 // Si el usuario elige "No", no hacer nada
             }

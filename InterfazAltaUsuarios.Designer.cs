@@ -227,7 +227,7 @@
             this.Rol_Null.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Rol_Null.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Rol_Null.ForeColor = System.Drawing.Color.Red;
-            this.Rol_Null.Location = new System.Drawing.Point(765, 427);
+            this.Rol_Null.Location = new System.Drawing.Point(924, 429);
             this.Rol_Null.Name = "Rol_Null";
             this.Rol_Null.Size = new System.Drawing.Size(194, 16);
             this.Rol_Null.TabIndex = 44;
@@ -237,7 +237,7 @@
             // 
             this.MayudaRol.AutoSize = true;
             this.MayudaRol.BackColor = System.Drawing.Color.LightGray;
-            this.MayudaRol.Location = new System.Drawing.Point(988, 400);
+            this.MayudaRol.Location = new System.Drawing.Point(1147, 402);
             this.MayudaRol.Name = "MayudaRol";
             this.MayudaRol.Size = new System.Drawing.Size(13, 13);
             this.MayudaRol.TabIndex = 41;
@@ -624,7 +624,7 @@
             this.ComboBox_Rol.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ComboBox_Rol.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBox_Rol.FormattingEnabled = true;
-            this.ComboBox_Rol.Location = new System.Drawing.Point(731, 388);
+            this.ComboBox_Rol.Location = new System.Drawing.Point(890, 390);
             this.ComboBox_Rol.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ComboBox_Rol.Name = "ComboBox_Rol";
             this.ComboBox_Rol.Size = new System.Drawing.Size(250, 33);
@@ -634,7 +634,7 @@
             // 
             this.Label_Tipo_Usuario.AutoSize = true;
             this.Label_Tipo_Usuario.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Tipo_Usuario.Location = new System.Drawing.Point(713, 355);
+            this.Label_Tipo_Usuario.Location = new System.Drawing.Point(872, 357);
             this.Label_Tipo_Usuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Tipo_Usuario.Name = "Label_Tipo_Usuario";
             this.Label_Tipo_Usuario.Size = new System.Drawing.Size(44, 28);

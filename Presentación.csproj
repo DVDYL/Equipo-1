@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InterfazRepoMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfazRepoMenu.Designer.cs">
+      <DependentUpon>InterfazRepoMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfazReportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     <EmbeddedResource Include="InterfazModificarProveedores.resx">
       <DependentUpon>InterfazModificarProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InterfazRepoMenu.resx">
+      <DependentUpon>InterfazRepoMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InterfazReportes.resx">
       <DependentUpon>InterfazReportes.cs</DependentUpon>
     </EmbeddedResource>
@@ -309,6 +318,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reporte1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reporte 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reporte4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reporte 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reporte5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reporte6.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

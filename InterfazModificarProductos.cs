@@ -15,8 +15,8 @@ namespace Presentacion
         public InterfazModificarProductos()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
-            this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
+            StartPosition = FormStartPosition.CenterScreen;
+            KeyPreview = true; 
         }
 
         private void Boton_Salir_Click(object sender, EventArgs e)
@@ -28,19 +28,16 @@ namespace Presentacion
         {
             if (e.KeyCode == Keys.Escape)
             {
-                DialogResult result = MessageBox.Show("¿Está seguro de que desea volver al menú principal?", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("¿Está seguro de que desea volver al listado de productos?", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                // Verificar la respuesta del usuario
-                if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
+                if (result == DialogResult.Yes) 
                 {
-                    InterfazMenu InterfazMenu = new InterfazMenu(); // Redirigir al formulario de inicio de sesión (LogIn)
-                    InterfazMenu.Show();
-                    this.Hide(); // Ocultar el formulario actual
+                    InterfazListaProductos ListaProductos = new InterfazListaProductos();
+                    ListaProductos.Show();
+                    Hide(); 
                 }
                 // Si el usuario elige "No", no hacer nada
             }
         }
-
-
     }
 }

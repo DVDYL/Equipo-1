@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.IO;
 using Negocio;
-using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Collections.Generic;
 using Datos;
@@ -12,20 +10,19 @@ namespace Presentacion
 {
     public partial class InterfazLogIn : Ventana
     {
-        // Variable miembro para almacenar el número de host del usuario
-        public string Host { get; set; }
+        public string Host { get; set; } // Variable miembro para almacenar el número de host del usuario
 
-        public static InterfazLogIn Instancia { get; private set; }
+        public static InterfazLogIn Instancia { get; private set; } // Retengo la instancia para manipular el Menú en función de quién se logueó.
 
-        // Definir las credenciales de administrador
+        // Definir las credenciales del administrador
         private const string UsuarioDefault = "ADMINI24";
         private const string ContraseñaDefault = "CAI20241";
 
-        public InterfazLogIn() // Función que inicia la ventana de Log In
+        public InterfazLogIn() 
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
-            this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
+            StartPosition = FormStartPosition.CenterScreen;
+            KeyPreview = true;
             Instancia = this;
         }
 
@@ -41,27 +38,27 @@ namespace Presentacion
 
             if (errorUsuario == "1") // Verificar si hay errores en el nombre de usuario y contraseña
             {
-                MessageBox.Show("No se ingresó el usuario.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se ingresó el usuario.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Salir del método sin continuar con el inicio de sesión ni contar errores
             }
 
             if (errorContraseña == "1") // Verificar si hay errores en el nombre de usuario y contraseña
             {
-                MessageBox.Show("No se ingresó la contraseña.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se ingresó la contraseña.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Salir del método sin continuar con el inicio de sesión ni contar errores
             }
 
             if (Usuario == UsuarioDefault && Contraseña == ContraseñaDefault)
             {
                 Host = Validar.NumeroHost(Usuario); // capturo el host para usarlo en el menú.
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                DialogResult = DialogResult.OK;
+                Close();
                 return; // Salir del método después de permitir el acceso al administrador
             }
 
             if (Validar.EsID(id.Substring(1, 36)) == 0)
             {
-                MessageBox.Show("El usuario no existe en el servidor o\n\nEl servidor está caído", "ERROR 101", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El usuario no existe en el servidor o\n\nEl servidor está caído.\n\nCódigo de Error: 101", "Fallo en la Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             if (Validar.EsID(id.Substring(1, 36)) == 2) //Hay que llamar a esto solamente cuando la contraseña está mal, pero el usuario existe
@@ -89,8 +86,7 @@ namespace Presentacion
                     CambiarClave.Visible = true;
                     PassViewImg.Enabled = false;
 
-                    MessageBox.Show("Por favor, ingrese una nueva contraseña", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    MessageBox.Show("Por favor, ingrese una nueva contraseña", "Primer Ingreso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
                 else if(Validar.ContraseñaExpirada(Usuario))     //Valido si la contraseña expiró
@@ -114,9 +110,8 @@ namespace Presentacion
                 {
                     Host = Validar.NumeroHost(Usuario); // Guardar el número de host del usuario
 
-
-                    this.DialogResult = DialogResult.OK;
-                    this.Hide(); // cerrar el login.
+                    DialogResult = DialogResult.OK;
+                    Hide(); 
                 }
             }
         }
@@ -133,9 +128,7 @@ namespace Presentacion
 
             if (usuarioEncontrado != null)
             {
-
-                //Cargo la ruta del TXT
-                string nombreArchivo = "Usuarios.txt";
+                string nombreArchivo = "Usuarios.txt"; //Cargo la ruta del TXT
                 string directorio = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CAI", "Equipo1");
                 string path = Path.Combine(directorio, nombreArchivo);
                 try
@@ -153,12 +146,11 @@ namespace Presentacion
                         string[] lineasTXT = File.ReadAllLines(path);
                         bool UsuarioExiste = lineasTXT.Any(linea => linea.StartsWith(Usuario + ";"));
 
-
                         if (!UsuarioExiste)
                         {
                             using (StreamWriter writer = File.AppendText(path))
                             {
-                                writer.WriteLine(Usuario + ";1;");   //Si llega acá es porque ya falló un intento.
+                                writer.WriteLine(Usuario + ";1;"); //Si llega acá es porque ya falló un intento.
                             }
                         }
                         else
@@ -189,7 +181,6 @@ namespace Presentacion
 
                                 if (intentos == 3)
                                 {
-                                    // falta validación para 3 errores + 4to exitoso.
                                     MessageBox.Show("Se han alcanzado los tres intentos permitidos para iniciar sesión.\n\nDe haber un intento fallido más, el usuario será bloqueado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 }
                                 else if (intentos >= 4)
@@ -242,9 +233,7 @@ namespace Presentacion
                             lineasTXT[i] = Usuario + ";" + "0" + ";" + parametros[2]; //Actualizo el valor de intentos fallidos a 0
 
                             SetearSession(Usuario);
-
                             ExisteUsuario = true;
-
                             break;
                         }
                     }
@@ -261,13 +250,12 @@ namespace Presentacion
 
                     File.WriteAllLines(path, lineasTXT);
                 }
-
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
-        } // No está usando el host del método de validar?
+        } // No está usando el host del método de validar? Hay que eliminar este método?
 
         private void SetearSession(string NombreUsuario)
         {
@@ -278,7 +266,7 @@ namespace Presentacion
 
             if (usuario != null)
             {
-                //this.Tag = new SessionData { Usuario = NombreUsuario, Host = usuario.Host};
+                //Tag = new SessionData { Usuario = NombreUsuario, Host = usuario.Host};
             }
         } // Ya se captura el hash desde la clase validar. Eliminar método? si → No se puede eliminar hasta sacarlo de ResetearIntentosFallidos
 
@@ -286,55 +274,6 @@ namespace Presentacion
         {
             IniciarSesion();
         }
-
-        /*private bool primerLogin = true; // Variable para controlar si es el primer inicio de sesión
-
-private void Boton_Ingresar_Click(object sender, EventArgs e)
-{
-    if (primerLogin)
-    {
-        // Si es el primer inicio de sesión, realizamos el cambio de clave
-        string usuario = Box_Usuario.Text;
-        string contraseña = Box_Pass.Text;
-        string nuevaContraseña = NewPass.Text;
-        string confirmacionContraseña = ConfirmNewPass.Text;
-
-        if (nuevaContraseña != confirmacionContraseña)
-        {
-            MessageBox.Show("La nueva contraseña y la confirmación no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return;
-        }
-
-        string errorNuevaContraseña = Validar.EsContraseña(nuevaContraseña);
-        if (errorNuevaContraseña != null)
-        {
-            MessageBox.Show(errorNuevaContraseña, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return;
-        }
-
-        try
-        {
-            UsuarioNegocio negocio = new UsuarioNegocio();
-            negocio.CambiarContraseña(usuario, contraseña, nuevaContraseña);
-            Host = Validar.NumeroHost(usuario);
-
-            // Cambiamos el texto del botón y la bandera primerLogin
-            Boton_Ingresar.Text = "Iniciar Sesión";
-            primerLogin = false;
-
-            MessageBox.Show("Contraseña cambiada correctamente. Por favor, inicie sesión con su nueva contraseña.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("Error al cambiar la contraseña: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-    }
-    else
-    {
-        // Si no es el primer inicio de sesión, simplemente iniciamos sesión
-        IniciarSesion();
-    }
-}*/
 
         private void CambiarClave_Click(object sender, EventArgs e)
         {
@@ -346,18 +285,18 @@ private void Boton_Ingresar_Click(object sender, EventArgs e)
             string errorNuevaContraseña = Validar.ConfirmarContraseña(nuevaContraseña, confirmacionContraseña);
             if (errorNuevaContraseña != null)
             {
-                MessageBox.Show(errorNuevaContraseña, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorNuevaContraseña, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 errorNuevaContraseña = Validar.EsContraseña(nuevaContraseña);
                 if (errorNuevaContraseña != null)
                 {
-                    MessageBox.Show(errorNuevaContraseña, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(errorNuevaContraseña, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (contraseña == nuevaContraseña)
                 {
-                    MessageBox.Show("La contraseña no puede ser igual a la actual.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("La contraseña no puede ser igual a la actual.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -368,12 +307,12 @@ private void Boton_Ingresar_Click(object sender, EventArgs e)
                         Host = Validar.NumeroHost(usuario);
                         MessageBox.Show("Contraseña actualizada con éxito!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ActualizarFechaTXT(usuario);
-                        this.DialogResult = DialogResult.OK;
-                        this.Hide();
+                        DialogResult = DialogResult.OK;
+                        Hide();
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error al cambiar la contraseña: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("No se pudo cambiar la Contraseña: " + ex.Message, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
                 }
@@ -384,11 +323,11 @@ private void Boton_Ingresar_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show("¿Desea salir del programa?\n\nSe cerrará la ventana y no se guardarán los datos.", "Confirmar Cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (resultado == DialogResult.Yes)             // Verificar la respuesta del usuario
+            if (resultado == DialogResult.Yes)
             {
-                Application.Exit();               // Si el usuario selecciona "Sí", cierra el formulario
+                Application.Exit();
             }
-        } // Pide confirmar la cancelación y si se acepta, sale del programa.
+        }
 
         private void PassViewImg_MouseDown(object sender, MouseEventArgs e) // Muestra la contraseña al hacer click en el ojo
         {
@@ -406,9 +345,9 @@ private void Boton_Ingresar_Click(object sender, EventArgs e)
             {
                 DialogResult resultado = MessageBox.Show("¿Desea salir del programa?\n\nSe cerrará la ventana y no se guardarán los datos.", "Confirmar Cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (resultado == DialogResult.Yes)             // Verificar la respuesta del usuario
+                if (resultado == DialogResult.Yes)
                 {
-                    this.Close();                 // Si el usuario selecciona "Sí", cierra el formulario
+                    Application.Exit();
                 }
             }
         }  // Evento KeyDown para cerrar la ventana con la tecla ESC
@@ -447,7 +386,6 @@ private void Boton_Ingresar_Click(object sender, EventArgs e)
                 }
             }
         }
-
     }
 }
 

@@ -10,18 +10,34 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class InterfazReportes : Ventana
+    public partial class InterfazRepoMenu : Ventana
     {
-        // Hay que editar esta clase. Cada reporte tiene que tener clase propia. No la elimino porque creo que es más ágil editarla.
-        // Faltaría editar InterfazReportes a InterfazRepoStock
-        // Falta crear InterfazRepoVentas
-        // Falta crear InterfazRepoProductos
+        // Falta traer el host del usuario porque:
+        // Stock crítico: 1 y 2
+        // Ventas por vendedor: todos
+        // Productos más vendidos por categoría: 1 y 2
+        // Recomiendo simplificar esto y que hagamos un sub-menú igual al menú, tres íconos y le damos al usuario posibilidad de elegir.
 
-        public InterfazReportes()
+        public InterfazRepoMenu()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             KeyPreview = true;
+        }
+
+        private void RepoStock_Icono_Click(object sender, EventArgs e)
+        {
+            // Stock crítico: 1 y 2
+        }
+
+        private void RepoVentas_Icono_Click(object sender, EventArgs e)
+        {
+            // Ventas por vendedor: todos
+        }
+
+        private void RepoMasVendido_Icono_Click(object sender, EventArgs e)
+        {
+            // Productos más vendidos por categoría: 1 y 2
         }
 
         private void Ventana_KeyDown(object sender, KeyEventArgs e) // Manejo para el evento de apretar ESC en una ventana 

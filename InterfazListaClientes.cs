@@ -19,8 +19,8 @@ namespace Presentacion
         public InterfazListaClientes()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
-            this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
+            StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
+            KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
             Boton_Modificar.Visible = false;
             Boton_Eliminar.Visible = false;
         }
@@ -55,7 +55,6 @@ namespace Presentacion
 
         private void ClienteLupa_Click(object sender, EventArgs e)
         {
-            // Obtener el texto ingresado en el TextBox UsuariosBuscador
             string textoBusqueda = ClienteBuscador.Text;
 
             if (string.IsNullOrEmpty(textoBusqueda))
@@ -65,14 +64,13 @@ namespace Presentacion
                 Boton_Eliminar.Visible = false;
             }
 
-            // Verificar si la lista de usuarios es nula o está vacía
-            if (Clientes.DataSource == null || Clientes.Rows.Count == 0)
+            if (Clientes.DataSource == null || Clientes.Rows.Count == 0) // Verificar si la lista de usuarios es nula o está vacía
             {
-                // Manejar el caso en el que la lista de usuarios es nula o vacía
                 MessageBox.Show("La lista se encuentra vacía.\n\nNo hay clientes para buscar.");
                 Boton_Modificar.Visible = false;
                 Boton_Eliminar.Visible = false;
             }
+
             else
             {
                 // Lista para almacenar los usuarios que coinciden con la búsqueda
@@ -92,8 +90,7 @@ namespace Presentacion
                     }
                 }
 
-                // Verificar si se encontraron usuarios que coinciden con la búsqueda
-                if (ClientesFiltrados.Count > 0)
+                if (ClientesFiltrados.Count > 0) // Verificar si se encontraron usuarios que coinciden con la búsqueda
                 {
                     // Actualizar el DataSource del DataGridView con los usuarios filtrados
                     var bindingList = new BindingList<Cliente>(ClientesFiltrados);
@@ -104,7 +101,6 @@ namespace Presentacion
                 }
                 else
                 {
-                    // Mostrar un mensaje si no se encontraron usuarios que coincidan con la búsqueda
                     MessageBox.Show("No se encontraron clientes que coincidan con la búsqueda.");
                 }
             }
@@ -112,7 +108,6 @@ namespace Presentacion
 
         private void LupaDNI_Click(object sender, EventArgs e)
         {
-            // Obtener el texto ingresado en el TextBox ClienteBuscador
             string textoBusqueda = Box_BuscarDNI.Text;
 
             if (string.IsNullOrEmpty(textoBusqueda))
@@ -169,7 +164,7 @@ namespace Presentacion
         private void Boton_AltaCliente_Click(object sender, EventArgs e)
         {
             InterfazAltaClientes AltaClientes = new InterfazAltaClientes();
-            this.Hide();
+            Hide();
             AltaClientes.Show();
         }
 
@@ -179,7 +174,7 @@ namespace Presentacion
             Limpiar();
         }
 
-        private void Limpiar() // Blanquea campos de búsqueda
+        private void Limpiar() 
         {
             ClienteBuscador.Text = "";
             Box_BuscarDNI.Text = "";
@@ -189,7 +184,6 @@ namespace Presentacion
 
         private void Listado_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            // Mostrar los botones de Modificar y Eliminar
             Boton_Modificar.Visible = true;
             Boton_Eliminar.Visible = true;
         }
@@ -213,7 +207,7 @@ namespace Presentacion
                 modificarClientes.ActualizarTextBox(direccion, telefono, email); // Levanto los datos de la lista y me los llevo a otra ventana.
 
                 modificarClientes.Show();
-                this.Hide(); // ocultar la lista de usuarios momentáneamente.
+                Hide(); // ocultar la lista de usuarios momentáneamente.
             }
             else
             {
@@ -239,12 +233,12 @@ namespace Presentacion
                 string idCliente = filaSeleccionada.Cells["id"].Value.ToString();
 
                 // Mostrar un cuadro de diálogo de confirmación al usuario
-                DialogResult resultadoConfirmacion = MessageBox.Show($"¿Está seguro que desea eliminar este cliente?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult resultadoConfirmacion = MessageBox.Show($"¿Está seguro que desea eliminar este cliente?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultadoConfirmacion == DialogResult.Yes)
                 {
                     EliminarCliente(idCliente);
-                    // Insertar acá el código para volver a llamar a la lista de clientes actualizada, así evitamos que se intente modificar algo dado de baja.
+                    CargarClientes(); // Insertar acá el código para volver a llamar a la lista de clientes actualizada, así evitamos que se intente modificar algo dado de baja.
                 }
                 else
                 {
@@ -265,18 +259,13 @@ namespace Presentacion
             // Verificar la respuesta del usuario
             if (resultado == DialogResult.Yes)
             {
-                // Ocultar la ventana actual
-                this.Hide();
-
-                // Crear una instancia de la ventana InterfazMenu
+                Hide();
                 InterfazMenu ventanaMenu = new InterfazMenu();
-
-                // Mostrar la ventana InterfazMenu
                 ventanaMenu.Show();
             }
         }
 
-        private void Ventana_KeyDown(object sender, KeyEventArgs e) // Manejo para el evento de apretar ESC en una ventana 
+        private void Ventana_KeyDown(object sender, KeyEventArgs e)  
         {
             if (e.KeyCode == Keys.Escape)
             {
@@ -287,7 +276,7 @@ namespace Presentacion
                 {
                     InterfazMenu InterfazMenu = new InterfazMenu(); // Redirigir al formulario de inicio de sesión (LogIn)
                     InterfazMenu.Show();
-                    this.Hide(); // Ocultar el formulario actual
+                    Hide(); // Ocultar el formulario actual
                 }
                 // Si el usuario elige "No", no hacer nada
             }

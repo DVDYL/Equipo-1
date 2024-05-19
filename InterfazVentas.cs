@@ -21,8 +21,8 @@ namespace Presentacion
         public InterfazVentas()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
-            this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
+            StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
+            KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
 
             // Configurar todos los comboboxes:
 
@@ -128,7 +128,6 @@ namespace Presentacion
                     ComboBox_Producto3.Items.Add(producto.IDCategoria);
                     ComboBox_Producto4.Items.Add(producto.IDCategoria);
                 }
-
             }
             catch (Exception ex)
             {
@@ -545,24 +544,15 @@ namespace Presentacion
 
         private void Boton_Salir_Click(object sender, EventArgs e)
         {
-            // Mostrar un cuadro de diálogo para confirmar la acción
             DialogResult resultado = MessageBox.Show("¿Desea volver al menú principal?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // Verificar la respuesta del usuario
             if (resultado == DialogResult.Yes)
             {
-                // Ocultar la ventana actual
-                this.Hide();
-
-                // Crear una instancia de la ventana InterfazMenu
-                InterfazMenu ventanaMenu = new InterfazMenu();
-
-                // Mostrar la ventana InterfazMenu
-                ventanaMenu.Show();
+                Hide();
+                InterfazMenu Menu = new InterfazMenu();
+                Menu.Show();
             }
         }
-
-        
 
         private void Ventana_KeyDown(object sender, KeyEventArgs e) // Manejo para el evento de apretar ESC en una ventana 
         {
@@ -570,16 +560,14 @@ namespace Presentacion
             {
                 DialogResult result = MessageBox.Show("¿Está seguro de que desea volver al menú principal?", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                // Verificar la respuesta del usuario
-                if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
+                if (result == DialogResult.Yes) 
                 {
-                    InterfazMenu InterfazMenu = new InterfazMenu(); // Redirigir al formulario de inicio de sesión (LogIn)
-                    InterfazMenu.Show();
-                    this.Hide(); // Ocultar el formulario actual
+                    InterfazMenu Menu = new InterfazMenu(); 
+                    Menu.Show();
+                    Hide();
                 }
                 // Si el usuario elige "No", no hacer nada
             }
-
         }
 
         private void Boton_Limpiar_Click(object sender, EventArgs e)
@@ -620,5 +608,4 @@ namespace Presentacion
             CargarProductos(); // Acá tengo que traerme la lista de productos.
         }
     }
-
 }

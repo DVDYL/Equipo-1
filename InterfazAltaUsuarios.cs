@@ -12,16 +12,17 @@ namespace Presentacion
     {
         public InterfazAltaUsuarios() // Esta Función prepara el formulario y sus restricciones
         {
-            InitializeComponent(); // Inicializamos el formulario.
-            this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
-            this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
+            InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
+            KeyPreview = true;
             Rol_Null.Visible = false; // Ocultar el TextBox Rol_Null
 
             // Establecer el formato de visualización predeterminado para la fecha de nacimiento
             Calendario_Nacimiento.Format = DateTimePickerFormat.Custom;
             Calendario_Nacimiento.CustomFormat = "dd/MM/yyyy";
 
-            ComboBox_Rol.DropDownStyle = ComboBoxStyle.DropDownList; // Configurar el estilo para que el usuario no pueda escribir
+            // Configurar el combobox del rol por asignar
+            ComboBox_Rol.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBox_Rol.Items.Add("Administrador");
             ComboBox_Rol.Items.Add("Supervisor");
             ComboBox_Rol.Items.Add("Vendedor");
@@ -35,7 +36,6 @@ namespace Presentacion
             string errorDNI = Validar.EsDNI(Box_DNI.Text);
             if (errorDNI != null)
             {
-                // Completar el contenido del TextBox DNI_Error con el error
                 DNI_Error.Text = errorDNI;
                 DNI_Error.Visible = true;
 
@@ -54,9 +54,10 @@ namespace Presentacion
                 return ContarErrores; // Detener la ejecución y devolver el contador de errores
             }
 
-            DateTime fechaNacimiento = Calendario_Nacimiento.Value; // Verifica que el usuario tenga sea mayor de 18 años y menor de 65 a partir de hoy.
+            DateTime fechaNacimiento = Calendario_Nacimiento.Value; 
+            
             string errorEdad = Validar.EsEdadLaboral(fechaNacimiento);
-            if (errorEdad != null)
+            if (errorEdad != null) // Verifica que el usuario tenga sea mayor de 18 años y menor de 65 a partir de hoy.
             {
                 Edad_Error.Text = errorEdad;
                 Edad_Error.Visible = true;
@@ -72,7 +73,7 @@ namespace Presentacion
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores; 
             }
 
             string errorNombre = Validar.EsNombre(Box_Nombre.Text, "Nombre");
@@ -92,13 +93,12 @@ namespace Presentacion
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores;
             }
 
             string errorApellido = Validar.EsNombre(Box_Apellido.Text, "Apellido");
             if (errorApellido != null)
             {
-                // Completar el contenido del TextBox Apellido_Error con el error
                 Apellido_Error.Text = errorApellido;
                 Apellido_Error.Visible = true;
                 MessageBox.Show(errorApellido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -113,13 +113,12 @@ namespace Presentacion
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores;
             }
 
             string errorCalle = Validar.EsDepartamento(Box_Calle.Text);
             if (errorCalle != null)
             {
-                // Completar el contenido del TextBox Calle_Error con el error
                 Calle_Error.Text = errorCalle;
                 Calle_Error.Visible = true;
                 MessageBox.Show(errorCalle, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -129,12 +128,12 @@ namespace Presentacion
             else
             {
                 Calle_Error.Visible = false;
-                MayudaCalle.Visible = false;// Ocultar el TextBox Calle_Error si el campo Calle no tiene errores.
+                MayudaCalle.Visible = false;
             }
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores; 
             }
 
             string errorTelefono = Validar.EsTelefono(Box_Telefono.Text);
@@ -154,11 +153,11 @@ namespace Presentacion
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores;
             }
 
             string errorMail = Validar.EsMail(Box_Mail.Text);
-            if (errorMail != null) //Si NO cumple con la validación, mostrará el mensaje.
+            if (errorMail != null) 
             {
                 Mail_Error.Text = errorMail;
                 Mail_Error.Visible = true;
@@ -174,13 +173,12 @@ namespace Presentacion
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores; 
             }
 
             string correo = Box_Mail.Text;
             string correoConfirmado = Box_Mail_Confirm.Text;
             string errorConfirmarMail = Validar.ConfirmarMail(correo, correoConfirmado);
-
 
             if (errorConfirmarMail != null)
             {
@@ -198,27 +196,24 @@ namespace Presentacion
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores; 
             }
 
-
-
-            if (ComboBox_Rol.SelectedIndex == -1)
+            if (ComboBox_Rol.SelectedIndex == -1) // Verifica que el combobox de tipo de usuario no sea vacío.
             {
-                Rol_Null.Visible = true; // Mostrar el TextBox Rol_Null
+                Rol_Null.Visible = true;
 
-                // Mostrar mensaje de advertencia cuando el tipo de usuario está en blanco
                 MessageBox.Show("No se seleccionó ningún tipo de usuario.\n\nPor favor, seleccione un tipo de usuario y vuelva a intentarlo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ComboBox_Rol.Focus();
                 MayudaRol.Visible = true;
                 ContarErrores++;
-            } // Verifica que el combobox de tipo de usuario no sea vacío.
+            } 
             else
             {
-                Rol_Null.Visible = false; // Ocultar el TextBox Rol_Null si el combobox Rol no es Null
+                Rol_Null.Visible = false; 
                 MayudaRol.Visible = false;
             }
-            return ContarErrores; // Devolver true si no hay errores, false si hay errores
+            return ContarErrores; 
         }
 
         private bool CamposCompletos() // Evalúa qué campos del formulario están completos
@@ -346,33 +341,27 @@ namespace Presentacion
 
             if (contadorErrores == 0)
             {
-                CrearUsuario();
-
-                // Si todas las validaciones pasan y el usuario se creó, mostrar un mensaje de éxito.
+                CrearUsuario(); // Si todas las validaciones pasan y el usuario se creó, mostrar un mensaje de éxito.
 
                 string nombreUsuario = GenerarCredenciales(Box_Nombre.Text, Box_Apellido.Text, Box_DNI.Text); // Generar el nombre de usuario
 
-                // Mostrar un cuadro de diálogo de confirmación al usuario
                 DialogResult resultadoConfirmacion = MessageBox.Show($"¿Desea realizar la operación de alta para el usuario {nombreUsuario}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultadoConfirmacion == DialogResult.Yes)
                 {
-                    // Mostrar mensaje de éxito con el nombre de usuario generado
                     MessageBox.Show($"Se ha realizado la operación de alta para el usuario {nombreUsuario}. Su contraseña es la misma que su nombre de usuario.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Preguntar al usuario si desea continuar en el Maestro de Usuarios
                     DialogResult resultadoContinuar = MessageBox.Show("¿Desea continuar dando de alta Usuarios?", "Confirmar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (resultadoContinuar == DialogResult.No)
                     {
-                        this.Close();
+                        Close();
                         InterfazListaUsuarios InterfazListaUsuarios = new InterfazListaUsuarios();
                         InterfazListaUsuarios.Show();
                     }
                     else
                     {
-                        // Restablecer todos los campos del formulario
-                        Limpiar();
+                        Limpiar(); // Restablecer todos los campos del formulario
                     }
                 }
             }
@@ -380,22 +369,19 @@ namespace Presentacion
 
         private void Boton_Limpiar_Click(object sender, EventArgs e)
         {
-            // Verificar si al menos un campo está completo
-            if (CamposCompletos())
+            if (CamposCompletos())  // Verificar si al menos un campo está completo
             {
-                // Mostrar un cuadro de diálogo de confirmación
                 DialogResult confirmacion = MessageBox.Show("¿Desea borrar todos los datos?\n\nSe perderán todos los cambios que no se hayan guardado.", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (confirmacion == DialogResult.Yes)
                 {
-                    Limpiar();  // Si el usuario elige "Sí", llamar al método para resetear los campos
+                    Limpiar(); 
                 }
                 // Si el usuario elige "No", no hacer nada
             }
             else
             {
-                // Mostrar un mensaje de error
-                MessageBox.Show("No hay datos para limpiar.\n\nCódigo de Error: 004", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No hay datos para limpiar.", "Formulario Vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         } // Maneja el evento del botón "Limpiar"
 
@@ -405,7 +391,7 @@ namespace Presentacion
 
             if (resultado == DialogResult.Yes)
             {
-                this.Hide();
+                Hide();
                 InterfazListaUsuarios InterfazListaUsuarios = new InterfazListaUsuarios();
                 InterfazListaUsuarios.Show();
             }
@@ -419,43 +405,31 @@ namespace Presentacion
 
                 if (resultado == DialogResult.Yes)
                 {
-                    // Cerrar el formulario actual (UserAdmin.cs)
-                    this.Close(); // Esto cerrará el formulario UserAdmin y volverá automáticamente al formulario Menu si es que fue abierto desde allí
+                    Close(); 
                 }
             }
         } 
 
-        private void IconoListaUsuarios_Click(object sender, EventArgs e)
+        private void IconoListaUsuarios_Click(object sender, EventArgs e) // No me convence: si estoy con cambios en curso, no me detiene?
         {
-            this.Hide();
-
-            // Crear una instancia del formulario InterfazListaUsuarios
+            Hide();
             InterfazListaUsuarios InterfazListaUsuarios = new InterfazListaUsuarios();
-
-            // Mostrar el formulario WWUsuario
             InterfazListaUsuarios.Show();
         }
 
         private void IconoMenu_Click(object sender, EventArgs e) // Evento para volver al menú cuando se hace clic en el ícono del banner 
         {
-            // Mostrar un cuadro de diálogo de confirmación
-            DialogResult result = MessageBox.Show("¿Está seguro de que desea cerrar esta ventana? No se guardarán los cambios.", "Cerrar ventana", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("¿Está seguro de que desea cerrar esta ventana?\n\nNo se guardarán los cambios.", "Cerrar ventana", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            // Verificar la respuesta del usuario
             if (result == DialogResult.Yes)
             {
+                Hide();
 
-                this.Hide();   // Ocultar la ventana actual (InterfazABM)
-
-                // Verificar si ya existe una instancia de InterfazMenu
-                InterfazMenu menuForm = Application.OpenForms.OfType<InterfazMenu>().FirstOrDefault();
+                InterfazMenu menuForm = Application.OpenForms.OfType<InterfazMenu>().FirstOrDefault(); // Verificar si ya existe una instancia de InterfazMenu
                 if (menuForm == null)
                 {
-                    // Si no existe, crear una nueva instancia
-                    menuForm = new InterfazMenu();
+                    menuForm = new InterfazMenu(); // Si no existe, crear una nueva instancia
                 }
-
-                // Mostrar la ventana InterfazMenu
                 menuForm.Show();
             }
             // Si el usuario elige "No", no hacer nada
@@ -463,26 +437,19 @@ namespace Presentacion
 
         private void IconoCerrarSesion_Click(object sender, EventArgs e) // Evento para volver al inicio de sesión cuando se hace clic en el ícono del banner 
         {
-            // Mostrar un cuadro de diálogo de confirmación
             DialogResult result = MessageBox.Show("¿Está seguro de que desea cerrar la sesión? No se guardarán los cambios.", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            // Verificar la respuesta del usuario
             if (result == DialogResult.Yes)
             {
-                // Ocultar la ventana de menú (InterfazMenu)
-                this.Hide();
+                Hide(); // Por qué no es close?
 
-                // Crear una nueva instancia de la ventana InterfazLogIn
                 InterfazLogIn loginForm = new InterfazLogIn();
 
-                // Manejar el evento FormClosed de InterfazLogIn para mostrar nuevamente la ventana de menú
                 loginForm.FormClosed += (s, args) =>
                 {
-                    // Mostrar la ventana de menú (InterfazMenu) cuando se cierre la ventana de inicio de sesión
-                    this.Show();
+                    Show();
                 };
 
-                // Mostrar la ventana InterfazLogIn
                 loginForm.Show();
             }
             // Si el usuario elige "No", no hacer nada

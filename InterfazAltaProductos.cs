@@ -15,13 +15,15 @@ namespace Presentacion
     public partial class InterfazAltaProductos : Ventana
     {
         private ProveedorNegocio ProveedorNegocio = new ProveedorNegocio();
+
         public InterfazAltaProductos()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
-            this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
+            StartPosition = FormStartPosition.CenterScreen; 
+            KeyPreview = true;
 
-            ComboBox_Categoria.DropDownStyle = ComboBoxStyle.DropDownList; // Configurar para que el usuario no pueda escribir
+            // Configurar el combobox para la categoría de producto
+            ComboBox_Categoria.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBox_Categoria.Items.Add("Audio");
             ComboBox_Categoria.Items.Add("Celulares");
             ComboBox_Categoria.Items.Add("ElectroHogar");
@@ -33,18 +35,12 @@ namespace Presentacion
             if (Proveedor != null)
             {
                 Proveedor = Proveedor.Where(u => u != null && u.Email != null && u.Email.Contains("@G1") && u.FechaBaja == null).ToList();
-             
             }
 
             ComboBox_Proveedor.DataSource = Proveedor;
             ComboBox_Proveedor.DisplayMember = "nombre"; //+"apellido"
             ComboBox_Proveedor.ValueMember = "id";
-            
         }
-
-       
-
-        
 
         private void CrearProducto()
         {
@@ -107,7 +103,6 @@ namespace Presentacion
                 MayudaCategoria.Visible = true;
                 ContarErrores++;
             }
-
             else
             {
                 Categoria_Error.Visible = false;
@@ -136,7 +131,7 @@ namespace Presentacion
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores; 
             }
 
             string errorPrecio = Validar.EsStock(Box_Precio.Text, "Precio");
@@ -154,7 +149,7 @@ namespace Presentacion
             }
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores;
             }
 
             string errorStock = Validar.EsStock(Box_Stock.Text, "Stock");
@@ -172,7 +167,7 @@ namespace Presentacion
             }
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores;
             }
             return ContarErrores;
         }
@@ -185,20 +180,17 @@ namespace Presentacion
             {
                 CrearProducto();
 
-                // Mostrar un cuadro de diálogo de confirmación al usuario
                 DialogResult resultadoConfirmacion = MessageBox.Show($"¿Desea realizar la operación de alta para el producto {Box_Nombre.Text}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultadoConfirmacion == DialogResult.Yes)
                 {
-                    // Mostrar mensaje de éxito con el nombre de usuario generado
                     MessageBox.Show($"Se ha realizado la operación de alta para el producto {Box_Nombre.Text}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Preguntar al usuario si desea continuar en el Maestro de Usuarios
                     DialogResult resultadoContinuar = MessageBox.Show("¿Desea seguir cargando productos?", "Confirmar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (resultadoContinuar == DialogResult.No)
                     {
-                        this.Close();
+                        Close();
                         InterfazListaProductos ListaProductos = new InterfazListaProductos();
                         ListaProductos.Show();
                     }
@@ -220,9 +212,8 @@ namespace Presentacion
             Categoria_Error.Visible = false;
             Nombre_Error.Visible = false;
             Stock_Error.Visible = false;
-            Precio_Error.Visible = false;  //Faltan Agregar
+            Precio_Error.Visible = false;
 
-            // Ocultar todos los tooltips
             MayudaCategoria.Visible = false;
             MayudaNombre.Visible = false;
             MayudaPrecio.Visible = false;
@@ -231,43 +222,31 @@ namespace Presentacion
 
         private void Boton_Salir_Click(object sender, EventArgs e)
         {
-            // Mostrar un cuadro de diálogo para confirmar la acción
             DialogResult resultado = MessageBox.Show("¿Desea volver al listado de productos?. Los cambios no se guardarán", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // Verificar la respuesta del usuario
             if (resultado == DialogResult.Yes)
             {
-                // Ocultar la ventana actual
-                this.Hide();
-
-                // Crear una instancia de la ventana InterfazMenu
+                Hide();
                 InterfazListaProductos ListaProductos = new InterfazListaProductos(); 
-
-                // Mostrar la ventana InterfazMenu
                 ListaProductos.Show();
             }
         }
 
-        private void Ventana_KeyDown(object sender, KeyEventArgs e) // Manejo para el evento de apretar ESC en una ventana 
+        private void Ventana_KeyDown(object sender, KeyEventArgs e) 
         {
             if (e.KeyCode == Keys.Escape)
             {
                 DialogResult result = MessageBox.Show("¿Está seguro de que desea volver al menú principal?", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                // Verificar la respuesta del usuario
-                if (result == DialogResult.Yes) // Si el usuario elige "Sí", cerrar la sesión
+                if (result == DialogResult.Yes)
                 {
-                    InterfazListaProductos ListaProductos = new InterfazListaProductos(); // Redirigir al formulario de inicio de sesión (LogIn)
+                    InterfazListaProductos ListaProductos = new InterfazListaProductos();
                     ListaProductos.Show();
-                    this.Hide(); // Ocultar el formulario actual
+                    Hide();
                 }
                 // Si el usuario elige "No", no hacer nada
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

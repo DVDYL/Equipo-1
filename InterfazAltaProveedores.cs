@@ -17,8 +17,8 @@ namespace Presentacion
         public InterfazAltaProveedores()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
-            this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
+            StartPosition = FormStartPosition.CenterScreen;
+            KeyPreview = true;
         }
 
         private int ControlarCampos()
@@ -48,8 +48,6 @@ namespace Presentacion
             string errorApellido = Validar.EsNombre(Apellido_Box.Text, "Apellido");
             if (errorApellido != null)
             {
-                // Completar el contenido del TextBox Apellido_Error con el error
-
                 MessageBox.Show(errorApellido, "Verificar el Apellido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 Apellido_Error.Text = errorApellido;
                 Apellido_Error.Visible = true;
@@ -64,11 +62,11 @@ namespace Presentacion
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores;
             }
 
             string errorMail = Validar.MailProveedor(Email_Box.Text);
-            if (errorMail != null) //Si NO cumple con la validación, mostrará el mensaje.
+            if (errorMail != null)
             {
                 Mail_Error.Text = errorMail;
                 Mail_Error.Visible = true;
@@ -84,7 +82,7 @@ namespace Presentacion
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores;
             }
 
             string correo = Email_Box.Text;
@@ -107,13 +105,12 @@ namespace Presentacion
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores;
             }
 
             string errorCUIT = Validar.EsCUIT(CUIT_Box.Text);
             if (errorCUIT != null)
             {
-                // Completar el contenido del TextBox DNI_Error con el error
                 CUIT_Error.Text = errorCUIT;
                 CUIT_Error.Visible = true;
 
@@ -129,7 +126,7 @@ namespace Presentacion
 
             if (ContarErrores >= 1)
             {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                return ContarErrores;
             }
 
             return ContarErrores; // Devolver true si no hay errores, false si hay errores
@@ -138,6 +135,7 @@ namespace Presentacion
         private void CrearProveedor()
         {
             // Está bien, pero tengo que obtener una fecha de alta, podría ser la fecha de hoy y quedar grabado defintivamente.
+            // Esa fecha, dónde la guardás? En el .txt?
 
             ProveedorNegocio AltaProveedor = new ProveedorNegocio();
             AltaProveedor.AgregarProveedor("70b37dc1-8fde-4840-be47-9ababd0ee7e5", Nombre_Box.Text, Apellido_Box.Text, ConfirMail_Box.Text, CUIT_Box.Text);
@@ -146,7 +144,6 @@ namespace Presentacion
         private void Limpiar() // Blanquea el Formulario de usuarios
         {
             // Reiniciar los valores de todos los campos del formulario a sus valores predeterminados
-
             Nombre_Box.Text = "";
             Apellido_Box.Text = "";
             Email_Box.Text = "";
@@ -154,22 +151,18 @@ namespace Presentacion
             CUIT_Box.Text = "";
 
             // Volver a ocultar todos los mensajes de error
-
             Nombre_Error.Visible = false;
             Mail_Error.Visible = false;
             Apellido_Error.Visible = false;
             ConfirMail_Error.Visible = false;
             CUIT_Error.Visible = false;
 
-
             // Ocultar todos los tooltips
-
             MayudaNombre.Visible = false;
             MayudaApellido.Visible = false;
             MayudaMail.Visible = false;
             MayudaConfirMail.Visible = false;
             MayudaCUIT.Visible = false;
-            
         }
 
         private void Boton_Confirmar_Click(object sender, EventArgs e)
@@ -180,26 +173,22 @@ namespace Presentacion
             {
                 CrearProveedor();           
 
-                // Mostrar un cuadro de diálogo de confirmación al usuario
                 DialogResult resultadoConfirmacion = MessageBox.Show("¿Desea realizar la operación de alta para el Proveedor?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultadoConfirmacion == DialogResult.Yes)
                 {
-                    // Mostrar mensaje de éxito con el nombre de usuario generado
                     MessageBox.Show("Se ha realizado la operación de alta para el Proveedor", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Preguntar al usuario si desea continuar en el Maestro de proveedor
                     DialogResult resultadoContinuar = MessageBox.Show("¿Desea continuar dando de alta proveedores?", "Confirmar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (resultadoContinuar == DialogResult.No)
                     {
-                        this.Close();
+                        Close();
                         InterfazListaProveedores InterfazListaProveedores = new InterfazListaProveedores();
                         InterfazListaProveedores.Show();
                     }
                     else
                     {
-                       // Restablecer todos los campos del formulario
                        Limpiar();
                     }
                 }
@@ -208,20 +197,13 @@ namespace Presentacion
 
         private void Boton_Cancelar_Click(object sender, EventArgs e)
         {
-            // Mostrar un cuadro de diálogo de confirmación al usuario
             DialogResult resultado = MessageBox.Show("¿Está seguro de que desea cancelar el alta del proveedor?\n\nLos cambios no se guardarán.", "Cancelar Alta de Proveedor", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            // Verificar la respuesta del usuario
             if (resultado == DialogResult.Yes)
             {
-                // Crear una nueva instancia del formulario InterfazListaProveedores
                 InterfazListaProveedores listaProveedores = new InterfazListaProveedores();
-
-                // Mostrar el formulario InterfazListaProveedores
                 listaProveedores.Show();
-
-                // Cerrar el formulario actual
-                this.Close();
+                Close();
             }
         }
 
@@ -231,11 +213,11 @@ namespace Presentacion
             {
                 DialogResult resultado = MessageBox.Show("¿Desea salir del programa?\n\nSe cerrará la ventana y no se guardarán los datos.", "Confirmar Cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (resultado == DialogResult.Yes)             // Verificar la respuesta del usuario
+                if (resultado == DialogResult.Yes)
                 {
-                    this.Close();                 // Si el usuario selecciona "Sí", cierra el formulario
+                    Close();
                 }
             }
         }  // Evento KeyDown para cerrar la ventana con la tecla ESC
-        }
+    }
 }

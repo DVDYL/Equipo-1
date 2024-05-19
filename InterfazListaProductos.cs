@@ -16,11 +16,13 @@ namespace Presentacion
     {
         private ProductoNegocio ProductoNegocio = new ProductoNegocio();
 
+        // Acá falta encapsular el host del usuario para que se puedan usar determinadas opciones.
+
         public InterfazListaProductos()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
-            this.KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
+            StartPosition = FormStartPosition.CenterScreen;
+            KeyPreview = true;
             Boton_Modificar.Visible = false;
             Boton_Eliminar.Visible = false;
         }
@@ -55,8 +57,7 @@ namespace Presentacion
 
         private void ProductosLupa_Click(object sender, EventArgs e)
         {
-            // Obtener el texto ingresado en el TextBox ProductosBuscador
-            string textoBusqueda = ProductoBuscador.Text;
+            string textoBusqueda = ProductoBuscador.Text; // Obtener el texto ingresado en el TextBox ProductosBuscador
 
             if (string.IsNullOrEmpty(textoBusqueda))
             {
@@ -65,14 +66,13 @@ namespace Presentacion
                 Boton_Eliminar.Visible = false;
             }
 
-            // Verificar si la lista de Productos es nula o está vacía
-            if (Productos.DataSource == null || Productos.Rows.Count == 0)
+            if (Productos.DataSource == null || Productos.Rows.Count == 0) // Verificar si la lista de Productos es nula o está vacía
             {
-                // Manejar el caso en el que la lista de Productos es nula o vacía
-                MessageBox.Show("La lista se encuentra vacía.\n\nNo hay productos para buscar.");
+                MessageBox.Show("La lista de productos se encuentra vacía.\n\nNo hay productos para buscar."); // Manejar el caso en el que la lista de Productos es nula o vacía
                 Boton_Modificar.Visible = false;
                 Boton_Eliminar.Visible = false;
             }
+
             else
             {
                 // Lista para almacenar los Productos que coinciden con la búsqueda
@@ -92,10 +92,8 @@ namespace Presentacion
                     }
                 }
 
-                // Verificar si se encontraron Productos que coinciden con la búsqueda
-                if (ProductosFiltrados.Count > 0)
+                if (ProductosFiltrados.Count > 0) // Verificar si se encontraron Productos que coinciden con la búsqueda
                 {
-                    // Actualizar el DataSource del DataGridView con los Productos filtrados
                     var bindingList = new BindingList<TraerProductos>(ProductosFiltrados);
                     var source = new BindingSource(bindingList, null);
                     Productos.DataSource = source;
@@ -104,7 +102,6 @@ namespace Presentacion
                 }
                 else
                 {
-                    // Mostrar un mensaje si no se encontraron Productos que coincidan con la búsqueda
                     MessageBox.Show("No se encontraron productos que coincidan con la búsqueda.");
                 }
             }
@@ -121,11 +118,9 @@ namespace Presentacion
                 Boton_Eliminar.Visible = false;
             }
 
-            // Verificar si la lista de Productos es nula o está vacía
-            if (Productos.DataSource == null || Productos.Rows.Count == 0)
+            if (Productos.DataSource == null || Productos.Rows.Count == 0) // Verificar si la lista de Productos es nula o está vacía
             {
-                // Manejar el caso en el que la lista de Productos es nula o vacía
-                MessageBox.Show("La lista se encuentra vacía.\n\nNo hay productos para buscar.");
+                MessageBox.Show("La lista de productos se encuentra vacía.\n\nNo hay productos para buscar.");
                 Boton_Modificar.Visible = false;
                 Boton_Eliminar.Visible = false;
             }
@@ -168,9 +163,9 @@ namespace Presentacion
         private void Boton_AltaProducto_Click(object sender, EventArgs e)
         {
             InterfazAltaProductos AltaProductos = new InterfazAltaProductos();
-            this.Hide();
+            Hide();
             AltaProductos.Show();
-        }
+        } // OJO ACÁ → A esta opción sólo puede entrar el host 1 y 2
 
         private void BorrarFiltro_Click(object sender, EventArgs e)
         {
@@ -189,12 +184,15 @@ namespace Presentacion
         private void Boton_Modificar_Click(object sender, EventArgs e)
         {
             // Falta desarrollar cómo llamar al servicio.
+            // Pero primero falta la redirección a la ventana de modificación! Ahí va el servicio. No acá.
+            // OJO ACÁ → A esta opción sólo puede entrar el host 2
         }
 
-        private void EliminarProducto()
+        private void EliminarProducto() // EliminarProducto(idProducto)
         {
             ProductoNegocio BajaProproducto = new ProductoNegocio();
-            //BajaProducto.BorrarProproducto(ACÁ SE DEBERÍA ESPECIFICAR DE QUÉ CELDA SALE EL DATO DEL IDPRODUCTO);
+            // BajaProducto.BorrarProproducto(ACÁ SE DEBERÍA ESPECIFICAR DE QUÉ CELDA SALE EL DATO DEL IDPRODUCTO);
+            // Usen el código con el que ya hicimos usuarios, proveedores, etc. La lógica debería ser idéntica.
         }
 
         private void Boton_Eliminar_Click(object sender, EventArgs e)
@@ -208,31 +206,22 @@ namespace Presentacion
                 // Obtener el valor de la celda "ID" de la fila seleccionada
                 string id = Productos.Rows[indiceFila].Cells["ID"].Value.ToString();
 
-                // Por medio del id, eliminamos el proveedor
-                // Por ejemplo:
-                EliminarProducto(); //Acá debería ir el id dentro del método.
+                EliminarProducto(); // EliminarProducto(idProducto)
             }
             else
             {
                 MessageBox.Show("Selecciona una fila antes de intentar eliminar.");
             }
-        }
+        } // OJO ACÁ → A esta opción sólo puede entrar el host 1 y 2
 
         private void Boton_Salir_Click(object sender, EventArgs e)
         {
-            // Mostrar un cuadro de diálogo para confirmar la acción
             DialogResult resultado = MessageBox.Show("¿Desea volver al menú principal?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // Verificar la respuesta del Producto
             if (resultado == DialogResult.Yes)
             {
-                // Ocultar la ventana actual
-                this.Hide();
-
-                // Crear una instancia de la ventana InterfazMenu
+                Hide();
                 InterfazMenu ventanaMenu = new InterfazMenu();
-
-                // Mostrar la ventana InterfazMenu
                 ventanaMenu.Show();
             }
         }
@@ -243,12 +232,11 @@ namespace Presentacion
             {
                 DialogResult result = MessageBox.Show("¿Está seguro de que desea volver al menú principal?", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                // Verificar la respuesta del Producto
-                if (result == DialogResult.Yes) // Si el Producto elige "Sí", cerrar la sesión
+                if (result == DialogResult.Yes)
                 {
-                    InterfazMenu InterfazMenu = new InterfazMenu(); // Redirigir al formulario de inicio de sesión (LogIn)
+                    InterfazMenu InterfazMenu = new InterfazMenu();
                     InterfazMenu.Show();
-                    this.Hide(); // Ocultar el formulario actual
+                    Hide();
                 }
                 // Si el Producto elige "No", no hacer nada
             }
