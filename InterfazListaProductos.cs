@@ -190,7 +190,7 @@ namespace Presentacion
 
         private void EliminarProducto() // EliminarProducto(idProducto)
         {
-            ProductoNegocio BajaProproducto = new ProductoNegocio();
+        //    ProductoNegocio BajaProproducto = new ProductoNegocio();
             // BajaProducto.BorrarProproducto(ACÁ SE DEBERÍA ESPECIFICAR DE QUÉ CELDA SALE EL DATO DEL IDPRODUCTO);
             // Usen el código con el que ya hicimos usuarios, proveedores, etc. La lógica debería ser idéntica.
         }

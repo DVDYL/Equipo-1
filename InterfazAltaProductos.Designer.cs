@@ -302,7 +302,7 @@
             this.ComboBox_Proveedor.Name = "ComboBox_Proveedor";
             this.ComboBox_Proveedor.Size = new System.Drawing.Size(250, 44);
             this.ComboBox_Proveedor.TabIndex = 127;
-            this.ComboBox_Proveedor.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+        //    this.ComboBox_Proveedor.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // InterfazAltaProductos
             // 

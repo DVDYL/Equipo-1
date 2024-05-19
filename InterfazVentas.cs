@@ -14,7 +14,7 @@ namespace Presentacion
 {
     public partial class InterfazVentas : Ventana
     {
-        private string idCliente;
+        //private string idCliente;
         private ClienteNegocio ClienteNegocio = new ClienteNegocio();
         private ProductoNegocio ProductoNegocio = new ProductoNegocio();
 

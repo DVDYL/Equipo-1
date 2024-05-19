@@ -13,9 +13,11 @@ namespace Presentacion
     public partial class InterfazRepoMenu : Ventana
     {
         // Falta traer el host del usuario porque:
+
         // Stock crítico: 1 y 2
         // Ventas por vendedor: todos
         // Productos más vendidos por categoría: 1 y 2
+
         // Recomiendo simplificar esto y que hagamos un sub-menú igual al menú, tres íconos y le damos al usuario posibilidad de elegir.
 
         public InterfazRepoMenu()

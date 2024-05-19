@@ -60,7 +60,7 @@
             // RepoMasVendido_Icono
             // 
             this.RepoMasVendido_Icono.Image = global::Presentacion.Properties.Resources.Reporte6;
-            this.RepoMasVendido_Icono.Location = new System.Drawing.Point(973, 187);
+            this.RepoMasVendido_Icono.Location = new System.Drawing.Point(981, 187);
             this.RepoMasVendido_Icono.Name = "RepoMasVendido_Icono";
             this.RepoMasVendido_Icono.Size = new System.Drawing.Size(315, 265);
             this.RepoMasVendido_Icono.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -71,7 +71,7 @@
             // RepoVentas_Icono
             // 
             this.RepoVentas_Icono.Image = global::Presentacion.Properties.Resources.Reporte5;
-            this.RepoVentas_Icono.Location = new System.Drawing.Point(519, 187);
+            this.RepoVentas_Icono.Location = new System.Drawing.Point(520, 185);
             this.RepoVentas_Icono.Name = "RepoVentas_Icono";
             this.RepoVentas_Icono.Size = new System.Drawing.Size(315, 265);
             this.RepoVentas_Icono.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -95,7 +95,7 @@
             this.RepoStock_Texto.AutoSize = true;
             this.RepoStock_Texto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RepoStock_Texto.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RepoStock_Texto.Location = new System.Drawing.Point(123, 455);
+            this.RepoStock_Texto.Location = new System.Drawing.Point(123, 468);
             this.RepoStock_Texto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RepoStock_Texto.Name = "RepoStock_Texto";
             this.RepoStock_Texto.Size = new System.Drawing.Size(210, 43);
@@ -108,7 +108,7 @@
             this.RepoVentas_Texto.AutoSize = true;
             this.RepoVentas_Texto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RepoVentas_Texto.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RepoVentas_Texto.Location = new System.Drawing.Point(508, 453);
+            this.RepoVentas_Texto.Location = new System.Drawing.Point(508, 466);
             this.RepoVentas_Texto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RepoVentas_Texto.Name = "RepoVentas_Texto";
             this.RepoVentas_Texto.Size = new System.Drawing.Size(337, 43);
@@ -121,7 +121,7 @@
             this.RepoMasVendido_Texto.AutoSize = true;
             this.RepoMasVendido_Texto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RepoMasVendido_Texto.Font = new System.Drawing.Font("Nunito", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RepoMasVendido_Texto.Location = new System.Drawing.Point(1007, 455);
+            this.RepoMasVendido_Texto.Location = new System.Drawing.Point(1007, 468);
             this.RepoMasVendido_Texto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RepoMasVendido_Texto.Name = "RepoMasVendido_Texto";
             this.RepoMasVendido_Texto.Size = new System.Drawing.Size(263, 43);

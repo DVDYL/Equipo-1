@@ -192,7 +192,7 @@ namespace Presentacion
 
                 // Obtener los valores de las celdas de la fila seleccionada
                 string idProveedor = filaSeleccionada.Cells["id"].Value.ToString(); // Lo voy a reutilizar para el patch y el delete
-                string idUsuario = idProveedor; // hace falta declarla acá? Creo que no.
+            //    string idUsuario = idProveedor; // hace falta declarla acá? Creo que no.
                 string nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
                 string apellido = filaSeleccionada.Cells["Apellido"].Value.ToString();
                 string email = filaSeleccionada.Cells["Email"].Value.ToString();
