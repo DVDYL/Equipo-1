@@ -1,6 +1,6 @@
 ﻿namespace Presentacion
 {
-    partial class InterfazReportes
+    partial class InterfazRepoStockCritico
     {
         /// <summary>
         /// Required designer variable.

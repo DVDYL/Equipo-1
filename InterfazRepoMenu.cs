@@ -29,17 +29,62 @@ namespace Presentacion
 
         private void RepoStock_Icono_Click(object sender, EventArgs e)
         {
-            // Stock crítico: 1 y 2
+            InterfazLogIn interfazLogIn = InterfazLogIn.Instancia;
+
+            // Verificar el valor de Host para filtrar visibilidad
+            if (interfazLogIn.Host == "1" || interfazLogIn.Host == "2")
+            {
+                InterfazRepoStockCritico InterfazRepoStockCritico = new InterfazRepoStockCritico(); // Crear una instancia del formulario InterfazRepoStockCritico
+
+                Hide(); // Ocultar el formulario RepoMenu
+
+                InterfazRepoStockCritico.FormClosed += (s, args) => Close(); // Cerrar la aplicación cuando se cierre UserAdmin
+                InterfazRepoStockCritico.Show(); // Mostrar el formulario InterfazRepoStockCritico
+            }
+            else
+            {
+                MessageBox.Show("ERROR 201: Este nivel de usuario no tiene acceso al reporte de Stock Crítico", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void RepoVentas_Icono_Click(object sender, EventArgs e)
         {
-            // Ventas por vendedor: todos
+            InterfazLogIn interfazLogIn = InterfazLogIn.Instancia;
+
+            // Verificar el valor de Host para filtrar visibilidad
+            if (interfazLogIn.Host == "1" || interfazLogIn.Host == "2" || interfazLogIn.Host == "3") //En teoría, todos los usuarios pueden acceder.
+            {
+                InterfazRepoVentas InterfazRepoVentas = new InterfazRepoVentas(); // Crear una instancia del formulario InterfazRepoVentas
+
+                Hide(); // Ocultar el formulario RepoMenu
+
+                InterfazRepoVentas.FormClosed += (s, args) => Close(); // Cerrar la aplicación cuando se cierre UserAdmin
+                InterfazRepoVentas.Show(); // Mostrar el formulario InterfazStockCritico
+            }
+            else
+            {
+                MessageBox.Show("ERROR 201: Este nivel de usuario no tiene acceso al reporte de las ventas por vendedor", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void RepoMasVendido_Icono_Click(object sender, EventArgs e)
         {
-            // Productos más vendidos por categoría: 1 y 2
+            InterfazLogIn interfazLogIn = InterfazLogIn.Instancia;
+
+            // Verificar el valor de Host para filtrar visibilidad
+            if (interfazLogIn.Host == "1" || interfazLogIn.Host == "2")
+            {
+                InterfazRepoMasVendidos InterfazMasVendidos = new InterfazRepoMasVendidos(); // Crear una instancia del formulario InterfazRepoMasVendidos
+
+                Hide(); // Ocultar el formulario RepoMenu
+
+                InterfazMasVendidos.FormClosed += (s, args) => Close(); // Cerrar la aplicación cuando se cierre UserAdmin
+                InterfazMasVendidos.Show(); // Mostrar el formulario InterfazRepoMasVendidos
+            }
+            else
+            {
+                MessageBox.Show("ERROR 201: Este nivel de usuario no tiene acceso al reporte de los productos mas vendidos", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Ventana_KeyDown(object sender, KeyEventArgs e) // Manejo para el evento de apretar ESC en una ventana 

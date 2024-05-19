@@ -62,17 +62,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InterfazRepoMasVendidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfazRepoMasVendidos.Designer.cs">
+      <DependentUpon>InterfazRepoMasVendidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfazRepoMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InterfazRepoMenu.Designer.cs">
       <DependentUpon>InterfazRepoMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="InterfazReportes.cs">
+    <Compile Include="InterfazRepoStockCritico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InterfazReportes.Designer.cs">
-      <DependentUpon>InterfazReportes.cs</DependentUpon>
+    <Compile Include="InterfazRepoStockCritico.Designer.cs">
+      <DependentUpon>InterfazRepoStockCritico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfazRepoVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfazRepoVentas.Designer.cs">
+      <DependentUpon>InterfazRepoVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="InterfazVentas.cs">
       <SubType>Form</SubType>
@@ -199,8 +211,8 @@
     <EmbeddedResource Include="InterfazRepoMenu.resx">
       <DependentUpon>InterfazRepoMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InterfazReportes.resx">
-      <DependentUpon>InterfazReportes.cs</DependentUpon>
+    <EmbeddedResource Include="InterfazRepoStockCritico.resx">
+      <DependentUpon>InterfazRepoStockCritico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfazVentas.resx">
       <DependentUpon>InterfazVentas.cs</DependentUpon>

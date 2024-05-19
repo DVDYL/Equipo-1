@@ -171,3 +171,4 @@ C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.Interfaz
 C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazMenu.resources
 C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazAltaUsuarios.resources
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazRepoMenu.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.InterfazRepoMenu.resources

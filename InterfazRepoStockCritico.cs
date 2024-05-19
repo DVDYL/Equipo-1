@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class InterfazReportes : Ventana
+    public partial class InterfazRepoStockCritico : Ventana
     {
         // Hay que editar esta clase. Cada reporte tiene que tener clase propia. No la elimino porque creo que es más ágil editarla.
         // Faltaría editar InterfazReportes a InterfazRepoStock
         // Falta crear InterfazRepoVentas
         // Falta crear InterfazRepoProductos
 
-        public InterfazReportes()
+        public InterfazRepoStockCritico()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
