@@ -73,7 +73,7 @@
             this.Boton_Modificar = new System.Windows.Forms.Button();
             this.Label_IDProducto = new System.Windows.Forms.Label();
             this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.Promocion_text = new System.Windows.Forms.TextBox();
             this.Label_Promocion = new System.Windows.Forms.Label();
             this.ComboBox_Clientes = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -574,14 +574,14 @@
             this.textBox18.Size = new System.Drawing.Size(268, 33);
             this.textBox18.TabIndex = 130;
             // 
-            // textBox19
+            // Promocion_text
             // 
-            this.textBox19.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox19.Location = new System.Drawing.Point(166, 625);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.ReadOnly = true;
-            this.textBox19.Size = new System.Drawing.Size(216, 33);
-            this.textBox19.TabIndex = 129;
+            this.Promocion_text.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Promocion_text.Location = new System.Drawing.Point(166, 625);
+            this.Promocion_text.Name = "Promocion_text";
+            this.Promocion_text.ReadOnly = true;
+            this.Promocion_text.Size = new System.Drawing.Size(216, 33);
+            this.Promocion_text.TabIndex = 129;
             // 
             // Label_Promocion
             // 
@@ -677,7 +677,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ComboBox_Clientes);
             this.Controls.Add(this.textBox18);
-            this.Controls.Add(this.textBox19);
+            this.Controls.Add(this.Promocion_text);
             this.Controls.Add(this.Label_Promocion);
             this.Controls.Add(this.Label_IDProducto);
             this.Controls.Add(this.Boton_Limpiar);
@@ -778,7 +778,7 @@
         private System.Windows.Forms.Button Boton_Modificar;
         private System.Windows.Forms.Label Label_IDProducto;
         private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox Promocion_text;
         private System.Windows.Forms.Label Label_Promocion;
         private System.Windows.Forms.ComboBox ComboBox_Clientes;
         private System.Windows.Forms.Label label1;

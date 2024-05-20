@@ -54,6 +54,7 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="ModificarProducto.cs" />
     <Compile Include="ModificarProveedor.cs" />
+    <Compile Include="RegistrarVenta.cs" />
     <Compile Include="TraerProductos.cs" />
     <Compile Include="TraerProveedores.cs" />
     <Compile Include="ModificarCliente.cs" />

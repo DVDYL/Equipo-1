@@ -443,7 +443,7 @@ namespace Presentacion
 
         public void CalcularDescuentoElectroHogar()
         {
-            // Se debería poder filtrar por idCategoría = 3, un totalizador con esos montos filtrados, y si es >=100000 multiplicarlo por 0.05, y guardar ese resultado como descuento
+            
         }
 
         public void CalcularMontoTotal4()
@@ -466,7 +466,7 @@ namespace Presentacion
                     Producto4_MontoTotal.Text = montoTotal.ToString();
                     CalcularMontoFinal();
                 }
-                catch (FormatException ex)
+                catch (FormatException ex) 
                 {
                     MessageBox.Show("Error de formato al convertir datos: " + ex.Message);
                 }
@@ -549,6 +549,7 @@ namespace Presentacion
 
             int MontoFinal = Monto1 + Monto2 + Monto3 + Monto4;
             Monto_Final.Text = "$" + MontoFinal.ToString();
+            CalcularDescuentoElectroHogar();
         }
 
         private void Boton_Salir_Click(object sender, EventArgs e)
