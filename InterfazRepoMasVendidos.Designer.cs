@@ -28,12 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.Boton_Salir = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // Boton_Salir
+            // 
+            this.Boton_Salir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Boton_Salir.Location = new System.Drawing.Point(405, 354);
+            this.Boton_Salir.Name = "Boton_Salir";
+            this.Boton_Salir.Size = new System.Drawing.Size(157, 45);
+            this.Boton_Salir.TabIndex = 1;
+            this.Boton_Salir.Text = "Salir";
+            this.Boton_Salir.UseVisualStyleBackColor = true;
+            this.Boton_Salir.Click += new System.EventHandler(this.Boton_Salir_Click_1);
+            // 
+            // InterfazRepoMasVendidos
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Boton_Salir);
+            this.Name = "InterfazRepoMasVendidos";
             this.Text = "InterfazMasVendidos";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button Boton_Salir;
     }
 }

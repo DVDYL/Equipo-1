@@ -28,12 +28,12 @@ namespace Presentacion
         {
             if (e.KeyCode == Keys.Escape)
             {
-                DialogResult result = MessageBox.Show("¿Está seguro de que desea volver al menú principal?", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("¿Está seguro de que desea volver al menú de Reportes?", "Volver", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
-                    InterfazMenu Menu = new InterfazMenu();
-                    Menu.Show();
+                    InterfazRepoMenu RepoMenu = new InterfazRepoMenu();
+                    RepoMenu.Show();
                     Hide();
                 }
                 // Si el usuario elige "No", no hacer nada
@@ -42,13 +42,13 @@ namespace Presentacion
 
         private void Boton_Salir_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("¿Desea volver al menú principal?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show("¿Desea volver al menú de Reportes?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
                 Hide();
-                InterfazMenu Menu = new InterfazMenu();
-                Menu.Show();
+                InterfazRepoMenu RepoMenu = new InterfazRepoMenu();
+                RepoMenu.Show();
             }
         }
     }

@@ -208,11 +208,17 @@
     <EmbeddedResource Include="InterfazModificarProveedores.resx">
       <DependentUpon>InterfazModificarProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InterfazRepoMasVendidos.resx">
+      <DependentUpon>InterfazRepoMasVendidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InterfazRepoMenu.resx">
       <DependentUpon>InterfazRepoMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfazRepoStockCritico.resx">
       <DependentUpon>InterfazRepoStockCritico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfazRepoVentas.resx">
+      <DependentUpon>InterfazRepoVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfazVentas.resx">
       <DependentUpon>InterfazVentas.cs</DependentUpon>

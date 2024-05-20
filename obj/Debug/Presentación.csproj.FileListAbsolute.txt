@@ -173,3 +173,5 @@ C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.
 C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.InterfazRepoStockCritico.resources
 C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentacion.InterfazRepoMenu.resources
 C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentacion.InterfazRepoStockCritico.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.InterfazRepoMasVendidos.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.InterfazRepoVentas.resources
