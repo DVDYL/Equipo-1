@@ -443,7 +443,39 @@ namespace Presentacion
 
         public void CalcularDescuentoElectroHogar()
         {
-            
+            int Monto1 = Convert.ToInt32(Producto1_MontoTotal.Text);
+            int Monto2 = Convert.ToInt32(Producto2_MontoTotal.Text);
+            int Monto3 = Convert.ToInt32(Producto3_MontoTotal.Text);
+            int Monto4 = Convert.ToInt32(Producto4_MontoTotal.Text);
+            int MontoAEvaluar = 0;
+
+             if (ComboBox_Producto1.SelectedItem.ToString() == ("3"))
+             {
+                MontoAEvaluar =+ Monto1;
+             }
+            if (ComboBox_Producto2.SelectedItem.ToString() == ("3"))
+            {
+                MontoAEvaluar =+ Monto2;
+            }
+            if (ComboBox_Producto3.SelectedItem.ToString() == ("3"))
+            {
+                MontoAEvaluar =+ Monto3;
+            }
+            if (ComboBox_Producto4.SelectedItem.ToString() == ("3"))
+            {
+                MontoAEvaluar =+ Monto4;
+            }
+
+            if (MontoAEvaluar > 100000)
+            {
+                //Debemos calcular el valor del descuento deberia ser Montoaevaluar * 0.05. Este valor habria que restarselo al monto Total
+            }
+            else
+            {
+                //No deberia aplicar el descuento
+            }
+
+
         }
 
         public void CalcularMontoTotal4()
