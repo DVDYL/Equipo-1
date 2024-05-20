@@ -549,7 +549,7 @@ namespace Presentacion
 
             int MontoFinal = Monto1 + Monto2 + Monto3 + Monto4;
             Monto_Final.Text = "$" + MontoFinal.ToString();
-            CalcularDescuentoElectroHogar();
+            
         }
 
         private void Boton_Salir_Click(object sender, EventArgs e)
