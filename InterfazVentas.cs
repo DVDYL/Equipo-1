@@ -441,41 +441,46 @@ namespace Presentacion
             //Acá tendríamos que poner el calculo del descuento teniendo en cuenta si el cliente tiene registrada alguna venta o no (deberíamos utilizar el GetVentaByCliente)
         }
 
-        public void CalcularDescuentoElectroHogar()
+        public double CalcularDescuentoElectroHogar()
         {
             int Monto1 = Convert.ToInt32(Producto1_MontoTotal.Text);
             int Monto2 = Convert.ToInt32(Producto2_MontoTotal.Text);
             int Monto3 = Convert.ToInt32(Producto3_MontoTotal.Text);
             int Monto4 = Convert.ToInt32(Producto4_MontoTotal.Text);
             int MontoAEvaluar = 0;
+            double descuento = 0.0;
 
-             if (ComboBox_Producto1.SelectedItem.ToString() == ("3"))
-             {
-                MontoAEvaluar =+ Monto1;
-             }
+            if (ComboBox_Producto1.SelectedItem.ToString() == ("3"))
+            {
+                MontoAEvaluar += Monto1;
+            }
             if (ComboBox_Producto2.SelectedItem.ToString() == ("3"))
             {
-                MontoAEvaluar =+ Monto2;
+                MontoAEvaluar += Monto2;
             }
             if (ComboBox_Producto3.SelectedItem.ToString() == ("3"))
             {
-                MontoAEvaluar =+ Monto3;
+                MontoAEvaluar += Monto3;
             }
             if (ComboBox_Producto4.SelectedItem.ToString() == ("3"))
             {
-                MontoAEvaluar =+ Monto4;
+                MontoAEvaluar += Monto4;
             }
 
-            if (MontoAEvaluar > 100000)
+            if (MontoAEvaluar > 100000) // Si cumple la condición, hace el descuento correspondiente y la leyenda.
             {
-                //Debemos calcular el valor del descuento deberia ser Montoaevaluar * 0.05. Este valor habria que restarselo al monto Total
+                descuento = MontoAEvaluar * 0.05;
+                MontoPromocion1.Text = "$" + descuento.ToString();
+                Promocion_text.Text = "Descuento ElectroHogar";
             }
-            else
+            else //En caso de que no aplique, le mandamos el monto 00 y la leyenda.
             {
-                //No deberia aplicar el descuento
+                descuento = 0.0;
+                MontoPromocion1.Text ="$" + descuento.ToString();
+                Promocion_text.Text = "No aplica descuentos";
             }
 
-
+            return descuento;
         }
 
         public void CalcularMontoTotal4()
@@ -580,7 +585,10 @@ namespace Presentacion
             }
 
             int MontoFinal = Monto1 + Monto2 + Monto3 + Monto4;
+            double descuento = CalcularDescuentoElectroHogar();
+            MontoFinal -= (int)descuento; //Restamos el descuento del monto final
             Monto_Final.Text = "$" + MontoFinal.ToString();
+            
             
         }
 
@@ -645,6 +653,8 @@ namespace Presentacion
             Producto3_MontoTotal.Text = "";
             Producto4_MontoTotal.Text = "";
             Monto_Final.Text = "";
+            Promocion_text.Text = "";
+            MontoPromocion1.Text = "";
 
             CargarClientes(); // Acá tengo que traerme la lista de nombres de los clientes.
             CargarProductos(); // Acá tengo que traerme la lista de productos.
