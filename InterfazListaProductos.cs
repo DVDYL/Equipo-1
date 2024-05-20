@@ -15,6 +15,7 @@ namespace Presentacion
     public partial class InterfazListaProductos : Ventana
     {
         private ProductoNegocio ProductoNegocio = new ProductoNegocio();
+        private ProveedorNegocio ProveedorNegocio = new ProveedorNegocio();
 
         // Acá falta encapsular el host del usuario para que se puedan usar determinadas opciones.
 
@@ -32,6 +33,12 @@ namespace Presentacion
             try
             {
                 List<TraerProductos> Producto = ProductoNegocio.listarProductos();
+                List<TraerProveedores> Proveedor = ProveedorNegocio.listarProveedores();
+
+                if (Proveedor != null)
+                {
+                    Proveedor = Proveedor.Where(u => u != null && u.Email != null && u.Email.Contains("@G1")).ToList();
+                }
 
                 var bindingList = new BindingList<TraerProductos>(Producto);
                 var source = new BindingSource(bindingList, null);

@@ -82,7 +82,7 @@ namespace Presentacion
             Producto.AgregarProductos(
                                             idCategoria,
                                             "70b37dc1-8fde-4840-be47-9ababd0ee7e5",
-                                            "70b37dc1-8fde-4840-be47-9ababd0ee7e5",
+                                            ComboBox_Proveedor.SelectedItem.ToString(),
                                             Box_Nombre.Text + " (G1)", // Acá va el G1 con el que se va a hacer la búsqueda
                                             int.Parse(Box_Precio.Text),
                                             int.Parse(Box_Stock.Text)
