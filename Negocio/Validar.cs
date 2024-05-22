@@ -405,22 +405,27 @@ namespace Negocio
             }
         }
 
-        //public static string EsStock(string valor, string campo)
-        //{
+        public static string EsNumero(string valor, string campo)
+        {
 
-        //    string error = "";
+            string error = "";
 
-        //    if (!int.TryParse(valor, out int salida))
-        //    {
-        //        error = "El campo " + campo + " no es numérico." + Environment.NewLine;
-        //    }
-        //    else if (salida <= 0)
-        //    {
-        //        error = "El campo " + campo + " no es positivo." + Environment.NewLine;
-        //    }
+            if (string.IsNullOrEmpty(valor))
+            {
+                return "El campo " + campo + " no puede estar vacío.";
+            }
 
-        //    return error;
-        //}
+            if (!int.TryParse(valor, out int salida))
+            {
+                error = "El campo " + campo + " no es numérico." + Environment.NewLine;
+            }
+            else if (salida <= 0)
+            {
+                error = "El campo " + campo + " no es positivo." + Environment.NewLine;
+            }
+
+            return null;
+        }
 
         public static string EsStock(string valor, string campo)
         {

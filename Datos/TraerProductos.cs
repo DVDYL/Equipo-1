@@ -20,8 +20,9 @@ namespace Datos
         {
         }
 
-        public TraerProductos(int idCategoria, string nombre, DateTime fechaAlta, DateTime fechaBaja, int precio, int stock)
+        public TraerProductos(Guid Id, int idCategoria, string nombre, DateTime fechaAlta, DateTime fechaBaja, int precio, int stock)
         {
+            _id = Id;
             _idCategoria = idCategoria;
             _nombre = nombre;
             _fechaAlta = fechaAlta;

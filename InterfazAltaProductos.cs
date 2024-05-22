@@ -134,7 +134,7 @@ namespace Presentacion
                 return ContarErrores; 
             }
 
-            string errorPrecio = Validar.EsStock(Box_Precio.Text, "Precio");
+            string errorPrecio = Validar.EsNumero(Box_Precio.Text, "Precio");
             if (errorPrecio != null)
             {
                 Precio_Error.Text = errorPrecio;
