@@ -67,7 +67,7 @@ namespace Presentacion
                 CargarTXT(Usuario, id); 
             }
 
-            if (Validar.EsID(id.Substring(1, 36)) == 1) // El hash es válido, permitir el acceso
+            if (Validar.EsID(id.Substring(1, 36)) == 1) // El id es válido, permitir el acceso
             {
                 ResetearIntentosFallidos(Usuario); // volver el contador de errores a 0.
                 if (Usuario == Contraseña)
@@ -105,6 +105,9 @@ namespace Presentacion
                     Boton_Ingresar.Visible = false;
                     CambiarClave.Visible = true;
                     PassViewImg.Enabled = false;
+                }
+                else if(Validar.UsuarioInactivo(Usuario)){
+                    MessageBox.Show("El usuario se encuentra inactivo. Contáctese con el administrador del sistema.", "Usuario Inactivo",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -150,7 +153,7 @@ namespace Presentacion
                         {
                             using (StreamWriter writer = File.AppendText(path))
                             {
-                                writer.WriteLine(Usuario + ";1;"); //Si llega acá es porque ya falló un intento.
+                                writer.WriteLine(Usuario + ";1;" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + ";activo" + Environment.NewLine); //Si llega acá es porque ya falló un intento.
                             }
                         }
                         else
@@ -173,9 +176,9 @@ namespace Presentacion
                                 intentos++;
                                 // Mantener la fecha del último cambio de contraseña
                                 string fechaUltimoCambio = parametros.Length > 2 ? parametros[2] : ""; //Esto es un condicional. Si existe parametro 2 lo pone. si no existe pone vacío
+                                string estado = parametros.Length > 3 ? parametros[3] : "activo";
 
-
-                                lineasTXT[indexUsuario] = Usuario + ";" + intentos.ToString() + ";" + fechaUltimoCambio;
+                                lineasTXT[indexUsuario] = Usuario + ";" + intentos.ToString() + ";" + fechaUltimoCambio + ";" + estado;
 
                                 File.WriteAllLines(path, lineasTXT);
 
@@ -185,9 +188,10 @@ namespace Presentacion
                                 }
                                 else if (intentos >= 4)
                                 {
-                                    UsuarioNegocio negocioUser = new UsuarioNegocio();
-                                    negocioUser.BorrarUsuario(id);
-
+                                    //UsuarioNegocio negocioUser = new UsuarioNegocio();    //El método borrar usuario no funciona. Lo reemplazamos por el .txt
+                                    //negocioUser.BorrarUsuario(id);
+                                    lineasTXT[indexUsuario] = Usuario + ";" + intentos.ToString() + ";" + fechaUltimoCambio + ";inactivo";
+                                    File.WriteAllLines(path, lineasTXT);
                                     MessageBox.Show("El usuario ha sido bloqueado. Contacte al Administrador del Sistema para reactivarlo nuevamente", "Usuario Bloqueado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     Application.Exit();
                                 }
@@ -195,7 +199,7 @@ namespace Presentacion
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (IOException ex)
                 {
                     Console.WriteLine(ex.ToString());
                 }
@@ -217,7 +221,7 @@ namespace Presentacion
                 if (!File.Exists(path))
                 {
                     // Si el archivo no existe, lo creamos y escribimos la información del usuario actual
-                    File.WriteAllText(path, Usuario + ";0;");
+                    File.WriteAllText(path, Usuario + ";0;" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + ";activo" + Environment.NewLine);
                     SetearSession(Usuario);
                 }
                 else
@@ -230,7 +234,10 @@ namespace Presentacion
                         if (lineasTXT[i].StartsWith(Usuario + ";"))
                         {
                             string[] parametros = lineasTXT[i].Split(';');
-                            lineasTXT[i] = Usuario + ";" + "0" + ";" + parametros[2]; //Actualizo el valor de intentos fallidos a 0
+                            string fechaUltimoCambio = parametros.Length > 2 ? parametros[2] : "";
+                            string estado = parametros.Length > 3 ? parametros[3] : "activo";
+
+                            lineasTXT[i] = Usuario + ";" + "0" + ";" + fechaUltimoCambio + ";" + estado; //Actualizo el valor de intentos fallidos a 0
 
                             SetearSession(Usuario);
                             ExisteUsuario = true;
@@ -240,7 +247,7 @@ namespace Presentacion
 
                     if (!ExisteUsuario)
                     {
-                        string[] nuevaLinea = {Usuario + ";0;"};
+                        string[] nuevaLinea = { Usuario + ";0;" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + ";activo" + Environment.NewLine };
                         List<string> lineasLista = lineasTXT.ToList();
                         lineasLista.AddRange(nuevaLinea);
                         lineasTXT = lineasLista.ToArray();
@@ -251,7 +258,7 @@ namespace Presentacion
                     File.WriteAllLines(path, lineasTXT);
                 }
             }
-            catch (Exception ex)
+            catch (IOException ex)
             {
                 Console.WriteLine(ex.ToString());
             }
@@ -268,7 +275,7 @@ namespace Presentacion
             {
                 //Tag = new SessionData { Usuario = NombreUsuario, Host = usuario.Host};
             }
-        } // Ya se captura el hash desde la clase validar. Eliminar método? si → No se puede eliminar hasta sacarlo de ResetearIntentosFallidos
+        } // Ya se captura el id desde la clase validar. Eliminar método? si → No se puede eliminar hasta sacarlo de ResetearIntentosFallidos
 
         private void Boton_Ingresar_Click(object sender, EventArgs e)
         {
@@ -310,7 +317,7 @@ namespace Presentacion
                         DialogResult = DialogResult.OK;
                         Hide();
                     }
-                    catch (Exception ex)
+                    catch (IOException ex)
                     {
                         MessageBox.Show("No se pudo cambiar la Contraseña: " + ex.Message, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
@@ -366,25 +373,29 @@ namespace Presentacion
             {
                 File.WriteAllText(path, "");
             }
-                string[] lineasTXT = File.ReadAllLines(path);
+            string[] lineasTXT = File.ReadAllLines(path);
+            bool usuarioEncontrado = false;
             for (int i = 0; i < lineasTXT.Length; i++)
             {
                 if (lineasTXT[i].StartsWith(usuario + ";"))
                 {
                     string[] parametros = lineasTXT[i].Split(';');
-                    lineasTXT[i] = usuario + ";" + parametros[1] + ";" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
+                    lineasTXT[i] = usuario + ";" + parametros[1] + ";" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss" + ";activo");
+                    usuarioEncontrado = true;
                     File.WriteAllLines(path, lineasTXT);
                     break;
                 }
-                else
+            }
+            if (!usuarioEncontrado)
+            {
+                using (StreamWriter writer = File.AppendText(path))
                 {
-                    using (StreamWriter writer = File.AppendText(path))
-                    {
-                        writer.WriteLine(usuario + ";0;" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                    }
+                    writer.WriteLine(usuario + ";0;" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + ";activo");
                 }
             }
+
+            File.WriteAllLines(path, lineasTXT);
         }
     }
 }

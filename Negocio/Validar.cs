@@ -577,7 +577,46 @@ namespace Negocio
                 // throw new InvalidOperationException("El usuario ingresado no se encuentra en la lista de usuarios activos.");
             }
         }
+        public static bool UsuarioInactivo(string usuario)
+        {
+            string nombreArchivo = "Usuarios.txt";
+            string directorio = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CAI", "Equipo1");
+            string path = Path.Combine(directorio, nombreArchivo);
+            try
+            {
+                if (File.Exists(path))
+                {
+                    string[] lineasTXT = File.ReadAllLines(path);
 
+                    foreach (string linea in lineasTXT)
+                    {
+                        if (linea.StartsWith(usuario + ";"))
+                        {
+                            string[] parametros = linea.Split(';');
+                            if (parametros.Length > 3)
+                            {
+                                string estado = parametros[3];
+                                if (estado == "inactivo")
+                                {
+                                    return true;
+
+                                }
+                                else
+                                {
+                                    return false;
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return false;
+        }
         public static bool ContraseñaExpirada(string usuario)
         {
             string nombreArchivo = "Usuarios.txt";
