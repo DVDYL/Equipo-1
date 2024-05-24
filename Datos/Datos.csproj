@@ -50,11 +50,13 @@
     <Compile Include="BajaProveedor.cs" />
     <Compile Include="BajaUsuario.cs" />
     <Compile Include="CambiarContraseña.cs" />
+    <Compile Include="DevolverVenta.cs" />
+    <Compile Include="TraerVenta.cs" />
     <Compile Include="LogIn.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="ModificarProducto.cs" />
     <Compile Include="ModificarProveedor.cs" />
-    <Compile Include="RegistrarVenta.cs" />
+    <Compile Include="AgregarVenta.cs" />
     <Compile Include="TraerProductos.cs" />
     <Compile Include="TraerProveedores.cs" />
     <Compile Include="ModificarCliente.cs" />

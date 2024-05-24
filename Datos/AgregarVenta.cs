@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class RegistrarVenta
+    public class AgregarVenta
     {
         
         string _idCliente;
@@ -15,7 +15,7 @@ namespace Datos
         int _cantidad;
        
 
-        public RegistrarVenta(string idCliente, string idUsuario, string idProducto, int cantidad)
+        public AgregarVenta(string idCliente, string idUsuario, string idProducto, int cantidad)
         {
             
             _idCliente = idCliente;
