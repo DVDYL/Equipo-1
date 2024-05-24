@@ -50,6 +50,7 @@
     <Compile Include="Utils\WebHelper.cs" />
     <Compile Include="UsuarioService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VentaService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
