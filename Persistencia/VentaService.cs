@@ -12,6 +12,32 @@ namespace Persistencia
 {
     public class VentaService
     {
+        public TraerVenta TraerVenta()
+        {
+            String path = "/api/Venta/GetVenta";
+            TraerVenta venta = null;
+
+            try
+            {
+                HttpResponseMessage response = WebHelper.Get(path);
+                if (response.IsSuccessStatusCode)
+                {
+                    var contentStream = response.Content.ReadAsStringAsync().Result;
+                    venta = JsonConvert.DeserializeObject<TraerVenta>(contentStream);
+                }
+                else
+                {
+                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception: {ex.Message}");
+            }
+
+            return venta;
+        }
+
         public void DevolverVenta(string idVenta, string idUsuario)
         {
             String path = "/api/Venta/DevolverVenta";
