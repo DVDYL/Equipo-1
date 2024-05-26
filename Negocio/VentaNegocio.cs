@@ -30,11 +30,10 @@ namespace Negocio
             ventaService.DevolverVenta(idVenta,idUsuario);
         }
 
-        public void TraerVentaPorCliente(string idCliente)
-        {
-            ventaService.TraerVentaPorCliente(idCliente);
-        }
-
+       // public List<TraerVentaPorCliente> GetTraerVentaPorClientes(string idCliente)
+        //{
+            //return VentaService.GetVentasCliente(idCliente);
+        //} Me esta generando conflicto
     }
 
 }

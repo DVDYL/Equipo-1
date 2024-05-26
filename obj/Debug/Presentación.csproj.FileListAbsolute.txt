@@ -178,3 +178,5 @@ C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazRep
 C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazRepoMenu.resources
 C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazRepoStockCritico.resources
 C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazRepoVentas.resources
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentacion.InterfazRepoMasVendidos.resources
+C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentacion.InterfazRepoVentas.resources

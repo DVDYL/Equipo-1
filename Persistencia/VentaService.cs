@@ -94,17 +94,21 @@ namespace Persistencia
 
         }
 
-        public void TraerVentaPorCliente(string idCliente)
+        
+
+        public List<TraerVentaPorCliente> GetVentasCliente(string idCliente)
         {
             String path = "/api/Venta/GetVentaByCliente" + idCliente;
+            List<TraerVentaPorCliente> VentasCliente = new List<TraerVentaPorCliente>();
 
             try
             {
-                HttpResponseMessage response = WebHelper.Delete(path);
+                HttpResponseMessage response = WebHelper.Get(path);
                 if (response.IsSuccessStatusCode)
                 {
-                    var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
-                    string respuesta = reader.ReadToEnd();
+                    var contentStream = response.Content.ReadAsStringAsync().Result;
+                    List<TraerVentaPorCliente> listadoVentasCliente = JsonConvert.DeserializeObject<List<TraerVentaPorCliente>>(contentStream);
+                    return listadoVentasCliente;
                 }
                 else
                 {
@@ -115,7 +119,8 @@ namespace Persistencia
             {
                 Console.WriteLine($"Exception: {ex.Message}");
             }
-
+            return VentasCliente;
         }
+
     }
 }
