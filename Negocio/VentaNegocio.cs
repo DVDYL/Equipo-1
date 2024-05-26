@@ -11,7 +11,7 @@ namespace Negocio
     public class VentaNegocio
     {
         private VentaService ventaService = new VentaService();
-        private String id = "70b37dc1-8fde-4840-be47-9ababd0ee7e5";
+        //private String id = "70b37dc1-8fde-4840-be47-9ababd0ee7e5";
 
 
         public TraerVenta traerVenta()
@@ -30,10 +30,10 @@ namespace Negocio
             ventaService.DevolverVenta(idVenta,idUsuario);
         }
 
-       // public List<TraerVentaPorCliente> GetTraerVentaPorClientes(string idCliente)
-        //{
-            //return VentaService.GetVentasCliente(idCliente);
-        //} Me esta generando conflicto
+       public List<TraerVentaPorCliente> GetTraerVentaPorClientes(string idCliente)
+       {
+             return ventaService.GetVentasCliente(idCliente);
+       }
     }
 
 }
