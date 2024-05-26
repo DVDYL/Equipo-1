@@ -94,6 +94,28 @@ namespace Persistencia
 
         }
 
-        // Faltan metodos para traer ventas
+        public void TraerVentaPorCliente(string idCliente)
+        {
+            String path = "/api/Venta/GetVentaByCliente" + idCliente;
+
+            try
+            {
+                HttpResponseMessage response = WebHelper.Delete(path);
+                if (response.IsSuccessStatusCode)
+                {
+                    var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
+                    string respuesta = reader.ReadToEnd();
+                }
+                else
+                {
+                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception: {ex.Message}");
+            }
+
+        }
     }
 }

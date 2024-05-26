@@ -60,6 +60,7 @@
     <Compile Include="TraerProductos.cs" />
     <Compile Include="TraerProveedores.cs" />
     <Compile Include="ModificarCliente.cs" />
+    <Compile Include="TraerVentaPorCliente.cs" />
     <Compile Include="UsuariosActivos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

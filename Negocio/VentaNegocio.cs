@@ -30,6 +30,11 @@ namespace Negocio
             ventaService.DevolverVenta(idVenta,idUsuario);
         }
 
+        public void TraerVentaPorCliente(string idCliente)
+        {
+            ventaService.TraerVentaPorCliente(idCliente);
+        }
+
     }
 
 }
