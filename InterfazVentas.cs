@@ -1,6 +1,7 @@
 ﻿using Datos;
 using Negocio;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace Presentacion
         //private string idCliente;
         private ClienteNegocio ClienteNegocio = new ClienteNegocio();
         private ProductoNegocio ProductoNegocio = new ProductoNegocio();
+        private VentaNegocio VentaNegocio = new VentaNegocio();
 
         public InterfazVentas()
         {
@@ -100,9 +102,11 @@ namespace Presentacion
                     string direccion = clienteSeleccionado.Direccion;
                     string telefono = clienteSeleccionado.Telefono;
                     string email = clienteSeleccionado.Email;
+                    
 
                     // Actualizar los campos de texto con los datos del cliente seleccionado
                     ActualizarCliente(DNI, direccion, telefono, email);
+                    ExisteVentaCliente();
                 }
                 else
                 {
@@ -659,5 +663,48 @@ namespace Presentacion
             CargarClientes(); // Acá tengo que traerme la lista de nombres de los clientes.
             CargarProductos(); // Acá tengo que traerme la lista de productos.
         }
+
+        private void CrearVenta()
+        {
+            // Está bien, pero tengo que obtener una fecha de alta, podría ser la fecha de hoy y quedar grabado defintivamente.
+            // Esa fecha, dónde la guardás? En el .txt?
+
+            VentaNegocio AltaVenta = new VentaNegocio();
+            AltaVenta.agregarVenta("70b37dc1-8fde-4840-be47-9ababd0ee7e5","","",7);
+        }
+
+        public bool ExisteVentaCliente()
+        {
+            // Obtener el nombre del cliente seleccionado en el ComboBox
+            string nombreCliente = ComboBox_Clientes.SelectedItem.ToString();
+            // Buscar el cliente en la lista de clientes utilizando su nombre
+            List<Cliente> listarClientes = ClienteNegocio.listarClientes();
+            Cliente clienteSeleccionado = listarClientes.FirstOrDefault(c => (c.Apellido + " " + c.Nombre) == nombreCliente);
+
+            // Verificar si se encontró el cliente
+            if (clienteSeleccionado != null)
+            {
+                // Obtener el ID del cliente
+                string idCliente = clienteSeleccionado.Id;
+                // Se busca en base al ID seleccionado si tiene alguna venta registrada
+                List<TraerVentaPorCliente> TraerVentaPorCliente = VentaNegocio.GetTraerVentaPorClientes(idCliente);
+
+                if (TraerVentaPorCliente.Count == 0) 
+                {
+
+                    return true;
+                   
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            return false;
+            
+
+        }
+            
     }
 }
