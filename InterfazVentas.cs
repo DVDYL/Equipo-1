@@ -591,6 +591,23 @@ namespace Presentacion
             int MontoFinal = Monto1 + Monto2 + Monto3 + Monto4;
             double descuento = CalcularDescuentoElectroHogar();
             MontoFinal -= (int)descuento; //Restamos el descuento del monto final
+                                          
+            bool PrimeraCompra = ExisteVentaCliente();
+
+            if (PrimeraCompra == true)
+            {
+                double DescuentoPrimeraCompra = MontoFinal * 0.05;
+                MontoFinal = (MontoFinal - (int)DescuentoPrimeraCompra);
+                MontoPromocion2.Text = "$" + DescuentoPrimeraCompra.ToString();
+                Promocion2_text.Text = "Promo Cliente Nuevo";
+            }
+            else
+            {
+                double DescuentoPrimeraCompra = 0.00;
+                MontoPromocion2.Text = "$" + DescuentoPrimeraCompra.ToString();
+                Promocion2_text.Text = "No aplica Promo Cliente Nuevo";
+
+            }
             Monto_Final.Text = "$" + MontoFinal.ToString();
             
             
@@ -705,6 +722,10 @@ namespace Presentacion
             
 
         }
-            
+
+        private void Promocion_text_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
