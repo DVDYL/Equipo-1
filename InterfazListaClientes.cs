@@ -46,6 +46,8 @@ namespace Presentacion
                 Clientes.DataSource = source;
                 Clientes.Columns["id"].Visible = false;
                 Clientes.Columns["Host"].Visible = false;
+                Clientes.Columns["fechaBaja"].Visible = false;
+                Clientes.Columns["fechaAlta"].Visible = false;
             }
             catch (Exception ex)
             {

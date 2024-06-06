@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Net;
-using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 
 namespace Negocio
@@ -37,7 +35,6 @@ namespace Negocio
             {
                 return $"El {nombreCampo} no puede tener caracteres especiales."; // Saco al espaciado como "caracter especial".
             }
-
             // Si pasa todas las condiciones, el texto es válido
             return null; // Retorna null si el nombre es válido
         }
@@ -81,17 +78,16 @@ namespace Negocio
 
             ClienteNegocio clientenegocio = new ClienteNegocio();
             List<Cliente> clientes = clientenegocio.listarClientes();
-            //    clientes = clientes.Where(u => u.NombreUsuario.StartsWith("G1")).ToList(); // Filtrar usuarios cuyo NombreUsuario empiece por "G1"
+            // clientes = clientes.Where(u => u.NombreUsuario.StartsWith("G1")).ToList(); // Filtrar usuarios cuyo NombreUsuario empiece por "G1"
 
-            // Verificar si el número de DNI asociado ya existe en la lista de clientes
+
             if (int.TryParse(dni, out dniNumero))
             {
                 if (clientes.Exists(u => u.DNI == dniNumero))
                 {
                     return "Este DNI ya existe como cliente.";
                 }
-
-            }
+            } // Verificar si el número de DNI asociado ya existe en la lista de clientes
 
             // Verificar si el número de DNI ya existe en la lista de proveedores
 

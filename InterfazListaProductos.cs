@@ -44,6 +44,8 @@ namespace Presentacion
                 var source = new BindingSource(bindingList, null);
                 Productos.DataSource = source;
                 Productos.Columns["id"].Visible = false;
+                Productos.Columns["fechaBaja"].Visible = false;
+                Productos.Columns["fechaAlta"].Visible = false;
             }
             catch (Exception ex)
             {

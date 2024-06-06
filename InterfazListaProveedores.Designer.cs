@@ -58,14 +58,14 @@
             this.Proveedores.AllowUserToDeleteRows = false;
             this.Proveedores.AllowUserToResizeColumns = false;
             this.Proveedores.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.NullValue = null;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.Proveedores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.Proveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.Proveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Proveedores.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.Proveedores.BackgroundColor = System.Drawing.Color.White;
             this.Proveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -81,16 +81,16 @@
             this.Proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Proveedores.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.Proveedores.DefaultCellStyle = dataGridViewCellStyle3;
             this.Proveedores.EnableHeadersVisualStyles = false;
             this.Proveedores.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Proveedores.Location = new System.Drawing.Point(50, 200);
+            this.Proveedores.Location = new System.Drawing.Point(47, 160);
             this.Proveedores.MultiSelect = false;
             this.Proveedores.Name = "Proveedores";
             this.Proveedores.ReadOnly = true;
@@ -106,13 +106,13 @@
             this.Proveedores.RowHeadersWidth = 15;
             this.Proveedores.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Proveedores.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.Proveedores.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Proveedores.RowTemplate.Height = 40;
             this.Proveedores.RowTemplate.ReadOnly = true;
             this.Proveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Proveedores.Size = new System.Drawing.Size(1260, 460);
+            this.Proveedores.Size = new System.Drawing.Size(1260, 496);
             this.Proveedores.TabIndex = 4;
             this.Proveedores.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Listado_RowHeaderMouseClick);
             // 
@@ -145,7 +145,7 @@
             this.BotonAltaProveedores.Name = "BotonAltaProveedores";
             this.BotonAltaProveedores.Size = new System.Drawing.Size(135, 40);
             this.BotonAltaProveedores.TabIndex = 3;
-            this.BotonAltaProveedores.Text = "+ Nuevo";
+            this.BotonAltaProveedores.Text = "Crear";
             this.BotonAltaProveedores.UseVisualStyleBackColor = true;
             this.BotonAltaProveedores.Click += new System.EventHandler(this.BotonAltaProveedores_Click);
             // 
@@ -222,7 +222,7 @@
             this.Boton_BorrarFiltro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_BorrarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_BorrarFiltro.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_BorrarFiltro.Location = new System.Drawing.Point(50, 150);
+            this.Boton_BorrarFiltro.Location = new System.Drawing.Point(35, 697);
             this.Boton_BorrarFiltro.Name = "Boton_BorrarFiltro";
             this.Boton_BorrarFiltro.Size = new System.Drawing.Size(185, 35);
             this.Boton_BorrarFiltro.TabIndex = 7;
@@ -268,9 +268,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Presentacion.Properties.Resources.Trash;
-            this.pictureBox1.Location = new System.Drawing.Point(50, 150);
+            this.pictureBox1.Location = new System.Drawing.Point(37, 700);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 35);
+            this.pictureBox1.Size = new System.Drawing.Size(29, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 49;
             this.pictureBox1.TabStop = false;

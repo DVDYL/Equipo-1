@@ -161,7 +161,6 @@ C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.Interfaz
 C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazModificarClientes.resources
 C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazModificarProductos.resources
 C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazModificarProveedores.resources
-C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazReportes.resources
 C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazVentas.resources
 C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.Ventana.resources
 C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazLogIn.resources
@@ -180,3 +179,7 @@ C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazRep
 C:\Users\Pajarito\Source\Repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazRepoVentas.resources
 C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentacion.InterfazRepoMasVendidos.resources
 C:\Users\yaly_\OneDrive\Desktop\TP CAI V2\obj\Debug\Presentacion.InterfazRepoVentas.resources
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazRepoMasVendidos.resources
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazRepoMenu.resources
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazRepoStockCritico.resources
+C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazRepoVentas.resources

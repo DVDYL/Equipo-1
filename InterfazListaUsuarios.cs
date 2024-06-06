@@ -13,13 +13,11 @@ namespace Presentacion
     {
         private UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
 
-        public InterfazListaUsuarios() // Las filas 1 y 2 están raras, las tenés que declarar sí o sí acá? Por qué? En otros formularios no fue necesario.
+        public InterfazListaUsuarios() 
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             KeyPreview = true;
-       //     dataGridView1 = new DataGridView(); // 1
-       //     dataGridView1.CellClick += Usuarios_CellClick; // 2
             Boton_Eliminar.Visible = false;
         }
 
@@ -76,28 +74,6 @@ namespace Presentacion
             Hide();
             InterfazAltaUsuarios.Show();
         } 
-
-        //private void Usuarios_CellClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    if (e.RowIndex >= 0 && e.ColumnIndex < dataGridView1.Columns.Count)
-        //    {
-        //        DataGridViewColumn column = dataGridView1.Columns[e.ColumnIndex];
-        //        if (column.Name == "Visualizar")
-        //        {
-        //            Console.WriteLine("Clic en Visualizar");
-        //            string Mode = "DSP";
-        //            MessageBox.Show("El valor de Mode es: " + Mode);
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Clic en Visualizar");
-        //        }
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("prueba");
-        //    }
-        //} // ¿Esta función no hace nada?, la eliminamos??
 
         private void Limpiar() 
         {
