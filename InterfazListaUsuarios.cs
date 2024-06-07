@@ -61,6 +61,7 @@ namespace Presentacion
                 Usuarios.DataSource = source;
                 Usuarios.Columns["Host"].HeaderText = "Rol";
                 Usuarios.Columns["id"].Visible = false;
+                Usuarios.Columns["NombreUsuario"].HeaderText = "Usuario";
             }
             catch (Exception ex)
             {

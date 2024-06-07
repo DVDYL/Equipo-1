@@ -4,10 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion
@@ -46,6 +43,7 @@ namespace Presentacion
                 Productos.Columns["id"].Visible = false;
                 Productos.Columns["fechaBaja"].Visible = false;
                 Productos.Columns["fechaAlta"].Visible = false;
+                Productos.Columns["IDCategoria"].HeaderText = "Categoría";
             }
             catch (Exception ex)
             {

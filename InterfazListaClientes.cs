@@ -48,6 +48,7 @@ namespace Presentacion
                 Clientes.Columns["Host"].Visible = false;
                 Clientes.Columns["fechaBaja"].Visible = false;
                 Clientes.Columns["fechaAlta"].Visible = false;
+                Clientes.Columns["fechaNacimiento"].HeaderText = "Nacimiento";
             }
             catch (Exception ex)
             {
