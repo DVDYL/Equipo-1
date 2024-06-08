@@ -198,10 +198,10 @@ namespace Presentacion
             Boton_Eliminar.Visible = false;
         }
 
-        private void EliminarUsuario() // EliminarUsuario(idUsuario)
+        private void EliminarUsuario(string id) // EliminarUsuario(idUsuario)
         {
             UsuarioNegocio BajaUsuario = new UsuarioNegocio();
-            //BajaUsuario.BorrarUsuario(ACÁ SE DEBERÍA ESPECIFICAR DE QUÉ CELDA SALE EL DATO DEL ID/IDUsuario);
+            BajaUsuario.BorrarUsuario(id);
             
         }
 
@@ -216,7 +216,21 @@ namespace Presentacion
                 // Obtener el valor de la celda "ID" de la fila seleccionada
                 string id = Usuarios.Rows[indiceFila].Cells["ID"].Value.ToString();
 
-                EliminarUsuario(); // EliminarUsuario(idUsuario)
+                // Mostrar un cuadro de diálogo de confirmación al usuario
+                DialogResult resultadoConfirmacion = MessageBox.Show($"¿Está seguro que desea eliminar este usuario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (resultadoConfirmacion == DialogResult.Yes)
+                {
+                    EliminarUsuario(id); // EliminarUsuario(idUsuario)
+                    // CargarUsuarios();
+                    
+                }
+                else
+                {
+                    MessageBox.Show("La eliminación del usuario ha sido cancelada.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                
             }
             else
             {
