@@ -224,6 +224,11 @@ namespace Presentacion
             }
         }
 
+        private void Listado_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Boton_Eliminar.Visible = true;
+        }
+
         private void Boton_Salir_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show("¿Desea volver al menú principal?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

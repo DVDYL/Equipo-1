@@ -158,6 +158,7 @@
             this.Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Usuarios.Size = new System.Drawing.Size(1253, 505);
             this.Usuarios.TabIndex = 0;
+            this.Usuarios.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Listado_RowHeaderMouseClick);
             // 
             // UsuariosLupa
             // 
