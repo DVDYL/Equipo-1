@@ -67,7 +67,7 @@ namespace Persistencia
             String path = "/api/Proveedor/ModificarProveedor";
             Dictionary<string, string> map = new Dictionary<string, string>();
             map.Add("id", idProveedor.ToString());
-            map.Add("idUsuario", idUsuario.ToString());
+            map.Add("idUsuario", "70b37dc1-8fde-4840-be47-9ababd0ee7e5");
             map.Add("nombre", Nombre);
             map.Add("apellido", Apellido);
             map.Add("email", email);
@@ -96,8 +96,8 @@ namespace Persistencia
 
         public void BorrarProveedor(string idProveedor) //Validar Tema de Parametro
         {
-            String path = "/api/Proveedor/BajaProveedor" + idProveedor;
-
+            String path = "/api/Proveedor/BajaProveedor"    +   idProveedor;
+            
             try
             {
                 HttpResponseMessage response = WebHelper.Delete(path);
