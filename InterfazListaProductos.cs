@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -44,6 +45,9 @@ namespace Presentacion
                 Productos.Columns["fechaBaja"].Visible = false;
                 Productos.Columns["fechaAlta"].Visible = false;
                 Productos.Columns["IDCategoria"].HeaderText = "Categoría";
+
+                // Suscribirse al evento CellFormatting
+                Productos.CellFormatting += Productos_CellFormatting;
             }
             catch (Exception ex)
             {
@@ -54,6 +58,25 @@ namespace Presentacion
         private void InterfazListaProductos_Load(object sender, EventArgs e)
         {
             CargarProductos();
+        }
+
+        private void Productos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Verificar si la celda pertenece a la columna "Stock"
+            if (Productos.Columns[e.ColumnIndex].Name == "Stock")
+            {
+                // Verificar si el valor de la celda es "0"
+                if (e.Value != null && e.Value.ToString() == "0")
+                {
+                    // Cambiar el color del texto a rojo
+                    e.CellStyle.ForeColor = Color.Red;
+                }
+                else
+                {
+                    // Restablecer el color del texto al valor predeterminado
+                    e.CellStyle.ForeColor = Productos.DefaultCellStyle.ForeColor;
+                }
+            }
         }
 
         private void Productos_CellContentClick(object sender, DataGridViewCellEventArgs e)

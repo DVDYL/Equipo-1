@@ -4,10 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion
@@ -49,6 +46,8 @@ namespace Presentacion
                 Clientes.Columns["fechaBaja"].Visible = false;
                 Clientes.Columns["fechaAlta"].Visible = false;
                 Clientes.Columns["fechaNacimiento"].HeaderText = "Nacimiento";
+                Clientes.Columns["Direccion"].HeaderText = "Dirección";
+                Clientes.Columns["Telefono"].HeaderText = "Teléfono";
             }
             catch (Exception ex)
             {

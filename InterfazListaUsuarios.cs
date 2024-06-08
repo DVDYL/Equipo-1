@@ -202,7 +202,7 @@ namespace Presentacion
         {
             UsuarioNegocio BajaUsuario = new UsuarioNegocio();
             BajaUsuario.BorrarUsuario(id);
-            
+            CargarUsuarios();
         }
 
         private void Boton_Eliminar_Click(object sender, EventArgs e)
@@ -217,7 +217,7 @@ namespace Presentacion
                 string id = Usuarios.Rows[indiceFila].Cells["ID"].Value.ToString();
 
                 // Mostrar un cuadro de diálogo de confirmación al usuario
-                DialogResult resultadoConfirmacion = MessageBox.Show($"¿Está seguro que desea eliminar este usuario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult resultadoConfirmacion = MessageBox.Show($"¿Está seguro que desea eliminar este {id}?", "Baja de Usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultadoConfirmacion == DialogResult.Yes)
                 {
@@ -228,9 +228,7 @@ namespace Presentacion
                 else
                 {
                     MessageBox.Show("La eliminación del usuario ha sido cancelada.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-                
+                }                
             }
             else
             {

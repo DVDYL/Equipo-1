@@ -59,14 +59,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Label_Descripcion = new System.Windows.Forms.Label();
-            this.ComboBox_Producto4 = new System.Windows.Forms.ComboBox();
-            this.ComboBox_Producto3 = new System.Windows.Forms.ComboBox();
-            this.ComboBox_Producto2 = new System.Windows.Forms.ComboBox();
+            this.ComboBox_Categoria4 = new System.Windows.Forms.ComboBox();
+            this.ComboBox_Categoria3 = new System.Windows.Forms.ComboBox();
+            this.ComboBox_Categoria2 = new System.Windows.Forms.ComboBox();
             this.Label_Producto4 = new System.Windows.Forms.Label();
             this.Label_Producto3 = new System.Windows.Forms.Label();
             this.Label_Producto2 = new System.Windows.Forms.Label();
             this.Label_Producto1 = new System.Windows.Forms.Label();
-            this.ComboBox_Producto1 = new System.Windows.Forms.ComboBox();
+            this.ComboBox_Categoria1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SeparatorDetalle = new System.Windows.Forms.GroupBox();
             this.SeparatorPersona = new System.Windows.Forms.GroupBox();
@@ -82,6 +82,11 @@
             this.Label_Direccion = new System.Windows.Forms.Label();
             this.Label_Nombre = new System.Windows.Forms.Label();
             this.Boton_Salir = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.ComboBox_Producto4 = new System.Windows.Forms.ComboBox();
+            this.ComboBox_Producto3 = new System.Windows.Forms.ComboBox();
+            this.ComboBox_Producto2 = new System.Windows.Forms.ComboBox();
+            this.ComboBox_Producto1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // MontoPromocion2
@@ -110,7 +115,7 @@
             this.Combobox_Producto4Cantidad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Combobox_Producto4Cantidad.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Combobox_Producto4Cantidad.FormattingEnabled = true;
-            this.Combobox_Producto4Cantidad.Location = new System.Drawing.Point(812, 495);
+            this.Combobox_Producto4Cantidad.Location = new System.Drawing.Point(819, 494);
             this.Combobox_Producto4Cantidad.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Combobox_Producto4Cantidad.Name = "Combobox_Producto4Cantidad";
             this.Combobox_Producto4Cantidad.Size = new System.Drawing.Size(70, 33);
@@ -122,7 +127,7 @@
             this.Combobox_Producto3Cantidad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Combobox_Producto3Cantidad.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Combobox_Producto3Cantidad.FormattingEnabled = true;
-            this.Combobox_Producto3Cantidad.Location = new System.Drawing.Point(812, 444);
+            this.Combobox_Producto3Cantidad.Location = new System.Drawing.Point(819, 443);
             this.Combobox_Producto3Cantidad.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Combobox_Producto3Cantidad.Name = "Combobox_Producto3Cantidad";
             this.Combobox_Producto3Cantidad.Size = new System.Drawing.Size(70, 33);
@@ -134,7 +139,7 @@
             this.Combobox_Producto2Cantidad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Combobox_Producto2Cantidad.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Combobox_Producto2Cantidad.FormattingEnabled = true;
-            this.Combobox_Producto2Cantidad.Location = new System.Drawing.Point(812, 393);
+            this.Combobox_Producto2Cantidad.Location = new System.Drawing.Point(819, 392);
             this.Combobox_Producto2Cantidad.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Combobox_Producto2Cantidad.Name = "Combobox_Producto2Cantidad";
             this.Combobox_Producto2Cantidad.Size = new System.Drawing.Size(70, 33);
@@ -146,7 +151,7 @@
             this.Combobox_Producto1Cantidad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Combobox_Producto1Cantidad.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Combobox_Producto1Cantidad.FormattingEnabled = true;
-            this.Combobox_Producto1Cantidad.Location = new System.Drawing.Point(812, 342);
+            this.Combobox_Producto1Cantidad.Location = new System.Drawing.Point(819, 341);
             this.Combobox_Producto1Cantidad.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Combobox_Producto1Cantidad.Name = "Combobox_Producto1Cantidad";
             this.Combobox_Producto1Cantidad.Size = new System.Drawing.Size(70, 33);
@@ -201,12 +206,12 @@
             // 
             this.Label_IDProducto.AutoSize = true;
             this.Label_IDProducto.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_IDProducto.Location = new System.Drawing.Point(133, 299);
+            this.Label_IDProducto.Location = new System.Drawing.Point(118, 299);
             this.Label_IDProducto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_IDProducto.Name = "Label_IDProducto";
-            this.Label_IDProducto.Size = new System.Drawing.Size(129, 28);
+            this.Label_IDProducto.Size = new System.Drawing.Size(52, 28);
             this.Label_IDProducto.TabIndex = 128;
-            this.Label_IDProducto.Text = "ID Producto";
+            this.Label_IDProducto.Text = "Cat.";
             // 
             // Boton_Limpiar
             // 
@@ -253,7 +258,7 @@
             // Producto4_MontoUnitario
             // 
             this.Producto4_MontoUnitario.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Producto4_MontoUnitario.Location = new System.Drawing.Point(936, 495);
+            this.Producto4_MontoUnitario.Location = new System.Drawing.Point(936, 494);
             this.Producto4_MontoUnitario.Name = "Producto4_MontoUnitario";
             this.Producto4_MontoUnitario.ReadOnly = true;
             this.Producto4_MontoUnitario.Size = new System.Drawing.Size(171, 32);
@@ -263,7 +268,7 @@
             // Producto4_MontoTotal
             // 
             this.Producto4_MontoTotal.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Producto4_MontoTotal.Location = new System.Drawing.Point(1138, 495);
+            this.Producto4_MontoTotal.Location = new System.Drawing.Point(1138, 494);
             this.Producto4_MontoTotal.Name = "Producto4_MontoTotal";
             this.Producto4_MontoTotal.ReadOnly = true;
             this.Producto4_MontoTotal.Size = new System.Drawing.Size(171, 32);
@@ -273,7 +278,7 @@
             // Producto4_Descripcion
             // 
             this.Producto4_Descripcion.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Producto4_Descripcion.Location = new System.Drawing.Point(309, 495);
+            this.Producto4_Descripcion.Location = new System.Drawing.Point(322, 494);
             this.Producto4_Descripcion.Name = "Producto4_Descripcion";
             this.Producto4_Descripcion.ReadOnly = true;
             this.Producto4_Descripcion.Size = new System.Drawing.Size(455, 32);
@@ -283,7 +288,7 @@
             // Producto3_MontoUnitario
             // 
             this.Producto3_MontoUnitario.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Producto3_MontoUnitario.Location = new System.Drawing.Point(936, 444);
+            this.Producto3_MontoUnitario.Location = new System.Drawing.Point(936, 443);
             this.Producto3_MontoUnitario.Name = "Producto3_MontoUnitario";
             this.Producto3_MontoUnitario.ReadOnly = true;
             this.Producto3_MontoUnitario.Size = new System.Drawing.Size(171, 32);
@@ -293,7 +298,7 @@
             // Producto3_MontoTotal
             // 
             this.Producto3_MontoTotal.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Producto3_MontoTotal.Location = new System.Drawing.Point(1138, 444);
+            this.Producto3_MontoTotal.Location = new System.Drawing.Point(1138, 443);
             this.Producto3_MontoTotal.Name = "Producto3_MontoTotal";
             this.Producto3_MontoTotal.ReadOnly = true;
             this.Producto3_MontoTotal.Size = new System.Drawing.Size(171, 32);
@@ -303,7 +308,7 @@
             // Producto3_Descripcion
             // 
             this.Producto3_Descripcion.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Producto3_Descripcion.Location = new System.Drawing.Point(309, 444);
+            this.Producto3_Descripcion.Location = new System.Drawing.Point(322, 443);
             this.Producto3_Descripcion.Name = "Producto3_Descripcion";
             this.Producto3_Descripcion.ReadOnly = true;
             this.Producto3_Descripcion.Size = new System.Drawing.Size(455, 32);
@@ -313,7 +318,7 @@
             // Producto2_MontoUnitario
             // 
             this.Producto2_MontoUnitario.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Producto2_MontoUnitario.Location = new System.Drawing.Point(936, 393);
+            this.Producto2_MontoUnitario.Location = new System.Drawing.Point(936, 392);
             this.Producto2_MontoUnitario.Name = "Producto2_MontoUnitario";
             this.Producto2_MontoUnitario.ReadOnly = true;
             this.Producto2_MontoUnitario.Size = new System.Drawing.Size(171, 32);
@@ -323,7 +328,7 @@
             // Producto2_MontoTotal
             // 
             this.Producto2_MontoTotal.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Producto2_MontoTotal.Location = new System.Drawing.Point(1138, 393);
+            this.Producto2_MontoTotal.Location = new System.Drawing.Point(1138, 392);
             this.Producto2_MontoTotal.Name = "Producto2_MontoTotal";
             this.Producto2_MontoTotal.ReadOnly = true;
             this.Producto2_MontoTotal.Size = new System.Drawing.Size(171, 32);
@@ -333,7 +338,7 @@
             // Producto2_Descripcion
             // 
             this.Producto2_Descripcion.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Producto2_Descripcion.Location = new System.Drawing.Point(309, 393);
+            this.Producto2_Descripcion.Location = new System.Drawing.Point(322, 392);
             this.Producto2_Descripcion.Name = "Producto2_Descripcion";
             this.Producto2_Descripcion.ReadOnly = true;
             this.Producto2_Descripcion.Size = new System.Drawing.Size(455, 32);
@@ -343,7 +348,7 @@
             // Producto1_MontoUnitario
             // 
             this.Producto1_MontoUnitario.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Producto1_MontoUnitario.Location = new System.Drawing.Point(936, 342);
+            this.Producto1_MontoUnitario.Location = new System.Drawing.Point(936, 341);
             this.Producto1_MontoUnitario.Name = "Producto1_MontoUnitario";
             this.Producto1_MontoUnitario.ReadOnly = true;
             this.Producto1_MontoUnitario.Size = new System.Drawing.Size(171, 32);
@@ -353,7 +358,7 @@
             // Producto1_MontoTotal
             // 
             this.Producto1_MontoTotal.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Producto1_MontoTotal.Location = new System.Drawing.Point(1138, 342);
+            this.Producto1_MontoTotal.Location = new System.Drawing.Point(1138, 341);
             this.Producto1_MontoTotal.Name = "Producto1_MontoTotal";
             this.Producto1_MontoTotal.ReadOnly = true;
             this.Producto1_MontoTotal.Size = new System.Drawing.Size(171, 32);
@@ -363,7 +368,7 @@
             // Producto1_Descripcion
             // 
             this.Producto1_Descripcion.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Producto1_Descripcion.Location = new System.Drawing.Point(309, 342);
+            this.Producto1_Descripcion.Location = new System.Drawing.Point(322, 341);
             this.Producto1_Descripcion.Name = "Producto1_Descripcion";
             this.Producto1_Descripcion.ReadOnly = true;
             this.Producto1_Descripcion.Size = new System.Drawing.Size(455, 32);
@@ -407,7 +412,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(798, 299);
+            this.label3.Location = new System.Drawing.Point(805, 299);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 28);
@@ -418,54 +423,54 @@
             // 
             this.Label_Descripcion.AutoSize = true;
             this.Label_Descripcion.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Descripcion.Location = new System.Drawing.Point(474, 299);
+            this.Label_Descripcion.Location = new System.Drawing.Point(487, 299);
             this.Label_Descripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Descripcion.Name = "Label_Descripcion";
             this.Label_Descripcion.Size = new System.Drawing.Size(125, 28);
             this.Label_Descripcion.TabIndex = 104;
             this.Label_Descripcion.Text = "Descripción";
             // 
-            // ComboBox_Producto4
+            // ComboBox_Categoria4
             // 
-            this.ComboBox_Producto4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ComboBox_Producto4.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboBox_Producto4.FormattingEnabled = true;
-            this.ComboBox_Producto4.Location = new System.Drawing.Point(130, 495);
-            this.ComboBox_Producto4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ComboBox_Producto4.Name = "ComboBox_Producto4";
-            this.ComboBox_Producto4.Size = new System.Drawing.Size(134, 33);
-            this.ComboBox_Producto4.TabIndex = 21;
-            this.ComboBox_Producto4.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Producto4_SelectedIndexChanged);
+            this.ComboBox_Categoria4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ComboBox_Categoria4.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBox_Categoria4.FormattingEnabled = true;
+            this.ComboBox_Categoria4.Location = new System.Drawing.Point(118, 494);
+            this.ComboBox_Categoria4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ComboBox_Categoria4.Name = "ComboBox_Categoria4";
+            this.ComboBox_Categoria4.Size = new System.Drawing.Size(53, 33);
+            this.ComboBox_Categoria4.TabIndex = 21;
+            this.ComboBox_Categoria4.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Categoria4_SelectedIndexChanged);
             // 
-            // ComboBox_Producto3
+            // ComboBox_Categoria3
             // 
-            this.ComboBox_Producto3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ComboBox_Producto3.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboBox_Producto3.FormattingEnabled = true;
-            this.ComboBox_Producto3.Location = new System.Drawing.Point(130, 444);
-            this.ComboBox_Producto3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ComboBox_Producto3.Name = "ComboBox_Producto3";
-            this.ComboBox_Producto3.Size = new System.Drawing.Size(134, 33);
-            this.ComboBox_Producto3.TabIndex = 16;
-            this.ComboBox_Producto3.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Producto3_SelectedIndexChanged);
+            this.ComboBox_Categoria3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ComboBox_Categoria3.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBox_Categoria3.FormattingEnabled = true;
+            this.ComboBox_Categoria3.Location = new System.Drawing.Point(118, 443);
+            this.ComboBox_Categoria3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ComboBox_Categoria3.Name = "ComboBox_Categoria3";
+            this.ComboBox_Categoria3.Size = new System.Drawing.Size(53, 33);
+            this.ComboBox_Categoria3.TabIndex = 16;
+            this.ComboBox_Categoria3.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Categoria3_SelectedIndexChanged);
             // 
-            // ComboBox_Producto2
+            // ComboBox_Categoria2
             // 
-            this.ComboBox_Producto2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ComboBox_Producto2.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboBox_Producto2.FormattingEnabled = true;
-            this.ComboBox_Producto2.Location = new System.Drawing.Point(130, 393);
-            this.ComboBox_Producto2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ComboBox_Producto2.Name = "ComboBox_Producto2";
-            this.ComboBox_Producto2.Size = new System.Drawing.Size(134, 33);
-            this.ComboBox_Producto2.TabIndex = 11;
-            this.ComboBox_Producto2.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Producto2_SelectedIndexChanged);
+            this.ComboBox_Categoria2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ComboBox_Categoria2.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBox_Categoria2.FormattingEnabled = true;
+            this.ComboBox_Categoria2.Location = new System.Drawing.Point(118, 392);
+            this.ComboBox_Categoria2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ComboBox_Categoria2.Name = "ComboBox_Categoria2";
+            this.ComboBox_Categoria2.Size = new System.Drawing.Size(53, 33);
+            this.ComboBox_Categoria2.TabIndex = 11;
+            this.ComboBox_Categoria2.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Categoria2_SelectedIndexChanged);
             // 
             // Label_Producto4
             // 
             this.Label_Producto4.AutoSize = true;
             this.Label_Producto4.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Producto4.Location = new System.Drawing.Point(56, 497);
+            this.Label_Producto4.Location = new System.Drawing.Point(56, 496);
             this.Label_Producto4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Producto4.Name = "Label_Producto4";
             this.Label_Producto4.Size = new System.Drawing.Size(25, 28);
@@ -476,7 +481,7 @@
             // 
             this.Label_Producto3.AutoSize = true;
             this.Label_Producto3.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Producto3.Location = new System.Drawing.Point(56, 446);
+            this.Label_Producto3.Location = new System.Drawing.Point(56, 445);
             this.Label_Producto3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Producto3.Name = "Label_Producto3";
             this.Label_Producto3.Size = new System.Drawing.Size(25, 28);
@@ -487,7 +492,7 @@
             // 
             this.Label_Producto2.AutoSize = true;
             this.Label_Producto2.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Producto2.Location = new System.Drawing.Point(56, 395);
+            this.Label_Producto2.Location = new System.Drawing.Point(56, 394);
             this.Label_Producto2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Producto2.Name = "Label_Producto2";
             this.Label_Producto2.Size = new System.Drawing.Size(25, 28);
@@ -498,24 +503,24 @@
             // 
             this.Label_Producto1.AutoSize = true;
             this.Label_Producto1.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Producto1.Location = new System.Drawing.Point(56, 344);
+            this.Label_Producto1.Location = new System.Drawing.Point(56, 343);
             this.Label_Producto1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Producto1.Name = "Label_Producto1";
             this.Label_Producto1.Size = new System.Drawing.Size(25, 28);
             this.Label_Producto1.TabIndex = 96;
             this.Label_Producto1.Text = "1";
             // 
-            // ComboBox_Producto1
+            // ComboBox_Categoria1
             // 
-            this.ComboBox_Producto1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ComboBox_Producto1.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboBox_Producto1.FormattingEnabled = true;
-            this.ComboBox_Producto1.Location = new System.Drawing.Point(130, 342);
-            this.ComboBox_Producto1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ComboBox_Producto1.Name = "ComboBox_Producto1";
-            this.ComboBox_Producto1.Size = new System.Drawing.Size(134, 33);
-            this.ComboBox_Producto1.TabIndex = 6;
-            this.ComboBox_Producto1.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Producto1_SelectedIndexChanged);
+            this.ComboBox_Categoria1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ComboBox_Categoria1.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBox_Categoria1.FormattingEnabled = true;
+            this.ComboBox_Categoria1.Location = new System.Drawing.Point(118, 341);
+            this.ComboBox_Categoria1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ComboBox_Categoria1.Name = "ComboBox_Categoria1";
+            this.ComboBox_Categoria1.Size = new System.Drawing.Size(53, 33);
+            this.ComboBox_Categoria1.TabIndex = 6;
+            this.ComboBox_Categoria1.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Categoria1_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -681,11 +686,75 @@
             this.Boton_Salir.UseVisualStyleBackColor = false;
             this.Boton_Salir.Click += new System.EventHandler(this.Boton_Salir_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(189, 299);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 28);
+            this.label7.TabIndex = 134;
+            this.label7.Text = "Producto";
+            // 
+            // ComboBox_Producto4
+            // 
+            this.ComboBox_Producto4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ComboBox_Producto4.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBox_Producto4.FormattingEnabled = true;
+            this.ComboBox_Producto4.Location = new System.Drawing.Point(194, 494);
+            this.ComboBox_Producto4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ComboBox_Producto4.Name = "ComboBox_Producto4";
+            this.ComboBox_Producto4.Size = new System.Drawing.Size(95, 33);
+            this.ComboBox_Producto4.TabIndex = 138;
+            this.ComboBox_Producto4.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Producto4_SelectedIndexChanged);
+            // 
+            // ComboBox_Producto3
+            // 
+            this.ComboBox_Producto3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ComboBox_Producto3.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBox_Producto3.FormattingEnabled = true;
+            this.ComboBox_Producto3.Location = new System.Drawing.Point(194, 443);
+            this.ComboBox_Producto3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ComboBox_Producto3.Name = "ComboBox_Producto3";
+            this.ComboBox_Producto3.Size = new System.Drawing.Size(95, 33);
+            this.ComboBox_Producto3.TabIndex = 137;
+            this.ComboBox_Producto3.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Producto3_SelectedIndexChanged);
+            // 
+            // ComboBox_Producto2
+            // 
+            this.ComboBox_Producto2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ComboBox_Producto2.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBox_Producto2.FormattingEnabled = true;
+            this.ComboBox_Producto2.Location = new System.Drawing.Point(194, 392);
+            this.ComboBox_Producto2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ComboBox_Producto2.Name = "ComboBox_Producto2";
+            this.ComboBox_Producto2.Size = new System.Drawing.Size(95, 33);
+            this.ComboBox_Producto2.TabIndex = 136;
+            this.ComboBox_Producto2.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Producto2_SelectedIndexChanged);
+            // 
+            // ComboBox_Producto1
+            // 
+            this.ComboBox_Producto1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ComboBox_Producto1.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBox_Producto1.FormattingEnabled = true;
+            this.ComboBox_Producto1.Location = new System.Drawing.Point(194, 341);
+            this.ComboBox_Producto1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ComboBox_Producto1.Name = "ComboBox_Producto1";
+            this.ComboBox_Producto1.Size = new System.Drawing.Size(95, 33);
+            this.ComboBox_Producto1.TabIndex = 135;
+            this.ComboBox_Producto1.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Producto1_SelectedIndexChanged);
+            // 
             // InterfazVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.ComboBox_Producto4);
+            this.Controls.Add(this.ComboBox_Producto3);
+            this.Controls.Add(this.ComboBox_Producto2);
+            this.Controls.Add(this.ComboBox_Producto1);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.MontoPromocion2);
             this.Controls.Add(this.Promocion2_text);
             this.Controls.Add(this.Combobox_Producto4Cantidad);
@@ -717,14 +786,14 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Label_Descripcion);
-            this.Controls.Add(this.ComboBox_Producto4);
-            this.Controls.Add(this.ComboBox_Producto3);
-            this.Controls.Add(this.ComboBox_Producto2);
+            this.Controls.Add(this.ComboBox_Categoria4);
+            this.Controls.Add(this.ComboBox_Categoria3);
+            this.Controls.Add(this.ComboBox_Categoria2);
             this.Controls.Add(this.Label_Producto4);
             this.Controls.Add(this.Label_Producto3);
             this.Controls.Add(this.Label_Producto2);
             this.Controls.Add(this.Label_Producto1);
-            this.Controls.Add(this.ComboBox_Producto1);
+            this.Controls.Add(this.ComboBox_Categoria1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.SeparatorDetalle);
             this.Controls.Add(this.SeparatorPersona);
@@ -766,13 +835,13 @@
         private System.Windows.Forms.Label Label_Nombre;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label Label_Producto1;
-        private System.Windows.Forms.ComboBox ComboBox_Producto1;
+        private System.Windows.Forms.ComboBox ComboBox_Categoria1;
         private System.Windows.Forms.Label Label_Producto2;
         private System.Windows.Forms.Label Label_Producto3;
         private System.Windows.Forms.Label Label_Producto4;
-        private System.Windows.Forms.ComboBox ComboBox_Producto2;
-        private System.Windows.Forms.ComboBox ComboBox_Producto3;
-        private System.Windows.Forms.ComboBox ComboBox_Producto4;
+        private System.Windows.Forms.ComboBox ComboBox_Categoria2;
+        private System.Windows.Forms.ComboBox ComboBox_Categoria3;
+        private System.Windows.Forms.ComboBox ComboBox_Categoria4;
         private System.Windows.Forms.Label Label_Descripcion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -804,5 +873,10 @@
         private System.Windows.Forms.ComboBox Combobox_Producto4Cantidad;
         private System.Windows.Forms.TextBox Promocion2_text;
         private System.Windows.Forms.TextBox MontoPromocion2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox ComboBox_Producto4;
+        private System.Windows.Forms.ComboBox ComboBox_Producto3;
+        private System.Windows.Forms.ComboBox ComboBox_Producto2;
+        private System.Windows.Forms.ComboBox ComboBox_Producto1;
     }
 }
