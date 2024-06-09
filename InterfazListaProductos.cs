@@ -219,9 +219,28 @@ namespace Presentacion
 
         private void Boton_Modificar_Click(object sender, EventArgs e)
         {
+            // Verificar si se ha seleccionado una fila en el DataGridView
+            if (Productos.SelectedRows.Count > 0)
+            {
+                // Obtener los datos de la fila seleccionada
+                DataGridViewRow filaSeleccionada = Productos.SelectedRows[0];
 
-            // Falta desarrollar cómo llamar al servicio.
-            // Pero primero falta la redirección a la ventana de modificación! Ahí va el servicio. No acá.
+                // Obtener los valores de las celdas de la fila seleccionada
+                string idProducto = filaSeleccionada.Cells["id"].Value.ToString(); // Lo voy a reutilizar para el patch y el delete
+
+                int precio = Convert.ToInt32(filaSeleccionada.Cells["Precio"].Value);
+                int stock = Convert.ToInt32(filaSeleccionada.Cells["Stock"].Value);
+
+                InterfazModificarProductos modificarProductos = new InterfazModificarProductos(idProducto);
+                modificarProductos.ActualizarTextBox(precio, stock); // Levanto los datos de la lista y me los llevo a otra ventana.
+
+                modificarProductos.Show();
+                Hide(); // ocultar la lista de productos momentáneamente.
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione una fila antes de hacer clic en Modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             // OJO ACÁ → A esta opción sólo puede entrar el host 2
         }
 

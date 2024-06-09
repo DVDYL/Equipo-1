@@ -24,7 +24,7 @@ namespace Negocio
             ProductoService.AgregarProductos(altaProducto);
         }
 
-        public void ModificarProducto(Guid idProducto, Guid idUsuario, int Precio, int Stock)
+        public void ModificarProducto(string idProducto, string idUsuario, int Precio, int Stock)
         {
             ProductoService.ModificarProducto(idProducto, idUsuario, Precio, Stock);
 

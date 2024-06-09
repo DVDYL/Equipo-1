@@ -65,7 +65,7 @@ namespace Persistencia
             }
         }
 
-        public void ModificarProducto(Guid idProducto, Guid idUsuario, int Precio, int Stock)
+        public void ModificarProducto(string idProducto, string idUsuario, int Precio, int Stock)
         {
             String path = "/api/Producto/ModificarProducto";
             Dictionary<string, string> map = new Dictionary<string, string>();

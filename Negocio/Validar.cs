@@ -447,10 +447,10 @@ namespace Negocio
             }
 
             // Verificar si el valor es mayor a 1000
-            if (stock > 1000)
-            {
-                return "El campo " + campo + " no puede ser mayor a 1000.";
-            }
+            //if (stock > 1000)
+            //{
+            //    return "El campo " + campo + " no puede ser mayor a 1000.";
+            //}
 
             // Si todas las validaciones pasan, devolver null
             return null;

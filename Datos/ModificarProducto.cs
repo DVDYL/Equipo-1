@@ -8,8 +8,8 @@ namespace Datos
 {
     public class ModificarProducto
     {
-        Guid _id;
-        Guid _idUsuario;
+        string _id;
+        string _idUsuario;
         int _precio;
         int _stock;
 
@@ -18,7 +18,7 @@ namespace Datos
             //
         }
 
-        public ModificarProducto(Guid idProducto, Guid idUsuario, int Precio, int Stock)
+        public ModificarProducto(string idProducto, string idUsuario, int Precio, int Stock)
         {
             _id = idProducto;
             _idUsuario = idUsuario;
@@ -26,9 +26,9 @@ namespace Datos
             _stock = Stock;
         }
 
-        public Guid idProducto { get => _id; set => _id = value; }
+        public string idProducto { get => _id; set => _id = value; }
 
-        public Guid idUsuario { get => _idUsuario; set => _idUsuario = value; }
+        public string idUsuario { get => _idUsuario; set => _idUsuario = value; }
 
         public int Precio { get => _precio; set => _precio= value; }
 
