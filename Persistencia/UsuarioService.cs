@@ -95,12 +95,20 @@ namespace Persistencia
             }
         }
 
-        public void BorrarUsuario(string idUsuario)
+        public void BorrarUsuario(string idUsuario) //Validar Tema de Parametro
         {
-            String path = "/api/Usuario/BajaUsuario"    +   idUsuario;
+
+            Dictionary<string, string> map = new Dictionary<string, string>();
+            map.Add("id", idUsuario.ToString());
+            map.Add("idUsuario", "70b37dc1-8fde-4840-be47-9ababd0ee7e5");
+
+            var jsonRequest = JsonConvert.SerializeObject(map);
+
+            String path = "/api/Usuario/BajaUsuario";
+
             try
             {
-                HttpResponseMessage response = WebHelper.Delete(path);
+                HttpResponseMessage response = WebHelper.DeleteWithBody(path, jsonRequest);
                 if (response.IsSuccessStatusCode)
                 {
                     var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
