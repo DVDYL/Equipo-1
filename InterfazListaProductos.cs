@@ -250,7 +250,7 @@ namespace Presentacion
                 {
                     EliminarProducto(idProducto);
                     MessageBox.Show("Se ha eliminado el Producto", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
+                    CargarProductos();
                 }
                 else
                 {
