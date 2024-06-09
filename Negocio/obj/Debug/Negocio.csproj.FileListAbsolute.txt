@@ -47,7 +47,6 @@ C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Negocio\bin\Debug\Persi
 C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Negocio\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
 C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
-C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Negocio\obj\Debug\Negocio.dll
 C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Negocio\obj\Debug\Negocio.pdb
 C:\Users\23343593309\source\repos\DVDYL\Equipo-1\Negocio\bin\Debug\Negocio.dll
@@ -63,3 +62,4 @@ C:\Users\23343593309\source\repos\DVDYL\Equipo-1\Negocio\obj\Debug\Negocio.cspro
 C:\Users\23343593309\source\repos\DVDYL\Equipo-1\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\23343593309\source\repos\DVDYL\Equipo-1\Negocio\obj\Debug\Negocio.dll
 C:\Users\23343593309\source\repos\DVDYL\Equipo-1\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\Negocio\obj\Debug\Negocio.csproj.Up2Date

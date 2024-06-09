@@ -113,7 +113,6 @@ C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.
 C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.Properties.Resources.resources
 C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentación.csproj.GenerateResource.cache
 C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentación.csproj.CoreCompileInputs.cache
-C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentación.csproj.CopyComplete
 C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.exe
 C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.pdb
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazAltaClientes.resources
@@ -183,3 +182,4 @@ C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.Interfaz
 C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazRepoMenu.resources
 C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazRepoStockCritico.resources
 C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazRepoVentas.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presenta.9A477869.Up2Date

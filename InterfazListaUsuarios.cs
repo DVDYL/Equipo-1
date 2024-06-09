@@ -217,13 +217,14 @@ namespace Presentacion
                 string id = Usuarios.Rows[indiceFila].Cells["ID"].Value.ToString();
 
                 // Mostrar un cuadro de diálogo de confirmación al usuario
-                DialogResult resultadoConfirmacion = MessageBox.Show($"¿Está seguro que desea eliminar este {id}?", "Baja de Usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult resultadoConfirmacion = MessageBox.Show($"¿Está seguro que desea eliminar este usuario?", "Baja de Usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultadoConfirmacion == DialogResult.Yes)
                 {
                     EliminarUsuario(id); // EliminarUsuario(idUsuario)
-                    // CargarUsuarios();
-                    
+                    MessageBox.Show("Se ha eliminado el Usuario", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarUsuarios();
+
                 }
                 else
                 {
