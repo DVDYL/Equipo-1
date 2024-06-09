@@ -96,13 +96,19 @@ namespace Persistencia
             }
         }
 
-        public void BorrarProducto(Guid idProducto)
+        public void BorrarProducto(string idProducto)
         {
-            String path = "/api/Producto/BajaProducto" + idProducto;
+            Dictionary<string, string> map = new Dictionary<string, string>();
+            map.Add("id", idProducto.ToString());
+            map.Add("idUsuario", "70b37dc1-8fde-4840-be47-9ababd0ee7e5");
+
+            var jsonRequest = JsonConvert.SerializeObject(map);
+
+            String path = "/api/Producto/BajaProducto";
 
             try
             {
-                HttpResponseMessage response = WebHelper.Delete(path);
+                HttpResponseMessage response = WebHelper.DeleteWithBody(path,jsonRequest);
                 if (response.IsSuccessStatusCode)
                 {
                     var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);

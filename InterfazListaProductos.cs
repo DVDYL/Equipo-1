@@ -60,6 +60,12 @@ namespace Presentacion
             CargarProductos();
         }
 
+        private void Listado_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Boton_Modificar.Visible = true;
+            Boton_Eliminar.Visible = true;
+        }
+
         private void Productos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Verificar si la celda pertenece a la columna "Stock"
@@ -213,15 +219,16 @@ namespace Presentacion
 
         private void Boton_Modificar_Click(object sender, EventArgs e)
         {
+
             // Falta desarrollar cómo llamar al servicio.
             // Pero primero falta la redirección a la ventana de modificación! Ahí va el servicio. No acá.
             // OJO ACÁ → A esta opción sólo puede entrar el host 2
         }
 
-        private void EliminarProducto() // EliminarProducto(idProducto)
+        private void EliminarProducto(string idProducto) // EliminarProducto(idProducto)
         {
-        //    ProductoNegocio BajaProproducto = new ProductoNegocio();
-            // BajaProducto.BorrarProproducto(ACÁ SE DEBERÍA ESPECIFICAR DE QUÉ CELDA SALE EL DATO DEL IDPRODUCTO);
+            ProductoNegocio BajaProducto = new ProductoNegocio();
+            BajaProducto.BorrarProducto(idProducto);
             // Usen el código con el que ya hicimos usuarios, proveedores, etc. La lógica debería ser idéntica.
         }
 
@@ -234,9 +241,23 @@ namespace Presentacion
                 int indiceFila = Productos.SelectedRows[0].Index;
 
                 // Obtener el valor de la celda "ID" de la fila seleccionada
-                string id = Productos.Rows[indiceFila].Cells["ID"].Value.ToString();
+                string idProducto = Productos.Rows[indiceFila].Cells["ID"].Value.ToString();
 
-                EliminarProducto(); // EliminarProducto(idProducto)
+                // Mostrar un cuadro de diálogo de confirmación al usuario
+                DialogResult resultadoConfirmacion = MessageBox.Show($"¿Está seguro que desea eliminar este producto?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (resultadoConfirmacion == DialogResult.Yes)
+                {
+                    EliminarProducto(idProducto);
+                    MessageBox.Show("Se ha eliminado el Producto", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                }
+                else
+                {
+                    MessageBox.Show("La eliminación del producto ha sido cancelada.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                
             }
             else
             {

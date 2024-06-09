@@ -30,7 +30,7 @@ namespace Negocio
 
         }
 
-        public void BorrarProducto(Guid idProducto)
+        public void BorrarProducto(string idProducto)
         {
             ProductoService.BorrarProducto(idProducto);
         }

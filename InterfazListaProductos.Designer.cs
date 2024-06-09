@@ -255,6 +255,8 @@
             this.Productos.Size = new System.Drawing.Size(1260, 512);
             this.Productos.TabIndex = 46;
             this.Productos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Productos_CellContentClick);
+            this.Productos.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Listado_RowHeaderMouseClick);
+
             // 
             // Boton_Eliminar
             // 
