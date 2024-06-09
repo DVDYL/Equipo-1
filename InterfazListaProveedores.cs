@@ -234,8 +234,8 @@ namespace Presentacion
                 if (resultadoConfirmacion == DialogResult.Yes)
                 {
                     EliminarProveedor(idProveedor);
-                    // CargarProveedores();
-                    // Insertar acá el código para volver a llamar a la lista de Proveedores actualizada, así evitamos que se intente modificar algo dado de baja.
+                    MessageBox.Show("Se ha eliminado el Proveedor", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarProveedores();
                 }
                 else
                 {

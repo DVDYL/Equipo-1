@@ -96,11 +96,18 @@ namespace Persistencia
 
         public void BorrarProveedor(string idProveedor) //Validar Tema de Parametro
         {
-            String path = "/api/Proveedor/BajaProveedor"    +   idProveedor;
             
+            Dictionary<string, string> map = new Dictionary<string, string>();
+            map.Add("id", idProveedor.ToString());
+            map.Add("idUsuario", "70b37dc1-8fde-4840-be47-9ababd0ee7e5");
+            
+            var jsonRequest = JsonConvert.SerializeObject(map);
+
+            String path = "/api/Proveedor/BajaProveedor";
+
             try
             {
-                HttpResponseMessage response = WebHelper.Delete(path);
+                HttpResponseMessage response = WebHelper.DeleteWithBody(path,jsonRequest);
                 if (response.IsSuccessStatusCode)
                 {
                     var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
