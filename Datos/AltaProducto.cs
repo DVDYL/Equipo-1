@@ -15,7 +15,7 @@ namespace Datos
         int _precio;
         int _stock;
 
-        public AltaProducto(int idCategoria, string idUsuario, string idProveedor, string Nombre, int Precio, int Stock)
+        public AltaProducto(int idCategoria, string idUsuario, string idProveedor, string Nombre, int Precio, int Stock) 
         {
             _idCategoria = idCategoria;
             _idUsuario = idUsuario;

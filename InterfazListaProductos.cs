@@ -33,9 +33,9 @@ namespace Presentacion
                 List<TraerProductos> Producto = ProductoNegocio.listarProductos();
                 List<TraerProveedores> Proveedor = ProveedorNegocio.listarProveedores();
 
-                if (Proveedor != null)
+                if (Producto != null)
                 {
-                    Proveedor = Proveedor.Where(u => u != null && u.Email != null && u.Email.Contains("@G1")).ToList();
+                    Producto = Producto.Where(u => u != null && u.Nombre != null && u.Nombre.Contains("G1")).ToList();
                 }
 
                 var bindingList = new BindingList<TraerProductos>(Producto);

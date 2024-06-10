@@ -456,6 +456,14 @@ namespace Negocio
             return null;
         }
 
+        public static string ValidarVacio(string valor, string campo)
+        {
+            if (string.IsNullOrEmpty(valor))
+            {
+                return "El campo " + campo + " no puede estar vacío.";
+            }
+            return null;
+        }
         public static string MailProveedor(string texto)
         {
             // Verificar si el correo está vacío

@@ -77,13 +77,13 @@ namespace Presentacion
                 return; // Sale del método sin continuar la validación
             }
 
-            // Crear un nuevo objeto AltaUsuario con los datos del formulario
+            // Crear un nuevo producto con los datos del formulario
             ProductoNegocio Producto = new ProductoNegocio();
             Producto.AgregarProductos(
                                             idCategoria,
                                             "70b37dc1-8fde-4840-be47-9ababd0ee7e5",
                                             ComboBox_Proveedor.SelectedItem.ToString(),
-                                            Box_Nombre.Text + " (G1)", // Acá va el G1 con el que se va a hacer la búsqueda
+                                            Box_Nombre.Text, // Acá va el G1 con el que se va a hacer la búsqueda
                                             int.Parse(Box_Precio.Text),
                                             int.Parse(Box_Stock.Text)
                                          ); 
@@ -114,7 +114,7 @@ namespace Presentacion
                 return ContarErrores; // Detener la ejecución y devolver el contador de errores
             }
 
-            string errorNombre = Validar.EsNombre(Box_Nombre.Text, "Nombre");
+            string errorNombre = Validar.ValidarVacio(Box_Nombre.Text, "Nombre");
             if (errorNombre != null)
             {
                 Nombre_Error.Text = errorNombre;
