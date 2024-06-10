@@ -129,7 +129,7 @@
             this.Boton_Limpiar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Limpiar.Name = "Boton_Limpiar";
             this.Boton_Limpiar.Size = new System.Drawing.Size(210, 43);
-            this.Boton_Limpiar.TabIndex = 15;
+            this.Boton_Limpiar.TabIndex = 11;
             this.Boton_Limpiar.Text = "Limpiar";
             this.Boton_Limpiar.UseVisualStyleBackColor = false;
             this.Boton_Limpiar.Click += new System.EventHandler(this.Boton_Limpiar_Click);
@@ -499,7 +499,7 @@
             this.Boton_Cancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Cancelar.Name = "Boton_Cancelar";
             this.Boton_Cancelar.Size = new System.Drawing.Size(210, 43);
-            this.Boton_Cancelar.TabIndex = 16;
+            this.Boton_Cancelar.TabIndex = 12;
             this.Boton_Cancelar.Text = "Cancelar";
             this.Boton_Cancelar.UseVisualStyleBackColor = false;
             this.Boton_Cancelar.Click += new System.EventHandler(this.Boton_Cancelar_Click);
@@ -516,7 +516,7 @@
             this.Boton_Confirmar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Confirmar.Name = "Boton_Confirmar";
             this.Boton_Confirmar.Size = new System.Drawing.Size(210, 43);
-            this.Boton_Confirmar.TabIndex = 14;
+            this.Boton_Confirmar.TabIndex = 10;
             this.Boton_Confirmar.Text = "Confirmar";
             this.Boton_Confirmar.UseVisualStyleBackColor = false;
             this.Boton_Confirmar.Click += new System.EventHandler(this.Boton_Confirmar_Click);
@@ -628,7 +628,7 @@
             this.ComboBox_Rol.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ComboBox_Rol.Name = "ComboBox_Rol";
             this.ComboBox_Rol.Size = new System.Drawing.Size(250, 33);
-            this.ComboBox_Rol.TabIndex = 12;
+            this.ComboBox_Rol.TabIndex = 9;
             // 
             // Label_Tipo_Usuario
             // 

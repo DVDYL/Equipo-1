@@ -82,7 +82,7 @@
             this.Proveedores.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
@@ -128,7 +128,7 @@
             this.Boton_Salir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Salir.Name = "Boton_Salir";
             this.Boton_Salir.Size = new System.Drawing.Size(150, 40);
-            this.Boton_Salir.TabIndex = 8;
+            this.Boton_Salir.TabIndex = 7;
             this.Boton_Salir.Text = "Salir";
             this.Boton_Salir.UseVisualStyleBackColor = false;
             this.Boton_Salir.Click += new System.EventHandler(this.Boton_Salir_Click);
@@ -225,7 +225,7 @@
             this.Boton_BorrarFiltro.Location = new System.Drawing.Point(35, 697);
             this.Boton_BorrarFiltro.Name = "Boton_BorrarFiltro";
             this.Boton_BorrarFiltro.Size = new System.Drawing.Size(185, 35);
-            this.Boton_BorrarFiltro.TabIndex = 7;
+            this.Boton_BorrarFiltro.TabIndex = 4;
             this.Boton_BorrarFiltro.Text = "Borrar Filtros";
             this.Boton_BorrarFiltro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Boton_BorrarFiltro.UseVisualStyleBackColor = true;

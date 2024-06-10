@@ -74,7 +74,7 @@
             this.Boton_Salir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Salir.Name = "Boton_Salir";
             this.Boton_Salir.Size = new System.Drawing.Size(150, 40);
-            this.Boton_Salir.TabIndex = 5;
+            this.Boton_Salir.TabIndex = 6;
             this.Boton_Salir.Text = "Salir";
             this.Boton_Salir.UseVisualStyleBackColor = false;
             this.Boton_Salir.Click += new System.EventHandler(this.Boton_Salir_Click);
@@ -126,7 +126,7 @@
             this.Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
@@ -253,7 +253,7 @@
             this.Boton_Eliminar.Location = new System.Drawing.Point(939, 696);
             this.Boton_Eliminar.Name = "Boton_Eliminar";
             this.Boton_Eliminar.Size = new System.Drawing.Size(150, 40);
-            this.Boton_Eliminar.TabIndex = 36;
+            this.Boton_Eliminar.TabIndex = 5;
             this.Boton_Eliminar.Text = "Eliminar";
             this.Boton_Eliminar.UseVisualStyleBackColor = false;
             this.Boton_Eliminar.Click += new System.EventHandler(this.Boton_Eliminar_Click);

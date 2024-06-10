@@ -43,6 +43,15 @@ namespace Presentacion
                 Proveedores.Columns["ID"].Visible = false;
                 Proveedores.Columns["fechaBaja"].Visible = false;
                 Proveedores.Columns["fechaAlta"].HeaderText = "Fecha de Alta";
+
+
+                foreach (DataGridViewRow row in Proveedores.Rows) // Reemplazar 0001-01-01T00:00:00 con la fecha de hoy
+                {
+                    if (row.Cells["fechaAlta"].Value != null && row.Cells["fechaAlta"].Value.ToString() == "0001-01-01T00:00:00")
+                    {
+                        row.Cells["fechaAlta"].Value = DateTime.Today.ToString("dd/MM/yyyy");
+                    }
+                }
             }
             catch (Exception ex)
             {

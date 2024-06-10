@@ -77,7 +77,7 @@
             this.Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -92,7 +92,7 @@
             this.Clientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -111,7 +111,7 @@
             // 
             this.DNILabel.AutoSize = true;
             this.DNILabel.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DNILabel.Location = new System.Drawing.Point(600, 80);
+            this.DNILabel.Location = new System.Drawing.Point(609, 80);
             this.DNILabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DNILabel.Name = "DNILabel";
             this.DNILabel.Size = new System.Drawing.Size(185, 32);
@@ -125,25 +125,25 @@
             this.BuscarCliente_Label.Location = new System.Drawing.Point(50, 80);
             this.BuscarCliente_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BuscarCliente_Label.Name = "BuscarCliente_Label";
-            this.BuscarCliente_Label.Size = new System.Drawing.Size(178, 32);
+            this.BuscarCliente_Label.Size = new System.Drawing.Size(233, 32);
             this.BuscarCliente_Label.TabIndex = 41;
-            this.BuscarCliente_Label.Text = "Buscar Cliente";
+            this.BuscarCliente_Label.Text = "Nombre del Cliente";
             // 
             // Box_BuscarDNI
             // 
             this.Box_BuscarDNI.BackColor = System.Drawing.Color.Gainsboro;
             this.Box_BuscarDNI.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Box_BuscarDNI.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Box_BuscarDNI.Location = new System.Drawing.Point(793, 80);
+            this.Box_BuscarDNI.Location = new System.Drawing.Point(802, 80);
             this.Box_BuscarDNI.Name = "Box_BuscarDNI";
             this.Box_BuscarDNI.Size = new System.Drawing.Size(220, 31);
-            this.Box_BuscarDNI.TabIndex = 40;
+            this.Box_BuscarDNI.TabIndex = 2;
             // 
             // LupaDNI
             // 
             this.LupaDNI.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LupaDNI.Image = global::Presentacion.Properties.Resources.Lupa2;
-            this.LupaDNI.Location = new System.Drawing.Point(1028, 80);
+            this.LupaDNI.Location = new System.Drawing.Point(1037, 80);
             this.LupaDNI.Name = "LupaDNI";
             this.LupaDNI.Size = new System.Drawing.Size(49, 34);
             this.LupaDNI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -156,16 +156,16 @@
             this.ClienteBuscador.BackColor = System.Drawing.Color.Gainsboro;
             this.ClienteBuscador.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ClienteBuscador.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClienteBuscador.Location = new System.Drawing.Point(235, 80);
+            this.ClienteBuscador.Location = new System.Drawing.Point(285, 80);
             this.ClienteBuscador.Name = "ClienteBuscador";
             this.ClienteBuscador.Size = new System.Drawing.Size(220, 31);
-            this.ClienteBuscador.TabIndex = 38;
+            this.ClienteBuscador.TabIndex = 1;
             // 
             // ClienteLupa
             // 
             this.ClienteLupa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClienteLupa.Image = global::Presentacion.Properties.Resources.Lupa2;
-            this.ClienteLupa.Location = new System.Drawing.Point(467, 80);
+            this.ClienteLupa.Location = new System.Drawing.Point(517, 80);
             this.ClienteLupa.Name = "ClienteLupa";
             this.ClienteLupa.Size = new System.Drawing.Size(49, 34);
             this.ClienteLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -185,7 +185,7 @@
             this.Boton_AltaCliente.Location = new System.Drawing.Point(1150, 75);
             this.Boton_AltaCliente.Name = "Boton_AltaCliente";
             this.Boton_AltaCliente.Size = new System.Drawing.Size(135, 40);
-            this.Boton_AltaCliente.TabIndex = 36;
+            this.Boton_AltaCliente.TabIndex = 3;
             this.Boton_AltaCliente.Text = "Crear";
             this.Boton_AltaCliente.UseVisualStyleBackColor = false;
             this.Boton_AltaCliente.Click += new System.EventHandler(this.Boton_AltaCliente_Click);
@@ -202,7 +202,7 @@
             this.Boton_Modificar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Modificar.Name = "Boton_Modificar";
             this.Boton_Modificar.Size = new System.Drawing.Size(150, 40);
-            this.Boton_Modificar.TabIndex = 45;
+            this.Boton_Modificar.TabIndex = 5;
             this.Boton_Modificar.Text = "Modificar";
             this.Boton_Modificar.UseVisualStyleBackColor = false;
             this.Boton_Modificar.Click += new System.EventHandler(this.Boton_Modificar_Click);
@@ -218,7 +218,7 @@
             this.BorrarFiltro.Location = new System.Drawing.Point(39, 695);
             this.BorrarFiltro.Name = "BorrarFiltro";
             this.BorrarFiltro.Size = new System.Drawing.Size(185, 35);
-            this.BorrarFiltro.TabIndex = 44;
+            this.BorrarFiltro.TabIndex = 4;
             this.BorrarFiltro.Text = "Borrar Filtros";
             this.BorrarFiltro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BorrarFiltro.UseVisualStyleBackColor = false;
@@ -236,7 +236,7 @@
             this.Boton_Salir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Salir.Name = "Boton_Salir";
             this.Boton_Salir.Size = new System.Drawing.Size(150, 40);
-            this.Boton_Salir.TabIndex = 43;
+            this.Boton_Salir.TabIndex = 7;
             this.Boton_Salir.Text = "Salir";
             this.Boton_Salir.UseVisualStyleBackColor = false;
             this.Boton_Salir.Click += new System.EventHandler(this.Boton_Salir_Click);
@@ -251,7 +251,7 @@
             this.Boton_Eliminar.Location = new System.Drawing.Point(979, 695);
             this.Boton_Eliminar.Name = "Boton_Eliminar";
             this.Boton_Eliminar.Size = new System.Drawing.Size(150, 40);
-            this.Boton_Eliminar.TabIndex = 46;
+            this.Boton_Eliminar.TabIndex = 6;
             this.Boton_Eliminar.Text = "Eliminar";
             this.Boton_Eliminar.UseVisualStyleBackColor = false;
             this.Boton_Eliminar.Click += new System.EventHandler(this.Boton_Eliminar_Click);
@@ -260,9 +260,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Presentacion.Properties.Resources.Trash;
-            this.pictureBox1.Location = new System.Drawing.Point(39, 695);
+            this.pictureBox1.Location = new System.Drawing.Point(43, 697);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 35);
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 47;
             this.pictureBox1.TabStop = false;

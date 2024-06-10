@@ -15,26 +15,32 @@ namespace Presentacion
     public partial class InterfazModificarProductos : Ventana
     {
         private string idProducto;
+
         public InterfazModificarProductos(string idProducto)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             KeyPreview = true;
             this.idProducto = idProducto;
+
+            // Bloquear los TextBox
+            Box_Nombre.ReadOnly = true;
+            Box_PActual.ReadOnly = true;
+            Box_SActual.ReadOnly = true;
         }
 
-        public void ActualizarTextBox(int precio, int stock)
+        public void ActualizarTextBox(int precio, int stock, string nombre)
         {
-            Box_Precio.Text = precio.ToString();
-            Box_Stock.Text = stock.ToString();
-            
+            Box_PActual.Text = precio.ToString();
+            Box_SActual.Text = stock.ToString();
+            Box_Nombre.Text = nombre.ToString();
         }
 
         private int ControlarCampos()
         {
             int ContarErrores = 0;
 
-            string errorPrecio = Validar.EsStock(Box_Precio.Text.ToString(),"Precio");
+            string errorPrecio = Validar.EsPrecio(Box_PNuevo.Text.ToString(),"Precio");
             if (errorPrecio != null)
             {
                 Precio_Error.Text = errorPrecio;
@@ -55,7 +61,7 @@ namespace Presentacion
                 return ContarErrores; // Detener la ejecución y devolver el contador de errores
             }
 
-            string errorStock = Validar.EsStock(Box_Stock.Text.ToString(), "Stock");
+            string errorStock = Validar.EsStock(Box_SNuevo.Text.ToString(), "Stock");
             if (errorStock != null)
             {
                 Stock_Error.Text = errorStock;
@@ -101,8 +107,8 @@ namespace Presentacion
             ProductoNegocio.ModificarProducto(
                                             idProducto,
                                             idUsuario,
-                                            Convert.ToInt32(Box_Precio.Text),
-                                            Convert.ToInt32(Box_Stock.Text)
+                                            Convert.ToInt32(Box_PNuevo.Text),
+                                            Convert.ToInt32(Box_SNuevo.Text)
                                          );
         }
 

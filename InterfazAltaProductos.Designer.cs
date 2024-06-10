@@ -50,6 +50,7 @@
             this.MayudaCategoria = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ComboBox_Proveedor = new System.Windows.Forms.ComboBox();
+            this.Proveedor_Error = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Boton_Cancelar
@@ -64,7 +65,7 @@
             this.Boton_Cancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Cancelar.Name = "Boton_Cancelar";
             this.Boton_Cancelar.Size = new System.Drawing.Size(153, 43);
-            this.Boton_Cancelar.TabIndex = 7;
+            this.Boton_Cancelar.TabIndex = 8;
             this.Boton_Cancelar.Text = "Cancelar";
             this.Boton_Cancelar.UseVisualStyleBackColor = false;
             this.Boton_Cancelar.Click += new System.EventHandler(this.Boton_Salir_Click);
@@ -83,7 +84,7 @@
             // Nombre_Label
             // 
             this.Nombre_Label.Font = new System.Drawing.Font("Nunito", 21.75F);
-            this.Nombre_Label.Location = new System.Drawing.Point(70, 283);
+            this.Nombre_Label.Location = new System.Drawing.Point(59, 338);
             this.Nombre_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Nombre_Label.Name = "Nombre_Label";
             this.Nombre_Label.Size = new System.Drawing.Size(136, 39);
@@ -95,15 +96,15 @@
             this.Box_Nombre.BackColor = System.Drawing.Color.Gainsboro;
             this.Box_Nombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Box_Nombre.Font = new System.Drawing.Font("Nunito", 18F);
-            this.Box_Nombre.Location = new System.Drawing.Point(431, 286);
+            this.Box_Nombre.Location = new System.Drawing.Point(455, 345);
             this.Box_Nombre.Name = "Box_Nombre";
-            this.Box_Nombre.Size = new System.Drawing.Size(250, 32);
-            this.Box_Nombre.TabIndex = 100;
+            this.Box_Nombre.Size = new System.Drawing.Size(250, 31);
+            this.Box_Nombre.TabIndex = 3;
             // 
             // Precio_Label
             // 
             this.Precio_Label.Font = new System.Drawing.Font("Nunito", 21.75F);
-            this.Precio_Label.Location = new System.Drawing.Point(70, 388);
+            this.Precio_Label.Location = new System.Drawing.Point(59, 438);
             this.Precio_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Precio_Label.Name = "Precio_Label";
             this.Precio_Label.Size = new System.Drawing.Size(136, 39);
@@ -115,15 +116,15 @@
             this.Box_Precio.BackColor = System.Drawing.Color.Gainsboro;
             this.Box_Precio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Box_Precio.Font = new System.Drawing.Font("Nunito", 18F);
-            this.Box_Precio.Location = new System.Drawing.Point(433, 393);
+            this.Box_Precio.Location = new System.Drawing.Point(455, 446);
             this.Box_Precio.Name = "Box_Precio";
-            this.Box_Precio.Size = new System.Drawing.Size(250, 32);
-            this.Box_Precio.TabIndex = 112;
+            this.Box_Precio.Size = new System.Drawing.Size(250, 31);
+            this.Box_Precio.TabIndex = 4;
             // 
             // Stock_Label
             // 
             this.Stock_Label.Font = new System.Drawing.Font("Nunito", 21.75F);
-            this.Stock_Label.Location = new System.Drawing.Point(70, 487);
+            this.Stock_Label.Location = new System.Drawing.Point(59, 551);
             this.Stock_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Stock_Label.Name = "Stock_Label";
             this.Stock_Label.Size = new System.Drawing.Size(136, 39);
@@ -135,25 +136,25 @@
             this.Box_Stock.BackColor = System.Drawing.Color.Gainsboro;
             this.Box_Stock.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Box_Stock.Font = new System.Drawing.Font("Nunito", 18F);
-            this.Box_Stock.Location = new System.Drawing.Point(431, 492);
+            this.Box_Stock.Location = new System.Drawing.Point(455, 559);
             this.Box_Stock.Name = "Box_Stock";
-            this.Box_Stock.Size = new System.Drawing.Size(251, 32);
-            this.Box_Stock.TabIndex = 114;
+            this.Box_Stock.Size = new System.Drawing.Size(251, 31);
+            this.Box_Stock.TabIndex = 5;
             // 
             // ComboBox_Categoria
             // 
             this.ComboBox_Categoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ComboBox_Categoria.Font = new System.Drawing.Font("Nunito", 14.25F);
             this.ComboBox_Categoria.FormattingEnabled = true;
-            this.ComboBox_Categoria.Location = new System.Drawing.Point(431, 171);
+            this.ComboBox_Categoria.Location = new System.Drawing.Point(455, 241);
             this.ComboBox_Categoria.Name = "ComboBox_Categoria";
             this.ComboBox_Categoria.Size = new System.Drawing.Size(250, 33);
-            this.ComboBox_Categoria.TabIndex = 115;
+            this.ComboBox_Categoria.TabIndex = 2;
             // 
             // Categoria_Label
             // 
             this.Categoria_Label.Font = new System.Drawing.Font("Nunito", 21.75F);
-            this.Categoria_Label.Location = new System.Drawing.Point(70, 171);
+            this.Categoria_Label.Location = new System.Drawing.Point(59, 235);
             this.Categoria_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Categoria_Label.Name = "Categoria_Label";
             this.Categoria_Label.Size = new System.Drawing.Size(161, 39);
@@ -172,9 +173,10 @@
             this.Boton_Limpiar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Limpiar.Name = "Boton_Limpiar";
             this.Boton_Limpiar.Size = new System.Drawing.Size(153, 43);
-            this.Boton_Limpiar.TabIndex = 116;
+            this.Boton_Limpiar.TabIndex = 7;
             this.Boton_Limpiar.Text = "Limpiar";
             this.Boton_Limpiar.UseVisualStyleBackColor = false;
+            this.Boton_Limpiar.Click += new System.EventHandler(this.Boton_Limpiar_Click);
             // 
             // Boton_Confirmar
             // 
@@ -188,7 +190,7 @@
             this.Boton_Confirmar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Confirmar.Name = "Boton_Confirmar";
             this.Boton_Confirmar.Size = new System.Drawing.Size(153, 43);
-            this.Boton_Confirmar.TabIndex = 117;
+            this.Boton_Confirmar.TabIndex = 6;
             this.Boton_Confirmar.Text = "Confirmar";
             this.Boton_Confirmar.UseVisualStyleBackColor = false;
             this.Boton_Confirmar.Click += new System.EventHandler(this.Boton_Confirmar_Click);
@@ -198,7 +200,7 @@
             this.Stock_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Stock_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Stock_Error.ForeColor = System.Drawing.Color.Red;
-            this.Stock_Error.Location = new System.Drawing.Point(431, 555);
+            this.Stock_Error.Location = new System.Drawing.Point(455, 593);
             this.Stock_Error.Multiline = true;
             this.Stock_Error.Name = "Stock_Error";
             this.Stock_Error.Size = new System.Drawing.Size(311, 20);
@@ -209,7 +211,7 @@
             this.Precio_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Precio_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Precio_Error.ForeColor = System.Drawing.Color.Red;
-            this.Precio_Error.Location = new System.Drawing.Point(433, 438);
+            this.Precio_Error.Location = new System.Drawing.Point(455, 481);
             this.Precio_Error.Multiline = true;
             this.Precio_Error.Name = "Precio_Error";
             this.Precio_Error.Size = new System.Drawing.Size(311, 20);
@@ -220,7 +222,7 @@
             this.Nombre_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Nombre_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nombre_Error.ForeColor = System.Drawing.Color.Red;
-            this.Nombre_Error.Location = new System.Drawing.Point(431, 323);
+            this.Nombre_Error.Location = new System.Drawing.Point(455, 379);
             this.Nombre_Error.Multiline = true;
             this.Nombre_Error.Name = "Nombre_Error";
             this.Nombre_Error.Size = new System.Drawing.Size(311, 20);
@@ -231,7 +233,7 @@
             this.Categoria_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Categoria_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Categoria_Error.ForeColor = System.Drawing.Color.Red;
-            this.Categoria_Error.Location = new System.Drawing.Point(431, 210);
+            this.Categoria_Error.Location = new System.Drawing.Point(455, 277);
             this.Categoria_Error.Multiline = true;
             this.Categoria_Error.Name = "Categoria_Error";
             this.Categoria_Error.Size = new System.Drawing.Size(311, 20);
@@ -242,7 +244,7 @@
             this.MayudaStock.AutoSize = true;
             this.MayudaStock.BackColor = System.Drawing.Color.LightGray;
             this.MayudaStock.Font = new System.Drawing.Font("Nunito", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MayudaStock.Location = new System.Drawing.Point(717, 503);
+            this.MayudaStock.Location = new System.Drawing.Point(711, 570);
             this.MayudaStock.Name = "MayudaStock";
             this.MayudaStock.Size = new System.Drawing.Size(15, 17);
             this.MayudaStock.TabIndex = 121;
@@ -254,7 +256,7 @@
             this.MayudaPrecio.AutoSize = true;
             this.MayudaPrecio.BackColor = System.Drawing.Color.LightGray;
             this.MayudaPrecio.Font = new System.Drawing.Font("Nunito", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MayudaPrecio.Location = new System.Drawing.Point(717, 404);
+            this.MayudaPrecio.Location = new System.Drawing.Point(711, 457);
             this.MayudaPrecio.Name = "MayudaPrecio";
             this.MayudaPrecio.Size = new System.Drawing.Size(15, 17);
             this.MayudaPrecio.TabIndex = 120;
@@ -266,7 +268,7 @@
             this.MayudaNombre.AutoSize = true;
             this.MayudaNombre.BackColor = System.Drawing.Color.LightGray;
             this.MayudaNombre.Font = new System.Drawing.Font("Nunito", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MayudaNombre.Location = new System.Drawing.Point(717, 295);
+            this.MayudaNombre.Location = new System.Drawing.Point(711, 356);
             this.MayudaNombre.Name = "MayudaNombre";
             this.MayudaNombre.Size = new System.Drawing.Size(15, 17);
             this.MayudaNombre.TabIndex = 119;
@@ -278,7 +280,7 @@
             this.MayudaCategoria.AutoSize = true;
             this.MayudaCategoria.BackColor = System.Drawing.Color.LightGray;
             this.MayudaCategoria.Font = new System.Drawing.Font("Nunito", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MayudaCategoria.Location = new System.Drawing.Point(717, 180);
+            this.MayudaCategoria.Location = new System.Drawing.Point(711, 249);
             this.MayudaCategoria.Name = "MayudaCategoria";
             this.MayudaCategoria.Size = new System.Drawing.Size(15, 17);
             this.MayudaCategoria.TabIndex = 118;
@@ -288,7 +290,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Nunito", 21.75F);
-            this.label1.Location = new System.Drawing.Point(70, 580);
+            this.label1.Location = new System.Drawing.Point(59, 146);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 39);
@@ -297,18 +299,30 @@
             // 
             // ComboBox_Proveedor
             // 
+            this.ComboBox_Proveedor.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBox_Proveedor.FormattingEnabled = true;
-            this.ComboBox_Proveedor.Location = new System.Drawing.Point(431, 575);
+            this.ComboBox_Proveedor.Location = new System.Drawing.Point(455, 149);
             this.ComboBox_Proveedor.Name = "ComboBox_Proveedor";
-            this.ComboBox_Proveedor.Size = new System.Drawing.Size(250, 44);
-            this.ComboBox_Proveedor.TabIndex = 127;
-        //    this.ComboBox_Proveedor.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.ComboBox_Proveedor.Size = new System.Drawing.Size(250, 33);
+            this.ComboBox_Proveedor.TabIndex = 1;
+            // 
+            // Proveedor_Error
+            // 
+            this.Proveedor_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Proveedor_Error.Font = new System.Drawing.Font("Nunito", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Proveedor_Error.ForeColor = System.Drawing.Color.Red;
+            this.Proveedor_Error.Location = new System.Drawing.Point(455, 188);
+            this.Proveedor_Error.Multiline = true;
+            this.Proveedor_Error.Name = "Proveedor_Error";
+            this.Proveedor_Error.Size = new System.Drawing.Size(311, 20);
+            this.Proveedor_Error.TabIndex = 128;
             // 
             // InterfazAltaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 768);
+            this.Controls.Add(this.Proveedor_Error);
             this.Controls.Add(this.ComboBox_Proveedor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Stock_Error);
@@ -363,5 +377,6 @@
         private System.Windows.Forms.Label MayudaCategoria;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox ComboBox_Proveedor;
+        private System.Windows.Forms.TextBox Proveedor_Error;
     }
 }

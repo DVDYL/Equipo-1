@@ -7,6 +7,7 @@ namespace Presentacion
     public partial class InterfazModificarProveedores : Ventana
     {
         private string idProveedor;
+        private string originalCUIT;
 
         public InterfazModificarProveedores(string idProveedor)
         {
@@ -14,6 +15,13 @@ namespace Presentacion
             StartPosition = FormStartPosition.CenterScreen;
             KeyPreview = true; 
             this.idProveedor = idProveedor;
+            this.Load += new EventHandler(InterfazModificarProveedores_Load); // Agregar manejador del evento Load
+        }
+
+        private void InterfazModificarProveedores_Load(object sender, EventArgs e)
+        {
+            // Almacenar el valor original del CUIT_Box una vez que el formulario se ha cargado
+            originalCUIT = CUIT_Box.Text;
         }
 
         public void ActualizarTextBox(string nombre, string apellido, string mail, string CUIT)
@@ -116,26 +124,29 @@ namespace Presentacion
                 return ContarErrores; // Detener la ejecución y devolver el contador de errores
             }
 
-            string errorCUIT = Validar.EsCUIT(CUIT_Box.Text);
-            if (errorCUIT != null)
+            if (CUIT_Box.Text != originalCUIT) // Validar CUIT solo si su contenido ha cambiado
             {
-                // Completar el contenido del TextBox DNI_Error con el error
-                CUIT_Error.Text = errorCUIT;
-                CUIT_Error.Visible = true;
+                string errorCUIT = Validar.EsCUIT(CUIT_Box.Text);
+                if (errorCUIT != null)
+                {
+                    // Completar el contenido del TextBox DNI_Error con el error
+                    CUIT_Error.Text = errorCUIT;
+                    CUIT_Error.Visible = true;
 
-                MessageBox.Show(errorCUIT, "Verificar CUIT", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                MayudaCUIT.Visible = true;
-                ContarErrores++;
-            }
-            else
-            {
-                CUIT_Error.Visible = false;
-                MayudaCUIT.Visible = true;
-            }
+                    MessageBox.Show(errorCUIT, "Verificar CUIT", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MayudaCUIT.Visible = true;
+                    ContarErrores++;
+                }
+                else
+                {
+                    CUIT_Error.Visible = false;
+                    MayudaCUIT.Visible = true;
+                }
 
-            if (ContarErrores >= 1)
-            {
-                return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                if (ContarErrores >= 1)
+                {
+                    return ContarErrores; // Detener la ejecución y devolver el contador de errores
+                }
             }
 
             return ContarErrores; // Devolver true si no hay errores, false si hay errores

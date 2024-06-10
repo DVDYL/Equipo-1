@@ -119,7 +119,6 @@ C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazAltaClientes
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazListaProductos.resources
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazModificarProductos.resources
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazModificarProveedores.resources
-C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazReportes.resources
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazVentas.resources
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazAltaProductos.resources
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazAltaProveedores.resources
@@ -183,3 +182,6 @@ C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.Interfaz
 C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazRepoStockCritico.resources
 C:\Users\23343593309\source\repos\DVDYL\Equipo-1\obj\Debug\Presentacion.InterfazRepoVentas.resources
 C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presenta.9A477869.Up2Date
+C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazRepoMasVendidos.resources
+C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazRepoStockCritico.resources
+C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazRepoVentas.resources

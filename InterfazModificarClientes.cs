@@ -28,7 +28,7 @@ namespace Presentacion
             int ContarErrores = 0; // Contador de errores
             string correoOriginal = Box_Mail.Text; // Almaceno el correo para ver si cuando se cambia, el nuevo ya existe.
 
-            string errorCalle = Validar.EsDepartamento(Box_Direccion.Text);
+            string errorCalle = Validar.EsDireccion(Box_Direccion.Text);
             if (errorCalle != null)
             {
                 Calle_Error.Text = errorCalle;

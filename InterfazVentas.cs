@@ -27,8 +27,15 @@ namespace Presentacion
             StartPosition = FormStartPosition.CenterScreen; // Establecer la posición de inicio en el centro de la pantalla
             KeyPreview = true; // Permitir que el formulario capture los eventos de teclado
 
-            // Configurar todos los comboboxes:
+            Calendario_Operacion.Value = DateTime.Now; // Establecer la fecha por defecto del calendario a hoy
+            Calendario_Operacion.Enabled = false; // Deshabilitar la edición del DateTimePicker
 
+            SetBoxes();
+            CargarClientes(); // Acá tengo que traerme la lista de nombres de los clientes.
+        }
+
+        private void SetBoxes()
+        {
             ComboBox_Clientes.DropDownStyle = ComboBoxStyle.DropDownList; // Configurar el estilo para que el usuario no pueda escribir
             ComboBox_Clientes.SelectedIndex = -1; // Establecer el elemento vacío como seleccionado por defecto
             ComboBox_Categoria1.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -56,18 +63,6 @@ namespace Presentacion
             Combobox_Producto4Cantidad.DropDownStyle = ComboBoxStyle.DropDownList;
             Combobox_Producto4Cantidad.SelectedIndex = -1;
 
-            // Establecer la fecha por defecto del calendario a hoy
-            Calendario_Operacion.Value = DateTime.Now;
-
-            // Deshabilitar la edición del DateTimePicker
-            Calendario_Operacion.Enabled = false;
-
-            // Ocultar las promociones por defecto
-            Promocion_text.Visible = false;
-            MontoPromocion1.Visible = false;
-            Promocion2_text.Visible = false;
-            MontoPromocion2.Visible = false;
-
             // Asociar el evento SelectedIndexChanged al ComboBox_Clientes
             ComboBox_Clientes.SelectedIndexChanged += ComboBox_Clientes_SelectedIndexChanged;
 
@@ -80,9 +75,11 @@ namespace Presentacion
                 ComboBox_Categoria4.Items.Add(i);
             }
 
-            // Cargar la lista de clientes y productos en los comboboxes:
-
-            CargarClientes(); // Acá tengo que traerme la lista de nombres de los clientes.
+            // Ocultar las promociones por defecto
+            Promocion_text.Visible = false; 
+            MontoPromocion1.Visible = false;
+            Promocion2_text.Visible = false;
+            MontoPromocion2.Visible = false;
         }
 
         private void CargarClientes()
@@ -235,7 +232,7 @@ namespace Presentacion
                 // Verificar si ComboBox_Clientes no está vacío
                 if (!string.IsNullOrEmpty(ComboBox_Clientes.Text))
                 {
-                    // Limpiar los campos relacionados con el Producto1 si el ComboBox_Producto1 ya ha cambiado antes
+                    // Limpiar los campos relacionados con el Producto2 si el ComboBox_Producto2 ya ha cambiado antes
                     if (ComboBox_Producto2.SelectedIndex != -1)
                     {
                         ComboBox_Producto2.SelectedIndex = -1;
@@ -247,7 +244,7 @@ namespace Presentacion
                     }
 
                     int categoriaSeleccionada = (int)comboBox.SelectedItem;
-                    CargarProductos(ComboBox_Producto1, categoriaSeleccionada);
+                    CargarProductos(ComboBox_Producto2, categoriaSeleccionada);
                 }
                 else
                 {
@@ -276,7 +273,7 @@ namespace Presentacion
                     }
 
                     int categoriaSeleccionada = (int)comboBox.SelectedItem;
-                    CargarProductos(ComboBox_Producto1, categoriaSeleccionada);
+                    CargarProductos(ComboBox_Producto3, categoriaSeleccionada);
                 }
                 else
                 {
@@ -305,7 +302,7 @@ namespace Presentacion
                     }
 
                     int categoriaSeleccionada = (int)comboBox.SelectedItem;
-                    CargarProductos(ComboBox_Producto1, categoriaSeleccionada);
+                    CargarProductos(ComboBox_Producto4, categoriaSeleccionada);
                 }
                 else
                 {
@@ -615,20 +612,20 @@ namespace Presentacion
             }
         }
 
-        public void CalcularMontoTotal1()
+        public void CalcularMontoTotal(ComboBox comboBoxCategoria, ComboBox comboBoxProductoCantidad, TextBox textBoxMontoUnitario, TextBox textBoxMontoTotal)
         {
-            // Verificar si ComboBox_Producto1 y ComboBox_Producto1Cantidad no están vacíos
-            if (ComboBox_Categoria1.SelectedItem != null && ComboBox_Producto1.SelectedItem != null)
+            // Verificar si comboBoxCategoria y comboBoxProductoCantidad no están vacíos
+            if (comboBoxCategoria.SelectedItem != null && comboBoxProductoCantidad.SelectedItem != null)
             {
                 // Obtener la cantidad seleccionada como un entero
-                if (int.TryParse(Combobox_Producto1Cantidad.SelectedItem.ToString(), out int cantidad) &&
-                    int.TryParse(Producto1_MontoUnitario.Text, out int precioUnitario))
+                if (int.TryParse(comboBoxProductoCantidad.SelectedItem.ToString(), out int cantidad) &&
+                    int.TryParse(textBoxMontoUnitario.Text, out int precioUnitario))
                 {
                     // Calcular el monto total
                     int montoTotal = cantidad * precioUnitario;
 
-                    // Mostrar el monto total en el TextBox Producto1_MontoTotal
-                    Producto1_MontoTotal.Text = montoTotal.ToString();
+                    // Mostrar el monto total en el textBoxMontoTotal
+                    textBoxMontoTotal.Text = montoTotal.ToString();
                     CalcularMontoFinal();
                 }
                 else
@@ -642,85 +639,24 @@ namespace Presentacion
             }
         }
 
+        public void CalcularMontoTotal1()
+        {
+            CalcularMontoTotal(ComboBox_Categoria1, Combobox_Producto1Cantidad, Producto1_MontoUnitario, Producto1_MontoTotal);
+        }
+
         public void CalcularMontoTotal2()
         {
-            // Verificar si ComboBox_Producto2 y ComboBox_Producto2Cantidad no están vacíos
-            if (ComboBox_Categoria2.SelectedItem != null && Combobox_Producto2Cantidad.SelectedItem != null)
-            {
-                // Obtener la cantidad seleccionada como un entero
-                if (int.TryParse(Combobox_Producto2Cantidad.SelectedItem.ToString(), out int cantidad) &&
-                    int.TryParse(Producto2_MontoUnitario.Text, out int precioUnitario))
-                {
-                    // Calcular el monto total
-                    int montoTotal = cantidad * precioUnitario;
-
-                    // Mostrar el monto total en el TextBox Producto2_MontoTotal
-                    Producto2_MontoTotal.Text = montoTotal.ToString();
-                    CalcularMontoFinal();
-                }
-                else
-                {
-                    MessageBox.Show("Error de formato al convertir los datos. Asegúrese de que la cantidad y el precio unitario sean números enteros válidos.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Debe seleccionar un producto y especificar una cantidad.");
-            }
+            CalcularMontoTotal(ComboBox_Categoria2, Combobox_Producto2Cantidad, Producto2_MontoUnitario, Producto2_MontoTotal);
         }
 
         public void CalcularMontoTotal3()
         {
-            // Verificar si ComboBox_Producto3 y ComboBox_Producto3Cantidad no están vacíos
-            if (ComboBox_Categoria3.SelectedItem != null && Combobox_Producto3Cantidad.SelectedItem != null)
-            {
-                // Obtener la cantidad seleccionada como un entero
-                if (int.TryParse(Combobox_Producto3Cantidad.SelectedItem.ToString(), out int cantidad) &&
-                    int.TryParse(Producto3_MontoUnitario.Text, out int precioUnitario))
-                {
-                    // Calcular el monto total
-                    int montoTotal = cantidad * precioUnitario;
-
-                    // Mostrar el monto total en el TextBox Producto3_MontoTotal
-                    Producto3_MontoTotal.Text = montoTotal.ToString();
-                    CalcularMontoFinal();
-                }
-                else
-                {
-                    MessageBox.Show("Error de formato al convertir los datos. Asegúrese de que la cantidad y el precio unitario sean números enteros válidos.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Debe seleccionar un producto y especificar una cantidad.");
-            }
+            CalcularMontoTotal(ComboBox_Categoria3, Combobox_Producto3Cantidad, Producto3_MontoUnitario, Producto3_MontoTotal);
         }
 
         public void CalcularMontoTotal4()
         {
-            // Verificar si ComboBox_Producto4 y ComboBox_Producto4Cantidad no están vacíos
-            if (ComboBox_Categoria4.SelectedItem != null && Combobox_Producto4Cantidad.SelectedItem != null)
-            {
-                // Obtener la cantidad seleccionada como un entero
-                if (int.TryParse(Combobox_Producto4Cantidad.SelectedItem.ToString(), out int cantidad) &&
-                    int.TryParse(Producto4_MontoUnitario.Text, out int precioUnitario))
-                {
-                    // Calcular el monto total
-                    int montoTotal = cantidad * precioUnitario;
-
-                    // Mostrar el monto total en el TextBox Producto4_MontoTotal
-                    Producto4_MontoTotal.Text = montoTotal.ToString();
-                    CalcularMontoFinal();
-                }
-                else
-                {
-                    MessageBox.Show("Error de formato al convertir los datos. Asegúrese de que la cantidad y el precio unitario sean números enteros válidos.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Debe seleccionar un producto y especificar una cantidad.");
-            }
+            CalcularMontoTotal(ComboBox_Categoria4, Combobox_Producto4Cantidad, Producto4_MontoUnitario, Producto4_MontoTotal);
         }
 
         public void CalcularMontoFinal()
@@ -825,7 +761,7 @@ namespace Presentacion
             }
 
             return descuento;
-        } // Este descuento, por qué no está dentro del cálculo del monto final como el otro??
+        }
 
         private void CrearVenta()
         {
@@ -921,7 +857,7 @@ namespace Presentacion
             }
         }
 
-        private void Ventana_KeyDown(object sender, KeyEventArgs e) // Manejo para el evento de apretar ESC en una ventana 
+        private void Ventana_KeyDown(object sender, KeyEventArgs e) 
         {
             if (e.KeyCode == Keys.Escape)
             {

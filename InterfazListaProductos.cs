@@ -14,6 +14,7 @@ namespace Presentacion
     {
         private ProductoNegocio ProductoNegocio = new ProductoNegocio();
         private ProveedorNegocio ProveedorNegocio = new ProveedorNegocio();
+        private List<TraerProductos> productosCompleta; // Lista completa de productos
 
         // Acá falta encapsular el host del usuario para que se puedan usar determinadas opciones.
 
@@ -24,35 +25,52 @@ namespace Presentacion
             KeyPreview = true;
             Boton_Modificar.Visible = false;
             Boton_Eliminar.Visible = false;
+
+            // Preparar ComboBox_Categoria
+            ComboBox_Categoria.DropDownStyle = ComboBoxStyle.DropDownList;
+            ComboBox_Categoria.Items.Add("Todas");
+            for (int i = 1; i <= 5; i++)
+            {
+                ComboBox_Categoria.Items.Add(i.ToString());
+            }
+            ComboBox_Categoria.SelectedIndex = 0; // Establecer "Todas" como selección predeterminada
+            ComboBox_Categoria.SelectedIndexChanged += ComboBox_Categoria_SelectedIndexChanged;  // Suscribir al evento SelectedIndexChanged
+
+            CargarProductos();
         }
 
         private void CargarProductos()
         {
             try
             {
-                List<TraerProductos> Producto = ProductoNegocio.listarProductos();
+                productosCompleta = ProductoNegocio.listarProductos(); // Cargar la lista completa de productos
                 List<TraerProveedores> Proveedor = ProveedorNegocio.listarProveedores();
 
-                if (Producto != null)
+                if (productosCompleta != null)
                 {
-                    Producto = Producto.Where(u => u != null && u.Nombre != null && u.Nombre.Contains("G1")).ToList();
+                    productosCompleta = productosCompleta.Where(u => u != null && u.Nombre != null && u.Nombre.Contains("G1")).ToList();
                 }
 
-                var bindingList = new BindingList<TraerProductos>(Producto);
-                var source = new BindingSource(bindingList, null);
-                Productos.DataSource = source;
-                Productos.Columns["id"].Visible = false;
-                Productos.Columns["fechaBaja"].Visible = false;
-                Productos.Columns["fechaAlta"].Visible = false;
-                Productos.Columns["IDCategoria"].HeaderText = "Categoría";
+                // Mostrar todos los productos al cargar inicialmente
+                ActualizarDataGridView(productosCompleta);
 
-                // Suscribirse al evento CellFormatting
-                Productos.CellFormatting += Productos_CellFormatting;
+                Productos.CellFormatting += Productos_CellFormatting; // Suscribirse al evento CellFormatting
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar los Productos: " + ex.Message);
             }
+        }
+
+        private void ActualizarDataGridView(List<TraerProductos> productos)
+        {
+            var bindingList = new BindingList<TraerProductos>(productos ?? new List<TraerProductos>());
+            var source = new BindingSource(bindingList, null);
+            Productos.DataSource = source;
+            Productos.Columns["id"].Visible = false;
+            Productos.Columns["fechaBaja"].Visible = false;
+            Productos.Columns["fechaAlta"].Visible = false;
+            Productos.Columns["IDCategoria"].HeaderText = "Categoría";
         }
 
         private void InterfazListaProductos_Load(object sender, EventArgs e)
@@ -143,55 +161,33 @@ namespace Presentacion
             }
         }
 
-        private void DescripcionLupa_Click(object sender, EventArgs e)
+        private void ComboBox_Categoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string textoBusqueda = ProductoBuscador.Text;
+            string textoCategoria = ComboBox_Categoria.SelectedItem.ToString();
 
-            if (string.IsNullOrEmpty(textoBusqueda))
+            if (textoCategoria == "Todas")
             {
-                CargarProductos();
-                Boton_Modificar.Visible = false;
-                Boton_Eliminar.Visible = false;
-            }
-
-            if (Productos.DataSource == null || Productos.Rows.Count == 0) // Verificar si la lista de Productos es nula o está vacía
-            {
-                MessageBox.Show("La lista de productos se encuentra vacía.\n\nNo hay productos para buscar.");
+                ActualizarDataGridView(productosCompleta);
                 Boton_Modificar.Visible = false;
                 Boton_Eliminar.Visible = false;
             }
             else
             {
-                // Lista para almacenar los Productos que coinciden con la búsqueda
-                List<TraerProductos> ProductosFiltrados = new List<TraerProductos>();
+                // Filtrar la lista completa de productos por la categoría seleccionada
+                List<TraerProductos> ProductosFiltrados = productosCompleta
+                    .Where(p => p.IDCategoria.ToString() == textoCategoria)
+                    .ToList();
 
-                // Recorrer cada fila en el DataGridView Productos
-                foreach (DataGridViewRow fila in Productos.Rows)
-                {
-                    // Obtener el valor de la celda que contiene el nombre del Producto
-                    string nombreProducto = fila.Cells["idCategoria"].Value?.ToString();
-
-                    // Comparar si el texto de búsqueda coincide con el nombre del Producto actual
-                    if (!string.IsNullOrEmpty(nombreProducto) && nombreProducto.ToLower().Contains(textoBusqueda.ToLower()))
-                    {
-                        // Agregar el Producto a la lista de Productos filtrados
-                        ProductosFiltrados.Add((TraerProductos)fila.DataBoundItem);
-                    }
-                }
-
-                // Verificar si se encontraron Productos que coinciden con la búsqueda
                 if (ProductosFiltrados.Count > 0)
                 {
-                    // Actualizar el DataSource del DataGridView con los Productos filtrados
-                    var bindingList = new BindingList<TraerProductos>(ProductosFiltrados);
-                    var source = new BindingSource(bindingList, null);
-                    Productos.DataSource = source;
+                    ActualizarDataGridView(ProductosFiltrados);
                     Boton_Modificar.Visible = true;
                     Boton_Eliminar.Visible = true;
                 }
                 else
                 {
-                    MessageBox.Show("No se encontraron productos que coincidan con la búsqueda.");
+                    MessageBox.Show("No se encontraron productos para la categoría seleccionada.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Limpiar();
                 }
             }
         }
@@ -212,7 +208,7 @@ namespace Presentacion
         private void Limpiar() 
         {
             ProductoBuscador.Text = "";
-            DescripcionBuscador.Text = "";
+            ComboBox_Categoria.SelectedIndex = 0;
             Boton_Modificar.Visible = false;
             Boton_Eliminar.Visible = false;
         }
@@ -230,9 +226,10 @@ namespace Presentacion
 
                 int precio = Convert.ToInt32(filaSeleccionada.Cells["Precio"].Value);
                 int stock = Convert.ToInt32(filaSeleccionada.Cells["Stock"].Value);
+                string nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
 
                 InterfazModificarProductos modificarProductos = new InterfazModificarProductos(idProducto);
-                modificarProductos.ActualizarTextBox(precio, stock); // Levanto los datos de la lista y me los llevo a otra ventana.
+                modificarProductos.ActualizarTextBox(precio, stock, nombre); // Levanto los datos de la lista y me los llevo a otra ventana.
 
                 modificarProductos.Show();
                 Hide(); // ocultar la lista de productos momentáneamente.

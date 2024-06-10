@@ -19,7 +19,7 @@ namespace Presentacion
         public InterfazAltaProductos()
         {
             InitializeComponent();
-            StartPosition = FormStartPosition.CenterScreen; 
+            StartPosition = FormStartPosition.CenterScreen;
             KeyPreview = true;
 
             // Configurar el combobox para la categoría de producto
@@ -29,6 +29,7 @@ namespace Presentacion
             ComboBox_Categoria.Items.Add("ElectroHogar");
             ComboBox_Categoria.Items.Add("Informática");
             ComboBox_Categoria.Items.Add("Smart TV");
+            ComboBox_Categoria.SelectedIndex = -1; // Establecer el combobox de categoría vacío por defecto
 
             List<TraerProveedores> Proveedor = ProveedorNegocio.listarProveedores();
 
@@ -38,9 +39,12 @@ namespace Presentacion
             }
 
             ComboBox_Proveedor.DataSource = Proveedor;
-            ComboBox_Proveedor.DisplayMember = "nombre"; //+"apellido"
+            ComboBox_Proveedor.DisplayMember = "nombre";
             ComboBox_Proveedor.ValueMember = "id";
+            ComboBox_Proveedor.DropDownStyle = ComboBoxStyle.DropDownList;
+            ComboBox_Proveedor.SelectedIndex = -1; // Establecer el combobox de proveedor vacío por defecto
         }
+
         private int SeleccionarCategoría()
         {
             int idCategoria;
@@ -101,12 +105,20 @@ namespace Presentacion
         {
             int ContarErrores = 0; // Contador de errores
 
+            if (ComboBox_Proveedor.SelectedIndex == -1)
+            {
+                Proveedor_Error.Visible = true;
+                MessageBox.Show("No se seleccionó un proveedor.\n\nPor favor, seleccione proveedor y vuelva a intentarlo.", "Revisar el Proveedor", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ComboBox_Proveedor.Focus();
+                ContarErrores++;
+            }
+
             if (ComboBox_Categoria.SelectedIndex == -1)
             {
                 Categoria_Error.Visible = true;
 
                 // Mostrar mensaje de advertencia cuando el tipo de categoría está en blanco
-                MessageBox.Show("No se seleccionó ningún tipo de Categoria.\n\nPor favor, seleccione un tipo de Categoria y vuelva a intentarlo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No se seleccionó ningún tipo de Categoria.\n\nPor favor, seleccione un tipo de Categoria y vuelva a intentarlo.", "Revisar la Categoría", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ComboBox_Categoria.Focus();
                 MayudaCategoria.Visible = true;
                 ContarErrores++;
@@ -127,7 +139,7 @@ namespace Presentacion
             {
                 Nombre_Error.Text = errorNombre;
                 Nombre_Error.Visible = true;
-                MessageBox.Show(errorNombre, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorNombre, "Revisar el Nombre", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 MayudaNombre.Visible = true;
                 ContarErrores++;
             }
@@ -142,12 +154,12 @@ namespace Presentacion
                 return ContarErrores; 
             }
 
-            string errorPrecio = Validar.EsNumero(Box_Precio.Text, "Precio");
+            string errorPrecio = Validar.EsPrecio(Box_Precio.Text, "Precio");
             if (errorPrecio != null)
             {
                 Precio_Error.Text = errorPrecio;
                 Precio_Error.Visible = true;
-                MessageBox.Show(errorPrecio, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorPrecio, "Revisar el Precio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ContarErrores++;
             }
             else
@@ -165,7 +177,7 @@ namespace Presentacion
             {
                 Stock_Error.Text = errorStock;
                 Stock_Error.Visible = true;
-                MessageBox.Show(errorNombre, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorStock, "Revisar el Stock", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ContarErrores++;
             }
             else
@@ -213,6 +225,7 @@ namespace Presentacion
         private void Limpiar()
         {
             ComboBox_Categoria.SelectedIndex = -1;
+            ComboBox_Proveedor.SelectedIndex = -1;
             Box_Nombre.Text = "";
             Box_Precio.Text = "";
             Box_Stock.Text = "";
@@ -226,6 +239,16 @@ namespace Presentacion
             MayudaNombre.Visible = false;
             MayudaPrecio.Visible = false;
             MayudaStock.Visible = false;
+        }
+
+        private void Boton_Limpiar_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("¿Desea borrar todos los campos?\n\nSe perderán todos los cambios.","Confirmar Limpieza",MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                Limpiar();
+            }
         }
 
         private void Boton_Salir_Click(object sender, EventArgs e)
@@ -255,6 +278,5 @@ namespace Presentacion
                 // Si el usuario elige "No", no hacer nada
             }
         }
-
     }
 }

@@ -91,7 +91,6 @@ namespace Presentacion
             {
                 CargarUsuarios();
                 Limpiar();
-                Boton_Eliminar.Visible = false;
             }
 
             // Verificar si la lista de usuarios es nula o está vacía
@@ -145,7 +144,6 @@ namespace Presentacion
             {
                 CargarUsuarios();
                 Limpiar();
-                Boton_Eliminar.Visible = false;
             }
 
             // Verificar si la lista de usuarios es nula o está vacía
@@ -195,7 +193,6 @@ namespace Presentacion
         {
             CargarUsuarios();
             Limpiar();
-            Boton_Eliminar.Visible = false;
         }
 
         private void EliminarUsuario(string id) // EliminarUsuario(idUsuario)

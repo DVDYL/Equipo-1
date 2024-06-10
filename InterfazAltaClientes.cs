@@ -111,7 +111,7 @@ namespace Presentacion
                 return ContarErrores;
             }
 
-            string errorCalle = Validar.EsDepartamento(Box_Calle.Text);
+            string errorCalle = Validar.EsDireccion(Box_Calle.Text);
             if (errorCalle != null)
             {
                 Calle_Error.Text = errorCalle;
@@ -345,9 +345,5 @@ namespace Presentacion
             }
         }
 
-        private void Importar_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

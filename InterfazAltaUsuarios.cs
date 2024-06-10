@@ -116,7 +116,7 @@ namespace Presentacion
                 return ContarErrores;
             }
 
-            string errorCalle = Validar.EsDepartamento(Box_Calle.Text);
+            string errorCalle = Validar.EsDireccion(Box_Calle.Text);
             if (errorCalle != null)
             {
                 Calle_Error.Text = errorCalle;
@@ -349,7 +349,7 @@ namespace Presentacion
 
                 if (resultadoConfirmacion == DialogResult.Yes)
                 {
-                    MessageBox.Show($"Se ha realizado la operación de alta para el usuario {nombreUsuario}. Su contraseña es la misma que su nombre de usuario.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Se ha realizado la operación de alta para el usuario {nombreUsuario}.\n\nSu contraseña es la misma que su nombre de usuario.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     DialogResult resultadoContinuar = MessageBox.Show("¿Desea continuar dando de alta Usuarios?", "Confirmar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -408,13 +408,25 @@ namespace Presentacion
                     Close(); 
                 }
             }
-        } 
+        }
 
-        private void IconoListaUsuarios_Click(object sender, EventArgs e) // No me convence: si estoy con cambios en curso, no me detiene?
+        private void IconoListaUsuarios_Click(object sender, EventArgs e)
         {
+            if (CamposCompletos())
+            {
+                var result = MessageBox.Show("¿Desea abandonar los cambios y continuar?","Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.No)
+                {
+                    // El usuario eligió quedarse en la pantalla, no hacer nada
+                    return;
+                }
+            }
+
+            // Si no hay cambios en curso o el usuario eligió continuar, ocultar esta ventana y mostrar la lista de usuarios
             Hide();
-            InterfazListaUsuarios InterfazListaUsuarios = new InterfazListaUsuarios();
-            InterfazListaUsuarios.Show();
+            InterfazListaUsuarios interfazListaUsuarios = new InterfazListaUsuarios();
+            interfazListaUsuarios.Show();
         }
 
         private void IconoMenu_Click(object sender, EventArgs e) // Evento para volver al menú cuando se hace clic en el ícono del banner 

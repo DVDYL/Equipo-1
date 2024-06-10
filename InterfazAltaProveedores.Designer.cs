@@ -66,7 +66,7 @@
             this.Boton_Cancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Cancelar.Name = "Boton_Cancelar";
             this.Boton_Cancelar.Size = new System.Drawing.Size(210, 43);
-            this.Boton_Cancelar.TabIndex = 122;
+            this.Boton_Cancelar.TabIndex = 7;
             this.Boton_Cancelar.Text = "Cancelar";
             this.Boton_Cancelar.UseVisualStyleBackColor = false;
             this.Boton_Cancelar.Click += new System.EventHandler(this.Boton_Cancelar_Click);
@@ -84,7 +84,7 @@
             this.Boton_Confirmar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_Confirmar.Name = "Boton_Confirmar";
             this.Boton_Confirmar.Size = new System.Drawing.Size(210, 43);
-            this.Boton_Confirmar.TabIndex = 121;
+            this.Boton_Confirmar.TabIndex = 6;
             this.Boton_Confirmar.Text = "Confirmar";
             this.Boton_Confirmar.UseVisualStyleBackColor = false;
             this.Boton_Confirmar.Click += new System.EventHandler(this.Boton_Confirmar_Click);
@@ -223,7 +223,7 @@
             this.ConfirMail_Box.Location = new System.Drawing.Point(431, 475);
             this.ConfirMail_Box.Name = "ConfirMail_Box";
             this.ConfirMail_Box.Size = new System.Drawing.Size(251, 31);
-            this.ConfirMail_Box.TabIndex = 103;
+            this.ConfirMail_Box.TabIndex = 4;
             // 
             // CUIT_Box
             // 
@@ -233,7 +233,7 @@
             this.CUIT_Box.Location = new System.Drawing.Point(432, 580);
             this.CUIT_Box.Name = "CUIT_Box";
             this.CUIT_Box.Size = new System.Drawing.Size(250, 31);
-            this.CUIT_Box.TabIndex = 104;
+            this.CUIT_Box.TabIndex = 5;
             // 
             // Email_Box
             // 
@@ -243,7 +243,7 @@
             this.Email_Box.Location = new System.Drawing.Point(433, 369);
             this.Email_Box.Name = "Email_Box";
             this.Email_Box.Size = new System.Drawing.Size(251, 31);
-            this.Email_Box.TabIndex = 102;
+            this.Email_Box.TabIndex = 3;
             // 
             // Apellido_Box
             // 
@@ -253,7 +253,7 @@
             this.Apellido_Box.Location = new System.Drawing.Point(431, 263);
             this.Apellido_Box.Name = "Apellido_Box";
             this.Apellido_Box.Size = new System.Drawing.Size(250, 31);
-            this.Apellido_Box.TabIndex = 101;
+            this.Apellido_Box.TabIndex = 2;
             // 
             // Nombre_Box
             // 
@@ -263,7 +263,7 @@
             this.Nombre_Box.Location = new System.Drawing.Point(431, 157);
             this.Nombre_Box.Name = "Nombre_Box";
             this.Nombre_Box.Size = new System.Drawing.Size(250, 31);
-            this.Nombre_Box.TabIndex = 100;
+            this.Nombre_Box.TabIndex = 1;
             // 
             // Label_ConfirmarEmail
             // 

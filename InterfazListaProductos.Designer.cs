@@ -30,25 +30,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Boton_Modificar = new System.Windows.Forms.Button();
             this.BorrarFiltro = new System.Windows.Forms.Button();
             this.Boton_Salir = new System.Windows.Forms.Button();
             this.ProductoDescripcion = new System.Windows.Forms.Label();
             this.ProductoLabel = new System.Windows.Forms.Label();
-            this.DescripcionBuscador = new System.Windows.Forms.TextBox();
-            this.DescripcionLupa = new System.Windows.Forms.PictureBox();
             this.ProductoBuscador = new System.Windows.Forms.TextBox();
             this.ProductosLupa = new System.Windows.Forms.PictureBox();
             this.Boton_AltaProducto = new System.Windows.Forms.Button();
             this.Productos = new System.Windows.Forms.DataGridView();
             this.Boton_Eliminar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.DescripcionLupa)).BeginInit();
+            this.ComboBox_Categoria = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ProductosLupa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Productos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -110,54 +108,30 @@
             // 
             this.ProductoDescripcion.AutoSize = true;
             this.ProductoDescripcion.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductoDescripcion.Location = new System.Drawing.Point(600, 80);
+            this.ProductoDescripcion.Location = new System.Drawing.Point(655, 81);
             this.ProductoDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProductoDescripcion.Name = "ProductoDescripcion";
-            this.ProductoDescripcion.Size = new System.Drawing.Size(229, 32);
+            this.ProductoDescripcion.Size = new System.Drawing.Size(240, 32);
             this.ProductoDescripcion.TabIndex = 53;
-            this.ProductoDescripcion.Text = "Buscar Descripción";
+            this.ProductoDescripcion.Text = "Filtrar por Categoría";
             // 
             // ProductoLabel
             // 
             this.ProductoLabel.AutoSize = true;
             this.ProductoLabel.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductoLabel.Location = new System.Drawing.Point(50, 80);
+            this.ProductoLabel.Location = new System.Drawing.Point(62, 81);
             this.ProductoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProductoLabel.Name = "ProductoLabel";
             this.ProductoLabel.Size = new System.Drawing.Size(200, 32);
             this.ProductoLabel.TabIndex = 52;
             this.ProductoLabel.Text = "Buscar Producto";
             // 
-            // DescripcionBuscador
-            // 
-            this.DescripcionBuscador.BackColor = System.Drawing.Color.Gainsboro;
-            this.DescripcionBuscador.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DescripcionBuscador.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescripcionBuscador.Location = new System.Drawing.Point(834, 80);
-            this.DescripcionBuscador.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.DescripcionBuscador.Name = "DescripcionBuscador";
-            this.DescripcionBuscador.Size = new System.Drawing.Size(220, 31);
-            this.DescripcionBuscador.TabIndex = 2;
-            // 
-            // DescripcionLupa
-            // 
-            this.DescripcionLupa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DescripcionLupa.Image = global::Presentacion.Properties.Resources.Lupa2;
-            this.DescripcionLupa.Location = new System.Drawing.Point(1059, 80);
-            this.DescripcionLupa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.DescripcionLupa.Name = "DescripcionLupa";
-            this.DescripcionLupa.Size = new System.Drawing.Size(49, 33);
-            this.DescripcionLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.DescripcionLupa.TabIndex = 50;
-            this.DescripcionLupa.TabStop = false;
-            this.DescripcionLupa.Click += new System.EventHandler(this.DescripcionLupa_Click);
-            // 
             // ProductoBuscador
             // 
             this.ProductoBuscador.BackColor = System.Drawing.Color.Gainsboro;
             this.ProductoBuscador.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ProductoBuscador.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductoBuscador.Location = new System.Drawing.Point(254, 80);
+            this.ProductoBuscador.Location = new System.Drawing.Point(266, 82);
             this.ProductoBuscador.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ProductoBuscador.Name = "ProductoBuscador";
             this.ProductoBuscador.Size = new System.Drawing.Size(220, 31);
@@ -167,7 +141,7 @@
             // 
             this.ProductosLupa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ProductosLupa.Image = global::Presentacion.Properties.Resources.Lupa2;
-            this.ProductosLupa.Location = new System.Drawing.Point(482, 80);
+            this.ProductosLupa.Location = new System.Drawing.Point(494, 81);
             this.ProductosLupa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ProductosLupa.Name = "ProductosLupa";
             this.ProductosLupa.Size = new System.Drawing.Size(49, 33);
@@ -185,7 +159,7 @@
             this.Boton_AltaProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.Boton_AltaProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Boton_AltaProducto.Font = new System.Drawing.Font("Nunito", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_AltaProducto.Location = new System.Drawing.Point(1150, 75);
+            this.Boton_AltaProducto.Location = new System.Drawing.Point(1150, 77);
             this.Boton_AltaProducto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Boton_AltaProducto.Name = "Boton_AltaProducto";
             this.Boton_AltaProducto.Size = new System.Drawing.Size(135, 40);
@@ -199,34 +173,34 @@
             this.Productos.AllowUserToAddRows = false;
             this.Productos.AllowUserToDeleteRows = false;
             this.Productos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.Productos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
+            this.Productos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.Productos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Productos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.Productos.BackgroundColor = System.Drawing.Color.White;
             this.Productos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Productos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Productos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.Productos.ColumnHeadersHeight = 40;
             this.Productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Productos.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Productos.DefaultCellStyle = dataGridViewCellStyle18;
             this.Productos.EnableHeadersVisualStyles = false;
             this.Productos.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Productos.Location = new System.Drawing.Point(50, 148);
@@ -235,28 +209,27 @@
             this.Productos.Name = "Productos";
             this.Productos.ReadOnly = true;
             this.Productos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Productos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Productos.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.Productos.RowHeadersWidth = 15;
             this.Productos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.Productos.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
+            this.Productos.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.Productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Productos.Size = new System.Drawing.Size(1260, 512);
             this.Productos.TabIndex = 46;
             this.Productos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Productos_CellContentClick);
             this.Productos.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Listado_RowHeaderMouseClick);
-
             // 
             // Boton_Eliminar
             // 
@@ -284,11 +257,22 @@
             this.pictureBox1.TabIndex = 58;
             this.pictureBox1.TabStop = false;
             // 
+            // ComboBox_Categoria
+            // 
+            this.ComboBox_Categoria.Font = new System.Drawing.Font("Nunito", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBox_Categoria.FormattingEnabled = true;
+            this.ComboBox_Categoria.Location = new System.Drawing.Point(902, 79);
+            this.ComboBox_Categoria.Name = "ComboBox_Categoria";
+            this.ComboBox_Categoria.Size = new System.Drawing.Size(121, 36);
+            this.ComboBox_Categoria.TabIndex = 2;
+            this.ComboBox_Categoria.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Categoria_SelectedIndexChanged);
+            // 
             // InterfazListaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.ComboBox_Categoria);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Boton_Eliminar);
             this.Controls.Add(this.Boton_Modificar);
@@ -296,17 +280,14 @@
             this.Controls.Add(this.Boton_Salir);
             this.Controls.Add(this.ProductoDescripcion);
             this.Controls.Add(this.ProductoLabel);
-            this.Controls.Add(this.DescripcionBuscador);
-            this.Controls.Add(this.DescripcionLupa);
             this.Controls.Add(this.ProductoBuscador);
             this.Controls.Add(this.ProductosLupa);
             this.Controls.Add(this.Boton_AltaProducto);
             this.Controls.Add(this.Productos);
             this.Name = "InterfazListaProductos";
-            this.Text = "Form1";
+            this.Text = "Lista de Productos";
             this.Load += new System.EventHandler(this.InterfazListaProductos_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ventana_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.DescripcionLupa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductosLupa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Productos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -322,13 +303,12 @@
         private System.Windows.Forms.Button Boton_Salir;
         private System.Windows.Forms.Label ProductoDescripcion;
         private System.Windows.Forms.Label ProductoLabel;
-        private System.Windows.Forms.TextBox DescripcionBuscador;
-        private System.Windows.Forms.PictureBox DescripcionLupa;
         private System.Windows.Forms.TextBox ProductoBuscador;
         private System.Windows.Forms.PictureBox ProductosLupa;
         private System.Windows.Forms.Button Boton_AltaProducto;
         private System.Windows.Forms.DataGridView Productos;
         private System.Windows.Forms.Button Boton_Eliminar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox ComboBox_Categoria;
     }
 }
