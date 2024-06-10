@@ -41,24 +41,23 @@ namespace Presentacion
             ComboBox_Proveedor.DisplayMember = "nombre"; //+"apellido"
             ComboBox_Proveedor.ValueMember = "id";
         }
-
-        private void CrearProducto()
+        private int SeleccionarCategoría()
         {
             int idCategoria;
-
             if (ComboBox_Categoria.SelectedIndex != -1) // Verifica si se ha seleccionado un ítem en el ComboBox
             {
+
                 if (ComboBox_Categoria.SelectedItem.ToString() == "Audio")
                 {
-                    idCategoria = 1;
+                     idCategoria = 1;
                 }
                 else if (ComboBox_Categoria.SelectedItem.ToString() == "Celulares")
                 {
-                    idCategoria = 2;
+                      idCategoria = 2;
                 }
                 else if (ComboBox_Categoria.SelectedItem.ToString() == "ElectroHogar")
                 {
-                    idCategoria = 3;
+                     idCategoria = 3;
                 }
                 else if (ComboBox_Categoria.SelectedItem.ToString() == "Informática")
                 {
@@ -66,7 +65,7 @@ namespace Presentacion
                 }
                 else
                 {
-                    idCategoria = 5;
+                     idCategoria = 5;
                 }
             }
             else
@@ -74,15 +73,24 @@ namespace Presentacion
                 // En caso de que no se haya seleccionado ningún ítem en el ComboBox
                 MessageBox.Show("Por favor, seleccione un tipo de producto.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ComboBox_Categoria.Focus();
-                return; // Sale del método sin continuar la validación
+                return 0; // Sale del método sin continuar la validación
             }
+            return idCategoria;
+        }
+
+        private void CrearProducto()
+        {
+            int idCategoria = SeleccionarCategoría();
+
+            Datos.TraerProveedores selectedProveedor = (Datos.TraerProveedores)ComboBox_Proveedor.SelectedItem;
+            string nombreProveedor = selectedProveedor.Nombre;
 
             // Crear un nuevo producto con los datos del formulario
             ProductoNegocio Producto = new ProductoNegocio();
             Producto.AgregarProductos(
                                             idCategoria,
                                             "70b37dc1-8fde-4840-be47-9ababd0ee7e5",
-                                            ComboBox_Proveedor.SelectedItem.ToString(),
+                                            nombreProveedor,//ComboBox_Proveedor.SelectedItem.ToString(), //ACÁ ESTÁ EL ERROR, ESTAMOS ENVIANDO MAL EL DATO DEL PROVEEDOR.
                                             Box_Nombre.Text, // Acá va el G1 con el que se va a hacer la búsqueda
                                             int.Parse(Box_Precio.Text),
                                             int.Parse(Box_Stock.Text)
