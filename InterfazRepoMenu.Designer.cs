@@ -59,6 +59,7 @@
             // 
             // RepoMasVendido_Icono
             // 
+            this.RepoMasVendido_Icono.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RepoMasVendido_Icono.Image = global::Presentacion.Properties.Resources.Reporte6;
             this.RepoMasVendido_Icono.Location = new System.Drawing.Point(981, 187);
             this.RepoMasVendido_Icono.Name = "RepoMasVendido_Icono";
@@ -70,6 +71,7 @@
             // 
             // RepoVentas_Icono
             // 
+            this.RepoVentas_Icono.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RepoVentas_Icono.Image = global::Presentacion.Properties.Resources.Reporte5;
             this.RepoVentas_Icono.Location = new System.Drawing.Point(520, 185);
             this.RepoVentas_Icono.Name = "RepoVentas_Icono";
@@ -81,6 +83,7 @@
             // 
             // RepoStock_Icono
             // 
+            this.RepoStock_Icono.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RepoStock_Icono.Image = global::Presentacion.Properties.Resources.Reporte4;
             this.RepoStock_Icono.Location = new System.Drawing.Point(71, 187);
             this.RepoStock_Icono.Name = "RepoStock_Icono";

@@ -14,11 +14,10 @@ namespace Presentacion
     {
         // Falta traer el host del usuario porque:
 
-        // Stock crítico: 1 y 2
+        // Stock crítico: 2 y 3
         // Ventas por vendedor: todos
-        // Productos más vendidos por categoría: 1 y 2
+        // Productos más vendidos por categoría: 2 y 3
 
-        // Recomiendo simplificar esto y que hagamos un sub-menú igual al menú, tres íconos y le damos al usuario posibilidad de elegir.
 
         public InterfazRepoMenu()
         {
@@ -32,7 +31,7 @@ namespace Presentacion
             InterfazLogIn interfazLogIn = InterfazLogIn.Instancia;
 
             // Verificar el valor de Host para filtrar visibilidad
-            if (interfazLogIn.Host == "1" || interfazLogIn.Host == "2")
+            if (interfazLogIn.Host == "2" || interfazLogIn.Host == "3")
             {
                 InterfazRepoStockCritico InterfazRepoStockCritico = new InterfazRepoStockCritico(); // Crear una instancia del formulario InterfazRepoStockCritico
 
@@ -72,7 +71,7 @@ namespace Presentacion
             InterfazLogIn interfazLogIn = InterfazLogIn.Instancia;
 
             // Verificar el valor de Host para filtrar visibilidad
-            if (interfazLogIn.Host == "1" || interfazLogIn.Host == "2")
+            if (interfazLogIn.Host == "2" || interfazLogIn.Host == "3")
             {
                 InterfazRepoMasVendidos InterfazMasVendidos = new InterfazRepoMasVendidos(); // Crear una instancia del formulario InterfazRepoMasVendidos
 

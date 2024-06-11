@@ -152,6 +152,18 @@
     <Compile Include="InterfazListaUsuarios.Designer.cs">
       <DependentUpon>InterfazListaUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfazVentasDevolver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfazVentasDevolver.Designer.cs">
+      <DependentUpon>InterfazVentasDevolver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfazVentasMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfazVentasMenu.Designer.cs">
+      <DependentUpon>InterfazVentasMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +234,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfazVentas.resx">
       <DependentUpon>InterfazVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfazVentasDevolver.resx">
+      <DependentUpon>InterfazVentasDevolver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfazVentasMenu.resx">
+      <DependentUpon>InterfazVentasMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana.resx">
       <DependentUpon>Ventana.cs</DependentUpon>
@@ -354,6 +372,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Reporte6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AgregarVenta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DevolverVenta.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

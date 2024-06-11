@@ -299,7 +299,7 @@ namespace Presentacion
             {
                 if (ComboBox_Rol.SelectedItem.ToString() == "Administrador")
                 {
-                    host = 1;
+                    host = 3;
                 }
                 else if (ComboBox_Rol.SelectedItem.ToString() == "Supervisor")
                 {
@@ -307,7 +307,7 @@ namespace Presentacion
                 }
                 else
                 {
-                    host = 3; // Valor predeterminado para otras opciones
+                    host = 1; // Vendedor
                 }
             }
             else

@@ -42,7 +42,7 @@ namespace Presentacion
                     int hostValue = Convert.ToInt32(usuario.Host);
 
                     // Reemplazar los valores numéricos por su equivalente en texto
-                    if (hostValue == 1)
+                    if (hostValue == 3)
                     {
                         usuario.Host = "Administrador";
                     }
@@ -50,7 +50,7 @@ namespace Presentacion
                     {
                         usuario.Host = "Supervisor";
                     }
-                    else if (hostValue == 3)
+                    else if (hostValue == 1)
                     {
                         usuario.Host = "Vendedor";
                     }

@@ -379,7 +379,7 @@ namespace Negocio
             return "0";
         }
 
-        public static int EsID(string texto) // VALIDAR ??
+        public static int EsID(string texto)
         {
             // Verificar si el texto está vacío
             if (string.IsNullOrEmpty(texto))
@@ -432,6 +432,47 @@ namespace Negocio
 
            //  Si todas las validaciones pasan, devolver null
             return null;
+        }
+
+        public static bool EsStockBajo(int valorMaximo, int valorSeleccionado)
+        {
+            if (valorMaximo == 0)
+            {
+                throw new ArgumentException("El valor máximo no puede ser cero.");
+            }
+
+            double porcentaje = (double)valorSeleccionado / valorMaximo * 100;
+            return porcentaje >= 75;
+        }
+
+        public static bool EsStockCritico(TraerProductos producto)
+        {
+            // Determinar el umbral de stock según la categoría
+            int umbralStock;
+            switch (producto.IDCategoria)
+            {
+                case 1:
+                    umbralStock = 100;
+                    break;
+                case 2:
+                    umbralStock = 200;
+                    break;
+                case 3:
+                    umbralStock = 300;
+                    break;
+                case 4:
+                    umbralStock = 400;
+                    break;
+                case 5:
+                    umbralStock = 500;
+                    break;
+                default:
+                    umbralStock = int.MaxValue; // Valor por defecto si la categoría no coincide con ninguna de las especificadas
+                    break;
+            }
+
+            // Verificar si el stock es igual o menor al 25% del umbral
+            return producto.Stock <= (umbralStock * 0.25);
         }
 
         public static string EsPrecio(string valor, string campo)
@@ -563,7 +604,7 @@ namespace Negocio
             if (nombreUsuario == "ADMINI24")
             {
                 // Devuelves el número de host para el administrador
-                return "1";
+                return "3";
             }
 
             // Listar todos los usuarios activos

@@ -152,7 +152,7 @@ namespace Presentacion
                     }
                     else
                     {
-                        MessageBox.Show("No se encontró el cliente seleccionado.");
+                        MessageBox.Show("No se encontró el cliente seleccionado.", "Revisar Dato", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
@@ -176,7 +176,7 @@ namespace Presentacion
             {
                 // Obtener la lista de productos filtrada por la categoría seleccionada
                 List<TraerProductos> Productos = ProductoNegocio.listarProductos()
-                    .Where(p => p.IDCategoria == categoriaSeleccionada)
+                    .Where(p => p.IDCategoria == categoriaSeleccionada && p.Nombre.Contains("G1"))
                     .ToList();
 
                 // Limpiar el ComboBox antes de agregar nuevos elementos
@@ -216,10 +216,11 @@ namespace Presentacion
 
                     int categoriaSeleccionada = (int)comboBox.SelectedItem;
                     CargarProductos(ComboBox_Producto1, categoriaSeleccionada);
+
                 }
                 else
                 {
-                    MessageBox.Show("Seleccione un cliente antes de seleccionar una categoría.");
+                    MessageBox.Show("Seleccione un cliente antes de seleccionar una categoría.", "Revisar Dato", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -237,7 +238,7 @@ namespace Presentacion
                     {
                         ComboBox_Producto2.SelectedIndex = -1;
                         Producto2_Descripcion.Text = string.Empty;
-                        Combobox_Producto1Cantidad.SelectedIndex = -1;
+                        Combobox_Producto2Cantidad.SelectedIndex = -1;
                         Producto2_MontoUnitario.Text = string.Empty;
                         Producto2_MontoTotal.Text = string.Empty;
                         CalcularMontoFinal();
@@ -248,7 +249,7 @@ namespace Presentacion
                 }
                 else
                 {
-                    MessageBox.Show("Seleccione un cliente antes de seleccionar una categoría.");
+                    MessageBox.Show("Seleccione un cliente antes de seleccionar una categoría.", "Revisar Dato", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -261,12 +262,12 @@ namespace Presentacion
                 // Verificar si ComboBox_Clientes no está vacío
                 if (!string.IsNullOrEmpty(ComboBox_Clientes.Text))
                 {
-                    // Limpiar los campos relacionados con el Producto1 si el ComboBox_Producto1 ya ha cambiado antes
+                    // Limpiar los campos relacionados con el Producto3 si el ComboBox_Producto3 ya ha cambiado antes
                     if (ComboBox_Producto3.SelectedIndex != -1)
                     {
                         ComboBox_Producto3.SelectedIndex = -1;
                         Producto3_Descripcion.Text = string.Empty;
-                        Combobox_Producto1Cantidad.SelectedIndex = -1;
+                        Combobox_Producto3Cantidad.SelectedIndex = -1;
                         Producto3_MontoUnitario.Text = string.Empty;
                         Producto3_MontoTotal.Text = string.Empty;
                         CalcularMontoFinal();
@@ -277,7 +278,7 @@ namespace Presentacion
                 }
                 else
                 {
-                    MessageBox.Show("Seleccione un cliente antes de seleccionar una categoría.");
+                    MessageBox.Show("Seleccione un cliente antes de seleccionar una categoría.", "Revisar Dato", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -290,12 +291,12 @@ namespace Presentacion
                 // Verificar si ComboBox_Clientes no está vacío
                 if (!string.IsNullOrEmpty(ComboBox_Clientes.Text))
                 {
-                    // Limpiar los campos relacionados con el Producto1 si el ComboBox_Producto1 ya ha cambiado antes
+                    // Limpiar los campos relacionados con el Producto1 si el ComboBox_Producto4 ya ha cambiado antes
                     if (ComboBox_Producto4.SelectedIndex != -1)
                     {
                         ComboBox_Producto4.SelectedIndex = -1;
                         Producto4_Descripcion.Text = string.Empty;
-                        Combobox_Producto1Cantidad.SelectedIndex = -1;
+                        Combobox_Producto4Cantidad.SelectedIndex = -1;
                         Producto4_MontoUnitario.Text = string.Empty;
                         Producto4_MontoTotal.Text = string.Empty;
                         CalcularMontoFinal();
@@ -306,7 +307,7 @@ namespace Presentacion
                 }
                 else
                 {
-                    MessageBox.Show("Seleccione un cliente antes de seleccionar una categoría.");
+                    MessageBox.Show("Seleccione un cliente antes de seleccionar una categoría.", "Revisar Dato", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -321,6 +322,18 @@ namespace Presentacion
                 // Verificar si se seleccionó un producto válido
                 if (!string.IsNullOrEmpty(nombreProducto))
                 {
+                    // Verificar si el producto ya está seleccionado en los otros ComboBoxes
+                    if (ComboBox_Producto2.SelectedItem?.ToString() == nombreProducto ||
+                        ComboBox_Producto3.SelectedItem?.ToString() == nombreProducto ||
+                        ComboBox_Producto4.SelectedItem?.ToString() == nombreProducto)
+                    {
+                        MessageBox.Show("El producto ya está seleccionado en otra categoría.", "Producto Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        ComboBox_Producto1.SelectedIndex = -1;
+                        Producto1_Descripcion.Text = "";
+                        Producto1_MontoUnitario.Text = "";
+                        return;
+                    }
+
                     // Buscar el producto en la lista de productos utilizando su nombre
                     List<TraerProductos> productos = ProductoNegocio.listarProductos();
                     TraerProductos productoSeleccionado = productos.FirstOrDefault(p => p.Nombre == nombreProducto);
@@ -338,12 +351,12 @@ namespace Presentacion
                     }
                     else
                     {
-                        MessageBox.Show("No se encontró el producto seleccionado.");
+                        MessageBox.Show("No se encontró el producto seleccionado.", "Revisar Dato", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No se ha seleccionado ningún producto.");
+                    MessageBox.Show("No se ha seleccionado ningún producto.", "Revisar Dato", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
@@ -362,6 +375,18 @@ namespace Presentacion
                 // Verificar si se seleccionó un producto válido
                 if (!string.IsNullOrEmpty(nombreProducto))
                 {
+                    // Verificar si el producto ya está seleccionado en los otros ComboBoxes
+                    if (ComboBox_Producto1.SelectedItem?.ToString() == nombreProducto ||
+                        ComboBox_Producto3.SelectedItem?.ToString() == nombreProducto ||
+                        ComboBox_Producto4.SelectedItem?.ToString() == nombreProducto)
+                    {
+                        MessageBox.Show("El producto ya está seleccionado en otra categoría.", "Producto Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        ComboBox_Producto2.SelectedIndex = -1;
+                        Producto2_Descripcion.Text = "";
+                        Producto2_MontoUnitario.Text = "";
+                        return;
+                    }
+
                     // Buscar el producto en la lista de productos utilizando su nombre
                     List<TraerProductos> productos = ProductoNegocio.listarProductos();
                     TraerProductos productoSeleccionado = productos.FirstOrDefault(p => p.Nombre == nombreProducto);
@@ -379,12 +404,12 @@ namespace Presentacion
                     }
                     else
                     {
-                        MessageBox.Show("No se encontró el producto seleccionado.");
+                        MessageBox.Show("No se encontró el producto seleccionado.", "Revisar Dato", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No se ha seleccionado ningún producto.");
+                    MessageBox.Show("No se ha seleccionado ningún producto.", "Revisar Dato", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
@@ -403,6 +428,18 @@ namespace Presentacion
                 // Verificar si se seleccionó un producto válido
                 if (!string.IsNullOrEmpty(nombreProducto))
                 {
+                    // Verificar si el producto ya está seleccionado en los otros ComboBoxes
+                    if (ComboBox_Producto1.SelectedItem?.ToString() == nombreProducto ||
+                        ComboBox_Producto2.SelectedItem?.ToString() == nombreProducto ||
+                        ComboBox_Producto4.SelectedItem?.ToString() == nombreProducto)
+                    {
+                        MessageBox.Show("El producto ya está seleccionado en otra categoría.", "Producto Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        ComboBox_Producto3.SelectedIndex = -1;
+                        Producto3_Descripcion.Text = "";
+                        Producto3_MontoUnitario.Text = "";
+                        return;
+                    }
+
                     // Buscar el producto en la lista de productos utilizando su nombre
                     List<TraerProductos> productos = ProductoNegocio.listarProductos();
                     TraerProductos productoSeleccionado = productos.FirstOrDefault(p => p.Nombre == nombreProducto);
@@ -444,6 +481,18 @@ namespace Presentacion
                 // Verificar si se seleccionó un producto válido
                 if (!string.IsNullOrEmpty(nombreProducto))
                 {
+                    // Verificar si el producto ya está seleccionado en los otros ComboBoxes
+                    if (ComboBox_Producto1.SelectedItem?.ToString() == nombreProducto ||
+                        ComboBox_Producto2.SelectedItem?.ToString() == nombreProducto ||
+                        ComboBox_Producto3.SelectedItem?.ToString() == nombreProducto)
+                    {
+                        MessageBox.Show("El producto ya está seleccionado en otra categoría.", "Producto Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        ComboBox_Producto4.SelectedIndex = -1;
+                        Producto4_Descripcion.Text = "";
+                        Producto4_MontoUnitario.Text = "";
+                        return;
+                    }
+
                     // Buscar el producto en la lista de productos utilizando su nombre
                     List<TraerProductos> productos = ProductoNegocio.listarProductos();
                     TraerProductos productoSeleccionado = productos.FirstOrDefault(p => p.Nombre == nombreProducto);
@@ -461,12 +510,12 @@ namespace Presentacion
                     }
                     else
                     {
-                        MessageBox.Show("No se encontró el producto seleccionado.");
+                        MessageBox.Show("No se encontró el producto seleccionado.", "Revisar Dato", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No se ha seleccionado ningún producto.");
+                    MessageBox.Show("No se ha seleccionado ningún producto.", "Revisar Dato", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
@@ -563,52 +612,167 @@ namespace Presentacion
                 // Verificar si se ha seleccionado un cliente
                 if (!string.IsNullOrEmpty(ComboBox_Clientes.Text))
                 {
+                    // Obtener el valor seleccionado en el ComboBox de cantidad
+                    int valorSeleccionado = Convert.ToInt32(Combobox_Producto1Cantidad.SelectedItem);
+
+                    // Recorrer todos los valores del ComboBox para obtener el valor máximo
+                    int valorMaximo = 0;
+                    foreach (var item in Combobox_Producto1Cantidad.Items)
+                    {
+                        int currentValue = Convert.ToInt32(item);
+                        if (currentValue > valorMaximo)
+                        {
+                            valorMaximo = currentValue;
+                        }
+                    }
+
+                    // Validar el porcentaje
+                    if (Validar.EsStockBajo(valorMaximo, valorSeleccionado))
+                    {
+                        MessageBox.Show("Alerta: El stock luego de esta venta será del 25% o menos.", "Stock Crítico", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    }
+
+                    // Calcular el monto total
                     CalcularMontoTotal1();
                 }
                 else
                 {
-                    MessageBox.Show("Debe seleccionar un cliente antes de agregar cantidades.");
+                    MessageBox.Show("Debe seleccionar un cliente antes de agregar cantidades.", "No se cargó un Cliente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Debe seleccionar una categoría y un producto antes de agregar cantidades.");
+                MessageBox.Show("Debe seleccionar una categoría y un producto antes de agregar cantidades.", "Faltan datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void Combobox_Producto2Cantidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(ComboBox_Clientes.Text))
+            // Verificar si se han seleccionado opciones en los ComboBoxes de Categoría y Producto
+            if (!string.IsNullOrEmpty(ComboBox_Categoria2.Text) && !string.IsNullOrEmpty(ComboBox_Producto2.Text))
             {
-                CalcularMontoTotal2();
+                // Verificar si se ha seleccionado un cliente
+                if (!string.IsNullOrEmpty(ComboBox_Clientes.Text))
+                {
+                    // Obtener el valor seleccionado en el ComboBox de cantidad
+                    int valorSeleccionado = Convert.ToInt32(Combobox_Producto2Cantidad.SelectedItem);
+
+                    // Recorrer todos los valores del ComboBox para obtener el valor máximo
+                    int valorMaximo = 0;
+                    foreach (var item in Combobox_Producto2Cantidad.Items)
+                    {
+                        int currentValue = Convert.ToInt32(item);
+                        if (currentValue > valorMaximo)
+                        {
+                            valorMaximo = currentValue;
+                        }
+                    }
+
+                    // Validar el porcentaje
+                    if (Validar.EsStockBajo(valorMaximo, valorSeleccionado))
+                    {
+                        MessageBox.Show("Alerta: El stock luego de esta venta será del 25% o menos.", "Stock Crítico", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    }
+
+                    // Calcular el monto total
+                    CalcularMontoTotal2();
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un cliente antes de agregar cantidades.", "No se cargó un Cliente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
-                MessageBox.Show("Debe seleccionar un cliente antes de agregar cantidades.");
+                MessageBox.Show("Debe seleccionar una categoría y un producto antes de agregar cantidades.", "Faltan datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void Combobox_Producto3Cantidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(ComboBox_Clientes.Text))
+            // Verificar si se han seleccionado opciones en los ComboBoxes de Categoría y Producto
+            if (!string.IsNullOrEmpty(ComboBox_Categoria3.Text) && !string.IsNullOrEmpty(ComboBox_Producto3.Text))
             {
-                CalcularMontoTotal3();
+                // Verificar si se ha seleccionado un cliente
+                if (!string.IsNullOrEmpty(ComboBox_Clientes.Text))
+                {
+                    // Obtener el valor seleccionado en el ComboBox de cantidad
+                    int valorSeleccionado = Convert.ToInt32(Combobox_Producto3Cantidad.SelectedItem);
+
+                    // Recorrer todos los valores del ComboBox para obtener el valor máximo
+                    int valorMaximo = 0;
+                    foreach (var item in Combobox_Producto3Cantidad.Items)
+                    {
+                        int currentValue = Convert.ToInt32(item);
+                        if (currentValue > valorMaximo)
+                        {
+                            valorMaximo = currentValue;
+                        }
+                    }
+
+                    // Validar el porcentaje
+                    if (Validar.EsStockBajo(valorMaximo, valorSeleccionado))
+                    {
+                        MessageBox.Show("Alerta: El stock luego de esta venta será del 25% o menos.", "Stock Crítico", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    }
+
+                    // Calcular el monto total
+                    CalcularMontoTotal3();
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un cliente antes de agregar cantidades.", "No se cargó un Cliente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
-                MessageBox.Show("Debe seleccionar un cliente antes de agregar cantidades.");
+                MessageBox.Show("Debe seleccionar una categoría y un producto antes de agregar cantidades.", "Faltan datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void Combobox_Producto4Cantidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(ComboBox_Clientes.Text))
+            // Verificar si se han seleccionado opciones en los ComboBoxes de Categoría y Producto
+            if (!string.IsNullOrEmpty(ComboBox_Categoria4.Text) && !string.IsNullOrEmpty(ComboBox_Producto4.Text))
             {
-                CalcularMontoTotal4();
+                // Verificar si se ha seleccionado un cliente
+                if (!string.IsNullOrEmpty(ComboBox_Clientes.Text))
+                {
+                    // Obtener el valor seleccionado en el ComboBox de cantidad
+                    int valorSeleccionado = Convert.ToInt32(Combobox_Producto4Cantidad.SelectedItem);
+
+                    // Recorrer todos los valores del ComboBox para obtener el valor máximo
+                    int valorMaximo = 0;
+                    foreach (var item in Combobox_Producto4Cantidad.Items)
+                    {
+                        int currentValue = Convert.ToInt32(item);
+                        if (currentValue > valorMaximo)
+                        {
+                            valorMaximo = currentValue;
+                        }
+                    }
+
+                    // Validar el porcentaje
+                    if (Validar.EsStockBajo(valorMaximo, valorSeleccionado))
+                    {
+                        MessageBox.Show("Alerta: El stock luego de esta venta será del 25% o menos.", "Stock Crítico", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    }
+
+                    // Calcular el monto total
+                    CalcularMontoTotal4();
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un cliente antes de agregar cantidades.", "No se cargó un Cliente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
-                MessageBox.Show("Debe seleccionar un cliente antes de agregar cantidades.");
+                MessageBox.Show("Debe seleccionar una categoría y un producto antes de agregar cantidades.", "Faltan datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -883,12 +1047,48 @@ namespace Presentacion
             return false;
         }
 
-        private void Boton_Limpiar_Click(object sender, EventArgs e)
+        private void Boton_Vender_Click(object sender, EventArgs e)
         {
-            LimpiarCampos();
+            DialogResult resultadoConfirmacion = MessageBox.Show($"¿Desea realizar la operación de venta para el cliente {ComboBox_Clientes.Text}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultadoConfirmacion == DialogResult.Yes)
+            {
+                CrearVenta();
+
+                MessageBox.Show($"Se ha realizado la venta para el cliente {ComboBox_Clientes.Text}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                DialogResult resultadoContinuar = MessageBox.Show("¿Desea realizar otra venta?", "Confirmar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultadoContinuar == DialogResult.No)
+                {
+                    Close();
+                    InterfazMenu Menu = new InterfazMenu();
+                    Menu.Show();
+                }
+                else
+                {
+                    LimpiarCampos(); // Restablecer todos los campos del formulario
+                }
+            }
         }
 
-        private void LimpiarCampos()
+        private void Boton_Limpiar_Click(object sender, EventArgs e)
+        {
+            DialogResult confirmacion = MessageBox.Show("¿Desea borrar todos los datos?\n\nSe perderán todos los cambios que no se hayan guardado.", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (confirmacion == DialogResult.Yes)
+            {
+                Limpiar();
+            }
+            // Si el usuario elige "No", no hacer nada
+
+            else
+            {
+                // No hacer nada
+            }
+        } // Maneja el evento del botón "Limpiar"
+
+        private void Limpiar()
         {
             Producto1_Descripcion.Text = "";
             Producto1_MontoUnitario.Text = "";
@@ -925,7 +1125,7 @@ namespace Presentacion
             Promocion2_text.Text = "";
             MontoPromocion2.Text = "";
 
-            CargarClientes(); // Acá tengo que traerme la lista de nombres de los clientes.
+            CargarClientes();
         }
 
         private void Boton_Salir_Click(object sender, EventArgs e)
@@ -953,31 +1153,6 @@ namespace Presentacion
                     Hide();
                 }
                 // Si el usuario elige "No", no hacer nada
-            }
-        }
-
-        private void Boton_Vender_Click(object sender, EventArgs e)
-        {
-            DialogResult resultadoConfirmacion = MessageBox.Show($"¿Desea realizar la operación de venta para el cliente {ComboBox_Clientes.Text}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (resultadoConfirmacion == DialogResult.Yes)
-            {
-                CrearVenta();
-
-                MessageBox.Show($"Se ha realizado la venta para el cliente {ComboBox_Clientes.Text}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                DialogResult resultadoContinuar = MessageBox.Show("¿Desea realizar otra venta?", "Confirmar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (resultadoContinuar == DialogResult.No)
-                {
-                    Close();
-                    InterfazMenu Menu = new InterfazMenu();
-                    Menu.Show();
-                }
-                else
-                {
-                    LimpiarCampos(); // Restablecer todos los campos del formulario
-                }
             }
         }
     }

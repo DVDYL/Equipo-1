@@ -17,19 +17,18 @@ namespace Presentacion
         {
             InterfazLogIn interfazLogIn = InterfazLogIn.Instancia;
 
-            // Verificar el valor de Host pero como pongo Interfaz Login? 
-            if (interfazLogIn.Host == "1")
+            if (interfazLogIn.Host == "3")
             {
-                InterfazListaUsuarios InterfazListaUsuarios = new InterfazListaUsuarios(); // Crear una instancia del formulario InterfazABM
+                InterfazListaUsuarios InterfazListaUsuarios = new InterfazListaUsuarios(); 
 
-                Hide(); // Ocultar el formulario Menu
+                Hide(); 
 
-                InterfazListaUsuarios.FormClosed += (s, args) => Close(); // Cerrar la aplicación cuando se cierre UserAdmin
-                InterfazListaUsuarios.Show(); // Mostrar el formulario InterfazABM
+                InterfazListaUsuarios.FormClosed += (s, args) => Close(); 
+                InterfazListaUsuarios.Show(); 
             }
             else
             {
-                MessageBox.Show("ERROR 201: Este nivel de usuario no tiene acceso al módulo de Usuarios", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Este nivel de usuario no tiene acceso al módulo de Usuarios", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -37,9 +36,9 @@ namespace Presentacion
         {
             InterfazLogIn interfazLogIn = InterfazLogIn.Instancia;
 
-            if ( interfazLogIn.Host == "1")
+            if ( interfazLogIn.Host == "3")
             {
-                Hide(); // Ocultar el formulario Menu
+                Hide(); 
 
                 InterfazListaProveedores ListaProveedores = new InterfazListaProveedores(); 
 
@@ -56,7 +55,7 @@ namespace Presentacion
         {
             InterfazLogIn interfazLogIn = InterfazLogIn.Instancia;
 
-            if (interfazLogIn.Host == "1" || interfazLogIn.Host == "2" || interfazLogIn.Host == "3") // SACAR EL 1 PARA LA ENTREGA FINAL
+            if (interfazLogIn.Host == "3") 
             {
                 InterfazListaClientes ListaClientes = new InterfazListaClientes();
                 Hide();
@@ -73,7 +72,7 @@ namespace Presentacion
         {
             InterfazLogIn interfazLogIn = InterfazLogIn.Instancia;
 
-            if (interfazLogIn.Host == "1" || interfazLogIn.Host == "2")
+            if (interfazLogIn.Host == "2" || interfazLogIn.Host == "3")
             {
                 InterfazListaProductos ListaProductos = new InterfazListaProductos();
                 Hide();
@@ -90,12 +89,12 @@ namespace Presentacion
         {
             InterfazLogIn interfazLogIn = InterfazLogIn.Instancia;
 
-            if (interfazLogIn.Host == "1" || interfazLogIn.Host == "2" || interfazLogIn.Host == "3") // SACAR EL 1 PARA LA ENTREGA FINAL
+            if (interfazLogIn.Host == "1" || interfazLogIn.Host == "2" || interfazLogIn.Host == "3") // SACAR EL 3 PARA LA ENTREGA FINAL
             {
-                InterfazVentas ListaVentas = new InterfazVentas();
-                Hide(); 
-                ListaVentas.FormClosed += (s, args) => Close();
-                ListaVentas.Show();
+                InterfazVentasMenu MenuVentas = new InterfazVentasMenu();
+                Hide();
+                MenuVentas.FormClosed += (s, args) => Close();
+                MenuVentas.Show();
             }
             else
             {
