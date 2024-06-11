@@ -87,15 +87,18 @@ namespace Presentacion
             int idCategoria = SeleccionarCategoría();
 
             Datos.TraerProveedores selectedProveedor = (Datos.TraerProveedores)ComboBox_Proveedor.SelectedItem;
-            string nombreProveedor = selectedProveedor.Nombre;
+            Guid IdProveedor = selectedProveedor.Id;
+            string IdProveedor1 = IdProveedor.ToString();
+
+            
 
             // Crear un nuevo producto con los datos del formulario
             ProductoNegocio Producto = new ProductoNegocio();
             Producto.AgregarProductos(
                                             idCategoria,
                                             "70b37dc1-8fde-4840-be47-9ababd0ee7e5",
-                                            nombreProveedor,//ComboBox_Proveedor.SelectedItem.ToString(), //ACÁ ESTÁ EL ERROR, ESTAMOS ENVIANDO MAL EL DATO DEL PROVEEDOR.
-                                            Box_Nombre.Text, // Acá va el G1 con el que se va a hacer la búsqueda
+                                            IdProveedor1,//ComboBox_Proveedor.SelectedItem.ToString(), //ACÁ ESTÁ EL ERROR, ESTAMOS ENVIANDO MAL EL DATO DEL PROVEEDOR.
+                                            "G1 - " +Box_Nombre.Text, // Acá va el G1 con el que se va a hacer la búsqueda
                                             int.Parse(Box_Precio.Text),
                                             int.Parse(Box_Stock.Text)
                                          ); 
