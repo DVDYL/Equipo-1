@@ -9,7 +9,7 @@ namespace Datos
     public class Cliente
     {
         
-        String _id;
+        string _id;
         String _nombre;
         String _apellido;
         int _dni;

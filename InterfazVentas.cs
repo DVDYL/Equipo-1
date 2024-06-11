@@ -767,9 +767,90 @@ namespace Presentacion
         {
             // Está bien, pero tengo que obtener una fecha de alta, podría ser la fecha de hoy y quedar grabado defintivamente.
             // Esa fecha, dónde la guardás? En el .txt?
+            
+            // Obtener el nombre del cliente seleccionado en el ComboBox
+            string nombreCliente = ComboBox_Clientes.SelectedItem.ToString();
+            // Buscar el cliente en la lista de clientes utilizando su nombre
+            List<Cliente> listarClientes = ClienteNegocio.listarClientes();
+            Cliente clienteSeleccionado = listarClientes.FirstOrDefault(c => (c.Apellido + " " + c.Nombre) == nombreCliente);
 
-            VentaNegocio AltaVenta = new VentaNegocio();
-            AltaVenta.agregarVenta("70b37dc1-8fde-4840-be47-9ababd0ee7e5", "", "", 7);
+            if (clienteSeleccionado != null)
+            {
+                // Obtener el ID del cliente
+                string idCliente = clienteSeleccionado.Id;
+
+                // Obtener el nombre del cliente seleccionado en el ComboBox
+                string nombreProducto = ComboBox_Producto1.SelectedItem.ToString();
+                // Buscar el cliente en la lista de clientes utilizando su nombre
+                List<TraerProductos> listarProductos = ProductoNegocio.listarProductos();
+                TraerProductos productoSeleccionado = listarProductos.FirstOrDefault(c => (c.Nombre) == nombreProducto);
+
+
+                if (productoSeleccionado != null)
+                {
+                    string idProducto = productoSeleccionado.Id.ToString();
+                    int cantidad1 = Convert.ToInt32(Combobox_Producto1Cantidad.Text);
+
+                    VentaNegocio AltaVenta = new VentaNegocio();
+                    AltaVenta.agregarVenta(idCliente, "70b37dc1-8fde-4840-be47-9ababd0ee7e5", idProducto, cantidad1);
+
+                    if (!string.IsNullOrEmpty(Producto2_MontoTotal.Text))
+                    {
+                        // Obtener el nombre del producto seleccionado en el ComboBox
+                        string nombreProducto2 = ComboBox_Producto2.SelectedItem.ToString();
+                        // Buscar el producto en la lista de productos utilizando su nombre
+                        List<TraerProductos> listarProductos2 = ProductoNegocio.listarProductos();
+                        TraerProductos productoSeleccionado2 = listarProductos2.FirstOrDefault(c => (c.Nombre) == nombreProducto2);
+
+                        if (productoSeleccionado2 != null)
+                        {
+                            string idProducto2 = productoSeleccionado2.Id.ToString();
+                            int cantidad2 = Convert.ToInt32(Combobox_Producto2Cantidad.Text);
+
+                            VentaNegocio AltaVenta2 = new VentaNegocio();
+                            AltaVenta2.agregarVenta(idCliente, "70b37dc1-8fde-4840-be47-9ababd0ee7e5", idProducto2, cantidad2);
+                        }
+                    }
+
+                    if (!string.IsNullOrEmpty(Producto3_MontoTotal.Text))
+                    {
+
+                        // Obtener el nombre del producto seleccionado en el ComboBox
+                        string nombreProducto3 = ComboBox_Producto3.SelectedItem.ToString();
+                        // Buscar el producto en la lista de productos utilizando su nombre
+                        List<TraerProductos> listarProductos3 = ProductoNegocio.listarProductos();
+                        TraerProductos productoSeleccionado3 = listarProductos3.FirstOrDefault(c => (c.Nombre) == nombreProducto3);
+
+                        if (productoSeleccionado3 != null)
+                        {
+                            string idProducto3 = productoSeleccionado3.Id.ToString();
+                            int cantidad3 = Convert.ToInt32(Combobox_Producto3Cantidad.Text);
+
+                            VentaNegocio AltaVenta3 = new VentaNegocio();
+                            AltaVenta3.agregarVenta(idCliente, "70b37dc1-8fde-4840-be47-9ababd0ee7e5", idProducto3, cantidad3);
+                        }
+                    }
+                    if (!string.IsNullOrEmpty(Producto4_MontoTotal.Text))
+                    {
+
+                        // Obtener el nombre del producto seleccionado en el ComboBox
+                        string nombreProducto4 = ComboBox_Producto4.SelectedItem.ToString();
+                        // Buscar el producto en la lista de productos utilizando su nombre
+                        List<TraerProductos> listarProductos4 = ProductoNegocio.listarProductos();
+                        TraerProductos productoSeleccionado4 = listarProductos4.FirstOrDefault(c => (c.Nombre) == nombreProducto4);
+
+                        if (productoSeleccionado4 != null)
+                        {
+                            string idProducto4 = productoSeleccionado4.Id.ToString();
+                            int cantidad4 = Convert.ToInt32(Combobox_Producto4Cantidad.Text);
+
+                            VentaNegocio AltaVenta4 = new VentaNegocio();
+                            AltaVenta4.agregarVenta(idCliente, "70b37dc1-8fde-4840-be47-9ababd0ee7e5", idProducto4, cantidad4);
+                        }
+                    }
+                }
+            }
+            
         } // Todavía No Funciona
 
         public bool ExisteVentaCliente()
@@ -841,6 +922,8 @@ namespace Presentacion
             Monto_Final.Text = "";
             Promocion_text.Text = "";
             MontoPromocion1.Text = "";
+            Promocion2_text.Text = "";
+            MontoPromocion2.Text = "";
 
             CargarClientes(); // Acá tengo que traerme la lista de nombres de los clientes.
         }
@@ -873,5 +956,29 @@ namespace Presentacion
             }
         }
 
+        private void Boton_Vender_Click(object sender, EventArgs e)
+        {
+            DialogResult resultadoConfirmacion = MessageBox.Show($"¿Desea realizar la operación de venta para el cliente {ComboBox_Clientes.Text}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultadoConfirmacion == DialogResult.Yes)
+            {
+                CrearVenta();
+
+                MessageBox.Show($"Se ha realizado la venta para el cliente {ComboBox_Clientes.Text}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                DialogResult resultadoContinuar = MessageBox.Show("¿Desea realizar otra venta?", "Confirmar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultadoContinuar == DialogResult.No)
+                {
+                    Close();
+                    InterfazMenu Menu = new InterfazMenu();
+                    Menu.Show();
+                }
+                else
+                {
+                    LimpiarCampos(); // Restablecer todos los campos del formulario
+                }
+            }
+        }
     }
 }

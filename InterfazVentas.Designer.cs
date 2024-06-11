@@ -40,7 +40,7 @@
             this.Promocion_text = new System.Windows.Forms.TextBox();
             this.Label_IDProducto = new System.Windows.Forms.Label();
             this.Boton_Limpiar = new System.Windows.Forms.Button();
-            this.Boton_Modificar = new System.Windows.Forms.Button();
+            this.Boton_Vender = new System.Windows.Forms.Button();
             this.Monto_Final = new System.Windows.Forms.TextBox();
             this.Producto4_MontoUnitario = new System.Windows.Forms.TextBox();
             this.Producto4_MontoTotal = new System.Windows.Forms.TextBox();
@@ -229,21 +229,22 @@
             this.Boton_Limpiar.UseVisualStyleBackColor = false;
             this.Boton_Limpiar.Click += new System.EventHandler(this.Boton_Limpiar_Click);
             // 
-            // Boton_Modificar
+            // Boton_Vender
             // 
-            this.Boton_Modificar.BackColor = System.Drawing.Color.Khaki;
-            this.Boton_Modificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Boton_Modificar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
-            this.Boton_Modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
-            this.Boton_Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Boton_Modificar.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boton_Modificar.Location = new System.Drawing.Point(782, 700);
-            this.Boton_Modificar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Boton_Modificar.Name = "Boton_Modificar";
-            this.Boton_Modificar.Size = new System.Drawing.Size(150, 40);
-            this.Boton_Modificar.TabIndex = 31;
-            this.Boton_Modificar.Text = "Vender";
-            this.Boton_Modificar.UseVisualStyleBackColor = false;
+            this.Boton_Vender.BackColor = System.Drawing.Color.Khaki;
+            this.Boton_Vender.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Boton_Vender.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.Boton_Vender.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.Boton_Vender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Boton_Vender.Font = new System.Drawing.Font("Nunito", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boton_Vender.Location = new System.Drawing.Point(782, 700);
+            this.Boton_Vender.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Boton_Vender.Name = "Boton_Vender";
+            this.Boton_Vender.Size = new System.Drawing.Size(150, 40);
+            this.Boton_Vender.TabIndex = 31;
+            this.Boton_Vender.Text = "Vender";
+            this.Boton_Vender.UseVisualStyleBackColor = false;
+            this.Boton_Vender.Click += new System.EventHandler(this.Boton_Vender_Click);
             // 
             // Monto_Final
             // 
@@ -767,7 +768,7 @@
             this.Controls.Add(this.Promocion_text);
             this.Controls.Add(this.Label_IDProducto);
             this.Controls.Add(this.Boton_Limpiar);
-            this.Controls.Add(this.Boton_Modificar);
+            this.Controls.Add(this.Boton_Vender);
             this.Controls.Add(this.Monto_Final);
             this.Controls.Add(this.Producto4_MontoUnitario);
             this.Controls.Add(this.Producto4_MontoTotal);
@@ -861,7 +862,7 @@
         private System.Windows.Forms.TextBox Producto4_Descripcion;
         private System.Windows.Forms.TextBox Monto_Final;
         private System.Windows.Forms.Button Boton_Limpiar;
-        private System.Windows.Forms.Button Boton_Modificar;
+        private System.Windows.Forms.Button Boton_Vender;
         private System.Windows.Forms.Label Label_IDProducto;
         private System.Windows.Forms.TextBox MontoPromocion1;
         private System.Windows.Forms.TextBox Promocion_text;
