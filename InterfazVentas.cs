@@ -931,7 +931,12 @@ namespace Presentacion
         {
             // Está bien, pero tengo que obtener una fecha de alta, podría ser la fecha de hoy y quedar grabado defintivamente.
             // Esa fecha, dónde la guardás? En el .txt?
-            
+
+            InterfazLogIn interfazLogIn = InterfazLogIn.Instancia;
+
+            string idVendedor = interfazLogIn.idVendedor; // Traigo el id del vendedor
+            idVendedor = idVendedor.Substring(1, idVendedor.Length - 2); // El dato venía con doble comilla, le eliminamos el primer y último caracter.
+
             // Obtener el nombre del cliente seleccionado en el ComboBox
             string nombreCliente = ComboBox_Clientes.SelectedItem.ToString();
             // Buscar el cliente en la lista de clientes utilizando su nombre
@@ -956,7 +961,7 @@ namespace Presentacion
                     int cantidad1 = Convert.ToInt32(Combobox_Producto1Cantidad.Text);
 
                     VentaNegocio AltaVenta = new VentaNegocio();
-                    AltaVenta.agregarVenta(idCliente, "70b37dc1-8fde-4840-be47-9ababd0ee7e5", idProducto, cantidad1);
+                    AltaVenta.agregarVenta(idCliente, idVendedor, idProducto, cantidad1);
 
                     if (!string.IsNullOrEmpty(Producto2_MontoTotal.Text))
                     {
@@ -972,7 +977,7 @@ namespace Presentacion
                             int cantidad2 = Convert.ToInt32(Combobox_Producto2Cantidad.Text);
 
                             VentaNegocio AltaVenta2 = new VentaNegocio();
-                            AltaVenta2.agregarVenta(idCliente, "70b37dc1-8fde-4840-be47-9ababd0ee7e5", idProducto2, cantidad2);
+                            AltaVenta2.agregarVenta(idCliente, idVendedor, idProducto2, cantidad2);
                         }
                     }
 
@@ -991,7 +996,7 @@ namespace Presentacion
                             int cantidad3 = Convert.ToInt32(Combobox_Producto3Cantidad.Text);
 
                             VentaNegocio AltaVenta3 = new VentaNegocio();
-                            AltaVenta3.agregarVenta(idCliente, "70b37dc1-8fde-4840-be47-9ababd0ee7e5", idProducto3, cantidad3);
+                            AltaVenta3.agregarVenta(idCliente, idVendedor, idProducto3, cantidad3);
                         }
                     }
                     if (!string.IsNullOrEmpty(Producto4_MontoTotal.Text))
@@ -1009,7 +1014,7 @@ namespace Presentacion
                             int cantidad4 = Convert.ToInt32(Combobox_Producto4Cantidad.Text);
 
                             VentaNegocio AltaVenta4 = new VentaNegocio();
-                            AltaVenta4.agregarVenta(idCliente, "70b37dc1-8fde-4840-be47-9ababd0ee7e5", idProducto4, cantidad4);
+                            AltaVenta4.agregarVenta(idCliente, idVendedor, idProducto4, cantidad4);
                         }
                     }
                 }
@@ -1067,7 +1072,7 @@ namespace Presentacion
                 }
                 else
                 {
-                    LimpiarCampos(); // Restablecer todos los campos del formulario
+                    Limpiar(); // Restablecer todos los campos del formulario
                 }
             }
         }

@@ -12,6 +12,7 @@ namespace Presentacion
     {
         public string Host { get; set; } // Variable miembro para almacenar el número de host del usuario
 
+        public string idVendedor { get; set; } //Variable para almacenar el idVendedor del usuario (nos va a servir para las ventas)
         public static InterfazLogIn Instancia { get; private set; } // Retengo la instancia para manipular el Menú en función de quién se logueó.
 
         // Definir las credenciales del administrador
@@ -35,6 +36,7 @@ namespace Presentacion
             string Contraseña = Box_Pass.Text;
             string errorUsuario = Validar.CampoEnBlanco(Usuario);
             string errorContraseña = Validar.CampoEnBlanco(Contraseña);
+            idVendedor = id; // Le asignamos al idVendedor el valor del id de inicio de sesión, lo vamos a utilizar para agregar la venta)
 
             if (errorUsuario == "1") // Verificar si hay errores en el nombre de usuario y contraseña
             {

@@ -187,3 +187,5 @@ C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazRepoStockCri
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazRepoVentas.resources
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazVentasDevolver.resources
 C:\Users\david\source\repos\Equipo-1\obj\Debug\Presentacion.InterfazVentasMenu.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.InterfazVentasDevolver.resources
+C:\Users\Tato\Desktop\Cosas de Tato\Facultad\CAI\Equipo1\obj\Debug\Presentacion.InterfazVentasMenu.resources
