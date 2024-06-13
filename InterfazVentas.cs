@@ -1049,35 +1049,70 @@ namespace Presentacion
             
         } // Todavía No Funciona
 
+        //private void GuardarVentaEnTxt(VentasTXT venta)
+        //{
+        //    string directoryPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CAI", "Equipo1");
+        //    Directory.CreateDirectory(directoryPath); // Crea el directorio si no existe
+
+        //    int nextFileNumber = 1;
+        //    string[] existingFiles = Directory.GetFiles(directoryPath, "ventas *.txt");
+        //    if (existingFiles.Length > 0)
+        //    {
+        //        List<int> fileNumbers = existingFiles.Select(file =>
+        //        {
+        //            string fileName = Path.GetFileNameWithoutExtension(file);
+        //            string[] parts = fileName.Split(' ');
+        //            return int.TryParse(parts[1], out int number) ? number : 0;
+        //        }).ToList();
+
+        //        nextFileNumber = fileNumbers.Max() + 1;
+        //    }
+
+        //    string filePath = Path.Combine(directoryPath, $"ventas {nextFileNumber}.txt");
+        //    using (StreamWriter writer = new StreamWriter(filePath))
+        //    {
+        //        writer.WriteLine($"IdTransaccion: {nextFileNumber}");
+        //        writer.WriteLine($"NombreVendedor: {venta.NombreVendedor}");
+        //        writer.WriteLine($"NombreCliente: {venta.NombreCliente}");
+        //        writer.WriteLine("Productos: " + string.Join(", ", venta.Productos));
+        //        writer.WriteLine($"MontoTotal: {venta.MontoTotal}");
+        //    }
+        //}
+
         private void GuardarVentaEnTxt(VentasTXT venta)
         {
+            // Construir la ruta del archivo
             string directoryPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CAI", "Equipo1");
             Directory.CreateDirectory(directoryPath); // Crea el directorio si no existe
+            string filePath = Path.Combine(directoryPath, "ventas.txt");
 
+            // Obtener el siguiente IdTransaccion
             int nextFileNumber = 1;
-            string[] existingFiles = Directory.GetFiles(directoryPath, "ventas *.txt");
-            if (existingFiles.Length > 0)
+            if (File.Exists(filePath))
             {
-                List<int> fileNumbers = existingFiles.Select(file =>
+                string[] existingLines = File.ReadAllLines(filePath);
+                if (existingLines.Length > 0)
                 {
-                    string fileName = Path.GetFileNameWithoutExtension(file);
-                    string[] parts = fileName.Split(' ');
-                    return int.TryParse(parts[1], out int number) ? number : 0;
-                }).ToList();
+                    List<int> transactionIds = existingLines.Select(line =>
+                    {
+                        string[] parts = line.Split('-');
+                        return int.TryParse(parts[0].Trim(), out int id) ? id : 0;
+                    }).ToList();
 
-                nextFileNumber = fileNumbers.Max() + 1;
+                    nextFileNumber = transactionIds.Max() + 1;
+                }
             }
 
-            string filePath = Path.Combine(directoryPath, $"ventas {nextFileNumber}.txt");
-            using (StreamWriter writer = new StreamWriter(filePath))
+            // Construir la línea a escribir en el archivo
+            string lineaVenta = $"{nextFileNumber} - {venta.NombreVendedor} - {venta.NombreCliente} - {string.Join(", ", venta.Productos)} - {venta.MontoTotal}";
+
+            // Escribir la línea en el archivo en modo de adición
+            using (StreamWriter writer = new StreamWriter(filePath, true))
             {
-                writer.WriteLine($"IdTransaccion: {nextFileNumber}");
-                writer.WriteLine($"NombreVendedor: {venta.NombreVendedor}");
-                writer.WriteLine($"NombreCliente: {venta.NombreCliente}");
-                writer.WriteLine("Productos: " + string.Join(", ", venta.Productos));
-                writer.WriteLine($"MontoTotal: {venta.MontoTotal}");
+                writer.WriteLine(lineaVenta);
             }
         }
+
 
         public bool ExisteVentaCliente()
         {
@@ -1124,8 +1159,8 @@ namespace Presentacion
                 if (resultadoContinuar == DialogResult.No)
                 {
                     Close();
-                    InterfazMenu Menu = new InterfazMenu();
-                    Menu.Show();
+                    InterfazVentasMenu VentasMenu = new InterfazVentasMenu();
+                    VentasMenu.Show();
                 }
                 else
                 {
