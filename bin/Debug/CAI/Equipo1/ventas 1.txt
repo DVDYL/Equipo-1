@@ -1,0 +1,5 @@
+IdTransaccion: 1
+NombreVendedor:  
+NombreCliente: Lionel Messi
+Productos: Celular Moto G13
+MontoTotal: $6600000

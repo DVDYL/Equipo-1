@@ -63,6 +63,7 @@
     <Compile Include="TraerVentaPorCliente.cs" />
     <Compile Include="UsuariosActivos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VentasTXT.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
