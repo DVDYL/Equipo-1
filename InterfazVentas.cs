@@ -1084,18 +1084,18 @@ namespace Presentacion
             // Construir la ruta del archivo
             string directoryPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CAI", "Equipo1");
             Directory.CreateDirectory(directoryPath); // Crea el directorio si no existe
-            string filePath = Path.Combine(directoryPath, "ventas.txt");
+            string filePath = Path.Combine(directoryPath, "ventas.csv");
 
             // Obtener el siguiente IdTransaccion
             int nextFileNumber = 1;
             if (File.Exists(filePath))
             {
                 string[] existingLines = File.ReadAllLines(filePath);
-                if (existingLines.Length > 0)
+                if (existingLines.Length > 1) // Primera Linea corresponde a los encabezados
                 {
                     List<int> transactionIds = existingLines.Select(line =>
                     {
-                        string[] parts = line.Split('-');
+                        string[] parts = line.Split(',');
                         return int.TryParse(parts[0].Trim(), out int id) ? id : 0;
                     }).ToList();
 
@@ -1103,14 +1103,21 @@ namespace Presentacion
                 }
             }
 
-            // Construir la línea a escribir en el archivo
-            string lineaVenta = $"{nextFileNumber} - {venta.NombreVendedor} - {venta.NombreCliente} - {string.Join(", ", venta.Productos)} - {venta.MontoTotal}";
-
-            // Escribir la línea en el archivo en modo de adición
+            // Verificar si el archivo existe y si no, crear la cabecera
+            bool fileExists = File.Exists(filePath);
+           
             using (StreamWriter writer = new StreamWriter(filePath, true))
             {
+                if (!fileExists)
+                {
+                    // Escribir la cabecera
+                    writer.WriteLine("IdTransaccion,NombreVendedor,NombreCliente,Productos,MontoTotal");
+                }
+                // Construir la línea a escribir en el archivo
+                string lineaVenta = $"{nextFileNumber},{venta.NombreVendedor},{venta.NombreCliente},{string.Join(" | ", venta.Productos)},{venta.MontoTotal}";
                 writer.WriteLine(lineaVenta);
             }
+            
         }
 
 
