@@ -42,7 +42,7 @@ namespace Presentacion
             }
             else
             {
-                MessageBox.Show("ERROR 201: Este nivel de usuario no tiene acceso al reporte de Stock Crítico", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Este nivel de usuario no tiene acceso al reporte de Stock Crítico", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -62,7 +62,7 @@ namespace Presentacion
             }
             else
             {
-                MessageBox.Show("ERROR 201: Este nivel de usuario no tiene acceso al reporte de las ventas por vendedor", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Este nivel de usuario no tiene acceso al reporte de las ventas por vendedor", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -82,7 +82,7 @@ namespace Presentacion
             }
             else
             {
-                MessageBox.Show("ERROR 201: Este nivel de usuario no tiene acceso al reporte de los productos mas vendidos", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Este nivel de usuario no tiene acceso al reporte de los productos mas vendidos", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

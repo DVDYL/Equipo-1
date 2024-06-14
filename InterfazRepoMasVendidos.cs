@@ -74,36 +74,41 @@ namespace Presentacion
                         string productosString = data[4].Trim();
                         string categoriasString = data[5].Trim();
                         string cantidadString = data[6].Trim();
+                        string estadoString = data[8].Trim();
 
-                        string[] productos = productosString.Split('|').Select(p => p.Trim()).ToArray();
-                        string[] categorias = categoriasString.Split('|').Select(c => c.Trim()).ToArray();
-                        string[] cantidades = cantidadString.Split('|').Select(c => c.Trim()).ToArray();
-
-                        if (productos.Length == categorias.Length && productos.Length == cantidades.Length)
+                        if (int.TryParse(estadoString, out int estado) && estado == 1)
                         {
-                            for (int i = 0; i < productos.Length; i++)
+
+                            string[] productos = productosString.Split('|').Select(p => p.Trim()).ToArray();
+                            string[] categorias = categoriasString.Split('|').Select(c => c.Trim()).ToArray();
+                            string[] cantidades = cantidadString.Split('|').Select(c => c.Trim()).ToArray();
+
+                            if (productos.Length == categorias.Length && productos.Length == cantidades.Length)
                             {
-                                string producto = productos[i];
-                                string categoria = categorias[i];
-                                int cantidad = int.Parse(cantidades[i]);
-
-                                if (!productosMasVendidosPorCategoria.ContainsKey(categoria))
+                                for (int i = 0; i < productos.Length; i++)
                                 {
-                                    productosMasVendidosPorCategoria[categoria] = new Dictionary<string, ProductoVentaInfo>();
-                                }
+                                    string producto = productos[i];
+                                    string categoria = categorias[i];
+                                    int cantidad = int.Parse(cantidades[i]);
 
-                                if (!productosMasVendidosPorCategoria[categoria].ContainsKey(producto))
-                                {
-                                    productosMasVendidosPorCategoria[categoria][producto] = new ProductoVentaInfo();
-                                }
+                                    if (!productosMasVendidosPorCategoria.ContainsKey(categoria))
+                                    {
+                                        productosMasVendidosPorCategoria[categoria] = new Dictionary<string, ProductoVentaInfo>();
+                                    }
 
-                                productosMasVendidosPorCategoria[categoria][producto].CantidadVentas += cantidad;
-                                productosMasVendidosPorCategoria[categoria][producto].IdsVentas.Add(int.Parse(data[0].Trim()));
+                                    if (!productosMasVendidosPorCategoria[categoria].ContainsKey(producto))
+                                    {
+                                        productosMasVendidosPorCategoria[categoria][producto] = new ProductoVentaInfo();
+                                    }
+
+                                    productosMasVendidosPorCategoria[categoria][producto].CantidadVentas += cantidad;
+                                    productosMasVendidosPorCategoria[categoria][producto].IdsVentas.Add(int.Parse(data[0].Trim()));
+                                }
                             }
-                        }
-                        else
-                        {
-                            Console.WriteLine($"Error en la estructura de datos de la línea: {line}");
+                            else
+                            {
+                                Console.WriteLine($"Error en la estructura de datos de la línea: {line}");
+                            }
                         }
                     }
                     else
@@ -126,8 +131,8 @@ namespace Presentacion
             // Crear un DataTable para mostrar los resultados
             DataTable dataTable = new DataTable();
             dataTable.Columns.Add("Categoría");
-            dataTable.Columns.Add("Producto Más Vendido");
-            dataTable.Columns.Add("Cantidad de Ventas", typeof(int));
+            dataTable.Columns.Add("Producto");
+            dataTable.Columns.Add("Cantidad", typeof(int));
             dataTable.Columns.Add("ID Venta", typeof(string));
 
             // Llenar el DataTable con los datos del diccionario

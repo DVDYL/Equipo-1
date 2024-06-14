@@ -7,6 +7,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -65,37 +66,43 @@ namespace Presentacion
                     {
                         string vendedor = data[2].Trim();
                         string fechaVentaString = data[1].Trim();
-                        string montoString = data[8].Trim().Replace("$", "").Replace(",", "");
+                        string montoString = data[7].Trim();
+                        string estadoString = data[8].Trim();
 
-                        if (decimal.TryParse(montoString, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal monto))
+                        if (int.TryParse(estadoString, out int estado) && estado == 1)
                         {
-                            if (DateTime.TryParseExact(fechaVentaString, "d/M/yyyy H:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime fechaVenta))
+
+                            montoString = Regex.Replace(montoString, @"[^\d.]", ""); // Deja solo dígitos y punto decimal
+                            if (decimal.TryParse(montoString, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal monto))
                             {
-                                string mes = fechaVenta.ToString("MMMM yyyy");
-
-                                if (!ventasPorVendedorYMes.TryGetValue(vendedor, out Dictionary<string, VentasPorMes> ventasPorMes))
+                                if (DateTime.TryParseExact(fechaVentaString, "d/M/yyyy H:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime fechaVenta))
                                 {
-                                    ventasPorMes = new Dictionary<string, VentasPorMes>();
-                                    ventasPorVendedorYMes[vendedor] = ventasPorMes;
-                                }
+                                    string mes = fechaVenta.ToString("MMMM yyyy");
 
-                                if (!ventasPorMes.TryGetValue(mes, out VentasPorMes ventasPorMesActual))
+                                    if (!ventasPorVendedorYMes.TryGetValue(vendedor, out Dictionary<string, VentasPorMes> ventasPorMes))
+                                    {
+                                        ventasPorMes = new Dictionary<string, VentasPorMes>();
+                                        ventasPorVendedorYMes[vendedor] = ventasPorMes;
+                                    }
+
+                                    if (!ventasPorMes.TryGetValue(mes, out VentasPorMes ventasPorMesActual))
+                                    {
+                                        ventasPorMesActual = new VentasPorMes();
+                                        ventasPorMes[mes] = ventasPorMesActual;
+                                    }
+
+                                    ventasPorMesActual.CantidadVentas++;
+                                    ventasPorMesActual.MontoTotal += monto;
+                                }
+                                else
                                 {
-                                    ventasPorMesActual = new VentasPorMes();
-                                    ventasPorMes[mes] = ventasPorMesActual;
+                                    Console.WriteLine($"Error al parsear la fecha: {fechaVentaString}");
                                 }
-
-                                ventasPorMesActual.CantidadVentas++;
-                                ventasPorMesActual.MontoTotal += monto;
                             }
                             else
                             {
-                                Console.WriteLine($"Error al parsear la fecha: {fechaVentaString}");
+                                Console.WriteLine($"Error al parsear el monto: {montoString}");
                             }
-                        }
-                        else
-                        {
-                            Console.WriteLine($"Error al parsear el monto: {montoString}");
                         }
                     }
                     else
@@ -120,7 +127,7 @@ namespace Presentacion
             dataTable.Columns.Add("Vendedor");
             dataTable.Columns.Add("Mes");
             dataTable.Columns.Add("Ventas", typeof(int));
-            dataTable.Columns.Add("Monto Total", typeof(decimal));
+            dataTable.Columns.Add("Total ($)", typeof(decimal));
 
             // Llenar el DataTable con los datos del diccionario
             foreach (var kvpVendedor in ventasPorVendedorYMes)

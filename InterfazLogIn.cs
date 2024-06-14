@@ -265,7 +265,7 @@ namespace Presentacion
             {
                 Console.WriteLine(ex.ToString());
             }
-        } // No está usando el host del método de validar? Hay que eliminar este método?
+        } 
 
         private void SetearSession(string NombreUsuario)
         {
@@ -278,7 +278,7 @@ namespace Presentacion
             {
                 //Tag = new SessionData { Usuario = NombreUsuario, Host = usuario.Host};
             }
-        } // Ya se captura el id desde la clase validar. Eliminar método? si → No se puede eliminar hasta sacarlo de ResetearIntentosFallidos
+        }
 
         private void Boton_Ingresar_Click(object sender, EventArgs e)
         {

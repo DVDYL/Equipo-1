@@ -1,2 +1,5 @@
 Venta Nro.,Fecha,Vendedor,Cliente,Productos,Categoria,Cantidad,Monto,Estado
 1,13/6/2024 20:09:38,NICO PUGA,Nicolas Tagliafico,Samsung G1  | Producto piola G1 | G1 - Licuadora Phillips,2 | 3 | 3,1 | 2 | 3,$133875,0
+2,13/6/2024 21:31:33,NICO PUGA,Lionel Messi,Producto piola G1 | Celular Moto G13,3 | 2,5 | 3,$1137500,0
+3,13/6/2024 22:18:24,Lisandro Suvercase,Lionel Messi,Samsung G1 ,2,8,$140000,0
+4,13/6/2024 23:05:13,Lisandro Suvercase,Nicolas Tagliafico,Samsung G1  | Producto piola G1 | G1 - Licuadora Phillips | G1 - Tele mas chica,2 | 3 | 3 | 5,16 | 40 | 17 | 13,$4901125,1
