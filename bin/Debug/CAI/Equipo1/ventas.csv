@@ -1,2 +1,2 @@
-IdTransaccion,NombreVendedor,NombreCliente,Productos,MontoTotal
-1, ,Lionel Messi,Producto piola G1,$950000
+Venta Nro.,Fecha,Vendedor,Cliente,Productos,Categoria,Cantidad,Monto,Estado
+1,13/6/2024 20:09:38,NICO PUGA,Nicolas Tagliafico,Samsung G1  | Producto piola G1 | G1 - Licuadora Phillips,2 | 3 | 3,1 | 2 | 3,$133875,0

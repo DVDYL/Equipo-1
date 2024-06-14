@@ -20,6 +20,7 @@ namespace Presentacion
         private ClienteNegocio ClienteNegocio = new ClienteNegocio();
         private ProductoNegocio ProductoNegocio = new ProductoNegocio();
         private VentaNegocio VentaNegocio = new VentaNegocio();
+        private UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
 
         public InterfazVentas()
         {
@@ -928,156 +929,249 @@ namespace Presentacion
             return descuento;
         }
 
+        //private void CrearVenta()
+        //{
+        //    InterfazLogIn interfazLogIn = InterfazLogIn.Instancia;
+
+        //    string idVendedorStr = interfazLogIn.idVendedor; // Traigo el id del vendedor
+        //    idVendedorStr = idVendedorStr.Substring(1, idVendedorStr.Length - 2); // El dato venía con doble comilla, le eliminamos el primer y último caracter.
+
+        //    // Convertir idVendedorStr a Guid
+        //    Guid idVendedor = Guid.Parse(idVendedorStr);
+
+        //    List<UsuariosActivos> usuarios = UsuarioNegocio.ListarUsuarios();
+
+        //    // Buscar el usuario en la lista de usuarios utilizando su idVendedor
+        //    UsuariosActivos usuarioVendedor = usuarios.FirstOrDefault(u => u.Id == idVendedor);
+        //    string nombreVendedorTXT = "";
+
+        //    if (usuarioVendedor != null)
+        //    {
+        //        nombreVendedorTXT = usuarioVendedor.Nombre + " " + usuarioVendedor.Apellido; //Me traigo el nombre del vendedor para guardarlo en el txt.
+        //    }
+
+        //    string MontoFinalTXT = Monto_Final.Text; //Me traigo el monto final para guardarlo en un TXT
+
+        //    // Obtener el nombre del cliente seleccionado en el ComboBox
+        //    string nombreCliente = ComboBox_Clientes.SelectedItem.ToString();
+
+        //    // Buscar el cliente en la lista de clientes utilizando su nombre
+        //    List<Cliente> listarClientes = ClienteNegocio.listarClientes();
+        //    Cliente clienteSeleccionado = listarClientes.FirstOrDefault(c => (c.Apellido + " " + c.Nombre) == nombreCliente);
+
+        //    if (clienteSeleccionado != null)
+        //    {
+        //        // Obtener el ID del cliente
+        //        string idCliente = clienteSeleccionado.Id;
+        //        string nombreClienteTXT = clienteSeleccionado.Nombre + " " + clienteSeleccionado.Apellido; //Me traigo el nombre del cliente para guardarlo en el TXT.
+
+        //        string nombreProducto = ComboBox_Producto1.SelectedItem.ToString();
+
+        //        List<TraerProductos> listarProductos = ProductoNegocio.listarProductos();
+        //        TraerProductos productoSeleccionado = listarProductos.FirstOrDefault(c => (c.Nombre) == nombreProducto);
+
+        //        List<string> productosParaTXT = new List<string>();
+
+        //        if (productoSeleccionado != null)
+        //        {
+        //            string idProducto = productoSeleccionado.Id.ToString();
+        //            int cantidad1 = Convert.ToInt32(Combobox_Producto1Cantidad.Text);
+        //            int categoria1 = Convert.ToInt32(ComboBox_Categoria1.Text);
+
+        //            VentaNegocio AltaVenta = new VentaNegocio();
+        //            AltaVenta.agregarVenta(idCliente, idVendedorStr, idProducto, cantidad1);
+
+        //            productosParaTXT.Add(nombreProducto);
+
+        //            if (!string.IsNullOrEmpty(Producto2_MontoTotal.Text))
+        //            {
+        //                // Obtener el nombre del producto seleccionado en el ComboBox
+        //                string nombreProducto2 = ComboBox_Producto2.SelectedItem.ToString();
+        //                // Buscar el producto en la lista de productos utilizando su nombre
+        //                List<TraerProductos> listarProductos2 = ProductoNegocio.listarProductos();
+        //                TraerProductos productoSeleccionado2 = listarProductos2.FirstOrDefault(c => (c.Nombre) == nombreProducto2);
+
+        //                if (productoSeleccionado2 != null)
+        //                {
+        //                    string idProducto2 = productoSeleccionado2.Id.ToString();
+        //                    int cantidad2 = Convert.ToInt32(Combobox_Producto2Cantidad.Text);
+        //                    int categoria2 = Convert.ToInt32(ComboBox_Categoria1.Text);
+
+        //                    VentaNegocio AltaVenta2 = new VentaNegocio();
+        //                    AltaVenta2.agregarVenta(idCliente, idVendedorStr, idProducto2, cantidad2);
+
+        //                    productosParaTXT.Add(nombreProducto2);
+        //                }
+        //            }
+
+        //            if (!string.IsNullOrEmpty(Producto3_MontoTotal.Text))
+        //            {
+
+        //                // Obtener el nombre del producto seleccionado en el ComboBox
+        //                string nombreProducto3 = ComboBox_Producto3.SelectedItem.ToString();
+        //                // Buscar el producto en la lista de productos utilizando su nombre
+        //                List<TraerProductos> listarProductos3 = ProductoNegocio.listarProductos();
+        //                TraerProductos productoSeleccionado3 = listarProductos3.FirstOrDefault(c => (c.Nombre) == nombreProducto3);
+
+        //                if (productoSeleccionado3 != null)
+        //                {
+        //                    string idProducto3 = productoSeleccionado3.Id.ToString();
+        //                    int cantidad3 = Convert.ToInt32(Combobox_Producto3Cantidad.Text);
+        //                    int categoria3 = Convert.ToInt32(ComboBox_Categoria1.Text);
+
+        //                    VentaNegocio AltaVenta3 = new VentaNegocio();
+        //                    AltaVenta3.agregarVenta(idCliente, idVendedorStr, idProducto3, cantidad3);
+
+        //                    productosParaTXT.Add(nombreProducto3);
+        //                }
+        //            }
+        //            if (!string.IsNullOrEmpty(Producto4_MontoTotal.Text))
+        //            {
+
+        //                // Obtener el nombre del producto seleccionado en el ComboBox
+        //                string nombreProducto4 = ComboBox_Producto4.SelectedItem.ToString();
+        //                // Buscar el producto en la lista de productos utilizando su nombre
+        //                List<TraerProductos> listarProductos4 = ProductoNegocio.listarProductos();
+        //                TraerProductos productoSeleccionado4 = listarProductos4.FirstOrDefault(c => (c.Nombre) == nombreProducto4);
+
+        //                if (productoSeleccionado4 != null)
+        //                {
+        //                    string idProducto4 = productoSeleccionado4.Id.ToString();
+        //                    int cantidad4 = Convert.ToInt32(Combobox_Producto4Cantidad.Text);
+        //                    int categoria4 = Convert.ToInt32(ComboBox_Categoria1.Text);
+
+        //                    VentaNegocio AltaVenta4 = new VentaNegocio();
+        //                    AltaVenta4.agregarVenta(idCliente, idVendedorStr, idProducto4, cantidad4);
+
+        //                    productosParaTXT.Add(nombreProducto4);
+        //                }
+        //            }
+        //        }
+
+        //        DateTime fechaVentaTXT = Calendario_Operacion.Value; // Capturar la fecha del comprobante
+
+        //        VentasTXT ventaTXT = new VentasTXT();
+        //        {
+        //            ventaTXT.FechaVenta = fechaVentaTXT; // Incluir la fecha de venta
+        //            ventaTXT.NombreVendedor = nombreVendedorTXT;
+        //            ventaTXT.NombreCliente = nombreClienteTXT;
+        //            ventaTXT.Productos = productosParaTXT;
+        //            ventaTXT.MontoTotal = MontoFinalTXT;
+        //        }
+
+        //        GuardarVentaEnTxt(ventaTXT);
+        //    }
+
+        //}
+
         private void CrearVenta()
         {
-            // Está bien, pero tengo que obtener una fecha de alta, podría ser la fecha de hoy y quedar grabado defintivamente.
-            // Esa fecha, dónde la guardás? En el .txt?
-
             InterfazLogIn interfazLogIn = InterfazLogIn.Instancia;
 
-            string idVendedor = interfazLogIn.idVendedor; // Traigo el id del vendedor
-            idVendedor = idVendedor.Substring(1, idVendedor.Length - 2); // El dato venía con doble comilla, le eliminamos el primer y último caracter.
+            string idVendedorStr = interfazLogIn.idVendedor; // Traigo el id del vendedor
+            idVendedorStr = idVendedorStr.Substring(1, idVendedorStr.Length - 2); // El dato venía con doble comilla, le eliminamos el primer y último caracter.
 
+            // Convertir idVendedorStr a Guid
+            Guid idVendedor = Guid.Parse(idVendedorStr);
 
-            UsuariosActivos nombreUsuarioTXT = new UsuariosActivos();
+            List<UsuariosActivos> usuarios = UsuarioNegocio.ListarUsuarios();
 
-            string nombreVendedorTXT = nombreUsuarioTXT.Nombre + " " + nombreUsuarioTXT.Apellido; //Me traigo el nombre del vendedor para guardarlo en el txt.
+            // Buscar el usuario en la lista de usuarios utilizando su idVendedor
+            UsuariosActivos usuarioVendedor = usuarios.FirstOrDefault(u => u.Id == idVendedor);
+            string nombreVendedorTXT = "";
+
+            if (usuarioVendedor != null)
+            {
+                nombreVendedorTXT = usuarioVendedor.Nombre + " " + usuarioVendedor.Apellido; //Me traigo el nombre del vendedor para guardarlo en el txt.
+            }
 
             string MontoFinalTXT = Monto_Final.Text; //Me traigo el monto final para guardarlo en un TXT
 
             // Obtener el nombre del cliente seleccionado en el ComboBox
             string nombreCliente = ComboBox_Clientes.SelectedItem.ToString();
+
             // Buscar el cliente en la lista de clientes utilizando su nombre
             List<Cliente> listarClientes = ClienteNegocio.listarClientes();
             Cliente clienteSeleccionado = listarClientes.FirstOrDefault(c => (c.Apellido + " " + c.Nombre) == nombreCliente);
-            
+
             if (clienteSeleccionado != null)
             {
                 // Obtener el ID del cliente
                 string idCliente = clienteSeleccionado.Id;
                 string nombreClienteTXT = clienteSeleccionado.Nombre + " " + clienteSeleccionado.Apellido; //Me traigo el nombre del cliente para guardarlo en el TXT.
 
-                // Obtener el nombre del cliente seleccionado en el ComboBox
-                string nombreProducto = ComboBox_Producto1.SelectedItem.ToString();
-                // Buscar el cliente en la lista de clientes utilizando su nombre
-                List<TraerProductos> listarProductos = ProductoNegocio.listarProductos();
-                TraerProductos productoSeleccionado = listarProductos.FirstOrDefault(c => (c.Nombre) == nombreProducto);
-
-
                 List<string> productosParaTXT = new List<string>();
+                List<int> cantidadesParaTXT = new List<int>();
+                List<string> categoriasParaTXT = new List<string>();
+
+                // Obtener los detalles del producto 1
+                string nombreProducto1 = ComboBox_Producto1.SelectedItem?.ToString();
+                if (!string.IsNullOrEmpty(nombreProducto1))
+                {
+                    TraerProductos productoSeleccionado1 = ProductoNegocio.listarProductos().FirstOrDefault(c => c.Nombre == nombreProducto1);
+                    if (productoSeleccionado1 != null)
+                    {
+                        string idProducto1 = productoSeleccionado1.Id.ToString();
+                        int cantidad1 = Convert.ToInt32(Combobox_Producto1Cantidad.Text);
+                        string categoria1 = ComboBox_Categoria1.Text;
+
+                        VentaNegocio AltaVenta = new VentaNegocio();
+                        AltaVenta.agregarVenta(idCliente, idVendedorStr, idProducto1, cantidad1);
+
+                        productosParaTXT.Add(nombreProducto1);
+                        cantidadesParaTXT.Add(cantidad1);
+                        categoriasParaTXT.Add(categoria1);
+                    }
+                }
+
+                // Obtener los detalles del producto 2
+                AgregarProducto(ComboBox_Producto2, Producto2_MontoTotal, Combobox_Producto2Cantidad, ComboBox_Categoria2, idCliente, idVendedorStr, productosParaTXT, cantidadesParaTXT, categoriasParaTXT);
+
+                // Obtener los detalles del producto 3
+                AgregarProducto(ComboBox_Producto3, Producto3_MontoTotal, Combobox_Producto3Cantidad, ComboBox_Categoria3, idCliente, idVendedorStr, productosParaTXT, cantidadesParaTXT, categoriasParaTXT);
+
+                // Obtener los detalles del producto 4
+                AgregarProducto(ComboBox_Producto4, Producto4_MontoTotal, Combobox_Producto4Cantidad, ComboBox_Categoria4, idCliente, idVendedorStr, productosParaTXT, cantidadesParaTXT, categoriasParaTXT);
+
+                DateTime fechaVentaTXT = Calendario_Operacion.Value; // Capturar la fecha del comprobante
+
+                VentasTXT ventaTXT = new VentasTXT
+                {
+                    FechaVenta = fechaVentaTXT, // Incluir la fecha de venta
+                    NombreVendedor = nombreVendedorTXT,
+                    NombreCliente = nombreClienteTXT,
+                    Productos = productosParaTXT,
+                    Cantidades = cantidadesParaTXT,
+                    Categorias = categoriasParaTXT,
+                    MontoTotal = MontoFinalTXT
+                };
+
+                GuardarVentaEnTxt(ventaTXT);
+            }
+        }
+
+        private void AgregarProducto(ComboBox comboBoxProducto, TextBox montoTotal, ComboBox comboBoxCantidad, ComboBox comboBoxCategoria, string idCliente, string idVendedorStr, List<string> productosParaTXT, List<int> cantidadesParaTXT, List<string> categoriasParaTXT)
+        {
+            if (!string.IsNullOrEmpty(montoTotal.Text))
+            {
+                string nombreProducto = comboBoxProducto.SelectedItem.ToString();
+                TraerProductos productoSeleccionado = ProductoNegocio.listarProductos().FirstOrDefault(c => c.Nombre == nombreProducto);
 
                 if (productoSeleccionado != null)
                 {
                     string idProducto = productoSeleccionado.Id.ToString();
-                    int cantidad1 = Convert.ToInt32(Combobox_Producto1Cantidad.Text);
+                    int cantidad = Convert.ToInt32(comboBoxCantidad.Text);
+                    string categoria = comboBoxCategoria.Text;
 
                     VentaNegocio AltaVenta = new VentaNegocio();
-                    AltaVenta.agregarVenta(idCliente, idVendedor, idProducto, cantidad1);
+                    AltaVenta.agregarVenta(idCliente, idVendedorStr, idProducto, cantidad);
 
                     productosParaTXT.Add(nombreProducto);
-
-                    if (!string.IsNullOrEmpty(Producto2_MontoTotal.Text))
-                    {
-                        // Obtener el nombre del producto seleccionado en el ComboBox
-                        string nombreProducto2 = ComboBox_Producto2.SelectedItem.ToString();
-                        // Buscar el producto en la lista de productos utilizando su nombre
-                        List<TraerProductos> listarProductos2 = ProductoNegocio.listarProductos();
-                        TraerProductos productoSeleccionado2 = listarProductos2.FirstOrDefault(c => (c.Nombre) == nombreProducto2);
-
-                        if (productoSeleccionado2 != null)
-                        {
-                            string idProducto2 = productoSeleccionado2.Id.ToString();
-                            int cantidad2 = Convert.ToInt32(Combobox_Producto2Cantidad.Text);
-
-                            VentaNegocio AltaVenta2 = new VentaNegocio();
-                            AltaVenta2.agregarVenta(idCliente, idVendedor, idProducto2, cantidad2);
-
-                            productosParaTXT.Add(nombreProducto2);
-                        }
-                    }
-
-                    if (!string.IsNullOrEmpty(Producto3_MontoTotal.Text))
-                    {
-
-                        // Obtener el nombre del producto seleccionado en el ComboBox
-                        string nombreProducto3 = ComboBox_Producto3.SelectedItem.ToString();
-                        // Buscar el producto en la lista de productos utilizando su nombre
-                        List<TraerProductos> listarProductos3 = ProductoNegocio.listarProductos();
-                        TraerProductos productoSeleccionado3 = listarProductos3.FirstOrDefault(c => (c.Nombre) == nombreProducto3);
-
-                        if (productoSeleccionado3 != null)
-                        {
-                            string idProducto3 = productoSeleccionado3.Id.ToString();
-                            int cantidad3 = Convert.ToInt32(Combobox_Producto3Cantidad.Text);
-
-                            VentaNegocio AltaVenta3 = new VentaNegocio();
-                            AltaVenta3.agregarVenta(idCliente, idVendedor, idProducto3, cantidad3);
-
-                            productosParaTXT.Add(nombreProducto3);
-                        }
-                    }
-                    if (!string.IsNullOrEmpty(Producto4_MontoTotal.Text))
-                    {
-
-                        // Obtener el nombre del producto seleccionado en el ComboBox
-                        string nombreProducto4 = ComboBox_Producto4.SelectedItem.ToString();
-                        // Buscar el producto en la lista de productos utilizando su nombre
-                        List<TraerProductos> listarProductos4 = ProductoNegocio.listarProductos();
-                        TraerProductos productoSeleccionado4 = listarProductos4.FirstOrDefault(c => (c.Nombre) == nombreProducto4);
-
-                        if (productoSeleccionado4 != null)
-                        {
-                            string idProducto4 = productoSeleccionado4.Id.ToString();
-                            int cantidad4 = Convert.ToInt32(Combobox_Producto4Cantidad.Text);
-
-                            VentaNegocio AltaVenta4 = new VentaNegocio();
-                            AltaVenta4.agregarVenta(idCliente, idVendedor, idProducto4, cantidad4);
-
-                            productosParaTXT.Add(nombreProducto4);
-                        }
-                    }
+                    cantidadesParaTXT.Add(cantidad);
+                    categoriasParaTXT.Add(categoria);
                 }
-                VentasTXT ventaTXT = new VentasTXT();
-                {
-                    ventaTXT.NombreVendedor = nombreVendedorTXT;
-                    ventaTXT.NombreCliente = nombreClienteTXT;
-                    ventaTXT.Productos = productosParaTXT;
-                    ventaTXT.MontoTotal = MontoFinalTXT;
-                }
-                GuardarVentaEnTxt(ventaTXT);
             }
-            
-        } // Todavía No Funciona
-
-        //private void GuardarVentaEnTxt(VentasTXT venta)
-        //{
-        //    string directoryPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CAI", "Equipo1");
-        //    Directory.CreateDirectory(directoryPath); // Crea el directorio si no existe
-
-        //    int nextFileNumber = 1;
-        //    string[] existingFiles = Directory.GetFiles(directoryPath, "ventas *.txt");
-        //    if (existingFiles.Length > 0)
-        //    {
-        //        List<int> fileNumbers = existingFiles.Select(file =>
-        //        {
-        //            string fileName = Path.GetFileNameWithoutExtension(file);
-        //            string[] parts = fileName.Split(' ');
-        //            return int.TryParse(parts[1], out int number) ? number : 0;
-        //        }).ToList();
-
-        //        nextFileNumber = fileNumbers.Max() + 1;
-        //    }
-
-        //    string filePath = Path.Combine(directoryPath, $"ventas {nextFileNumber}.txt");
-        //    using (StreamWriter writer = new StreamWriter(filePath))
-        //    {
-        //        writer.WriteLine($"IdTransaccion: {nextFileNumber}");
-        //        writer.WriteLine($"NombreVendedor: {venta.NombreVendedor}");
-        //        writer.WriteLine($"NombreCliente: {venta.NombreCliente}");
-        //        writer.WriteLine("Productos: " + string.Join(", ", venta.Productos));
-        //        writer.WriteLine($"MontoTotal: {venta.MontoTotal}");
-        //    }
-        //}
+        }
 
         private void GuardarVentaEnTxt(VentasTXT venta)
         {
@@ -1105,20 +1199,66 @@ namespace Presentacion
 
             // Verificar si el archivo existe y si no, crear la cabecera
             bool fileExists = File.Exists(filePath);
-           
+
             using (StreamWriter writer = new StreamWriter(filePath, true))
             {
                 if (!fileExists)
                 {
                     // Escribir la cabecera
-                    writer.WriteLine("IdTransaccion,NombreVendedor,NombreCliente,Productos,MontoTotal");
+                    writer.WriteLine("Venta Nro.,Fecha,Vendedor,Cliente,Productos,Categoria,Cantidad,Monto,Estado");
                 }
+
+                // Construir las líneas de productos, cantidades y categorías
+                string productos = string.Join(" | ", venta.Productos);
+                string cantidades = string.Join(" | ", venta.Cantidades);
+                string categorias = string.Join(" | ", venta.Categorias);
+
                 // Construir la línea a escribir en el archivo
-                string lineaVenta = $"{nextFileNumber},{venta.NombreVendedor},{venta.NombreCliente},{string.Join(" | ", venta.Productos)},{venta.MontoTotal}";
-                writer.WriteLine(lineaVenta);
+                string lineaVenta = $"{nextFileNumber},{venta.FechaVenta},{venta.NombreVendedor},{venta.NombreCliente},{productos},{categorias},{cantidades},{venta.MontoTotal},1";
+                writer.WriteLine(lineaVenta); // Inserto 1 por defecto, ya que es el alta de la venta.
             }
-            
         }
+
+        //private void GuardarVentaEnTxt(VentasTXT venta)
+        //{
+        //    // Construir la ruta del archivo
+        //    string directoryPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CAI", "Equipo1");
+        //    Directory.CreateDirectory(directoryPath); // Crea el directorio si no existe
+        //    string filePath = Path.Combine(directoryPath, "ventas.csv");
+
+        //    // Obtener el siguiente IdTransaccion
+        //    int nextFileNumber = 1;
+        //    if (File.Exists(filePath))
+        //    {
+        //        string[] existingLines = File.ReadAllLines(filePath);
+        //        if (existingLines.Length > 1) // Primera Linea corresponde a los encabezados
+        //        {
+        //            List<int> transactionIds = existingLines.Select(line =>
+        //            {
+        //                string[] parts = line.Split(',');
+        //                return int.TryParse(parts[0].Trim(), out int id) ? id : 0;
+        //            }).ToList();
+
+        //            nextFileNumber = transactionIds.Max() + 1;
+        //        }
+        //    }
+
+        //    // Verificar si el archivo existe y si no, crear la cabecera
+        //    bool fileExists = File.Exists(filePath);
+
+        //    using (StreamWriter writer = new StreamWriter(filePath, true))
+        //    {
+        //        if (!fileExists)
+        //        {
+        //            // Escribir la cabecera
+        //            writer.WriteLine("Venta Nro.,Fecha,Vendedor,Cliente,Producto,Monto,Estado");
+        //        }
+        //        // Construir la línea a escribir en el archivo
+        //        string lineaVenta = $"{nextFileNumber},{venta.FechaVenta},{venta.NombreVendedor},{venta.NombreCliente},{string.Join(" | ", venta.Productos)},{venta.MontoTotal}, 1";
+        //        writer.WriteLine(lineaVenta); // Inserto 1 por defecto, ya que es el alta de la venta.
+        //    }
+        //}
+
 
 
         public bool ExisteVentaCliente()
@@ -1166,12 +1306,13 @@ namespace Presentacion
                 if (resultadoContinuar == DialogResult.No)
                 {
                     Close();
-                    InterfazVentasMenu VentasMenu = new InterfazVentasMenu();
-                    VentasMenu.Show();
+                    InterfazMenu Menu = new InterfazMenu();
+                    Menu.Show();
                 }
                 else
                 {
                     Limpiar(); // Restablecer todos los campos del formulario
+                    SetBoxes();
                 }
             }
         }
@@ -1230,6 +1371,7 @@ namespace Presentacion
             MontoPromocion2.Text = "";
 
             CargarClientes();
+
         }
 
         private void Boton_Salir_Click(object sender, EventArgs e)

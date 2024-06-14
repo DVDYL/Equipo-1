@@ -89,7 +89,7 @@ namespace Presentacion
         {
             InterfazLogIn interfazLogIn = InterfazLogIn.Instancia;
 
-            if (interfazLogIn.Host == "1" || interfazLogIn.Host == "2" || interfazLogIn.Host == "3") // SACAR EL 3 PARA LA ENTREGA FINAL
+            if (interfazLogIn.Host == "1" || interfazLogIn.Host == "2")
             {
                 InterfazVentasMenu MenuVentas = new InterfazVentasMenu();
                 Hide();

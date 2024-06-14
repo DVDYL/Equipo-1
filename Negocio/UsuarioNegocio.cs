@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Negocio
 {
-    public class UsuarioNegocio
+    public class UsuarioNegocio 
     {
         private UsuarioService UsuarioService = new UsuarioService();
         public String idUsuario = "70b37dc1-8fde-4840-be47-9ababd0ee7e5";

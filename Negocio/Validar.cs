@@ -603,7 +603,7 @@ namespace Negocio
         {
             if (nombreUsuario == "ADMINI24")
             {
-                // Devuelves el número de host para el administrador
+                // Devuelve el número de host para el administrador
                 return "3";
             }
 
@@ -622,8 +622,6 @@ namespace Negocio
             else
             {
                 return null;
-
-                // throw new InvalidOperationException("El usuario ingresado no se encuentra en la lista de usuarios activos.");
             }
         }
 
