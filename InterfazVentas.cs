@@ -16,7 +16,6 @@ namespace Presentacion
 {
     public partial class InterfazVentas : Ventana
     {
-        //private string idCliente;
         private ClienteNegocio ClienteNegocio = new ClienteNegocio();
         private ProductoNegocio ProductoNegocio = new ProductoNegocio();
         private VentaNegocio VentaNegocio = new VentaNegocio();
@@ -1116,48 +1115,6 @@ namespace Presentacion
             }
         }
 
-        //private void GuardarVentaEnTxt(VentasTXT venta)
-        //{
-        //    // Construir la ruta del archivo
-        //    string directoryPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CAI", "Equipo1");
-        //    Directory.CreateDirectory(directoryPath); // Crea el directorio si no existe
-        //    string filePath = Path.Combine(directoryPath, "ventas.csv");
-
-        //    // Obtener el siguiente IdTransaccion
-        //    int nextFileNumber = 1;
-        //    if (File.Exists(filePath))
-        //    {
-        //        string[] existingLines = File.ReadAllLines(filePath);
-        //        if (existingLines.Length > 1) // Primera Linea corresponde a los encabezados
-        //        {
-        //            List<int> transactionIds = existingLines.Select(line =>
-        //            {
-        //                string[] parts = line.Split(',');
-        //                return int.TryParse(parts[0].Trim(), out int id) ? id : 0;
-        //            }).ToList();
-
-        //            nextFileNumber = transactionIds.Max() + 1;
-        //        }
-        //    }
-
-        //    // Verificar si el archivo existe y si no, crear la cabecera
-        //    bool fileExists = File.Exists(filePath);
-
-        //    using (StreamWriter writer = new StreamWriter(filePath, true))
-        //    {
-        //        if (!fileExists)
-        //        {
-        //            // Escribir la cabecera
-        //            writer.WriteLine("Venta Nro.,Fecha,Vendedor,Cliente,Producto,Monto,Estado");
-        //        }
-        //        // Construir la línea a escribir en el archivo
-        //        string lineaVenta = $"{nextFileNumber},{venta.FechaVenta},{venta.NombreVendedor},{venta.NombreCliente},{string.Join(" | ", venta.Productos)},{venta.MontoTotal}, 1";
-        //        writer.WriteLine(lineaVenta); // Inserto 1 por defecto, ya que es el alta de la venta.
-        //    }
-        //}
-
-
-
         public bool ExisteVentaCliente()
         {
             // Obtener el nombre del cliente seleccionado en el ComboBox
@@ -1202,7 +1159,7 @@ namespace Presentacion
 
                 if (resultadoContinuar == DialogResult.No)
                 {
-                    Close();
+                    Hide();
                     InterfazMenu Menu = new InterfazMenu();
                     Menu.Show();
                 }
